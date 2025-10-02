@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback } from "react";
 import { Inter, Playfair_Display } from "next/font/google";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -15,9 +16,9 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string;
-    name: string;
+    description: string;
     title: string;
+    subtitle: string;
   }[];
   direction?: "right" | "left";
   speed?: "fast" | "normal" | "slow";
@@ -27,6 +28,20 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
+  const [blog, setBlog] = useState([]);
+
+  const getData = async () => {
+    try {
+      const res = await axios.get("/api/card/[id]");
+      setBlog(res.data?.data);
+    } catch (err) {
+      console.error("Error fetching blog:", err);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const getDirection = useCallback(() => {
     if (containerRef.current) {
@@ -92,10 +107,10 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item) => (
+        {items.map((item, id) => (
           <li
             className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-border bg-gradient-to-b from-card to-muted px-8 py-6 md:w-[450px]"
-            key={item.name}
+            key={id}
           >
             <blockquote>
               <div
@@ -103,15 +118,15 @@ export const InfiniteMovingCards = ({
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
               <span className={`relative z-20 text-sm leading-[1.6] font-normal text-foreground uppercase ${inter.className}`}>
-                {item.quote}
+                {item.description}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
                   <span className={`text-sm leading-[1.6] font-normal text-foreground uppercase ${inter.className}`}>
-                    {item.name}
+                    {item.subtitle}
                   </span>
                   <span className={`text-sm leading-[1.6] font-normal text-muted-foreground uppercase ${inter.className}`}>
-                    {item.title}
+                    {item.  title}
                   </span>
                 </span>
               </div>

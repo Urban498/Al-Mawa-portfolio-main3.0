@@ -11,11 +11,15 @@
 //     </div>
 //   );
 // }
+"use client";
 
 import HeroSection from "@/components/hero-section";
 
 
+
 export default function Home() {
+
+  
   return (
     <div className="min-h-screen">
       {/* Pass the inter className to HeroSection */}

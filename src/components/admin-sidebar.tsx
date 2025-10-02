@@ -7,21 +7,30 @@ import axios from "axios";
 import { CiLogout } from "react-icons/ci";
 import { motion } from "motion/react";
 import { toast } from "sonner";
-
+import { useRouter } from "next/navigation";
 interface AdminSidebarProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
   onLogout: () => void;
 }
 
+interface MenuItem {
+  label: string;
+  key: string;
+  icon: React.ReactNode;
+  link?: string;
+}
+
 // This component will be inside SidebarBody and can access useSidebar
 const SidebarContent = ({ activeSection, setActiveSection, onLogout }: AdminSidebarProps) => {
   const { open } = useSidebar();
+  const router = useRouter();
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { label: "Contact", key: "contact", icon: <IconHome2 size={20} /> },
     { label: "Enquiry", key: "enquiry", icon: <IconUser size={20} /> },
     { label: "Job Applications", key: "jobs", icon: <IconSettings size={20} /> },
+    { label: "Cards", key: "cards", link: "/admin/cards", icon: <IconSettings size={20} /> },
   ];
 
 
@@ -53,7 +62,12 @@ const SidebarContent = ({ activeSection, setActiveSection, onLogout }: AdminSide
         {menuItems.map((item, index) => (
           <button
             key={index}
-            onClick={() => setActiveSection(item.key)}
+            onClick={() => {
+              setActiveSection(item.key);
+              if (item.link && window.location.pathname !== item.link) {
+                router.push(item.link);
+              }
+            }}
             className={`relative flex items-center gap-2 px-2 py-2 rounded-md transition-colors text-left group ${
               activeSection === item.key
                 ? "bg-neutral-300 dark:bg-neutral-700"
@@ -120,15 +134,17 @@ const SidebarContent = ({ activeSection, setActiveSection, onLogout }: AdminSide
 
 const AdminSidebar = ({ activeSection, setActiveSection, onLogout }: AdminSidebarProps) => {
   return (
-    <Sidebar>
-      <SidebarBody>
-        <SidebarContent 
-          activeSection={activeSection}
-          setActiveSection={setActiveSection}
-          onLogout={onLogout}
-        />
-      </SidebarBody>
-    </Sidebar>
+    <div className="h-screen">
+      <Sidebar>
+        <SidebarBody className="h-full">
+          <SidebarContent 
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+            onLogout={onLogout}
+          />
+        </SidebarBody>
+      </Sidebar>
+    </div>
   );
 };
 

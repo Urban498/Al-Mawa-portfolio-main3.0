@@ -5,15 +5,26 @@ import LoginPage from "@/components/login";
 import AdminSidebar from "@/components/admin-sidebar";
 import axios from "axios";
 import { ContactSchema, EnquirySchema, JobApplySchema, AdminDataType, ApiResponse } from "@/types/schemas";
+import { useSearchParams } from "next/navigation";
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("contact");
   const [data, setData] = useState<AdminDataType[]>([]);
+  const searchParams = useSearchParams();
+  const sectionParam = searchParams.get('section');
 
-  const checkAuthStatus = async () => {
+  const checkAuthStatus = useCallback(async () => {
     try {
+      // If coming from cards page with section parameter, assume authenticated
+      if (sectionParam) {
+        setIsAuthenticated(true);
+        setActiveSection(sectionParam);
+        setIsLoading(false);
+        return;
+      }
+      
       // Check if user is authenticated by making a request to a protected route
       const response = await fetch('/api/check-auth');
       if (response.ok) {
@@ -24,7 +35,7 @@ export default function AdminPage() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [sectionParam]);
 
   const fetchData = useCallback(async () => {
     try {
@@ -58,7 +69,7 @@ export default function AdminPage() {
   // Check authentication status on component mount
   useEffect(() => {
     checkAuthStatus();
-  }, []);
+  }, [checkAuthStatus]);
 
   // Fetch data when active section changes
   useEffect(() => {

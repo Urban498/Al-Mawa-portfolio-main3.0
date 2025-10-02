@@ -78,7 +78,7 @@ export default function TestimonialsPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-6xl font-bold pb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}>
-            What Our Clients Say
+          From Our Experts to You
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto uppercase">
             Hear from our satisfied clients about their experience working with us and the results we&apos;ve achieved together.

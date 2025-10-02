@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
@@ -15,6 +16,23 @@ const playfair_display = Playfair_Display({
 
 
 export default function HeroSection() {
+
+  const [blog, setBlog] = useState([]);
+
+  const getData = async () => {
+    try {
+      const res = await axios.get("/api/card/[id]");
+      setBlog(res.data?.data);
+      console.log(res.data?.data);
+      
+    } catch (err) {
+      console.error("Error fetching blog:", err);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="relative">
      
@@ -81,40 +99,14 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className={`${inter.className} text-4xl md:text-5xl font-bold pb-4 text-center text-black uppercase`}>
-              What Our Clients Say
+            From Our Experts to You
             </h2>
             <p className={`${playfair_display.className} text-lg text-black uppercase`}>
-              Hear from our satisfied clients about their experience working with us
+            “Read our articles, tutorials, and stories crafted by our team of professionals.”
             </p>
           </div>
           <InfiniteMovingCards
-            items={[
-              {
-                quote: "Working with this team was an absolute pleasure. They delivered exceptional results that exceeded our expectations and transformed our digital presence.",
-                name: "Sarah Johnson",
-                title: "CEO, TechStart Inc."
-              },
-              {
-                quote: "The attention to detail and innovative approach they brought to our project was remarkable. Our user engagement increased by 300% after the redesign.",
-                name: "Michael Chen",
-                title: "Product Manager, InnovateCorp"
-              },
-              {
-                quote: "Professional, creative, and reliable. They understood our vision perfectly and brought it to life with stunning results.",
-                name: "Emily Rodriguez",
-                title: "Marketing Director, GrowthLab"
-              },
-              {
-                quote: "The team's expertise in both design and development made our project seamless. Highly recommend for any digital transformation needs.",
-                name: "David Thompson",
-                title: "CTO, FutureTech Solutions"
-              },
-              {
-                quote: "Outstanding work quality and excellent communication throughout the project. They delivered on time and within budget.",
-                name: "Lisa Wang",
-                title: "Founder, StartupHub"
-              }
-            ]}
+            items={blog}
             direction="right"
             speed="slow"
           />
