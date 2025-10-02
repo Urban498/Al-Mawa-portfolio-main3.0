@@ -164,7 +164,11 @@ export default function TestimonialsPage() {
             </p>
           </div>
           <InfiniteMovingCards
-            items={testimonials}
+            items={testimonials.map(testimonial => ({
+              description: testimonial.quote,
+              title: testimonial.name,
+              subtitle: testimonial.title
+            }))}
             direction="right"
             speed="slow"
           />
