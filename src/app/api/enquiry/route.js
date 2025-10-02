@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "../libs/db";
 import EnquiryModel from "../models/enquiry_schema";
+import { corsHeaders, handleOptions } from "@/lib/cors";
+
+// Handle preflight requests
+export async function OPTIONS() {
+  return handleOptions();
+}
 
 export async function POST(request) {
     console.log("🔄 Enquiry API called");
@@ -13,7 +19,7 @@ export async function POST(request) {
         console.log("📝 Request body:", reqBody);
         
         // Validate required fields
-        const { fullName, Email, Number, ServiceIntrestedIn, ProjectDetails } = reqBody;
+        const { fullName, Email, Number: phoneNumber, ServiceIntrestedIn, ProjectDetails } = reqBody;
         
         if (!fullName || !Email || !ServiceIntrestedIn || !ProjectDetails) {
             console.log("❌ Missing required fields");
@@ -35,13 +41,13 @@ export async function POST(request) {
             success: true,
             message: "Enquiry submitted successfully",
             data: savedData
-        });
+        }, { headers: corsHeaders });
     } catch (error) {
         console.error("❌ Enquiry API error:", error);
         return NextResponse.json({
             success: false,
             message: error.message || "Failed to submit enquiry"
-        }, { status: 500 });
+        }, { status: 500, headers: corsHeaders });
     }
 }
 
@@ -50,10 +56,10 @@ export async function GET() {
     try {
         const getdata = await EnquiryModel.find()
         if (getdata.length === 0) {
-            return NextResponse.json({message:"No data Available in enquiry form"})
+            return NextResponse.json({message:"No data Available in enquiry form"}, { headers: corsHeaders })
         }
-        return NextResponse.json({success:true,data:getdata})
+        return NextResponse.json({success:true,data:getdata}, { headers: corsHeaders })
     } catch (error) {
-        return NextResponse.json({success:false,message:error})
+        return NextResponse.json({success:false,message:error}, { headers: corsHeaders })
     }
 }

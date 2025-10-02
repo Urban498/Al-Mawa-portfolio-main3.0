@@ -9,7 +9,7 @@ export async function POST(req){
             return NextResponse.json({success : false , error:"all fields are required"});
         } 
         const adminEmail = process.env.ADMIN_EMAIL;
-        const adminPassword = "$2b$10$lbQI5oOEHF7LNFNsXw9tG.r.eNQjIn9m8ibrDYWjRc9FwmsVOnrxq";
+        const adminPassword = "$2b$10$J7fHE2QVrOLl.XZExglHZu5TIuERjLM3UM1Xr05NErjPe/BaovX8.";
         if(email !== adminEmail ){
             return NextResponse.json({success : false , error:"Email is wrong"});
         }

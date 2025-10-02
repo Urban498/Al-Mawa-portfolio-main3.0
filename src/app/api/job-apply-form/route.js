@@ -2,6 +2,12 @@ import { NextResponse } from "next/server";
 import { connectDB } from "../libs/db";
 import jobApllyModel from "../models/job-apply-schema";
 import { v2 as cloudinary } from 'cloudinary';
+import { corsHeaders, handleOptions } from "@/lib/cors";
+
+// Handle preflight requests
+export async function OPTIONS() {
+  return handleOptions();
+}
 
 // Configure Cloudinary
 cloudinary.config({
@@ -141,7 +147,7 @@ export async function POST(request) {
         resumeUrl: uploadResult.secure_url,
         publicId: uploadResult.public_id
       }
-    });
+    }, { headers: corsHeaders });
 
   } catch (error) {
     console.error('Job application error:', error);
@@ -149,7 +155,7 @@ export async function POST(request) {
     return NextResponse.json({
       success: false,
       message: error.message || "Failed to submit job application"
-    }, { status: 500 });
+    }, { status: 500, headers: corsHeaders });
   }
 }
 
@@ -162,18 +168,18 @@ export async function GET() {
     if (applications.length === 0) {
       return NextResponse.json({
         message: "No job applications found"
-      });
+      }, { headers: corsHeaders });
     }
 
     return NextResponse.json({
       success: true,
       data: applications
-    });
+    }, { headers: corsHeaders });
 
   } catch (error) {
     return NextResponse.json({
       success: false,
       message: error.message
-    }, { status: 500 });
+    }, { status: 500, headers: corsHeaders });
   }
 }

@@ -1,8 +1,18 @@
 import axios from 'axios';
 
+// Get the correct base URL for API calls
+const getBaseURL = () => {
+  // In development, use localhost
+  if (process.env.NODE_ENV === 'development') {
+    return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+  }
+  // In production, use relative URLs to avoid CORS issues
+  return '/api';
+};
+
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
   },
