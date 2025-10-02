@@ -12,7 +12,7 @@ export default function ToastProvider() {
       toastOptions={{
         duration: 4000,
         style: {
-          zIndex: 9999,
+          zIndex: 99999,
         },
         classNames: {
           toast: 'bg-white border border-gray-200 text-gray-900',

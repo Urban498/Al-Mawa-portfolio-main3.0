@@ -6,6 +6,7 @@ import { IconHome2, IconUser, IconSettings } from "@tabler/icons-react";
 import axios from "axios";
 import { CiLogout } from "react-icons/ci";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 interface AdminSidebarProps {
   activeSection: string;
@@ -23,16 +24,25 @@ const SidebarContent = ({ activeSection, setActiveSection, onLogout }: AdminSide
     { label: "Job Applications", key: "jobs", icon: <IconSettings size={20} /> },
   ];
 
+
   const logout = async () => {
     try {
+      console.log("🔄 Attempting logout...");
       const res = await axios.post("/api/admin-logout");
+      console.log("📤 Logout response:", res.data);
+      
       if (res.data.success === true) {
-        alert("Logout Success");
+        console.log("✅ Logout successful, showing toast");
+        toast.success("Logout Success", {
+          description: "You have been logged out successfully"
+        });
         onLogout();
       }
     } catch (error) {
-      console.log(error);
-      alert("Logout failed");
+      console.error("❌ Logout error:", error);
+      toast.error("Logout failed", {
+        description: "Please try again"
+      });
     }
   };
 

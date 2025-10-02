@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 interface loginData {
   email: string;
@@ -20,20 +21,31 @@ const LoginPage = ({ onLoginSuccess }: LoginPageProps) => {
 
   const handleLogin = async (data: loginData) => {
     try {
+      console.log("🔄 Attempting login...");
       const res = await axios.post("/api/admin-login", data);
+      console.log("📤 Login response:", res.data);
+      
       if (res.data.success) {
-        alert("Login Success");
+        console.log("✅ Login successful, showing toast");
+        toast.success("Login Success", {
+          description: "Welcome to admin panel"
+        });
         if (onLoginSuccess) {
           onLoginSuccess();
         } else {
           window.location.href = "/admin";
         }
       } else {
-        alert(res.data.error || "Invalid credentials");
+        console.log("❌ Login failed:", res.data.error);
+        toast.error(res.data.error || "Invalid credentials", {
+          description: "Please check your credentials"
+        });
       }
     } catch (error) {
-      console.error(error);
-      alert("Something went wrong!");
+      console.error("❌ Login error:", error);
+      toast.error("Something went wrong!", {
+        description: "Please try again later"
+      });
     }
   };
 
