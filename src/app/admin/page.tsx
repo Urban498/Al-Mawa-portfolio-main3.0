@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import LoginPage from "@/components/login";
-import AdminSidebar from "./admin-sidebar/page";
+import AdminSidebar from "@/components/admin-sidebar";
 import axios from "axios";
 import { ContactSchema, EnquirySchema, JobApplySchema, AdminDataType, ApiResponse } from "@/types/schemas";
 
