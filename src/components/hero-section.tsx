@@ -7,7 +7,10 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import ServicesSection from "@/components/services-section";
 
 import { Inter, Playfair_Display } from "next/font/google";
-
+import aboutus from "@/components/images/about us.webp"
+import values from "@/components/images/ourvalue.jpg"
+import mission from "@/components/images/ourmission.jpg"
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -52,8 +55,7 @@ export default function HeroSection() {
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-4 text-black">Innovation</h3>
-                    <p className="text-lg text-black">Constantly pushing boundaries with creative solutions</p>
+                    <Image src={aboutus} alt="about us" width={500} height={500} />
                   </div>
                 </div>
               ),
@@ -64,8 +66,7 @@ export default function HeroSection() {
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-4 text-black">Quality</h3>
-                    <p className="text-lg text-black">Delivering excellence in every project we undertake</p>
+                    <Image src={mission} alt="mission" width={500} height={500} />
                   </div>
                 </div>
               ),
@@ -76,8 +77,7 @@ export default function HeroSection() {
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-accent-foreground">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-4 text-black">Impact</h3>
-                    <p className="text-lg text-black">Creating meaningful change through digital transformation</p>
+                    <Image src={values} alt="values" width={500} height={500} />
                   </div>
                 </div>
               ),

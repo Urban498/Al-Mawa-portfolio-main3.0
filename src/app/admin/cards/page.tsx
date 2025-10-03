@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useForm } from "react-hook-form";
 import AdminSidebar from "@/components/admin-sidebar";
+import BlogCardForm from "@/components/admin/BlogCardForm";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -26,13 +26,6 @@ const Cards: React.FC = () => {
   const [activeSection, setActiveSection] = useState("cards");
   const router = useRouter();
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    setValue,
-    formState: { errors },
-  } = useForm<FormValues>();
 
   // 🔹 Fetch all cards
   const fetchCards = async () => {
@@ -96,23 +89,18 @@ const Cards: React.FC = () => {
 
   // 🔹 Open modal for Add
   const openAddModal = () => {
-    reset();
     setEditingCard(null);
     setIsModalOpen(true);
   };
 
   // 🔹 Open modal for Edit
   const openEditModal = (card: CardType) => {
-    setValue("title", card.title);
-    setValue("subtitle", card.subtitle);
-    setValue("description", card.description);
     setEditingCard(card);
     setIsModalOpen(true);
   };
 
   // 🔹 Close modal
   const closeModal = () => {
-    reset();
     setEditingCard(null);
     setIsModalOpen(false);
   };
@@ -206,53 +194,16 @@ const Cards: React.FC = () => {
 
           {/* Modal */}
           {isModalOpen && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
-                <h2 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">
-                  {editingCard ? "Edit Card" : "Add Card"}
-                </h2>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    {...register("title", { required: "Title is required" })}
-                    className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  />
-                  {errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
-
-                  <input
-                    type="text"
-                    placeholder="Subtitle"
-                    {...register("subtitle", { required: "Subtitle is required" })}
-                    className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  />
-                  {errors.subtitle && <p className="text-red-500 text-sm">{errors.subtitle.message}</p>}
-
-                  <textarea
-                    placeholder="Description"
-                    {...register("description", { required: "Description is required" })}
-                    className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  />
-                  {errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
-
-                  <div className="flex justify-end gap-2">
-                    <button
-                      type="button"
-                      onClick={closeModal}
-                      className="px-4 py-2 bg-gray-400 hover:bg-gray-500 text-white rounded transition-colors"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
-                    >
-                      {editingCard ? "Update" : "Add"}
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <BlogCardForm
+              onSubmit={onSubmit}
+              onCancel={closeModal}
+              initialData={editingCard ? {
+                title: editingCard.title,
+                subtitle: editingCard.subtitle,
+                description: editingCard.description
+              } : undefined}
+              isEditing={!!editingCard}
+            />
           )}
         </div>
       </div>
