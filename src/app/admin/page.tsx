@@ -6,6 +6,8 @@ import AdminSidebar from "@/components/admin-sidebar";
 import axios from "axios";
 import { ContactSchema, EnquirySchema, JobApplySchema, AdminDataType, ApiResponse } from "@/types/schemas";
 import { useSearchParams } from "next/navigation";
+import JobPostForm from "@/components/admin/JobPostForm";
+import JobManagement from "@/components/admin/JobManagement";
 
 function AdminContent() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -115,10 +117,17 @@ function AdminContent() {
       <div className="flex-1 p-4 md:p-6 min-h-screen overflow-auto min-w-0">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 capitalize">
-            {activeSection === "jobs" ? "Job Applications" : activeSection}
+            {activeSection === "jobs" ? "Job Applications" : 
+             activeSection === "post-jobs" ? "Post New Job" :
+             activeSection === "manage-jobs" ? "Manage Jobs" : activeSection}
           </h1>
         </div>
 
+        {activeSection === "post-jobs" ? (
+          <JobPostForm />
+        ) : activeSection === "manage-jobs" ? (
+          <JobManagement />
+        ) : (
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 max-w-full">
           {data.length > 0 ? (
             <div className="overflow-x-auto">
@@ -235,6 +244,7 @@ function AdminContent() {
             </div>
           )}
         </div>
+        )}
       </div>
     </div>
   );

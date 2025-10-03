@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Search, 
@@ -29,80 +30,21 @@ import { Badge } from "@/components/ui/badge";
 import { Inter, Playfair_Display } from "next/font/google";
 import { submitJobApplication } from "@/lib/formServices";
 import { toast } from "sonner";
+
+// Job interface based on API schema
+interface Job {
+  _id?: string;
+  jobTitle: string;
+  jobDescription: string;
+  jobkeySkills: string[];
+  jobDepartment: string;
+  jobType: string;
+}
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
 });
-// Mock job data
-const jobListings = [
-  {
-    id: 1,
-    title: "Senior Frontend Developer",
-    department: "Engineering",
-    location: "Pune, India",
-    type: "Full-time",
-    salary: "₹12L - ₹18L",
-    description: "Join our frontend team to build cutting-edge user interfaces using React, TypeScript, and modern web technologies.",
-    requirements: ["5+ years React experience", "TypeScript proficiency", "UI/UX design sense"],
-    posted: "2 days ago"
-  },
-  {
-    id: 2,
-    title: "Product Manager",
-    department: "Product",
-    location: "Pune, India",
-    type: "Full-time",
-    salary: "₹15L - ₹22L",
-    description: "Lead product strategy and roadmap for our core platform, working closely with engineering and design teams.",
-    requirements: ["3+ years PM experience", "Technical background", "Data-driven mindset"],
-    posted: "1 week ago"
-  },
-  {
-    id: 3,
-    title: "UX Designer",
-    department: "Design",
-    location: "Pune, India",
-    type: "Full-time",
-    salary: "₹8L - ₹14L",
-    description: "Create intuitive and beautiful user experiences for our web and mobile applications.",
-    requirements: ["Portfolio of UX work", "Figma expertise", "User research experience"],
-    posted: "3 days ago"
-  },
-  {
-    id: 4,
-    title: "DevOps Engineer",
-    department: "Engineering",
-    location: "Pune, India",
-    type: "Full-time",
-    salary: "₹10L - ₹16L",
-    description: "Build and maintain our cloud infrastructure, CI/CD pipelines, and deployment systems.",
-    requirements: ["AWS/GCP experience", "Kubernetes knowledge", "Infrastructure as Code"],
-    posted: "5 days ago"
-  },
-  {
-    id: 5,
-    title: "Marketing Specialist",
-    department: "Marketing",
-    location: "Pune, India",
-    type: "Full-time",
-    salary: "₹6L - ₹10L",
-    description: "Drive our digital marketing initiatives and help grow our brand presence across multiple channels.",
-    requirements: ["Digital marketing experience", "Analytics tools", "Content creation skills"],
-    posted: "1 week ago"
-  },
-  {
-    id: 6,
-    title: "Backend Developer",
-    department: "Engineering",
-    location: "Pune, India",
-    type: "Contract",
-    salary: "₹8L - ₹12L",
-    description: "Develop scalable backend services and APIs using Node.js, Python, and cloud technologies.",
-    requirements: ["Backend development experience", "API design", "Database knowledge"],
-    posted: "4 days ago"
-  }
-];
 
 // Benefits data
 const benefits = [
@@ -165,9 +107,9 @@ const faqs = [
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("all");
-  const [selectedJob, setSelectedJob] = useState<typeof jobListings[0] | null>(null);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
-  const [expandedJobs, setExpandedJobs] = useState<number[]>([]);
+  const [expandedJobs, setExpandedJobs] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -178,24 +120,36 @@ export default function CareersPage() {
     coverLetter: "",
     resume: null as File | null
   });
-
+  const [jobs, setJobs] = useState<Job[]>([])
+const getData = async() => {
+  try {
+    const response = await axios.get("/api/jobs")
+    console.log(response.data?.data)
+    setJobs(response.data?.data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+useEffect(() => {
+  getData()
+}, [])
   // Filter jobs based on search and filters
-  const filteredJobs = jobListings.filter(job => {
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         job.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesDepartment = selectedDepartment === "all" || job.department === selectedDepartment;
+  const filteredJobs = jobs?.filter(job => {
+    const matchesSearch = job?.jobTitle?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         job?.jobDescription?.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesDepartment = selectedDepartment === "all" || job?.jobDepartment === selectedDepartment;
     
     return matchesSearch && matchesDepartment;
   });
 
-  const departments = ["all", ...Array.from(new Set(jobListings.map(job => job.department)))];
+  const departments = ["all", ...Array.from(new Set(jobs.map((job: Job) => job.jobDepartment)))];
 
-  const handleApplyNow = (job: typeof jobListings[0]) => {
+  const handleApplyNow = (job: Job) => {
     setSelectedJob(job);
     setIsApplicationOpen(true);
   };
 
-  const toggleJobExpansion = (jobId: number) => {
+  const toggleJobExpansion = (jobId: string) => {
     setExpandedJobs(prev => 
       prev.includes(jobId) 
         ? prev.filter(id => id !== jobId)
@@ -251,7 +205,7 @@ export default function CareersPage() {
       console.log("✅ Job application submitted successfully:", result);
       
       toast.success('Application submitted successfully!', {
-        description: `Your application for ${selectedJob?.title} has been received. We'll review it and get back to you soon.`,
+        description: `Your application for ${selectedJob?.jobTitle} has been received. We'll review it and get back to you soon.`,
       });
 
       // Reset form and close dialog
@@ -385,7 +339,7 @@ export default function CareersPage() {
           <div className="grid gap-6 max-w-5xl mx-auto">
             {filteredJobs.map((job, index) => (
               <motion.div
-                key={job.id}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -396,23 +350,23 @@ export default function CareersPage() {
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
                         <CardTitle className={`text-xl font-bold text-black transition-colors uppercase ${inter.className}`}>
-                          {job.title}
+                          {job.jobTitle}
                         </CardTitle>
                         <CardDescription className={`text-black mt-2 `}>
                           <div 
                             className="cursor-pointer hover:text-black transition-colors"
-                            onClick={() => toggleJobExpansion(job.id)}
+                            onClick={() => toggleJobExpansion(job._id || index.toString())}
                           >
-                            {job.description}
+                            {job.jobDescription}
                             <span className="text-black ml-2 text-sm font-medium underline">
-                              {expandedJobs.includes(job.id) ? "Show less" : "Show more"}
+                              {expandedJobs.includes(job._id || index.toString()) ? "Show less" : "Show more"}
                             </span>
                           </div>
                           
                           <AnimatePresence mode="wait">
-                            {expandedJobs.includes(job.id) && (
+                            {expandedJobs.includes(job._id || index.toString()) && (
                               <motion.div
-                                key={`job-details-${job.id}`}
+                                key={`job-details-${job._id || index}`}
                                 initial={{ opacity: 0, height: 0, marginTop: 0 }}
                                 animate={{ opacity: 1, height: "auto", marginTop: 16 }}
                                 exit={{ opacity: 0, height: 0, marginTop: 0 }}
@@ -427,7 +381,7 @@ export default function CareersPage() {
                               <div>
                                 <h4 className="font-semibold text-foreground mb-2">Key Requirements:</h4>
                                 <ul className="list-disc list-inside space-y-1 text-sm">
-                                  {job.requirements.map((req, index) => (
+                                  {job.jobkeySkills.map((req, index) => (
                                     <li key={index} className="text-muted-foreground">{req}</li>
                                   ))}
                                 </ul>
@@ -438,19 +392,19 @@ export default function CareersPage() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
                                   <div className="flex items-center gap-2">
                                     <Building2 className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Department: {job.department}</span>
+                                    <span className="text-muted-foreground">Department: {job.jobDepartment || "Not specified"}</span>
                                   </div>
                                   <div className="flex items-center gap-2">
                                     <MapPin className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Location: {job.location}</span>
+                                    <span className="text-muted-foreground">Location: Pune, India</span>
                                   </div>
                                   <div className="flex items-center gap-2">
                                     <Briefcase className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Type: {job.type}</span>
+                                    <span className="text-muted-foreground">Type: {job.jobType || "Full-time"}</span>
                                   </div>
                                   <div className="flex items-center gap-2">
                                     <DollarSign className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Salary: {job.salary}</span>
+                                    <span className="text-muted-foreground">Salary: Competitive</span>
                                   </div>
                                 </div>
                               </div>
@@ -462,15 +416,15 @@ export default function CareersPage() {
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="secondary" className="bg-muted text-muted-foreground">
                           <Building2 className="w-3 h-3 mr-1" />
-                          {job.department}
+                          {job.jobDepartment}
                         </Badge>
                         <Badge variant="secondary" className="bg-muted text-muted-foreground">
                           <MapPin className="w-3 h-3 mr-1" />
-                          {job.location}
+                          Pune, India
                         </Badge>
                         <Badge variant="secondary" className="bg-muted text-muted-foreground">
                           <Briefcase className="w-3 h-3 mr-1" />
-                          {job.type}
+                          {job.jobType}
                         </Badge>
                       </div>
                     </div>
@@ -480,11 +434,11 @@ export default function CareersPage() {
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <DollarSign className="w-4 h-4" />
-                          {job.salary}
+                          Competitive
                         </span>
                         <span className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />
-                          {job.posted}
+                          Recently posted
                         </span>
                       </div>
                       <Button 
@@ -605,10 +559,10 @@ export default function CareersPage() {
 
       {/* Job Application Modal */}
       <Dialog open={isApplicationOpen} onOpenChange={setIsApplicationOpen}>
-        <DialogContent className="bg-background border-border text-foreground w-[200rem] max-h-[90vh] overflow-y-auto ">
+        <DialogContent className="bg-background border-border text-foreground max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className={`text-2xl font-bold text-black ${inter.className} uppercase`}>
-              Apply for {selectedJob?.title}
+              Apply for {selectedJob?.jobTitle}
             </DialogTitle>
             <DialogDescription className="text-muted-foreground">
               Fill out the form below to submit your application. We&apos;ll get back to you within 48 hours.
