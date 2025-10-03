@@ -313,9 +313,9 @@ export default function AboutPage() {
         </div>
 
         {/* <div className="panel three">Passion</div> */}
-        <div className="panel four">Collaboration</div>
+        {/* <div className="panel four">Collaboration</div>
         <div className="panel five">Innovation</div>
-        <div className="panel six">Excellence</div>
+        <div className="panel six">Excellence</div> */}
       </div>
 
       {/* Mobile-friendly sections - visible only on small screens */}
