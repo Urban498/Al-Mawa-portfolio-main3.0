@@ -113,10 +113,9 @@ export default function RootLayout({
                 <div className="flex items-center justify-center gap-2 text-sm font-medium">
                   <span className="animate-pulse">🚧</span>
                   <span className="hidden sm:inline">
-                    This website is under construction. Some features may not work
-                    as expected.
+                   this website is under Maintenance some features may not work as expected
                   </span>
-                  <span className="sm:hidden">Website is under construction.</span>
+                  <span className="sm:hidden">Website is under Maintenance.</span>
                   <span className="animate-pulse">🚧</span>
                 </div>
               </div>
