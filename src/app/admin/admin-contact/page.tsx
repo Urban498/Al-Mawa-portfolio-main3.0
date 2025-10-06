@@ -33,7 +33,7 @@ export default function AdminContactPage() {
   // ✅ Fetch all contact data
   const handleGet = async () => {
     try {
-      const response = await axios.get("/api/contact-us/get");
+      const response = await axios.get("/api/contact-us");
       console.log("Fetched contacts:", response.data);
 
       setContacts(

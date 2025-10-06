@@ -46,7 +46,7 @@ function AdminContent() {
       let endpoint = "";
       switch (activeSection) {
         case "contact":
-          endpoint = "/api/contact-us/get";
+          endpoint = "/api/contact-us";
           break;
         case "enquiry":
           endpoint = "/api/enquiry";
