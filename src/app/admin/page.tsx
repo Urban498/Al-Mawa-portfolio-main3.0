@@ -8,6 +8,8 @@ import { ContactSchema, EnquirySchema, JobApplySchema, AdminDataType, ApiRespons
 import { useSearchParams } from "next/navigation";
 import JobPostForm from "@/components/admin/JobPostForm";
 import JobManagement from "@/components/admin/JobManagement";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AdminContent() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,7 +46,7 @@ function AdminContent() {
       let endpoint = "";
       switch (activeSection) {
         case "contact":
-          endpoint = "/api/contact-us";
+          endpoint = "/api/contact-us/get";
           break;
         case "enquiry":
           endpoint = "/api/enquiry";
@@ -88,6 +90,46 @@ function AdminContent() {
     setIsAuthenticated(false);
     setActiveSection("contact");
     setData([]);
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      let endpoint = "";
+      switch (activeSection) {
+        case "contact":
+          endpoint = `/api/contact-us/${id}`;
+          break;
+        case "enquiry":
+          endpoint = `/api/enquiry/${id}`;
+          break;
+        case "jobs":
+          endpoint = `/api/job-apply-form/${id}`;
+          break;
+        default:
+          return;
+      }
+      
+      const response = await axios.delete(endpoint);
+      if (response.data.success) {
+        toast.success('Deleted successfully!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+        // Refresh data after successful delete
+        fetchData();
+        console.log(`${activeSection} deleted successfully`);
+      }
+    } catch (error) {
+      console.error("Error deleting data:", error);
+      toast.error("Failed to delete. Please try again.");
+    }
   };
 
   if (isLoading) {
@@ -142,6 +184,7 @@ function AdminContent() {
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Phone</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Country</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Subject</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Actions</th>
                       </>
                     )}
                     {activeSection === "enquiry" && (
@@ -151,6 +194,7 @@ function AdminContent() {
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Phone</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Service</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Project Details</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Actions</th>
                       </>
                     )}
                     {activeSection === "jobs" && (
@@ -161,6 +205,7 @@ function AdminContent() {
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Phone</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Experience</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Resume</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Actions</th>
                       </>
                     )}
                   </tr>
@@ -188,6 +233,14 @@ function AdminContent() {
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
                             {(item as ContactSchema).subject}
                           </td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
+                            <button
+                              onClick={() => (item as ContactSchema)._id && handleDelete((item as ContactSchema)._id!)}
+                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                            >
+                              Delete
+                            </button>
+                          </td>
                         </>
                       )}
                       {activeSection === "enquiry" && (
@@ -206,6 +259,15 @@ function AdminContent() {
                           </td>
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
                             {(item as EnquirySchema).ProjectDetails?.substring(0, 50)}...
+                          </td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
+                            <button
+                              onClick={() => (item as EnquirySchema)._id && handleDelete((item as EnquirySchema)._id!)}
+                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                            >
+                              
+                              Delete
+                            </button>
                           </td>
                         </>
                       )}
@@ -231,6 +293,14 @@ function AdminContent() {
                               View Resume
                             </a>
                           </td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
+                            <button
+                              onClick={() => (item as JobApplySchema)._id && handleDelete((item as JobApplySchema)._id!)}
+                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                            >
+                              Delete
+                            </button>
+                          </td>
                         </>
                       )}
                     </tr>
@@ -246,6 +316,20 @@ function AdminContent() {
         </div>
         )}
       </div>
+      
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

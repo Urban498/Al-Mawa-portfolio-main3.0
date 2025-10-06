@@ -53,10 +53,9 @@ export default function HeroSection() {
               title: "About Our Company",
               description: "We are a passionate team of digital innovators, designers, and developers dedicated to transforming ideas into extraordinary digital experiences. With years of combined experience in the industry, we specialize in creating cutting-edge solutions that drive business growth and user engagement.",
               content: (
-                <div className="h-full w-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground">
-                  <div className="text-center">
-                    <Image src={aboutus} alt="about us" width={500} height={500} />
-                  </div>
+                <div className="h-full w-full  flex items-center justify-center text-primary-foreground">
+              
+                    <Image src={aboutus} alt="about us"  className="object-cover h-full w-full" />
                 </div>
               ),
             },
@@ -65,9 +64,9 @@ export default function HeroSection() {
               description: "Our mission is to bridge the gap between creativity and technology, delivering solutions that not only meet your needs but exceed your expectations. We believe in creating meaningful change through digital transformation.",
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
-                  <div className="text-center">
-                    <Image src={mission} alt="mission" width={500} height={500} />
-                  </div>
+                  
+                    <Image src={mission} alt="mission" className="object-cover h-full w-full"/>
+                
                 </div>
               ),
             },
@@ -76,9 +75,9 @@ export default function HeroSection() {
               description: "We value collaboration, working closely with clients as trusted partners. Our commitment to quality ensures that we deliver excellence in every project we undertake, creating impactful solutions that make a difference.",
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-accent-foreground">
-                  <div className="text-center">
-                    <Image src={values} alt="values" width={500} height={500} />
-                  </div>
+                  
+                    <Image src={values} alt="values" className="object-cover h-full w-full"/>
+                  
                 </div>
               ),
             },

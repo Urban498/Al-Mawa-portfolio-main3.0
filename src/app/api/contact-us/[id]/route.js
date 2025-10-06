@@ -1,7 +1,7 @@
 
 import { NextResponse } from "next/server";
-import { connectDB } from "../libs/db";
-import { ContactModel } from "../models/contact_schema";
+import { connectDB } from "../../libs/db";
+import { ContactModel } from "../../models/contact_schema";
 
 // CORS headers helper
 const corsHeaders = {
@@ -72,3 +72,25 @@ export async function GET() {
         return NextResponse.json({success:false,message:error}, { headers: corsHeaders })
     }
 }
+
+export async function DELETE(request, { params }) {
+    await connectDB();
+    try {
+        const { id } =await params; // now params.id will have the value
+        if (!id) {
+            return NextResponse.json({ success: false, message: "ID is required" }, { headers: corsHeaders });
+        }
+
+        const deleteData = await ContactModel.findByIdAndDelete(id);
+        if (!deleteData) {
+            return NextResponse.json({ success: false, message: "Data not found" }, { headers: corsHeaders });
+        }
+
+        console.log("Data deleted successfully:", deleteData._id);
+        return NextResponse.json({ success: true, message: "Data deleted successfully" }, { headers: corsHeaders });
+    } catch (error) {
+        console.error("Delete error:", error);
+        return NextResponse.json({ success: false, message: error.message || error }, { headers: corsHeaders });
+    }
+}
+

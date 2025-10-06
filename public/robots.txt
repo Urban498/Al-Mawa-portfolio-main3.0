@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.al-mawa.international
+
+# Sitemaps
+Sitemap: https://www.al-mawa.international/sitemap.xml
