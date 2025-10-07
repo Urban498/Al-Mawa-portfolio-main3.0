@@ -76,6 +76,8 @@ export default function AboutPage() {
   }, []);
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
+      {/* SEO H1 Tag */}
+      <h1 className="sr-only">About Al Mawa International Pune - Professional Web Development Team</h1>
       {/* Hero Section */}
       <motion.section
         className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8"

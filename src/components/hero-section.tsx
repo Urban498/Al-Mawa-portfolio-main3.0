@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -50,8 +52,8 @@ export default function HeroSection() {
         <div>
           <StickyScroll content={[
             {
-              title: "About Our Company",
-              description: "We are a passionate team of digital innovators, designers, and developers dedicated to transforming ideas into extraordinary digital experiences. With years of combined experience in the industry, we specialize in creating cutting-edge solutions that drive business growth and user engagement.",
+              title: "About Al Mawa International",
+              description: "Al Mawa International is a leading digital agency in Pune, specializing in web development, website design, and digital marketing services. We are a passionate team of digital innovators, designers, and developers dedicated to transforming ideas into extraordinary digital experiences for businesses in Pune and Maharashtra.",
               content: (
                 <div className="h-full w-full  flex items-center justify-center text-primary-foreground">
               

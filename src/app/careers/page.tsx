@@ -234,6 +234,8 @@ useEffect(() => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card">
+      {/* SEO H1 Tag */}
+      <h1 className="sr-only">Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs</h1>
       {/* Hero Section */}
       <section className="relative py-12 px-4 overflow-hidden">
         {/* Background Effects */}

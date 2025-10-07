@@ -97,6 +97,66 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Al Mawa International - Digital Agency Pune | Web Development Company</title>
+        <meta name="description" content="Al Mawa International Pune - Leading digital agency offering web development, website design, digital marketing and IT consulting services in Pune Maharashtra" />
+        <meta name="keywords" content="Al Mawa International, Al Mawa International Pune, Al Mawa, digital agency Pune, web development company Pune, website design services Pune" />
+        <meta name="author" content="Al Mawa International" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.al-mawa.international" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Al Mawa International - Digital Agency Pune" />
+        <meta property="og:description" content="Leading digital agency in Pune offering web development, website design, and digital marketing services" />
+        <meta property="og:url" content="https://www.al-mawa.international" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Al Mawa International" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Al Mawa International - Digital Agency Pune" />
+        <meta name="twitter:description" content="Leading digital agency in Pune offering web development and digital marketing services" />
+        
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Al Mawa International",
+              "alternateName": "Al Mawa",
+              "url": "https://www.al-mawa.international",
+              "logo": "https://www.al-mawa.international/logo.png",
+              "description": "Leading digital agency in Pune offering web development, website design, and digital marketing services",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+919561179693",
+                "contactType": "customer service",
+                "email": "hr@al-mawa.international"
+              },
+              "sameAs": [
+                "https://wa.me/919561179693"
+              ],
+              "services": [
+                "Web Development",
+                "Website Design",
+                "Digital Marketing",
+                "Mobile App Development",
+                "IT Consulting"
+              ]
+            })
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100 text-base-content`}
       >

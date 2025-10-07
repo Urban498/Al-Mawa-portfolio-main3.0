@@ -90,7 +90,7 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-6xl font-bold pb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}>
-            Our Services
+            Web Development Services Pune - Al Mawa International
           </h1>
           <p className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto uppercase ${inter.className}`}>
             We offer comprehensive digital solutions to help your business thrive in the modern world
