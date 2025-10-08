@@ -24,7 +24,8 @@ const content = [
   {
     title: "Our Mission",
     description:
-      "Our mission is to bridge the gap between creativity and technology, delivering solutions that not only meet your needs but exceed your expectations. We believe in creating meaningful change through digital transformation.",
+      "To redefine the digital experience by delivering smart, seamless, and sustainable IT solutions that help businesses evolve with confidence."
+ ,
     content: (
       <div className="h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
         <div className="text-center">

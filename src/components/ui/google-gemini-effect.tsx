@@ -32,12 +32,12 @@ export const GoogleGeminiEffect = ({
         Empowering Businesses, Transforming {<ContainerTextFlip words={["Now.","Tomorrow.","Future."]} />}
       </div> 
 
-      <p className={`text-md md:text-xl font-normal text-center text-black mt-4 w-[80%] max-w-lg mx-auto tracking-wide ${playfair_display.className}`}>
+      <p className={`text-md md:text-xl mb-20 font-normal text-center text-black mt-4 w-[80%] max-w-lg mx-auto tracking-wide ${playfair_display.className}`}>
         &ldquo;Curating digital experience and conveying digital solutions for brighter future.&rdquo;
       </p>
      
 
-      <div className="flex justify-center items-center w-full -mb-16 sm:-mb-20 md:-mb-24 lg:-mb-0 -mt-12">
+      <div className="flex justify-center items-center w-full mb-16 sm:mb-12 md:-mb-2 lg:-mb-0 -mt-12">
         <svg
           width="1440"
           height="800"

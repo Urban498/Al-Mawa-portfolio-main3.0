@@ -132,14 +132,12 @@ export default function TeamSection() {
             <h2
               className={`text-3xl font-bold sm:text-4xl uppercase ${inter.className}`}
             >
-              Our dream <span className="text-7xl">team</span>
+              Our Dynamic <span className="text-7xl">team</span>
             </h2>
           </div>
           <div className={`mt-6 sm:mt-0 ${playfair_display.className}`}>
             <p>
-              During the working process, we perform regular fitting with the
-              client because he is the only person who can feel whether a new
-              suit fits or not.
+            AL-Mawa International operates under a lean, agile, and innovation-driven structure led by our visionary Director and powered by a core team of specialists across IT Services & Development, Digital Marketing, . Each department works in perfect sync to ensure seamless execution and impactful client outcomes.At the heart of AL-Mawa is a diverse team of passionate professionals  tech innovators, creative strategists, and industry experts who combine experience with forward thinking. Together, they focus on delivering excellence, fuel it with innovation, and transform every project into a success story.
             </p>
           </div>
         </div>
@@ -172,6 +170,7 @@ export default function TeamSection() {
                     </h3>
                     <span className="text-xs">_0{index + 1}</span>
                   </div>
+                  
                   <div className="mt-1 flex items-center justify-between">
                     <span className="text-muted-foreground inline-block translate-y-6 text-sm opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                       {member.role}

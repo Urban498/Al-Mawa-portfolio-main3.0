@@ -42,6 +42,13 @@ body {
   .five { background: #E5E7EB; }
   .six { background: #E5E7EB; }
 
+   /* .one { background:#000000eb; }
+  .two { background: #000000eb }
+  .three { background: #000000eb; }
+  .four { background: #000000eb; }
+  .five { background: #000000eb; }
+  .six { background: #000000eb; } */
+
 /* Mobile scroll animation for team cards - for all devices except large screens */
 @media (max-width: 1024px) {
   .team-card img {

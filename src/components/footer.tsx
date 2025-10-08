@@ -40,9 +40,7 @@ export default function FooterSection() {
               />
             </div>
             <p className={` text-gray-300 text-sm leading-relaxed max-w-md`}>
-              Transforming ideas into extraordinary digital experiences. We
-              specialize in creating cutting-edge solutions that drive business
-              growth.
+            Delivering next-generation digital solutions that transform ideas into measurable results.
             </p>
           </div>
 

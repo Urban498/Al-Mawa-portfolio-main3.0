@@ -14,6 +14,7 @@ import "../style.css";
 import grpimage from "./image/grp image.jpg";
 import visionimage from "./image/vision image.webp";
 import missionimage from "./image/mission image.jpg";
+import conferenceRoom from "./image/conference room 1.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
       {/* SEO H1 Tag */}
-      <h1 className="sr-only">About Al Mawa International Pune - Professional Web Development Team</h1>
+      <h1 className="sr-only">
+        About Al Mawa International Pune - Professional Web Development Team
+      </h1>
       {/* Hero Section */}
       <motion.section
         className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8"
@@ -88,21 +91,21 @@ export default function AboutPage() {
         {/* About us main */}
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
-            className={`text-5xl md:text-6xl lg:text-9xl text-left pb-4 bg-clip-text text-transparent bg-black uppercase  ${montserrat.className}`}
+            className={`text-5xl md:text-6xl lg:text-9xl text-left pb-4 bg-clip-text text-transparent bg-black   ${montserrat.className}`}
             variants={fadeInUp}
           >
-            About <br />{" "}
+            <span className="text-black font-bold uppercase">About</span> <br />{" "}
             <div className="flex flex-col justify-between lg:flex-row gap-4 lg:gap-0">
               <span className="flex flex-col order-1 lg:order-1 ">
-                Us
+                <span className="uppercase">us</span>
                 <motion.p
-                  className={`text-base md:text-lg lg:text-sm font-light max-w-xs lg:max-w-3xs mx-auto lg:mx-0 leading-relaxed text-gray-500 py-2`}
+                  className={`  md:text-lg lg:text-sm font-normal max-w-xs lg:max-w-3xs mx-auto lg:mx-0 leading-relaxed text-gray-500 py-2 ${playfair_display.className}`}
                   variants={fadeInUp}
                 >
-                  We are a passionate team of digital innovators, designers, and
-                  developers dedicated to transforming ideas into extraordinary
-                  digital experiences. Our mission is to bridge the gap between
-                  creativity and technology.
+                  Through our work, we strive to not only support businesses but
+                  to empower them to <span className="text-black font-semibold uppercase">lead, adapt, and thrive </span>in a competitive
+                  world. At AL-Mawa International, we don’t just provide
+                  services we deliver transformation and we promise evolution.
                 </motion.p>
               </span>
               <div className="order-2 lg:order-2 flex justify-center lg:justify-start">
@@ -123,12 +126,11 @@ export default function AboutPage() {
                   height={50}
                   className="rounded-4xl mt-3 h-30 object-cover w-full max-w-sm "
                 />
-                <h4 className="text-xl lg:text-2xl font-bold text-black mt-4 lg:mt-0">Our Team</h4>
-                <p className="text-sm max-w-sm text-gray-500 text-center lg:text-left px-4 lg:px-0">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Provident aut minus officia voluptas dolorem vero incidunt
-                  corporis. Aliquid maxime tempore alias ipsam dolore pariatur
-                  ex molestias error aspernatur! Repellendus, quasi!
+                <h4 className="text-2xl lg:text-3xl  text-black mt-4 lg:mt-0 uppercase">
+                  Our Team
+                </h4>
+                <p className={`text-sm max-w-sm text-gray-500 text-center lg:text-left px-4 lg:px-0 ${playfair_display.className}`}>
+                Driven by innovation and teamwork, our experts from IT, digital marketing, and graphics departments work hand in hand to create impactful digital experiences. We focus on delivering quality, creativity, and performance in every project we handle.
                 </p>
               </div>
             </div>
@@ -208,11 +210,11 @@ export default function AboutPage() {
           <motion.div variants={fadeInUp}>
             <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src={conferenceRoom}
                 alt="Our team working together"
-                width={800}
+                 width={2000}
                 height={500}
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                className="rounded-2xl   shadow-2xl object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
@@ -221,44 +223,29 @@ export default function AboutPage() {
             <h2
               className={`text-3xl md:text-7xl flex justify-start font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
             >
-              Our Story
+              The Way We Work
             </h2>
             <div
               className={`space-y-4 text-black ${playfair_display.className}`}
             >
               <p className="text-lg leading-relaxed">
-                Founded with a vision to revolutionize digital experiences,
-                we&apos;ve grown from a small team of dreamers to a dynamic
-                force in the tech industry. Our journey began with a simple
-                belief: technology should serve humanity, not the other way
-                around.
+              At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference.Our approach is collaborative, transparent, and result-oriented  ensuring every project aligns perfectly with client goals.We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth.
+              Efficiency, agility, and innovation are not just methods, they're our mindset.
               </p>
-              <p className="text-lg leading-relaxed">
-                Over the years, we&apos;ve partnered with startups, enterprises,
-                and everything in between, helping them navigate the digital
-                landscape with innovative solutions that drive real results. Our
-                approach combines cutting-edge technology with human-centered
-                design.
-              </p>
-              <p className="text-lg leading-relaxed">
-                Today, we continue to push boundaries, explore new
-                possibilities, and create digital experiences that matter. Every
-                project is an opportunity to make a positive impact on the
-                world.
-              </p>
+              
             </div>
           </motion.div>
         </div>
         {/* panel two */}
         <div className="grid lg:grid-cols-2 gap-12 items-center panel two">
           <motion.div variants={fadeInUp}>
-            <div className="relative">
+          <div className="relative">
               <Image
-                src= {missionimage}
+                src={conferenceRoom}
                 alt="Our team working together"
-                width={800}
+                 width={2000}
                 height={500}
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                className="rounded-2xl   shadow-2xl object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
@@ -267,33 +254,29 @@ export default function AboutPage() {
             <h2
               className={`text-3xl md:text-7xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
             >
-               Our Mission
+          Why Choose Us
             </h2>
             <div
               className={`space-y-4 text-black ${playfair_display.className}`}
             >
               <p className="text-lg leading-relaxed">
-                To bridge the gap between creativity and technology, delivering solutions that exceed expectations and drive meaningful change.
+              Choosing AL-Mawa International means partnering with a team that prioritizes your success as much as its own.We bring together technology, strategy, and creativity to craft solutions that deliver measurable results.Our commitment goes beyond service we build lasting partnerships rooted in integrity and excellence.Every solution is tailored, every deadline is respected, and every outcome is designed to empower your digital journey.
+              We don’t just meet expectations, we redefine them.
               </p>
-              <p className="text-lg leading-relaxed">
-                Our mission is to create innovative and user-friendly digital experiences that help businesses and individuals achieve their goals.
-              </p>
-              <p className="text-lg leading-relaxed">
-                We are committed to delivering exceptional results and making a positive impact on the world through our work.
-              </p>
+             
             </div>
           </motion.div>
         </div>
         {/* panel three */}
         <div className="grid lg:grid-cols-2 gap-12 items-center panel three">
           <motion.div variants={fadeInUp}>
-            <div className="relative">
+          <div className="relative">
               <Image
-                src={visionimage}
+                src={conferenceRoom}
                 alt="Our team working together"
-                width={800}
+                 width={2000}
                 height={500}
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                className="rounded-2xl   shadow-2xl object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
@@ -302,13 +285,13 @@ export default function AboutPage() {
             <h2
               className={`text-3xl md:text-7xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
             >
-               Our vision
+              What We Stand For
             </h2>
             <div
               className={`space-y-4 text-black ${playfair_display.className}`}
             >
-              <p className="text-lg leading-relaxed"> 
-                To be the leading digital agency in the world, delivering innovative and user-friendly solutions that help businesses and individuals achieve their goals.
+              <p className="text-lg leading-relaxed">
+              We stand for innovation, accountability, and transformation values that guide every decision we make. Our goal is to create technology that simplifies lives and accelerates growth. We believe in empowering businesses with digital solutions that are sustainable, smart, and scalable.At our core lies a commitment to honesty, collaboration, and continuous improvement.We’re focused on building a better digital experience  one that connects people, ideas, and possibilities
               </p>
             </div>
           </motion.div>
@@ -361,17 +344,17 @@ export default function AboutPage() {
                     around.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed">
-                    Over the years, we&apos;ve partnered with startups, enterprises,
-                    and everything in between, helping them navigate the digital
-                    landscape with innovative solutions that drive real results. Our
-                    approach combines cutting-edge technology with human-centered
-                    design.
+                    Over the years, we&apos;ve partnered with startups,
+                    enterprises, and everything in between, helping them
+                    navigate the digital landscape with innovative solutions
+                    that drive real results. Our approach combines cutting-edge
+                    technology with human-centered design.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed">
                     Today, we continue to push boundaries, explore new
-                    possibilities, and create digital experiences that matter. Every
-                    project is an opportunity to make a positive impact on the
-                    world.
+                    possibilities, and create digital experiences that matter.
+                    Every project is an opportunity to make a positive impact on
+                    the world.
                   </p>
                 </div>
               </motion.div>
@@ -403,7 +386,7 @@ export default function AboutPage() {
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-6">
                 <h2
-                 className={`text-5xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
+                  className={`text-5xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
                   Our Mission
                 </h2>
@@ -411,13 +394,18 @@ export default function AboutPage() {
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    To bridge the gap between creativity and technology, delivering solutions that exceed expectations and drive meaningful change.
+                    To bridge the gap between creativity and technology,
+                    delivering solutions that exceed expectations and drive
+                    meaningful change.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed">
-                    Our mission is to create innovative and user-friendly digital experiences that help businesses and individuals achieve their goals.
+                    Our mission is to create innovative and user-friendly
+                    digital experiences that help businesses and individuals
+                    achieve their goals.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed">
-                    We are committed to delivering exceptional results and making a positive impact on the world through our work.
+                    We are committed to delivering exceptional results and
+                    making a positive impact on the world through our work.
                   </p>
                 </div>
               </motion.div>
@@ -456,8 +444,12 @@ export default function AboutPage() {
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
-                  <p className="text-base md:text-lg leading-relaxed"> 
-                    To be the leading digital agency in the world, delivering innovative and user-friendly solutions that help businesses and individuals achieve their goals.
+                  <p className="text-base md:text-lg leading-relaxed">
+                    To become a global symbol of trust and transformation in the
+                    IT world — where ideas turn into impact and technology
+                    drives human progress. At AL-Mawa International, we envision
+                    a future where every business, big or small, thrives through
+                    intelligent innovation and limitless possibilities
                   </p>
                 </div>
               </motion.div>
@@ -467,7 +459,6 @@ export default function AboutPage() {
       </div>
 
       {/* Mission/Vision Section */}
-      
 
       {/* Team Section */}
       <motion.div
@@ -478,9 +469,6 @@ export default function AboutPage() {
       >
         <TeamSection />
       </motion.div>
-
-      
     </div>
   );
 }
-

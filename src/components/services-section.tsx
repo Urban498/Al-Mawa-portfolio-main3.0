@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Code, Megaphone, Brush, Users } from "lucide-react";
+import { Code, Megaphone, Brush, Brain } from "lucide-react";
 import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 
@@ -87,16 +87,16 @@ const services: Service[] = [
     href: "/services/branding-graphic-design",
   },
   {
-    id: "Consulting Services",
-    title: "Consulting Services",
+    id: "AI Services",
+    title: "AI Services",
     description:
-      "Expert technology consulting and digital transformation guidance to optimize your business operations.",
-    icon: <Users className="w-8 h-8" />,
+      "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
+    icon: <Brain className="w-8 h-8" />,
     features: [
-      "Technology Consulting",
-      "Digital Transformation",
-      "Business Strategy",
-      "Project Management",
+      "Machine Learning Solutions",
+      "Computer Vision Services",
+      "Generative AI Services",
+      "AI Automation Services",
     ],
     color: "from-indigo-500 to-blue-600",
     href: "/services/consulting",
@@ -144,15 +144,14 @@ export default function ServicesSection() {
           viewport={{ once: true }}
         >
           <h2
-            className={`text-3xl md:text-5xl font-bold pb-4 text-left bg-clip-text text-transparent bg-black uppercase  ${inter.className}`}
+            className={`text-3xl md:text-5xl font-bold pt-8 pb-8 text-left bg-clip-text text-transparent bg-black uppercase  ${inter.className}`}
           >
-            Our Services
+            what we create
           </h2>
           <p
             className={`text-lg md:text-xl  max-w-3xl text-black uppercase ${inter.className}`}
           >
-            &ldquo;We offer comprehensive digital solutions to help your
-            business thrive in the modern world&rdquo;
+            "Transforming businesses through technology, insight, and integrated solutions"
           </p>
         </motion.div>
 

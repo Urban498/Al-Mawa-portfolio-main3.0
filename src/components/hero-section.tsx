@@ -9,7 +9,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import ServicesSection from "@/components/services-section";
 
 import { Inter, Playfair_Display } from "next/font/google";
-import aboutus from "@/components/images/about us.webp"
+import conferenceRoom from "@/components/images/conference room 1.jpg"
 import values from "@/components/images/ourvalue.jpg"
 import mission from "@/components/images/ourmission.jpg"
 import Image from "next/image";
@@ -52,18 +52,18 @@ export default function HeroSection() {
         <div>
           <StickyScroll content={[
             {
-              title: "About Al Mawa International",
-              description: "Al Mawa International is a leading digital agency in Pune, specializing in web development, website design, and digital marketing services. We are a passionate team of digital innovators, designers, and developers dedicated to transforming ideas into extraordinary digital experiences for businesses in Pune and Maharashtra.",
+              title: "Al Mawa International",
+              description: "At AL-Mawa International, We see technology not just as a set of tools, but as a bridge that empowers people and accelerates growth. As your digital growth partner, we combine innovation, strategy, and cutting-edge solutions to help businesses thrive in a fast-evolving world. ",
               content: (
                 <div className="h-full w-full  flex items-center justify-center text-primary-foreground">
-              
-                    <Image src={aboutus} alt="about us"  className="object-cover h-full w-full" />
+
+                    <Image src={conferenceRoom} alt="about us"  className="object-cover h-full w-full" />
                 </div>
               ),
             },
             {
               title: "Our Mission",
-              description: "Our mission is to bridge the gap between creativity and technology, delivering solutions that not only meet your needs but exceed your expectations. We believe in creating meaningful change through digital transformation.",
+              description: "Inspired by the belief that technology’s true power lies in people, We're committed to redefining the digital experience through smart, seamless, and sustainable IT solutions. Our mission is to fuse creativity with technology, empowering every client to innovate boldly, perform efficiently, and lead confidently in this evolving digital world.",
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
                   
@@ -74,7 +74,7 @@ export default function HeroSection() {
             },
             {
               title: "Our Values",
-              description: "We value collaboration, working closely with clients as trusted partners. Our commitment to quality ensures that we deliver excellence in every project we undertake, creating impactful solutions that make a difference.",
+              description: "We envision becoming a global symbol of trust, innovation, and transformation  a place where ideas turn into lasting impact, and technology serves as a catalyst for human progress, aspiring to create a future where every business, regardless of size, thrives through intelligent innovation, empowered teams, and limitless possibilities.",
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-accent-foreground">
                   
@@ -101,10 +101,10 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className={`${inter.className} text-4xl md:text-5xl font-bold pb-4 text-center text-black uppercase`}>
-            From Our Experts to You
+            voices from the desk
             </h2>
             <p className={`${playfair_display.className} text-lg text-black uppercase`}>
-            “Read our articles, tutorials, and stories crafted by our team of professionals.”
+            Professional perspectives designed to inform, inspire, and empower
             </p>
           </div>
           <InfiniteMovingCards
