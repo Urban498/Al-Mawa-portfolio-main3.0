@@ -3,32 +3,27 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import TeamSection from "@/components/team";
+import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Users, Lightbulb, Award } from "lucide-react";
 import Image from "next/image";
 import { Inter, Playfair_Display, Archivo, Montserrat } from "next/font/google";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "../style.css";
-import grpimage from "./image/grp image.jpg";
-import visionimage from "./image/vision image.webp";
-import missionimage from "./image/mission image.jpg";
-import conferenceRoom from "./image/conference room 1.jpg";
 
+// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+import grpimage from "@/app/about/image/conference room 1.jpg";
+import conferenceRoom from "@/app/about/image/conference room 1.jpg";
+import TeamSection from "@/components/team";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
-});
-const archivo = Archivo({
-  subsets: ["latin"],
   weight: "600",
-  variable: "--font-archivo-black",
-  display: "swap",
 });
+const archivo = Archivo({ subsets: ["latin"] });
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: "700",
@@ -55,24 +50,39 @@ export default function AboutPage() {
     // Only run GSAP animation on desktop (lg and above)
     if (!containerRef.current || window.innerWidth < 1024) return;
 
-    const panels =
-      containerRef.current.querySelectorAll<HTMLDivElement>(".panel");
+    const container = containerRef.current;
+    const panels = container.querySelectorAll<HTMLDivElement>(".panel");
 
-    gsap.to(panels, {
-      xPercent: -100 * (panels.length - 1),
-      ease: "none",
+    // Set up the horizontal scroll animation
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: containerRef.current,
+        trigger: container,
         pin: true,
         scrub: 1,
         snap: 1 / (panels.length - 1),
-        end: () => "+=" + containerRef.current!.offsetWidth,
+        end: () => "+=" + (container.scrollWidth - window.innerWidth),
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
     });
 
+    // Animate panels horizontally
+    tl.to(panels, {
+      xPercent: -100 * (panels.length - 1),
+      ease: "none",
+    });
+
+    // Handle window resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+
     // Cleanup on unmount
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      window.removeEventListener('resize', handleResize);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
   return (
@@ -89,17 +99,17 @@ export default function AboutPage() {
         variants={staggerContainer}
       >
         {/* About us main */}
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto">
           <motion.h1
-            className={`text-5xl md:text-6xl lg:text-9xl text-left pb-4 bg-clip-text text-transparent bg-black   ${montserrat.className}`}
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-center sm:text-left pb-4 bg-clip-text text-transparent bg-black ${montserrat.className}`}
             variants={fadeInUp}
           >
             <span className="text-black font-bold uppercase">About</span> <br />{" "}
-            <div className="flex flex-col justify-between lg:flex-row gap-4 lg:gap-0">
-              <span className="flex flex-col order-1 lg:order-1 ">
-                <span className="uppercase">us</span>
+            <div className="flex flex-col justify-between xl:flex-row gap-4 xl:gap-6 2xl:gap-8">
+              <span className="flex flex-col order-1 xl:order-1">
+                <span className="uppercase text-center sm:text-left">us</span>
                 <motion.p
-                  className={`  md:text-lg lg:text-sm font-normal max-w-xs lg:max-w-3xs mx-auto lg:mx-0 leading-relaxed text-gray-500 py-2 ${playfair_display.className}`}
+                  className={`text-sm sm:text-base md:text-lg xl:text-sm font-normal max-w-xs sm:max-w-sm md:max-w-md xl:max-w-xs 2xl:max-w-sm mx-auto xl:mx-0 leading-relaxed text-gray-500 py-2 text-center sm:text-left ${playfair_display.className}`}
                   variants={fadeInUp}
                 >
                   Through our work, we strive to not only support businesses but
@@ -108,28 +118,28 @@ export default function AboutPage() {
                   services we deliver transformation and we promise evolution.
                 </motion.p>
               </span>
-              <div className="order-2 lg:order-2 flex justify-center lg:justify-start">
+              <div className="order-2 xl:order-2 flex justify-center xl:justify-start">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Team collaboration"
                   width={450}
                   height={350}
-                  className="rounded-4xl mt-3 w-full max-w-sm lg:max-w-none lg:w-auto"
+                  className="rounded-4xl mt-3 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-none xl:w-auto h-auto object-cover"
                 />
               </div>
 
-              <div className="flex flex-col items-center lg:items-start justify-center lg:justify-between order-3 lg:order-3 lg:ml-20 mt-6 lg:mt-0">
+              <div className="flex flex-col items-center xl:items-start justify-center xl:justify-between order-3 xl:order-3 xl:ml-12 2xl:ml-20 mt-6 xl:mt-0">
                 <Image
                   src={grpimage}
                   alt="Our Team"
                   width={350}
                   height={50}
-                  className="rounded-4xl mt-3 h-30 object-cover w-full max-w-sm "
+                  className="rounded-4xl mt-3 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-30 object-cover w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm"
                 />
-                <h4 className="text-2xl lg:text-3xl  text-black mt-4 lg:mt-0 uppercase">
+                <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-black mt-4 xl:mt-2 2xl:mt-0 uppercase text-center xl:text-left">
                   Our Team
                 </h4>
-                <p className={`text-sm max-w-sm text-gray-500 text-center lg:text-left px-4 lg:px-0 ${playfair_display.className}`}>
+                <p className={`text-xs sm:text-sm md:text-base xl:text-sm max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm text-gray-500 text-center xl:text-left px-4 xl:px-0 ${playfair_display.className}`}>
                 Driven by innovation and teamwork, our experts from IT, digital marketing, and graphics departments work hand in hand to create impactful digital experiences. We focus on delivering quality, creativity, and performance in every project we handle.
                 </p>
               </div>
@@ -204,17 +214,18 @@ export default function AboutPage() {
         </div>
       </motion.section> */}
 
-      <div ref={containerRef} className="container hidden lg:flex">
+      {/* Desktop GSAP Horizontal Scroll */}
+      <div ref={containerRef} className="container hidden lg:flex overflow-hidden" style={{ width: '300vw', height: '100vh' }}>
         {/* panel one */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center panel one">
+        <div className="grid lg:grid-cols-2 gap-12 items-center panel one min-w-screen px-8" style={{ width: '100vw' }}>
           <motion.div variants={fadeInUp}>
-            <div className="relative">
+            <div className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px]">
               <Image
                 src={conferenceRoom}
                 alt="Our team working together"
-                 width={2000}
-                height={500}
-                className="rounded-2xl   shadow-2xl object-contain"
+                fill
+                className="rounded-2xl shadow-2xl object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
@@ -230,22 +241,22 @@ export default function AboutPage() {
             >
               <p className="text-lg leading-relaxed">
               At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference.Our approach is collaborative, transparent, and result-oriented  ensuring every project aligns perfectly with client goals.We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth.
-              Efficiency, agility, and innovation are not just methods, they're our mindset.
+              Efficiency, agility, and innovation are not just methods, they&apos;re our mindset.
               </p>
               
             </div>
           </motion.div>
         </div>
         {/* panel two */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center panel two">
+        <div className="grid lg:grid-cols-2 gap-12 items-center panel two min-w-screen px-8" style={{ width: '100vw' }}>
           <motion.div variants={fadeInUp}>
-          <div className="relative">
+          <div className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px]">
               <Image
                 src={conferenceRoom}
                 alt="Our team working together"
-                 width={2000}
-                height={500}
-                className="rounded-2xl   shadow-2xl object-contain"
+                fill
+                className="rounded-2xl shadow-2xl object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
@@ -268,15 +279,15 @@ export default function AboutPage() {
           </motion.div>
         </div>
         {/* panel three */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center panel three">
+        <div className="grid lg:grid-cols-2 gap-12 items-center panel three min-w-screen px-8" style={{ width: '100vw' }}>
           <motion.div variants={fadeInUp}>
-          <div className="relative">
+          <div className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px]">
               <Image
                 src={conferenceRoom}
                 alt="Our team working together"
-                 width={2000}
-                height={500}
-                className="rounded-2xl   shadow-2xl object-contain"
+                fill
+                className="rounded-2xl shadow-2xl object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
@@ -303,9 +314,9 @@ export default function AboutPage() {
         <div className="panel six">Excellence</div> */}
       </div>
 
-      {/* Mobile-friendly sections - visible only on small screens */}
+      {/* Mobile sections - same content as GSAP panels */}
       <div className="lg:hidden">
-        {/* Our Story - Mobile */}
+        {/* The Way We Work - Mobile */}
         <motion.section
           className="py-16 px-4 md:px-6"
           initial="initial"
@@ -318,7 +329,7 @@ export default function AboutPage() {
               <motion.div variants={fadeInUp}>
                 <div className="relative mb-8">
                   <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src={conferenceRoom}
                     alt="Our team working together"
                     width={800}
                     height={400}
@@ -329,32 +340,16 @@ export default function AboutPage() {
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-6">
                 <h2
-                  className={`text-5xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
+                  className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
-                  Our Story
+                  The Way We Work
                 </h2>
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    Founded with a vision to revolutionize digital experiences,
-                    we&apos;ve grown from a small team of dreamers to a dynamic
-                    force in the tech industry. Our journey began with a simple
-                    belief: technology should serve humanity, not the other way
-                    around.
-                  </p>
-                  <p className="text-base md:text-lg leading-relaxed">
-                    Over the years, we&apos;ve partnered with startups,
-                    enterprises, and everything in between, helping them
-                    navigate the digital landscape with innovative solutions
-                    that drive real results. Our approach combines cutting-edge
-                    technology with human-centered design.
-                  </p>
-                  <p className="text-base md:text-lg leading-relaxed">
-                    Today, we continue to push boundaries, explore new
-                    possibilities, and create digital experiences that matter.
-                    Every project is an opportunity to make a positive impact on
-                    the world.
+                    At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference. Our approach is collaborative, transparent, and result-oriented ensuring every project aligns perfectly with client goals. We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth.
+                    Efficiency, agility, and innovation are not just methods, they&apos;re our mindset.
                   </p>
                 </div>
               </motion.div>
@@ -362,7 +357,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Our Mission - Mobile */}
+        {/* Why Choose Us - Mobile */}
         <motion.section
           className="py-16 px-4 md:px-6 bg-gray-50"
           initial="initial"
@@ -375,8 +370,8 @@ export default function AboutPage() {
               <motion.div variants={fadeInUp}>
                 <div className="relative mb-8">
                   <Image
-                    src={missionimage}
-                    alt="Our mission"
+                    src={conferenceRoom}
+                    alt="Our team working together"
                     width={800}
                     height={400}
                     className="rounded-2xl shadow-2xl w-full h-[300px] md:h-[400px] object-cover"
@@ -386,26 +381,16 @@ export default function AboutPage() {
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-6">
                 <h2
-                  className={`text-5xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
+                  className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
-                  Our Mission
+                  Why Choose Us
                 </h2>
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    To bridge the gap between creativity and technology,
-                    delivering solutions that exceed expectations and drive
-                    meaningful change.
-                  </p>
-                  <p className="text-base md:text-lg leading-relaxed">
-                    Our mission is to create innovative and user-friendly
-                    digital experiences that help businesses and individuals
-                    achieve their goals.
-                  </p>
-                  <p className="text-base md:text-lg leading-relaxed">
-                    We are committed to delivering exceptional results and
-                    making a positive impact on the world through our work.
+                    Choosing AL-Mawa International means partnering with a team that prioritizes your success as much as its own. We bring together technology, strategy, and creativity to craft solutions that deliver measurable results. Our commitment goes beyond service we build lasting partnerships rooted in integrity and excellence. Every solution is tailored, every deadline is respected, and every outcome is designed to empower your digital journey.
+                    We don&apos;t just meet expectations, we redefine them.
                   </p>
                 </div>
               </motion.div>
@@ -413,7 +398,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Our Vision - Mobile */}
+        {/* What We Stand For - Mobile */}
         <motion.section
           className="py-16 px-4 md:px-6"
           initial="initial"
@@ -426,8 +411,8 @@ export default function AboutPage() {
               <motion.div variants={fadeInUp}>
                 <div className="relative mb-8">
                   <Image
-                    src={visionimage}
-                    alt="Our vision"
+                    src={conferenceRoom}
+                    alt="Our team working together"
                     width={800}
                     height={400}
                     className="rounded-2xl shadow-2xl w-full h-[300px] md:h-[400px] object-cover"
@@ -437,19 +422,15 @@ export default function AboutPage() {
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-6">
                 <h2
-                  className={`text-5xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
+                  className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
-                  Our Vision
+                  What We Stand For
                 </h2>
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    To become a global symbol of trust and transformation in the
-                    IT world — where ideas turn into impact and technology
-                    drives human progress. At AL-Mawa International, we envision
-                    a future where every business, big or small, thrives through
-                    intelligent innovation and limitless possibilities
+                    We stand for innovation, accountability, and transformation values that guide every decision we make. Our goal is to create technology that simplifies lives and accelerates growth. We believe in empowering businesses with digital solutions that are sustainable, smart, and scalable. At our core lies a commitment to honesty, collaboration, and continuous improvement. We&apos;re focused on building a better digital experience one that connects people, ideas, and possibilities.
                   </p>
                 </div>
               </motion.div>

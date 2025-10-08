@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import api from "@/lib/axios";
-import { AwardIcon } from "lucide-react";
 import axios from "axios";
 
 interface Enquiry {

@@ -2,9 +2,8 @@
 
 import React from "react";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import { Inter,Playfair_Display } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 const content = [

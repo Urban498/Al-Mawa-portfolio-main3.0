@@ -2,11 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback } from "react";
-import { Inter, Playfair_Display } from "next/font/google";
-import axios from "axios";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const playfair_display = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const InfiniteMovingCards = ({
   items,
@@ -28,20 +26,8 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
-  const [blog, setBlog] = useState([]);
 
-  const getData = async () => {
-    try {
-      const res = await axios.get("/api/card/[id]");
-      setBlog(res.data?.data);
-    } catch (err) {
-      console.error("Error fetching blog:", err);
-    }
-  };
 
-  useEffect(() => {
-    getData();
-  }, []);
 
   const getDirection = useCallback(() => {
     if (containerRef.current) {

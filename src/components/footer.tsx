@@ -1,13 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const playfair_display = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
 
 // const quickLinks = [
 //     { title: 'About', href: '/about' },

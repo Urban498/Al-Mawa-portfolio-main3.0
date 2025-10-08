@@ -5,9 +5,8 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
-const playfair_display = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const testimonials = [
   {
     quote: "Working with this team was an absolute pleasure. They delivered exceptional results that exceeded our expectations and transformed our digital presence.",

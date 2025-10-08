@@ -132,7 +132,7 @@ export default function TeamSection() {
             <h2
               className={`text-3xl font-bold sm:text-4xl uppercase ${inter.className}`}
             >
-              Our Dynamic <span className="text-7xl">team</span>
+              The Dynamic <span className="text-7xl">minds</span>
             </h2>
           </div>
           <div className={`mt-6 sm:mt-0 ${playfair_display.className}`}>

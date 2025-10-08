@@ -11,14 +11,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Code, Megaphone, Brush, Brain } from "lucide-react";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
-const playfair_display = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
 
 interface Service {
   id: string;
@@ -151,7 +147,7 @@ export default function ServicesSection() {
           <p
             className={`text-lg md:text-xl  max-w-3xl text-black uppercase ${inter.className}`}
           >
-            "            &ldquo;Transforming businesses through technology, insight, and integrated solutions&rdquo;"
+            &ldquo;Transforming businesses through technology, insight, and integrated solutions&rdquo;
           </p>
         </motion.div>
 

@@ -10,10 +10,9 @@ import {
   Megaphone,
   ArrowRight
 } from "lucide-react";
-import {Inter,Playfair_Display} from "next/font/google";
+import {Inter} from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const playfair_display = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 interface Service {
   id: string;
   title: string;

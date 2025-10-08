@@ -8,10 +8,7 @@ import {
   MapPin, 
   Clock, 
   DollarSign,
-  Coffee,
   Heart,
-  Laptop,
-  Calendar,
   Award,
   ChevronRight,
   Building2,
@@ -50,13 +47,14 @@ const playfair_display = Playfair_Display({
 const benefits = [
   {
     icon: <Heart className="w-8 h-8" />,
-    title: "Health & Wellness",
-    description: "Comprehensive health, dental, and vision insurance plus wellness programs"
+    title: "Innovative Work Environment",
+    description: "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning."
+
   },
   {
     icon: <DollarSign className="w-8 h-8" />,
-    title: "Competitive Salary",
-    description: "Market-competitive salaries with performance-based bonuses and equity"
+    title: "Career Growth & Development",
+    description: "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape"
   },
   // {
   //   icon: <Laptop className="w-8 h-8" />,
@@ -75,8 +73,8 @@ const benefits = [
   // },
   {
     icon: <Award className="w-8 h-8" />,
-    title: "Learning & Development",
-    description: "Annual learning budget and conference attendance opportunities"
+    title: "Empowerment & Impact",
+    description: "Contribute to meaningful projects that drive real business results and make a tangible difference"
   }
 ];
 
@@ -479,7 +477,7 @@ useEffect(() => {
             className="text-center mb-12"
           >
             <h2 className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}>
-              Perks & Benefits
+              why work with us
             </h2>
             <p className={`text-black text-lg max-w-2xl mx-auto ${playfair_display.className}`}>
               We believe in taking care of our team with comprehensive benefits and perks
