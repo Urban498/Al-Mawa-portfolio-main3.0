@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 import { ContainerTextFlip } from "./container-text-flip";
 import { Inter,Playfair_Display } from "next/font/google";
 
@@ -10,8 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 const transition = {
-  duration: 2,
+  duration: 6,
   ease: "easeInOut",
+  repeat: Infinity,
+  repeatType: "loop" as const,
 } as const;
 
 export const GoogleGeminiEffect = ({
@@ -19,11 +21,8 @@ export const GoogleGeminiEffect = ({
 }: {
   className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
-
   return (
-    <div ref={ref} className={cn("mt-16 sm:mt-20 md:mt-28 lg:mt-24", className)}>
+    <div className={cn("mt-16 sm:mt-20 md:mt-28 lg:mt-24", className)}>
       <p className="text-3xl md:text-7xl font-bold text-center text-black w-full">
         <span className={`text-5xl md:text-9xl font-medium w-full   ${inter.className}`}>TRY. TRUST. TRANSFORM.</span>
       </p>
@@ -52,7 +51,7 @@ export const GoogleGeminiEffect = ({
           strokeWidth="2"
           fill="none"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: isInView ? 1 : 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
           transition={transition}
         />
         <motion.path
@@ -62,10 +61,10 @@ export const GoogleGeminiEffect = ({
           strokeWidth="2"
           fill="none"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: isInView ? 1 : 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
           transition={{
             ...transition,
-            delay: 0.2
+            delay: 1.0
           }}
         />
         <motion.path
@@ -75,10 +74,10 @@ export const GoogleGeminiEffect = ({
           strokeWidth="2"
           fill="none"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: isInView ? 1 : 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
           transition={{
             ...transition,
-            delay: 0.4
+            delay: 2.0
           }}
         />
         <motion.path
@@ -88,10 +87,10 @@ export const GoogleGeminiEffect = ({
           strokeWidth="2"
           fill="none"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: isInView ? 1 : 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
           transition={{
             ...transition,
-            delay: 0.6
+            delay: 3.0
           }}
         />
         <motion.path
@@ -101,10 +100,10 @@ export const GoogleGeminiEffect = ({
           strokeWidth="2"
           fill="none"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: isInView ? 1 : 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
           transition={{
             ...transition,
-            delay: 0.8
+            delay: 4.0
           }}
         />
 
