@@ -151,7 +151,7 @@ export default function ServicesSection() {
           <p
             className={`text-lg md:text-xl  max-w-3xl text-black uppercase ${inter.className}`}
           >
-            "Transforming businesses through technology, insight, and integrated solutions"
+            "            &ldquo;Transforming businesses through technology, insight, and integrated solutions&rdquo;"
           </p>
         </motion.div>
 

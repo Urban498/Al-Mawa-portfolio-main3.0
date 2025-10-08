@@ -74,7 +74,7 @@ export default function HeroSection() {
             },
             {
               title: "Our Values",
-              description: "We envision becoming a global symbol of trust, innovation, and transformation  a place where ideas turn into lasting impact, and technology serves as a catalyst for human progress, aspiring to create a future where every business, regardless of size, thrives through intelligent innovation, empowered teams, and limitless possibilities.",
+              description: "We envision becoming a global symbol of trust, innovation, and transformation — a place where ideas turn into lasting impact, and technology serves as a catalyst for human progress, aspiring to create a future where every business, regardless of size, thrives through intelligent innovation, empowered teams, and limitless possibilities.",
               content: (
                 <div className="h-full w-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-accent-foreground">
                   
