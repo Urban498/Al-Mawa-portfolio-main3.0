@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -20,41 +20,43 @@ import {
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 
-const WorldMap = lazy(() => import("@/components/ui/world-map"));
+import { PinContainer } from "@/components/ui/3D-pin";
 import "../globals.css";
 import { Inter, Playfair_Display, Work_Sans } from "next/font/google";
 import api from "@/lib/api";
 import { toast } from "sonner";
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const playfair_display = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const work_sans = Work_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+const playfair_display = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+const work_sans = Work_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Email",
-    value: [
-      "business@al-mawa.international",
-      "hr@al-mawa.international",
-      
-    ],
+    value: ["business@al-mawa.international", "hr@al-mawa.international"],
     description: "Send us an email anytime",
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Phone",
-    value: [
-      "+91 9561179693",
-      "+91 9561186693",
-      "+91 9561106693"
-    ],
+    value: ["+91 9561179693", "+91 9561186693", "+91 9561106693"],
     description: "Mon – Sat: 9:00 AM – 7:00 PM",
   },
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Office",
     value: "AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces)",
-    description: "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014",
+    description:
+      "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014",
   },
   // AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces) 1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharshtra- India 411014
   {
@@ -269,21 +271,23 @@ export default function ContactPage() {
     phoneNumber: "",
     selecetCountry: "",
     subject: "",
-    tellUSAboutYou: ""
+    tellUSAboutYou: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSelectChange = (value: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      selecetCountry: value
+      selecetCountry: value,
     }));
   };
 
@@ -293,16 +297,17 @@ export default function ContactPage() {
 
     try {
       console.log("📤 Submitting form data:", formData);
-      
-      const response = await api.post('/contact-us', {
+
+      const response = await api.post("/contact-us", {
         ...formData,
-        phoneNumber: parseInt(formData.phoneNumber, 10)
+        phoneNumber: parseInt(formData.phoneNumber, 10),
       });
 
       console.log("✅ Form submitted successfully:", response.data);
-      
-      toast.success('Message sent successfully!', {
-        description: 'Thank you for reaching out. We\'ll get back to you within 24 hours.',
+
+      toast.success("Message sent successfully!", {
+        description:
+          "Thank you for reaching out. We'll get back to you within 24 hours.",
       });
 
       // Reset form
@@ -313,14 +318,14 @@ export default function ContactPage() {
         phoneNumber: "",
         selecetCountry: "",
         subject: "",
-        tellUSAboutYou: ""
+        tellUSAboutYou: "",
       });
-
     } catch (error: unknown) {
       console.error("❌ Form submission error:", error);
-      
-      toast.error('Failed to send message', {
-        description: error instanceof Error ? error.message : 'Please try again later.',
+
+      toast.error("Failed to send message", {
+        description:
+          error instanceof Error ? error.message : "Please try again later.",
       });
     } finally {
       setLoading(false);
@@ -403,7 +408,7 @@ export default function ContactPage() {
           ></motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 py-10 w-[90%] mx-auto gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 py-6 sm:py-10 w-[95%] sm:w-[90%] mx-auto gap-6 sm:gap-8">
           {/* Contact Form - Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -411,7 +416,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="order-2 lg:order-2"
           >
-            <Card className="bg-[#ffffff8b] px-4 py-16 rounded-md shadow-lg shadow-black ">
+            <Card className="bg-[#ffffff8b] px-3 sm:px-4 py-8 sm:py-16 rounded-md shadow-lg shadow-black ">
               <CardHeader className="relative">
                 <motion.div
                   initial={{ scale: 0.9 }}
@@ -499,7 +504,10 @@ export default function ContactPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.2 }}
                   >
-                    <Select value={formData.selecetCountry} onValueChange={handleSelectChange}>
+                    <Select
+                      value={formData.selecetCountry}
+                      onValueChange={handleSelectChange}
+                    >
                       <SelectTrigger className="w-full p-4 border-b text-black placeholder:text-black hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black bg-transparent ">
                         <SelectValue placeholder="Select country" />
                       </SelectTrigger>
@@ -561,7 +569,7 @@ export default function ContactPage() {
                       disabled={loading}
                       className="px-8 py-3 cursor-pointer rounded-full bg-black w-full text-center text-white text-lg font-semibold hover:bg-white hover:text-black border border-black transition-all duration-500 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {loading ? 'Sending...' : 'Submit'}
+                      {loading ? "Sending..." : "Submit"}
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </motion.div>
@@ -570,54 +578,37 @@ export default function ContactPage() {
             </Card>
           </motion.div>
 
-          {/* World Map - Left Side */}
+          {/* 3D Pin Map - Left Side */}
           <motion.div
             className="flex justify-center items-center order-1 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* <Image
-              src={<WorldMap />}
-              alt="worldmap"
-              width={600}
-              height={600}
-              className="rounded-lg"
-              loading="lazy"
-            /> */}
-            <Suspense fallback={
-              <div className="w-full aspect-[2/1] bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="text-gray-500">Loading map...</div>
-              </div>
-            }>
-              <WorldMap 
-                dots={[
-                  {
-                    // All animations start from India (AL-MAWA INTERNATIONAL office in Pune)
-                    start: { lat: 18.5204, lng: 73.8567 }, // Pune, India (Your office) - Central Hub
-                    end: { lat: 40.7128, lng: -74.0060 },   // New York, USA
-                  },
-                  {
-                    start: { lat: 18.5204, lng: 73.8567 }, // Pune, India - Central Hub
-                    end: { lat: 51.5074, lng: -0.1278 },    // London, UK
-                  },
-                  {
-                    start: { lat: 18.5204, lng: 73.8567 }, // Pune, India - Central Hub
-                    end: { lat: 55.6762, lng: 139.6503 },   // Tokyo, Japan
-                  },
-                  {
-                    start: { lat: 18.5204, lng: 73.8567 }, // Pune, India - Central Hub
-                    end: { lat: -33.8688, lng: 120.2093 },  // Sydney, Australia
-                  },
-                  {
-                    start: { lat: 18.5204, lng: 73.8567 }, // Pune, India - Central Hub
-                    end: { lat: 25.2048, lng: 55.2708 },    // Dubai, UAE
-                  },
-                ]}
-                lineColor="#b5ff08"
-              />
-            </Suspense>
+            <div className="w-full h-[400px] sm:h-[450px] md:h-[500px] lg:w-[50vw] lg:h-[80vh] flex items-center justify-center relative overflow-hidden">
+              <PinContainer
+                title="AL-MAWA INTERNATIONAL - Pune, India"
+                href="  https://www.google.com/maps/dir/''/1st+Floor,+Pride+Icon,+Office+No,+102,103,+Nexus+Work+Spaces,+Mundhwa+-+Kharadi+Rd,+above+Athithi+Restaurant,+Kharadi,+Pune,+Maharashtra+411014/@18.5437685,73.9317181,1168m/data=!3m1!1e3!4m13!4m12!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D "
+                className="w-full h-full min-w-[320px] min-h-[350px] sm:min-w-[400px] sm:min-h-[400px] lg:w-[40vw] lg:h-[60vh]"
+                containerClassName="w-full h-full"
+                imageUrl="/mapdark.png"
+              >
+                <div className="text-base !p-6 !m-0 h-full w-full text-white rounded-lg flex flex-col justify-center items-center">
+                  <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100"></h3>
+                  <div className="text-base !m-0 !p-0 font-normal">
+                    <span className="text-slate-200 text-sm">
+                      <br />
+
+                      <br />
+                    </span>
+                  </div>
+                  <div className="flex items-center mt-4 space-x-2"></div>
+                </div>
+              </PinContainer>
+            </div>
           </motion.div>
+
+          {/* Scroll indicator below the map */}
         </div>
 
         {/* Contact Information */}
@@ -647,7 +638,7 @@ export default function ContactPage() {
             </motion.p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 shadow-lg ">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 shadow-lg ">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -657,11 +648,11 @@ export default function ContactPage() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="group h-full"
               >
-                <Card className=" border border-white/20 bg-gray-200 backdrop-blur-xl hover:bg-gray-300 transition-all duration-500 h-full min-h-[200px]">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
+                <Card className=" border border-white/20 bg-gray-200 backdrop-blur-xl hover:bg-gray-300 transition-all duration-500 h-full min-h-[180px] sm:min-h-[200px]">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
                       <motion.div
-                        className="p-4 rounded-xl bg-[#cfff32] text-black group-hover:scale-110 transition-transform duration-300"
+                        className="p-3 sm:p-4 rounded-xl bg-[#cfff32] text-black group-hover:scale-110 transition-transform duration-300"
                         whileHover={{ rotate: 5 }}
                       >
                         {info.icon}
@@ -673,7 +664,10 @@ export default function ContactPage() {
                         <div className="text-[black] font-semibold mb-1">
                           {Array.isArray(info.value) ? (
                             info.value.map((item, idx) => (
-                              <div key={idx} className="mb-1 text-sm sm:text-base leading-tight break-words">
+                              <div
+                                key={idx}
+                                className="mb-1 text-sm sm:text-base leading-tight break-words"
+                              >
                                 {item}
                               </div>
                             ))
@@ -699,9 +693,7 @@ export default function ContactPage() {
   );
 }
 
-// "use client";
 
-// import React from "react";
 // import { Button } from "@/components/ui/button";
 // import { Label } from "@/components/ui/label";
 // import { Input } from "@/components/ui/input";

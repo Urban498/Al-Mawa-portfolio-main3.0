@@ -98,7 +98,7 @@ export default function FooterSection() {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://x.com/al_mawa__"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X/Twitter"
@@ -116,7 +116,7 @@ export default function FooterSection() {
                 </svg>
               </Link>
               <Link
-                href="www.linkedin.com/in/dilip-khandagale-083948381"
+                href="https://www.linkedin.com/company/108440677/admin/dashboard/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
