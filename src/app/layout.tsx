@@ -169,7 +169,7 @@ export default function RootLayout({
           {!isAdminRoute && (
             <>
               {/* Banner */}
-              <div className="fixed top-0 left-0 right-0 z-[100] bg-orange-500 text-white text-center py-2 px-4 shadow-lg construction-banner">
+              {/* <div className="fixed top-0 left-0 right-0 z-[100] bg-orange-500 text-white text-center py-2 px-4 shadow-lg construction-banner">
                 <div className="flex items-center justify-center gap-2 text-sm font-medium">
                   <span className="animate-pulse">🚧</span>
                   <span className="hidden sm:inline">
@@ -178,9 +178,9 @@ export default function RootLayout({
                   <span className="sm:hidden">Website is under Maintenance.</span>
                   <span className="animate-pulse">🚧</span>
                 </div>
-              </div>
+              </div> */}
 
-              <header className="fixed top-10 z-50">
+              <header className="fixed top-0 z-50">
                 <NavBar />
               </header>
             </>

@@ -52,6 +52,7 @@ export function ContainerTextFlip({
     return () => clearInterval(intervalId);
   }, [words, interval]);
 
+  {/** border-[#c4ee39]*/}
   return (
     <motion.div
       layout
@@ -59,7 +60,7 @@ export function ContainerTextFlip({
       animate={{ width }}
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
-        "bg-gray-200 backdrop-blur-2xl relative inline-block rounded-xl pt-2 pb-3 border-[0.1px] mt-5 border-[#c4ee39] border-2 text-center text-2xl font-bold text-black md:text-5xl dark:text-gray-200",
+        "bg-gray-200 backdrop-blur-2xl relative inline-block rounded-xl pt-2 pb-3 border-[0.1px] mt-5 border-[#0ea5e9] border-2 text-center text-2xl font-bold text-black md:text-5xl dark:text-gray-200",
         // "[background:linear-gradient(to_bottom,#f3f4f6,#e5e7eb)]",
         // "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
         // "dark:[background:linear-gradient(to_bottom,#374151,#1f2937)]",
