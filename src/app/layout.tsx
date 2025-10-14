@@ -5,7 +5,7 @@ import { NavBar } from "@/components/header";
 import FooterSection from "@/components/footer";
 import AOSProvider from "@/components/aos-provider";
 import { useState, useEffect, useRef } from "react";
-import { MessageSquare, Mail, Phone } from "lucide-react";
+import {  Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import ToastProvider from "@/components/ToastProvider";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -211,7 +211,7 @@ export default function RootLayout({
                 `}
                 onClick={() => isMobile && setIsOpen(!isOpen)}
               >
-                <MessageSquare
+                <Phone
                   className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${
                     isOpen ? "scale-110" : ""
                   }`}
