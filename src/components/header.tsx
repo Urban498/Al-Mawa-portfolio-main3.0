@@ -222,6 +222,7 @@ const servicesData = [
 export const NavBar = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [openDropdown, setOpenDropdown] = React.useState<number | null>(null);
 
   // ✅ AOS Initialization (Dynamic import to avoid SSR issues)
   useEffect(() => {
@@ -275,11 +276,23 @@ export const NavBar = () => {
     };
   }, [menuState]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setOpenDropdown(null);
+    };
+
+    if (openDropdown !== null) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [openDropdown]);
 
   return (
     <header>
-
-
       <nav
         data-state={menuState && "active"}
         className={` fixed z-50 w-full px-5`}
@@ -342,19 +355,41 @@ export const NavBar = () => {
                 {servicesData.map((service, index) => (
                   <li
                     key={`service-${index}`}
-                    className="relative group"
+                    className="relative"
                     onMouseEnter={async () => {
+                      setOpenDropdown(index);
                       // ✅ Refresh AOS on hover (dynamic import)
                       const AOS = (await import("aos")).default;
                       AOS.refresh();
                     }}
+                    onMouseLeave={(e) => {
+                      // Only close if we're not moving to the dropdown
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      if (e.clientY > rect.bottom + 24) {
+                        setOpenDropdown(null);
+                      }
+                    }}
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    <div className=" flex items-center gap-1 duration-150 cursor-pointer">
+                    <div className="flex items-center gap-1 duration-150 cursor-pointer">
                       <span>{service.name}</span>
-                      <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                      <ChevronDown className={cn(
+                        "w-3 h-3 transition-transform",
+                        openDropdown === index && "rotate-180"
+                      )} />
                     </div>
-                    <div className="absolute top-full left-2 overflow-y-scroll transform -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[110] w-screen">
-                      <div className="bg-[#b5ff08]  py-8 transition-all duration-500 transform origin-top scale-y-0 group-hover:scale-y-100 w-full min-h-[80vh] h-auto">
+                    <div 
+                      className={cn(
+                        "absolute top-full left-2 overflow-y-scroll transform -translate-x-1/2 pt-6 transition-all duration-300 z-[110] w-screen",
+                        openDropdown === index ? "opacity-100 visible" : "opacity-0 invisible"
+                      )}
+                      onMouseEnter={() => setOpenDropdown(index)}
+                      onMouseLeave={() => setOpenDropdown(null)}
+                    >
+                      <div className={cn(
+                        "bg-[#d1d1d1]/10 backdrop-blur-xl backdrop-saturate-150 border border-gray-300 shadow-[inset_0_0_0.5px_rgba(255,255,255,0.3)] py-8 transition-all duration-500 transform origin-top w-full min-h-[80vh] h-auto rounded-3xl",
+                        openDropdown === index ? "scale-y-100" : "scale-y-0"
+                      )}>
                         <div className="max-w-7xl mx-auto px-2 lg:px-4">
                           <div className="flex justify-center gap-12 flex-wrap">
                             {service.items.map((item, itemIndex) => (
@@ -372,7 +407,7 @@ export const NavBar = () => {
                                   {item.subItems?.map((subItem, subIndex) => (
                                     <div
                                       key={subIndex}
-                                      className="flex items-center justify-between group/item hover:bg-white/20 rounded px-2 py-1 transition-all duration-200"
+                                      className="flex items-center justify-between group/item hover:bg-[#0ea5e9]/30 rounded px-2 py-1 transition-all duration-200"
                                     >
                                       <Link
                                         href={subItem.href}
@@ -380,7 +415,6 @@ export const NavBar = () => {
                                       >
                                         {subItem.name}
                                       </Link>
-                                  
                                     </div>
                                   ))}
                                 </div>
@@ -422,7 +456,6 @@ export const NavBar = () => {
           </div>
         </div>
       </nav>
-
     </header>
   );
 };

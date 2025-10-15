@@ -10,6 +10,8 @@ import { Inter, Playfair_Display, Archivo, Montserrat } from "next/font/google";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TeamD from "../about/image/team discuss.png";
+import GRP from "../about/image/grp.png";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -120,7 +122,7 @@ export default function AboutPage() {
               </span>
               <div className="order-2 xl:order-2 flex justify-center xl:justify-start">
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src ={TeamD}
                   alt="Team collaboration"
                   width={450}
                   height={350}
@@ -130,11 +132,11 @@ export default function AboutPage() {
 
               <div className="flex flex-col items-center xl:items-start justify-center xl:justify-between order-3 xl:order-3 xl:ml-12 2xl:ml-20 mt-6 xl:mt-0">
                 <Image
-                  src={grpimage}
+                  src={GRP}
                   alt="Our Team"
                   width={350}
                   height={50}
-                  className="rounded-4xl mt-3 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-30 object-cover w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm"
+                  className="rounded-4xl mt-3 h-24 sm:h-28 md:h-32 lg:h-46 xl:h-40 object-cover w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm"
                 />
                 <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-black mt-4 xl:mt-2 2xl:mt-0 uppercase text-center xl:text-left">
                   Our Team

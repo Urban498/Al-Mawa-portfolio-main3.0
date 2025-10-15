@@ -1,119 +1,79 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Inter, Playfair_Display } from "next/font/google";
-import sufiyan from "./images/sufiyan.jpeg";
-import arshad from "./images/arshad.jpeg";
-import ahemad from "./images/ahemad.png";
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 
+// ✅ Import member images
+import amitesh from "../components/images/images/amitesh.png";
+import arshad from "../components/images/images/arshad.png";
+import hussain from "../components/images/images/hussain.png";
+import jigyasa from "../components/images/images/jigyasa.png";
+import komal from "../components/images/images/komal.png";
+import mihir from "../components/images/images/mihir.png";
+import omkar from "../components/images/images/omkar.png";
+import pranali from "../components/images/images/pranali.png";
+import sabeel from "../components/images/images/sabeel.png";
+import shraddha from "../components/images/images/shraddha.png";
+import sufiyan from "../components/images/images/sufiyan.png";
+import ahemad from "../components/images/images/ahemad.png";
+import  priyanka from "../components/images/images/priyanka.png";
+
+
+
+// ✅ Font setup
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
 });
-const members = [
-  {
-    name: "Sufiyan Ali",
-    role: "Full Stack Developer",
-    avatar: sufiyan,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Arshad shaikh",
-    role: "Full Stack Developer",
-    avatar: arshad,
-    link: "#",
-  },
-  {
-    name: "Ahmad Raza",
-    role: "Full Stack Developer",
-    avatar: ahemad,
-    link: "#",
-  },
-  {
-    name: "Ahemad Raza",
-    role: "Full Stack Developer",
-    avatar: ahemad,
-    link: "#",
-  },
-  {
-    name: "Ahemad Raza",
-    role: "Full Stack Developer",
-    avatar: ahemad,
-    link: "#",
-  },
+
+// ✅ Member Type
+type Member = {
+  name: string;
+  role: string;
+  avatar: StaticImageData;
+  link: string;
+  team: string;
+};
+
+// ✅ Members data
+const members: Member[] = [
+  { name: "Arshad Shaikh", role: "Full Stack Developer", avatar: arshad, link: "#", team: "Development Team" },
+  { name: "Sufiyan Ali", role: "Full Stack Developer", avatar: sufiyan, link: "#", team: "Development Team" },
+  { name: "Ahemad", role: "Full Stack Developer", avatar: ahemad, link: "#", team: "Development Team" },
+    { name: "Priyanka Godbole", role: "Sales & Marketing Team", avatar: priyanka, link: "#", team: "Sales & Marketing Team" },
+  { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
+  { name: "Husain Rangwala", role: "Sales & Marketing Team", avatar: hussain, link: "#", team: "Sales & Marketing Team" },
+  { name: "Omkar", role: "Sales & Marketing Team", avatar: omkar, link: "#", team: "Sales & Marketing Team" },
+  { name: "Mihir Fakirde", role: "Graphic Team", avatar: mihir, link: "#", team: "Graphic Team" },
+  { name: "Komal Jadhav", role: "Graphic Team", avatar: komal, link: "#", team: "Graphic Team" },
+  { name: "Pranali Khilare", role: "Graphic Team", avatar: pranali, link: "#", team: "Graphic Team" },
+
+  { name: "Jigyasa Singh", role: " HR & Management ", avatar: jigyasa, link: "#", team: "HR & Management" },
+  { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
+  { name: "Jigyasa Singh", role: " Legal Team ", avatar: jigyasa, link: "#", team: "Legal Team" },
+  { name: "Amitesh", role: "Sales & Marketing Team", avatar: amitesh, link: "#", team: "Sales & Marketing Team" },
+  { name: "Shraddha", role: "Legal Team", avatar: shraddha, link: "#", team: "Legal Team" },
 ];
 
 export default function TeamSection() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  // ✅ Scroll animation for mobile view
   useEffect(() => {
-    // Initialize array with correct length
     cardRefs.current = new Array(members.length).fill(null);
-    
     if (typeof window === "undefined") return;
-
-    // Enable scroll animation for all devices except large screens (> 1024px)
     if (window.innerWidth > 1024) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("mobile-active");
-            console.log("Adding mobile-active to:", entry.target);
-          } else {
-            entry.target.classList.remove("mobile-active");
-            console.log("Removing mobile-active from:", entry.target);
-          }
+          if (entry.isIntersecting) entry.target.classList.add("mobile-active");
+          else entry.target.classList.remove("mobile-active");
         });
       },
-      { 
-        threshold: 0.2, // when 20% of card is visible
-        rootMargin: '0px 0px -50px 0px' // trigger slightly before fully visible
-      }
+      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
     );
 
     cardRefs.current.forEach((card) => {
@@ -123,70 +83,92 @@ export default function TeamSection() {
     return () => observer.disconnect();
   }, []);
 
+  // ✅ Group members by team (type-safe)
+  const teams = members.reduce<Record<string, Member[]>>((acc, member) => {
+    if (!acc[member.team]) acc[member.team] = [];
+    acc[member.team].push(member);
+    return acc;
+  }, {});
+
   return (
-    <section className="bg-gray-50  py-16 md:py-10 dark:bg-transparent">
-      <div className="mx-auto max-w-5xl  px-6">
-        {/* <span className="text-caption -ml-6 -mt-3.5 block w-max bg-gray-50 px-6 dark:bg-gray-950">Team</span> */}
-        <div className="mt-12 gap-4 grid sm:grid-cols-1 md:grid-cols-2 md:mt-24">
+    <section className="bg-gray-50 py-16 md:py-10 dark:bg-transparent">
+      <div className="mx-auto max-w-5xl px-6">
+        {/* Intro Section */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-1 md:grid-cols-2 md:mt-24">
           <div className="sm:w-3/5">
-            <h2
-              className={`text-3xl font-bold sm:text-4xl uppercase ${inter.className}`}
-            >
-              The Dynamic <span className="text-7xl">minds</span>
+            <h2 className={`text-3xl font-bold sm:text-4xl uppercase ${inter.className}`}>
+              The Dynamic <span className="text-7xl text-gray-800 dark:text-gray-200">Minds</span>
             </h2>
           </div>
-          <div className={`mt-6 sm:mt-0 ${playfair_display.className}`}>
+          <div className={`mt-6 sm:mt-0 text-gray-700 dark:text-gray-300 ${playfair_display.className}`}>
             <p>
-            AL-Mawa International operates under a lean, agile, and innovation-driven structure led by our visionary Director and powered by a core team of specialists across IT Services & Development, Digital Marketing, . Each department works in perfect sync to ensure seamless execution and impactful client outcomes.At the heart of AL-Mawa is a diverse team of passionate professionals  tech innovators, creative strategists, and industry experts who combine experience with forward thinking. Together, they focus on delivering excellence, fuel it with innovation, and transform every project into a success story.
+              AL-Mawa International operates under a lean, agile, and innovation-driven structure powered by specialists across IT,
+              Digital Marketing, Design, HR, and Sales. Each department works in harmony to ensure seamless execution and impactful
+              client outcomes. At the heart of AL-Mawa is a diverse team of passionate professionals who combine experience with
+              creativity — delivering excellence and transforming every project into a success story.
             </p>
           </div>
         </div>
-        <div className="mt-12 md:mt-24">
-          <h3 className={`${inter.className} text-3xl border-b mb-5 uppercase`}>
-            Development Team
-          </h3>
 
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {members.map((member, index) => (
-              <div key={index} 
-              ref={(el) => {
-                if (cardRefs.current) {
-                  cardRefs.current[index] = el;
-                }
-              }}
-              className="group overflow-hidden team-card">
-                <Image
-                  className="h-96 w-full rounded-md object-cover object-top transition-all duration-500 lg:grayscale lg:hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl next-image"
-                  src={member.avatar}
-                  alt={`${member.name} - ${member.role}`}
-                  width={826}
-                  height={1239}
-                  priority={index < 3}
-                />
-                <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
-                  <div className="flex justify-between">
-                    <h3 className="text-base font-medium transition-all duration-500 group-hover:tracking-wider">
-                      {member.name}
-                    </h3>
-                    <span className="text-xs">_0{index + 1}</span>
-                  </div>
-                  
-                  <div className="mt-1 flex items-center justify-between">
-                    <span className="text-muted-foreground inline-block translate-y-6 text-sm opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                      {member.role}
-                    </span>
-                    <Link
-                      href={member.link}
-                      className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100"
-                    >
-                      {" "}
-                      LinkdeIn
-                    </Link>
-                  </div>
-                </div>
+        {/* Team Sections */}
+        <div className="mt-12 md:mt-24 space-y-20">
+          {Object.entries(teams).map(([teamName, teamMembers], teamIndex) => (
+            <div
+              key={teamIndex}
+              className="border-t border-gray-300 dark:border-gray-700 pt-12 first:border-t-0 first:pt-0"
+            >
+              {/* Section Heading */}
+              <div className="flex items-center mb-8">
+               
+                <h3 className={`${inter.className} text-3xl font-semibold uppercase`}>
+                  {teamName} 
+                </h3>
               </div>
-            ))}
-          </div>
+
+              {/* Members Grid */}
+              <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                {teamMembers.map((member, index) => (
+                  <div
+                    key={index}
+                    ref={(el) => {
+                      if (cardRefs.current) cardRefs.current[index] = el;
+                    }}
+                    className="group overflow-hidden team-card"
+                  >
+                    <Image
+                      className="h-96 w-full rounded-md object-cover object-top transition-all duration-500 lg:grayscale lg:hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl"
+                      src={member.avatar}
+                      alt={`${member.name} - ${member.role}`}
+                      width={826}
+                      height={1239}
+                      priority={index < 3}
+                    />
+
+                    <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
+                      <div className="flex justify-between">
+                        <h3 className="text-base font-medium transition-all duration-500 group-hover:tracking-wider">
+                          {member.name}
+                        </h3>
+                        <span className="text-xs text-gray-500">_0{index + 1}</span>
+                      </div>
+
+                      <div className="mt-1 flex items-center justify-between">
+                        <span className="text-muted-foreground inline-block translate-y-6 text-sm opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                          {member.role}
+                        </span>
+                        <Link
+                          href={member.link}
+                          className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100"
+                        >
+                          LinkedIn
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
