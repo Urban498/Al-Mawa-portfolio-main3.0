@@ -445,7 +445,7 @@ export const NavBar = () => {
               onClose={() => setMenuState(false)}
             />
 
-            {/* Desktop Contact Button */}
+            {/* Desktop Contact Butto */}
             <div className="hidden lg:flex">
               <Button asChild size="sm" className="animated-border-button">
                 <Link href="/contact" className="hover:text-white">
