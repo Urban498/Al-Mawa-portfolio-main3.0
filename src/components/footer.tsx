@@ -73,7 +73,7 @@ export default function FooterSection() {
                     <li key={index}>
                       <Link
                         href={contact.href}
-                        className="text-gray-300 flex items-center space-x-3 hover:text-primary transition-colors duration-200 text-sm group md:flex-row-reverse md:space-x-reverse "
+                        className="text-gray-300 flex items-center space-x-3 hover:text-[#0ea5e9] transition-colors duration-200 text-sm group md:flex-row-reverse md:space-x-reverse "
                         target="_blank"
                       >
                         <Icon className="size-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -102,7 +102,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X/Twitter"
-                className="text-white hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
               >
                 <svg
                   className="size-7"
@@ -120,7 +120,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-white hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
               >
                 <svg
                   className="size-7"
@@ -138,7 +138,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-white hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
               >
                 <svg
                   className="size-7"

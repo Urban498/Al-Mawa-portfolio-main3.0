@@ -158,7 +158,7 @@ export default function DigitalMarketingPage() {
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="pt-6">
                     <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">
-                      <stat.icon className="w-6 h-6 text-primary" />
+                      <stat.icon className="w-6 h-6 text-[#0ea5e9]" />
                     </div>
                     <h3 className={`text-3xl font-bold text-black mb-2 ${inter.className}`}>
                       {stat.metric}
@@ -199,9 +199,9 @@ export default function DigitalMarketingPage() {
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2 bg-primary/10 rounded-lg">
-                        <service.icon className="w-6 h-6 text-primary" />
+                        <service.icon className="w-6 h-6 text-[#0ea5e9]" />
                       </div>
-                      <Badge variant="secondary">Marketing</Badge>
+                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white">Marketing</Badge>
                     </div>
                     <CardTitle className={`text-xl font-semibold text-black ${inter.className}`}>
                       {service.title}
@@ -221,7 +221,7 @@ export default function DigitalMarketingPage() {
                     </div>
                     <Button 
                       onClick={() => setIsEnquiryModalOpen(true)}
-                      className="w-full animated-border-button mt-auto"
+                      className="w-full animated-border-button mt-auto hover:text-white"
                       size="sm"
                     >
                       Enquire
@@ -289,9 +289,9 @@ export default function DigitalMarketingPage() {
             <Button 
               onClick={() => setIsEnquiryModalOpen(true)}
               size="lg" 
-              className="animated-border-button"
+              className="animated-border-button hover:text-white"
             >
-              Start Marketing Campaign
+             <span > Start Marketing Campaign </span>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/about">

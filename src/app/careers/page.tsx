@@ -330,7 +330,7 @@ useEffect(() => {
               </SelectContent>
             </Select>
             <div className="w-full md:w-48 flex items-center justify-center bg-background/50 border border-border rounded-md px-3 py-2">
-              <MapPin className="w-4 h-4 text-primary mr-2" />
+              <MapPin className="w-4 h-4 text-[#0ea5e9] mr-2" />
               <span className="text-black font-medium">Pune, India</span>
             </div>
           </motion.div>
@@ -496,7 +496,7 @@ useEffect(() => {
                 <Card className="border border-border/50 bg-card/40 backdrop-blur-xl hover:bg-card/60 transition-all duration-300 h-full group">
                   <CardContent className="p-6 text-center">
                     <motion.div 
-                      className="inline-flex p-4 rounded-xl bg-[#cfff32] text-black mb-4 group-hover:scale-110 transition-transform duration-300"
+                      className="inline-flex p-4 rounded-xl bg-[#0ea5e9] text-white mb-4 group-hover:scale-110 transition-transform duration-300"
                       whileHover={{ rotate: 5 }}
                     >
                       {benefit.icon}

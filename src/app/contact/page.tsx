@@ -58,7 +58,6 @@ const contactInfo = [
     description:
       "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014",
   },
-  // AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces) 1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharshtra- India 411014
   {
     icon: <Clock className="w-6 h-6" />,
     title: "Working Hours",
@@ -333,7 +332,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="background-img relative w-full bg-cover bg-center bg-no-repeat min-h-screen">
+    <div className="background-img relative w-full bg-cover bg-center bg-no-repeat min-h-screen -mt-20 pt-20">
       <div className="absolute inset-0 bg-gray-300 opacity-85 z-0" />
 
       {/* Animated Background Elements */}
@@ -378,7 +377,7 @@ export default function ContactPage() {
         />
       </div>
 
-      <div className="container mx-auto px-4 pt-26 pb-16 relative z-10">
+      <div className="container mx-auto px-4 pt-6 pb-16 relative z-10">
         {/* Page Header */}
         <motion.div
           className="text-center mb-16"
@@ -397,7 +396,6 @@ export default function ContactPage() {
             >
               reach out to us
               <br />
-              {/* <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">Our Expert Team</span> */}
             </h1>
           </motion.div>
           <motion.p
@@ -607,8 +605,6 @@ export default function ContactPage() {
               </PinContainer>
             </div>
           </motion.div>
-
-          {/* Scroll indicator below the map */}
         </div>
 
         {/* Contact Information */}
@@ -652,7 +648,7 @@ export default function ContactPage() {
                   <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start space-x-3 sm:space-x-4">
                       <motion.div
-                        className="p-3 sm:p-4 rounded-xl bg-[#cfff32] text-black group-hover:scale-110 transition-transform duration-300"
+                        className="p-3 sm:p-4 rounded-xl bg-[#0ea5e9] text-white group-hover:scale-110 transition-transform duration-300"
                         whileHover={{ rotate: 5 }}
                       >
                         {info.icon}
@@ -692,399 +688,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-
-// import { Button } from "@/components/ui/button";
-// import { Label } from "@/components/ui/label";
-// import { Input } from "@/components/ui/input";
-// import { Textarea } from "@/components/ui/textarea";
-// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-// import { motion } from "framer-motion";
-// import {
-//   ArrowRight,
-//   Mail,
-//   Phone,
-//   MapPin,
-//   Clock,
-//   Send,
-//   Sparkles
-// } from "lucide-react";
-// import { cn } from "@/lib/utils";
-
-// const contactInfo = [
-//   {
-//     icon: <Mail className="w-6 h-6" />,
-//     title: "Email",
-//     value: "hello@almawa.com",
-//     description: "Send us an email anytime"
-//   },
-//   {
-//     icon: <Phone className="w-6 h-6" />,
-//     title: "Phone",
-//     value: "+1 (555) 123-4567",
-//     description: "Mon-Fri from 8am to 5pm"
-//   },
-//   {
-//     icon: <MapPin className="w-6 h-6" />,
-//     title: "Office",
-//     value: "123 Business Street",
-//     description: "San Francisco, CA 94102"
-//   },
-//   {
-//     icon: <Clock className="w-6 h-6" />,
-//     title: "Working Hours",
-//     value: "Mon-Fri 8AM-5PM",
-//     description: "Weekend support available"
-//   }
-// ];
-
-// export default function ContactPage() {
-//   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     console.log("Form submitted");
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
-//       {/* Animated Background Elements */}
-//       <div className="absolute inset-0 overflow-hidden">
-//         <motion.div
-//           className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
-//           animate={{
-//             x: [0, 100, 0],
-//             y: [0, -50, 0],
-//             scale: [1, 1.1, 1]
-//           }}
-//           transition={{
-//             duration: 20,
-//             repeat: Infinity,
-//             ease: "easeInOut"
-//           }}
-//         />
-//         <motion.div
-//           className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full blur-3xl"
-//           animate={{
-//             x: [0, -80, 0],
-//             y: [0, 60, 0],
-//             scale: [1, 0.9, 1]
-//           }}
-//           transition={{
-//             duration: 25,
-//             repeat: Infinity,
-//             ease: "easeInOut"
-//           }}
-//         />
-//         <motion.div
-//           className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-pink-400/5 to-orange-400/5 rounded-full blur-3xl"
-//           animate={{
-//             rotate: [0, 360],
-//             scale: [1, 1.2, 1]
-//           }}
-//           transition={{
-//             duration: 30,
-//             repeat: Infinity,
-//             ease: "linear"
-//           }}
-//         />
-//       </div>
-
-//       <div className="container mx-auto px-4 py-16 relative z-10">
-//         {/* Page Header */}
-//         <motion.div
-//           className="text-center mb-16"
-//           initial={{ opacity: 0, y: 30 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8 }}
-//         >
-//           <motion.div
-//             initial={{ scale: 0.9 }}
-//             animate={{ scale: 1 }}
-//             transition={{ duration: 0.8, delay: 0.2 }}
-//             className="relative inline-block"
-//           >
-//             <Sparkles className="absolute -top-6 -right-6 w-8 h-8 text-yellow-400 animate-pulse" />
-//             <h1 className="text-4xl md:text-6xl font-bold pb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
-//               Let&apos;s Connect
-//             </h1>
-//           </motion.div>
-//           <motion.p
-//             className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ duration: 0.8, delay: 0.4 }}
-//           >
-//             Ready to transform your ideas into reality?
-//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-semibold"> Let&apos;s create something extraordinary together!</span>
-//           </motion.p>
-//         </motion.div>
-
-//         <div className="flex flex-col gap-12 max-w-4xl mx-auto">
-//           {/* Contact Form */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 50 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.6 }}
-//             whileHover={{ y: -5 }}
-//             className="group"
-//           >
-//             <Card className="border border-slate-700/50 bg-slate-800/40 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 relative overflow-hidden">
-//               {/* Card Glow Effect */}
-//               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-//               <CardHeader className="relative">
-//                 <motion.div
-//                   initial={{ scale: 0.9 }}
-//                   animate={{ scale: 1 }}
-//                   transition={{ duration: 0.5, delay: 0.8 }}
-//                 >
-//                   <CardTitle className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
-//                     Send us a message
-//                   </CardTitle>
-//                   <CardDescription className="text-center text-slate-300 mt-2">
-//                     Fill out the form below and we&apos;ll get back to you within 24 hours.
-//                   </CardDescription>
-//                 </motion.div>
-//               </CardHeader>
-
-//               <CardContent className="relative">
-//                 <form onSubmit={handleSubmit} className="space-y-6">
-//                   <motion.div
-//                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
-//                     initial={{ opacity: 0 }}
-//                     animate={{ opacity: 1 }}
-//                     transition={{ duration: 0.6, delay: 1 }}
-//                   >
-//                     <LabelInputContainer>
-//                       <Label htmlFor="firstname" className="text-slate-200 font-medium">First name</Label>
-//                       <Input
-//                         id="firstname"
-//                         placeholder="John"
-//                         type="text"
-//                         required
-//                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:ring-cyan-400/20 transition-all duration-300"
-//                       />
-//                     </LabelInputContainer>
-//                     <LabelInputContainer>
-//                       <Label htmlFor="lastname" className="text-slate-200 font-medium">Last name</Label>
-//                       <Input
-//                         id="lastname"
-//                         placeholder="Doe"
-//                         type="text"
-//                         required
-//                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:ring-cyan-400/20 transition-all duration-300"
-//                       />
-//                     </LabelInputContainer>
-//                   </motion.div>
-
-//                   <motion.div
-//                     initial={{ opacity: 0, x: -20 }}
-//                     animate={{ opacity: 1, x: 0 }}
-//                     transition={{ duration: 0.6, delay: 1.1 }}
-//                   >
-//                     <LabelInputContainer>
-//                       <Label htmlFor="email" className="text-slate-200 font-medium">Email Address</Label>
-//                       <Input
-//                         id="email"
-//                         placeholder="john.doe@example.com"
-//                         type="email"
-//                         required
-//                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 transition-all duration-300"
-//                       />
-//                     </LabelInputContainer>
-//                   </motion.div>
-
-//                   <motion.div
-//                     initial={{ opacity: 0, x: 20 }}
-//                     animate={{ opacity: 1, x: 0 }}
-//                     transition={{ duration: 0.6, delay: 1.2 }}
-//                   >
-//                     <LabelInputContainer>
-//                       <Label htmlFor="company" className="text-slate-200 font-medium">Company (Optional)</Label>
-//                       <Input
-//                         id="company"
-//                         placeholder="Your Company"
-//                         type="text"
-//                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 transition-all duration-300"
-//                       />
-//                     </LabelInputContainer>
-//                   </motion.div>
-
-//                   <motion.div
-//                     initial={{ opacity: 0, x: -20 }}
-//                     animate={{ opacity: 1, x: 0 }}
-//                     transition={{ duration: 0.6, delay: 1.3 }}
-//                   >
-//                     <LabelInputContainer>
-//                       <Label htmlFor="subject" className="text-slate-200 font-medium">Subject</Label>
-//                       <Input
-//                         id="subject"
-//                         placeholder="How can we help you?"
-//                         type="text"
-//                         required
-//                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-pink-400 focus:ring-pink-400/20 transition-all duration-300"
-//                       />
-//                     </LabelInputContainer>
-//                   </motion.div>
-
-//                   <motion.div
-//                     initial={{ opacity: 0, y: 20 }}
-//                     animate={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 0.6, delay: 1.4 }}
-//                   >
-//                     <LabelInputContainer>
-//                       <Label htmlFor="message" className="text-slate-200 font-medium">Message</Label>
-//                       <Textarea
-//                         id="message"
-//                         placeholder="Tell us about your project and how we can help bring your vision to life..."
-//                         rows={6}
-//                         required
-//                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:ring-cyan-400/20 transition-all duration-300 resize-none"
-//                       />
-//                     </LabelInputContainer>
-//                   </motion.div>
-
-//                   <motion.div
-//                     initial={{ opacity: 0, scale: 0.9 }}
-//                     animate={{ opacity: 1, scale: 1 }}
-//                     transition={{ duration: 0.6, delay: 1.5 }}
-//                     whileHover={{ scale: 1.02 }}
-//                     whileTap={{ scale: 0.98 }}
-//                   >
-//                     <Button
-//                       type="submit"
-//                       size="lg"
-//                       className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold py-4 rounded-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 group"
-//                     >
-//                       <Send className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-//                       Send Message
-//                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-//                     </Button>
-//                   </motion.div>
-//                 </form>
-//               </CardContent>
-//             </Card>
-//           </motion.div>
-
-//           {/* Contact Information */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 50 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 1.6 }}
-//             className="space-y-8"
-//           >
-//             <div className="text-center">
-//               <motion.h2
-//                 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400"
-//                 initial={{ scale: 0.9 }}
-//                 animate={{ scale: 1 }}
-//                 transition={{ duration: 0.6, delay: 1.8 }}
-//               >
-//                 Other Ways to Reach Us
-//               </motion.h2>
-//               <motion.p
-//                 className="text-slate-300 mb-8"
-//                 initial={{ opacity: 0 }}
-//                 animate={{ opacity: 1 }}
-//                 transition={{ duration: 0.6, delay: 2 }}
-//               >
-//                 Choose the method that works best for you. We&apos;re always here to help!
-//               </motion.p>
-//             </div>
-
-//             <div className="grid gap-6 sm:grid-cols-2">
-//               {contactInfo.map((info, index) => (
-//                 <motion.div
-//                   key={index}
-//                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
-//                   animate={{ opacity: 1, y: 0, scale: 1 }}
-//                   transition={{ duration: 0.6, delay: 2.2 + index * 0.1 }}
-//                   whileHover={{ y: -8, scale: 1.02 }}
-//                   className="group"
-//                 >
-//                   <Card className="border border-slate-700/50 bg-slate-800/30 backdrop-blur-xl hover:bg-slate-800/50 transition-all duration-500 relative overflow-hidden">
-//                     {/* Animated border gradient */}
-//                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-
-//                     <CardContent className="p-6 relative">
-//                       <div className="flex items-start space-x-4">
-//                         <motion.div
-//                           className="p-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 text-cyan-400 group-hover:scale-110 transition-transform duration-300"
-//                           whileHover={{ rotate: 5 }}
-//                         >
-//                           {info.icon}
-//                         </motion.div>
-//                         <div className="flex-1">
-//                           <h3 className="font-bold text-lg text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
-//                             {info.title}
-//                           </h3>
-//                           <p className="text-emerald-400 font-semibold mb-1">
-//                             {info.value}
-//                           </p>
-//                           <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
-//                             {info.description}
-//                           </p>
-//                         </div>
-//                       </div>
-//                     </CardContent>
-//                   </Card>
-//                 </motion.div>
-//               ))}
-//             </div>
-
-//             {/* Enhanced CTA Section */}
-//             <motion.div
-//               className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-8 rounded-2xl border border-slate-700/50 text-center backdrop-blur-xl overflow-hidden group"
-//               initial={{ opacity: 0, y: 30, scale: 0.95 }}
-//               animate={{ opacity: 1, y: 0, scale: 1 }}
-//               transition={{ duration: 0.8, delay: 2.6 }}
-//               whileHover={{ scale: 1.02, y: -5 }}
-//             >
-//               {/* Animated background gradient */}
-//               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-//               <motion.div
-//                 initial={{ scale: 0.9 }}
-//                 animate={{ scale: 1 }}
-//                 transition={{ duration: 0.6, delay: 2.8 }}
-//                 className="relative"
-//               >
-//                 <Sparkles className="w-8 h-8 text-yellow-400 mx-auto mb-4 animate-pulse" />
-//                 <h3 className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-//                   Ready to get started?
-//                 </h3>
-//                 <p className="text-slate-300 mb-6 max-w-md mx-auto">
-//                   Let&apos;s discuss your project and see how we can help bring your vision to life with cutting-edge solutions.
-//                 </p>
-//                 <motion.div
-//                   whileHover={{ scale: 1.05 }}
-//                   whileTap={{ scale: 0.95 }}
-//                 >
-//                   <Button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 group">
-//                     <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-//                     Schedule a Call
-//                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-//                   </Button>
-//                 </motion.div>
-//               </motion.div>
-//             </motion.div>
-//           </motion.div>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-// const LabelInputContainer = ({
-//   children,
-//   className,
-// }: {
-//   children: React.ReactNode;
-//   className?: string;
-// }) => {
-//   return (
-//     <div className={cn("flex w-full flex-col space-y-2", className)}>
-//       {children}
-//     </div>
-//   );
-// };

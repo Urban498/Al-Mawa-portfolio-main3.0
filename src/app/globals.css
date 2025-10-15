@@ -268,7 +268,23 @@
     overflow: hidden;
     color: black;
   }
-{/*  #b5ff08*/}
+
+  /* Remove default focus styles for animated border buttons */
+  .animated-border-button:focus-visible {
+    outline: none !important;
+    border: 2px solid transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove hover border styles */
+  .animated-border-button:hover {
+    border: 2px solid transparent !important;
+    box-shadow: none !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+  }
+  
+  /*  #b5ff08*/
   .animated-border-button::before {
     content: '';
     position: absolute;
@@ -289,18 +305,15 @@
     transition: all 0.3s ease;
   }
 
-  .animated-border-button:hover {
-    transform: scale(1.02);
-    transition: all 0.3s ease;
-  }
 
   /* .animated-border-button:hover::before {
     animation: border-spin 1.5s linear infinite;
   } */
 
   .animated-border-button:hover::after {
-
+    background: var(--background);
     background-color: #0ea5e9;
+
   }
 
   /* Learn More buttons with border animation only */
@@ -331,6 +344,18 @@
     z-index: -1;
   }
 
+
+}
+
+/* Ensure backdrop-blur is always applied */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+}
+
+.backdrop-saturate-150 {
+  backdrop-filter: blur(24px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
 }
 
 .background-img {

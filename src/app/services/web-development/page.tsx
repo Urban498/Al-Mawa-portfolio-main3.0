@@ -168,9 +168,9 @@ export default function WebDevelopmentPage() {
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2 bg-primary/10 rounded-lg">
-                        <service.icon className="w-6 h-6 text-primary" />
+                        <service.icon className="w-6 h-6 text-[#0ea5e9]" />
                       </div>
-                      <Badge variant="secondary">Service</Badge>
+                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white">Service</Badge>
                     </div>
                     <CardTitle className={`text-xl font-semibold text-black ${inter.className}`}>
                       {service.title}
@@ -190,7 +190,7 @@ export default function WebDevelopmentPage() {
                     </div>
                     <Button 
                       onClick={() => setIsEnquiryModalOpen(true)}
-                      className="w-full animated-border-button mt-auto"
+                      className="w-full animated-border-button mt-auto hover:text-white"
                       size="sm"
                     >
                       Enquire
@@ -258,7 +258,7 @@ export default function WebDevelopmentPage() {
             <Button 
               onClick={() => setIsEnquiryModalOpen(true)}
               size="lg" 
-              className="animated-border-button"
+              className="animated-border-button hover:text-white"
             >
               Get Started Today
             </Button>
