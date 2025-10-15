@@ -291,6 +291,7 @@ export const NavBar = () => {
     };
   }, [openDropdown]);
 
+
   return (
     <header>
       <nav
@@ -386,17 +387,16 @@ export const NavBar = () => {
                       onMouseEnter={() => setOpenDropdown(index)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
-                      <div className={cn(
-                        "bg-[#d1d1d1]/10 backdrop-blur-xl backdrop-saturate-150 border border-gray-300 shadow-[inset_0_0_0.5px_rgba(255,255,255,0.3)] py-8 transition-all duration-500 transform origin-top w-full min-h-[80vh] h-auto rounded-3xl",
-                        openDropdown === index ? "scale-y-100" : "scale-y-0"
-                      )}>
-                        <div className="max-w-7xl mx-auto px-2 lg:px-4">
-                          <div className="flex justify-center gap-12 flex-wrap">
-                            {service.items.map((item, itemIndex) => (
-                              <div
-                                key={itemIndex}
-                                className="space-y-4 min-w-[180px] max-w-[220px] flex-1"
-                              >
+                            <div 
+                              className="bg-gray-50 border border-gray-300 shadow-[inset_0_0_0.5px_rgba(255,255,255,0.3)] py-8 transition-all duration-500 transform origin-top w-full min-h-[80vh] h-auto rounded-3xl"
+                            >
+                              <div className="max-w-7xl mx-auto px-2 lg:px-4">
+                                <div className="flex justify-center gap-12 flex-wrap">
+                                  {service.items.map((item, itemIndex) => (
+                                    <div
+                                      key={itemIndex}
+                                      className="space-y-4 min-w-[180px] max-w-[220px] flex-1"
+                                    >
                                 <Link
                                   href={item.href}
                                   className="block text-xl font-bold text-black hover:text-gray-800 transition-colors duration-200 border-b-2 border-black/20 pb-2"
@@ -418,11 +418,11 @@ export const NavBar = () => {
                                     </div>
                                   ))}
                                 </div>
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                            </div>
                     </div>
                   </li>
                 ))}
@@ -448,7 +448,7 @@ export const NavBar = () => {
             {/* Desktop Contact Button */}
             <div className="hidden lg:flex">
               <Button asChild size="sm" className="animated-border-button">
-                <Link href="/contact">
+                <Link href="/contact" className="hover:text-white">
                   <span>Contact US</span>
                 </Link>
               </Button>

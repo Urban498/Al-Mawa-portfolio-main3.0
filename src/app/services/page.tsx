@@ -139,9 +139,9 @@ export default function ServicesPage() {
                   
                   <Button 
                     size="sm"
-                    className="animated-border-button w-full"
+                    className="animated-border-button w-full cursor-pointer hover:text-white"
                   >
-                    <span>Learn more</span>
+                   Learn More
                   </Button>
                 </CardContent>
               </Card>
