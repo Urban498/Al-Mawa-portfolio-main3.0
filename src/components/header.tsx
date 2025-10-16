@@ -222,42 +222,6 @@ const servicesData = [
 export const NavBar = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [openDropdown, setOpenDropdown] = React.useState<number | null>(null);
-
-  // ✅ AOS Initialization (Dynamic import to avoid SSR issues)
-  useEffect(() => {
-    const initAOS = async () => {
-      const AOS = (await import("aos")).default;
-      AOS.init({
-        duration: 600,
-        easing: "ease-out-cubic",
-        once: false,
-      });
-    };
-    initAOS();
-  }, []);
-
-  useEffect(() => {
-    let ticking = false;
-    
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    
-    // Use passive listener for better performance
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    
-    // Initial check
-    handleScroll();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Close mobile menu on escape key
   useEffect(() => {
@@ -275,22 +239,6 @@ export const NavBar = () => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [menuState]);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = () => {
-      setOpenDropdown(null);
-    };
-
-    if (openDropdown !== null) {
-      document.addEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [openDropdown]);
-
 
   return (
     <header>
@@ -345,84 +293,51 @@ export const NavBar = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-black hover:text-black block duration-150"
+                      className="text-black hover:text-black block"
                     >
                       <span>{item.name}</span>
                     </Link>
                   </li>
                 ))}
 
-                {/* Dropdown Menus */}
+                {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
-                  <li
-                    key={`service-${index}`}
-                    className="relative"
-                    onMouseEnter={async () => {
-                      setOpenDropdown(index);
-                      // ✅ Refresh AOS on hover (dynamic import)
-                      const AOS = (await import("aos")).default;
-                      AOS.refresh();
-                    }}
-                    onMouseLeave={(e) => {
-                      // Only close if we're not moving to the dropdown
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      if (e.clientY > rect.bottom + 24) {
-                        setOpenDropdown(null);
-                      }
-                    }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="flex items-center gap-1 duration-150 cursor-pointer">
+                  <li key={index} className="relative group">
+                    <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
                       <span>{service.name}</span>
-                      <ChevronDown className={cn(
-                        "w-3 h-3 transition-transform",
-                        openDropdown === index && "rotate-180"
-                      )} />
+                      <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                     </div>
-                    <div 
-                      className={cn(
-                        "absolute top-full left-2 overflow-y-scroll transform -translate-x-1/2 pt-6 transition-all duration-300 z-[110] w-screen",
-                        openDropdown === index ? "opacity-100 visible" : "opacity-0 invisible"
-                      )}
-                      onMouseEnter={() => setOpenDropdown(index)}
-                      onMouseLeave={() => setOpenDropdown(null)}
+
+                    {/* Dropdown Box */}
+                    <div
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
+                     group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
                     >
-                            <div 
-                              className="bg-gray-50 border border-gray-300 shadow-[inset_0_0_0.5px_rgba(255,255,255,0.3)] py-8 transition-all duration-500 transform origin-top w-full min-h-[80vh] h-auto rounded-3xl"
-                            >
-                              <div className="max-w-7xl mx-auto px-2 lg:px-4">
-                                <div className="flex justify-center gap-12 flex-wrap">
-                                  {service.items.map((item, itemIndex) => (
-                                    <div
-                                      key={itemIndex}
-                                      className="space-y-4 min-w-[180px] max-w-[220px] flex-1"
-                                    >
-                                <Link
-                                  href={item.href}
-                                  className="block text-xl font-bold text-black hover:text-gray-800 transition-colors duration-200 border-b-2 border-black/20 pb-2"
-                                >
-                                  {item.name}
-                                </Link>
-                                <div className="space-y-2">
-                                  {item.subItems?.map((subItem, subIndex) => (
-                                    <div
-                                      key={subIndex}
-                                      className="flex items-center justify-between group/item hover:bg-[#0ea5e9]/30 rounded px-2 py-1 transition-all duration-200"
-                                    >
-                                      <Link
-                                        href={subItem.href}
-                                        className="flex-1 text-sm text-black/80 hover:text-black transition-all duration-200 hover:transform hover:translate-x-1"
-                                      >
-                                        {subItem.name}
-                                      </Link>
-                                    </div>
-                                  ))}
-                                </div>
-                                    </div>
-                                  ))}
-                                </div>
+                      <div className="bg-white/60 backdrop-blur-xl border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl h-[80vh] overflow-y-auto">
+                        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                          {service.items.map((item, itemIndex) => (
+                            <div key={itemIndex} className="space-y-4">
+                              <Link
+                                href={item.href}
+                                className="block text-sm font-semibold text-black hover:text-blue-600 transition-colors duration-200 pb-2"
+                              >
+                                {item.name}
+                              </Link>
+                              <div className="space-y-2">
+                                {item.subItems?.map((subItem, subIndex) => (
+                                  <Link
+                                    key={subIndex}
+                                    href={subItem.href}
+                                    className="block text-xs text-gray-700 hover:text-blue-600 transition-colors duration-200 py-1.5 leading-relaxed"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
                               </div>
                             </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </li>
                 ))}
@@ -445,7 +360,7 @@ export const NavBar = () => {
               onClose={() => setMenuState(false)}
             />
 
-            {/* Desktop Contact Butto */}
+            {/* Desktop Contact Button */}
             <div className="hidden lg:flex">
               <Button asChild size="sm" className="animated-border-button">
                 <Link href="/contact" className="hover:text-white">
