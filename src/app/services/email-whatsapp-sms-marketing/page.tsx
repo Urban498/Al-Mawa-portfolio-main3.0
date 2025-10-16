@@ -6,13 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { EnquiryModal } from "@/components/enquiry-modal";
-import { 
-  Mail, 
-  MessageCircle, 
-  Smartphone, 
+import {
+  Mail,
+  MessageCircle,
+  Smartphone,
   Network,
   TrendingUp,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -41,33 +41,63 @@ const services = [
   {
     icon: Mail,
     title: "Email Marketing Services",
-    description: "Professional email campaigns that engage your audience and drive conversions",
-    features: ["Campaign Design", "Automated Sequences", "A/B Testing", "Performance Analytics"]
+    description:
+      "Professional email campaigns that engage your audience and drive conversions",
+    features: [
+      "Campaign Design",
+      "Automated Sequences",
+      "A/B Testing",
+      "Performance Analytics",
+    ],
   },
   {
     icon: MessageCircle,
     title: "WhatsApp Marketing Services",
-    description: "Direct customer engagement through WhatsApp Business with personalized messaging",
-    features: ["Business API Setup", "Broadcast Messages", "Customer Support", "Automated Responses"]
+    description:
+      "Direct customer engagement through WhatsApp Business with personalized messaging",
+    features: [
+      "Business API Setup",
+      "Broadcast Messages",
+      "Customer Support",
+      "Automated Responses",
+    ],
   },
   {
     icon: Smartphone,
     title: "SMS Marketing Services",
-    description: "Instant reach with targeted SMS campaigns for time-sensitive promotions and updates",
-    features: ["Bulk SMS Campaigns", "Personalized Messages", "Delivery Reports", "Opt-in Management"]
+    description:
+      "Instant reach with targeted SMS campaigns for time-sensitive promotions and updates",
+    features: [
+      "Bulk SMS Campaigns",
+      "Personalized Messages",
+      "Delivery Reports",
+      "Opt-in Management",
+    ],
   },
   {
     icon: Network,
     title: "Omnichannel Integration",
-    description: "Seamless integration across all marketing channels for consistent customer experience",
-    features: ["Cross-platform Campaigns", "Unified Analytics", "Customer Journey Mapping", "Synchronized Messaging"]
+    description:
+      "Seamless integration across all marketing channels for consistent customer experience",
+    features: [
+      "Cross-platform Campaigns",
+      "Unified Analytics",
+      "Customer Journey Mapping",
+      "Synchronized Messaging",
+    ],
   },
   {
     icon: CheckCircle,
     title: "Benefits of Email, WhatsApp & SMS Marketing",
-    description: "Comprehensive advantages of multi-channel marketing approach for business growth",
-    features: ["Higher Engagement", "Direct Communication", "Cost-Effective", "Measurable Results"]
-  }
+    description:
+      "Comprehensive advantages of multi-channel marketing approach for business growth",
+    features: [
+      "Higher Engagement",
+      "Direct Communication",
+      "Cost-Effective",
+      "Measurable Results",
+    ],
+  },
 ];
 
 const benefits = [
@@ -80,30 +110,30 @@ const benefits = [
   "Detailed analytics and reporting for campaign optimization",
   "Increased customer retention through regular engagement",
   "Global reach with local personalization capabilities",
-  "Integration with existing CRM and marketing tools"
+  "Integration with existing CRM and marketing tools",
 ];
 
 const marketingStats = [
   {
     metric: "4.1 Billion",
     description: "Email users worldwide",
-    icon: Mail
+    icon: Mail,
   },
   {
     metric: "2+ Billion",
     description: "WhatsApp active users",
-    icon: MessageCircle
+    icon: MessageCircle,
   },
   {
     metric: "98%",
     description: "SMS open rate",
-    icon: Smartphone
+    icon: Smartphone,
   },
   {
     metric: "4200%",
     description: "Average ROI for email marketing",
-    icon: TrendingUp
-  }
+    icon: TrendingUp,
+  },
 ];
 
 export default function DigitalMarketingPage() {
@@ -125,14 +155,14 @@ export default function DigitalMarketingPage() {
           >
             Digital Marketing
             <br />
-           
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Connect with your customers through powerful email, WhatsApp, and SMS marketing campaigns. 
-            Drive engagement and boost conversions with our integrated digital marketing solutions.
+            Connect with your customers through powerful email, WhatsApp, and
+            SMS marketing campaigns. Drive engagement and boost conversions with
+            our integrated digital marketing solutions.
           </motion.p>
         </div>
       </motion.section>
@@ -147,7 +177,9 @@ export default function DigitalMarketingPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-12 -mt-15" variants={fadeInUp}>
-            <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
+            >
               Marketing That Delivers Results
             </h2>
           </motion.div>
@@ -160,10 +192,14 @@ export default function DigitalMarketingPage() {
                     <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">
                       <stat.icon className="w-6 h-6 text-[#0ea5e9]" />
                     </div>
-                    <h3 className={`text-3xl font-bold text-black mb-2 ${inter.className}`}>
+                    <h3
+                      className={`text-3xl font-bold text-black mb-2 ${inter.className}`}
+                    >
                       {stat.metric}
                     </h3>
-                    <p className={`text-gray-600 ${playfair_display.className}`}>
+                    <p
+                      className={`text-gray-600 ${playfair_display.className}`}
+                    >
                       {stat.description}
                     </p>
                   </CardContent>
@@ -184,10 +220,14 @@ export default function DigitalMarketingPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
+            >
               Our Digital Marketing Services
             </h2>
-            <p className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}>
+            <p
+              className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
+            >
               Comprehensive marketing solutions across multiple channels
             </p>
           </motion.div>
@@ -201,31 +241,47 @@ export default function DigitalMarketingPage() {
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <service.icon className="w-6 h-6 text-[#0ea5e9]" />
                       </div>
-                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white">Marketing</Badge>
+                      <Badge
+                        variant="secondary"
+                        className="bg-[#0ea5e9] text-white"
+                      >
+                        Marketing
+                      </Badge>
                     </div>
-                    <CardTitle className={`text-xl font-semibold text-black ${inter.className}`}>
+                    <CardTitle
+                      className={`text-xl font-semibold text-black ${inter.className}`}
+                    >
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col">
-                    <p className={`text-gray-600 mb-4 ${playfair_display.className}`}>
+                    <p
+                      className={`text-gray-600 mb-4 ${playfair_display.className}`}
+                    >
                       {service.description}
                     </p>
                     <div className="space-y-2 mb-6 flex-1">
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center gap-2">
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-2"
+                        >
                           <CheckCircle className="w-4 h-4 text-green-500" />
-                          <span className="text-sm text-gray-600">{feature}</span>
+                          <span className="text-sm text-gray-600">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
-                    <Button 
-                      onClick={() => setIsEnquiryModalOpen(true)}
-                      className="w-full animated-border-button mt-auto hover:text-white"
-                      size="sm"
-                    >
-                      Enquire
-                    </Button>
+                    <div className="flex w-full">
+                      <Button
+                        onClick={() => setIsEnquiryModalOpen(true)}
+                        className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
+                        size="sm"
+                      >
+                        Enquire
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -244,18 +300,22 @@ export default function DigitalMarketingPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
+            >
               Benefits of Email, WhatsApp & SMS Marketing
             </h2>
-            <p className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}>
+            <p
+              className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
+            >
               Why multi-channel marketing is essential for your business growth
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm"
               >
@@ -278,25 +338,28 @@ export default function DigitalMarketingPage() {
         variants={fadeInUp}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}
+          >
             Ready to Boost Your Marketing Results?
           </h2>
-          <p className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}>
-            Start connecting with your customers through powerful email, WhatsApp, and SMS campaigns. 
-            Let&apos;s create a marketing strategy that drives real results.
+          <p
+            className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}
+          >
+            Start connecting with your customers through powerful email,
+            WhatsApp, and SMS campaigns. Let&apos;s create a marketing strategy
+            that drives real results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               onClick={() => setIsEnquiryModalOpen(true)}
-              size="lg" 
-              className="animated-border-button hover:text-white"
+              size="lg"
+              className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
-             <span > Start Marketing Campaign </span>
+              <span> Start Marketing Campaign </span>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">
-                Learn More About Us
-              </Link>
+              <Link href="/about">Learn More About Us</Link>
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 "use client";
-
+import "../../../app/globals.css";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -188,14 +188,17 @@ export default function WebDevelopmentPage() {
                         </div>
                       ))}
                     </div>
-                    <Button 
+                    
+                  </CardContent>
+                  <div className="flex w-full">
+                  <Button 
                       onClick={() => setIsEnquiryModalOpen(true)}
-                      className="w-full animated-border-button mt-auto hover:text-white"
+                      className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
                       size="sm"
                     >
                       Enquire
                     </Button>
-                  </CardContent>
+                  </div>
                 </Card>
               </motion.div>
             ))}
@@ -258,7 +261,7 @@ export default function WebDevelopmentPage() {
             <Button 
               onClick={() => setIsEnquiryModalOpen(true)}
               size="lg" 
-              className="animated-border-button hover:text-white"
+              className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
               Get Started Today
             </Button>

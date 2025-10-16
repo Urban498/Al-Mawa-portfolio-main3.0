@@ -205,7 +205,7 @@ export default function ServicesSection() {
                   </div>
 
                   <Link href={service.href}>
-                    <Button size="lg" className="animated-border-button text-lg w-full">
+                    <Button size="lg" className="animated-border-button text-lg w-full no-animated-hover">
                       <span>Learn more</span>
                     </Button>
                   </Link>

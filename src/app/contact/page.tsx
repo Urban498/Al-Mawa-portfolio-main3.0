@@ -181,7 +181,7 @@ export default function ContactPage() {
 
   const typewriterWords = [
     {
-      text: isMobile ? "Click over the Map for Direction" : "Hover over the Map for Direction",
+      text: isMobile ? "Click on the Map for Direction" : "Hover over the Map for Direction",
       className: "text-blue-600"
     },
   ];

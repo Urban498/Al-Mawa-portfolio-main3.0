@@ -6,10 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { EnquiryModal } from "@/components/enquiry-modal";
-import { 
-  Palette, 
-  Megaphone, 
-  Share2, 
+import {
+  Palette,
+  Megaphone,
+  Share2,
   Monitor,
   Building,
   Play,
@@ -17,7 +17,7 @@ import {
   FileText,
   Package,
   TrendingUp,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -46,69 +46,135 @@ const services = [
   {
     icon: Palette,
     title: "Brand Identity Design",
-    description: "Complete brand identity systems including logos, color palettes, and brand guidelines",
-    features: ["Logo Design", "Brand Guidelines", "Color Schemes", "Typography Selection"]
+    description:
+      "Complete brand identity systems including logos, color palettes, and brand guidelines",
+    features: [
+      "Logo Design",
+      "Brand Guidelines",
+      "Color Schemes",
+      "Typography Selection",
+    ],
   },
   {
     icon: Megaphone,
     title: "Marketing & Promotional Design",
-    description: "Eye-catching marketing materials that drive engagement and boost conversions",
-    features: ["Flyers & Brochures", "Banners & Posters", "Advertisement Design", "Promotional Graphics"]
+    description:
+      "Eye-catching marketing materials that drive engagement and boost conversions",
+    features: [
+      "Flyers & Brochures",
+      "Banners & Posters",
+      "Advertisement Design",
+      "Promotional Graphics",
+    ],
   },
   {
     icon: Share2,
     title: "Digital & Social Media Design",
-    description: "Engaging digital graphics optimized for social media platforms and online presence",
-    features: ["Social Media Posts", "Cover Images", "Digital Ads", "Web Graphics"]
+    description:
+      "Engaging digital graphics optimized for social media platforms and online presence",
+    features: [
+      "Social Media Posts",
+      "Cover Images",
+      "Digital Ads",
+      "Web Graphics",
+    ],
   },
   {
     icon: Monitor,
     title: "UI/UX & Web Graphics",
-    description: "User-friendly interface designs and web graphics that enhance user experience",
-    features: ["Website Graphics", "UI Elements", "Icons & Illustrations", "User Interface Design"]
+    description:
+      "User-friendly interface designs and web graphics that enhance user experience",
+    features: [
+      "Website Graphics",
+      "UI Elements",
+      "Icons & Illustrations",
+      "User Interface Design",
+    ],
   },
   {
     icon: Building,
     title: "Corporate & Office Branding",
-    description: "Professional corporate identity and office branding solutions for businesses",
-    features: ["Business Cards", "Letterheads", "Office Signage", "Corporate Presentations"]
+    description:
+      "Professional corporate identity and office branding solutions for businesses",
+    features: [
+      "Business Cards",
+      "Letterheads",
+      "Office Signage",
+      "Corporate Presentations",
+    ],
   },
   {
     icon: Play,
     title: "Motion Graphics & Multimedia Design",
-    description: "Dynamic motion graphics and multimedia content for engaging visual storytelling",
-    features: ["Animated Graphics", "Video Graphics", "GIF Creation", "Interactive Media"]
+    description:
+      "Dynamic motion graphics and multimedia content for engaging visual storytelling",
+    features: [
+      "Animated Graphics",
+      "Video Graphics",
+      "GIF Creation",
+      "Interactive Media",
+    ],
   },
   {
     icon: Brush,
     title: "Illustration & Creative Art",
-    description: "Custom illustrations and creative artwork tailored to your brand and message",
-    features: ["Custom Illustrations", "Digital Art", "Character Design", "Infographics"]
+    description:
+      "Custom illustrations and creative artwork tailored to your brand and message",
+    features: [
+      "Custom Illustrations",
+      "Digital Art",
+      "Character Design",
+      "Infographics",
+    ],
   },
   {
     icon: FileText,
     title: "Print & Publishing Design",
-    description: "Professional print design services for books, magazines, and marketing materials",
-    features: ["Book Design", "Magazine Layout", "Catalog Design", "Print Materials"]
+    description:
+      "Professional print design services for books, magazines, and marketing materials",
+    features: [
+      "Book Design",
+      "Magazine Layout",
+      "Catalog Design",
+      "Print Materials",
+    ],
   },
   {
     icon: Package,
     title: "Packaging & Product Branding",
-    description: "Attractive packaging design and product branding that stands out on shelves",
-    features: ["Product Packaging", "Label Design", "Brand Applications", "Product Graphics"]
+    description:
+      "Attractive packaging design and product branding that stands out on shelves",
+    features: [
+      "Product Packaging",
+      "Label Design",
+      "Brand Applications",
+      "Product Graphics",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Emerging Graphic Design Trends",
-    description: "Cutting-edge design approaches using the latest trends and technologies",
-    features: ["Modern Design Trends", "3D Graphics", "AR/VR Graphics", "Interactive Design"]
+    description:
+      "Cutting-edge design approaches using the latest trends and technologies",
+    features: [
+      "Modern Design Trends",
+      "3D Graphics",
+      "AR/VR Graphics",
+      "Interactive Design",
+    ],
   },
   {
     icon: CheckCircle,
     title: "Benefits of Branding & Graphic Design Services",
-    description: "Key advantages of professional branding and graphic design for business success",
-    features: ["Brand Recognition", "Professional Image", "Marketing Effectiveness", "Customer Trust"]
-  }
+    description:
+      "Key advantages of professional branding and graphic design for business success",
+    features: [
+      "Brand Recognition",
+      "Professional Image",
+      "Marketing Effectiveness",
+      "Customer Trust",
+    ],
+  },
 ];
 
 const benefits = [
@@ -121,30 +187,30 @@ const benefits = [
   "Scalable designs that work across different platforms",
   "Expert guidance on design trends and best practices",
   "Custom solutions tailored to your specific needs",
-  "Ongoing design support and revisions included"
+  "Ongoing design support and revisions included",
 ];
 
 const designStats = [
   {
     metric: "94%",
     description: "First impressions are design-related",
-    icon: Palette
+    icon: Palette,
   },
   {
     metric: "3x",
     description: "More likely to share visual content",
-    icon: Share2
+    icon: Share2,
   },
   {
     metric: "65%",
     description: "Of people are visual learners",
-    icon: Monitor
+    icon: Monitor,
   },
   {
     metric: "80%",
     description: "Brand recognition increase with color",
-    icon: TrendingUp
-  }
+    icon: TrendingUp,
+  },
 ];
 
 export default function GraphicDesignPage() {
@@ -166,14 +232,14 @@ export default function GraphicDesignPage() {
           >
             Graphic Design
             <br />
-            
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Transform your brand with stunning visual designs that captivate audiences and drive results. 
-            From branding to digital graphics, we create designs that make an impact.
+            Transform your brand with stunning visual designs that captivate
+            audiences and drive results. From branding to digital graphics, we
+            create designs that make an impact.
           </motion.p>
         </div>
       </motion.section>
@@ -188,7 +254,9 @@ export default function GraphicDesignPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-12 -mt-15" variants={fadeInUp}>
-            <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
+            >
               The Power of Visual Design
             </h2>
           </motion.div>
@@ -201,10 +269,14 @@ export default function GraphicDesignPage() {
                     <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">
                       <stat.icon className="w-6 h-6 text-[#0ea5e9]" />
                     </div>
-                    <h3 className={`text-3xl font-bold text-black mb-2 ${inter.className}`}>
+                    <h3
+                      className={`text-3xl font-bold text-black mb-2 ${inter.className}`}
+                    >
                       {stat.metric}
                     </h3>
-                    <p className={`text-gray-600 ${playfair_display.className}`}>
+                    <p
+                      className={`text-gray-600 ${playfair_display.className}`}
+                    >
                       {stat.description}
                     </p>
                   </CardContent>
@@ -225,11 +297,16 @@ export default function GraphicDesignPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
+            >
               Our Graphic Design Services
             </h2>
-            <p className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}>
-              Comprehensive design solutions for all your visual communication needs
+            <p
+              className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
+            >
+              Comprehensive design solutions for all your visual communication
+              needs
             </p>
           </motion.div>
 
@@ -242,31 +319,47 @@ export default function GraphicDesignPage() {
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <service.icon className="w-6 h-6 text-[#0ea5e9]" />
                       </div>
-                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white">Design</Badge>
+                      <Badge
+                        variant="secondary"
+                        className="bg-[#0ea5e9] text-white"
+                      >
+                        Design
+                      </Badge>
                     </div>
-                    <CardTitle className={`text-xl font-semibold text-black ${inter.className}`}>
+                    <CardTitle
+                      className={`text-xl font-semibold text-black ${inter.className}`}
+                    >
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col">
-                    <p className={`text-gray-600 mb-4 ${playfair_display.className}`}>
+                    <p
+                      className={`text-gray-600 mb-4 ${playfair_display.className}`}
+                    >
                       {service.description}
                     </p>
                     <div className="space-y-2 mb-6 flex-1">
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center gap-2">
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-2"
+                        >
                           <CheckCircle className="w-4 h-4 text-green-500" />
-                          <span className="text-sm text-gray-600">{feature}</span>
+                          <span className="text-sm text-gray-600">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
-                    <Button 
-                      onClick={() => setIsEnquiryModalOpen(true)}
-                      className="w-full animated-border-button mt-auto hover:text-white"
-                      size="sm"
-                    >
-                      Enquire
-                    </Button>
+                    <div className="flex w-full">
+                      <Button
+                        onClick={() => setIsEnquiryModalOpen(true)}
+                        className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
+                        size="sm"
+                      >
+                        Enquire
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -285,18 +378,22 @@ export default function GraphicDesignPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
+            >
               Benefits of Branding & Graphic Design Services
             </h2>
-            <p className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}>
+            <p
+              className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
+            >
               How professional design services can transform your business
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm"
               >
@@ -319,25 +416,28 @@ export default function GraphicDesignPage() {
         variants={fadeInUp}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}
+          >
             Ready to Transform Your Brand?
           </h2>
-          <p className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}>
-            Let our creative team bring your vision to life with stunning graphic designs that make an impact. 
-            Start your design project today and see the difference professional design can make.
+          <p
+            className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}
+          >
+            Let our creative team bring your vision to life with stunning
+            graphic designs that make an impact. Start your design project today
+            and see the difference professional design can make.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               onClick={() => setIsEnquiryModalOpen(true)}
-              size="lg" 
-              className="animated-border-button hover:text-white"
+              size="lg"
+              className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
               Start Design Project
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">
-                Learn More About Us
-              </Link>
+              <Link href="/about">Learn More About Us</Link>
             </Button>
           </div>
         </div>

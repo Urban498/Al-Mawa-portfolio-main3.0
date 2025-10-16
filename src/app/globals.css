@@ -316,6 +316,11 @@
 
   }
 
+  .no-animated-hover:hover {
+  background: #0ea5e9; /* or whatever solid color you want */
+  border: none;
+  color: white;
+}
   /* Learn More buttons with border animation only */
   .learn-more-button {
     position: relative;

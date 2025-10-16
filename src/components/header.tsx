@@ -372,9 +372,13 @@ export const NavBar = () => {
 
             {/* Desktop Contact Button */}
             <div className="hidden lg:flex">
-              <Button asChild size="sm" className="animated-border-button">
-                <Link href="/contact" className="hover:text-white">
-                  <span>Contact US</span>
+              <Button
+                asChild
+                size="sm"
+                className="animated-border-button no-animated-hover"
+              >
+                <Link href="/contact">
+                  <span>Contact Us</span>
                 </Link>
               </Button>
             </div>
