@@ -136,7 +136,7 @@ export default function AboutPage() {
                   alt="Our Team"
                   width={350}
                   height={50}
-                  className="rounded-4xl mt-3 h-24 sm:h-28 md:h-32 lg:h-46 xl:h-40 object-cover w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm"
+                  className="rounded-4xl mt-3 h-35 sm:h-28 md:h-32 lg:h-46 xl:h-40 object-cover w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm"
                 />
                 <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-black mt-4 xl:mt-2 2xl:mt-0 uppercase text-center xl:text-left">
                   Our Team
