@@ -313,7 +313,7 @@ export const NavBar = () => {
                       className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
                      group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
                     >
-                      <div className="bg-white/60 backdrop-blur-xl border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl h-[80vh] overflow-y-auto">
+                      <div className="bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide">
                         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                           {service.items.map((item, itemIndex) => (
                             <div key={itemIndex} className="space-y-4">
