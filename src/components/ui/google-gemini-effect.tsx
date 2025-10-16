@@ -101,7 +101,7 @@ export const GoogleGeminiEffect = ({
         brighter future.&rdquo;
       </p>
 
-      <div className="flex justify-center items-center w-full mb-16 sm:mb-12 md:-mb-2 lg:-mb-0 -mt-12">
+      <div className="flex justify-center items-center w-full mb-16 sm:mb-12 md:-mb-2 lg:-mb-0 -mt-16">
         <svg
           width="1440"
           height="800"

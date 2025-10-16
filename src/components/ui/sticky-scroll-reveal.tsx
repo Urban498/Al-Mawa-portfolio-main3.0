@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const StickyScroll = ({
@@ -62,6 +63,7 @@ export const StickyScroll = ({
       className="relative flex flex-col lg:flex-row h-auto lg:h-[30rem] justify-start lg:space-x-5 overflow-y-auto scrollbar-hide p-4 sm:p-6 lg:p-10  border-none "
       ref={ref}
     >
+      
       <div className="w-full lg:w-[60%] mx-auto relative flex items-start px-2 sm:px-4">
         <div className="w-full lg:w-[50%] mx-auto">
           {content.map((item, index) => (
@@ -73,7 +75,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4 sm:mb-6 uppercase ${inter.className} [&]:!opacity-100 lg:[&]:opacity-[inherit]`}
+                className={`text-2xl sm:text-3xl lg:text-6xl font-bold text-black mb-4 sm:mb-6 uppercase ${inter.className} [&]:!opacity-100 lg:[&]:opacity-[inherit]`}
               >
                 {item.title}
               </motion.h2>
