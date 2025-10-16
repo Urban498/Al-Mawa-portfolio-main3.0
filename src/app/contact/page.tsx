@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -38,6 +38,64 @@ const work_sans = Work_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
+
+// Utility function to merge classes
+const cn = (...classes: (string | undefined | null | false)[]) => {
+  return classes.filter(Boolean).join(' ');
+};
+
+// TypewriterEffectSmooth Component
+const TypewriterEffectSmooth = ({ words, className, cursorClassName }: {
+  words: { text: string; className?: string; }[];
+  className?: string;
+  cursorClassName?: string;
+}) => {
+  const wordsArray = words.map((word) => ({
+    ...word,
+    text: word.text.split(""),
+  }));
+
+  const renderWords = () => (
+    <div>
+      {wordsArray.map((word, idx) => (
+        <div key={`word-${idx}`} className="inline-block">
+          {word.text.map((char, index) => (
+            <span key={`char-${index}`} className={cn("text-gray-900", word.className)}>
+              {char}
+            </span>
+          ))}
+          &nbsp;
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className={cn("flex space-x-1 my-6", className)}>
+      <motion.div
+        className="overflow-hidden pb-2"
+        initial={{ width: "0%" }}
+        whileInView={{ width: "fit-content" }}
+        transition={{ duration: 2, ease: "linear", delay: 0.5 }}
+      >
+        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold whitespace-nowrap">
+          {renderWords()}
+        </div>
+      </motion.div>
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        className={cn("block rounded-sm w-1 h-6 sm:h-8 xl:h-10 bg-blue-500", cursorClassName)}
+      />
+    </div>
+  );
+};
+
 const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
@@ -67,202 +125,39 @@ const contactInfo = [
 ];
 
 const countries = [
-  "Afghanistan",
-  "Albania",
-  "Algeria",
-  "Andorra",
-  "Angola",
-  "Argentina",
-  "Armenia",
-  "Australia",
-  "Austria",
-  "Azerbaijan",
-  "Bahamas",
-  "Bahrain",
-  "Bangladesh",
-  "Barbados",
-  "Belarus",
-  "Belgium",
-  "Belize",
-  "Benin",
-  "Bhutan",
-  "Bolivia",
-  "Bosnia and Herzegovina",
-  "Botswana",
-  "Brazil",
-  "Brunei",
-  "Bulgaria",
-  "Burkina Faso",
-  "Burundi",
-  "Cambodia",
-  "Cameroon",
-  "Canada",
-  "Cape Verde",
-  "Central African Republic",
-  "Chad",
-  "Chile",
-  "China",
-  "Colombia",
-  "Comoros",
-  "Congo",
-  "Costa Rica",
-  "Croatia",
-  "Cuba",
-  "Cyprus",
-  "Czech Republic",
-  "Denmark",
-  "Djibouti",
-  "Dominica",
-  "Dominican Republic",
-  "Ecuador",
-  "Egypt",
-  "El Salvador",
-  "Equatorial Guinea",
-  "Eritrea",
-  "Estonia",
-  "Ethiopia",
-  "Fiji",
-  "Finland",
-  "France",
-  "Gabon",
-  "Gambia",
-  "Georgia",
-  "Germany",
-  "Ghana",
-  "Greece",
-  "Grenada",
-  "Guatemala",
-  "Guinea",
-  "Guinea-Bissau",
-  "Guyana",
-  "Haiti",
-  "Honduras",
-  "Hungary",
-  "Iceland",
-  "India",
-  "Indonesia",
-  "Iran",
-  "Iraq",
-  "Ireland",
-  "Israel",
-  "Italy",
-  "Jamaica",
-  "Japan",
-  "Jordan",
-  "Kazakhstan",
-  "Kenya",
-  "Kiribati",
-  "Kuwait",
-  "Kyrgyzstan",
-  "Laos",
-  "Latvia",
-  "Lebanon",
-  "Lesotho",
-  "Liberia",
-  "Libya",
-  "Liechtenstein",
-  "Lithuania",
-  "Luxembourg",
-  "Madagascar",
-  "Malawi",
-  "Malaysia",
-  "Maldives",
-  "Mali",
-  "Malta",
-  "Marshall Islands",
-  "Mauritania",
-  "Mauritius",
-  "Mexico",
-  "Micronesia",
-  "Moldova",
-  "Monaco",
-  "Mongolia",
-  "Montenegro",
-  "Morocco",
-  "Mozambique",
-  "Myanmar",
-  "Namibia",
-  "Nauru",
-  "Nepal",
-  "Netherlands",
-  "New Zealand",
-  "Nicaragua",
-  "Niger",
-  "Nigeria",
-  "North Korea",
-  "North Macedonia",
-  "Norway",
-  "Oman",
-  "Pakistan",
-  "Palau",
-  "Palestine",
-  "Panama",
-  "Papua New Guinea",
-  "Paraguay",
-  "Peru",
-  "Philippines",
-  "Poland",
-  "Portugal",
-  "Qatar",
-  "Romania",
-  "Russia",
-  "Rwanda",
-  "Saint Kitts and Nevis",
-  "Saint Lucia",
-  "Saint Vincent and the Grenadines",
-  "Samoa",
-  "San Marino",
-  "Sao Tome and Principe",
-  "Saudi Arabia",
-  "Senegal",
-  "Serbia",
-  "Seychelles",
-  "Sierra Leone",
-  "Singapore",
-  "Slovakia",
-  "Slovenia",
-  "Solomon Islands",
-  "Somalia",
-  "South Africa",
-  "South Korea",
-  "South Sudan",
-  "Spain",
-  "Sri Lanka",
-  "Sudan",
-  "Suriname",
-  "Sweden",
-  "Switzerland",
-  "Syria",
-  "Taiwan",
-  "Tajikistan",
-  "Tanzania",
-  "Thailand",
-  "Timor-Leste",
-  "Togo",
-  "Tonga",
-  "Trinidad and Tobago",
-  "Tunisia",
-  "Turkey",
-  "Turkmenistan",
-  "Tuvalu",
-  "Uganda",
-  "Ukraine",
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States",
-  "Uruguay",
-  "Uzbekistan",
-  "Vanuatu",
-  "Vatican City",
-  "Venezuela",
-  "Vietnam",
-  "Yemen",
-  "Zambia",
-  "Zimbabwe",
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia",
+  "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+  "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+  "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia",
+  "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China",
+  "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus",
+  "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador",
+  "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji",
+  "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece",
+  "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras",
+  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
+  "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan",
+  "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania",
+  "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta",
+  "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova",
+  "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia",
+  "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+  "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine",
+  "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
+  "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+  "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe",
+  "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore",
+  "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea",
+  "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland",
+  "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga",
+  "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine",
+  "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan",
+  "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe",
 ];
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
     firstname: "",
     lastName: "",
@@ -272,6 +167,24 @@ export default function ContactPage() {
     subject: "",
     tellUSAboutYou: "",
   });
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  const typewriterWords = [
+    {
+      text: isMobile ? "Click over the Map for Direction" : "Hover over the Map for Direction",
+      className: "text-blue-600"
+    },
+  ];
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -309,7 +222,6 @@ export default function ContactPage() {
           "Thank you for reaching out. We'll get back to you within 24 hours.",
       });
 
-      // Reset form
       setFormData({
         firstname: "",
         lastName: "",
@@ -335,7 +247,6 @@ export default function ContactPage() {
     <div className="background-img relative w-full bg-cover bg-center bg-no-repeat min-h-screen -mt-20 pt-20">
       <div className="absolute inset-0 bg-gray-300 opacity-85 z-0" />
 
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
@@ -378,7 +289,6 @@ export default function ContactPage() {
       </div>
 
       <div className="container mx-auto px-4 pt-6 pb-16 relative z-10">
-        {/* Page Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -392,7 +302,7 @@ export default function ContactPage() {
             className="relative inline-block"
           >
             <h1
-              className={`text-5xl md:text-7xl text-center font-normal leading-tight text-black uppercase ${work_sans.className} `}
+              className={` mt-15 text-5xl md:text-7xl text-center font-normal leading-tight text-black uppercase ${work_sans.className} `}
             >
               reach out to us
               <br />
@@ -407,7 +317,6 @@ export default function ContactPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 py-6 sm:py-10 w-[95%] sm:w-[90%] mx-auto gap-6 sm:gap-8">
-          {/* Contact Form - Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -576,17 +485,23 @@ export default function ContactPage() {
             </Card>
           </motion.div>
 
-          {/* 3D Pin Map - Left Side */}
+          {/* Typewriter Animation + 3D Pin Map */}
           <motion.div
-            className="flex justify-center items-center order-1 lg:order-1"
+            className="flex flex-col justify-center items-center order-1 lg:order-1 space-y-6"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            {/* Typewriter Effect */}
+            <div className="w-full flex justify-center">
+              <TypewriterEffectSmooth words={typewriterWords} />
+            </div>
+
+            {/* 3D Pin Map */}
             <div className="w-full h-[400px] sm:h-[450px] md:h-[500px] lg:w-[50vw] lg:h-[80vh] flex items-center justify-center relative overflow-hidden">
               <PinContainer
                 title="AL-MAWA INTERNATIONAL - Pune, India"
-                href="  https://www.google.com/maps/dir/''/1st+Floor,+Pride+Icon,+Office+No,+102,103,+Nexus+Work+Spaces,+Mundhwa+-+Kharadi+Rd,+above+Athithi+Restaurant,+Kharadi,+Pune,+Maharashtra+411014/@18.5437685,73.9317181,1168m/data=!3m1!1e3!4m13!4m12!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D "
+                href="https://www.google.com/maps/dir/''/1st+Floor,+Pride+Icon,+Office+No,+102,103,+Nexus+Work+Spaces,+Mundhwa+-+Kharadi+Rd,+above+Athithi+Restaurant,+Kharadi,+Pune,+Maharashtra+411014/@18.5437685,73.9317181,1168m/data=!3m1!1e3!4m13!4m12!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D"
                 className="w-full h-full min-w-[320px] min-h-[350px] sm:min-w-[400px] sm:min-h-[400px] lg:w-[40vw] lg:h-[60vh]"
                 containerClassName="w-full h-full"
                 imageUrl="/mapdark.png"
@@ -596,7 +511,6 @@ export default function ContactPage() {
                   <div className="text-base !m-0 !p-0 font-normal">
                     <span className="text-slate-200 text-sm">
                       <br />
-
                       <br />
                     </span>
                   </div>
@@ -607,7 +521,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
 
-        {/* Contact Information */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

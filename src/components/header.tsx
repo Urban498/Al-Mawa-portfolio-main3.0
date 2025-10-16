@@ -223,6 +223,16 @@ export const NavBar = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Close mobile menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -313,13 +323,13 @@ export const NavBar = () => {
                       className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
                      group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
                     >
-                      <div className="bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide">
+                      <div className="bg-white border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide">
                         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                           {service.items.map((item, itemIndex) => (
                             <div key={itemIndex} className="space-y-4">
                               <Link
                                 href={item.href}
-                                className="block text-sm font-semibold text-black hover:text-blue-600 transition-colors duration-200 pb-2"
+                                className="block text-lg font-semibold text-black  transition-colors duration-200 pb-2"
                               >
                                 {item.name}
                               </Link>
@@ -328,7 +338,7 @@ export const NavBar = () => {
                                   <Link
                                     key={subIndex}
                                     href={subItem.href}
-                                    className="block text-xs text-gray-700 hover:text-blue-600 transition-colors duration-200 py-1.5 leading-relaxed"
+                                    className="block text-xs text-gray-700 hover:bg-[#0ea5e9]/15 rounded-xl pl-2 transition-colors duration-200 py-1.5 leading-relaxed"
                                   >
                                     {subItem.name}
                                   </Link>
