@@ -3,26 +3,49 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Search, 
-  MapPin, 
-  Clock, 
+import {
+  Search,
+  MapPin,
+  Clock,
   DollarSign,
   Heart,
   Award,
   ChevronRight,
   Building2,
-  Briefcase
+  Briefcase,
 } from "lucide-react";
 // Shadcn UI Components
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Inter, Playfair_Display } from "next/font/google";
 import { submitJobApplication } from "@/lib/formServices";
@@ -48,13 +71,14 @@ const benefits = [
   {
     icon: <Heart className="w-8 h-8" />,
     title: "Innovative Work Environment",
-    description: "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning."
-
+    description:
+      "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning.",
   },
   {
     icon: <DollarSign className="w-8 h-8" />,
     title: "Career Growth & Development",
-    description: "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape"
+    description:
+      "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape",
   },
   // {
   //   icon: <Laptop className="w-8 h-8" />,
@@ -74,32 +98,38 @@ const benefits = [
   {
     icon: <Award className="w-8 h-8" />,
     title: "Empowerment & Impact",
-    description: "Contribute to meaningful projects that drive real business results and make a tangible difference"
-  }
+    description:
+      "Contribute to meaningful projects that drive real business results and make a tangible difference",
+  },
 ];
 
 // FAQ data
 const faqs = [
   {
     question: "What is the interview process like?",
-    answer: "Our interview process typically consists of an initial phone screening, technical assessment (for technical roles), and 2-3 rounds of interviews with team members and leadership. The entire process usually takes 1-2 weeks."
+    answer:
+      "Our interview process typically consists of an initial phone screening, technical assessment (for technical roles), and 2-3 rounds of interviews with team members and leadership. The entire process usually takes 2 to 4 days.",
   },
   {
     question: "Do you offer remote work opportunities?",
-    answer: "Yes! We offer fully remote positions as well as hybrid arrangements. Many of our team members work remotely, and we have the tools and culture to support distributed teams effectively."
+    answer:
+      "Yes! We offer fully remote positions as well as hybrid arrangements. Many of our team members work remotely, and we have the tools and culture to support distributed teams effectively.",
   },
   {
     question: "What benefits do you provide?",
-    answer: "We offer comprehensive benefits including health insurance, unlimited PTO, equity participation, learning stipends, home office allowances, and much more. Check out our benefits section above for details."
+    answer:
+      "We believe in helping our team grow through continuous learning. We offer opportunities to explore new skills, gain hands-on experience, and enhance your expertise all while providing a competitive salary, dedicated training hours for learning new skills, and refreshing tea breaks to keep you energized throughout the day.",
   },
   {
     question: "How do you support career growth?",
-    answer: "We believe in investing in our people. We provide mentorship programs, annual learning budgets, conference attendance, internal mobility opportunities, and regular career development conversations."
+    answer:
+      "We believe in investing in our people. We provide mentorship programs, conference attendance, internal mobility opportunities, and regular career development conversations.",
   },
   {
     question: "What is the company culture like?",
-    answer: "Our culture is built on collaboration, innovation, and respect. We value diverse perspectives, encourage open communication, and maintain a healthy work-life balance while building amazing products."
-  }
+    answer:
+      "Our culture is built on collaboration, innovation, and respect. We value diverse perspectives, encourage open communication, and maintain a healthy work-life balance while building amazing products.",
+  },
 ];
 
 export default function CareersPage() {
@@ -116,31 +146,36 @@ export default function CareersPage() {
     phoneNumber: "",
     yearOfExperience: "",
     coverLetter: "",
-    resume: null as File | null
+    resume: null as File | null,
   });
-  const [jobs, setJobs] = useState<Job[]>([])
-const getData = async() => {
-  try {
-    const response = await axios.get("/api/jobs")
-    console.log(response.data?.data)
-    setJobs(response.data?.data)
-  } catch (error) {
-    console.log(error)
-  }
-}
-useEffect(() => {
-  getData()
-}, [])
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const getData = async () => {
+    try {
+      const response = await axios.get("/api/jobs");
+      console.log(response.data?.data);
+      setJobs(response.data?.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   // Filter jobs based on search and filters
-  const filteredJobs = jobs?.filter(job => {
-    const matchesSearch = job?.jobTitle?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         job?.jobDescription?.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesDepartment = selectedDepartment === "all" || job?.jobDepartment === selectedDepartment;
-    
+  const filteredJobs = jobs?.filter((job) => {
+    const matchesSearch =
+      job?.jobTitle?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.jobDescription?.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesDepartment =
+      selectedDepartment === "all" || job?.jobDepartment === selectedDepartment;
+
     return matchesSearch && matchesDepartment;
   });
 
-  const departments = ["all", ...Array.from(new Set(jobs.map((job: Job) => job.jobDepartment)))];
+  const departments = [
+    "all",
+    ...Array.from(new Set(jobs.map((job: Job) => job.jobDepartment))),
+  ];
 
   const handleApplyNow = (job: Job) => {
     setSelectedJob(job);
@@ -148,33 +183,35 @@ useEffect(() => {
   };
 
   const toggleJobExpansion = (jobId: string) => {
-    setExpandedJobs(prev => 
-      prev.includes(jobId) 
-        ? prev.filter(id => id !== jobId)
+    setExpandedJobs((prev) =>
+      prev.includes(jobId)
+        ? prev.filter((id) => id !== jobId)
         : [...prev, jobId]
     );
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSelectChange = (value: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      yearOfExperience: value
+      yearOfExperience: value,
     }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      resume: file
+      resume: file,
     }));
   };
 
@@ -184,25 +221,25 @@ useEffect(() => {
 
     try {
       console.log("📤 Submitting job application:", formData);
-      
+
       // Create FormData for file upload
       const submitFormData = new FormData();
-      submitFormData.append('firstName', formData.firstName);
-      submitFormData.append('lastName', formData.lastName);
-      submitFormData.append('emailAddress', formData.emailAddress);
-      submitFormData.append('phoneNumber', formData.phoneNumber);
-      submitFormData.append('yearOfExperience', formData.yearOfExperience);
-      submitFormData.append('coverLetter', formData.coverLetter);
-      
+      submitFormData.append("firstName", formData.firstName);
+      submitFormData.append("lastName", formData.lastName);
+      submitFormData.append("emailAddress", formData.emailAddress);
+      submitFormData.append("phoneNumber", formData.phoneNumber);
+      submitFormData.append("yearOfExperience", formData.yearOfExperience);
+      submitFormData.append("coverLetter", formData.coverLetter);
+
       if (formData.resume) {
-        submitFormData.append('resume', formData.resume);
+        submitFormData.append("resume", formData.resume);
       }
 
       const result = await submitJobApplication(submitFormData);
-      
+
       console.log("✅ Job application submitted successfully:", result);
-      
-      toast.success('Application submitted successfully!', {
+
+      toast.success("Application submitted successfully!", {
         description: `Your application for ${selectedJob?.jobTitle} has been received. We'll review it and get back to you soon.`,
       });
 
@@ -214,16 +251,18 @@ useEffect(() => {
         phoneNumber: "",
         yearOfExperience: "",
         coverLetter: "",
-        resume: null
+        resume: null,
       });
       setIsApplicationOpen(false);
       setSelectedJob(null);
-
     } catch (error: unknown) {
       console.error("❌ Job application error:", error);
-      
-      toast.error('Failed to submit application', {
-        description: error instanceof Error ? error.message : 'Please check your information and try again.',
+
+      toast.error("Failed to submit application", {
+        description:
+          error instanceof Error
+            ? error.message
+            : "Please check your information and try again.",
       });
     } finally {
       setLoading(false);
@@ -233,7 +272,9 @@ useEffect(() => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card">
       {/* SEO H1 Tag */}
-      <h1 className="sr-only">Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs</h1>
+      <h1 className="sr-only">
+        Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs
+      </h1>
       {/* Hero Section */}
       <section className="relative py-12 px-4 overflow-hidden">
         {/* Background Effects */}
@@ -293,10 +334,14 @@ useEffect(() => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className={`text-2xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className} `}>
+            <h2
+              className={`text-2xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className} `}
+            >
               Open Positions
             </h2>
-            <p className={`text-lg max-w-4xl mx-auto text-black ${playfair_display.className}`}>
+            <p
+              className={`text-lg max-w-4xl mx-auto text-black ${playfair_display.className}`}
+            >
               Discover opportunities that match your skills and passion
             </p>
           </motion.div>
@@ -317,13 +362,20 @@ useEffect(() => {
                 className="pl-10 bg-background/50 border-border text-black placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
               />
             </div>
-            <Select value={selectedDepartment} onValueChange={setSelectedDepartment}>
+            <Select
+              value={selectedDepartment}
+              onValueChange={setSelectedDepartment}
+            >
               <SelectTrigger className="w-full md:w-48 bg-background/50 border-border text-black">
                 <SelectValue placeholder="Department" />
               </SelectTrigger>
               <SelectContent className="bg-background border-border text-black">
-                {departments.map(dept => (
-                  <SelectItem key={dept} value={dept} className="text-black hover:bg-muted">
+                {departments.map((dept) => (
+                  <SelectItem
+                    key={dept}
+                    value={dept}
+                    className="text-black hover:bg-muted"
+                  >
                     {dept === "all" ? "All Departments" : dept}
                   </SelectItem>
                 ))}
@@ -349,80 +401,125 @@ useEffect(() => {
                   <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
-                        <CardTitle className={`text-xl font-bold text-black transition-colors uppercase ${inter.className}`}>
+                        <CardTitle
+                          className={`text-xl font-bold text-black transition-colors uppercase ${inter.className}`}
+                        >
                           {job.jobTitle}
                         </CardTitle>
                         <CardDescription className={`text-black mt-2 `}>
-                          <div 
+                          <div
                             className="cursor-pointer hover:text-black transition-colors"
-                            onClick={() => toggleJobExpansion(job._id || index.toString())}
+                            onClick={() =>
+                              toggleJobExpansion(job._id || index.toString())
+                            }
                           >
                             {job.jobDescription}
                             <span className="text-black ml-2 text-sm font-medium underline">
-                              {expandedJobs.includes(job._id || index.toString()) ? "Show less" : "Show more"}
+                              {expandedJobs.includes(
+                                job._id || index.toString()
+                              )
+                                ? "Show less"
+                                : "Show more"}
                             </span>
                           </div>
-                          
+
                           <AnimatePresence mode="wait">
-                            {expandedJobs.includes(job._id || index.toString()) && (
+                            {expandedJobs.includes(
+                              job._id || index.toString()
+                            ) && (
                               <motion.div
                                 key={`job-details-${job._id || index}`}
-                                initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                                animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+                                initial={{
+                                  opacity: 0,
+                                  height: 0,
+                                  marginTop: 0,
+                                }}
+                                animate={{
+                                  opacity: 1,
+                                  height: "auto",
+                                  marginTop: 16,
+                                }}
                                 exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                                transition={{ 
-                                  duration: 0.4, 
+                                transition={{
+                                  duration: 0.4,
                                   ease: "easeInOut",
                                   height: { duration: 0.4 },
-                                  opacity: { duration: 0.3 }
+                                  opacity: { duration: 0.3 },
                                 }}
                                 className="space-y-3 overflow-hidden"
                               >
-                              <div>
-                                <h4 className="font-semibold text-foreground mb-2">Key Requirements:</h4>
-                                <ul className="list-disc list-inside space-y-1 text-sm">
-                                  {job.jobkeySkills.map((req, index) => (
-                                    <li key={index} className="text-muted-foreground">{req}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                              
-                              <div>
-                                <h4 className="font-semibold text-foreground mb-2">Job Details:</h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                                  <div className="flex items-center gap-2">
-                                    <Building2 className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Department: {job.jobDepartment || "Not specified"}</span>
-                                  </div>
-                                  <div className="flex items-center gap-2">
-                                    <MapPin className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Location: Pune, India</span>
-                                  </div>
-                                  <div className="flex items-center gap-2">
-                                    <Briefcase className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Type: {job.jobType || "Full-time"}</span>
-                                  </div>
-                                  <div className="flex items-center gap-2">
-                                    <DollarSign className="w-4 h-4 text-primary" />
-                                    <span className="text-muted-foreground">Salary: Competitive</span>
+                                <div>
+                                  <h4 className="font-semibold text-foreground mb-2">
+                                    Key Requirements:
+                                  </h4>
+                                  <ul className="list-disc list-inside space-y-1 text-sm">
+                                    {job.jobkeySkills.map((req, index) => (
+                                      <li
+                                        key={index}
+                                        className="text-muted-foreground"
+                                      >
+                                        {req}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+
+                                <div>
+                                  <h4 className="font-semibold text-foreground mb-2">
+                                    Job Details:
+                                  </h4>
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                                    <div className="flex items-center gap-2">
+                                      <Building2 className="w-4 h-4 text-primary" />
+                                      <span className="text-muted-foreground">
+                                        Department:{" "}
+                                        {job.jobDepartment || "Not specified"}
+                                      </span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      <MapPin className="w-4 h-4 text-primary" />
+                                      <span className="text-muted-foreground">
+                                        Location: Pune, India
+                                      </span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      <Briefcase className="w-4 h-4 text-primary" />
+                                      <span className="text-muted-foreground">
+                                        Type: {job.jobType || "Full-time"}
+                                      </span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      <DollarSign className="w-4 h-4 text-primary" />
+                                      <span className="text-muted-foreground">
+                                        Salary: Competitive
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
                               </motion.div>
                             )}
                           </AnimatePresence>
                         </CardDescription>
                       </div>
                       <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="bg-muted text-muted-foreground">
+                        <Badge
+                          variant="secondary"
+                          className="bg-muted text-muted-foreground"
+                        >
                           <Building2 className="w-3 h-3 mr-1" />
                           {job.jobDepartment}
                         </Badge>
-                        <Badge variant="secondary" className="bg-muted text-muted-foreground">
+                        <Badge
+                          variant="secondary"
+                          className="bg-muted text-muted-foreground"
+                        >
                           <MapPin className="w-3 h-3 mr-1" />
                           Pune, India
                         </Badge>
-                        <Badge variant="secondary" className="bg-muted text-muted-foreground">
+                        <Badge
+                          variant="secondary"
+                          className="bg-muted text-muted-foreground"
+                        >
                           <Briefcase className="w-3 h-3 mr-1" />
                           {job.jobType}
                         </Badge>
@@ -441,7 +538,7 @@ useEffect(() => {
                           Recently posted
                         </span>
                       </div>
-                      <Button 
+                      <Button
                         onClick={() => handleApplyNow(job)}
                         className="hover:bg-[#cfff32] bg-white border-2 transition-all duration-300 cursor-pointer border-[#cfff32] text-black "
                       >
@@ -461,7 +558,9 @@ useEffect(() => {
               animate={{ opacity: 1 }}
               className="text-center py-12"
             >
-              <p className="text-muted-foreground text-lg">No jobs found matching your criteria.</p>
+              <p className="text-muted-foreground text-lg">
+                No jobs found matching your criteria.
+              </p>
             </motion.div>
           )}
         </div>
@@ -476,11 +575,16 @@ useEffect(() => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
+            >
               why work with us
             </h2>
-            <p className={`text-black text-lg max-w-2xl mx-auto ${playfair_display.className}`}>
-              We believe in taking care of our team with comprehensive benefits and perks
+            <p
+              className={`text-black text-lg max-w-2xl mx-auto ${playfair_display.className}`}
+            >
+              We believe in taking care of our team with comprehensive benefits
+              and perks
             </p>
           </motion.div>
 
@@ -495,13 +599,15 @@ useEffect(() => {
               >
                 <Card className="border border-border/50 bg-card/40 backdrop-blur-xl hover:bg-card/60 transition-all duration-300 h-full group">
                   <CardContent className="p-6 text-center">
-                    <motion.div 
+                    <motion.div
                       className="inline-flex p-4 rounded-xl bg-[#0ea5e9] text-white mb-4 group-hover:scale-110 transition-transform duration-300"
                       whileHover={{ rotate: 5 }}
                     >
                       {benefit.icon}
                     </motion.div>
-                    <h3 className= {`font-bold text-lg text-black transition-colors mb-2 uppercase ${inter.className}`}>
+                    <h3
+                      className={`font-bold text-lg text-black transition-colors mb-2 uppercase ${inter.className}`}
+                    >
                       {benefit.title}
                     </h3>
                     <p className="text-black text-sm leading-relaxed">
@@ -524,10 +630,14 @@ useEffect(() => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}>
+            <h2
+              className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
+            >
               Frequently Asked Questions
             </h2>
-            <p className={`text-black text-xl max-w-2xl mx-auto ${playfair_display.className}`}>
+            <p
+              className={`text-black text-xl max-w-2xl mx-auto ${playfair_display.className}`}
+            >
               Got questions? We&apos;ve got answers.
             </p>
           </motion.div>
@@ -539,8 +649,8 @@ useEffect(() => {
           >
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="border border-border/50 bg-card/40 backdrop-blur-xl rounded-lg px-6 "
                 >
@@ -561,56 +671,67 @@ useEffect(() => {
       <Dialog open={isApplicationOpen} onOpenChange={setIsApplicationOpen}>
         <DialogContent className="bg-background border-border text-foreground max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className={`text-2xl font-bold text-black ${inter.className} uppercase`}>
+            <DialogTitle
+              className={`text-2xl font-bold text-black ${inter.className} uppercase`}
+            >
               Apply for {selectedJob?.jobTitle}
             </DialogTitle>
             <DialogDescription className="text-muted-foreground">
-              Fill out the form below to submit your application. We&apos;ll get back to you within 48 hours.
+              Fill out the form below to submit your application. We&apos;ll get
+              back to you within 48 hours.
             </DialogDescription>
           </DialogHeader>
-          
+
           <form onSubmit={handleApplicationSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="firstName" className="text-foreground mb-2">First Name</Label>
-                <Input 
+                <Label htmlFor="firstName" className="text-foreground mb-2">
+                  First Name
+                </Label>
+                <Input
                   id="firstName"
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  required 
+                  required
                   className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
                 />
               </div>
               <div>
-                <Label htmlFor="lastName" className="text-foreground mb-2">Last Name</Label>
-                <Input 
+                <Label htmlFor="lastName" className="text-foreground mb-2">
+                  Last Name
+                </Label>
+                <Input
                   id="lastName"
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  required 
+                  required
                   className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
                 />
               </div>
             </div>
-            
+
             <div>
-              <Label htmlFor="email" className="text-foreground mb-2">Email Address</Label>
-              <Input 
+              <Label htmlFor="email" className="text-foreground mb-2">
+                Email Address
+              </Label>
+              <Input
                 id="email"
                 name="emailAddress"
                 type="email"
                 value={formData.emailAddress}
                 onChange={handleInputChange}
-                required 
+                required
                 className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
               />
             </div>
-            
+
             <div>
-              <Label htmlFor="phone" className="text-foreground mb-2">Phone Number</Label>
-              <Input 
+              <Label htmlFor="phone" className="text-foreground mb-2">
+                Phone Number
+              </Label>
+              <Input
                 id="phone"
                 name="phoneNumber"
                 type="tel"
@@ -619,10 +740,15 @@ useEffect(() => {
                 className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
               />
             </div>
-            
+
             <div>
-              <Label htmlFor="experience" className="text-foreground mb-2">Years of Experience</Label>
-              <Select value={formData.yearOfExperience} onValueChange={handleSelectChange}>
+              <Label htmlFor="experience" className="text-foreground mb-2">
+                Years of Experience
+              </Label>
+              <Select
+                value={formData.yearOfExperience}
+                onValueChange={handleSelectChange}
+              >
                 <SelectTrigger className="bg-background/50 border-border text-foreground">
                   <SelectValue placeholder="Select experience level" />
                 </SelectTrigger>
@@ -635,49 +761,53 @@ useEffect(() => {
                 </SelectContent>
               </Select>
             </div>
-            
+
             <div>
-              <Label htmlFor="coverLetter" className="text-foreground mb-2">Cover Letter</Label>
-              <Textarea 
+              <Label htmlFor="coverLetter" className="text-foreground mb-2">
+                Cover Letter
+              </Label>
+              <Textarea
                 id="coverLetter"
                 name="coverLetter"
                 rows={6}
                 placeholder="Tell us why you're interested in this role and what makes you a great fit..."
                 value={formData.coverLetter}
                 onChange={handleInputChange}
-                required 
+                required
                 className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 resize-none"
               />
             </div>
-            
+
             <div>
-              <Label htmlFor="resume" className="text-foreground mb-2">Resume/CV</Label>
-              <Input 
+              <Label htmlFor="resume" className="text-foreground mb-2">
+                Resume/CV
+              </Label>
+              <Input
                 id="resume"
                 name="resume"
-                type="file" 
+                type="file"
                 accept=".pdf,.doc,.docx"
                 onChange={handleFileChange}
-                required 
+                required
                 className="bg-background/50 border-border text-foreground file:bg-gray-200 cursor-pointer file:text-blue-400 file:border-0 file:rounded-md file:px-3 file:py-1 file:mr-3"
               />
             </div>
-            
+
             <div className="flex gap-4 pt-4">
-              <Button 
-                type="button" 
-                variant="outline" 
+              <Button
+                type="button"
+                variant="outline"
                 onClick={() => setIsApplicationOpen(false)}
                 className="flex-1 border-border text-black "
               >
                 Cancel
               </Button>
-              <Button 
+              <Button
                 type="submit"
                 disabled={loading}
                 className="flex-1 bg-black text-white hover:bg-black/50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? 'Submitting...' : 'Submit Application'}
+                {loading ? "Submitting..." : "Submit Application"}
               </Button>
             </div>
           </form>
