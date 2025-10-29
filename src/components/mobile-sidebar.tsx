@@ -5,22 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface MenuItem {
-  name: string;
-  href: string;
-}
-
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useTranslations } from 'next-intl';
 
 interface MobileSidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const menuItems: MenuItem[] = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-];
 
 const servicesData = [
   {
@@ -224,6 +215,7 @@ const servicesData = [
 ];
 
 export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
+  const t = useTranslations('nav');
   const [expandedServices, setExpandedServices] = useState<number[]>([]);
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
@@ -335,17 +327,24 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
           <div className="flex-1 overflow-y-auto p-6">
             <ul className="space-y-6" style={{ opacity: isOpen ? 1 : 0, transition: isInitialized ? 'opacity 200ms ease-in-out' : 'none' }}>
               {/* Main Menu Items */}
-              {menuItems.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={item.href}
-                    onClick={handleLinkClick}
-                    className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/"
+                  onClick={handleLinkClick}
+                  className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
+                >
+                  {t('home')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  onClick={handleLinkClick}
+                  className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
+                >
+                  {t('about')}
+                </Link>
+              </li>
 
               {/* Services Section */}
               <li className="pt-6">
@@ -353,7 +352,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                   onClick={openServicesMenu}
                   className="flex items-center justify-between w-full text-black text-xl  hover:text-gray-600 transition-colors duration-300"
                 >
-                  <span className="text-left">Our Services</span>
+                  <span className="text-left">{t('services')}</span>
                   <ChevronDown className="w-6 h-6 transition-transform duration-200 -rotate-90" />
                 </button>
               </li>
@@ -365,21 +364,22 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                   onClick={handleLinkClick}
                   className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
                 >
-                  Careers
+                  {t('careers')}
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Sidebar Footer */}
-          <div className="p-6 border-t" style={{ opacity: isOpen ? 1 : 0, transition: isInitialized ? 'opacity 200ms ease-in-out 100ms' : 'none' }}>
+          <div className="p-6 border-t space-y-4" style={{ opacity: isOpen ? 1 : 0, transition: isInitialized ? 'opacity 200ms ease-in-out 100ms' : 'none' }}>
+            <LanguageSwitcher variant="mobile" />
             <Button
               asChild
               size="lg"
               className="w-full animated-border-button text-lg"
             >
               <Link href="/contact" onClick={handleLinkClick}>
-                Contact US
+                {t('contact')}
               </Link>
             </Button>
           </div>

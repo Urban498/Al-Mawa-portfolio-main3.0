@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ContainerTextFlip } from "./container-text-flip";
 import { Inter, Playfair_Display } from "next/font/google";
+import { useTranslations } from 'next-intl';
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
@@ -76,11 +77,13 @@ export const GoogleGeminiEffect = ({
 }: {
   className?: string;
 }) => {
+  const t = useTranslations('hero');
+  
   return (
     <div className={cn("mt-16 sm:mt-20 md:mt-28 lg:mt-24", className)}>
       <p className="text-3xl md:text-7xl font-bold text-center text-black w-full">
         <ShimmerText
-          text="TRY. TRUST. TRANSFORM."
+          text={t('tryTrustTransform')}
           className={`text-5xl md:text-9xl font-medium w-full ${inter.className}`}
           speed="slow"
           color="#0ea5e9"
@@ -90,15 +93,14 @@ export const GoogleGeminiEffect = ({
       <div
         className={`relative group text-3xl md:text-5xl text-center text-black ${playfair_display.className}`}
       >
-        Empowering Businesses, Transforming{" "}
-        {<ContainerTextFlip words={["Now.", "Tomorrow.", "Future."]} />}
+        {t('empoweringBusinesses')}{" "}
+        {<ContainerTextFlip words={[t('now'), t('tomorrow'), t('future')]} />}
       </div>
 
       <p
         className={`text-md md:text-xl mb-20 font-normal text-center text-black mt-4 w-[80%] max-w-lg mx-auto tracking-wide ${playfair_display.className}`}
       >
-        &ldquo;Curating digital experience and conveying digital solutions for
-        brighter future.&rdquo;
+        &ldquo;{t('tagline')}&rdquo;
       </p>
 
       <div className="flex justify-center items-center w-full mb-16 sm:mb-12 md:-mb-2 lg:-mb-0 -mt-16">

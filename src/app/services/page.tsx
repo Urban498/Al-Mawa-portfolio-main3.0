@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -22,29 +23,30 @@ interface Service {
   color: string;
 }
 
-const services: Service[] = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getServices = (t: any): Service[] => [
   {
     id: "uiux",
-    title: "UI/UX Design",
-    description: "Creating intuitive and visually stunning user experiences that engage and convert.",
+    title: t('uiux.title') as string,
+    description: t('uiux.description') as string,
     icon: <Palette className="w-8 h-8" />,
-    features: ["User Research", "Wireframing", "Prototyping", "Visual Design"],
+    features: t.raw('uiux.features') as string[],
     color: "from-purple-500 to-pink-500"
   },
   {
     id: "development",
-    title: "Software Development",
-    description: "Building robust, scalable applications with cutting-edge technologies and best practices.",
+    title: t('development.title') as string,
+    description: t('development.description') as string,
     icon: <Code className="w-8 h-8" />,
-    features: ["Web Applications", "Mobile Apps", "API Development", "Database Design"],
+    features: t.raw('development.features') as string[],
     color: "from-blue-500 to-cyan-500"
   },
   {
     id: "marketing",
-    title: "Digital Marketing",
-    description: "Driving growth through strategic digital marketing campaigns and data-driven insights.",
+    title: t('marketing.title') as string,
+    description: t('marketing.description') as string,
     icon: <Megaphone className="w-8 h-8" />,
-    features: ["SEO Optimization", "Social Media", "Content Strategy", "Analytics"],
+    features: t.raw('marketing.features') as string[],
     color: "from-green-500 to-emerald-500"
   },
 ];
@@ -78,6 +80,9 @@ const cardVariants = {
 };
 
 export default function ServicesPage() {
+  const t = useTranslations('servicesPage');
+  const services = getServices(t);
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card bg-white">
       <div className="container mx-auto px-4 py-16 bg-white">
@@ -89,10 +94,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-6xl font-bold pb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}>
-            Web Development Services Pune - Al Mawa International
+            {t('title')}
           </h1>
           <p className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto uppercase ${inter.className}`}>
-            We offer comprehensive digital solutions to help your business thrive in the modern world
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -141,7 +146,7 @@ export default function ServicesPage() {
                     size="sm"
                     className="animated-border-button w-full cursor-pointer hover:text-white"
                   >
-                   Learn More
+                   {t('learnMore')}
                   </Button>
                 </CardContent>
               </Card>
@@ -157,10 +162,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-muted-foreground mb-6 text-lg">
-            Ready to transform your business with our expertise?
+            {t('ctaText')}
           </p>
           <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground">
-            Get Started Today
+            {t('ctaButton')}
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </motion.div>

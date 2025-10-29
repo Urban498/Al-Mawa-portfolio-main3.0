@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,179 +43,173 @@ const staggerContainer = {
   },
 };
 
-const services = [
+const getServices = (t: (key: string) => string) => [
   {
     icon: Palette,
-    title: "Brand Identity Design",
-    description:
-      "Complete brand identity systems including logos, color palettes, and brand guidelines",
+    title: t('services.brandIdentity.title') as string,
+    description: t('services.brandIdentity.description') as string,
     features: [
-      "Logo Design",
-      "Brand Guidelines",
-      "Color Schemes",
-      "Typography Selection",
+      t('services.brandIdentity.feature1') as string,
+      t('services.brandIdentity.feature2') as string,
+      t('services.brandIdentity.feature3') as string,
+      t('services.brandIdentity.feature4') as string,
     ],
   },
   {
     icon: Megaphone,
-    title: "Marketing & Promotional Design",
-    description:
-      "Eye-catching marketing materials that drive engagement and boost conversions",
+    title: t('services.marketing.title') as string,
+    description: t('services.marketing.description') as string,
     features: [
-      "Flyers & Brochures",
-      "Banners & Posters",
-      "Advertisement Design",
-      "Promotional Graphics",
+      t('services.marketing.feature1') as string,
+      t('services.marketing.feature2') as string,
+      t('services.marketing.feature3') as string,
+      t('services.marketing.feature4') as string,
     ],
   },
   {
     icon: Share2,
-    title: "Digital & Social Media Design",
-    description:
-      "Engaging digital graphics optimized for social media platforms and online presence",
+    title: t('services.digitalSocial.title') as string,
+    description: t('services.digitalSocial.description') as string,
     features: [
-      "Social Media Posts",
-      "Cover Images",
-      "Digital Ads",
-      "Web Graphics",
+      t('services.digitalSocial.feature1') as string,
+      t('services.digitalSocial.feature2') as string,
+      t('services.digitalSocial.feature3') as string,
+      t('services.digitalSocial.feature4') as string,
     ],
   },
   {
     icon: Monitor,
-    title: "UI/UX & Web Graphics",
-    description:
-      "User-friendly interface designs and web graphics that enhance user experience",
+    title: t('services.uiux.title') as string,
+    description: t('services.uiux.description') as string,
     features: [
-      "Website Graphics",
-      "UI Elements",
-      "Icons & Illustrations",
-      "User Interface Design",
+      t('services.uiux.feature1') as string,
+      t('services.uiux.feature2') as string,
+      t('services.uiux.feature3') as string,
+      t('services.uiux.feature4') as string,
     ],
   },
   {
     icon: Building,
-    title: "Corporate & Office Branding",
-    description:
-      "Professional corporate identity and office branding solutions for businesses",
+    title: t('services.corporate.title') as string,
+    description: t('services.corporate.description') as string,
     features: [
-      "Business Cards",
-      "Letterheads",
-      "Office Signage",
-      "Corporate Presentations",
+      t('services.corporate.feature1') as string,
+      t('services.corporate.feature2') as string,
+      t('services.corporate.feature3') as string,
+      t('services.corporate.feature4') as string,
     ],
   },
   {
     icon: Play,
-    title: "Motion Graphics & Multimedia Design",
-    description:
-      "Dynamic motion graphics and multimedia content for engaging visual storytelling",
+    title: t('services.motion.title') as string,
+    description: t('services.motion.description') as string,
     features: [
-      "Animated Graphics",
-      "Video Graphics",
-      "GIF Creation",
-      "Interactive Media",
+      t('services.motion.feature1') as string,
+      t('services.motion.feature2') as string,
+      t('services.motion.feature3') as string,
+      t('services.motion.feature4') as string,
     ],
   },
   {
     icon: Brush,
-    title: "Illustration & Creative Art",
-    description:
-      "Custom illustrations and creative artwork tailored to your brand and message",
+    title: t('services.illustration.title') as string,
+    description: t('services.illustration.description') as string,
     features: [
-      "Custom Illustrations",
-      "Digital Art",
-      "Character Design",
-      "Infographics",
+      t('services.illustration.feature1') as string,
+      t('services.illustration.feature2') as string,
+      t('services.illustration.feature3') as string,
+      t('services.illustration.feature4') as string,
     ],
   },
   {
     icon: FileText,
-    title: "Print & Publishing Design",
-    description:
-      "Professional print design services for books, magazines, and marketing materials",
+    title: t('services.print.title') as string,
+    description: t('services.print.description') as string,
     features: [
-      "Book Design",
-      "Magazine Layout",
-      "Catalog Design",
-      "Print Materials",
+      t('services.print.feature1') as string,
+      t('services.print.feature2') as string,
+      t('services.print.feature3') as string,
+      t('services.print.feature4') as string,
     ],
   },
   {
     icon: Package,
-    title: "Packaging & Product Branding",
-    description:
-      "Attractive packaging design and product branding that stands out on shelves",
+    title: t('services.packaging.title') as string,
+    description: t('services.packaging.description') as string,
     features: [
-      "Product Packaging",
-      "Label Design",
-      "Brand Applications",
-      "Product Graphics",
+      t('services.packaging.feature1') as string,
+      t('services.packaging.feature2') as string,
+      t('services.packaging.feature3') as string,
+      t('services.packaging.feature4') as string,
     ],
   },
   {
     icon: TrendingUp,
-    title: "Emerging Graphic Design Trends",
-    description:
-      "Cutting-edge design approaches using the latest trends and technologies",
+    title: t('services.emerging.title') as string,
+    description: t('services.emerging.description') as string,
     features: [
-      "Modern Design Trends",
-      "3D Graphics",
-      "AR/VR Graphics",
-      "Interactive Design",
+      t('services.emerging.feature1') as string,
+      t('services.emerging.feature2') as string,
+      t('services.emerging.feature3') as string,
+      t('services.emerging.feature4') as string,
     ],
   },
   {
     icon: CheckCircle,
-    title: "Benefits of Branding & Graphic Design Services",
-    description:
-      "Key advantages of professional branding and graphic design for business success",
+    title: t('services.benefits.title') as string,
+    description: t('services.benefits.description') as string,
     features: [
-      "Brand Recognition",
-      "Professional Image",
-      "Marketing Effectiveness",
-      "Customer Trust",
+      t('services.benefits.feature1') as string,
+      t('services.benefits.feature2') as string,
+      t('services.benefits.feature3') as string,
+      t('services.benefits.feature4') as string,
     ],
   },
 ];
 
-const benefits = [
-  "Professional brand image that builds trust and credibility",
-  "Consistent visual identity across all marketing materials",
-  "Increased brand recognition and customer recall",
-  "Higher engagement rates with visually appealing content",
-  "Cost-effective design solutions for all business sizes",
-  "Fast turnaround times without compromising quality",
-  "Scalable designs that work across different platforms",
-  "Expert guidance on design trends and best practices",
-  "Custom solutions tailored to your specific needs",
-  "Ongoing design support and revisions included",
+const getBenefits = (t: (key: string) => string) => [
+  t('benefit1') as string,
+  t('benefit2') as string,
+  t('benefit3') as string,
+  t('benefit4') as string,
+  t('benefit5') as string,
+  t('benefit6') as string,
+  t('benefit7') as string,
+  t('benefit8') as string,
+  t('benefit9') as string,
+  t('benefit10') as string,
 ];
 
-const designStats = [
+const getDesignStats = (t: (key: string) => string) => [
   {
-    metric: "94%",
-    description: "First impressions are design-related",
+    metric: t('stats.firstImpressions.metric') as string,
+    description: t('stats.firstImpressions.description') as string,
     icon: Palette,
   },
   {
-    metric: "3x",
-    description: "More likely to share visual content",
+    metric: t('stats.visualContent.metric') as string,
+    description: t('stats.visualContent.description') as string,
     icon: Share2,
   },
   {
-    metric: "65%",
-    description: "Of people are visual learners",
+    metric: t('stats.visualLearners.metric') as string,
+    description: t('stats.visualLearners.description') as string,
     icon: Monitor,
   },
   {
-    metric: "80%",
-    description: "Brand recognition increase with color",
+    metric: t('stats.brandRecognition.metric') as string,
+    description: t('stats.brandRecognition.description') as string,
     icon: TrendingUp,
   },
 ];
 
 export default function GraphicDesignPage() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const t = useTranslations('graphicDesignPage');
+  
+  const services = getServices(t);
+  const benefits = getBenefits(t);
+  const designStats = getDesignStats(t);
 
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
@@ -230,16 +225,14 @@ export default function GraphicDesignPage() {
             className={`text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             variants={fadeInUp}
           >
-            Graphic Design
+            {t('title')}
             <br />
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Transform your brand with stunning visual designs that captivate
-            audiences and drive results. From branding to digital graphics, we
-            create designs that make an impact.
+            {t('subtitle')}
           </motion.p>
         </div>
       </motion.section>
@@ -257,7 +250,7 @@ export default function GraphicDesignPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              The Power of Visual Design
+              {t('statsTitle')}
             </h2>
           </motion.div>
 
@@ -300,13 +293,12 @@ export default function GraphicDesignPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Our Graphic Design Services
+              {t('servicesTitle')}
             </h2>
             <p
               className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              Comprehensive design solutions for all your visual communication
-              needs
+              {t('servicesSubtitle')}
             </p>
           </motion.div>
 
@@ -323,7 +315,7 @@ export default function GraphicDesignPage() {
                         variant="secondary"
                         className="bg-[#0ea5e9] text-white"
                       >
-                        Design
+                        {t('serviceBadge')}
                       </Badge>
                     </div>
                     <CardTitle
@@ -357,7 +349,7 @@ export default function GraphicDesignPage() {
                         className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
                         size="sm"
                       >
-                        Enquire
+                        {t('enquireButton')}
                       </Button>
                     </div>
                   </CardContent>
@@ -381,12 +373,12 @@ export default function GraphicDesignPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Benefits of Branding & Graphic Design Services
+              {t('benefitsTitle')}
             </h2>
             <p
               className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              How professional design services can transform your business
+              {t('benefitsSubtitle')}
             </p>
           </motion.div>
 
@@ -419,14 +411,12 @@ export default function GraphicDesignPage() {
           <h2
             className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}
           >
-            Ready to Transform Your Brand?
+            {t('ctaTitle')}
           </h2>
           <p
             className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}
           >
-            Let our creative team bring your vision to life with stunning
-            graphic designs that make an impact. Start your design project today
-            and see the difference professional design can make.
+            {t('ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -434,10 +424,10 @@ export default function GraphicDesignPage() {
               size="lg"
               className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
-              Start Design Project
+              {t('ctaButton')}
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">Learn More About Us</Link>
+              <Link href="/about">{t('learnMoreButton')}</Link>
             </Button>
           </div>
         </div>
@@ -447,7 +437,7 @@ export default function GraphicDesignPage() {
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
-        serviceName="Graphic Design"
+        serviceName={t('title')}
       />
     </div>
   );

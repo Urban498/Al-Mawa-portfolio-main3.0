@@ -1,6 +1,7 @@
 "use client";
 import "../../../app/globals.css";
 import React, { useState } from "react";
+import { useTranslations } from 'next-intl';
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -40,82 +41,78 @@ const staggerContainer = {
   },
 };
 
-const services = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getServices = (t: any) => [
   {
     icon: Globe,
-    title: "Website Designing & Development Services",
-    description: "Complete end-to-end website solutions from concept to deployment with modern design principles",
-    features: ["Custom Design", "Responsive Layout", "Modern UI/UX", "Cross-browser Compatible"]
+    title: t('services.websiteDesignDev.title'),
+    description: t('services.websiteDesignDev.description'),
+    features: t.raw('services.websiteDesignDev.features')
   },
   {
     icon: Code,
-    title: "Website Design Services",
-    description: "Creative and user-focused website designs that convert visitors into customers",
-    features: ["Visual Design", "User Experience", "Brand Integration", "Mobile-first Design"]
+    title: t('services.websiteDesign.title'),
+    description: t('services.websiteDesign.description'),
+    features: t.raw('services.websiteDesign.features')
   },
   {
     icon: Server,
-    title: "Website Development Services",
-    description: "Robust backend development and frontend implementation for scalable websites",
-    features: ["Frontend Development", "Backend Systems", "Database Integration", "API Development"]
+    title: t('services.websiteDevelopment.title'),
+    description: t('services.websiteDevelopment.description'),
+    features: t.raw('services.websiteDevelopment.features')
   },
   {
     icon: ShoppingCart,
-    title: "E-commerce Development",
-    description: "Full-featured online stores with secure payment processing and inventory management",
-    features: ["Shopping Cart", "Payment Gateway", "Inventory Management", "Order Processing"]
+    title: t('services.ecommerce.title'),
+    description: t('services.ecommerce.description'),
+    features: t.raw('services.ecommerce.features')
   },
   {
     icon: Server,
-    title: "Web Hosting & Domain Services",
-    description: "Reliable hosting solutions and domain management for optimal website performance",
-    features: ["Domain Registration", "SSL Certificates", "Cloud Hosting", "24/7 Support"]
+    title: t('services.hosting.title'),
+    description: t('services.hosting.description'),
+    features: t.raw('services.hosting.features')
   },
   {
     icon: Search,
-    title: "SEO & Digital Marketing Integration",
-    description: "Built-in SEO optimization and marketing tools to boost your online presence",
-    features: ["On-page SEO", "Analytics Setup", "Social Integration", "Performance Tracking"]
+    title: t('services.seo.title'),
+    description: t('services.seo.description'),
+    features: t.raw('services.seo.features')
   },
   {
     icon: Shield,
-    title: "Performance & Security Optimization",
-    description: "Advanced security measures and performance optimization for fast, secure websites",
-    features: ["Security Audits", "Speed Optimization", "SSL Implementation", "Backup Solutions"]
+    title: t('services.security.title'),
+    description: t('services.security.description'),
+    features: t.raw('services.security.features')
   },
   {
     icon: Wrench,
-    title: "Website Maintenance & Support",
-    description: "Ongoing maintenance and technical support to keep your website running smoothly",
-    features: ["Regular Updates", "Bug Fixes", "Content Updates", "Technical Support"]
+    title: t('services.maintenance.title'),
+    description: t('services.maintenance.description'),
+    features: t.raw('services.maintenance.features')
   },
   {
     icon: Zap,
-    title: "Emerging Web Technologies",
-    description: "Cutting-edge web technologies and frameworks for future-ready websites",
-    features: ["Progressive Web Apps", "AI Integration", "Modern Frameworks", "Cloud Solutions"]
+    title: t('services.emerging.title'),
+    description: t('services.emerging.description'),
+    features: t.raw('services.emerging.features')
   },
   {
     icon: CheckCircle,
-    title: "Benefits of Website Design & Development Services",
-    description: "Comprehensive advantages of professional website design and development for your business",
-    features: ["Increased Online Presence", "Better User Engagement", "Higher Conversion Rates", "Professional Credibility"]
+    title: t('services.benefits.title'),
+    description: t('services.benefits.description'),
+    features: t.raw('services.benefits.features')
   }
 ];
 
-const benefits = [
-  "Professional web presence that builds trust and credibility",
-  "Responsive design that works perfectly on all devices",
-  "SEO-optimized structure for better search engine rankings",
-  "Fast loading times and optimal performance",
-  "Secure and reliable hosting with regular backups",
-  "Ongoing support and maintenance included",
-  "Scalable solutions that grow with your business",
-  "Integration with modern marketing tools and analytics"
-];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getBenefits = (t: any) => t.raw('benefitsList');
 
 export default function WebDevelopmentPage() {
+  const t = useTranslations('webDevelopmentPage');
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const services = getServices(t);
+  const benefits = getBenefits(t);
 
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
@@ -131,16 +128,14 @@ export default function WebDevelopmentPage() {
             className={`text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             variants={fadeInUp}
           >
-            Web Development
+            {t('title')}
             <br />
-            {/* <span className="text-2xl md:text-3xl lg:text-4xl">Services</span> */}
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-7 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Transform your digital presence with our comprehensive web development services. 
-            From stunning designs to powerful functionality, we create websites that drive results.
+            {t('subtitle')}
           </motion.p>
         </div>
       </motion.section>
@@ -156,7 +151,7 @@ export default function WebDevelopmentPage() {
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-16 -mt-15" variants={fadeInUp}>
             <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
-              Our Web Development Services
+              {t('servicesTitle')}
             </h2>
             
           </motion.div>
@@ -170,7 +165,7 @@ export default function WebDevelopmentPage() {
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <service.icon className="w-6 h-6 text-[#0ea5e9]" />
                       </div>
-                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white">Service</Badge>
+                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white">{t('serviceBadge')}</Badge>
                     </div>
                     <CardTitle className={`text-xl font-semibold text-black ${inter.className}`}>
                       {service.title}
@@ -181,7 +176,7 @@ export default function WebDevelopmentPage() {
                       {service.description}
                     </p>
                     <div className="space-y-2 mb-6 flex-1">
-                      {service.features.map((feature, featureIndex) => (
+                      {service.features.map((feature: string, featureIndex: number) => (
                         <div key={featureIndex} className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-green-500" />
                           <span className="text-sm text-gray-600">{feature}</span>
@@ -196,7 +191,7 @@ export default function WebDevelopmentPage() {
                       className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
                       size="sm"
                     >
-                      Enquire
+                      {t('enquireButton')}
                     </Button>
                   </div>
                 </Card>
@@ -217,15 +212,15 @@ export default function WebDevelopmentPage() {
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}>
-              Benefits of Our Web Development Services
+              {t('benefitsTitle')}
             </h2>
             <p className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}>
-              Why choose our web development solutions for your business
+              {t('benefitsSubtitle')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
+            {benefits.map((benefit: string, index: number) => (
               <motion.div 
                 key={index} 
                 variants={fadeInUp}
@@ -251,11 +246,10 @@ export default function WebDevelopmentPage() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}>
-            Ready to Build Your Website?
+            {t('ctaTitle')}
           </h2>
           <p className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}>
-            Let&apos;s create a powerful web presence that drives your business forward. 
-            Get in touch with our web development experts today.
+            {t('ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -263,11 +257,11 @@ export default function WebDevelopmentPage() {
               size="lg" 
               className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
-              Get Started Today
+              {t('ctaButton')}
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/about">
-                Learn More About Us
+                {t('learnMoreButton')}
               </Link>
             </Button>
           </div>
@@ -278,7 +272,7 @@ export default function WebDevelopmentPage() {
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
-        serviceName="Web Development"
+        serviceName={t('title')}
       />
     </div>
   );

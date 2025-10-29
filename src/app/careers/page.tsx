@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
@@ -50,6 +52,7 @@ import { Badge } from "@/components/ui/badge";
 import { Inter, Playfair_Display } from "next/font/google";
 import { submitJobApplication } from "@/lib/formServices";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 // Job interface based on API schema
 interface Job {
@@ -66,73 +69,51 @@ const playfair_display = Playfair_Display({
   variable: "--font-playfair",
 });
 
-// Benefits data
-const benefits = [
-  {
-    icon: <Heart className="w-8 h-8" />,
-    title: "Innovative Work Environment",
-    description:
-      "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning.",
-  },
-  {
-    icon: <DollarSign className="w-8 h-8" />,
-    title: "Career Growth & Development",
-    description:
-      "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape",
-  },
-  // {
-  //   icon: <Laptop className="w-8 h-8" />,
-  //   title: "Remote Work",
-  //   description: "Flexible work arrangements with home office setup allowance"
-  // },
-  // {
-  //   icon: <Calendar className="w-8 h-8" />,
-  //   title: "Unlimited PTO",
-  //   description: "Take the time you need to recharge with our unlimited vacation policy"
-  // },
-  // {
-  //   icon: <Coffee className="w-8 h-8" />,
-  //   title: "Office Perks",
-  //   description: "Free meals, snacks, and beverages in our modern office spaces"
-  // },
-  {
-    icon: <Award className="w-8 h-8" />,
-    title: "Empowerment & Impact",
-    description:
-      "Contribute to meaningful projects that drive real business results and make a tangible difference",
-  },
-];
-
-// FAQ data
-const faqs = [
-  {
-    question: "What is the interview process like?",
-    answer:
-      "Our interview process typically consists of an initial phone screening, technical assessment (for technical roles), and 2-3 rounds of interviews with team members and leadership. The entire process usually takes 2 to 4 days.",
-  },
-  {
-    question: "Do you offer remote work opportunities?",
-    answer:
-      "Yes! We offer fully remote positions as well as hybrid arrangements. Many of our team members work remotely, and we have the tools and culture to support distributed teams effectively.",
-  },
-  {
-    question: "What benefits do you provide?",
-    answer:
-      "We believe in helping our team grow through continuous learning. We offer opportunities to explore new skills, gain hands-on experience, and enhance your expertise all while providing a competitive salary, dedicated training hours for learning new skills, and refreshing tea breaks to keep you energized throughout the day.",
-  },
-  {
-    question: "How do you support career growth?",
-    answer:
-      "We believe in investing in our people. We provide mentorship programs, conference attendance, internal mobility opportunities, and regular career development conversations.",
-  },
-  {
-    question: "What is the company culture like?",
-    answer:
-      "Our culture is built on collaboration, innovation, and respect. We value diverse perspectives, encourage open communication, and maintain a healthy work-life balance while building amazing products.",
-  },
-];
-
 export default function CareersPage() {
+  const t = useTranslations('careers');
+  
+  // Benefits data
+  const benefits = [
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: t('benefits.items.innovative.title'),
+      description: t('benefits.items.innovative.description'),
+    },
+    {
+      icon: <DollarSign className="w-8 h-8" />,
+      title: t('benefits.items.growth.title'),
+      description: t('benefits.items.growth.description'),
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: t('benefits.items.empowerment.title'),
+      description: t('benefits.items.empowerment.description'),
+    },
+  ];
+
+  // FAQ data
+  const faqs = [
+    {
+      question: t('faq.items.interview.question'),
+      answer: t('faq.items.interview.answer'),
+    },
+    {
+      question: t('faq.items.remote.question'),
+      answer: t('faq.items.remote.answer'),
+    },
+    {
+      question: t('faq.items.benefits.question'),
+      answer: t('faq.items.benefits.answer'),
+    },
+    {
+      question: t('faq.items.careerGrowth.question'),
+      answer: t('faq.items.careerGrowth.answer'),
+    },
+    {
+      question: t('faq.items.culture.question'),
+      answer: t('faq.items.culture.answer'),
+    },
+  ];
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("all");
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
@@ -239,8 +220,8 @@ export default function CareersPage() {
 
       console.log("✅ Job application submitted successfully:", result);
 
-      toast.success("Application submitted successfully!", {
-        description: `Your application for ${selectedJob?.jobTitle} has been received. We'll review it and get back to you soon.`,
+      toast.success(t('applicationForm.toast.success'), {
+        description: t('applicationForm.toast.successDescription', { jobTitle: selectedJob?.jobTitle || '' }),
       });
 
       // Reset form and close dialog
@@ -258,11 +239,11 @@ export default function CareersPage() {
     } catch (error: unknown) {
       console.error("❌ Job application error:", error);
 
-      toast.error("Failed to submit application", {
+      toast.error(t('applicationForm.toast.error'), {
         description:
           error instanceof Error
             ? error.message
-            : "Please check your information and try again.",
+            : t('applicationForm.toast.errorDescription'),
       });
     } finally {
       setLoading(false);
@@ -273,7 +254,7 @@ export default function CareersPage() {
     <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card">
       {/* SEO H1 Tag */}
       <h1 className="sr-only">
-        Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs
+        {t('pageTitle')}
       </h1>
       {/* Hero Section */}
       <section className="relative py-12 px-4 overflow-hidden">
@@ -337,12 +318,12 @@ export default function CareersPage() {
             <h2
               className={`text-2xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className} `}
             >
-              Open Positions
+              {t('openPositions.title')}
             </h2>
             <p
               className={`text-lg max-w-4xl mx-auto text-black ${playfair_display.className}`}
             >
-              Discover opportunities that match your skills and passion
+              {t('openPositions.subtitle')}
             </p>
           </motion.div>
 
@@ -356,7 +337,7 @@ export default function CareersPage() {
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black h-4 w-4" />
               <Input
-                placeholder="Search jobs..."
+                placeholder={t('search.placeholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10 bg-background/50 border-border text-black placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
@@ -376,14 +357,14 @@ export default function CareersPage() {
                     value={dept}
                     className="text-black hover:bg-muted"
                   >
-                    {dept === "all" ? "All Departments" : dept}
+                    {dept === "all" ? t('search.allDepartments') : dept}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <div className="w-full md:w-48 flex items-center justify-center bg-background/50 border border-border rounded-md px-3 py-2">
               <MapPin className="w-4 h-4 text-[#0ea5e9] mr-2" />
-              <span className="text-black font-medium">Pune, India</span>
+              <span className="text-black font-medium">{t('search.location')}</span>
             </div>
           </motion.div>
 
@@ -418,8 +399,8 @@ export default function CareersPage() {
                               {expandedJobs.includes(
                                 job._id || index.toString()
                               )
-                                ? "Show less"
-                                : "Show more"}
+                                ? t('jobCard.showLess')
+                                : t('jobCard.showMore')}
                             </span>
                           </div>
 
@@ -450,7 +431,7 @@ export default function CareersPage() {
                               >
                                 <div>
                                   <h4 className="font-semibold text-foreground mb-2">
-                                    Key Requirements:
+                                    {t('jobCard.keyRequirements')}
                                   </h4>
                                   <ul className="list-disc list-inside space-y-1 text-sm">
                                     {job.jobkeySkills.map((req, index) => (
@@ -466,32 +447,32 @@ export default function CareersPage() {
 
                                 <div>
                                   <h4 className="font-semibold text-foreground mb-2">
-                                    Job Details:
+                                    {t('jobCard.jobDetails')}
                                   </h4>
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
                                     <div className="flex items-center gap-2">
                                       <Building2 className="w-4 h-4 text-primary" />
                                       <span className="text-muted-foreground">
-                                        Department:{" "}
-                                        {job.jobDepartment || "Not specified"}
+                                        {t('jobCard.department')}:{" "}
+                                        {job.jobDepartment || t('jobCard.notSpecified')}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                       <MapPin className="w-4 h-4 text-primary" />
                                       <span className="text-muted-foreground">
-                                        Location: Pune, India
+                                        {t('jobCard.location')}: {t('search.location')}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                       <Briefcase className="w-4 h-4 text-primary" />
                                       <span className="text-muted-foreground">
-                                        Type: {job.jobType || "Full-time"}
+                                        {t('jobCard.type')}: {job.jobType || "Full-time"}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                       <DollarSign className="w-4 h-4 text-primary" />
                                       <span className="text-muted-foreground">
-                                        Salary: Competitive
+                                        {t('jobCard.salary')}: {t('jobCard.competitive')}
                                       </span>
                                     </div>
                                   </div>
@@ -531,18 +512,18 @@ export default function CareersPage() {
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <DollarSign className="w-4 h-4" />
-                          Competitive
+                          {t('jobCard.competitive')}
                         </span>
                         <span className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />
-                          Recently posted
+                          {t('jobCard.recentlyPosted')}
                         </span>
                       </div>
                       <Button
                         onClick={() => handleApplyNow(job)}
                         className="hover:bg-[#cfff32] bg-white border-2 transition-all duration-300 cursor-pointer border-[#cfff32] text-black "
                       >
-                        Apply Now
+                        {t('jobCard.applyNow')}
                         <ChevronRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -559,7 +540,7 @@ export default function CareersPage() {
               className="text-center py-12"
             >
               <p className="text-muted-foreground text-lg">
-                No jobs found matching your criteria.
+                {t('noJobs')}
               </p>
             </motion.div>
           )}
@@ -578,13 +559,12 @@ export default function CareersPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             >
-              why work with us
+              {t('benefits.title')}
             </h2>
             <p
               className={`text-black text-lg max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              We believe in taking care of our team with comprehensive benefits
-              and perks
+              {t('benefits.subtitle')}
             </p>
           </motion.div>
 
@@ -633,12 +613,12 @@ export default function CareersPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             >
-              Frequently Asked Questions
+              {t('faq.title')}
             </h2>
             <p
               className={`text-black text-xl max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              Got questions? We&apos;ve got answers.
+              {t('faq.subtitle')}
             </p>
           </motion.div>
 
@@ -674,11 +654,10 @@ export default function CareersPage() {
             <DialogTitle
               className={`text-2xl font-bold text-black ${inter.className} uppercase`}
             >
-              Apply for {selectedJob?.jobTitle}
+              {t('applicationForm.title')} {selectedJob?.jobTitle}
             </DialogTitle>
             <DialogDescription className="text-muted-foreground">
-              Fill out the form below to submit your application. We&apos;ll get
-              back to you within 48 hours.
+              {t('applicationForm.subtitle')}
             </DialogDescription>
           </DialogHeader>
 
@@ -686,7 +665,7 @@ export default function CareersPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="firstName" className="text-foreground mb-2">
-                  First Name
+                  {t('applicationForm.fields.firstName')}
                 </Label>
                 <Input
                   id="firstName"
@@ -699,7 +678,7 @@ export default function CareersPage() {
               </div>
               <div>
                 <Label htmlFor="lastName" className="text-foreground mb-2">
-                  Last Name
+                  {t('applicationForm.fields.lastName')}
                 </Label>
                 <Input
                   id="lastName"
@@ -714,7 +693,7 @@ export default function CareersPage() {
 
             <div>
               <Label htmlFor="email" className="text-foreground mb-2">
-                Email Address
+                {t('applicationForm.fields.email')}
               </Label>
               <Input
                 id="email"
@@ -729,7 +708,7 @@ export default function CareersPage() {
 
             <div>
               <Label htmlFor="phone" className="text-foreground mb-2">
-                Phone Number
+                {t('applicationForm.fields.phone')}
               </Label>
               <Input
                 id="phone"
@@ -743,34 +722,34 @@ export default function CareersPage() {
 
             <div>
               <Label htmlFor="experience" className="text-foreground mb-2">
-                Years of Experience
+                {t('applicationForm.fields.experience')}
               </Label>
               <Select
                 value={formData.yearOfExperience}
                 onValueChange={handleSelectChange}
               >
                 <SelectTrigger className="bg-background/50 border-border text-foreground">
-                  <SelectValue placeholder="Select experience level" />
+                  <SelectValue placeholder={t('applicationForm.fields.experiencePlaceholder')} />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border text-foreground">
-                  <SelectItem value="0-1">0-1 years</SelectItem>
-                  <SelectItem value="2-3">2-3 years</SelectItem>
-                  <SelectItem value="4-5">4-5 years</SelectItem>
-                  <SelectItem value="6-10">6-10 years</SelectItem>
-                  <SelectItem value="10+">10+ years</SelectItem>
+                  <SelectItem value="0-1">{t('applicationForm.fields.experienceOptions.0-1')}</SelectItem>
+                  <SelectItem value="2-3">{t('applicationForm.fields.experienceOptions.2-3')}</SelectItem>
+                  <SelectItem value="4-5">{t('applicationForm.fields.experienceOptions.4-5')}</SelectItem>
+                  <SelectItem value="6-10">{t('applicationForm.fields.experienceOptions.6-10')}</SelectItem>
+                  <SelectItem value="10+">{t('applicationForm.fields.experienceOptions.10+')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div>
               <Label htmlFor="coverLetter" className="text-foreground mb-2">
-                Cover Letter
+                {t('applicationForm.fields.coverLetter')}
               </Label>
               <Textarea
                 id="coverLetter"
                 name="coverLetter"
                 rows={6}
-                placeholder="Tell us why you're interested in this role and what makes you a great fit..."
+                placeholder={t('applicationForm.fields.coverLetterPlaceholder')}
                 value={formData.coverLetter}
                 onChange={handleInputChange}
                 required
@@ -780,7 +759,7 @@ export default function CareersPage() {
 
             <div>
               <Label htmlFor="resume" className="text-foreground mb-2">
-                Resume/CV
+                {t('applicationForm.fields.resume')}
               </Label>
               <Input
                 id="resume"
@@ -800,14 +779,14 @@ export default function CareersPage() {
                 onClick={() => setIsApplicationOpen(false)}
                 className="flex-1 border-border text-black "
               >
-                Cancel
+                {t('applicationForm.buttons.cancel')}
               </Button>
               <Button
                 type="submit"
                 disabled={loading}
                 className="flex-1 bg-black text-white hover:bg-black/50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? "Submitting..." : "Submit Application"}
+                {loading ? t('applicationForm.buttons.submitting') : t('applicationForm.buttons.submit')}
               </Button>
             </div>
           </form>

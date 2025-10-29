@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,168 +43,160 @@ const staggerContainer = {
   },
 };
 
-const services = [
+const getServices = (t: (key: string) => string) => [
   {
     icon: CheckCircle,
-    title: "IT & Tech Services - Complete Details",
-    description:
-      "Comprehensive overview of all our IT and technology service offerings",
+    title: t('services.overview.title') as string,
+    description: t('services.overview.description') as string,
     features: [
-      "Service Portfolio",
-      "Technology Stack",
-      "Implementation Process",
-      "Support Structure",
+      t('services.overview.feature1') as string,
+      t('services.overview.feature2') as string,
+      t('services.overview.feature3') as string,
+      t('services.overview.feature4') as string,
     ],
   },
   {
     icon: Server,
-    title: "Infrastructure Services",
-    description:
-      "Robust IT infrastructure solutions for scalable and reliable business operations",
+    title: t('services.infrastructure.title') as string,
+    description: t('services.infrastructure.description') as string,
     features: [
-      "Network Setup",
-      "Server Management",
-      "Hardware Installation",
-      "System Architecture",
+      t('services.infrastructure.feature1') as string,
+      t('services.infrastructure.feature2') as string,
+      t('services.infrastructure.feature3') as string,
+      t('services.infrastructure.feature4') as string,
     ],
   },
   {
     icon: Settings,
-    title: "Managed IT Services",
-    description:
-      "Complete IT management and monitoring to keep your systems running smoothly",
+    title: t('services.managed.title') as string,
+    description: t('services.managed.description') as string,
     features: [
-      "24/7 Monitoring",
-      "Proactive Maintenance",
-      "System Updates",
-      "Performance Optimization",
+      t('services.managed.feature1') as string,
+      t('services.managed.feature2') as string,
+      t('services.managed.feature3') as string,
+      t('services.managed.feature4') as string,
     ],
   },
   {
     icon: Shield,
-    title: "Cybersecurity Services",
-    description:
-      "Advanced security solutions to protect your business from cyber threats",
+    title: t('services.cybersecurity.title') as string,
+    description: t('services.cybersecurity.description') as string,
     features: [
-      "Security Audits",
-      "Threat Detection",
-      "Data Protection",
-      "Compliance Management",
+      t('services.cybersecurity.feature1') as string,
+      t('services.cybersecurity.feature2') as string,
+      t('services.cybersecurity.feature3') as string,
+      t('services.cybersecurity.feature4') as string,
     ],
   },
   {
     icon: Cloud,
-    title: "Cloud & DevOps Services",
-    description:
-      "Modern cloud solutions and DevOps practices for efficient development and deployment",
+    title: t('services.cloud.title') as string,
+    description: t('services.cloud.description') as string,
     features: [
-      "Cloud Migration",
-      "DevOps Implementation",
-      "CI/CD Pipelines",
-      "Container Management",
+      t('services.cloud.feature1') as string,
+      t('services.cloud.feature2') as string,
+      t('services.cloud.feature3') as string,
+      t('services.cloud.feature4') as string,
     ],
   },
   {
     icon: Code,
-    title: "Software Development Services",
-    description:
-      "Custom software solutions tailored to your specific business requirements",
+    title: t('services.software.title') as string,
+    description: t('services.software.description') as string,
     features: [
-      "Custom Applications",
-      "System Integration",
-      "API Development",
-      "Legacy Modernization",
+      t('services.software.feature1') as string,
+      t('services.software.feature2') as string,
+      t('services.software.feature3') as string,
+      t('services.software.feature4') as string,
     ],
   },
   {
     icon: Users,
-    title: "IT Consulting & Advisory",
-    description:
-      "Strategic IT guidance to align technology with your business objectives",
+    title: t('services.consulting.title') as string,
+    description: t('services.consulting.description') as string,
     features: [
-      "Technology Strategy",
-      "Digital Transformation",
-      "IT Planning",
-      "Risk Assessment",
+      t('services.consulting.feature1') as string,
+      t('services.consulting.feature2') as string,
+      t('services.consulting.feature3') as string,
+      t('services.consulting.feature4') as string,
     ],
   },
   {
     icon: BarChart3,
-    title: "Data & Analytics Services",
-    description:
-      "Transform your data into actionable insights for better business decisions",
+    title: t('services.data.title') as string,
+    description: t('services.data.description') as string,
     features: [
-      "Data Analysis",
-      "Business Intelligence",
-      "Reporting Solutions",
-      "Data Visualization",
+      t('services.data.feature1') as string,
+      t('services.data.feature2') as string,
+      t('services.data.feature3') as string,
+      t('services.data.feature4') as string,
     ],
   },
   {
     icon: MessageSquare,
-    title: "Communication & Collaboration Services",
-    description:
-      "Modern communication tools and collaboration platforms for remote teams",
+    title: t('services.communication.title') as string,
+    description: t('services.communication.description') as string,
     features: [
-      "Video Conferencing",
-      "Team Collaboration",
-      "Document Sharing",
-      "Remote Access",
+      t('services.communication.feature1') as string,
+      t('services.communication.feature2') as string,
+      t('services.communication.feature3') as string,
+      t('services.communication.feature4') as string,
     ],
   },
   {
     icon: HeadphonesIcon,
-    title: "IT Support & Helpdesk Services",
-    description:
-      "Comprehensive technical support and helpdesk services for your IT needs",
+    title: t('services.support.title') as string,
+    description: t('services.support.description') as string,
     features: [
-      "Technical Support",
-      "Issue Resolution",
-      "User Training",
-      "Documentation",
+      t('services.support.feature1') as string,
+      t('services.support.feature2') as string,
+      t('services.support.feature3') as string,
+      t('services.support.feature4') as string,
     ],
   },
   {
     icon: Zap,
-    title: "Emerging Technology Services",
-    description:
-      "Cutting-edge technology solutions including AI, IoT, and blockchain implementations",
+    title: t('services.emerging.title') as string,
+    description: t('services.emerging.description') as string,
     features: [
-      "AI Integration",
-      "IoT Solutions",
-      "Blockchain Development",
-      "Automation Tools",
+      t('services.emerging.feature1') as string,
+      t('services.emerging.feature2') as string,
+      t('services.emerging.feature3') as string,
+      t('services.emerging.feature4') as string,
     ],
   },
   {
     icon: CheckCircle,
-    title: "Benefits of IT & Tech Services",
-    description:
-      "Key advantages and benefits of implementing our IT and technology services",
+    title: t('services.benefits.title') as string,
+    description: t('services.benefits.description') as string,
     features: [
-      "Cost Reduction",
-      "Enhanced Security",
-      "Improved Productivity",
-      "Strategic Growth",
+      t('services.benefits.feature1') as string,
+      t('services.benefits.feature2') as string,
+      t('services.benefits.feature3') as string,
+      t('services.benefits.feature4') as string,
     ],
   },
 ];
 
-const benefits = [
-  "Reduced IT costs through efficient managed services",
-  "Enhanced security with advanced cybersecurity measures",
-  "Improved productivity with reliable IT infrastructure",
-  "24/7 technical support and monitoring",
-  "Scalable solutions that grow with your business",
-  "Access to latest technologies and best practices",
-  "Compliance with industry standards and regulations",
-  "Strategic IT planning aligned with business goals",
-  "Faster issue resolution and minimal downtime",
-  "Expert guidance from certified IT professionals",
+const getBenefits = (t: (key: string) => string) => [
+  t('benefit1') as string,
+  t('benefit2') as string,
+  t('benefit3') as string,
+  t('benefit4') as string,
+  t('benefit5') as string,
+  t('benefit6') as string,
+  t('benefit7') as string,
+  t('benefit8') as string,
+  t('benefit9') as string,
+  t('benefit10') as string,
 ];
 
 export default function ITTechServicesPage() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const t = useTranslations('itTechServicesPage');
+  
+  const services = getServices(t);
+  const benefits = getBenefits(t);
 
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
@@ -219,16 +212,14 @@ export default function ITTechServicesPage() {
             className={`text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             variants={fadeInUp}
           >
-            IT & Tech
+            {t('title')}
             <br />
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Comprehensive IT solutions and technology services to power your
-            business forward. From infrastructure to emerging technologies,
-            we&apos;ve got you covered.
+            {t('subtitle')}
           </motion.p>
         </div>
       </motion.section>
@@ -246,7 +237,7 @@ export default function ITTechServicesPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Complete IT & Technology Solutions
+              {t('servicesTitle')}
             </h2>
           </motion.div>
 
@@ -263,7 +254,7 @@ export default function ITTechServicesPage() {
                         variant="secondary"
                         className="bg-[#0ea5e9] text-white"
                       >
-                        IT Service
+                        {t('serviceBadge')}
                       </Badge>
                     </div>
                     <CardTitle
@@ -297,7 +288,7 @@ export default function ITTechServicesPage() {
                         className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
                         size="sm"
                       >
-                        Enquire
+                        {t('enquireButton')}
                       </Button>
                     </div>
                   </CardContent>
@@ -321,12 +312,12 @@ export default function ITTechServicesPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Benefits of Our IT & Tech Services
+              {t('benefitsTitle')}
             </h2>
             <p
               className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              Transform your business with our comprehensive IT solutions
+              {t('benefitsSubtitle')}
             </p>
           </motion.div>
 
@@ -359,14 +350,12 @@ export default function ITTechServicesPage() {
           <h2
             className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}
           >
-            Ready to Upgrade Your IT Infrastructure?
+            {t('ctaTitle')}
           </h2>
           <p
             className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}
           >
-            Let our IT experts help you build a robust, secure, and scalable
-            technology foundation. Contact us today for a comprehensive IT
-            assessment.
+            {t('ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -374,10 +363,10 @@ export default function ITTechServicesPage() {
               size="lg"
               className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
-              Get IT Consultation
+              {t('ctaButton')}
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">Learn More About Us</Link>
+              <Link href="/about">{t('learnMoreButton')}</Link>
             </Button>
           </div>
         </div>
@@ -387,7 +376,7 @@ export default function ITTechServicesPage() {
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
-        serviceName="IT & Tech Services"
+        serviceName={t('title')}
       />
     </div>
   );

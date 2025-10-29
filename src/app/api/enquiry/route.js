@@ -19,7 +19,7 @@ export async function POST(request) {
         console.log("📝 Request body:", reqBody);
         
         // Validate required fields
-        const { fullName, Email, Number: phoneNumber, ServiceIntrestedIn, ProjectDetails } = reqBody;
+        const { fullName, Email, ServiceIntrestedIn, ProjectDetails } = reqBody;
         
         if (!fullName || !Email || !ServiceIntrestedIn || !ProjectDetails) {
             console.log("❌ Missing required fields");

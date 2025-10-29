@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Inter } from "next/font/google";
+import { useTranslations } from 'next-intl';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,8 @@ const contactInfo = [
 ];
 
 export default function FooterSection() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="bg-black text-white border-t border-border/50">
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-8">
@@ -36,7 +39,7 @@ export default function FooterSection() {
               />
             </div>
             <p className={` text-gray-300 text-sm leading-relaxed max-w-md`}>
-            Delivering next-generation digital solutions that transform ideas into measurable results.
+              {t('description')}
             </p>
           </div>
 
@@ -64,7 +67,7 @@ export default function FooterSection() {
               <h3
                 className={`${inter.className} font-semibold  mb-4 text-left md:text-right text-2xl text-white uppercase`}
               >
-                Contact Info
+                {t('contactInfo')}
               </h3>
               <ul className="space-y-3">
                 {contactInfo.map((contact, index) => {
@@ -93,8 +96,7 @@ export default function FooterSection() {
         <div className="border-t border-border/50 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-white text-sm font-semibold">
-              © {new Date().getFullYear()} Al Mawa International. All rights
-              reserved.
+              © {new Date().getFullYear()} {t('companyName')}. {t('allRightsReserved')}
             </p>
             <div className="flex space-x-4">
               <Link

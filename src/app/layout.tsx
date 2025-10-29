@@ -1,9 +1,13 @@
 "use client";
+
+export const dynamic = 'force-dynamic';
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/header";
 import FooterSection from "@/components/footer";
 import AOSProvider from "@/components/aos-provider";
+import { IntlProvider } from "@/components/providers/intl-provider";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -111,8 +115,19 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.al-mawa.international" />
 
-        {/* ✅ Favicon */}
-         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {/* ✅ Circular Favicon - Multiple formats for better browser support */}
+        <link rel="icon" href="/favicon-32x32.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Additional favicon sizes for different devices */}
+        <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon-32x32.svg" />
+        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-32x32.svg" />
+        
+        {/* Theme color for mobile browsers */}
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
 
         {/* Open Graph Meta Tags */}
         <meta
@@ -127,6 +142,10 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Al Mawa International" />
         <meta property="og:locale" content="en_IN" />
+        <meta property="og:image" content="https://www.al-mawa.international/apple-touch-icon.svg" />
+        <meta property="og:image:width" content="180" />
+        <meta property="og:image:height" content="180" />
+        <meta property="og:image:type" content="image/svg+xml" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -138,6 +157,8 @@ export default function RootLayout({
           name="twitter:description"
           content="Leading digital agency in Pune offering web development and digital marketing services"
         />
+        <meta name="twitter:image" content="https://www.al-mawa.international/apple-touch-icon.svg" />
+        <meta name="twitter:image:alt" content="Al Mawa International Logo" />
 
         {/* Schema.org JSON-LD */}
         <script
@@ -184,7 +205,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AOSProvider>
+          <IntlProvider>
+            <AOSProvider>
             {!isAdminRoute && (
               <>
                 <header className="fixed top-0 z-50">
@@ -248,6 +270,7 @@ export default function RootLayout({
             {!isAdminRoute && <FooterSection />}
             <ToastProvider />
           </AOSProvider>
+          </IntlProvider>
         </ThemeProvider>
       </body>
     </html>

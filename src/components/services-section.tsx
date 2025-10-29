@@ -13,91 +13,11 @@ import { motion } from "framer-motion";
 import { Code, Megaphone, Brush, Brain } from "lucide-react";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 const inter = Inter({ subsets: ["latin"] });
 
-interface Service {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  features: string[];
-  color: string;
-  href: string;
-}
 
-const services: Service[] = [
-  {
-    id: "Web Development",
-    title: "Web Development",
-    description:
-      "Creating modern, responsive websites and web applications that drive business growth and user engagement.",
-    icon: <Code className="w-8 h-8" />,
-    features: ["Website Design", "E-commerce Development", "Web Hosting", "SEO Integration"],
-    color: "from-blue-500 to-cyan-500",
-    href: "/services/web-development",
-  },
-  {
-    id: "IT & Tech Services",
-    title: "IT & Tech Services",
-    description:
-      "Comprehensive IT solutions including infrastructure, cybersecurity, and managed services for your business.",
-    icon: <Code className="w-8 h-8" />,
-    features: [
-      "Infrastructure Services",
-      "Cybersecurity",
-      "Managed IT",
-      "Cloud Solutions",
-    ],
-    color: "from-slate-500 to-gray-600",
-    href: "/services/it-tech-services",
-  },
-  {
-    id: "Digital Marketing",
-    title: "Digital Marketing",
-    description:
-      "Strategic digital marketing campaigns including email, WhatsApp, and SMS marketing to boost your reach.",
-    icon: <Megaphone className="w-8 h-8" />,
-    features: [
-      "Email Marketing",
-      "WhatsApp Marketing",
-      "SMS Campaigns",
-      "Analytics",
-    ],
-    color: "from-green-500 to-emerald-500",
-    href: "/services/email-whatsapp-sms-marketing",
-  },
-  {
-    id: "Graphic Design",
-    title: "Graphic Design",
-    description:
-      "Professional branding and graphic design services to create compelling visual identities and marketing materials.",
-    icon: <Brush className="w-8 h-8" />,
-    features: [
-      "Brand Identity",
-      "Marketing Design",
-      "Digital Graphics",
-      "Print Design",
-    ],
-    color: "from-purple-500 to-pink-500",
-    href: "/services/branding-graphic-design",
-  },
-  {
-    id: "AI Services",
-    title: "AI Services",
-    description:
-      "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
-    icon: <Brain className="w-8 h-8" />,
-    features: [
-      "Machine Learning Solutions",
-      "Computer Vision Services",
-      "Generative AI Services",
-      "AI Automation Services",
-    ],
-    color: "from-indigo-500 to-blue-600",
-    href: "/services/consulting",
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -128,6 +48,42 @@ const cardVariants = {
 };
 
 export default function ServicesSection() {
+  const t = useTranslations('servicesSection');
+
+  // Define services with translation keys
+  const services = [
+    {
+      id: "webDevelopment",
+      icon: <Code className="w-8 h-8" />,
+      color: "from-blue-500 to-cyan-500",
+      href: "/services/web-development",
+    },
+    {
+      id: "itTechServices",
+      icon: <Code className="w-8 h-8" />,
+      color: "from-slate-500 to-gray-600",
+      href: "/services/it-tech-services",
+    },
+    {
+      id: "digitalMarketing",
+      icon: <Megaphone className="w-8 h-8" />,
+      color: "from-green-500 to-emerald-500",
+      href: "/services/email-whatsapp-sms-marketing",
+    },
+    {
+      id: "graphicDesign",
+      icon: <Brush className="w-8 h-8" />,
+      color: "from-purple-500 to-pink-500",
+      href: "/services/branding-graphic-design",
+    },
+    {
+      id: "aiServices",
+      icon: <Brain className="w-8 h-8" />,
+      color: "from-indigo-500 to-blue-600",
+      href: "/services/consulting",
+    },
+  ];
+
   return (
     <section className="py-1 sm:py-1 md:py-2 lg:py-3 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -142,12 +98,12 @@ export default function ServicesSection() {
           <h2
             className={`text-3xl md:text-5xl font-bold pt-8 pb-8 text-left bg-clip-text text-transparent bg-black uppercase  ${inter.className}`}
           >
-            what we create
+            {t('title')}
           </h2>
           <p
             className={`text-lg md:text-xl  max-w-3xl text-black uppercase ${inter.className}`}
           >
-            &ldquo;Transforming businesses through technology, insight, and integrated solutions&rdquo;
+            &ldquo;{t('subtitle')}&rdquo;
           </p>
         </motion.div>
 
@@ -180,18 +136,18 @@ export default function ServicesSection() {
                   <CardTitle
                     className={`text-xl font-semibold text-foreground group-hover:text-2xl transition-all duration-300 ease-in-out ${inter.className}`}
                   >
-                    {service.title}
+                    {t(`${service.id}.title`)}
                   </CardTitle>
                   <CardDescription
                     className={`text-muted-foreground leading-relaxed uppercase ${inter.className}`}
                   >
-                    {service.description}
+                    {t(`${service.id}.description`)}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent className="pt-0">
                   <div className="space-y-3 mb-6">
-                    {service.features.map((feature, index) => (
+                    {t.raw(`${service.id}.features`).map((feature: string, index: number) => (
                       <div
                         key={index}
                         className="flex items-center text-sm text-muted-foreground"
@@ -206,7 +162,7 @@ export default function ServicesSection() {
 
                   <Link href={service.href}>
                     <Button size="lg" className="animated-border-button text-lg w-full no-animated-hover">
-                      <span>Learn more</span>
+                      <span>{t('learnMore')}</span>
                     </Button>
                   </Link>
                 </CardContent>

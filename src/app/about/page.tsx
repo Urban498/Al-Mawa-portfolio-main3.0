@@ -1,21 +1,20 @@
 "use client";
 {/*test */}
 import React from "react";
+
+export const dynamic = 'force-dynamic';
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Target, Eye, Heart, Users, Lightbulb, Award } from "lucide-react";
 import Image from "next/image";
-import { Inter, Playfair_Display, Archivo, Montserrat } from "next/font/google";
+import { Inter, Playfair_Display, Montserrat } from "next/font/google";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from 'next-intl';
 import TeamD from "../about/image/team discuss.png";
 import GRP from "../about/image/grp.png";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-import grpimage from "@/app/about/image/conference room 1.jpg";
 import conferenceRoom from "@/app/about/image/conference room 1.jpg";
 import TeamSection from "@/components/team";
 
@@ -25,7 +24,6 @@ const playfair_display = Playfair_Display({
   variable: "--font-playfair",
   weight: "600",
 });
-const archivo = Archivo({ subsets: ["latin"] });
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: "700",
@@ -46,11 +44,12 @@ const staggerContainer = {
 };
 
 export default function AboutPage() {
+  const t = useTranslations('about');
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // Only run GSAP animation on desktop (lg and above)
-    if (!containerRef.current || window.innerWidth < 1024) return;
+    if (typeof window === 'undefined' || !containerRef.current || window.innerWidth < 1024) return;
 
     const container = containerRef.current;
     const panels = container.querySelectorAll<HTMLDivElement>(".panel");
@@ -106,18 +105,15 @@ export default function AboutPage() {
             className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-center sm:text-left pb-4 bg-clip-text text-transparent bg-black ${montserrat.className}`}
             variants={fadeInUp}
           >
-            <span className="text-black font-bold uppercase">About</span> <br />{" "}
+            <span className="text-black font-bold uppercase">{t('pageTitle')}</span> <br />{" "}
             <div className="flex flex-col justify-between xl:flex-row gap-4 xl:gap-6 2xl:gap-8">
               <span className="flex flex-col order-1 xl:order-1">
-                <span className="uppercase text-center sm:text-left">us</span>
+                <span className="uppercase text-center sm:text-left">{t('pageSubtitle')}</span>
                 <motion.p
                   className={`text-sm sm:text-base md:text-lg xl:text-sm font-normal max-w-xs sm:max-w-sm md:max-w-md xl:max-w-xs 2xl:max-w-sm mx-auto xl:mx-0 leading-relaxed text-gray-500 py-2 text-center sm:text-left ${playfair_display.className}`}
                   variants={fadeInUp}
                 >
-                  Through our work, we strive to not only support businesses but
-                  to empower them to <span className="text-black font-semibold uppercase">lead, adapt, and thrive </span>in a competitive
-                  world. At AL-Mawa International, we don’t just provide
-                  services we deliver transformation and we promise evolution.
+                  {t('mainDescription')}
                 </motion.p>
               </span>
               <div className="order-2 xl:order-2 flex justify-center xl:justify-start">
@@ -139,10 +135,10 @@ export default function AboutPage() {
                   className="rounded-4xl mt-3 h-35 sm:h-28 md:h-32 lg:h-46 xl:h-40 object-cover w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm"
                 />
                 <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl   text-black mt-4 xl:mt-2 2xl:mt-0 uppercase text-center xl:text-left">
-                  Our Team
+                  {t('ourTeamTitle')}
                 </h4>
                 <p className={`text-xs sm:text-sm md:text-base xl:text-sm max-w-xs sm:max-w-sm md:max-w-md xl:max-w-sm text-gray-500 text-center xl:text-left px-4 xl:px-0 ${playfair_display.className}`}>
-                Driven by innovation and teamwork, our experts from IT, digital marketing, and graphics departments work hand in hand to create impactful digital experiences. We focus on delivering quality, creativity, and performance in every project we handle.
+                {t('teamDescription')}
                 </p>
               </div>
             </div>
@@ -236,14 +232,13 @@ export default function AboutPage() {
             <h2
               className={`text-3xl md:text-7xl flex justify-start font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
             >
-              The Way We Work
+              {t('wayWeWorkTitle')}
             </h2>
             <div
               className={`space-y-4 text-black ${playfair_display.className}`}
             >
               <p className="text-lg leading-relaxed">
-              At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference.Our approach is collaborative, transparent, and result-oriented  ensuring every project aligns perfectly with client goals.We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth.
-              Efficiency, agility, and innovation are not just methods, they&apos;re our mindset.
+              {t('wayWeWorkDescription')}
               </p>
               
             </div>
@@ -267,16 +262,14 @@ export default function AboutPage() {
             <h2
               className={`text-3xl md:text-7xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
             >
-          Why Choose Us
+              {t('whyChooseUsTitle')}
             </h2>
             <div
               className={`space-y-4 text-black ${playfair_display.className}`}
             >
               <p className="text-lg leading-relaxed">
-              Choosing AL-Mawa International means partnering with a team that prioritizes your success as much as its own.We bring together technology, strategy, and creativity to craft solutions that deliver measurable results.Our commitment goes beyond service we build lasting partnerships rooted in integrity and excellence.Every solution is tailored, every deadline is respected, and every outcome is designed to empower your digital journey.
-              We don’t just meet expectations, we redefine them.
+              {t('whyChooseUsDescription')}
               </p>
-             
             </div>
           </motion.div>
         </div>
@@ -298,22 +291,18 @@ export default function AboutPage() {
             <h2
               className={`text-3xl md:text-7xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
             >
-              What We Stand For
+              {t('whatWeStandForTitle')}
             </h2>
             <div
               className={`space-y-4 text-black ${playfair_display.className}`}
             >
               <p className="text-lg leading-relaxed">
-              We stand for innovation, accountability, and transformation values that guide every decision we make. Our goal is to create technology that simplifies lives and accelerates growth. We believe in empowering businesses with digital solutions that are sustainable, smart, and scalable.At our core lies a commitment to honesty, collaboration, and continuous improvement.We’re focused on building a better digital experience  one that connects people, ideas, and possibilities
+              {t('whatWeStandForDescription')}
               </p>
             </div>
           </motion.div>
         </div>
 
-        {/* <div className="panel three">Passion</div> */}
-        {/* <div className="panel four">Collaboration</div>
-        <div className="panel five">Innovation</div>
-        <div className="panel six">Excellence</div> */}
       </div>
 
       {/* Mobile sections - same content as GSAP panels */}
@@ -344,14 +333,13 @@ export default function AboutPage() {
                 <h2
                   className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
-                  The Way We Work
+                  {t('wayWeWorkTitle')}
                 </h2>
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference. Our approach is collaborative, transparent, and result-oriented ensuring every project aligns perfectly with client goals. We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth.
-                    Efficiency, agility, and innovation are not just methods, they&apos;re our mindset.
+                    {t('wayWeWorkDescription')}
                   </p>
                 </div>
               </motion.div>
@@ -385,14 +373,13 @@ export default function AboutPage() {
                 <h2
                   className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
-                  Why Choose Us
+                  {t('whyChooseUsTitle')}
                 </h2>
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    Choosing AL-Mawa International means partnering with a team that prioritizes your success as much as its own. We bring together technology, strategy, and creativity to craft solutions that deliver measurable results. Our commitment goes beyond service we build lasting partnerships rooted in integrity and excellence. Every solution is tailored, every deadline is respected, and every outcome is designed to empower your digital journey.
-                    We don&apos;t just meet expectations, we redefine them.
+                    {t('whyChooseUsDescription')}
                   </p>
                 </div>
               </motion.div>
@@ -426,13 +413,13 @@ export default function AboutPage() {
                 <h2
                   className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-black ${inter.className} uppercase text-left`}
                 >
-                  What We Stand For
+                  {t('whatWeStandForTitle')}
                 </h2>
                 <div
                   className={`space-y-4 text-black ${playfair_display.className}`}
                 >
                   <p className="text-base md:text-lg leading-relaxed">
-                    We stand for innovation, accountability, and transformation values that guide every decision we make. Our goal is to create technology that simplifies lives and accelerates growth. We believe in empowering businesses with digital solutions that are sustainable, smart, and scalable. At our core lies a commitment to honesty, collaboration, and continuous improvement. We&apos;re focused on building a better digital experience one that connects people, ideas, and possibilities.
+                    {t('whatWeStandForDescription')}
                   </p>
                 </div>
               </motion.div>

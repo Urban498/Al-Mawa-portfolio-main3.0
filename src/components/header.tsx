@@ -5,13 +5,10 @@ import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileSidebar } from "@/components/mobile-sidebar";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import React, { useEffect } from "react";
 import { cn } from "@/lib/utils";
-
-const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-];
+import { useTranslations } from 'next-intl';
 
 const servicesData = [
   {
@@ -220,6 +217,7 @@ const servicesData = [
 ];
 
 export const NavBar = () => {
+  const t = useTranslations('nav');
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -299,22 +297,28 @@ export const NavBar = () => {
             {/* Desktop Menu */}
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
               <ul className="flex gap-8 text-sm items-center">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      className="text-black hover:text-black block"
-                    >
-                      <span>{item.name}</span>
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    href="/"
+                    className="text-black hover:text-black block"
+                  >
+                    <span>{t('home')}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-black hover:text-black block"
+                  >
+                    <span>{t('about')}</span>
+                  </Link>
+                </li>
 
                 {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
                   <li key={index} className="relative group">
                     <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
-                      <span>{service.name}</span>
+                      <span>{t('services')}</span>
                       <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                     </div>
 
@@ -358,7 +362,7 @@ export const NavBar = () => {
                     href="/careers"
                     className="text-black hover:text-black block duration-150"
                   >
-                    <span>Careers</span>
+                    <span>{t('careers')}</span>
                   </Link>
                 </li>
               </ul>
@@ -370,15 +374,16 @@ export const NavBar = () => {
               onClose={() => setMenuState(false)}
             />
 
-            {/* Desktop Contact Button */}
-            <div className="hidden lg:flex">
+            {/* Desktop Contact Button & Language Switcher */}
+            <div className="hidden lg:flex items-center gap-2">
+              <LanguageSwitcher />
               <Button
                 asChild
                 size="sm"
                 className="animated-border-button no-animated-hover"
               >
                 <Link href="/contact">
-                  <span>Contact Us</span>
+                  <span>{t('contact')}</span>
                 </Link>
               </Button>
             </div>

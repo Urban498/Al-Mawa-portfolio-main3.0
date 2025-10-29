@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,144 +43,138 @@ const staggerContainer = {
   },
 };
 
-const services = [
+const getServices = (t: (key: string) => string) => [
   {
     icon: Brain,
-    title: "Machine Learning (ML) Services",
-    description:
-      "Advanced machine learning solutions to automate processes and extract insights from your data",
+    title: t('services.machineLearning.title') as string,
+    description: t('services.machineLearning.description') as string,
     features: [
-      "Predictive Analytics",
-      "Classification Models",
-      "Recommendation Systems",
-      "Anomaly Detection",
+      t('services.machineLearning.feature1') as string,
+      t('services.machineLearning.feature2') as string,
+      t('services.machineLearning.feature3') as string,
+      t('services.machineLearning.feature4') as string,
     ],
   },
   {
     icon: Bot,
-    title: "Natural Language Processing (NLP) Services",
-    description:
-      "Intelligent text processing and language understanding capabilities for your applications",
+    title: t('services.nlp.title') as string,
+    description: t('services.nlp.description') as string,
     features: [
-      "Text Analysis",
-      "Chatbots & Virtual Assistants",
-      "Sentiment Analysis",
-      "Language Translation",
+      t('services.nlp.feature1') as string,
+      t('services.nlp.feature2') as string,
+      t('services.nlp.feature3') as string,
+      t('services.nlp.feature4') as string,
     ],
   },
   {
     icon: Eye,
-    title: "Computer Vision Services",
-    description:
-      "Advanced image and video analysis capabilities to automate visual tasks and extract insights",
+    title: t('services.computerVision.title') as string,
+    description: t('services.computerVision.description') as string,
     features: [
-      "Object Detection",
-      "Image Classification",
-      "Facial Recognition",
-      "Quality Inspection",
+      t('services.computerVision.feature1') as string,
+      t('services.computerVision.feature2') as string,
+      t('services.computerVision.feature3') as string,
+      t('services.computerVision.feature4') as string,
     ],
   },
   {
     icon: Cpu,
-    title: "Generative AI Services",
-    description:
-      "Cutting-edge generative AI solutions to create content, code, and innovative applications",
+    title: t('services.generativeAI.title') as string,
+    description: t('services.generativeAI.description') as string,
     features: [
-      "Content Generation",
-      "Code Automation",
-      "Creative Design",
-      "Synthetic Data",
+      t('services.generativeAI.feature1') as string,
+      t('services.generativeAI.feature2') as string,
+      t('services.generativeAI.feature3') as string,
+      t('services.generativeAI.feature4') as string,
     ],
   },
   {
     icon: Zap,
-    title: "AI Automation Services",
-    description:
-      "Intelligent automation solutions to streamline workflows and increase operational efficiency",
+    title: t('services.aiAutomation.title') as string,
+    description: t('services.aiAutomation.description') as string,
     features: [
-      "Process Automation",
-      "Intelligent Document Processing",
-      "Workflow Optimization",
-      "RPA Integration",
+      t('services.aiAutomation.feature1') as string,
+      t('services.aiAutomation.feature2') as string,
+      t('services.aiAutomation.feature3') as string,
+      t('services.aiAutomation.feature4') as string,
     ],
   },
   {
     icon: BarChart3,
-    title: "Data & Analytics AI Services",
-    description:
-      "AI-powered analytics and insights to drive data-driven decision making across your organization",
+    title: t('services.dataAnalytics.title') as string,
+    description: t('services.dataAnalytics.description') as string,
     features: [
-      "Predictive Analytics",
-      "Business Intelligence",
-      "Data Visualization",
-      "Real-time Insights",
+      t('services.dataAnalytics.feature1') as string,
+      t('services.dataAnalytics.feature2') as string,
+      t('services.dataAnalytics.feature3') as string,
+      t('services.dataAnalytics.feature4') as string,
     ],
   },
   {
     icon: Shield,
-    title: "AI in Cybersecurity",
-    description:
-      "Advanced AI-driven security solutions to protect your digital assets and detect threats",
+    title: t('services.cybersecurity.title') as string,
+    description: t('services.cybersecurity.description') as string,
     features: [
-      "Threat Detection",
-      "Behavioral Analysis",
-      "Security Automation",
-      "Risk Assessment",
+      t('services.cybersecurity.feature1') as string,
+      t('services.cybersecurity.feature2') as string,
+      t('services.cybersecurity.feature3') as string,
+      t('services.cybersecurity.feature4') as string,
     ],
   },
   {
     icon: Building,
-    title: "Industry-Specific AI Solutions",
-    description:
-      "Tailored AI solutions designed for specific industries and business verticals",
+    title: t('services.industrySpecific.title') as string,
+    description: t('services.industrySpecific.description') as string,
     features: [
-      "Healthcare AI",
-      "Financial Services",
-      "Manufacturing",
-      "Retail & E-commerce",
+      t('services.industrySpecific.feature1') as string,
+      t('services.industrySpecific.feature2') as string,
+      t('services.industrySpecific.feature3') as string,
+      t('services.industrySpecific.feature4') as string,
     ],
   },
   {
     icon: Server,
-    title: "AI Infrastructure & MLOps",
-    description:
-      "Robust AI infrastructure and MLOps practices to deploy and manage AI models at scale",
+    title: t('services.infrastructure.title') as string,
+    description: t('services.infrastructure.description') as string,
     features: [
-      "Model Deployment",
-      "Pipeline Automation",
-      "Monitoring & Maintenance",
-      "Scalable Infrastructure",
+      t('services.infrastructure.feature1') as string,
+      t('services.infrastructure.feature2') as string,
+      t('services.infrastructure.feature3') as string,
+      t('services.infrastructure.feature4') as string,
     ],
   },
   {
     icon: GraduationCap,
-    title: "AI Training & Support",
-    description:
-      "Comprehensive training and ongoing support to help your team leverage AI technologies effectively",
+    title: t('services.training.title') as string,
+    description: t('services.training.description') as string,
     features: [
-      "Team Training",
-      "Best Practices",
-      "Technical Support",
-      "Knowledge Transfer",
+      t('services.training.feature1') as string,
+      t('services.training.feature2') as string,
+      t('services.training.feature3') as string,
+      t('services.training.feature4') as string,
     ],
   },
 ];
 
-const benefits = [
-  "Expert AI guidance from experienced industry professionals",
-  "Customized AI solutions tailored to your specific business needs",
-  "Reduced implementation risks through proven AI methodologies",
-  "Faster AI deployment with structured project management",
-  "Cost optimization through strategic AI planning and resource allocation",
-  "Access to latest AI trends and emerging technologies",
-  "Scalable AI infrastructure designed for growth",
-  "Strategic alignment between AI initiatives and business objectives",
-  "Ongoing AI support and knowledge transfer to your team",
-  "Measurable AI results with clear KPIs and success metrics",
+const getBenefits = (t: (key: string) => string) => [
+  t('benefit1') as string,
+  t('benefit2') as string,
+  t('benefit3') as string,
+  t('benefit4') as string,
+  t('benefit5') as string,
+  t('benefit6') as string,
+  t('benefit7') as string,
+  t('benefit8') as string,
+  t('benefit9') as string,
+  t('benefit10') as string,
 ];
 
 export default function AIServicesPage() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const t = useTranslations('aiServicesPage');
+  
+  const services = getServices(t);
+  const benefits = getBenefits(t);
 
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
@@ -195,17 +190,14 @@ export default function AIServicesPage() {
             className={`text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             variants={fadeInUp}
           >
-            AI Services
+            {t('title')}
             <br />
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-7 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Harness the power of artificial intelligence to transform your
-            business operations and drive innovation. Our comprehensive AI
-            services help you leverage cutting-edge technology for competitive
-            advantage.
+            {t('subtitle')}
           </motion.p>
         </div>
       </motion.section>
@@ -223,7 +215,7 @@ export default function AIServicesPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Our AI Services
+              {t('servicesTitle')}
             </h2>
           </motion.div>
 
@@ -236,7 +228,7 @@ export default function AIServicesPage() {
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <service.icon className="w-6 h-6 text-[#0ea5e9]" />
                       </div>
-                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white ">AI Service</Badge>
+                      <Badge variant="secondary" className="bg-[#0ea5e9] text-white ">{t('serviceBadge')}</Badge>
                     </div>
                     <CardTitle
                       className={`text-xl font-semibold text-black ${inter.className}`}
@@ -269,7 +261,7 @@ export default function AIServicesPage() {
                         className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
                         size="sm"
                       >
-                        Enquire
+                        {t('enquireButton')}
                       </Button>
                     </div>
                   </CardContent>
@@ -293,13 +285,12 @@ export default function AIServicesPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Why Choose Our AI Services?
+              {t('benefitsTitle')}
             </h2>
             <p
               className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              Transform your business with intelligent solutions designed for
-              the future
+              {t('benefitsSubtitle')}
             </p>
           </motion.div>
 
@@ -332,14 +323,12 @@ export default function AIServicesPage() {
           <h2
             className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}
           >
-            Ready to Transform Your Business with AI?
+            {t('ctaTitle')}
           </h2>
           <p
             className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}
           >
-            Let our AI experts help you harness the power of artificial
-            intelligence to drive innovation and growth. Start your AI
-            transformation today and unlock new possibilities for your business.
+            {t('ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -347,10 +336,10 @@ export default function AIServicesPage() {
               size="lg"
               className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
-              Start AI Project
+              {t('ctaButton')}
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">Learn More About Us</Link>
+              <Link href="/about">{t('learnMoreButton')}</Link>
             </Button>
           </div>
         </div>
@@ -359,7 +348,7 @@ export default function AIServicesPage() {
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
-        serviceName="AI Services"
+        serviceName={t('title')}
       />
     </div>
   );

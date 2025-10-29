@@ -1,0 +1,59 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="90" cy="90" r="90" fill="#ffffff"/>
+  
+  <!-- Globe design (left side) -->
+  <g transform="translate(45, 90)">
+    <!-- Main circle outline -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="black" stroke-width="3"/>
+    
+    <!-- Horizontal latitude lines -->
+    <path d="M-25 0 L25 0" stroke="black" stroke-width="2"/>
+    <path d="M-20 -12 L20 -12" stroke="black" stroke-width="1.5"/>
+    <path d="M-20 12 L20 12" stroke="black" stroke-width="1.5"/>
+    <path d="M-15 -20 L15 -20" stroke="black" stroke-width="1"/>
+    <path d="M-15 20 L15 20" stroke="black" stroke-width="1"/>
+    
+    <!-- Vertical longitude lines -->
+    <path d="M0 -30 Q-12 0 0 30" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M0 -30 Q12 0 0 30" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M0 -30 Q-20 0 0 30" stroke="black" stroke-width="1" fill="none"/>
+    <path d="M0 -30 Q20 0 0 30" stroke="black" stroke-width="1" fill="none"/>
+    
+    <!-- Grid squares pattern -->
+    <rect x="-20" y="-25" width="5" height="5" fill="black" opacity="0.7"/>
+    <rect x="-10" y="-25" width="5" height="5" fill="black" opacity="0.5"/>
+    <rect x="5" y="-25" width="5" height="5" fill="black" opacity="0.7"/>
+    <rect x="15" y="-25" width="5" height="5" fill="black" opacity="0.5"/>
+    
+    <rect x="-25" y="-15" width="5" height="5" fill="black" opacity="0.6"/>
+    <rect x="-15" y="-15" width="5" height="5" fill="black" opacity="0.8"/>
+    <rect x="0" y="-15" width="5" height="5" fill="black" opacity="0.6"/>
+    <rect x="10" y="-15" width="5" height="5" fill="black" opacity="0.8"/>
+    <rect x="20" y="-15" width="5" height="5" fill="black" opacity="0.6"/>
+    
+    <rect x="-20" y="-5" width="5" height="5" fill="black" opacity="0.7"/>
+    <rect x="-10" y="-5" width="5" height="5" fill="black" opacity="0.5"/>
+    <rect x="5" y="-5" width="5" height="5" fill="black" opacity="0.7"/>
+    <rect x="15" y="-5" width="5" height="5" fill="black" opacity="0.5"/>
+    
+    <rect x="-25" y="5" width="5" height="5" fill="black" opacity="0.6"/>
+    <rect x="-15" y="5" width="5" height="5" fill="black" opacity="0.8"/>
+    <rect x="0" y="5" width="5" height="5" fill="black" opacity="0.6"/>
+    <rect x="10" y="5" width="5" height="5" fill="black" opacity="0.8"/>
+    <rect x="20" y="5" width="5" height="5" fill="black" opacity="0.6"/>
+    
+    <rect x="-20" y="15" width="5" height="5" fill="black" opacity="0.7"/>
+    <rect x="-5" y="15" width="5" height="5" fill="black" opacity="0.5"/>
+    <rect x="5" y="15" width="5" height="5" fill="black" opacity="0.7"/>
+    <rect x="15" y="15" width="5" height="5" fill="black" opacity="0.5"/>
+  </g>
+  
+  <!-- "AL" Text (right side) -->
+  <g transform="translate(135, 90)">
+    <!-- Letter A -->
+    <path d="M-30 20 L-20 -20 L-10 -20 L0 20 M-25 0 L-5 0" stroke="black" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Letter L -->
+    <path d="M10 -20 L10 20 L30 20" stroke="black" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

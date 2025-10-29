@@ -1,8 +1,11 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslations } from 'next-intl';
 import {
   Card,
   CardContent,
@@ -96,31 +99,30 @@ const TypewriterEffectSmooth = ({ words, className, cursorClassName }: {
   );
 };
 
-const contactInfo = [
+const getContactInfo = (t: (key: string) => string) => [
   {
     icon: <Mail className="w-6 h-6" />,
-    title: "Email",
+    title: t('contactInfo.email.title'),
     value: ["business@al-mawa.international", "hr@al-mawa.international"],
-    description: "Send us an email anytime",
+    description: t('contactInfo.email.description'),
   },
   {
     icon: <Phone className="w-6 h-6" />,
-    title: "Phone",
+    title: t('contactInfo.phone.title'),
     value: ["+91 9561179693", "+91 9561186693", "+91 9561106693"],
-    description: "Mon – Sat: 9:00 AM – 7:00 PM",
+    description: t('contactInfo.phone.description'),
   },
   {
     icon: <MapPin className="w-6 h-6" />,
-    title: "Office",
-    value: "AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces)",
-    description:
-      "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014",
+    title: t('contactInfo.office.title'),
+    value: t('contactInfo.office.address'),
+    description: t('contactInfo.office.description'),
   },
   {
     icon: <Clock className="w-6 h-6" />,
-    title: "Working Hours",
-    value: "Mon – Sat: 9:00 AM – 7:00 PM",
-    description: "* Closed on 1st & 3rd Saturdays",
+    title: t('contactInfo.workingHours.title'),
+    value: t('contactInfo.workingHours.hours'),
+    description: t('contactInfo.workingHours.description'),
   },
 ];
 
@@ -156,8 +158,11 @@ const countries = [
 ];
 
 export default function ContactPage() {
+  const t = useTranslations('contact');
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  
+  const contactInfo = getContactInfo(t);
   const [formData, setFormData] = useState({
     firstname: "",
     lastName: "",
@@ -181,7 +186,7 @@ export default function ContactPage() {
 
   const typewriterWords = [
     {
-      text: isMobile ? "Click on the Map for Direction" : "Hover over the Map for Direction",
+      text: isMobile ? t('mapInstruction.mobile') : t('mapInstruction.desktop'),
       className: "text-blue-600"
     },
   ];
@@ -217,9 +222,8 @@ export default function ContactPage() {
 
       console.log("✅ Form submitted successfully:", response.data);
 
-      toast.success("Message sent successfully!", {
-        description:
-          "Thank you for reaching out. We'll get back to you within 24 hours.",
+      toast.success(t('successMessage'), {
+        description: t('successDescription'),
       });
 
       setFormData({
@@ -234,9 +238,9 @@ export default function ContactPage() {
     } catch (error: unknown) {
       console.error("❌ Form submission error:", error);
 
-      toast.error("Failed to send message", {
+      toast.error(t('errorMessage'), {
         description:
-          error instanceof Error ? error.message : "Please try again later.",
+          error instanceof Error ? error.message : t('errorDescription'),
       });
     } finally {
       setLoading(false);
@@ -304,7 +308,7 @@ export default function ContactPage() {
             <h1
               className={` mt-15 text-5xl md:text-7xl text-center font-normal leading-tight text-black uppercase ${work_sans.className} `}
             >
-              reach out to us
+              {t('title')}
               <br />
             </h1>
           </motion.div>
@@ -333,13 +337,12 @@ export default function ContactPage() {
                   <CardTitle
                     className={`text-3xl font-bold text-center text-black uppercase ${inter.className}`}
                   >
-                    Send us a message
+                    {t('formTitle')}
                   </CardTitle>
                   <CardDescription
                     className={`text-center text-black mt-2 ${playfair_display.className}`}
                   >
-                    Fill out the form below and we&apos;ll get back to you
-                    within 24 hours.
+                    {t('formDescription')}
                   </CardDescription>
                 </motion.div>
               </CardHeader>
@@ -357,7 +360,7 @@ export default function ContactPage() {
                   >
                     <Input
                       name="firstname"
-                      placeholder="First Name"
+                      placeholder={t('firstName')}
                       type="text"
                       value={formData.firstname}
                       onChange={handleInputChange}
@@ -366,7 +369,7 @@ export default function ContactPage() {
                     />
                     <Input
                       name="lastName"
-                      placeholder="Last Name"
+                      placeholder={t('lastName')}
                       type="text"
                       value={formData.lastName}
                       onChange={handleInputChange}
@@ -382,7 +385,7 @@ export default function ContactPage() {
                   >
                     <Input
                       name="emailAddress"
-                      placeholder="Email Address"
+                      placeholder={t('emailAddress')}
                       type="email"
                       value={formData.emailAddress}
                       onChange={handleInputChange}
@@ -397,7 +400,7 @@ export default function ContactPage() {
                   >
                     <Input
                       name="phoneNumber"
-                      placeholder="Phone Number"
+                      placeholder={t('phoneNumber')}
                       type="tel"
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
@@ -416,7 +419,7 @@ export default function ContactPage() {
                       onValueChange={handleSelectChange}
                     >
                       <SelectTrigger className="w-full p-4 border-b text-black placeholder:text-black hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black bg-transparent ">
-                        <SelectValue placeholder="Select country" />
+                        <SelectValue placeholder={t('selectCountry')} />
                       </SelectTrigger>
                       <SelectContent className="bg-gray-100 border-gray-600 text-black max-h-60">
                         {countries.map((country) => (
@@ -439,7 +442,7 @@ export default function ContactPage() {
                   >
                     <Input
                       name="subject"
-                      placeholder="Subject"
+                      placeholder={t('subject')}
                       type="text"
                       value={formData.subject}
                       onChange={handleInputChange}
@@ -455,7 +458,7 @@ export default function ContactPage() {
                   >
                     <Textarea
                       name="tellUSAboutYou"
-                      placeholder="Tell us about your project and how we can help bring your vision to life..."
+                      placeholder={t('projectDescription')}
                       rows={6}
                       value={formData.tellUSAboutYou}
                       onChange={handleInputChange}
@@ -476,7 +479,7 @@ export default function ContactPage() {
                       disabled={loading}
                       className="px-8 py-3 cursor-pointer rounded-full bg-black w-full text-center text-white text-lg font-semibold hover:bg-white hover:text-black border border-black transition-all duration-500 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {loading ? "Sending..." : "Submit"}
+                      {loading ? t('submitting') : t('submitButton')}
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </motion.div>
@@ -534,7 +537,7 @@ export default function ContactPage() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.6, delay: 1.8 }}
             >
-              Other Ways to Reach Us
+              {t('otherWaysTitle')}
             </motion.h2>
             <motion.p
               className={`text-black mb-8 ${playfair_display.className}`}
@@ -542,8 +545,7 @@ export default function ContactPage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 2 }}
             >
-              Choose the method that works best for you. We&apos;re always here
-              to help!
+              {t('otherWaysDescription')}
             </motion.p>
           </div>
 

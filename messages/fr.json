@@ -1,0 +1,883 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Nuestros Servicios",
+    "careers": "Carreras",
+    "contact": "Contáctenos"
+  },
+  "hero": {
+    "welcome": "Bienvenido a Al Mawa International",
+    "subtitle": "donde la innovación se encuentra con la excelencia.",
+    "title": "Soluciones Empresariales Integrales",
+    "description": "Desde bienes raíces hasta documentación legal, proporcionamos servicios empresariales de principio a fin adaptados a sus necesidades. Explore nuestra diversa gama de soluciones profesionales.",
+    "cta": "Comience Hoy",
+    "tryTrustTransform": "PRUEBE. CONFÍE. TRANSFORME.",
+    "empoweringBusinesses": "Empoderando Negocios, Transformando",
+    "now": "Ahora.",
+    "tomorrow": "Mañana.",
+    "future": "Futuro.",
+    "tagline": "Creando experiencias digitales y brindando soluciones digitales para un futuro más brillante."
+  },
+  "services": {
+    "realEstate": "Servicios Inmobiliarios",
+    "legalPublic": "Documentation Legal Pública",
+    "insurance": "Servicios de Seguros",
+    "hr": "RRHH y Reclutamiento",
+    "accounting": "Contabilidad e Impuestos",
+    "business": "Registro de Empresas",
+    "legal": "Legal y Cumplimiento",
+    "sales": "Gestión de Ventas y Compras",
+    "architect": "Arquitectura e Interiores",
+    "travel": "Viajes y Transporte",
+    "import": "Importación y Exportación",
+    "vehicle": "Venta de Vehículos de Segunda Mano",
+    "event": "Gestión de Eventos",
+    "visa": "Soluciones de Visa",
+    "social": "Social y Comunitario",
+    "workshop": "Servicios de Taller",
+    "dropshipping": "Servicios de Dropshipping"
+  },
+  "about": {
+    "title": "Acerca de los Servicios de Almawa",
+    "subtitle": "Empoderando Negocios a Través de la Innovación",
+    "description": "En Almawa Services, nos dedicamos a transformar negocios a través de soluciones de vanguardia, consultoría estratégica y un compromiso inquebrantable con la excelencia.",
+    "ourStory": "Nuestra Historia",
+    "ourMission": "Nuestra Misión",
+    "ourValues": "Nuestros Valores",
+    "meetTeam": "Conozca a Nuestro Equipo",
+    "readyToWork": "¿Listo para Trabajar Juntos?",
+    "getInTouch": "Contáctenos",
+    "scheduleCall": "Programe una Llamada",
+    "pageTitle": "Acerca de",
+    "pageSubtitle": "nosotros",
+    "mainDescription": "A través de nuestro trabajo, nos esforzamos no solo por apoyar a las empresas, sino por empoderarlas para liderar, adaptarse y prosperar en un mundo competitivo. En AL-Mawa International, no solo brindamos servicios, entregamos transformación y prometemos evolución.",
+    "ourTeamTitle": "Nuestro Equipo",
+    "teamDescription": "Impulsados por la innovación y el trabajo en equipo, nuestros expertos de los departamentos de TI, marketing digital y gráficos trabajan mano a mano para crear experiencias digitales impactantes. Nos enfocamos en entregar calidad, creatividad y rendimiento en cada proyecto que manejamos.",
+    "wayWeWorkTitle": "Nuestra Forma de Trabajar",
+    "wayWeWorkDescription": "En AL-Mawa International, creemos en combinar precisión con creatividad para entregar soluciones que realmente marquen la diferencia. Nuestro enfoque es colaborativo, transparente y orientado a resultados, asegurando que cada proyecto se alinee perfectamente con los objetivos del cliente. Nos adaptamos rápidamente, innovamos constantemente y nos comunicamos claramente en cada etapa de ejecución. Desde el concepto hasta la finalización, nuestros equipos trabajan sin problemas para convertir ideas en realidades digitales que inspiran confianza y crecimiento. Eficiencia, agilidad e innovación no son solo métodos, son nuestra mentalidad.",
+    "whyChooseUsTitle": "Por Qué Elegirnos",
+    "whyChooseUsDescription": "Elegir AL-Mawa International significa asociarse con un equipo que prioriza su éxito tanto como el propio. Reunimos tecnología, estrategia y creatividad para crear soluciones que entreguen resultados medibles. Nuestro compromiso va más allá del servicio: construimos asociaciones duraderas arraigadas en integridad y excelencia. Cada solución está personalizada, cada plazo se respeta y cada resultado está diseñado para empoderar su viaje digital. No solo cumplimos expectativas, las redefinimos.",
+    "whatWeStandForTitle": "Lo Que Representamos",
+    "whatWeStandForDescription": "Representamos innovación, responsabilidad y transformación: valores que guían cada decisión que tomamos. Nuestro objetivo es crear tecnología que simplifique vidas y acelere el crecimiento. Creemos en empoderar a las empresas con soluciones digitales que sean sostenibles, inteligentes y escalables. En nuestro núcleo yace un compromiso con la honestidad, la colaboración y la mejora continua. Estamos enfocados en construir una mejor experiencia digital, una que conecte personas, ideas y posibilidades."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "sales": "Ventas",
+    "salesDesc": "¿Interesado en aprender más sobre nuestra plataforma? Contacte a nuestro equipo de ventas para más información.",
+    "support": "Soporte",
+    "supportDesc": "Estamos aquí para ayudar con cualquier pregunta sobre la plataforma. Consulte nuestras preguntas frecuentes y aprenda más.",
+    "general": "Consulta General",
+    "generalDesc": "Para consultas generales, contáctenos usando el formulario a continuación.",
+    "getDirections": "Obtener Direcciones",
+    "contactOffice": "Contactar Oficina",
+    "formTitle": "Envíenos un mensaje",
+    "formDescription": "Complete el formulario a continuación y nos comunicaremos con usted en 24 horas.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "emailAddress": "Correo Electrónico",
+    "phoneNumber": "Número de Teléfono",
+    "selectCountry": "Seleccione país",
+    "subject": "Asunto",
+    "projectDescription": "Cuéntenos sobre su proyecto y cómo podemos ayudar a dar vida a su visión...",
+    "submitButton": "Enviar",
+    "submitting": "Envoi en cours...",
+    "successMessage": "¡Mensaje enviado exitosamente!",
+    "successDescription": "Gracias por contactarnos. Nos comunicaremos con usted en 24 horas.",
+    "errorMessage": "Error al enviar mensaje",
+    "errorDescription": "Veuillez réessayer plus tard.",
+    "mapInstruction": {
+      "desktop": "Pase el cursor sobre el Mapa para Direcciones",
+      "mobile": "Haga clic en el Mapa para Direcciones"
+    },
+    "otherWaysTitle": "Otras Formas de Contactarnos",
+    "otherWaysDescription": "Elija el método que funcione mejor para usted. ¡Siempre estamos aquí para ayudar!",
+    "contactInfo": {
+      "email": {
+        "title": "Correo Electrónico",
+        "description": "Envíenos un correo electrónico en cualquier momento"
+      },
+      "phone": {
+        "title": "Teléfono",
+        "description": "Lun – Sáb: 9:00 AM – 7:00 PM"
+      },
+      "office": {
+        "title": "Oficina",
+        "address": "AL- MAWA INTERNATIONAL Oficina No. 102-103, ( Nexus Work Spaces)",
+        "description": "1er Piso, Edificio Pride Icon, Arriba del Restaurante Athithi, Kharadi, Pune, Maharashtra- India 411014"
+      },
+      "workingHours": {
+        "title": "Horario de Trabajo",
+        "hours": "Lun – Sáb: 9:00 AM – 7:00 PM",
+        "description": "* Cerrado el 1er y 3er Sábado"
+      }
+    }
+  },
+  "footer": {
+    "description": "Entregando soluciones digitales de próxima generación que transforman ideas en resultados medibles.",
+    "contactInfo": "Información de Contacto",
+    "quickLinks": "Enlaces Rápidos",
+    "services": "Servicios",
+    "followUs": "Síganos",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "companyName": "Al Mawa International"
+  },
+  "common": {
+    "learnMore": "Saber Más",
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todo",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "loading": "Cargando..."
+  },
+  "home": {
+    "companyTitle": "Al Mawa International",
+    "companyDescription": "En AL-MAWA International, vemos la tecnología no solo como un conjunto de herramientas, sino como un puente que empodera a las personas y acelera el crecimiento. Como su socio de crecimiento digital, combinamos innovación, estrategia y soluciones de vanguardia para ayudar a las empresas a prosperar en un mundo en rápida evolución.",
+    "ourMissionTitle": "Nuestra Misión",
+    "ourMissionDescription": "Inspirados por la creencia de que el verdadero poder de la tecnología reside en las personas, estamos comprometidos a redefinir la experiencia digital a través de soluciones de TI inteligentes, fluidas y sostenibles. Nuestra misión es fusionar creatividad con tecnología, empoderando a cada cliente para innovar audazmente, desempeñarse eficientemente y liderar con confianza en este mundo digital en evolución.",
+    "ourValuesTitle": "Nuestros Valores",
+    "ourValuesDescription": "Visualizamos convertirnos en un símbolo global de confianza, innovación y transformación: un lugar donde las ideas se convierten en impacto duradero, y la tecnología sirve como catalizador para el progreso humano, aspirando a crear un futuro donde cada negocio, independientemente de su tamaño, prospere a través de innovación inteligente, equipos empoderados y posibilidades ilimitadas.",
+    "voicesFromDesk": "Voces Desde el Escritorio",
+    "voicesSubtitle": "Perspectivas profesionales diseñadas para informar, inspirar y empoderar"
+  },
+  "servicesSection": {
+    "title": "lo que creamos",
+    "subtitle": "Transformando negocios a través de tecnología, perspicacia y soluciones integradas",
+    "webDevelopment": {
+      "title": "Développement Web",
+      "description": "Creando sitios web modernos y responsivos y aplicaciones web que impulsan el crecimiento empresarial y el compromiso del usuario.",
+      "features": ["Design de Sitios Web", "Développement E-commerce", "Alojamiento Web", "Integración SEO"]
+    },
+    "itTechServices": {
+      "title": "Services IT et Technologie", 
+      "description": "Soluciones integrales de TI que incluyen infraestructura, ciberseguridad y servicios administrados para su negocio.",
+      "features": ["Services d'Infrastructure", "Ciberseguridad", "TI Administrada", "Solutions Cloud"]
+    },
+    "digitalMarketing": {
+      "title": "Marketing Digital",
+      "description": "Campañas estratégicas de marketing digital que incluyen email, WhatsApp y marketing por SMS para aumentar su alcance.",
+      "features": ["Email Marketing", "Marketing por WhatsApp", "Campañas SMS", "Analítica"]
+    },
+    "graphicDesign": {
+      "title": "Design Graphique",
+      "description": "Servicios profesionales de branding y diseño gráfico para crear identidades visuales convincentes y materiales de marketing.",
+      "features": ["Identidad de Marca", "Design de Marketing", "Gráficos Digitales", "Design de Impresión"]
+    },
+    "aiServices": {
+      "title": "Services IA",
+      "description": "Soluciones de inteligencia artificial de vanguardia que incluyen aprendizaje automático, automatización y analítica de datos para revolucionar su negocio.",
+      "features": ["Soluciones de Aprendizaje Automático", "Services de Vision par Ordinateur", "Services IA Generativa", "Services d'Automatisation IA"]
+    },
+    "learnMore": "Saber más"
+  },
+  "team": {
+    "title": "Las Mentes",
+    "titleHighlight": "Dinámicas",
+    "description": "AL-Mawa International opera bajo una estructura ágil, eficiente e impulsada por la innovación, respaldada por especialistas en TI, Marketing Digital, Design, RRHH y Ventas. Cada departamento trabaja en armonía para garantizar una ejecución fluida y resultados impactantes para los clientes. En el corazón de AL-Mawa hay un equipo diverso de profesionales apasionados que combinan experiencia con creatividad, entregando excelencia y transformando cada proyecto en una historia de éxito.",
+    "linkedin": "LinkedIn"
+  },
+  "servicesPage": {
+    "title": "Servicios de Développement Web Pune - Al Mawa International",
+    "subtitle": "Ofrecemos soluciones digitales integrales para ayudar a su negocio a prosperar en el mundo moderno",
+    "ctaText": "¿Listo para transformar su negocio con nuestra experiencia?",
+    "ctaButton": "Comience Hoy",
+    "learnMore": "Saber Más",
+    "uiux": {
+      "title": "Design UI/UX",
+      "description": "Creando experiencias de usuario intuitivas y visualmente impresionantes que involucran y convierten.",
+      "features": ["Investigación de Usuarios", "Wireframing", "Prototipado", "Design Visuel"]
+    },
+    "development": {
+      "title": "Desarrollo de Software",
+      "description": "Construyendo aplicaciones robustas y escalables con tecnologías de vanguardia y mejores prácticas.",
+      "features": ["Aplicaciones Web", "Aplicaciones Móviles", "Développement API", "Design de Bases de Datos"]
+    },
+    "marketing": {
+      "title": "Marketing Digital",
+      "description": "Impulsando el crecimiento a través de campañas estratégicas de marketing digital y perspectivas basadas en datos.",
+      "features": ["Optimización SEO", "Redes Sociales", "Estrategia de Contenido", "Analítica"]
+    }
+  },
+  "webDevelopmentPage": {
+    "title": "Développement Web",
+    "subtitle": "Transforme su presencia digital con nuestros servicios integrales de desarrollo web. Desde diseños impresionantes hasta funcionalidad poderosa, creamos sitios web que generan resultados.",
+    "servicesTitle": "Nos Services de Développement Web",
+    "benefitsTitle": "Beneficios de Nos Services de Développement Web",
+    "benefitsSubtitle": "Por qué elegir nuestras soluciones de desarrollo web para su negocio",
+    "ctaTitle": "¿Listo para Construir Su Sitio Web?",
+    "ctaSubtitle": "Creemos una poderosa presencia web que impulse su negocio. Póngase en contacto con nuestros expertos en desarrollo web hoy.",
+    "ctaButton": "Comience Hoy",
+    "learnMoreButton": "En Savoir Plus Sur Nous",
+    "enquireButton": "Se Renseigner",
+    "serviceBadge": "Servicio",
+    "services": {
+      "websiteDesignDev": {
+        "title": "Services de Conception et Développement de Sites Web",
+        "description": "Solutions complètes de site web de bout en bout du concept au déploiement avec des principes de design modernes",
+        "features": ["Design Personnalisé", "Mise en Page Réactive", "UI/UX Moderne", "Compatible Tous Navigateurs"]
+      },
+      "websiteDesign": {
+        "title": "Services de Conception de Sites Web",
+        "description": "Designs de sites web créatifs et centrés sur l'utilisateur qui convertissent les visiteurs en clients",
+        "features": ["Design Visuel", "Expérience Utilisateur", "Intégration de Marque", "Design Mobile-First"]
+      },
+      "websiteDevelopment": {
+        "title": "Services de Développement de Sites Web",
+        "description": "Développement backend robuste et implémentation frontend pour des sites web évolutifs",
+        "features": ["Développement Frontend", "Systèmes Backend", "Intégration de Bases de Données", "Développement API"]
+      },
+      "ecommerce": {
+        "title": "Développement E-commerce",
+        "description": "Boutiques en ligne complètes avec traitement des paiements sécurisé et gestion des stocks",
+        "features": ["Panier d'Achat", "Passerelle de Paiement", "Gestion des Stocks", "Traitement des Commandes"]
+      },
+      "hosting": {
+        "title": "Services d'Hébergement Web et Domaines",
+        "description": "Solutions d'hébergement fiables et gestion de domaines pour des performances optimales du site web",
+        "features": ["Enregistrement de Domaine", "Certificats SSL", "Hébergement Cloud", "Support 24/7"]
+      },
+      "seo": {
+        "title": "Intégration SEO et Marketing Digital",
+        "description": "Optimisation SEO intégrée et outils marketing pour renforcer votre présence en ligne",
+        "features": ["SEO On-page", "Configuration Analytique", "Intégration Sociale", "Suivi des Performances"]
+      },
+      "security": {
+        "title": "Optimisation des Performances et Sécurité",
+        "description": "Mesures de sécurité avancées et optimisation des performances pour des sites web rapides et sécurisés",
+        "features": ["Audits de Sécurité", "Optimisation de Vitesse", "Implémentation SSL", "Solutions de Sauvegarde"]
+      },
+      "maintenance": {
+        "title": "Maintenance et Support de Sites Web",
+        "description": "Maintenance continue et support technique pour maintenir votre site web en bon état de fonctionnement",
+        "features": ["Mises à Jour Régulières", "Correction de Bugs", "Mises à Jour de Contenu", "Support Technique"]
+      },
+      "emerging": {
+        "title": "Technologies Web Émergentes",
+        "description": "Technologies et frameworks web de pointe pour des sites web prêts pour l'avenir",
+        "features": ["Applications Web Progressives", "Intégration IA", "Frameworks Modernes", "Solutions Cloud"]
+      },
+      "benefits": {
+        "title": "Avantages des Services de Conception et Développement Web",
+        "description": "Avantages complets de la conception et du développement web professionnels pour votre entreprise",
+        "features": ["Présence en Ligne Accrue", "Meilleur Engagement Utilisateur", "Taux de Conversion Plus Élevés", "Crédibilité Professionnelle"]
+      }
+    },
+    "benefitsList": [
+      "Présence web professionnelle qui inspire confiance et crédibilité",
+      "Design réactif qui fonctionne parfaitement sur tous les appareils",
+      "Structure optimisée pour le SEO pour un meilleur classement dans les moteurs de recherche",
+      "Temps de chargement rapides et performances optimales",
+      "Hébergement sécurisé et fiable avec sauvegardes régulières",
+      "Support et maintenance continus inclus",
+      "Solutions évolutives qui grandissent avec votre entreprise",
+      "Intégration avec des outils marketing modernes et analytique"
+    ]
+  },
+  "itTechServicesPage": {
+    "title": "IT et Technologie",
+    "subtitle": "Solutions IT complètes et services technologiques pour propulser votre entreprise. De l'infrastructure aux technologies émergentes, nous avons tout ce qu'il vous faut.",
+    "servicesTitle": "Solutions Complètes IT et Technologie",
+    "benefitsTitle": "Beneficios de Nos Services de IT et Technologie",
+    "benefitsSubtitle": "Transformez votre entreprise avec nos solutions IT complètes",
+    "ctaTitle": "Prêt à Mettre à Niveau Votre Infrastructure IT?",
+    "ctaSubtitle": "Laissez nos experts IT vous aider à construire une base technologique robuste, sécurisée et évolutive. Contactez-nous aujourd'hui pour une évaluation IT complète.",
+    "ctaButton": "Obtenir une Consultation IT",
+    "learnMoreButton": "En Savoir Plus Sur Nous",
+    "enquireButton": "Se Renseigner",
+    "serviceBadge": "Service IT",
+    "services": {
+      "overview": {
+        "title": "Services IT et Technologie - Detalles Completos",
+        "description": "Aperçu complet de toutes nos offres de services IT et technologie",
+        "feature1": "Portefeuille de Services",
+        "feature2": "Stack Technologique",
+        "feature3": "Processus de Mise en Œuvre",
+        "feature4": "Structure de Support"
+      },
+      "infrastructure": {
+        "title": "Services d'Infrastructure",
+        "description": "Solutions d'infrastructure IT robustes pour des opérations commerciales évolutives et fiables",
+        "feature1": "Configuration Réseau",
+        "feature2": "Gestion des Serveurs",
+        "feature3": "Installation Matérielle",
+        "feature4": "Architecture Système"
+      },
+      "managed": {
+        "title": "Services IT Gérés",
+        "description": "Gestion et surveillance IT complètes pour maintenir vos systèmes en bon état de fonctionnement",
+        "feature1": "Surveillance 24/7",
+        "feature2": "Maintenance Proactive",
+        "feature3": "Mises à Jour Système",
+        "feature4": "Optimisation des Performances"
+      },
+      "cybersecurity": {
+        "title": "Services de Cybersécurité",
+        "description": "Solutions de sécurité avancées pour protéger votre entreprise contre les cybermenaces",
+        "feature1": "Audits de Sécurité",
+        "feature2": "Détection des Menaces",
+        "feature3": "Protection des Données",
+        "feature4": "Gestion de la Conformité"
+      },
+      "cloud": {
+        "title": "Services Cloud et DevOps",
+        "description": "Solutions cloud modernes et pratiques DevOps pour un développement et un déploiement efficaces",
+        "feature1": "Migration Cloud",
+        "feature2": "Implémentation DevOps",
+        "feature3": "Pipelines CI/CD",
+        "feature4": "Gestion des Conteneurs"
+      },
+      "software": {
+        "title": "Services de Développement de Logiciels",
+        "description": "Solutions logicielles personnalisées adaptées à vos exigences commerciales spécifiques",
+        "feature1": "Applications Personnalisées",
+        "feature2": "Intégration de Systèmes",
+        "feature3": "Développement API",
+        "feature4": "Modernisation des Systèmes Hérités"
+      },
+      "consulting": {
+        "title": "Conseil et Conseil IT",
+        "description": "Orientation stratégique IT pour aligner la technologie avec vos objectifs commerciaux",
+        "feature1": "Stratégie Technologique",
+        "feature2": "Transformation Digitale",
+        "feature3": "Planification IT",
+        "feature4": "Évaluation des Risques"
+      },
+      "data": {
+        "title": "Services de Données et Analytique",
+        "description": "Transformez vos données en insights exploitables pour de meilleures décisions commerciales",
+        "feature1": "Analyse de Données",
+        "feature2": "Intelligence d'Affaires",
+        "feature3": "Solutions de Reporting",
+        "feature4": "Visualisation de Données"
+      },
+      "communication": {
+        "title": "Services de Communication et Collaboration",
+        "description": "Outils de communication modernes et plateformes de collaboration pour les équipes distantes",
+        "feature1": "Visioconférence",
+        "feature2": "Collaboration d'Équipe",
+        "feature3": "Partage de Documents",
+        "feature4": "Accès à Distance"
+      },
+      "support": {
+        "title": "Services de Support IT et Help Desk",
+        "description": "Support technique complet et services de help desk pour vos besoins IT",
+        "feature1": "Support Technique",
+        "feature2": "Résolution de Problèmes",
+        "feature3": "Formation des Utilisateurs",
+        "feature4": "Documentation"
+      },
+      "emerging": {
+        "title": "Services de Technologies Émergentes",
+        "description": "Solutions technologiques de pointe incluant des implémentations IA, IoT et blockchain",
+        "feature1": "Intégration IA",
+        "feature2": "Solutions IoT",
+        "feature3": "Développement Blockchain",
+        "feature4": "Outils d'Automatisation"
+      },
+      "benefits": {
+        "title": "Avantages des Services IT et Technologie",
+        "description": "Avantages clés et bénéfices de la mise en œuvre de nos services IT et technologie",
+        "feature1": "Réduction des Coûts",
+        "feature2": "Sécurité Renforcée",
+        "feature3": "Productivité Améliorée",
+        "feature4": "Croissance Stratégique"
+      }
+    },
+    "benefit1": "Coûts IT réduits grâce à des services gérés efficaces",
+    "benefit2": "Sécurité renforcée avec des mesures de cybersécurité avancées",
+    "benefit3": "Productivité améliorée avec une infrastructure IT fiable",
+    "benefit4": "Support technique et surveillance 24/7",
+    "benefit5": "Solutions évolutives qui grandissent avec votre entreprise",
+    "benefit6": "Accès aux dernières technologies et meilleures pratiques",
+    "benefit7": "Conformité aux normes et réglementations de l'industrie",
+    "benefit8": "Planification stratégique IT alignée avec les objectifs commerciaux",
+    "benefit9": "Résolution plus rapide des problèmes et temps d'arrêt minimal",
+    "benefit10": "Orientation experte de professionnels IT certifiés"
+  },
+  "digitalMarketingPage": {
+    "title": "Marketing Digital",
+    "subtitle": "Connectez-vous avec vos clients grâce à de puissantes campagnes de marketing par e-mail, WhatsApp et SMS. Stimulez l'engagement et augmentez les conversions avec nos solutions de marketing digital intégrées.",
+    "statsTitle": "Marketing Qui Livre des Résultats",
+    "servicesTitle": "Nos Services de Marketing Digital",
+    "servicesSubtitle": "Solutions marketing complètes sur plusieurs canaux",
+    "benefitsTitle": "Avantages du Marketing par E-mail, WhatsApp et SMS",
+    "benefitsSubtitle": "Pourquoi le marketing multicanal est essentiel pour la croissance de votre entreprise",
+    "ctaTitle": "Prêt à Booster Vos Résultats Marketing?",
+    "ctaSubtitle": "Commencez à vous connecter avec vos clients grâce à de puissantes campagnes par e-mail, WhatsApp et SMS. Créons une stratégie marketing qui génère de vrais résultats.",
+    "ctaButton": "Lancer une Campagne Marketing",
+    "learnMoreButton": "En Savoir Plus Sur Nous",
+    "enquireButton": "Se Renseigner",
+    "serviceBadge": "Marketing",
+    "stats": {
+      "emailUsers": {
+        "metric": "4,1 Milliards",
+        "description": "Utilisateurs d'e-mail dans le monde"
+      },
+      "whatsappUsers": {
+        "metric": "2+ Milliards",
+        "description": "Utilisateurs actifs de WhatsApp"
+      },
+      "smsOpenRate": {
+        "metric": "98%",
+        "description": "Taux d'ouverture des SMS"
+      },
+      "emailROI": {
+        "metric": "4200%",
+        "description": "ROI moyen pour l'e-mail marketing"
+      }
+    },
+    "services": {
+      "email": {
+        "title": "Services d'E-mail Marketing",
+        "description": "Campagnes d'e-mail professionnelles qui engagent votre audience et stimulent les conversions",
+        "feature1": "Conception de Campagnes",
+        "feature2": "Séquences Automatisées",
+        "feature3": "Tests A/B",
+        "feature4": "Analytique de Performance"
+      },
+      "whatsapp": {
+        "title": "Services de Marketing WhatsApp",
+        "description": "Engagement client direct via WhatsApp Business avec messagerie personnalisée",
+        "feature1": "Configuration API Business",
+        "feature2": "Messages de Diffusion",
+        "feature3": "Support Client",
+        "feature4": "Réponses Automatisées"
+      },
+      "sms": {
+        "title": "Services de Marketing par SMS",
+        "description": "Portée instantanée avec des campagnes SMS ciblées pour les promotions et mises à jour urgentes",
+        "feature1": "Campagnes SMS en Masse",
+        "feature2": "Messages Personnalisés",
+        "feature3": "Rapports de Livraison",
+        "feature4": "Gestion des Abonnements"
+      },
+      "omnichannel": {
+        "title": "Intégration Omnicanal",
+        "description": "Intégration transparente sur tous les canaux marketing pour une expérience client cohérente",
+        "feature1": "Campagnes Multiplateformes",
+        "feature2": "Analytique Unifiée",
+        "feature3": "Cartographie du Parcours Client",
+        "feature4": "Messagerie Synchronisée"
+      },
+      "benefits": {
+        "title": "Avantages du Marketing par E-mail, WhatsApp et SMS",
+        "description": "Avantages complets de l'approche de marketing multicanal para el crecimiento empresarial",
+        "feature1": "Meilleur Engagement",
+        "feature2": "Communication Directe",
+        "feature3": "Rentable",
+        "feature4": "Résultats Mesurables"
+      }
+    },
+    "benefit1": "Communication directe avec les clients via leurs canaux préférés",
+    "benefit2": "Taux d'engagement plus élevés par rapport à la publicité traditionnelle",
+    "benefit3": "Marketing rentable avec ROI mesurable",
+    "benefit4": "Messagerie personnalisée basée sur le comportement et les préférences du client",
+    "benefit5": "Livraison en temps réel et feedback client instantané",
+    "benefit6": "Campagnes automatisées qui économisent du temps et augmentent l'efficacité",
+    "benefit7": "Analytique détaillée et rapports pour l'optimisation des campagnes",
+    "benefit8": "Meilleure rétention client grâce à l'engagement régulier",
+    "benefit9": "Portée mondiale avec capacités de personnalisation locale",
+    "benefit10": "Intégration avec les outils CRM et marketing existants"
+  },
+  "graphicDesignPage": {
+    "title": "Design Graphique",
+    "subtitle": "Transformez votre marque avec des designs visuels époustouflants qui captivent les audiences et génèrent des résultats. Du branding aux graphiques numériques, nous créons des designs qui font impact.",
+    "statsTitle": "Le Pouvoir du Design Visuel",
+    "servicesTitle": "Nos Services de Design Graphique",
+    "servicesSubtitle": "Solutions de design complètes pour tous vos besoins de communication visuelle",
+    "benefitsTitle": "Avantages des Services Branding y Design Graphique",
+    "benefitsSubtitle": "Comment les services de design professionnels peuvent transformer votre entreprise",
+    "ctaTitle": "Prêt à Transformer Votre Marque?",
+    "ctaSubtitle": "Laissez notre équipe créative donner vie à votre vision avec des designs graphiques époustouflants qui font impact. Commencez votre projet de design aujourd'hui et voyez la différence que le design professionnel peut faire.",
+    "ctaButton": "Lancer un Projet de Design",
+    "learnMoreButton": "En Savoir Plus Sur Nous",
+    "enquireButton": "Se Renseigner",
+    "serviceBadge": "Design",
+    "stats": {
+      "firstImpressions": {
+        "metric": "94%",
+        "description": "Les premières impressions sont liées au design"
+      },
+      "visualContent": {
+        "metric": "3x",
+        "description": "Plus de probabilité de partager du contenu visuel"
+      },
+      "visualLearners": {
+        "metric": "65%",
+        "description": "Des personnes sont des apprenants visuels"
+      },
+      "brandRecognition": {
+        "metric": "80%",
+        "description": "Augmentation de la reconnaissance de marque avec la couleur"
+      }
+    },
+    "services": {
+      "brandIdentity": {
+        "title": "Design de Identidad de Marca",
+        "description": "Systèmes complets d'identité de marque incluant logos, palettes de couleurs et guides de marque",
+        "feature1": "Design de Logo",
+        "feature2": "Guides de Marque",
+        "feature3": "Schémas de Couleur",
+        "feature4": "Sélection de Typographie"
+      },
+      "marketing": {
+        "title": "Design de Marketing y Promocional",
+        "description": "Supports marketing accrocheurs qui stimulent l'engagement et augmentent les conversions",
+        "feature1": "Dépliants et Brochures",
+        "feature2": "Bannières et Affiches",
+        "feature3": "Design de Publicidad",
+        "feature4": "Graphiques Promotionnels"
+      },
+      "digitalSocial": {
+        "title": "Design Digital y de Redes Sociales",
+        "description": "Graphiques numériques attrayants optimisés pour les plateformes de réseaux sociaux et présence en ligne",
+        "feature1": "Publications sur Réseaux Sociaux",
+        "feature2": "Images de Couverture",
+        "feature3": "Annonces Numériques",
+        "feature4": "Graphiques Web"
+      },
+      "uiux": {
+        "title": "UI/UX y Graphiques Web",
+        "description": "Designs de interfaz fáciles de usar y gráficos web que mejoran la experiencia del usuario",
+        "feature1": "Graphiques de Site Web",
+        "feature2": "Éléments UI",
+        "feature3": "Icônes et Illustrations",
+        "feature4": "Design de Interfaz de Usuario"
+      },
+      "corporate": {
+        "title": "Branding Corporatif et de Bureau",
+        "description": "Solutions professionnelles d'identité corporative et branding de bureau pour entreprises",
+        "feature1": "Cartes de Visite",
+        "feature2": "En-têtes de Lettre",
+        "feature3": "Signalétique de Bureau",
+        "feature4": "Présentations Corporatives"
+      },
+      "motion": {
+        "title": "Motion Graphics y Design Multimedia",
+        "description": "Motion graphics dynamiques et contenu multimédia pour une narration visuelle engageante",
+        "feature1": "Graphiques Animés",
+        "feature2": "Graphiques Vidéo",
+        "feature3": "Création de GIF",
+        "feature4": "Médias Interactifs"
+      },
+      "illustration": {
+        "title": "Illustration et Art Créatif",
+        "description": "Illustrations personnalisées et art créatif adapté à votre marque et message",
+        "feature1": "Illustrations Personnalisées",
+        "feature2": "Art Numérique",
+        "feature3": "Design de Personajes",
+        "feature4": "Infographies"
+      },
+      "print": {
+        "title": "Design de Impresión y Publicación",
+        "description": "Services professionnels de design d'impression pour livres, magazines et supports marketing",
+        "feature1": "Design de Libros",
+        "feature2": "Design de Revistas",
+        "feature3": "Design de Catálogos",
+        "feature4": "Supports Imprimés"
+      },
+      "packaging": {
+        "title": "Emballage et Branding de Produits",
+        "description": "Design de empaque atractivo y branding de productos que se destacan en los estantes",
+        "feature1": "Emballage de Produits",
+        "feature2": "Design de Etiquetas",
+        "feature3": "Applications de Marque",
+        "feature4": "Graphiques de Produits"
+      },
+      "emerging": {
+        "title": "Tendencias Emergentes de Design Graphique",
+        "description": "Approches de design de pointe utilisant les dernières tendances et technologies",
+        "feature1": "Tendencias de Design Moderno",
+        "feature2": "Graphiques 3D",
+        "feature3": "Graphiques AR/VR",
+        "feature4": "Design Interactivo"
+      },
+      "benefits": {
+        "title": "Avantages des Services Branding y Design Graphique",
+        "description": "Ventajas clave del branding profesional y diseño gráfico para el éxito empresarial",
+        "feature1": "Reconnaissance de Marque",
+        "feature2": "Image Professionnelle",
+        "feature3": "Efficacité Marketing",
+        "feature4": "Confiance Client"
+      }
+    },
+    "benefit1": "Imagen de marca profesional que genera confianza y credibilidad",
+    "benefit2": "Identidad visual consistente en todos los materiales de marketing",
+    "benefit3": "Mayor reconocimiento de marca y recordación del cliente",
+    "benefit4": "Tasas de compromiso más altas con contenido visualmente atractivo",
+    "benefit5": "Solutions de design rentables pour toutes les tailles d'entreprises",
+    "benefit6": "Délais de livraison rapides sans compromettre la qualité",
+    "benefit7": "Designs évolutifs qui fonctionnent sur différentes plateformes",
+    "benefit8": "Orientation experte sur les tendances de design et meilleures pratiques",
+    "benefit9": "Solutions personnalisées adaptées à vos besoins spécifiques",
+    "benefit10": "Support de design continu et révisions incluses"
+  },
+  "aiServicesPage": {
+    "title": "Services IA",
+    "subtitle": "Exploitez le pouvoir de l'intelligence artificielle pour transformer les opérations de votre entreprise et stimuler l'innovation. Nos services IA complets vous aident à exploiter la technologie de pointe pour obtenir un avantage concurrentiel.",
+    "servicesTitle": "Nos Services IA",
+    "benefitsTitle": "Pourquoi Choisir Nos Services IA?",
+    "benefitsSubtitle": "Transformez votre entreprise avec des solutions intelligentes conçues pour l'avenir",
+    "ctaTitle": "Prêt à Transformer Votre Entreprise avec l'IA?",
+    "ctaSubtitle": "Laissez nos experts IA vous aider à exploiter le pouvoir de l'intelligence artificielle pour stimuler l'innovation et la croissance. Commencez votre transformation IA aujourd'hui et débloquez de nouvelles possibilités pour votre entreprise.",
+    "ctaButton": "Lancer un Projet IA",
+    "learnMoreButton": "En Savoir Plus Sur Nous",
+    "enquireButton": "Se Renseigner",
+    "serviceBadge": "Service IA",
+    "services": {
+      "machineLearning": {
+        "title": "Services d'Apprentissage Automatique (ML)",
+        "description": "Solutions avancées d'apprentissage automatique pour automatiser les processus et extraire des insights de vos données",
+        "feature1": "Analytique Prédictive",
+        "feature2": "Modèles de Classification",
+        "feature3": "Systèmes de Recommandation",
+        "feature4": "Détection d'Anomalies"
+      },
+      "nlp": {
+        "title": "Services de Traitement du Langage Naturel (NLP)",
+        "description": "Capacités intelligentes de traitement de texte et compréhension du langage pour vos applications",
+        "feature1": "Analyse de Texte",
+        "feature2": "Chatbots et Assistants Virtuels",
+        "feature3": "Analyse de Sentiments",
+        "feature4": "Traduction de Langues"
+      },
+      "computerVision": {
+        "title": "Services de Vision par Ordinateur",
+        "description": "Capacités avancées d'analyse d'images et de vidéos pour automatiser les tâches visuelles et extraire des insights",
+        "feature1": "Détection d'Objets",
+        "feature2": "Classification d'Images",
+        "feature3": "Reconnaissance Faciale",
+        "feature4": "Inspection de Qualité"
+      },
+      "generativeAI": {
+        "title": "Services IA Generativa",
+        "description": "Solutions IA générative de pointe pour créer du contenu, du code et des applications innovantes",
+        "feature1": "Génération de Contenu",
+        "feature2": "Automatisation de Code",
+        "feature3": "Design Créatif",
+        "feature4": "Datos Sintéticos"
+      },
+      "aiAutomation": {
+        "title": "Services d'Automatisation IA",
+        "description": "Soluciones de automatización inteligente para optimizar flujos de trabajo y aumentar la eficiencia operativa",
+        "feature1": "Automatisation de Processus",
+        "feature2": "Traitement Intelligent de Documents",
+        "feature3": "Optimización de Flujos de Trabajo",
+        "feature4": "Integración RPA"
+      },
+      "dataAnalytics": {
+        "title": "Services IA para Datos y Analítica",
+        "description": "Analítica e insights impulsados por IA para impulsar la toma de decisiones basada en datos en toda su organización",
+        "feature1": "Analytique Prédictive",
+        "feature2": "Intelligence d'Affaires",
+        "feature3": "Visualisation de Données",
+        "feature4": "Insights en Tiempo Real"
+      },
+      "cybersecurity": {
+        "title": "IA en Ciberseguridad",
+        "description": "Soluciones de seguridad avanzadas impulsadas por IA para proteger sus activos digitales y detectar amenazas",
+        "feature1": "Détection des Menaces",
+        "feature2": "Análisis de Comportamiento",
+        "feature3": "Automatización de Seguridad",
+        "feature4": "Évaluation des Risques"
+      },
+      "industrySpecific": {
+        "title": "Soluciones de IA Específicas por Industria",
+        "description": "Soluciones de IA personalizadas diseñadas para industrias específicas y verticales de negocios",
+        "feature1": "IA para Salud",
+        "feature2": "Servicios Financieros",
+        "feature3": "Manufactura",
+        "feature4": "Retail y E-commerce"
+      },
+      "infrastructure": {
+        "title": "Infraestructura de IA y MLOps",
+        "description": "Infraestructura robusta de IA y prácticas MLOps para desplegar y gestionar modelos de IA a escala",
+        "feature1": "Despliegue de Modelos",
+        "feature2": "Automatización de Pipelines",
+        "feature3": "Monitoreo y Mantenimiento",
+        "feature4": "Infraestructura Escalable"
+      },
+      "training": {
+        "title": "Capacitación y Soporte en IA",
+        "description": "Capacitación integral y soporte continuo para ayudar a su equipo a aprovechar las tecnologías de IA de manera efectiva",
+        "feature1": "Capacitación de Equipo",
+        "feature2": "Mejores Prácticas",
+        "feature3": "Support Technique",
+        "feature4": "Transfert de Connaissances"
+      }
+    },
+    "benefit1": "Orientación experta en IA de profesionales experimentados de la industria",
+    "benefit2": "Solutions IA personnalisées adaptées à vos besoins commerciaux spécifiques",
+    "benefit3": "Risques de mise en œuvre réduits grâce à des méthodologies IA éprouvées",
+    "benefit4": "Déploiement IA plus rapide avec gestion de projets structurée",
+    "benefit5": "Optimisation des coûts grâce à la planification stratégique IA et allocation des ressources",
+    "benefit6": "Accès aux dernières tendances IA et technologies émergentes",
+    "benefit7": "Infrastructure IA évolutive conçue pour la croissance",
+    "benefit8": "Alignement stratégique entre initiatives IA et objectifs commerciaux",
+    "benefit9": "Support IA continu et transfert de connaissances à votre équipe",
+    "benefit10": "Résultats IA mesurables avec KPIs clairs et métriques de succès"
+  },
+  "enquiryForm": {
+    "title": "Contactez-Nous",
+    "subtitle": "Parlez-nous des exigences de votre projet",
+    "thankYouTitle": "Merci!",
+    "thankYouMessage": "Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24 heures.",
+    "fields": {
+      "fullName": {
+        "label": "Nom Complet",
+        "placeholder": "Entrez votre nom complet",
+        "required": true
+      },
+      "email": {
+        "label": "Correo Electrónico",
+        "placeholder": "Entrez votre adresse e-mail",
+        "required": true
+      },
+      "phone": {
+        "label": "Número de Teléfono",
+        "placeholder": "Entrez votre numéro de téléphone",
+        "required": false
+      },
+      "company": {
+        "label": "Nom de l'Entreprise",
+        "placeholder": "Entrez le nom de votre entreprise",
+        "required": false
+      },
+      "service": {
+        "label": "Service d'Intérêt",
+        "placeholder": "Sélectionnez un service",
+        "required": true
+      },
+      "message": {
+        "label": "Détails du Projet",
+        "placeholder": "Parlez-nous des exigences de votre projet, du calendrier et du budget...",
+        "required": true
+      }
+    },
+    "services": {
+      "webDevelopment": "Développement Web",
+      "itTechServices": "Services IT et Technologie",
+      "digitalMarketing": "Marketing Digital",
+      "graphicDesign": "Design Graphique",
+      "consultingServices": "Services de Conseil",
+      "other": "Autre"
+    },
+    "buttons": {
+      "submit": "Envoyer la Demande",
+      "submitting": "Envoi en cours..."
+    },
+    "toast": {
+      "success": "Demande envoyée avec succès!",
+      "successDescription": "Merci pour votre demande. Nous vous contacterons dans les 24 heures.",
+      "error": "Erreur lors de l'envoi de la demande",
+      "errorDescription": "Veuillez réessayer plus tard."
+    }
+  },
+  "careers": {
+    "pageTitle": "Carrières chez Al Mawa International Pune - Emplois de Développeur Web | Emplois IT",
+    "openPositions": {
+      "title": "Postes Ouverts",
+      "subtitle": "Découvrez des opportunités qui correspondent à vos compétences et votre passion"
+    },
+    "search": {
+      "placeholder": "Rechercher des emplois...",
+      "department": "Département",
+      "allDepartments": "Tous les Départements",
+      "location": "Pune, Inde"
+    },
+    "jobCard": {
+      "showMore": "Afficher plus",
+      "showLess": "Afficher moins",
+      "keyRequirements": "Exigences Clés:",
+      "jobDetails": "Détails de l'Emploi:",
+      "department": "Département",
+      "notSpecified": "Non spécifié",
+      "location": "Emplacement",
+      "type": "Type",
+      "salary": "Salaire",
+      "competitive": "Compétitif",
+      "recentlyPosted": "Publié récemment",
+      "applyNow": "Postuler Maintenant"
+    },
+    "noJobs": "Aucun emploi trouvé correspondant à vos critères.",
+    "benefits": {
+      "title": "pourquoi travailler avec nous",
+      "subtitle": "Nous croyons en prendre soin de notre équipe avec des avantages et des bénéfices complets",
+      "items": {
+        "innovative": {
+          "title": "Environnement de Travail Innovant",
+          "description": "Collaborez avec une équipe visionnaire qui embrasse la créativité, la technologie et l'apprentissage continu."
+        },
+        "growth": {
+          "title": "Croissance et Développement Professionnel",
+          "description": "Accédez à des opportunités pour améliorer les compétences, le mentorat et l'avancement dans un paysage numérique en évolution rapide"
+        },
+        "empowerment": {
+          "title": "Autonomisation et Impact",
+          "description": "Contribuez à des projets significatifs qui génèrent de vrais résultats commerciaux et font une différence tangible"
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "subtitle": "Vous avez des questions? Nous avons des réponses.",
+      "items": {
+        "interview": {
+          "question": "Comment se déroule le processus d'entretien?",
+          "answer": "Notre processus d'entretien consiste généralement en une évaluation téléphonique initiale, une évaluation technique (pour les rôles techniques) et 2-3 tours d'entretiens avec les membres de l'équipe et la direction. L'ensemble du processus prend généralement 2 à 4 jours."
+        },
+        "remote": {
+          "question": "Offrez-vous des opportunités de travail à distance?",
+          "answer": "Oui! Nous offrons des postes entièrement à distance ainsi que des arrangements hybrides. Beaucoup de nos membres d'équipe travaillent à distance, et nous avons les outils et la culture pour soutenir efficacement les équipes distribuées."
+        },
+        "benefits": {
+          "question": "Quels avantages offrez-vous?",
+          "answer": "Nous croyons en aider notre équipe à grandir grâce à l'apprentissage continu. Nous offrons des opportunités pour explorer de nouvelles compétences, acquérir une expérience pratique et améliorer votre expertise, tout en fournissant un salaire compétitif, des heures de formation dédiées pour apprendre de nouvelles compétences et des pauses thé rafraîchissantes pour vous garder énergisé tout au long de la journée."
+        },
+        "careerGrowth": {
+          "question": "Comment soutenez-vous la croissance professionnelle?",
+          "answer": "Nous croyons en investir dans nos gens. Nous fournissons des programmes de mentorat, la participation à des conférences, des opportunités de mobilité interne et des conversations régulières sur le développement professionnel."
+        },
+        "culture": {
+          "question": "Comment est la culture de l'entreprise?",
+          "answer": "Notre culture est basée sur la collaboration, l'innovation et le respect. Nous valorisons les perspectives diverses, encourageons la communication ouverte et maintenons un équilibre sain entre travail et vie personnelle tout en construisant des produits incroyables."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Postuler pour",
+      "subtitle": "Remplissez le formulaire ci-dessous pour soumettre votre candidature. Nous vous contacterons dans les 48 heures.",
+      "fields": {
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo Electrónico",
+        "phone": "Número de Teléfono",
+        "experience": "Années d'Expérience",
+        "experiencePlaceholder": "Sélectionnez le niveau d'expérience",
+        "experienceOptions": {
+          "0-1": "0-1 ans",
+          "2-3": "2-3 ans",
+          "4-5": "4-5 ans",
+          "6-10": "6-10 ans",
+          "10+": "10+ ans"
+        },
+        "coverLetter": "Lettre de Motivation",
+        "coverLetterPlaceholder": "Dites-nous pourquoi vous êtes intéressé par ce rôle et ce qui fait de vous un excellent candidat...",
+        "resume": "CV/Curriculum Vitae"
+      },
+      "buttons": {
+        "cancel": "Cancelar",
+        "submit": "Soumettre la Candidature",
+        "submitting": "Envoi en cours..."
+      },
+      "toast": {
+        "success": "Candidature soumise avec succès!",
+        "successDescription": "Votre candidature pour {jobTitle} a été reçue. Nous l'examinerons et vous contacterons bientôt.",
+        "error": "Erreur lors de la soumission de la candidature",
+        "errorDescription": "Veuillez vérifier vos informations et réessayer."
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslations } from 'next-intl';
 
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
@@ -13,7 +14,6 @@ import conferenceRoom from "@/components/images/conference room 1.jpg";
 import values from "@/components/images/ourvalue.jpg";
 import mission from "@/components/images/ourmission.jpg";
 import Image from "next/image";
-import { url } from "inspector";
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -21,6 +21,7 @@ const playfair_display = Playfair_Display({
 });
 
 export default function HeroSection() {
+  const t = useTranslations('home');
   const [blog, setBlog] = useState([]);
 
   const getData = async () => {
@@ -56,9 +57,8 @@ export default function HeroSection() {
           <StickyScroll
             content={[
               {
-                title: "Al Mawa International",
-                description:
-                  "At AL-MAWA International, We see technology not just as a set of tools, but as a bridge that empowers people and accelerates growth. As your digital growth partner, we combine innovation, strategy, and cutting-edge solutions to help businesses thrive in a fast-evolving world. ",
+                title: t('companyTitle'),
+                description: t('companyDescription'),
                 content: (
                   <div className="h-full w-full flex items-center justify-center z-20">
                     <Image
@@ -71,9 +71,8 @@ export default function HeroSection() {
                 ),
               },
               {
-                title: "Our Mission",
-                description:
-                  "Inspired by the belief that technology's true power lies in people, We're committed to redefining the digital experience through smart, seamless, and sustainable IT solutions. Our mission is to fuse creativity with technology, empowering every client to innovate boldly, perform efficiently, and lead confidently in this evolving digital world.",
+                title: t('ourMissionTitle'),
+                description: t('ourMissionDescription'),
                 content: (
                   <div className="h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
                     <Image
@@ -85,9 +84,8 @@ export default function HeroSection() {
                 ),
               },
               {
-                title: "Our Values",
-                description:
-                  "We envision becoming a global symbol of trust, innovation, and transformation a place where ideas turn into lasting impact, and technology serves as a catalyst for human progress, aspiring to create a future where every business, regardless of size, thrives through intelligent innovation, empowered teams, and limitless possibilities.",
+                title: t('ourValuesTitle'),
+                description: t('ourValuesDescription'),
                 content: (
                   <div className="h-full w-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-accent-foreground">
                     <Image
@@ -118,12 +116,12 @@ export default function HeroSection() {
             <h2
               className={`${inter.className} text-4xl md:text-5xl font-bold pb-4 text-center text-black uppercase`}
             >
-              voices from the desk
+              {t('voicesFromDesk')}
             </h2>
             <p
               className={`${playfair_display.className} text-lg text-black uppercase`}
             >
-              Professional perspectives designed to inform, inspire, and empower
+              {t('voicesSubtitle')}
             </p>
           </div>
           <InfiniteMovingCards items={blog} direction="right" speed="slow" />

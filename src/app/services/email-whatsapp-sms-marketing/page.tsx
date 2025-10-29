@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -37,107 +38,107 @@ const staggerContainer = {
   },
 };
 
-const services = [
+const getServices = (t: (key: string) => string) => [
   {
     icon: Mail,
-    title: "Email Marketing Services",
-    description:
-      "Professional email campaigns that engage your audience and drive conversions",
+    title: t('services.email.title') as string,
+    description: t('services.email.description') as string,
     features: [
-      "Campaign Design",
-      "Automated Sequences",
-      "A/B Testing",
-      "Performance Analytics",
+      t('services.email.feature1') as string,
+      t('services.email.feature2') as string,
+      t('services.email.feature3') as string,
+      t('services.email.feature4') as string,
     ],
   },
   {
     icon: MessageCircle,
-    title: "WhatsApp Marketing Services",
-    description:
-      "Direct customer engagement through WhatsApp Business with personalized messaging",
+    title: t('services.whatsapp.title') as string,
+    description: t('services.whatsapp.description') as string,
     features: [
-      "Business API Setup",
-      "Broadcast Messages",
-      "Customer Support",
-      "Automated Responses",
+      t('services.whatsapp.feature1') as string,
+      t('services.whatsapp.feature2') as string,
+      t('services.whatsapp.feature3') as string,
+      t('services.whatsapp.feature4') as string,
     ],
   },
   {
     icon: Smartphone,
-    title: "SMS Marketing Services",
-    description:
-      "Instant reach with targeted SMS campaigns for time-sensitive promotions and updates",
+    title: t('services.sms.title') as string,
+    description: t('services.sms.description') as string,
     features: [
-      "Bulk SMS Campaigns",
-      "Personalized Messages",
-      "Delivery Reports",
-      "Opt-in Management",
+      t('services.sms.feature1') as string,
+      t('services.sms.feature2') as string,
+      t('services.sms.feature3') as string,
+      t('services.sms.feature4') as string,
     ],
   },
   {
     icon: Network,
-    title: "Omnichannel Integration",
-    description:
-      "Seamless integration across all marketing channels for consistent customer experience",
+    title: t('services.omnichannel.title') as string,
+    description: t('services.omnichannel.description') as string,
     features: [
-      "Cross-platform Campaigns",
-      "Unified Analytics",
-      "Customer Journey Mapping",
-      "Synchronized Messaging",
+      t('services.omnichannel.feature1') as string,
+      t('services.omnichannel.feature2') as string,
+      t('services.omnichannel.feature3') as string,
+      t('services.omnichannel.feature4') as string,
     ],
   },
   {
     icon: CheckCircle,
-    title: "Benefits of Email, WhatsApp & SMS Marketing",
-    description:
-      "Comprehensive advantages of multi-channel marketing approach for business growth",
+    title: t('services.benefits.title') as string,
+    description: t('services.benefits.description') as string,
     features: [
-      "Higher Engagement",
-      "Direct Communication",
-      "Cost-Effective",
-      "Measurable Results",
+      t('services.benefits.feature1') as string,
+      t('services.benefits.feature2') as string,
+      t('services.benefits.feature3') as string,
+      t('services.benefits.feature4') as string,
     ],
   },
 ];
 
-const benefits = [
-  "Direct communication with customers through their preferred channels",
-  "Higher engagement rates compared to traditional advertising",
-  "Cost-effective marketing with measurable ROI",
-  "Personalized messaging based on customer behavior and preferences",
-  "Real-time delivery and instant customer feedback",
-  "Automated campaigns that save time and increase efficiency",
-  "Detailed analytics and reporting for campaign optimization",
-  "Increased customer retention through regular engagement",
-  "Global reach with local personalization capabilities",
-  "Integration with existing CRM and marketing tools",
+const getBenefits = (t: (key: string) => string) => [
+  t('benefit1') as string,
+  t('benefit2') as string,
+  t('benefit3') as string,
+  t('benefit4') as string,
+  t('benefit5') as string,
+  t('benefit6') as string,
+  t('benefit7') as string,
+  t('benefit8') as string,
+  t('benefit9') as string,
+  t('benefit10') as string,
 ];
 
-const marketingStats = [
+const getMarketingStats = (t: (key: string) => string) => [
   {
-    metric: "4.1 Billion",
-    description: "Email users worldwide",
+    metric: t('stats.emailUsers.metric') as string,
+    description: t('stats.emailUsers.description') as string,
     icon: Mail,
   },
   {
-    metric: "2+ Billion",
-    description: "WhatsApp active users",
+    metric: t('stats.whatsappUsers.metric') as string,
+    description: t('stats.whatsappUsers.description') as string,
     icon: MessageCircle,
   },
   {
-    metric: "98%",
-    description: "SMS open rate",
+    metric: t('stats.smsOpenRate.metric') as string,
+    description: t('stats.smsOpenRate.description') as string,
     icon: Smartphone,
   },
   {
-    metric: "4200%",
-    description: "Average ROI for email marketing",
+    metric: t('stats.emailROI.metric') as string,
+    description: t('stats.emailROI.description') as string,
     icon: TrendingUp,
   },
 ];
 
 export default function DigitalMarketingPage() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const t = useTranslations('digitalMarketingPage');
+  
+  const services = getServices(t);
+  const benefits = getBenefits(t);
+  const marketingStats = getMarketingStats(t);
 
   return (
     <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
@@ -153,16 +154,14 @@ export default function DigitalMarketingPage() {
             className={`text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
             variants={fadeInUp}
           >
-            Digital Marketing
+            {t('title')}
             <br />
           </motion.h1>
           <motion.p
             className={`text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6 ${playfair_display.className}`}
             variants={fadeInUp}
           >
-            Connect with your customers through powerful email, WhatsApp, and
-            SMS marketing campaigns. Drive engagement and boost conversions with
-            our integrated digital marketing solutions.
+            {t('subtitle')}
           </motion.p>
         </div>
       </motion.section>
@@ -180,7 +179,7 @@ export default function DigitalMarketingPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Marketing That Delivers Results
+              {t('statsTitle')}
             </h2>
           </motion.div>
 
@@ -223,12 +222,12 @@ export default function DigitalMarketingPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Our Digital Marketing Services
+              {t('servicesTitle')}
             </h2>
             <p
               className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              Comprehensive marketing solutions across multiple channels
+              {t('servicesSubtitle')}
             </p>
           </motion.div>
 
@@ -245,7 +244,7 @@ export default function DigitalMarketingPage() {
                         variant="secondary"
                         className="bg-[#0ea5e9] text-white"
                       >
-                        Marketing
+                        {t('serviceBadge')}
                       </Badge>
                     </div>
                     <CardTitle
@@ -279,7 +278,7 @@ export default function DigitalMarketingPage() {
                         className="mx-auto w-[80%] cursor-pointer bg-[#0ea5e9] hover:bg-[#13a5e9cc]  mt-auto text-white"
                         size="sm"
                       >
-                        Enquire
+                        {t('enquireButton')}
                       </Button>
                     </div>
                   </CardContent>
@@ -303,12 +302,12 @@ export default function DigitalMarketingPage() {
             <h2
               className={`text-3xl md:text-4xl font-bold text-black mb-4 ${inter.className}`}
             >
-              Benefits of Email, WhatsApp & SMS Marketing
+              {t('benefitsTitle')}
             </h2>
             <p
               className={`text-lg text-gray-600 max-w-2xl mx-auto ${playfair_display.className}`}
             >
-              Why multi-channel marketing is essential for your business growth
+              {t('benefitsSubtitle')}
             </p>
           </motion.div>
 
@@ -341,14 +340,12 @@ export default function DigitalMarketingPage() {
           <h2
             className={`text-3xl md:text-4xl font-bold text-black mb-6 ${inter.className}`}
           >
-            Ready to Boost Your Marketing Results?
+            {t('ctaTitle')}
           </h2>
           <p
             className={`text-lg text-gray-600 mb-8 ${playfair_display.className}`}
           >
-            Start connecting with your customers through powerful email,
-            WhatsApp, and SMS campaigns. Let&apos;s create a marketing strategy
-            that drives real results.
+            {t('ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -356,10 +353,10 @@ export default function DigitalMarketingPage() {
               size="lg"
               className="hover:bg-[#0ea5e9] bg-white text-black border hover:text-white"
             >
-              <span> Start Marketing Campaign </span>
+              <span>{t('ctaButton')}</span>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">Learn More About Us</Link>
+              <Link href="/about">{t('learnMoreButton')}</Link>
             </Button>
           </div>
         </div>
@@ -369,7 +366,7 @@ export default function DigitalMarketingPage() {
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
-        serviceName="Digital Marketing"
+        serviceName={t('title')}
       />
     </div>
   );

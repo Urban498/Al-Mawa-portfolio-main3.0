@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 import { submitEnquiryForm } from "@/lib/formServices";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -23,20 +24,13 @@ interface EnquiryModalProps {
   serviceName?: string;
 }
 
-const services = [
-  "Web Development",
-  "IT & Tech Services", 
-  "Digital Marketing",
-  "Graphic Design",
-  "Consulting Services",
-  "Other"
-];
-
 export const EnquiryModal: React.FC<EnquiryModalProps> = ({ 
   isOpen, 
   onClose, 
   serviceName 
 }) => {
+  const t = useTranslations('enquiryForm');
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,6 +42,15 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const services = [
+    { key: "webDevelopment", label: t('services.webDevelopment') },
+    { key: "itTechServices", label: t('services.itTechServices') },
+    { key: "digitalMarketing", label: t('services.digitalMarketing') },
+    { key: "graphicDesign", label: t('services.graphicDesign') },
+    { key: "consultingServices", label: t('services.consultingServices') },
+    { key: "other", label: t('services.other') }
+  ];
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -76,8 +79,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
       
       console.log("✅ Enquiry submitted successfully:", result);
       
-      toast.success('Enquiry submitted successfully!', {
-        description: 'Thank you for your enquiry. We\'ll get back to you within 24 hours.',
+      toast.success(t('toast.success'), {
+        description: t('toast.successDescription'),
       });
       
       setIsSubmitted(true);
@@ -99,8 +102,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     } catch (error: unknown) {
       console.error("❌ Enquiry submission error:", error);
       
-      toast.error('Failed to submit enquiry', {
-        description: error instanceof Error ? error.message : 'Please try again later.',
+      toast.error(t('toast.error'), {
+        description: error instanceof Error ? error.message : t('toast.errorDescription'),
       });
     } finally {
       setIsSubmitting(false);
@@ -159,9 +162,9 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b">
             <div>
-              <h2 className="text-2xl font-bold text-black">Get In Touch</h2>
+              <h2 className="text-2xl font-bold text-black">{t('title')}</h2>
               <p className="text-gray-600 text-sm mt-1">
-                Tell us about your project requirements
+                {t('subtitle')}
               </p>
             </div>
             <button
@@ -184,10 +187,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                   <Send className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-black mb-2">
-                  Thank You!
+                  {t('thankYouTitle')}
                 </h3>
                 <p className="text-gray-600">
-                  Your enquiry has been submitted successfully. We&apos;ll get back to you within 24 hours.
+                  {t('thankYouMessage')}
                 </p>
               </motion.div>
             ) : (
@@ -195,14 +198,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 {/* Name */}
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium text-black">
-                    Full Name *
+                    {t('fields.fullName.label')} *
                   </Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
                       id="name"
                       type="text"
-                      placeholder="Enter your full name"
+                      placeholder={t('fields.fullName.placeholder')}
                       value={formData.name}
                       onChange={(e) => handleInputChange("name", e.target.value)}
                       className="pl-10"
@@ -214,14 +217,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 {/* Email */}
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-sm font-medium text-black">
-                    Email Address *
+                    {t('fields.email.label')} *
                   </Label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
                       id="email"
                       type="email"
-                      placeholder="Enter your email address"
+                      placeholder={t('fields.email.placeholder')}
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       className="pl-10"
@@ -233,14 +236,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 {/* Phone */}
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-sm font-medium text-black">
-                    Phone Number
+                    {t('fields.phone.label')}
                   </Label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="Enter your phone number"
+                      placeholder={t('fields.phone.placeholder')}
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
                       className="pl-10"
@@ -251,14 +254,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 {/* Company */}
                 <div className="space-y-2">
                   <Label htmlFor="company" className="text-sm font-medium text-black">
-                    Company Name
+                    {t('fields.company.label')}
                   </Label>
                   <div className="relative">
                     <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
                       id="company"
                       type="text"
-                      placeholder="Enter your company name"
+                      placeholder={t('fields.company.placeholder')}
                       value={formData.company}
                       onChange={(e) => handleInputChange("company", e.target.value)}
                       className="pl-10"
@@ -269,7 +272,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 {/* Service */}
                 <div className="space-y-2">
                   <Label htmlFor="service" className="text-sm font-medium text-black">
-                    Service Interested In *
+                    {t('fields.service.label')} *
                   </Label>
                   <Select
                     value={formData.service}
@@ -277,12 +280,12 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     required
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a service" />
+                      <SelectValue placeholder={t('fields.service.placeholder')} />
                     </SelectTrigger>
                     <SelectContent>
                       {services.map((service) => (
-                        <SelectItem key={service} value={service}>
-                          {service}
+                        <SelectItem key={service.key} value={service.label}>
+                          {service.label}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -292,13 +295,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 {/* Message */}
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-sm font-medium text-black">
-                    Project Details *
+                    {t('fields.message.label')} *
                   </Label>
                   <div className="relative">
                     <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                     <Textarea
                       id="message"
-                      placeholder="Tell us about your project requirements, timeline, and budget..."
+                      placeholder={t('fields.message.placeholder')}
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
                       className="pl-10 min-h-[100px] resize-none"
@@ -317,12 +320,12 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Submitting...
+                      {t('buttons.submitting')}
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
                       <Send className="w-4 h-4" />
-                      Send Enquiry
+                      {t('buttons.submit')}
                     </div>
                   )}
                 </Button>

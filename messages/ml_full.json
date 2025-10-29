@@ -1,0 +1,883 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Our Services",
+    "careers": "Careers",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "welcome": "Welcome to Al Mawa International",
+    "subtitle": "where innovation meets excellence.",
+    "title": "Comprehensive Business Solutions",
+    "description": "From real estate to legal documentation, we provide end-to-end business services tailored to your needs. Explore our diverse range of professional solutions.",
+    "cta": "Get Started Today",
+    "tryTrustTransform": "TRY. TRUST. TRANSFORM.",
+    "empoweringBusinesses": "Empowering Businesses, Transforming",
+    "now": "Now.",
+    "tomorrow": "Tomorrow.",
+    "future": "Future.",
+    "tagline": "Curating digital experience and conveying digital solutions for brighter future."
+  },
+  "services": {
+    "realEstate": "Real Estate Services",
+    "legalPublic": "Legal Public Documentation",
+    "insurance": "Insurance Services",
+    "hr": "HR & Recruitment",
+    "accounting": "Accounting & Tax",
+    "business": "Business Registration",
+    "legal": "Legal & Compliance",
+    "sales": "Sales & Purchase Management",
+    "architect": "Architect & Interior",
+    "travel": "Travel & Transport",
+    "import": "Import & Export",
+    "vehicle": "2nd Hand Vehicle Selling",
+    "event": "Event Management",
+    "visa": "Visa Solutions",
+    "social": "Social & Community",
+    "workshop": "Workshop Services",
+    "dropshipping": "Dropshipping Services"
+  },
+  "about": {
+    "title": "About Almawa Services",
+    "subtitle": "Empowering Businesses Through Innovation",
+    "description": "At Almawa Services, we are dedicated to transforming businesses through cutting-edge solutions, strategic consulting, and unwavering commitment to excellence.",
+    "ourStory": "Our Story",
+    "ourMission": "Our Mission",
+    "ourValues": "Our Values",
+    "meetTeam": "Meet Our Team",
+    "readyToWork": "Ready to Work Together?",
+    "getInTouch": "Get In Touch",
+    "scheduleCall": "Schedule a Call",
+    "pageTitle": "About",
+    "pageSubtitle": "us",
+    "mainDescription": "Through our work, we strive to not only support businesses but to empower them to lead, adapt, and thrive in a competitive world. At AL-Mawa International, we don't just provide services we deliver transformation and we promise evolution.",
+    "ourTeamTitle": "Our Team",
+    "teamDescription": "Driven by innovation and teamwork, our experts from IT, digital marketing, and graphics departments work hand in hand to create impactful digital experiences. We focus on delivering quality, creativity, and performance in every project we handle.",
+    "wayWeWorkTitle": "The Way We Work",
+    "wayWeWorkDescription": "At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference. Our approach is collaborative, transparent, and result-oriented ensuring every project aligns perfectly with client goals. We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth. Efficiency, agility, and innovation are not just methods, they're our mindset.",
+    "whyChooseUsTitle": "Why Choose Us",
+    "whyChooseUsDescription": "Choosing AL-Mawa International means partnering with a team that prioritizes your success as much as its own. We bring together technology, strategy, and creativity to craft solutions that deliver measurable results. Our commitment goes beyond service we build lasting partnerships rooted in integrity and excellence. Every solution is tailored, every deadline is respected, and every outcome is designed to empower your digital journey. We don't just meet expectations, we redefine them.",
+    "whatWeStandForTitle": "What We Stand For",
+    "whatWeStandForDescription": "We stand for innovation, accountability, and transformation values that guide every decision we make. Our goal is to create technology that simplifies lives and accelerates growth. We believe in empowering businesses with digital solutions that are sustainable, smart, and scalable. At our core lies a commitment to honesty, collaboration, and continuous improvement. We're focused on building a better digital experience one that connects people, ideas, and possibilities."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "sales": "Sales",
+    "salesDesc": "Interested in learning more about our platform? Contact our sales team for more information.",
+    "support": "Support",
+    "supportDesc": "We're here to help with any platform questions. Check out our FAQ and learn more.",
+    "general": "General Inquiry",
+    "generalDesc": "For general inquiries, please contact us using the form below.",
+    "getDirections": "Get Directions",
+    "contactOffice": "Contact Office",
+    "formTitle": "Send us a message",
+    "formDescription": "Fill out the form below and we'll get back to you within 24 hours.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "selectCountry": "Select country",
+    "subject": "Subject",
+    "projectDescription": "Tell us about your project and how we can help bring your vision to life...",
+    "submitButton": "Submit",
+    "submitting": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "successDescription": "Thank you for reaching out. We'll get back to you within 24 hours.",
+    "errorMessage": "Failed to send message",
+    "errorDescription": "Please try again later.",
+    "mapInstruction": {
+      "desktop": "Hover over the Map for Direction",
+      "mobile": "Click on the Map for Direction"
+    },
+    "otherWaysTitle": "Other Ways to Reach Us",
+    "otherWaysDescription": "Choose the method that works best for you. We're always here to help!",
+    "contactInfo": {
+      "email": {
+        "title": "Email",
+        "description": "Send us an email anytime"
+      },
+      "phone": {
+        "title": "Phone",
+        "description": "Mon – Sat: 9:00 AM – 7:00 PM"
+      },
+      "office": {
+        "title": "Office",
+        "address": "AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces)",
+        "description": "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014"
+      },
+      "workingHours": {
+        "title": "Working Hours",
+        "hours": "Mon – Sat: 9:00 AM – 7:00 PM",
+        "description": "* Closed on 1st & 3rd Saturdays"
+      }
+    }
+  },
+  "footer": {
+    "description": "Delivering next-generation digital solutions that transform ideas into measurable results.",
+    "contactInfo": "Contact Info",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved.",
+    "companyName": "Al Mawa International"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "loading": "Loading..."
+  },
+  "home": {
+    "companyTitle": "Al Mawa International",
+    "companyDescription": "At AL-MAWA International, We see technology not just as a set of tools, but as a bridge that empowers people and accelerates growth. As your digital growth partner, we combine innovation, strategy, and cutting-edge solutions to help businesses thrive in a fast-evolving world.",
+    "ourMissionTitle": "Our Mission",
+    "ourMissionDescription": "Inspired by the belief that technology's true power lies in people, We're committed to redefining the digital experience through smart, seamless, and sustainable IT solutions. Our mission is to fuse creativity with technology, empowering every client to innovate boldly, perform efficiently, and lead confidently in this evolving digital world.",
+    "ourValuesTitle": "Our Values",
+    "ourValuesDescription": "We envision becoming a global symbol of trust, innovation, and transformation a place where ideas turn into lasting impact, and technology serves as a catalyst for human progress, aspiring to create a future where every business, regardless of size, thrives through intelligent innovation, empowered teams, and limitless possibilities.",
+    "voicesFromDesk": "Voices From The Desk",
+    "voicesSubtitle": "Professional perspectives designed to inform, inspire, and empower"
+  },
+  "servicesSection": {
+    "title": "what we create",
+    "subtitle": "Transforming businesses through technology, insight, and integrated solutions",
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "Creating modern, responsive websites and web applications that drive business growth and user engagement.",
+      "features": ["Website Design", "E-commerce Development", "Web Hosting", "SEO Integration"]
+    },
+    "itTechServices": {
+      "title": "IT & Tech Services", 
+      "description": "Comprehensive IT solutions including infrastructure, cybersecurity, and managed services for your business.",
+      "features": ["Infrastructure Services", "Cybersecurity", "Managed IT", "Cloud Solutions"]
+    },
+    "digitalMarketing": {
+      "title": "Digital Marketing",
+      "description": "Strategic digital marketing campaigns including email, WhatsApp, and SMS marketing to boost your reach.",
+      "features": ["Email Marketing", "WhatsApp Marketing", "SMS Campaigns", "Analytics"]
+    },
+    "graphicDesign": {
+      "title": "Graphic Design",
+      "description": "Professional branding and graphic design services to create compelling visual identities and marketing materials.",
+      "features": ["Brand Identity", "Marketing Design", "Digital Graphics", "Print Design"]
+    },
+    "aiServices": {
+      "title": "AI Services",
+      "description": "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
+      "features": ["Machine Learning Solutions", "Computer Vision Services", "Generative AI Services", "AI Automation Services"]
+    },
+    "learnMore": "Learn more"
+  },
+  "team": {
+    "title": "The Dynamic",
+    "titleHighlight": "Minds",
+    "description": "AL-Mawa International operates under a lean, agile, and innovation-driven structure powered by specialists across IT, Digital Marketing, Design, HR, and Sales. Each department works in harmony to ensure seamless execution and impactful client outcomes. At the heart of AL-Mawa is a diverse team of passionate professionals who combine experience with creativity — delivering excellence and transforming every project into a success story.",
+    "linkedin": "LinkedIn"
+  },
+  "servicesPage": {
+    "title": "Web Development Services Pune - Al Mawa International",
+    "subtitle": "We offer comprehensive digital solutions to help your business thrive in the modern world",
+    "ctaText": "Ready to transform your business with our expertise?",
+    "ctaButton": "Get Started Today",
+    "learnMore": "Learn More",
+    "uiux": {
+      "title": "UI/UX Design",
+      "description": "Creating intuitive and visually stunning user experiences that engage and convert.",
+      "features": ["User Research", "Wireframing", "Prototyping", "Visual Design"]
+    },
+    "development": {
+      "title": "Software Development",
+      "description": "Building robust, scalable applications with cutting-edge technologies and best practices.",
+      "features": ["Web Applications", "Mobile Apps", "API Development", "Database Design"]
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "description": "Driving growth through strategic digital marketing campaigns and data-driven insights.",
+      "features": ["SEO Optimization", "Social Media", "Content Strategy", "Analytics"]
+    }
+  },
+  "webDevelopmentPage": {
+    "title": "Web Development",
+    "subtitle": "Transform your digital presence with our comprehensive web development services. From stunning designs to powerful functionality, we create websites that drive results.",
+    "servicesTitle": "Our Web Development Services",
+    "benefitsTitle": "Benefits of Our Web Development Services",
+    "benefitsSubtitle": "Why choose our web development solutions for your business",
+    "ctaTitle": "Ready to Build Your Website?",
+    "ctaSubtitle": "Let's create a powerful web presence that drives your business forward. Get in touch with our web development experts today.",
+    "ctaButton": "Get Started Today",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Service",
+    "services": {
+      "websiteDesignDev": {
+        "title": "Website Designing & Development Services",
+        "description": "Complete end-to-end website solutions from concept to deployment with modern design principles",
+        "features": ["Custom Design", "Responsive Layout", "Modern UI/UX", "Cross-browser Compatible"]
+      },
+      "websiteDesign": {
+        "title": "Website Design Services",
+        "description": "Creative and user-focused website designs that convert visitors into customers",
+        "features": ["Visual Design", "User Experience", "Brand Integration", "Mobile-first Design"]
+      },
+      "websiteDevelopment": {
+        "title": "Website Development Services",
+        "description": "Robust backend development and frontend implementation for scalable websites",
+        "features": ["Frontend Development", "Backend Systems", "Database Integration", "API Development"]
+      },
+      "ecommerce": {
+        "title": "E-commerce Development",
+        "description": "Full-featured online stores with secure payment processing and inventory management",
+        "features": ["Shopping Cart", "Payment Gateway", "Inventory Management", "Order Processing"]
+      },
+      "hosting": {
+        "title": "Web Hosting & Domain Services",
+        "description": "Reliable hosting solutions and domain management for optimal website performance",
+        "features": ["Domain Registration", "SSL Certificates", "Cloud Hosting", "24/7 Support"]
+      },
+      "seo": {
+        "title": "SEO & Digital Marketing Integration",
+        "description": "Built-in SEO optimization and marketing tools to boost your online presence",
+        "features": ["On-page SEO", "Analytics Setup", "Social Integration", "Performance Tracking"]
+      },
+      "security": {
+        "title": "Performance & Security Optimization",
+        "description": "Advanced security measures and performance optimization for fast, secure websites",
+        "features": ["Security Audits", "Speed Optimization", "SSL Implementation", "Backup Solutions"]
+      },
+      "maintenance": {
+        "title": "Website Maintenance & Support",
+        "description": "Ongoing maintenance and technical support to keep your website running smoothly",
+        "features": ["Regular Updates", "Bug Fixes", "Content Updates", "Technical Support"]
+      },
+      "emerging": {
+        "title": "Emerging Web Technologies",
+        "description": "Cutting-edge web technologies and frameworks for future-ready websites",
+        "features": ["Progressive Web Apps", "AI Integration", "Modern Frameworks", "Cloud Solutions"]
+      },
+      "benefits": {
+        "title": "Benefits of Website Design & Development Services",
+        "description": "Comprehensive advantages of professional website design and development for your business",
+        "features": ["Increased Online Presence", "Better User Engagement", "Higher Conversion Rates", "Professional Credibility"]
+      }
+    },
+    "benefitsList": [
+      "Professional web presence that builds trust and credibility",
+      "Responsive design that works perfectly on all devices",
+      "SEO-optimized structure for better search engine rankings",
+      "Fast loading times and optimal performance",
+      "Secure and reliable hosting with regular backups",
+      "Ongoing support and maintenance included",
+      "Scalable solutions that grow with your business",
+      "Integration with modern marketing tools and analytics"
+    ]
+  },
+  "itTechServicesPage": {
+    "title": "IT & Tech",
+    "subtitle": "Comprehensive IT solutions and technology services to power your business forward. From infrastructure to emerging technologies, we've got you covered.",
+    "servicesTitle": "Complete IT & Technology Solutions",
+    "benefitsTitle": "Benefits of Our IT & Tech Services",
+    "benefitsSubtitle": "Transform your business with our comprehensive IT solutions",
+    "ctaTitle": "Ready to Upgrade Your IT Infrastructure?",
+    "ctaSubtitle": "Let our IT experts help you build a robust, secure, and scalable technology foundation. Contact us today for a comprehensive IT assessment.",
+    "ctaButton": "Get IT Consultation",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "IT Service",
+    "services": {
+      "overview": {
+        "title": "IT & Tech Services - Complete Details",
+        "description": "Comprehensive overview of all our IT and technology service offerings",
+        "feature1": "Service Portfolio",
+        "feature2": "Technology Stack",
+        "feature3": "Implementation Process",
+        "feature4": "Support Structure"
+      },
+      "infrastructure": {
+        "title": "Infrastructure Services",
+        "description": "Robust IT infrastructure solutions for scalable and reliable business operations",
+        "feature1": "Network Setup",
+        "feature2": "Server Management",
+        "feature3": "Hardware Installation",
+        "feature4": "System Architecture"
+      },
+      "managed": {
+        "title": "Managed IT Services",
+        "description": "Complete IT management and monitoring to keep your systems running smoothly",
+        "feature1": "24/7 Monitoring",
+        "feature2": "Proactive Maintenance",
+        "feature3": "System Updates",
+        "feature4": "Performance Optimization"
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity Services",
+        "description": "Advanced security solutions to protect your business from cyber threats",
+        "feature1": "Security Audits",
+        "feature2": "Threat Detection",
+        "feature3": "Data Protection",
+        "feature4": "Compliance Management"
+      },
+      "cloud": {
+        "title": "Cloud & DevOps Services",
+        "description": "Modern cloud solutions and DevOps practices for efficient development and deployment",
+        "feature1": "Cloud Migration",
+        "feature2": "DevOps Implementation",
+        "feature3": "CI/CD Pipelines",
+        "feature4": "Container Management"
+      },
+      "software": {
+        "title": "Software Development Services",
+        "description": "Custom software solutions tailored to your specific business requirements",
+        "feature1": "Custom Applications",
+        "feature2": "System Integration",
+        "feature3": "API Development",
+        "feature4": "Legacy Modernization"
+      },
+      "consulting": {
+        "title": "IT Consulting & Advisory",
+        "description": "Strategic IT guidance to align technology with your business objectives",
+        "feature1": "Technology Strategy",
+        "feature2": "Digital Transformation",
+        "feature3": "IT Planning",
+        "feature4": "Risk Assessment"
+      },
+      "data": {
+        "title": "Data & Analytics Services",
+        "description": "Transform your data into actionable insights for better business decisions",
+        "feature1": "Data Analysis",
+        "feature2": "Business Intelligence",
+        "feature3": "Reporting Solutions",
+        "feature4": "Data Visualization"
+      },
+      "communication": {
+        "title": "Communication & Collaboration Services",
+        "description": "Modern communication tools and collaboration platforms for remote teams",
+        "feature1": "Video Conferencing",
+        "feature2": "Team Collaboration",
+        "feature3": "Document Sharing",
+        "feature4": "Remote Access"
+      },
+      "support": {
+        "title": "IT Support & Helpdesk Services",
+        "description": "Comprehensive technical support and helpdesk services for your IT needs",
+        "feature1": "Technical Support",
+        "feature2": "Issue Resolution",
+        "feature3": "User Training",
+        "feature4": "Documentation"
+      },
+      "emerging": {
+        "title": "Emerging Technology Services",
+        "description": "Cutting-edge technology solutions including AI, IoT, and blockchain implementations",
+        "feature1": "AI Integration",
+        "feature2": "IoT Solutions",
+        "feature3": "Blockchain Development",
+        "feature4": "Automation Tools"
+      },
+      "benefits": {
+        "title": "Benefits of IT & Tech Services",
+        "description": "Key advantages and benefits of implementing our IT and technology services",
+        "feature1": "Cost Reduction",
+        "feature2": "Enhanced Security",
+        "feature3": "Improved Productivity",
+        "feature4": "Strategic Growth"
+      }
+    },
+    "benefit1": "Reduced IT costs through efficient managed services",
+    "benefit2": "Enhanced security with advanced cybersecurity measures",
+    "benefit3": "Improved productivity with reliable IT infrastructure",
+    "benefit4": "24/7 technical support and monitoring",
+    "benefit5": "Scalable solutions that grow with your business",
+    "benefit6": "Access to latest technologies and best practices",
+    "benefit7": "Compliance with industry standards and regulations",
+    "benefit8": "Strategic IT planning aligned with business goals",
+    "benefit9": "Faster issue resolution and minimal downtime",
+    "benefit10": "Expert guidance from certified IT professionals"
+  },
+  "digitalMarketingPage": {
+    "title": "Digital Marketing",
+    "subtitle": "Connect with your customers through powerful email, WhatsApp, and SMS marketing campaigns. Drive engagement and boost conversions with our integrated digital marketing solutions.",
+    "statsTitle": "Marketing That Delivers Results",
+    "servicesTitle": "Our Digital Marketing Services",
+    "servicesSubtitle": "Comprehensive marketing solutions across multiple channels",
+    "benefitsTitle": "Benefits of Email, WhatsApp & SMS Marketing",
+    "benefitsSubtitle": "Why multi-channel marketing is essential for your business growth",
+    "ctaTitle": "Ready to Boost Your Marketing Results?",
+    "ctaSubtitle": "Start connecting with your customers through powerful email, WhatsApp, and SMS campaigns. Let's create a marketing strategy that drives real results.",
+    "ctaButton": "Start Marketing Campaign",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Marketing",
+    "stats": {
+      "emailUsers": {
+        "metric": "4.1 Billion",
+        "description": "Email users worldwide"
+      },
+      "whatsappUsers": {
+        "metric": "2+ Billion",
+        "description": "WhatsApp active users"
+      },
+      "smsOpenRate": {
+        "metric": "98%",
+        "description": "SMS open rate"
+      },
+      "emailROI": {
+        "metric": "4200%",
+        "description": "Average ROI for email marketing"
+      }
+    },
+    "services": {
+      "email": {
+        "title": "Email Marketing Services",
+        "description": "Professional email campaigns that engage your audience and drive conversions",
+        "feature1": "Campaign Design",
+        "feature2": "Automated Sequences",
+        "feature3": "A/B Testing",
+        "feature4": "Performance Analytics"
+      },
+      "whatsapp": {
+        "title": "WhatsApp Marketing Services",
+        "description": "Direct customer engagement through WhatsApp Business with personalized messaging",
+        "feature1": "Business API Setup",
+        "feature2": "Broadcast Messages",
+        "feature3": "Customer Support",
+        "feature4": "Automated Responses"
+      },
+      "sms": {
+        "title": "SMS Marketing Services",
+        "description": "Instant reach with targeted SMS campaigns for time-sensitive promotions and updates",
+        "feature1": "Bulk SMS Campaigns",
+        "feature2": "Personalized Messages",
+        "feature3": "Delivery Reports",
+        "feature4": "Opt-in Management"
+      },
+      "omnichannel": {
+        "title": "Omnichannel Integration",
+        "description": "Seamless integration across all marketing channels for consistent customer experience",
+        "feature1": "Cross-platform Campaigns",
+        "feature2": "Unified Analytics",
+        "feature3": "Customer Journey Mapping",
+        "feature4": "Synchronized Messaging"
+      },
+      "benefits": {
+        "title": "Benefits of Email, WhatsApp & SMS Marketing",
+        "description": "Comprehensive advantages of multi-channel marketing approach for business growth",
+        "feature1": "Higher Engagement",
+        "feature2": "Direct Communication",
+        "feature3": "Cost-Effective",
+        "feature4": "Measurable Results"
+      }
+    },
+    "benefit1": "Direct communication with customers through their preferred channels",
+    "benefit2": "Higher engagement rates compared to traditional advertising",
+    "benefit3": "Cost-effective marketing with measurable ROI",
+    "benefit4": "Personalized messaging based on customer behavior and preferences",
+    "benefit5": "Real-time delivery and instant customer feedback",
+    "benefit6": "Automated campaigns that save time and increase efficiency",
+    "benefit7": "Detailed analytics and reporting for campaign optimization",
+    "benefit8": "Increased customer retention through regular engagement",
+    "benefit9": "Global reach with local personalization capabilities",
+    "benefit10": "Integration with existing CRM and marketing tools"
+  },
+  "graphicDesignPage": {
+    "title": "Graphic Design",
+    "subtitle": "Transform your brand with stunning visual designs that captivate audiences and drive results. From branding to digital graphics, we create designs that make an impact.",
+    "statsTitle": "The Power of Visual Design",
+    "servicesTitle": "Our Graphic Design Services",
+    "servicesSubtitle": "Comprehensive design solutions for all your visual communication needs",
+    "benefitsTitle": "Benefits of Branding & Graphic Design Services",
+    "benefitsSubtitle": "How professional design services can transform your business",
+    "ctaTitle": "Ready to Transform Your Brand?",
+    "ctaSubtitle": "Let our creative team bring your vision to life with stunning graphic designs that make an impact. Start your design project today and see the difference professional design can make.",
+    "ctaButton": "Start Design Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Design",
+    "stats": {
+      "firstImpressions": {
+        "metric": "94%",
+        "description": "First impressions are design-related"
+      },
+      "visualContent": {
+        "metric": "3x",
+        "description": "More likely to share visual content"
+      },
+      "visualLearners": {
+        "metric": "65%",
+        "description": "Of people are visual learners"
+      },
+      "brandRecognition": {
+        "metric": "80%",
+        "description": "Brand recognition increase with color"
+      }
+    },
+    "services": {
+      "brandIdentity": {
+        "title": "Brand Identity Design",
+        "description": "Complete brand identity systems including logos, color palettes, and brand guidelines",
+        "feature1": "Logo Design",
+        "feature2": "Brand Guidelines",
+        "feature3": "Color Schemes",
+        "feature4": "Typography Selection"
+      },
+      "marketing": {
+        "title": "Marketing & Promotional Design",
+        "description": "Eye-catching marketing materials that drive engagement and boost conversions",
+        "feature1": "Flyers & Brochures",
+        "feature2": "Banners & Posters",
+        "feature3": "Advertisement Design",
+        "feature4": "Promotional Graphics"
+      },
+      "digitalSocial": {
+        "title": "Digital & Social Media Design",
+        "description": "Engaging digital graphics optimized for social media platforms and online presence",
+        "feature1": "Social Media Posts",
+        "feature2": "Cover Images",
+        "feature3": "Digital Ads",
+        "feature4": "Web Graphics"
+      },
+      "uiux": {
+        "title": "UI/UX & Web Graphics",
+        "description": "User-friendly interface designs and web graphics that enhance user experience",
+        "feature1": "Website Graphics",
+        "feature2": "UI Elements",
+        "feature3": "Icons & Illustrations",
+        "feature4": "User Interface Design"
+      },
+      "corporate": {
+        "title": "Corporate & Office Branding",
+        "description": "Professional corporate identity and office branding solutions for businesses",
+        "feature1": "Business Cards",
+        "feature2": "Letterheads",
+        "feature3": "Office Signage",
+        "feature4": "Corporate Presentations"
+      },
+      "motion": {
+        "title": "Motion Graphics & Multimedia Design",
+        "description": "Dynamic motion graphics and multimedia content for engaging visual storytelling",
+        "feature1": "Animated Graphics",
+        "feature2": "Video Graphics",
+        "feature3": "GIF Creation",
+        "feature4": "Interactive Media"
+      },
+      "illustration": {
+        "title": "Illustration & Creative Art",
+        "description": "Custom illustrations and creative artwork tailored to your brand and message",
+        "feature1": "Custom Illustrations",
+        "feature2": "Digital Art",
+        "feature3": "Character Design",
+        "feature4": "Infographics"
+      },
+      "print": {
+        "title": "Print & Publishing Design",
+        "description": "Professional print design services for books, magazines, and marketing materials",
+        "feature1": "Book Design",
+        "feature2": "Magazine Layout",
+        "feature3": "Catalog Design",
+        "feature4": "Print Materials"
+      },
+      "packaging": {
+        "title": "Packaging & Product Branding",
+        "description": "Attractive packaging design and product branding that stands out on shelves",
+        "feature1": "Product Packaging",
+        "feature2": "Label Design",
+        "feature3": "Brand Applications",
+        "feature4": "Product Graphics"
+      },
+      "emerging": {
+        "title": "Emerging Graphic Design Trends",
+        "description": "Cutting-edge design approaches using the latest trends and technologies",
+        "feature1": "Modern Design Trends",
+        "feature2": "3D Graphics",
+        "feature3": "AR/VR Graphics",
+        "feature4": "Interactive Design"
+      },
+      "benefits": {
+        "title": "Benefits of Branding & Graphic Design Services",
+        "description": "Key advantages of professional branding and graphic design for business success",
+        "feature1": "Brand Recognition",
+        "feature2": "Professional Image",
+        "feature3": "Marketing Effectiveness",
+        "feature4": "Customer Trust"
+      }
+    },
+    "benefit1": "Professional brand image that builds trust and credibility",
+    "benefit2": "Consistent visual identity across all marketing materials",
+    "benefit3": "Increased brand recognition and customer recall",
+    "benefit4": "Higher engagement rates with visually appealing content",
+    "benefit5": "Cost-effective design solutions for all business sizes",
+    "benefit6": "Fast turnaround times without compromising quality",
+    "benefit7": "Scalable designs that work across different platforms",
+    "benefit8": "Expert guidance on design trends and best practices",
+    "benefit9": "Custom solutions tailored to your specific needs",
+    "benefit10": "Ongoing design support and revisions included"
+  },
+  "aiServicesPage": {
+    "title": "AI Services",
+    "subtitle": "Harness the power of artificial intelligence to transform your business operations and drive innovation. Our comprehensive AI services help you leverage cutting-edge technology for competitive advantage.",
+    "servicesTitle": "Our AI Services",
+    "benefitsTitle": "Why Choose Our AI Services?",
+    "benefitsSubtitle": "Transform your business with intelligent solutions designed for the future",
+    "ctaTitle": "Ready to Transform Your Business with AI?",
+    "ctaSubtitle": "Let our AI experts help you harness the power of artificial intelligence to drive innovation and growth. Start your AI transformation today and unlock new possibilities for your business.",
+    "ctaButton": "Start AI Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "AI Service",
+    "services": {
+      "machineLearning": {
+        "title": "Machine Learning (ML) Services",
+        "description": "Advanced machine learning solutions to automate processes and extract insights from your data",
+        "feature1": "Predictive Analytics",
+        "feature2": "Classification Models",
+        "feature3": "Recommendation Systems",
+        "feature4": "Anomaly Detection"
+      },
+      "nlp": {
+        "title": "Natural Language Processing (NLP) Services",
+        "description": "Intelligent text processing and language understanding capabilities for your applications",
+        "feature1": "Text Analysis",
+        "feature2": "Chatbots & Virtual Assistants",
+        "feature3": "Sentiment Analysis",
+        "feature4": "Language Translation"
+      },
+      "computerVision": {
+        "title": "Computer Vision Services",
+        "description": "Advanced image and video analysis capabilities to automate visual tasks and extract insights",
+        "feature1": "Object Detection",
+        "feature2": "Image Classification",
+        "feature3": "Facial Recognition",
+        "feature4": "Quality Inspection"
+      },
+      "generativeAI": {
+        "title": "Generative AI Services",
+        "description": "Cutting-edge generative AI solutions to create content, code, and innovative applications",
+        "feature1": "Content Generation",
+        "feature2": "Code Automation",
+        "feature3": "Creative Design",
+        "feature4": "Synthetic Data"
+      },
+      "aiAutomation": {
+        "title": "AI Automation Services",
+        "description": "Intelligent automation solutions to streamline workflows and increase operational efficiency",
+        "feature1": "Process Automation",
+        "feature2": "Intelligent Document Processing",
+        "feature3": "Workflow Optimization",
+        "feature4": "RPA Integration"
+      },
+      "dataAnalytics": {
+        "title": "Data & Analytics AI Services",
+        "description": "AI-powered analytics and insights to drive data-driven decision making across your organization",
+        "feature1": "Predictive Analytics",
+        "feature2": "Business Intelligence",
+        "feature3": "Data Visualization",
+        "feature4": "Real-time Insights"
+      },
+      "cybersecurity": {
+        "title": "AI in Cybersecurity",
+        "description": "Advanced AI-driven security solutions to protect your digital assets and detect threats",
+        "feature1": "Threat Detection",
+        "feature2": "Behavioral Analysis",
+        "feature3": "Security Automation",
+        "feature4": "Risk Assessment"
+      },
+      "industrySpecific": {
+        "title": "Industry-Specific AI Solutions",
+        "description": "Tailored AI solutions designed for specific industries and business verticals",
+        "feature1": "Healthcare AI",
+        "feature2": "Financial Services",
+        "feature3": "Manufacturing",
+        "feature4": "Retail & E-commerce"
+      },
+      "infrastructure": {
+        "title": "AI Infrastructure & MLOps",
+        "description": "Robust AI infrastructure and MLOps practices to deploy and manage AI models at scale",
+        "feature1": "Model Deployment",
+        "feature2": "Pipeline Automation",
+        "feature3": "Monitoring & Maintenance",
+        "feature4": "Scalable Infrastructure"
+      },
+      "training": {
+        "title": "AI Training & Support",
+        "description": "Comprehensive training and ongoing support to help your team leverage AI technologies effectively",
+        "feature1": "Team Training",
+        "feature2": "Best Practices",
+        "feature3": "Technical Support",
+        "feature4": "Knowledge Transfer"
+      }
+    },
+    "benefit1": "Expert AI guidance from experienced industry professionals",
+    "benefit2": "Customized AI solutions tailored to your specific business needs",
+    "benefit3": "Reduced implementation risks through proven AI methodologies",
+    "benefit4": "Faster AI deployment with structured project management",
+    "benefit5": "Cost optimization through strategic AI planning and resource allocation",
+    "benefit6": "Access to latest AI trends and emerging technologies",
+    "benefit7": "Scalable AI infrastructure designed for growth",
+    "benefit8": "Strategic alignment between AI initiatives and business objectives",
+    "benefit9": "Ongoing AI support and knowledge transfer to your team",
+    "benefit10": "Measurable AI results with clear KPIs and success metrics"
+  },
+  "enquiryForm": {
+    "title": "Get In Touch",
+    "subtitle": "Tell us about your project requirements",
+    "thankYouTitle": "Thank You!",
+    "thankYouMessage": "Your enquiry has been submitted successfully. We'll get back to you within 24 hours.",
+    "fields": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": true
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
+        "required": true
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number",
+        "required": false
+      },
+      "company": {
+        "label": "Company Name",
+        "placeholder": "Enter your company name",
+        "required": false
+      },
+      "service": {
+        "label": "Service Interested In",
+        "placeholder": "Select a service",
+        "required": true
+      },
+      "message": {
+        "label": "Project Details",
+        "placeholder": "Tell us about your project requirements, timeline, and budget...",
+        "required": true
+      }
+    },
+    "services": {
+      "webDevelopment": "Web Development",
+      "itTechServices": "IT & Tech Services",
+      "digitalMarketing": "Digital Marketing",
+      "graphicDesign": "Graphic Design",
+      "consultingServices": "Consulting Services",
+      "other": "Other"
+    },
+    "buttons": {
+      "submit": "Send Enquiry",
+      "submitting": "Submitting..."
+    },
+    "toast": {
+      "success": "Enquiry submitted successfully!",
+      "successDescription": "Thank you for your enquiry. We'll get back to you within 24 hours.",
+      "error": "Failed to submit enquiry",
+      "errorDescription": "Please try again later."
+    }
+  },
+  "careers": {
+    "pageTitle": "Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs",
+    "openPositions": {
+      "title": "Open Positions",
+      "subtitle": "Discover opportunities that match your skills and passion"
+    },
+    "search": {
+      "placeholder": "Search jobs...",
+      "department": "Department",
+      "allDepartments": "All Departments",
+      "location": "Pune, India"
+    },
+    "jobCard": {
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "keyRequirements": "Key Requirements:",
+      "jobDetails": "Job Details:",
+      "department": "Department",
+      "notSpecified": "Not specified",
+      "location": "Location",
+      "type": "Type",
+      "salary": "Salary",
+      "competitive": "Competitive",
+      "recentlyPosted": "Recently posted",
+      "applyNow": "Apply Now"
+    },
+    "noJobs": "No jobs found matching your criteria.",
+    "benefits": {
+      "title": "why work with us",
+      "subtitle": "We believe in taking care of our team with comprehensive benefits and perks",
+      "items": {
+        "innovative": {
+          "title": "Innovative Work Environment",
+          "description": "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning."
+        },
+        "growth": {
+          "title": "Career Growth & Development",
+          "description": "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape"
+        },
+        "empowerment": {
+          "title": "Empowerment & Impact",
+          "description": "Contribute to meaningful projects that drive real business results and make a tangible difference"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Got questions? We've got answers.",
+      "items": {
+        "interview": {
+          "question": "What is the interview process like?",
+          "answer": "Our interview process typically consists of an initial phone screening, technical assessment (for technical roles), and 2-3 rounds of interviews with team members and leadership. The entire process usually takes 2 to 4 days."
+        },
+        "remote": {
+          "question": "Do you offer remote work opportunities?",
+          "answer": "Yes! We offer fully remote positions as well as hybrid arrangements. Many of our team members work remotely, and we have the tools and culture to support distributed teams effectively."
+        },
+        "benefits": {
+          "question": "What benefits do you provide?",
+          "answer": "We believe in helping our team grow through continuous learning. We offer opportunities to explore new skills, gain hands-on experience, and enhance your expertise all while providing a competitive salary, dedicated training hours for learning new skills, and refreshing tea breaks to keep you energized throughout the day."
+        },
+        "careerGrowth": {
+          "question": "How do you support career growth?",
+          "answer": "We believe in investing in our people. We provide mentorship programs, conference attendance, internal mobility opportunities, and regular career development conversations."
+        },
+        "culture": {
+          "question": "What is the company culture like?",
+          "answer": "Our culture is built on collaboration, innovation, and respect. We value diverse perspectives, encourage open communication, and maintain a healthy work-life balance while building amazing products."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Apply for",
+      "subtitle": "Fill out the form below to submit your application. We'll get back to you within 48 hours.",
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "experience": "Years of Experience",
+        "experiencePlaceholder": "Select experience level",
+        "experienceOptions": {
+          "0-1": "0-1 years",
+          "2-3": "2-3 years",
+          "4-5": "4-5 years",
+          "6-10": "6-10 years",
+          "10+": "10+ years"
+        },
+        "coverLetter": "Cover Letter",
+        "coverLetterPlaceholder": "Tell us why you're interested in this role and what makes you a great fit...",
+        "resume": "Resume/CV"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "submit": "Submit Application",
+        "submitting": "Submitting..."
+      },
+      "toast": {
+        "success": "Application submitted successfully!",
+        "successDescription": "Your application for {jobTitle} has been received. We'll review it and get back to you soon.",
+        "error": "Failed to submit application",
+        "errorDescription": "Please check your information and try again."
+      }
+    }
+  }
+}
