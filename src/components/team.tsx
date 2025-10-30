@@ -5,9 +5,9 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { useEffect, useRef } from "react";
 import { useTranslations } from 'next-intl';
 // ✅ Import member images
-import amitesh from "../components/images/images/amitesh.png";
+// import amitesh from "../components/images/images/amitesh.png";
 import arshad from "../components/images/images/arshad.png";
-import hussain from "../components/images/images/hussain.png";
+// import hussain from "../components/images/images/hussain.png";
 import jigyasa from "../components/images/images/jigyasa.png";
 // import komal from "../components/images/images/komal.png";
 import mihir from "../components/images/images/mihir.png";
@@ -44,7 +44,7 @@ const members: Member[] = [
   { name: "Md Ahmad Raza", role: "Full Stack Developer", avatar: ahemad, link: "https://www.linkedin.com/in/md-ahmad-raza-4626a5232/", team: "Development Team" },
   { name: "Priyanka Godbole", role: "Marketing Manager", avatar: priyanka, link: "#", team: "Sales & Marketing Team" },
   { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
-  { name: "Husain Rangwala", role: "Sales & Marketing Team", avatar: hussain, link: "#", team: "Sales & Marketing Team" },
+  // { name: "Husain Rangwala", role: "Sales & Marketing Team", avatar: hussain, link: "#", team: "Sales & Marketing Team" },
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Mihir Manoj Fakirde", role: "Social Media Executive", avatar: mihir, link: "https://www.linkedin.com/in/mihir-fakirde-892357240/", team: "Graphic Team" },
   // { name: "Komal Vijay Jadhav", role: "Graphic Designer", avatar: komal, link: "https://www.linkedin.com/in/komal-jadhav-1b9503263/", team: "Graphic Team" },
@@ -53,7 +53,7 @@ const members: Member[] = [
   { name: "Jigyasa Singh Raghuvanshi", role: "", avatar: jigyasa, link: "https://www.linkedin.com/in/adv-jigyasa-singh-raghuvanshi-332068199/?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "HR & Management" },
   { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
   { name: "Jigyasa Singh Raghuvanshi", role: " Legal Advisor ", avatar: jigyasa, link: "https://www.linkedin.com/in/adv-jigyasa-singh-raghuvanshi-332068199/?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "Legal Team" },
-  { name: "Amitesh Ashok Jadhav", role: "Back Office Coordinator", avatar: amitesh, link: "https://www.linkedin.com/in/amitesh-jadhav-415385311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
+  // { name: "Amitesh Ashok Jadhav", role: "Back Office Coordinator", avatar: amitesh, link: "https://www.linkedin.com/in/amitesh-jadhav-415385311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Shradha Duragkar", role: "Legal Advisor", avatar: shraddha, link: "https://www.linkedin.com/in/shradha-duragkar-a87aab340/?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "Legal Team" },
 ];
 
