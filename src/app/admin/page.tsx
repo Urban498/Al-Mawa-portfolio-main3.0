@@ -20,6 +20,7 @@ function AdminContent() {
   const [visitorData, setVisitorData] = useState<VisitorApiResponse | null>(null);
   const [visitorPage, setVisitorPage] = useState(1);
   const [visitorSearch, setVisitorSearch] = useState("");
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const searchParams = useSearchParams();
   const sectionParam = searchParams.get('section');
 
@@ -224,7 +225,22 @@ function AdminContent() {
 
         {/* Visitor Statistics */}
         {activeSection === "visitors" && visitorData?.statistics && (
-          <VisitorStats statistics={visitorData.statistics} />
+          <VisitorStats 
+            statistics={visitorData.statistics}
+            onRefresh={async () => {
+              setIsRefreshing(true);
+              try {
+                await fetchData();
+                toast.success('Statistics refreshed successfully');
+              } catch (error) {
+                toast.error('Failed to refresh statistics');
+                console.error('Error refreshing statistics:', error);
+              } finally {
+                setIsRefreshing(false);
+              }
+            }}
+            isRefreshing={isRefreshing}
+          />
         )}
 
         {activeSection === "post-jobs" ? (
