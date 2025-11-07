@@ -14,6 +14,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import ToastProvider from "@/components/ToastProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { usePathname } from "next/navigation";
+import VisitorTracker from "@/components/VisitorTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -266,6 +267,7 @@ export default function RootLayout({
               </div>
             )}
 
+            {!isAdminRoute && <VisitorTracker />}
             <div className={isAdminRoute ? "" : "pt-10"}>{children}</div>
             {!isAdminRoute && <FooterSection />}
             <ToastProvider />

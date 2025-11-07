@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Sidebar, SidebarBody, useSidebar } from "@/components/ui/sidebar";
-import { IconHome2, IconUser, IconSettings, IconBriefcase, IconTrash } from "@tabler/icons-react";
+import { IconHome2, IconUser, IconSettings, IconBriefcase, IconTrash, IconUsers } from "@tabler/icons-react";
 import axios from "axios";
 import { CiLogout } from "react-icons/ci";
 import { motion } from "motion/react";
@@ -29,6 +29,7 @@ const SidebarContent = ({ activeSection, setActiveSection, onLogout }: AdminSide
   const menuItems: MenuItem[] = [
     { label: "Contact", key: "contact", icon: <IconHome2 size={20} /> },
     { label: "Enquiry", key: "enquiry", icon: <IconUser size={20} /> },
+    { label: "Visitors", key: "visitors", icon: <IconUsers size={20} /> },
     { label: "Job Applications", key: "jobs", icon: <IconSettings size={20} /> },
     { label: "Post Jobs", key: "post-jobs", icon: <IconBriefcase size={20} /> },
     { label: "Manage Jobs", key: "manage-jobs", icon: <IconTrash size={20} /> },
