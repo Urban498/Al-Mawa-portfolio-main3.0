@@ -1,15 +1,13 @@
 "use client";
 
 import { VisitorStatistics } from "@/types/schemas";
-import { Users, Globe, TrendingUp, Clock, RefreshCw } from "lucide-react";
+import { Users, Globe, TrendingUp, Clock } from "lucide-react";
 
 interface VisitorStatsProps {
   statistics: VisitorStatistics | null;
-  onRefresh: () => void;
-  isRefreshing?: boolean;
 }
 
-export default function VisitorStats({ statistics, onRefresh, isRefreshing = false }: VisitorStatsProps) {
+export default function VisitorStats({ statistics }: VisitorStatsProps) {
   if (!statistics) {
     return null;
   }
@@ -43,21 +41,6 @@ export default function VisitorStats({ statistics, onRefresh, isRefreshing = fal
 
   return (
     <div className="space-y-6 mb-6">
-      {/* Stats Header with Refresh Button */}
-      <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-          Visitor Statistics
-        </h3>
-        <button
-          onClick={onRefresh}
-          disabled={isRefreshing}
-          className="flex items-center gap-2 px-3 py-2 text-sm bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-          {isRefreshing ? 'Refreshing...' : 'Refresh'}
-        </button>
-      </div>
-
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {statCards.map((stat, index) => (

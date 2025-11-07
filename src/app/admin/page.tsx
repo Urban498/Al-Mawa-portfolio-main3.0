@@ -195,25 +195,46 @@ function AdminContent() {
         {/* Visitor Search Bar */}
         {activeSection === "visitors" && (
           <div className="mb-4">
-            <div className="relative max-w-md">
-              <input
-                type="text"
-                placeholder="Search by city or country..."
-                value={visitorSearch}
-                onChange={(e) => {
-                  setVisitorSearch(e.target.value);
-                  setVisitorPage(1); // Reset to first page on search
+            <div className="flex items-center gap-3">
+              <div className="relative flex-1 max-w-md">
+                <input
+                  type="text"
+                  placeholder="Search by city or country..."
+                  value={visitorSearch}
+                  onChange={(e) => {
+                    setVisitorSearch(e.target.value);
+                    setVisitorPage(1); // Reset to first page on search
+                  }}
+                  className="w-full px-4 py-2 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                />
+                {visitorSearch && (
+                  <button
+                    onClick={() => setVisitorSearch("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+
+              <button
+                onClick={async () => {
+                  setIsRefreshing(true);
+                  try {
+                    await fetchData();
+                    toast.success('Visitor data refreshed');
+                  } catch (err) {
+                    console.error('Refresh failed:', err);
+                    toast.error('Failed to refresh visitor data');
+                  } finally {
+                    setIsRefreshing(false);
+                  }
                 }}
-                className="w-full px-4 py-2 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
-              />
-              {visitorSearch && (
-                <button
-                  onClick={() => setVisitorSearch("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
-                >
-                  ✕
-                </button>
-              )}
+                disabled={isRefreshing}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isRefreshing ? 'Refreshing...' : 'Refresh'}
+              </button>
             </div>
             {visitorSearch && (
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -225,22 +246,7 @@ function AdminContent() {
 
         {/* Visitor Statistics */}
         {activeSection === "visitors" && visitorData?.statistics && (
-          <VisitorStats 
-            statistics={visitorData.statistics}
-            onRefresh={async () => {
-              setIsRefreshing(true);
-              try {
-                await fetchData();
-                toast.success('Statistics refreshed successfully');
-              } catch (error) {
-                toast.error('Failed to refresh statistics');
-                console.error('Error refreshing statistics:', error);
-              } finally {
-                setIsRefreshing(false);
-              }
-            }}
-            isRefreshing={isRefreshing}
-          />
+          <VisitorStats statistics={visitorData.statistics} />
         )}
 
         {activeSection === "post-jobs" ? (
