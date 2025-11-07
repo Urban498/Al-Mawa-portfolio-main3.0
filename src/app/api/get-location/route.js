@@ -112,53 +112,82 @@ export async function GET(request) {
       });
     }
 
-    // Fetch location data from ipapi.co
+    // Fetch location data from ip-api.com (more accurate and reliable)
     let locationData;
     try {
-      const { data } = await axios.get(`https://ipapi.co/${ip}/json/`, {
+      const { data } = await axios.get(`http://ip-api.com/json/${ip}?fields=status,message,country,countryCode,region,regionName,city,lat,lon,timezone,isp,query`, {
         timeout: 5000, // 5 second timeout
       });
       
+      console.log("🌍 Geolocation API Response:", data);
+      
       // Check if API returned error
-      if (data.error) {
-        throw new Error(data.reason || "IP geolocation service error");
+      if (data.status === "fail") {
+        throw new Error(data.message || "IP geolocation service error");
       }
       
       locationData = data;
     } catch (apiError) {
       console.error("IP Geolocation API Error:", apiError.message);
       
-      // Save visitor with minimal data if API fails
-      const visitor = await Visitor.create({
-        ip,
-        city: "Unknown",
-        region: "Unknown",
-        country: "Unknown",
-        countryCode: "Unknown",
-        userAgent,
-        referrer,
-        sessionId: uuidv4(),
-      });
+      // Fallback: Try ipapi.co as backup
+      try {
+        console.log("🔄 Trying backup API (ipapi.co)...");
+        const { data: backupData } = await axios.get(`https://ipapi.co/${ip}/json/`, {
+          timeout: 5000,
+        });
+        
+        if (!backupData.error) {
+          locationData = {
+            status: "success",
+            country: backupData.country_name,
+            countryCode: backupData.country_code,
+            regionName: backupData.region,
+            city: backupData.city,
+            lat: backupData.latitude,
+            lon: backupData.longitude,
+            timezone: backupData.timezone,
+            query: ip,
+          };
+          console.log("✅ Backup API succeeded:", locationData);
+        } else {
+          throw new Error("Backup API also failed");
+        }
+      } catch (backupError) {
+        console.error("❌ Both APIs failed:", backupError.message);
+        
+        // Save visitor with minimal data if both APIs fail
+        const visitor = await Visitor.create({
+          ip,
+          city: "Unknown",
+          region: "Unknown",
+          country: "Unknown",
+          countryCode: "Unknown",
+          userAgent,
+          referrer,
+          sessionId: uuidv4(),
+        });
 
-      return Response.json({
-        success: true,
-        message: "Visitor tracked (location unavailable)",
-        visitor: {
-          ip: visitor.ip,
-          sessionId: visitor.sessionId,
-        },
-      });
+        return Response.json({
+          success: true,
+          message: "Visitor tracked (location unavailable)",
+          visitor: {
+            ip: visitor.ip,
+            sessionId: visitor.sessionId,
+          },
+        });
+      }
     }
 
     // Save complete visitor info to DB
     const visitor = await Visitor.create({
       ip,
       city: locationData.city || "Unknown",
-      region: locationData.region || "Unknown",
-      country: locationData.country_name || "Unknown",
-      countryCode: locationData.country_code || "Unknown",
-      latitude: locationData.latitude || null,
-      longitude: locationData.longitude || null,
+      region: locationData.regionName || locationData.region || "Unknown",
+      country: locationData.country || "Unknown",
+      countryCode: locationData.countryCode || "Unknown",
+      latitude: locationData.lat || locationData.latitude || null,
+      longitude: locationData.lon || locationData.longitude || null,
       timezone: locationData.timezone || "Unknown",
       userAgent,
       referrer,
