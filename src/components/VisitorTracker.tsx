@@ -20,10 +20,13 @@ export default function VisitorTracker() {
 
         console.log("📡 API Response:", data);
 
-        if (data.success && data.visitor?.sessionId) {
-          // Store session ID to prevent duplicate tracking
-          sessionStorage.setItem("visitorSessionId", data.visitor.sessionId);
-          console.log("✅ Visitor tracked successfully:", data.visitor);
+        if (data.success && data.visitor) {
+          // Store session ID or IP to prevent duplicate tracking
+          const trackingId = data.visitor.sessionId || data.visitor.ip;
+          if (trackingId) {
+            sessionStorage.setItem("visitorSessionId", trackingId);
+          }
+          console.log("✅ Visitor tracked successfully:", data.message, data.visitor);
         } else {
           console.error("⚠️ Tracking failed:", data);
         }
