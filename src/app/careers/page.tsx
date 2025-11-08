@@ -521,7 +521,7 @@ export default function CareersPage() {
                       </div>
                       <Button
                         onClick={() => handleApplyNow(job)}
-                        className="hover:bg-[#cfff32] bg-white border-2 transition-all duration-300 cursor-pointer border-[#cfff32] text-black "
+                        className="hover:bg-[#0ea5e9] bg-white border-2 transition-all duration-300 cursor-pointer border-[#0ea5e9] hover:text-[white] text-black "
                       >
                         {t('jobCard.applyNow')}
                         <ChevronRight className="ml-2 h-4 w-4" />
