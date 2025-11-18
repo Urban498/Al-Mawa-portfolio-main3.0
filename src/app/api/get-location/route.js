@@ -67,15 +67,51 @@ function isValidIP(ip) {
 
 export async function GET(request) {
   try {
+    console.log("🚀 Starting visitor tracking process...");
     await connectDB();
+    console.log("✅ Database connected successfully");
 
     // Get client IP (now async to fetch public IP if needed)
     const ip = await getClientIP(request);
     
     console.log("🔍 Detected IP:", ip);
     
+    // Get user agent and referrer BEFORE they're used
+    const userAgent = request.headers.get("user-agent") || "Unknown";
+    const referrer = request.headers.get("referer") || request.headers.get("referrer") || "Direct";
+    
     if (!ip || !isValidIP(ip)) {
       console.error("❌ Invalid IP detected:", ip);
+      
+      // In development, use a fallback IP to prevent errors
+      if (process.env.NODE_ENV === "development") {
+        console.log("🔧 Development mode: Using fallback IP");
+        const fallbackIP = "127.0.0.1";
+        
+        // Create a minimal visitor record for development
+        const visitor = await Visitor.create({
+          ip: fallbackIP,
+          city: "Development",
+          region: "Local",
+          country: "Development",
+          countryCode: "DEV",
+          userAgent,
+          referrer,
+          sessionId: uuidv4(),
+        });
+
+        return Response.json({
+          success: true,
+          message: "Development mode visitor tracked",
+          visitor: {
+            ip: visitor.ip,
+            city: visitor.city,
+            country: visitor.country,
+            sessionId: visitor.sessionId,
+          },
+        });
+      }
+      
       return Response.json({
         success: false,
         error: "Unable to determine valid IP address",
@@ -86,17 +122,15 @@ export async function GET(request) {
     
     console.log("✅ Valid IP confirmed:", ip);
 
-    // Get user agent and referrer
-    const userAgent = request.headers.get("user-agent") || "Unknown";
-    const referrer = request.headers.get("referer") || request.headers.get("referrer") || "Direct";
-
     // Check if visitor already exists (within last 24 hours)
+    console.log("🔍 Checking for existing visitor with IP:", ip);
     const existingVisitor = await Visitor.findOne({
       ip,
       createdAt: { $gte: new Date(Date.now() - 24 * 60 * 60 * 1000) }
     }).sort({ createdAt: -1 });
 
     if (existingVisitor) {
+      console.log("👤 Found existing visitor, updating visit count");
       // Update existing visitor
       await existingVisitor.incrementVisit();
       
@@ -108,9 +142,12 @@ export async function GET(request) {
           city: existingVisitor.city,
           country: existingVisitor.country,
           visitCount: existingVisitor.visitCount,
+          sessionId: existingVisitor.sessionId,
         },
       });
     }
+
+    console.log("👤 No existing visitor found, creating new record");
 
     // Fetch location data from ip-api.com (more accurate and reliable)
     let locationData;
@@ -180,7 +217,8 @@ export async function GET(request) {
     }
 
     // Save complete visitor info to DB
-    const visitor = await Visitor.create({
+    console.log("💾 Creating new visitor record in database");
+    const visitorData = {
       ip,
       city: locationData.city || "Unknown",
       region: locationData.regionName || locationData.region || "Unknown",
@@ -192,7 +230,11 @@ export async function GET(request) {
       userAgent,
       referrer,
       sessionId: uuidv4(),
-    });
+    };
+    
+    console.log("📝 Visitor data to save:", visitorData);
+    const visitor = await Visitor.create(visitorData);
+    console.log("✅ Visitor record created successfully:", visitor._id);
 
     return Response.json({
       success: true,

@@ -18,6 +18,7 @@ interface JobFormData {
   jobkeySkills: string[];
   jobDepartment: string;
   jobType: string;
+  jobSalary: string;
 }
 
 const JobPostForm = () => {
@@ -28,7 +29,8 @@ const JobPostForm = () => {
     jobDescription: "",
     jobkeySkills: [],
     jobDepartment: "",
-    jobType: ""
+    jobType: "",
+    jobSalary: ""
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -114,7 +116,8 @@ const JobPostForm = () => {
         jobDescription: "",
         jobkeySkills: [],
         jobDepartment: "",
-        jobType: ""
+        jobType: "",
+        jobSalary: ""
       });
       setSkillInput("");
 
@@ -172,6 +175,24 @@ const JobPostForm = () => {
               required
               className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 resize-none"
             />
+          </div>
+
+          {/* Job Salary */}
+          <div>
+            <Label htmlFor="jobSalary" className="text-gray-700 dark:text-gray-300 mb-2">
+              Job Salary (Optional)
+            </Label>
+            <Input
+              id="jobSalary"
+              name="jobSalary"
+              value={formData.jobSalary}
+              onChange={handleInputChange}
+              placeholder="e.g., ₹5,00,000 - ₹8,00,000 per annum"
+              className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100"
+            />
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              Leave empty to display &quot;Competitive&quot; as default
+            </p>
           </div>
 
           {/* Key Skills */}
@@ -282,7 +303,8 @@ const JobPostForm = () => {
                   jobDescription: "",
                   jobkeySkills: [],
                   jobDepartment: "",
-                  jobType: ""
+                  jobType: "",
+                  jobSalary: ""
                 });
                 setSkillInput("");
               }}

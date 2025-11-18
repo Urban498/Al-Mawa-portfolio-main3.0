@@ -95,9 +95,17 @@ export default function FooterSection() {
         {/* Bottom Bar */}
         <div className="border-t border-border/50 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white text-sm font-semibold">
-              © {new Date().getFullYear()} {t('companyName')}. {t('allRightsReserved')}
-            </p>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <p className="text-white text-sm font-semibold">
+                © {new Date().getFullYear()} {t('companyName')}. {t('allRightsReserved')}
+              </p>
+              <Link
+                href="/policy"
+                className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+              >
+                Terms &amp; Conditions / Policy
+              </Link>
+            </div>
             <div className="flex space-x-4">
               <Link
                 href="https://x.com/al_mawa__"

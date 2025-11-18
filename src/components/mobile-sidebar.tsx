@@ -312,6 +312,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
               alt="Al-Mawa Logo"
               width={80}
               height={80}
+              priority
               className="h-12 w-auto"
             />
             <button

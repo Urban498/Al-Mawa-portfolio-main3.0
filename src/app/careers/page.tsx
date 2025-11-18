@@ -9,7 +9,6 @@ import {
   Search,
   MapPin,
   Clock,
-  DollarSign,
   Heart,
   Award,
   ChevronRight,
@@ -62,6 +61,7 @@ interface Job {
   jobkeySkills: string[];
   jobDepartment: string;
   jobType: string;
+  jobSalary?: string; // Optional salary field
 }
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
@@ -80,7 +80,7 @@ export default function CareersPage() {
       description: t('benefits.items.innovative.description'),
     },
     {
-      icon: <DollarSign className="w-8 h-8" />,
+      icon: <span className="w-8 h-8 flex items-center justify-center text-2xl font-bold">₹</span>,
       title: t('benefits.items.growth.title'),
       description: t('benefits.items.growth.description'),
     },
@@ -133,7 +133,17 @@ export default function CareersPage() {
   const getData = async () => {
     try {
       const response = await axios.get("/api/jobs");
-      console.log(response.data?.data);
+      console.log("📋 Jobs API Response:", response.data?.data);
+      
+      // Debug: Check if salary fields exist (development only)
+      if (response.data?.data && process.env.NODE_ENV === 'development') {
+        response.data.data.forEach((job: Job, index: number) => {
+          if (job.jobSalary) {
+            console.log(`💰 Job ${index + 1} (${job.jobTitle}) has salary:`, job.jobSalary);
+          }
+        });
+      }
+      
       setJobs(response.data?.data);
     } catch (error) {
       console.log(error);
@@ -141,6 +151,14 @@ export default function CareersPage() {
   };
   useEffect(() => {
     getData();
+  }, []);
+
+  // Add refresh functionality for development/debugging
+  useEffect(() => {
+    if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+      // @ts-expect-error - Adding to window for debugging
+      window.refreshJobs = getData;
+    }
   }, []);
   // Filter jobs based on search and filters
   const filteredJobs = jobs?.filter((job) => {
@@ -470,9 +488,12 @@ export default function CareersPage() {
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                      <DollarSign className="w-4 h-4 text-primary" />
+                                      <span className="w-4 h-4 text-primary flex items-center justify-center font-bold">₹</span>
                                       <span className="text-muted-foreground">
-                                        {t('jobCard.salary')}: {t('jobCard.competitive')}
+                                        {t('jobCard.salary')}: {(() => {
+                                          const hasSalary = job.jobSalary && job.jobSalary.trim() !== '';
+                                          return hasSalary ? job.jobSalary : t('jobCard.competitive');
+                                        })()}
                                       </span>
                                     </div>
                                   </div>
@@ -511,8 +532,12 @@ export default function CareersPage() {
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
-                          <DollarSign className="w-4 h-4" />
-                          {t('jobCard.competitive')}
+                          <span className="w-4 h-4 flex items-center justify-center font-bold">₹</span>
+                          {(() => {
+                            // Check for actual salary value (not empty string or null)
+                            const hasSalary = job.jobSalary && job.jobSalary.trim() !== '';
+                            return hasSalary ? job.jobSalary : t('jobCard.competitive');
+                          })()}
                         </span>
                         <span className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />

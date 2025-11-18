@@ -21,7 +21,31 @@ export async function GET(){
     try {
         await connectDB()
         const jobs = await JobsModel.find()
-        return NextResponse.json({success:true,data:jobs})
+        
+        // Debug: Log what we're getting from database
+        console.log("📋 Database jobs count:", jobs.length)
+        jobs.forEach((job, index) => {
+            console.log(`Job ${index + 1} from DB:`, {
+                id: job._id,
+                title: job.jobTitle,
+                salary: job.jobSalary,
+                hasSalary: job.jobSalary !== undefined,
+                salaryType: typeof job.jobSalary,
+                allFields: Object.keys(job.toObject())
+            })
+        })
+        
+        // Ensure all jobs have salary field (migration-like fix)
+        const jobsWithSalary = jobs.map(job => {
+            const jobObj = job.toObject()
+            if (!jobObj.hasOwnProperty('jobSalary')) {
+                jobObj.jobSalary = null
+                console.log(`🔧 Added missing jobSalary field to: ${job.jobTitle}`)
+            }
+            return jobObj
+        })
+        
+        return NextResponse.json({success:true,data:jobsWithSalary})
     } catch (error) {
         console.log(error)
         return NextResponse.json({success:false,message:"Failed to fetch jobs"})
