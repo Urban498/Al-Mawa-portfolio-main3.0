@@ -17,7 +17,7 @@ import sabeel from "../components/images/images/sabeel.png";
 import shraddha from "../components/images/images/shraddha.png";
 import sufiyan from "../components/images/images/sufiyan.png";
 import ahemad from "../components/images/images/ahemad.png";
-import  priyanka from "../components/images/images/priyanka.png";
+import priyanka from "../components/images/images/priyanka.png";
 
 
 
@@ -44,17 +44,15 @@ const members: Member[] = [
   { name: "Md Ahmad Raza", role: "Full Stack Developer", avatar: ahemad, link: "https://www.linkedin.com/in/md-ahmad-raza-4626a5232/", team: "Development Team" },
   { name: "Priyanka Godbole", role: "Marketing Manager", avatar: priyanka, link: "#", team: "Sales & Marketing Team" },
   { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
-  // { name: "Husain Rangwala", role: "Sales & Marketing Team", avatar: hussain, link: "#", team: "Sales & Marketing Team" },
+
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Mihir Manoj Fakirde", role: "Social Media Executive", avatar: mihir, link: "https://www.linkedin.com/in/mihir-fakirde-892357240/", team: "Graphic Team" },
-  // { name: "Komal Vijay Jadhav", role: "Graphic Designer", avatar: komal, link: "https://www.linkedin.com/in/komal-jadhav-1b9503263/", team: "Graphic Team" },
-  // { name: "Pranali Shivaji Khilare", role: "Graphic Designer", avatar: pranali, link: "https://www.linkedin.com/in/pranali-khilare-535829261", team: "Graphic Team" },
 
-  { name: "Jigyasa Singh Raghuvanshi", role: "", avatar: jigyasa, link: "https://www.linkedin.com/in/adv-jigyasa-singh-raghuvanshi-332068199/?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "HR & Management" },
+
+
   { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
-  { name: "Jigyasa Singh Raghuvanshi", role: " Legal Advisor ", avatar: jigyasa, link: "https://www.linkedin.com/in/adv-jigyasa-singh-raghuvanshi-332068199/?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "Legal Team" },
-  // { name: "Amitesh Ashok Jadhav", role: "Back Office Coordinator", avatar: amitesh, link: "https://www.linkedin.com/in/amitesh-jadhav-415385311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
-  { name: "Shradha Duragkar", role: "Legal Advisor", avatar: shraddha, link: "https://www.linkedin.com/in/shradha-duragkar-a87aab340/?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "Legal Team" },
+
+
 ];
 
 export default function TeamSection() {
@@ -117,9 +115,9 @@ export default function TeamSection() {
             >
               {/* Section Heading */}
               <div className="flex items-center mb-8">
-               
+
                 <h3 className={`${inter.className} text-3xl font-semibold uppercase`}>
-                  {teamName} 
+                  {teamName}
                 </h3>
               </div>
 
