@@ -4,6 +4,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 import {LinkPreview} from "@/components/ui/link-preview"
+import localFont from "next/font/local";
+
+// ----------------------
+// Font Configuration
+// ----------------------
+const corpta = localFont({
+  src: "../fonts/Corpta.otf",
+  variable: "--font-corpta",
+  display: "swap",
+});
 
 // ----------------------
 // Sample Data
@@ -81,8 +91,8 @@ const websiteProjects = [
     name: "AL-MAWA International – Corporate Website",
   },
   {
-    url: "https://example.com/",
-    name: "Noor Luxe Interiors – Boutique Studio Site",
+    url: "https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_5szpgfto9i_e&adgrpid=155259813593&hvpone=&hvptwo=&hvadid=674893540034&hvpos=&hvnetw=g&hvrand=8756815515200173300&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062111&hvtargid=kwd-64107830&hydadcr=14452_2316413&gad_source=1",
+    name: "Amazon Website",
   },
   {
     url: "https://example.org/",
@@ -111,7 +121,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background via-muted to-card text-foreground">
+    <main className={`min-h-screen bg-gradient-to-b from-background via-muted to-card text-foreground ${corpta.variable}`}>
       <div className="relative isolate overflow-hidden z-0">
         {/* Hero Section */}
         <section className="relative max-w-6xl mx-auto px-4 pt-20 pb-14 md:pt-24 lg:pt-28 lg:pb-16">
@@ -122,9 +132,10 @@ export default function TestimonialsPage() {
             <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-primary">
               Testimonials &amp; Case Studies
             </p>
-            <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] font-semibold tracking-tight">
-              What Our Clients{" "}
-              <span className="text-primary">Say</span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
+              What Our 
+                <span className="text-primary font-[family-name:var(--font-corpta)] font-light text-7xl"> Clients </span>
+              Say
             </h1>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
               A selection of brands that trust{" "}
@@ -168,74 +179,6 @@ export default function TestimonialsPage() {
               rigorous execution across platforms.
             </p>
           </motion.div>
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8">
-            {testimonials.map((t, index) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.55,
-                  ease: "easeOut",
-                  delay: 0.08 * index,
-                }}
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <Card className="relative flex h-full flex-col rounded-2xl border border-border/60 bg-card/60 shadow-lg backdrop-blur-sm transition duration-300 hover:border-primary/80 hover:shadow-xl">
-                  <CardHeader className="flex flex-row items-center gap-4 pb-3">
-                    <div className="h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-border bg-muted">
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-xs uppercase tracking-[0.22em] text-primary">
-                        {t.industry}
-                      </p>
-                      <p className="text-sm font-semibold text-foreground">
-                        {t.name}
-                      </p>
-                      <p className="text-xs text-muted-foreground">{t.company}</p>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="space-y-4">
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      “{t.quote}”
-                    </p>
-                    <div className="flex items-center gap-2 text-xs">
-                      <div className="flex items-center gap-[2px] text-primary">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <span
-                            key={i}
-                            className={
-                              i < t.rating
-                                ? "text-primary"
-                                : "text-muted-foreground"
-                            }
-                          >
-                            ★
-                          </span>
-                        ))}
-                      </div>
-                      <span className="text-[11px] text-muted-foreground">
-                        {t.rating.toFixed(1)} / 5.0
-                      </span>
-                    </div>
-                  </CardContent>
-
-                  <CardFooter className="mt-auto pt-2">
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                      {t.scope}
-                    </p>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div> */}
         </section>
 
         {/* Social Media Work Section */}
