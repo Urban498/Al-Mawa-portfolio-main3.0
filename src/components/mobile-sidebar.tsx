@@ -368,6 +368,16 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                   {t('careers')}
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  href="/testimonials"
+                  onClick={handleLinkClick}
+                  className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
+                >
+                  {t('testimonials')}
+                </Link>
+              </li>
             </ul>
           </div>
 

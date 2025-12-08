@@ -366,6 +366,16 @@ export const NavBar = () => {
                     <span>{t('careers')}</span>
                   </Link>
                 </li>
+
+                  {/* Testimonials Link */}
+                <li>
+                  <Link
+                    href="/testimonials"
+                    className="text-black hover:text-black block duration-150"
+                  >
+                    <span>{t('testimonials')}</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 
