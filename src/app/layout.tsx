@@ -10,11 +10,11 @@ import AOSProvider from "@/components/aos-provider";
 import { IntlProvider } from "@/components/providers/intl-provider";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Phone } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
 import ToastProvider from "@/components/ToastProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { usePathname } from "next/navigation";
 import VisitorTracker from "@/components/VisitorTracker";
+import { FaWhatsapp, FaLinkedin, FaInstagram, FaFacebook, FaXTwitter, FaShare, FaYoutube } from "react-icons/fa6";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +35,9 @@ export default function RootLayout({
 
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isSocialOpen, setIsSocialOpen] = useState(false);
+  const [isPhoneHovered, setIsPhoneHovered] = useState(false);
+  const [isSocialHovered, setIsSocialHovered] = useState(false);
   const dragRef = useRef<HTMLDivElement | null>(null);
 
   const [dock, setDock] = useState<"left" | "right">("right");
@@ -121,11 +124,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
         <link rel="manifest" href="/site.webmanifest" />
-        
+
         {/* Additional favicon sizes for different devices */}
         <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon-32x32.svg" />
         <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-32x32.svg" />
-        
+
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#ffffff" />
         <meta name="msapplication-TileColor" content="#ffffff" />
@@ -208,70 +211,132 @@ export default function RootLayout({
         >
           <IntlProvider>
             <AOSProvider>
-            {!isAdminRoute && (
-              <>
-                <header className="fixed top-0 z-50">
-                  <NavBar />
-                </header>
-              </>
-            )}
+              {!isAdminRoute && (
+                <>
+                  <header className="fixed top-0 z-50">
+                    <NavBar />
+                  </header>
+                </>
+              )}
 
-            {!isAdminRoute && (
-              <div
-                ref={dragRef}
-                style={{
-                  position: "fixed",
-                  top: 0,
-                  [dock]: "0px",
-                  transform: `translateY(${y}px)`,
-                  transition: dragging ? "none" : "all 0.3s ease",
-                  zIndex: 9999,
-                  touchAction: "none",
-                }}
-              >
-                <span
-                  className={`transition-all duration-300 ease-in-out bg-black/55 backdrop-blur-sm text-white w-10 h-10 flex items-center gap-3 px-2 overflow-hidden cursor-pointer
-                    ${
-                      dock === "right"
-                        ? "rounded-tl-2xl rounded-bl-2xl"
-                        : "rounded-tr-2xl rounded-br-2xl"
-                    }
-                    ${!isMobile ? "hover:w-44 hover:h-16" : ""}
-                    ${isMobile && isOpen ? "w-44 h-16" : ""}
-                  `}
-                  onClick={() => isMobile && setIsOpen(!isOpen)}
+              {!isAdminRoute && (
+                <div
+                  ref={dragRef}
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    [dock]: "0px",
+                    transform: `translateY(${y}px)`,
+                    transition: dragging ? "none" : "all 0.3s ease",
+                    zIndex: 9999,
+                    touchAction: "none",
+                  }}
                 >
-                  <Phone
-                    className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${
-                      isOpen ? "scale-110" : ""
-                    }`}
-                  />
-                  {(isOpen || !isMobile) && (
-                    <div className="flex items-center gap-4">
-                      <a
-                        href="https://wa.me/919561179693"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaWhatsapp className="w-5 h-5 text-green-400 hover:scale-110 transition" />
-                      </a>
-                      <a href="mailto:hr@al-mawa.international">
-                        <Mail className="w-5 h-5 text-blue-400 hover:scale-110 transition" />
-                      </a>
-                      <a href="tel:+919561179693">
-                        <Phone className="w-5 h-5 text-yellow-400 hover:scale-110 transition" />
-                      </a>
-                    </div>
-                  )}
-                </span>
-              </div>
-            )}
+                  <div className="fixed right-4 top-20 flex flex-col gap-3">
+                    {/* Phone Contact Button */}
+                    <span
+                      className={`transition-all duration-300 ease-in-out bg-black/55 backdrop-blur-sm text-white w-10 h-10 flex items-center gap-3 px-2 overflow-hidden cursor-pointer
+                        ${dock === "right"
+                          ? "rounded-tl-2xl rounded-bl-2xl"
+                          : "rounded-tr-2xl rounded-br-2xl"
+                        }
+                        ${!isMobile && isPhoneHovered ? "w-44 h-16" : ""}
+                        ${isMobile && isOpen ? "w-44 h-16" : ""}
+                      `}
+                      onClick={() => isMobile && setIsOpen(!isOpen)}
+                      onMouseEnter={() => !isMobile && setIsPhoneHovered(true)}
+                      onMouseLeave={() => !isMobile && setIsPhoneHovered(false)}
+                    >
+                      <Phone
+                        className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isOpen || isPhoneHovered ? "scale-110" : ""
+                          }`}
+                      />
+                      {((isMobile && isOpen) || (!isMobile && isPhoneHovered)) && (
+                        <div className="flex items-center gap-4">
+                          <a
+                            href="https://wa.me/919561179693"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaWhatsapp className="w-5 h-5 text-green-400 hover:scale-110 transition" />
+                          </a>
+                          <a href="mailto:hr@al-mawa.international">
+                            <Mail className="w-5 h-5 text-blue-400 hover:scale-110 transition" />
+                          </a>
+                          <a href="tel:+919561179693">
+                            <Phone className="w-5 h-5 text-yellow-400 hover:scale-110 transition" />
+                          </a>
+                        </div>
+                      )}
+                    </span>
 
-            {!isAdminRoute && <VisitorTracker />}
-            <div className={isAdminRoute ? "" : "pt-10"}>{children}</div>
-            {!isAdminRoute && <FooterSection />}
-            <ToastProvider />
-          </AOSProvider>
+                    {/* Social Media Button */}
+                    <span
+                      className={`transition-all duration-300 ease-in-out bg-black/55 backdrop-blur-sm text-white w-10 h-10 flex items-center gap-3 px-2 overflow-hidden cursor-pointer
+                        ${dock === "right"
+                          ? "rounded-tl-2xl rounded-bl-2xl"
+                          : "rounded-tr-2xl rounded-br-2xl"
+                        }
+                        ${!isMobile && isSocialHovered ? "w-56 h-16" : ""}
+                        ${isMobile && isSocialOpen ? "w-72 h-16" : ""}
+                      `}
+                      onClick={() => isMobile && setIsSocialOpen(!isSocialOpen)}
+                      onMouseEnter={() => !isMobile && setIsSocialHovered(true)}
+                      onMouseLeave={() => !isMobile && setIsSocialHovered(false)}
+                    >
+                      <FaShare
+                        className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isSocialOpen || isSocialHovered ? "scale-110" : ""
+                          }`}
+                      />
+                      {((isMobile && isSocialOpen) || (!isMobile && isSocialHovered)) && (
+                        <div className="flex items-center gap-4">
+                          <a
+                            href="https://www.linkedin.com/in/al-m-international-private-limited-083948381"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaLinkedin className="w-5 h-5 text-blue-500 hover:scale-110 transition" />
+                          </a>
+                          <a
+                            href="https://www.instagram.com/al_mawainternational/?igsh=MXJkbWt3b3NvOTBmaw%3D%3D#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaInstagram className="w-5 h-5 text-pink-500 hover:scale-110 transition" />
+                          </a>
+                          <a
+                            href="https://www.facebook.com/yourpage"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaFacebook className="w-5 h-5 text-blue-400 hover:scale-110 transition" />
+                          </a>
+                          <a
+                            href="https://x.com/al_mawa__"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaXTwitter className="w-5 h-5 text-white hover:scale-110 transition" />
+                          </a>
+                          <a
+                            href="https://www.youtube.com/@Al-MawaInternational-k3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaYoutube className="w-5 h-5 text-red-500 hover:scale-110 transition" />
+                          </a>
+                        </div>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {!isAdminRoute && <VisitorTracker />}
+              <div className={isAdminRoute ? "" : "pt-10"}>{children}</div>
+              {!isAdminRoute && <FooterSection />}
+              <ToastProvider />
+            </AOSProvider>
           </IntlProvider>
         </ThemeProvider>
       </body>
