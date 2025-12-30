@@ -11,6 +11,7 @@
 //     </div>
 //   );
 // }
+import AutoModal from "@/components/AutoModal";
 import HeroSection from "@/components/hero-section";
 import { Metadata } from 'next';
 
@@ -30,6 +31,7 @@ export default function Home() {
   
   return (
     <div className="min-h-screen">
+      <AutoModal />
       {/* SEO optimized homepage */}
       <main>
         <h1 className="sr-only">Al Mawa International - Digital Agency Pune | Web Development Company</h1>
