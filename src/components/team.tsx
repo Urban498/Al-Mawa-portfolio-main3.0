@@ -4,17 +4,11 @@ import Image, { StaticImageData } from "next/image";
 import { Inter, Playfair_Display } from "next/font/google";
 import { useEffect, useRef } from "react";
 import { useTranslations } from 'next-intl';
+
 // ✅ Import member images
-// import amitesh from "../components/images/images/amitesh.png";
 import arshad from "../components/images/images/arshad.png";
-// import hussain from "../components/images/images/hussain.png";
-import jigyasa from "../components/images/images/jigyasa.png";
-// import komal from "../components/images/images/komal.png";
-import mihir from "../components/images/images/mihir.png";
 import omkar from "../components/images/images/omkar.png";
-// import pranali from "../components/images/images/pranali.png";
 import sabeel from "../components/images/images/sabeel.png";
-import shraddha from "../components/images/images/shraddha.png";
 import sufiyan from "../components/images/images/sufiyan.png";
 import ahemad from "../components/images/images/ahemad.png";
 import priyanka from "../components/images/images/priyanka.png";
@@ -46,10 +40,6 @@ const members: Member[] = [
   { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
 
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
-  { name: "Mihir Manoj Fakirde", role: "Social Media Executive", avatar: mihir, link: "https://www.linkedin.com/in/mihir-fakirde-892357240/", team: "Graphic Team" },
-
-
-
   { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
 
 

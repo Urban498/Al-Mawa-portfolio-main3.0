@@ -11,8 +11,10 @@ import ServicesSection from "@/components/services-section";
 import Bg from "../app/about/image/demo2.png";
 import { Inter, Playfair_Display } from "next/font/google";
 import conferenceRoom from "@/components/images/conference room 1.jpg";
-import values from "@/components/images/ourvalue.jpg";
-import mission from "@/components/images/ourmission.jpg";
+// import values from "@/components/images/ourvalue.jpg";
+import values from "@/components/images/ourv.png";
+// import mission from "@/components/images/ourmission.jpg";
+import mission from "@/components/images/ourm.png";
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({

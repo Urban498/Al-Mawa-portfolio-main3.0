@@ -96,12 +96,12 @@ export default function ServicesSection() {
           viewport={{ once: true }}
         >
           <h2
-            className={`text-3xl md:text-5xl font-bold pt-8 pb-8 text-left bg-clip-text text-transparent bg-black uppercase  ${inter.className}`}
+            className={`text-3xl md:text-6xl font-bold pt-8 pb-8 text-left bg-clip-text text-transparent bg-black uppercase  ${inter.className}`}
           >
             {t('title')}
           </h2>
           <p
-            className={`text-lg md:text-xl  max-w-3xl text-black uppercase ${inter.className}`}
+            className={`text-lg md:text-xl  max-w-3xl text-black italic ${inter.className}`}
           >
             &ldquo;{t('subtitle')}&rdquo;
           </p>

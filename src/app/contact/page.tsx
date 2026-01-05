@@ -340,7 +340,7 @@ export default function ContactPage() {
                     {t('formTitle')}
                   </CardTitle>
                   <CardDescription
-                    className={`text-center text-black mt-2 ${playfair_display.className}`}
+                    className={`text-center text-black mt-2 `}
                   >
                     {t('formDescription')}
                   </CardDescription>
@@ -365,7 +365,7 @@ export default function ContactPage() {
                       value={formData.firstname}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black"
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
                     />
                     <Input
                       name="lastName"
@@ -374,7 +374,7 @@ export default function ContactPage() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black"
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
                     />
                   </motion.div>
 
@@ -390,7 +390,7 @@ export default function ContactPage() {
                       value={formData.emailAddress}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black"
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
                     />
                   </motion.div>
                   <motion.div
@@ -405,7 +405,7 @@ export default function ContactPage() {
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black"
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
                     />
                   </motion.div>
 
@@ -418,7 +418,7 @@ export default function ContactPage() {
                       value={formData.selecetCountry}
                       onValueChange={handleSelectChange}
                     >
-                      <SelectTrigger className="w-full p-4 border-b text-black placeholder:text-black hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black bg-transparent ">
+                      <SelectTrigger className="w-full p-4 border-b text-black placeholder:text-black hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black bg-transparent ">
                         <SelectValue placeholder={t('selectCountry')} />
                       </SelectTrigger>
                       <SelectContent className="bg-gray-100 border-gray-600 text-black max-h-60">
@@ -447,7 +447,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black"
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
                     />
                   </motion.div>
 
@@ -463,7 +463,7 @@ export default function ContactPage() {
                       value={formData.tellUSAboutYou}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-black focus:outline-none focus:ring-b-2 focus:ring-black"
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
                     />
                   </motion.div>
 
@@ -504,7 +504,7 @@ export default function ContactPage() {
             <div className="w-full h-[400px] sm:h-[450px] md:h-[500px] lg:w-[50vw] lg:h-[80vh] flex items-center justify-center relative overflow-hidden">
               <PinContainer
                 title="AL-MAWA INTERNATIONAL - Pune, India"
-                href="https://www.google.com/maps/dir/''/1st+Floor,+Pride+Icon,+Office+No,+102,103,+Nexus+Work+Spaces,+Mundhwa+-+Kharadi+Rd,+above+Athithi+Restaurant,+Kharadi,+Pune,+Maharashtra+411014/@18.5437685,73.9317181,1168m/data=!3m1!1e3!4m13!4m12!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/dir//1st+Floor,+Office+No,+102,103,+Nexus+Work+Spaces,+Mundhwa+-+Kharadi+Rd,+above+Athithi+Restaurant,+Kharadi,+Pune,+Maharashtra+411014/@18.5453735,73.930827,5492m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x6094c0903e247dfd:0xb0a873dfffda5192!2m2!1d73.9359362!2d18.5434425?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
                 className="w-full h-full min-w-[320px] min-h-[350px] sm:min-w-[400px] sm:min-h-[400px] lg:w-[40vw] lg:h-[60vh]"
                 containerClassName="w-full h-full"
                 imageUrl="/mapdark.png"
