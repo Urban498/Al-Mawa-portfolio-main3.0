@@ -9,6 +9,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import React, { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
+import { usePathname } from "next/navigation";
 
 const servicesData = [
   {
@@ -35,10 +36,10 @@ const servicesData = [
             name: "Web Hosting & Domain Services",
             href: "/services/web-development",
           },
-          {
-            name: "SEO & Digital Marketing Integration",
-            href: "/services/web-development",
-          },
+          // {
+          //   name: "SEO & Digital Marketing Integration",
+          //   href: "/services/web-development",
+          // },
           {
             name: "Performance & Security Optimization",
             href: "/services/web-development",
@@ -47,14 +48,14 @@ const servicesData = [
             name: "Website Maintenance & Support",
             href: "/services/web-development",
           },
-          {
-            name: "Emerging Web Technologies",
-            href: "/services/web-development",
-          },
-          {
-            name: "Benefits of Website Design & Development Services",
-            href: "/services/web-development",
-          },
+          // {
+          //   name: "Emerging Web Technologies",
+          //   href: "/services/web-development",
+          // },
+          // {
+          //   name: "Benefits of Website Design & Development Services",
+          //   href: "/services/web-development",
+          // },
         ],
       },
       {
@@ -98,14 +99,14 @@ const servicesData = [
             name: "IT Support & Helpdesk Services",
             href: "/services/it-tech-services",
           },
-          {
-            name: "Emerging Technology Services",
-            href: "/services/it-tech-services",
-          },
-          {
-            name: "Benefits of IT & Tech Services",
-            href: "/services/it-tech-services",
-          },
+          // {
+          //   name: "Emerging Technology Services",
+          //   href: "/services/it-tech-services",
+          // },
+          // {
+          //   name: "Benefits of IT & Tech Services",
+          //   href: "/services/it-tech-services",
+          // },
         ],
       },
       {
@@ -128,10 +129,10 @@ const servicesData = [
             name: "Omnichannel Integration",
             href: "/services/email-whatsapp-sms-marketing",
           },
-          {
-            name: "Benefits of Email, WhatsApp & SMS Marketing",
-            href: "/services/email-whatsapp-sms-marketing",
-          },
+          // {
+          //   name: "Benefits of Email, WhatsApp & SMS Marketing",
+          //   href: "/services/email-whatsapp-sms-marketing",
+          // },
         ],
       },
       {
@@ -174,14 +175,14 @@ const servicesData = [
             name: "Packaging & Product Branding",
             href: "/services/branding-graphic-design",
           },
-          {
-            name: "Emerging Graphic Design Trends",
-            href: "/services/branding-graphic-design",
-          },
-          {
-            name: "Benefits of Branding & Graphic Design Services",
-            href: "/services/branding-graphic-design",
-          },
+          // {
+          //   name: "Emerging Graphic Design Trends",
+          //   href: "/services/branding-graphic-design",
+          // },
+          // {
+          //   name: "Benefits of Branding & Graphic Design Services",
+          //   href: "/services/branding-graphic-design",
+          // },
         ],
       },
       {
@@ -218,8 +219,14 @@ const servicesData = [
 
 export const NavBar = () => {
   const t = useTranslations('nav');
+  const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+
+  const navLinkBaseClass =
+    "relative inline-block text-black transition-colors duration-200 hover:text-[#0ea5e9] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#0ea5e9] after:transition-all after:duration-200 hover:after:w-full";
+
+  const navLinkActiveClass = "text-[#0ea5e9] after:w-full";
 
   // Handle scroll effect
   useEffect(() => {
@@ -252,7 +259,7 @@ export const NavBar = () => {
     <header>
       <nav
         data-state={menuState && "active"}
-        className={` fixed z-50 w-full px-5`}
+        className={` fixed z-50 lg:z-[100] w-full px-5`}
       >
         <div
           className={cn(
@@ -301,7 +308,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/"
-                    className="text-black hover:text-black block"
+                    aria-current={pathname === "/" ? "page" : undefined}
+                    className={cn(
+                      navLinkBaseClass,
+                      pathname === "/" && navLinkActiveClass
+                    )}
                   >
                     <span>{t('home')}</span>
                   </Link>
@@ -309,7 +320,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/about"
-                    className="text-black hover:text-black block"
+                    aria-current={pathname === "/about" ? "page" : undefined}
+                    className={cn(
+                      navLinkBaseClass,
+                      pathname === "/about" && navLinkActiveClass
+                    )}
                   >
                     <span>{t('about')}</span>
                   </Link>
@@ -318,9 +333,16 @@ export const NavBar = () => {
                 {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
                   <li key={index} className="relative group">
-                    <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
-                      <span>{t('services')}</span>
-                      <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                    <div
+                      className={cn(
+                        "relative inline-flex items-center gap-1 cursor-pointer",
+                        navLinkBaseClass,
+                        pathname?.startsWith("/services") && navLinkActiveClass,
+                        "group-hover:after:w-full"
+                      )}
+                    >
+                      <span className="flex gap-1">{t('services')} <ChevronDown className="w-3 h-3 my-auto transition-transform group-hover:rotate-180" /></span>
+                      
                     </div>
 
                     {/* Dropdown Box */}
@@ -361,7 +383,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/careers"
-                    className="text-black hover:text-black block duration-150"
+                    aria-current={pathname === "/careers" ? "page" : undefined}
+                    className={cn(
+                      navLinkBaseClass,
+                      pathname === "/careers" && navLinkActiveClass
+                    )}
                   >
                     <span>{t('careers')}</span>
                   </Link>
@@ -371,7 +397,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/testimonials"
-                    className="text-black hover:text-black block duration-150"
+                    aria-current={pathname === "/testimonials" ? "page" : undefined}
+                    className={cn(
+                      navLinkBaseClass,
+                      pathname === "/testimonials" && navLinkActiveClass
+                    )}
                   >
                     <span>{t('testimonials')}</span>
                   </Link>
