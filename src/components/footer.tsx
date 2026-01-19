@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Inter } from "next/font/google";
 import { useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,11 @@ const contactInfo = [
 
 export default function FooterSection() {
   const t = useTranslations('footer');
+  const [year, setYear] = useState(2025);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="bg-black text-white border-t border-border/50">
@@ -97,14 +103,23 @@ export default function FooterSection() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col items-center md:items-start gap-1">
               <p className="text-white text-sm font-semibold">
-                © {new Date().getFullYear()} {t('companyName')}. {t('allRightsReserved')}
+                © {year} {t('companyName')}. {t('allRightsReserved')}
               </p>
-              <Link
-                href="/policy"
-                className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
-              >
-                Terms &amp; Conditions / Policy
-              </Link>
+              <div className="flex flex-col md:flex-row gap-3">
+                <Link
+                  href="/our-work"
+                  className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+                >
+                  Our Work
+                </Link>
+                <span className="text-xs text-gray-300 hidden md:inline">|</span>
+                <Link
+                  href="/policy"
+                  className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+                >
+                  Terms &amp; Conditions / Policy
+                </Link>
+              </div>
             </div>
             <div className="flex space-x-4">
               <Link

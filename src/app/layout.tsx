@@ -203,6 +203,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100 text-base-content`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           defaultTheme="light"

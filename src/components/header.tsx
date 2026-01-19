@@ -330,6 +330,19 @@ export const NavBar = () => {
                   </Link>
                 </li>
 
+                <li>
+                  <Link
+                    href="/our-work"
+                    aria-current={pathname === "/our-work" ? "page" : undefined}
+                    className={cn(
+                      navLinkBaseClass,
+                      pathname === "/our-work" && navLinkActiveClass
+                    )}
+                  >
+                    <span>Our Work</span>
+                  </Link>
+                </li>
+
                 {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
                   <li key={index} className="relative group">
