@@ -7,8 +7,8 @@ const reviewsFile = path.join(process.cwd(), 'data', 'reviews.json');
 async function ensureDataDir() {
   try {
     await fs.mkdir(path.dirname(reviewsFile), { recursive: true });
-  } catch (err) {
-    console.error('Error creating data directory:', err);
+  } catch (error) {
+    console.error('Error creating data directory:', error);
   }
 }
 
@@ -18,7 +18,7 @@ async function getReviews() {
     await ensureDataDir();
     const data = await fs.readFile(reviewsFile, 'utf-8');
     return JSON.parse(data);
-  } catch (err) {
+  } catch {
     // File doesn't exist yet, return empty array
     return [];
   }
@@ -35,7 +35,7 @@ async function saveReviews(reviews) {
   }
 }
 
-export async function GET(request) {
+export async function GET() {
   try {
     const reviews = await getReviews();
     return Response.json(reviews);
