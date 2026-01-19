@@ -33,6 +33,7 @@ const SidebarContent = ({ activeSection, setActiveSection, onLogout }: AdminSide
     { label: "Job Applications", key: "jobs", icon: <IconSettings size={20} /> },
     { label: "Post Jobs", key: "post-jobs", icon: <IconBriefcase size={20} /> },
     { label: "Manage Jobs", key: "manage-jobs", icon: <IconTrash size={20} /> },
+    { label: "Feedback", key: "feedback", icon: <IconUsers size={20} /> },
     { label: "Cards", key: "cards", link: "/admin/cards", icon: <IconSettings size={20} /> },
   ];
 

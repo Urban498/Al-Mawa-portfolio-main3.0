@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Card,
   CardHeader,
@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { LinkPreview } from "@/components/ui/link-preview";
 import localFont from "next/font/local";
-import { Play, ExternalLink, Share2, Eye, X, Star } from "lucide-react";
+import { Play, ExternalLink, Share2, Eye, X, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import logo from "../../../public/logoblack.png";
 
@@ -570,6 +570,19 @@ export default function TestimonialsPage() {
   const [reviews, setReviews] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-slide carousel every 5 seconds
+  useEffect(() => {
+    if (reviews.length === 0) return;
+    
+    const interval = setInterval(() => {
+      const totalSets = Math.ceil(reviews.length / 3);
+      setCurrentIndex((prev) => ((prev + 3) % (totalSets * 3)) < reviews.length ? (prev + 3) % (totalSets * 3) : 0);
+    }, 5000); // 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [reviews.length]);
 
   // Load reviews from API on mount
   useEffect(() => {
@@ -605,11 +618,28 @@ export default function TestimonialsPage() {
         const updatedReviews = await response.json();
         setReviews(updatedReviews);
         setIsModalOpen(false);
+        setCurrentIndex(0);
       }
     } catch (error) {
       console.error('Error adding review:', error);
       alert('Failed to save review. Please try again.');
     }
+  };
+
+  const handlePrevious = () => {
+    const totalSets = Math.ceil(reviews.length / 3);
+    setCurrentIndex((prev) => {
+      const newIndex = prev - 3;
+      return newIndex < 0 ? (totalSets - 1) * 3 : newIndex;
+    });
+  };
+
+  const handleNext = () => {
+    const totalSets = Math.ceil(reviews.length / 3);
+    setCurrentIndex((prev) => {
+      const newIndex = prev + 3;
+      return newIndex >= reviews.length ? 0 : newIndex;
+    });
   };
   return (
     <main
@@ -658,7 +688,7 @@ export default function TestimonialsPage() {
           </motion.div>
         </section>
 
-        {/* Client Reviews Section */}
+        {/* Client Reviews Section - Carousel */}
         {reviews.length > 0 && (
           <section className="relative max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-20">
             <motion.div
@@ -673,10 +703,67 @@ export default function TestimonialsPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
-              {reviews.map((review, index) => (
-                <ReviewCard key={index} review={review} index={index} />
-              ))}
+            {/* Carousel Container */}
+            <div className="relative">
+              {/* Navigation Buttons - Left */}
+              <button
+                onClick={handlePrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 md:translate-x-0 p-2 rounded-full bg-white/80 hover:bg-white text-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm z-10"
+                aria-label="Previous reviews"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              {/* Main Carousel - 3 Cards */}
+              <div className="overflow-hidden px-4">
+                <motion.div
+                  animate={{ x: -currentIndex * (100 / 3) + "%" }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="flex gap-6"
+                >
+                  {reviews.map((review, index) => (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 w-full md:w-1/3"
+                    >
+                      <ReviewCard 
+                        review={review} 
+                        index={index}
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Navigation Buttons - Right */}
+              <button
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 md:translate-x-0 p-2 rounded-full bg-white/80 hover:bg-white text-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm z-10"
+                aria-label="Next reviews"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              {/* Carousel Indicators */}
+              <div className="flex items-center justify-center gap-2 mt-8">
+                {Array.from({ length: Math.ceil(reviews.length / 3) }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === Math.floor(currentIndex / 3)
+                        ? "bg-[#0ea5e9] w-8"
+                        : "bg-gray-300 hover:bg-gray-400 w-2"
+                    }`}
+                    aria-label={`Go to review set ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Review Counter */}
+              <div className="text-center mt-4 text-sm text-gray-600">
+                <span className="font-semibold text-gray-900">{Math.floor(currentIndex / 3) + 1}</span> of <span className="font-semibold text-gray-900">{Math.ceil(reviews.length / 3)}</span>
+              </div>
             </div>
           </section>
         )}

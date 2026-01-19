@@ -63,3 +63,30 @@ export async function POST(request) {
     return Response.json({ error: 'Failed to save review' }, { status: 500 });
   }
 }
+
+export async function DELETE(request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const index = searchParams.get('index');
+
+    if (index === null || isNaN(index)) {
+      return Response.json({ error: 'Invalid review index' }, { status: 400 });
+    }
+
+    const reviews = await getReviews();
+    const reviewIndex = parseInt(index);
+
+    if (reviewIndex < 0 || reviewIndex >= reviews.length) {
+      return Response.json({ error: 'Review not found' }, { status: 404 });
+    }
+
+    // Remove review at specified index
+    reviews.splice(reviewIndex, 1);
+    await saveReviews(reviews);
+
+    return Response.json({ success: true, message: 'Review deleted successfully', reviews });
+  } catch (error) {
+    console.error('Error deleting review:', error);
+    return Response.json({ error: 'Failed to delete review' }, { status: 500 });
+  }
+}

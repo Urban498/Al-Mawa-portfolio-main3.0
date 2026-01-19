@@ -8,6 +8,7 @@ import { ContactSchema, EnquirySchema, JobApplySchema, AdminDataType, ApiRespons
 import { useSearchParams } from "next/navigation";
 import JobPostForm from "@/components/admin/JobPostForm";
 import JobManagement from "@/components/admin/JobManagement";
+import AdminFeedback from "@/components/admin/AdminFeedback";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import VisitorStats from "@/components/admin/VisitorStats";
@@ -188,6 +189,7 @@ function AdminContent() {
             {activeSection === "jobs" ? "Job Applications" : 
              activeSection === "post-jobs" ? "Post New Job" :
              activeSection === "manage-jobs" ? "Manage Jobs" :
+             activeSection === "feedback" ? "Client Feedback" :
              activeSection === "visitors" ? "Website Visitors" : activeSection}
           </h1>
         </div>
@@ -253,6 +255,8 @@ function AdminContent() {
           <JobPostForm />
         ) : activeSection === "manage-jobs" ? (
           <JobManagement />
+        ) : activeSection === "feedback" ? (
+          <AdminFeedback />
         ) : activeSection === "visitors" ? (
           /* Visitors Table */
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 max-w-full">
