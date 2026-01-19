@@ -7,13 +7,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { toast } from "sonner";
 
+interface Review {
+  name: string;
+  designation: string;
+  feedback: string;
+  rating: number;
+  image?: string;
+  createdAt?: string;
+}
+
+interface ReviewToDelete {
+  index: number;
+  name: string;
+}
+
 export default function AdminFeedback() {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [deleting, setDeleting] = useState(null);
+  const [deleting, setDeleting] = useState<number | null>(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
-  const [reviewToDelete, setReviewToDelete] = useState(null);
-  const [expandedReviews, setExpandedReviews] = useState<string[]>([]);
+  const [reviewToDelete, setReviewToDelete] = useState<ReviewToDelete | null>(null);
+  const [expandedReviews, setExpandedReviews] = useState<number[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   const defaultImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect fill='%23E5E7EB' width='128' height='128'/%3E%3Ccircle cx='64' cy='40' r='16' fill='%239CA3AF'/%3E%3Cpath d='M32 100 Q32 75 64 75 Q96 75 96 100 L96 128 L32 128 Z' fill='%239CA3AF'/%3E%3C/svg%3E";
@@ -38,7 +52,7 @@ export default function AdminFeedback() {
     }
   };
 
-  const toggleReviewExpansion = (index) => {
+  const toggleReviewExpansion = (index: number) => {
     setExpandedReviews((prev) =>
       prev.includes(index)
         ? prev.filter((i) => i !== index)
@@ -46,7 +60,7 @@ export default function AdminFeedback() {
     );
   };
 
-  const handleDelete = async (index) => {
+  const handleDelete = async (index: number) => {
     try {
       setDeleting(index);
       const response = await fetch(`/api/reviews?index=${index}`, {
@@ -130,6 +144,7 @@ export default function AdminFeedback() {
               <button
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                title="Clear search"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -176,6 +191,7 @@ export default function AdminFeedback() {
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <div className="mb-3">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={review.image || defaultImage}
                               alt={review.name}
@@ -210,7 +226,7 @@ export default function AdminFeedback() {
                       {expandedReviews.includes(index) && (
                         <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                           <p className="text-gray-700 dark:text-gray-300 italic mb-4">
-                            "{review.feedback}"
+                            &ldquo;{review.feedback}&rdquo;
                           </p>
                           {review.createdAt && (
                             <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -277,7 +293,11 @@ export default function AdminFeedback() {
                             </Button>
                             <Button
                               variant="destructive"
-                              onClick={() => handleDelete(reviewToDelete?.index)}
+                              onClick={() => {
+                                if (reviewToDelete?.index !== undefined) {
+                                  handleDelete(reviewToDelete.index);
+                                }
+                              }}
                             >
                               Delete
                             </Button>
