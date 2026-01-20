@@ -41,8 +41,7 @@ const staggerContainer = {
   },
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getServices = (t: any) => [
+const getServices = (t: ReturnType<typeof useTranslations>) => [
   {
     icon: Globe,
     title: t('services.websiteDesignDev.title'),
@@ -105,8 +104,7 @@ const getServices = (t: any) => [
   }
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getBenefits = (t: any) => t.raw('benefitsList');
+const getBenefits = (t: ReturnType<typeof useTranslations>) => t.raw('benefitsList') as string[];
 
 export default function WebDevelopmentPage() {
   const t = useTranslations('webDevelopmentPage');

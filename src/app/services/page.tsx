@@ -23,8 +23,7 @@ interface Service {
   color: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getServices = (t: any): Service[] => [
+const getServices = (t: ReturnType<typeof useTranslations>): Service[] => [
   {
     id: "uiux",
     title: t('uiux.title') as string,

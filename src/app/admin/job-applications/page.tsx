@@ -26,7 +26,7 @@ export default function JobApplicationsPage() {
       console.log(response.data.data)
       // Ensure newest applications show at the top. Sort by `_id` (ObjectId contains timestamp).
       const apps = Array.isArray(response.data.data) ? response.data.data.slice() : [];
-      apps.sort((a, b) => (b._id || "").localeCompare(a._id || ""));
+      apps.sort((a: JobApplication, b: JobApplication) => (b._id || "").localeCompare(a._id || ""));
       setJobs(apps);
       setCurrentPage(1);
       
