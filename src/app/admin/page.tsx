@@ -34,7 +34,7 @@ function AdminContent() {
   };
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeSection, setActiveSection] = useState("contact");
+  const [activeSection, setActiveSectionState] = useState("contact");
   const [data, setData] = useState<AdminDataType[]>([]);
   const [currentPageJobs, setCurrentPageJobs] = useState<number>(1);
   const [pageSizeJobs, setPageSizeJobs] = useState<number>(10);
@@ -46,12 +46,23 @@ function AdminContent() {
   const searchParams = useSearchParams();
   const sectionParam = searchParams.get('section');
 
+  // Wrapper to persist section to localStorage
+  const setActiveSection = (section: string) => {
+    setActiveSectionState(section);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('adminActiveSection', section);
+    }
+  };
+
   const checkAuthStatus = useCallback(async () => {
     try {
       // If coming from cards page with section parameter, assume authenticated
       if (sectionParam) {
         setIsAuthenticated(true);
-        setActiveSection(sectionParam);
+        setActiveSectionState(sectionParam);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('adminActiveSection', sectionParam);
+        }
         setIsLoading(false);
         return;
       }
@@ -60,6 +71,13 @@ function AdminContent() {
       const response = await fetch('/api/check-auth');
       if (response.ok) {
         setIsAuthenticated(true);
+        // Restore the last active section from localStorage if available
+        if (typeof window !== 'undefined') {
+          const savedSection = localStorage.getItem('adminActiveSection');
+          if (savedSection) {
+            setActiveSectionState(savedSection);
+          }
+        }
       }
     } catch {
       console.log("Not authenticated");
@@ -153,8 +171,12 @@ function AdminContent() {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    setActiveSection("contact");
+    setActiveSectionState("contact");
     setData([]);
+    // Clear the saved section from localStorage on logout
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('adminActiveSection');
+    }
   };
 
   const handleDelete = async (id: string) => {
