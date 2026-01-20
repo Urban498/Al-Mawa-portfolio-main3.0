@@ -12,12 +12,6 @@ const AdminOTPSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    backupCodes: [
-      {
-        code: String,
-        used: { type: Boolean, default: false },
-      },
-    ],
     attempts: {
       type: Number,
       default: 0,
