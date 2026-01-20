@@ -97,6 +97,7 @@ export async function POST(request) {
     const emailAddress = formData.get('emailAddress') || formData.get('EmailAddress');
     const phoneNumber = formData.get('phoneNumber') || formData.get('PhoneNumber');
     const yearOfExperience = formData.get('yearOfExperience') || formData.get('YearOfExperience');
+    const monthsOfExperience = formData.get('monthsOfExperience') || formData.get('MonthsOfExperience');
     const coverLetter = formData.get('coverLetter') || formData.get('Coverletter') || formData.get('coverletter');
 
     console.log('📋 Form data received:', {
@@ -119,6 +120,7 @@ export async function POST(request) {
           emailAddress,
           phoneNumber,
           yearOfExperience,
+          monthsOfExperience,
           coverLetter
         }
       }, { status: 400 });
@@ -131,6 +133,7 @@ export async function POST(request) {
       EmailAddress: emailAddress,
       PhoneNumber: parseInt(String(phoneNumber), 10),
       YearOfExperience: parseInt(String(yearOfExperience), 10),
+      MonthsOfExperience: monthsOfExperience ? parseInt(String(monthsOfExperience), 10) : 0,
       Coverletter: coverLetter,
       ResumeLink: uploadResult.secure_url,
     };

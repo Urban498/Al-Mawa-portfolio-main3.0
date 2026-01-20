@@ -31,6 +31,7 @@ export interface JobApplySchema {
   EmailAddress: string;
   PhoneNumber: number;
   YearOfExperience: number;
+  MonthsOfExperience?: number;
   Coverletter: string;
   ResumeLink: string;
   createdAt?: string;

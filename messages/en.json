@@ -857,6 +857,7 @@
         "phone": "Phone Number",
         "experience": "Years of Experience",
         "experiencePlaceholder": "Select experience level",
+        "monthsPlaceholder": "Months",
         "experienceOptions": {
           "0-1": "0-1 years",
           "2-3": "2-3 years",
