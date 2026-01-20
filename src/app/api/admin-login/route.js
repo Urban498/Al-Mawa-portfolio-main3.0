@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 import { generateOTP, sendOTPEmail } from "../libs/emailService";
-import { generateBackupCodes } from "../libs/backupCodes";
 import AdminOTP from "../models/AdminOTP";
 
 export async function POST(req) {
@@ -38,15 +37,8 @@ export async function POST(req) {
         await mongoose.connect(process.env.MONGODB_URI);
       }
 
-      // Generate OTP & Backup Codes
+      // Generate OTP
       const newOTP = generateOTP();
-      const backupCodes = generateBackupCodes();
-
-      // Format backup codes for storage
-      const formattedBackupCodes = backupCodes.map((code) => ({
-        code: code.replace(/[-\s]/g, "").toUpperCase(),
-        used: false,
-      }));
 
       // Clear existing OTP records
       await AdminOTP.deleteOne({ email });
@@ -55,7 +47,6 @@ export async function POST(req) {
       await AdminOTP.create({
         email,
         otp: newOTP,
-        backupCodes: formattedBackupCodes,
         attempts: 0,
       });
 
@@ -132,62 +123,6 @@ export async function POST(req) {
         success: true,
         message: "Login successful",
         step: 3,
-      });
-
-      res.cookies.set("admin", "true", {
-        httpOnly: true,
-        secure: true,
-        sameSite: "strict",
-        maxAge: 60 * 60 * 24,
-      });
-
-      return res;
-    }
-
-    // STEP 3: Verify with Backup Code (if OTP is lost)
-    if (step === "backup") {
-      if (!email || !backupCode) {
-        return NextResponse.json({
-          success: false,
-          error: "Email and backup code are required",
-        });
-      }
-
-      // Connect to MongoDB
-      if (mongoose.connection.readyState === 0) {
-        await mongoose.connect(process.env.MONGODB_URI);
-      }
-
-      // Find OTP record
-      const otpRecord = await AdminOTP.findOne({ email });
-
-      if (!otpRecord) {
-        return NextResponse.json({
-          success: false,
-          error: "No backup codes found. Please login again.",
-        });
-      }
-
-      // Find and verify backup code
-      const backupCodeObj = otpRecord.backupCodes.find(
-        (bc) => bc.code === backupCode.replace(/[-\s]/g, "").toUpperCase() && !bc.used
-      );
-
-      if (!backupCodeObj) {
-        return NextResponse.json({
-          success: false,
-          error: "Invalid or already used backup code",
-        });
-      }
-
-      // Mark backup code as used
-      backupCodeObj.used = true;
-      await otpRecord.save();
-
-      // Set authentication cookie
-      const res = NextResponse.json({
-        success: true,
-        message: "Login successful with backup code",
       });
 
       res.cookies.set("admin", "true", {

@@ -16,7 +16,6 @@ interface OTPVerificationProps {
 
 interface OTPFormData {
   otp: string;
-  backupCode: string;
 }
 
 const OTPVerification = ({
@@ -26,7 +25,6 @@ const OTPVerification = ({
 }: OTPVerificationProps) => {
   const { register, handleSubmit } = useForm<OTPFormData>();
   const [loading, setLoading] = useState(false);
-  const [showBackupCodeField, setShowBackupCodeField] = useState(false);
   const [timer, setTimer] = useState(300); // 5 minutes
 
   // Timer effect
@@ -83,42 +81,13 @@ const OTPVerification = ({
   };
 
   const handleBackupCodeSubmit: SubmitHandler<OTPFormData> = async (data) => {
-    try {
-      setLoading(true);
-      console.log("🔄 Verifying backup code...");
-
-      const res = await axios.post("/api/admin-login", {
-        email,
-        backupCode: data.backupCode,
-        step: "backup",
-      });
-
-      if (res.data.success) {
-        toast.success("Backup Code Verified!", {
-          description: "Welcome to admin panel",
-        });
-        onSuccess();
-      } else {
-        toast.error("Invalid Backup Code", {
-          description: res.data.error || "Please try again",
-        });
-      }
-    } catch (error) {
-      console.error("❌ Backup code verification error:", error);
-      toast.error("Verification failed", {
-        description: "Please try again",
-      });
-    } finally {
-      setLoading(false);
-    }
+    // Backup code functionality removed
   };
 
   return (
     <section className="flex min-h-screen items-center justify-center bg-zinc-50 px-4 py-16 dark:bg-zinc-900">
       <form
-        onSubmit={handleSubmit(
-          showBackupCodeField ? handleBackupCodeSubmit : handleOTPSubmit
-        )}
+        onSubmit={handleSubmit(handleOTPSubmit)}
         className="bg-white dark:bg-zinc-800 w-full max-w-md rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-lg p-8 space-y-6"
       >
         {/* Header */}
@@ -147,46 +116,27 @@ const OTPVerification = ({
           </p>
         </div>
 
-        {/* OTP or Backup Code Input */}
-        {!showBackupCodeField ? (
-          <div className="space-y-2">
-            <Label htmlFor="otp" className="text-sm text-zinc-700 dark:text-zinc-300">
-              Enter OTP Code
-            </Label>
-            <Input
-              type="text"
-              id="otp"
-              placeholder="000000"
-              maxLength={6}
-              required
-              {...register("otp", {
-                required: "OTP is required",
-                minLength: { value: 6, message: "OTP must be 6 digits" },
-              })}
-              className="text-center text-2xl tracking-widest font-bold border-zinc-300 dark:border-zinc-600 focus:border-blue-500 focus:ring focus:ring-blue-200 dark:focus:ring-blue-800"
-            />
-            <p className="text-xs text-zinc-500">
-              Check your email for the 6-digit code
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-2">
-            <Label htmlFor="backupCode" className="text-sm text-zinc-700 dark:text-zinc-300">
-              Enter Backup Code
-            </Label>
-            <Input
-              type="text"
-              id="backupCode"
-              placeholder="XXXX-XXXX"
-              required
-              {...register("backupCode", { required: "Backup code is required" })}
-              className="text-center font-mono border-zinc-300 dark:border-zinc-600 focus:border-blue-500 focus:ring focus:ring-blue-200 dark:focus:ring-blue-800"
-            />
-            <p className="text-xs text-zinc-500">
-              Use one of your saved backup codes
-            </p>
-          </div>
-        )}
+        {/* OTP Input */}
+        <div className="space-y-2">
+          <Label htmlFor="otp" className="text-sm text-zinc-700 dark:text-zinc-300">
+            Enter OTP Code
+          </Label>
+          <Input
+            type="text"
+            id="otp"
+            placeholder="000000"
+            maxLength={6}
+            required
+            {...register("otp", {
+              required: "OTP is required",
+              minLength: { value: 6, message: "OTP must be 6 digits" },
+            })}
+            className="text-center text-2xl tracking-widest font-bold border-zinc-300 dark:border-zinc-600 focus:border-blue-500 focus:ring focus:ring-blue-200 dark:focus:ring-blue-800"
+          />
+          <p className="text-xs text-zinc-500">
+            Check your email for the 6-digit code
+          </p>
+        </div>
 
         {/* Submit Button */}
         <Button
@@ -196,15 +146,6 @@ const OTPVerification = ({
         >
           {loading ? "Verifying..." : "Verify"}
         </Button>
-
-        {/* Toggle Backup Code */}
-        <button
-          type="button"
-          onClick={() => setShowBackupCodeField(!showBackupCodeField)}
-          className="w-full text-center text-sm text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          {showBackupCodeField ? "← Back to OTP" : "Don't have your OTP? →"}
-        </button>
 
         {/* Back to Login */}
         <button
