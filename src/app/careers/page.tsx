@@ -258,6 +258,7 @@ export default function CareersPage() {
         emailAddress: "",
         phoneNumber: "",
         yearOfExperience: "",
+        monthsOfExperience: "",
         coverLetter: "",
         resume: null,
       });

@@ -15,19 +15,19 @@ import VisitorStats from "@/components/admin/VisitorStats";
 
 function AdminContent() {
   // Helper: get unix timestamp (seconds) from document's `createdAt` or from Mongo ObjectId string
-  const getDocTimestamp = (doc: any) => {
+  const getDocTimestamp = (doc: { createdAt?: string; _id?: string; id?: string } | null | undefined) => {
     if (!doc) return 0;
     if (doc.createdAt) {
       const d = new Date(doc.createdAt);
       if (!isNaN(d.getTime())) return Math.floor(d.getTime() / 1000);
     }
-    const id = doc._id || doc.id || "";
+    const id = (doc._id as string) || (doc.id as string) || "";
     try {
       const hex = String(id);
       if (hex.length >= 8) {
         return parseInt(hex.substring(0, 8), 16);
       }
-    } catch (e) {
+    } catch {
       // ignore
     }
     return 0;
@@ -100,9 +100,9 @@ function AdminContent() {
       const response = await axios.get<ApiResponse<AdminDataType>>(endpoint);
       if (response.data.success && response.data.data) {
         // If showing job applications, sort newest first
-        if (activeSection === "jobs" && Array.isArray(response.data.data)) {
+      if (activeSection === "jobs" && Array.isArray(response.data.data)) {
           const apps = response.data.data.slice();
-          apps.sort((a: any, b: any) => getDocTimestamp(b) - getDocTimestamp(a));
+          apps.sort((a: AdminDataType, b: AdminDataType) => getDocTimestamp(b) - getDocTimestamp(a));
           setData(apps);
         } else {
           setData(response.data.data);
@@ -117,14 +117,14 @@ function AdminContent() {
   }, [activeSection, visitorPage, visitorSearch]);
 
   const filteredJobs = useMemo(() => {
-    if (activeSection !== "jobs") return data;
-    if (!jobSearch) return data;
+    if (activeSection !== "jobs") return data as JobApplySchema[];
+    if (!jobSearch) return data as JobApplySchema[];
     const q = jobSearch.toLowerCase();
-    return data.filter((item: any) => {
-      const first = String((item as any).FirstName || "").toLowerCase();
-      const last = String((item as any).LastName || "").toLowerCase();
-      const email = String((item as any).EmailAddress || "").toLowerCase();
-      const phone = String((item as any).PhoneNumber || "").toLowerCase();
+    return (data as JobApplySchema[]).filter((item: JobApplySchema) => {
+      const first = String(item.FirstName || "").toLowerCase();
+      const last = String(item.LastName || "").toLowerCase();
+      const email = String(item.EmailAddress || "").toLowerCase();
+      const phone = String(item.PhoneNumber || "").toLowerCase();
       return first.includes(q) || last.includes(q) || email.includes(q) || phone.includes(q);
     });
   }, [data, jobSearch, activeSection]);
@@ -462,7 +462,7 @@ function AdminContent() {
                       const start = (currentPageJobs - 1) * pageSizeJobs;
                       const end = start + pageSizeJobs;
                       return jobsSource.slice(start, end).map((item, idx) => (
-                        <tr key={(item as any)._id || idx} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <tr key={((item as JobApplySchema)._id as string) || idx} className="hover:bg-gray-50 dark:hover:bg-gray-700">
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).FirstName}</td>
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).LastName}</td>
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).EmailAddress}</td>

@@ -12,10 +12,10 @@ interface IntlProviderProps {
 export function IntlProvider({ children }: IntlProviderProps) {
   const [locale, setLocale] = useState<SupportedLocale>(DEFAULT_LOCALE);
   const [messages, setMessages] = useState<Record<string, unknown>>(enMessages);
-  const [isClient, setIsClient] = useState(false);
+ 
 
   useEffect(() => {
-    setIsClient(true);
+    // mark client-mounted (previously used isClient state removed)
     
     // Get locale from cookie, ensuring it defaults to English
     const cookieLocale = getCurrentLocale();
