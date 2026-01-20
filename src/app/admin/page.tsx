@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useCallback, useMemo, Suspense } from "react";
 import LoginPage from "@/components/login";
 import AdminSidebar from "@/components/admin-sidebar";
 import axios from "axios";
@@ -14,14 +14,35 @@ import 'react-toastify/dist/ReactToastify.css';
 import VisitorStats from "@/components/admin/VisitorStats";
 
 function AdminContent() {
+  // Helper: get unix timestamp (seconds) from document's `createdAt` or from Mongo ObjectId string
+  const getDocTimestamp = (doc: any) => {
+    if (!doc) return 0;
+    if (doc.createdAt) {
+      const d = new Date(doc.createdAt);
+      if (!isNaN(d.getTime())) return Math.floor(d.getTime() / 1000);
+    }
+    const id = doc._id || doc.id || "";
+    try {
+      const hex = String(id);
+      if (hex.length >= 8) {
+        return parseInt(hex.substring(0, 8), 16);
+      }
+    } catch (e) {
+      // ignore
+    }
+    return 0;
+  };
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("contact");
   const [data, setData] = useState<AdminDataType[]>([]);
+  const [currentPageJobs, setCurrentPageJobs] = useState<number>(1);
+  const [pageSizeJobs, setPageSizeJobs] = useState<number>(10);
   const [visitorData, setVisitorData] = useState<VisitorApiResponse | null>(null);
   const [visitorPage, setVisitorPage] = useState(1);
   const [visitorSearch, setVisitorSearch] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [jobSearch, setJobSearch] = useState("");
   const searchParams = useSearchParams();
   const sectionParam = searchParams.get('section');
 
@@ -78,7 +99,14 @@ function AdminContent() {
       
       const response = await axios.get<ApiResponse<AdminDataType>>(endpoint);
       if (response.data.success && response.data.data) {
-        setData(response.data.data);
+        // If showing job applications, sort newest first
+        if (activeSection === "jobs" && Array.isArray(response.data.data)) {
+          const apps = response.data.data.slice();
+          apps.sort((a: any, b: any) => getDocTimestamp(b) - getDocTimestamp(a));
+          setData(apps);
+        } else {
+          setData(response.data.data);
+        }
       } else {
         setData([]);
       }
@@ -87,6 +115,19 @@ function AdminContent() {
       setData([]);
     }
   }, [activeSection, visitorPage, visitorSearch]);
+
+  const filteredJobs = useMemo(() => {
+    if (activeSection !== "jobs") return data;
+    if (!jobSearch) return data;
+    const q = jobSearch.toLowerCase();
+    return data.filter((item: any) => {
+      const first = String((item as any).FirstName || "").toLowerCase();
+      const last = String((item as any).LastName || "").toLowerCase();
+      const email = String((item as any).EmailAddress || "").toLowerCase();
+      const phone = String((item as any).PhoneNumber || "").toLowerCase();
+      return first.includes(q) || last.includes(q) || email.includes(q) || phone.includes(q);
+    });
+  }, [data, jobSearch, activeSection]);
 
   // Check authentication status on component mount
   useEffect(() => {
@@ -184,7 +225,7 @@ function AdminContent() {
       
       {/* Main Content */}
       <div className="flex-1 p-4 md:p-6 min-h-screen overflow-auto min-w-0">
-        <div className="mb-6">
+        <div className="mb-6 flex items-center gap-3">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 capitalize">
             {activeSection === "jobs" ? "Job Applications" : 
              activeSection === "post-jobs" ? "Post New Job" :
@@ -192,6 +233,29 @@ function AdminContent() {
              activeSection === "feedback" ? "Client Feedback" :
              activeSection === "visitors" ? "Website Visitors" : activeSection}
           </h1>
+
+          {activeSection === "jobs" && (
+            <div className="ml-2">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search applicants..."
+                  value={jobSearch}
+                  onChange={(e) => { setJobSearch(e.target.value); setCurrentPageJobs(1); }}
+                  className="w-64 px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                />
+                {jobSearch && (
+                  <button
+                    onClick={() => setJobSearch("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                    aria-label="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Visitor Search Bar */}
@@ -392,102 +456,68 @@ function AdminContent() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
-                  {data.map((item, index) => (
-                    <tr key={index} className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                      {activeSection === "contact" && (
-                        <>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as ContactSchema).firstname}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as ContactSchema).lastName}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as ContactSchema).emailAddress}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as ContactSchema).phoneNumber}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as ContactSchema).selecetCountry}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as ContactSchema).subject}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            <button
-                              onClick={() => (item as ContactSchema)._id && handleDelete((item as ContactSchema)._id!)}
-                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
-                            >
-                              Delete
-                            </button>
-                          </td>
-                        </>
-                      )}
-                      {activeSection === "enquiry" && (
-                        <>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as EnquirySchema).fullName}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as EnquirySchema).Email}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as EnquirySchema).Number}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as EnquirySchema).ServiceIntrestedIn}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as EnquirySchema).ProjectDetails?.substring(0, 50)}...
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            <button
-                              onClick={() => (item as EnquirySchema)._id && handleDelete((item as EnquirySchema)._id!)}
-                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
-                            >
-                              
-                              Delete
-                            </button>
-                          </td>
-                        </>
-                      )}
-                      {activeSection === "jobs" && (
-                        <>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as JobApplySchema).FirstName}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as JobApplySchema).LastName}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as JobApplySchema).EmailAddress}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as JobApplySchema).PhoneNumber}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            {(item as JobApplySchema).YearOfExperience} years
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            <a href={(item as JobApplySchema).ResumeLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                              View Resume
-                            </a>
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
-                            <button
-                              onClick={() => (item as JobApplySchema)._id && handleDelete((item as JobApplySchema)._id!)}
-                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
-                            >
-                              Delete
-                            </button>
-                          </td>
-                        </>
-                      )}
-                    </tr>
-                  ))}
+                  {(() => {
+                    if (activeSection === "jobs") {
+                      const jobsSource = filteredJobs as AdminDataType[];
+                      const start = (currentPageJobs - 1) * pageSizeJobs;
+                      const end = start + pageSizeJobs;
+                      return jobsSource.slice(start, end).map((item, idx) => (
+                        <tr key={(item as any)._id || idx} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).FirstName}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).LastName}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).EmailAddress}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).PhoneNumber}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).YearOfExperience} yrs {(item as JobApplySchema).MonthsOfExperience || 0} mos</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"><a href={(item as JobApplySchema).ResumeLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">View Resume</a></td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"><button onClick={() => (item as JobApplySchema)._id && handleDelete((item as JobApplySchema)._id!)} className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors">Delete</button></td>
+                        </tr>
+                      ));
+                    }
+
+                    return data.map((item, index) => (
+                      <tr key={index} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                        {activeSection === "contact" && (
+                          <>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as ContactSchema).firstname}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as ContactSchema).lastName}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as ContactSchema).emailAddress}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as ContactSchema).phoneNumber}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as ContactSchema).selecetCountry}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as ContactSchema).subject}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"><button onClick={() => (item as ContactSchema)._id && handleDelete((item as ContactSchema)._id!)} className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors">Delete</button></td>
+                          </>
+                        )}
+                        {activeSection === "enquiry" && (
+                          <>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as EnquirySchema).fullName}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as EnquirySchema).Email}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as EnquirySchema).Number}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as EnquirySchema).ServiceIntrestedIn}</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as EnquirySchema).ProjectDetails?.substring(0, 50)}...</td>
+                            <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"><button onClick={() => (item as EnquirySchema)._id && handleDelete((item as EnquirySchema)._id!)} className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors">Delete</button></td>
+                          </>
+                        )}
+                      </tr>
+                    ));
+                  })()}
                 </tbody>
               </table>
+
+                {activeSection === "jobs" && (
+                <div className="px-4 py-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
+                  <div className="text-sm text-gray-700 dark:text-gray-300">Showing {filteredJobs.length === 0 ? 0 : Math.min((currentPageJobs - 1) * pageSizeJobs + 1, filteredJobs.length)} to {Math.min(currentPageJobs * pageSizeJobs, filteredJobs.length)} of {filteredJobs.length}</div>
+                  <div className="flex items-center gap-2">
+                    <select value={pageSizeJobs} onChange={(e) => { setPageSizeJobs(Number(e.target.value)); setCurrentPageJobs(1); }} className="border px-2 py-1 rounded">
+                      <option value={5}>5</option>
+                      <option value={10}>10</option>
+                      <option value={20}>20</option>
+                    </select>
+                    <button onClick={() => setCurrentPageJobs(p => Math.max(1, p - 1))} disabled={currentPageJobs === 1} className="px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
+                    <button onClick={() => setCurrentPageJobs(p => p + 1)} disabled={currentPageJobs * pageSizeJobs >= filteredJobs.length} className="px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+                  </div>
+                </div>
+              )}
+
             </div>
           ) : (
             <div className="p-8 text-center text-gray-500 dark:text-gray-400">

@@ -126,6 +126,7 @@ export default function CareersPage() {
     emailAddress: "",
     phoneNumber: "",
     yearOfExperience: "",
+    monthsOfExperience: "",
     coverLetter: "",
     resume: null as File | null,
   });
@@ -206,6 +207,13 @@ export default function CareersPage() {
     }));
   };
 
+  const handleMonthsChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      monthsOfExperience: value,
+    }));
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setFormData((prev) => ({
@@ -228,6 +236,7 @@ export default function CareersPage() {
       submitFormData.append("emailAddress", formData.emailAddress);
       submitFormData.append("phoneNumber", formData.phoneNumber);
       submitFormData.append("yearOfExperience", formData.yearOfExperience);
+      submitFormData.append("monthsOfExperience", formData.monthsOfExperience || "0");
       submitFormData.append("coverLetter", formData.coverLetter);
 
       if (formData.resume) {
@@ -749,21 +758,47 @@ export default function CareersPage() {
               <Label htmlFor="experience" className="text-foreground mb-2">
                 {t('applicationForm.fields.experience')}
               </Label>
-              <Select
-                value={formData.yearOfExperience}
-                onValueChange={handleSelectChange}
-              >
-                <SelectTrigger className="bg-background/50 border-border text-foreground">
-                  <SelectValue placeholder={t('applicationForm.fields.experiencePlaceholder')} />
-                </SelectTrigger>
-                <SelectContent className="bg-background border-border text-foreground">
-                  <SelectItem value="0-1">{t('applicationForm.fields.experienceOptions.0-1')}</SelectItem>
-                  <SelectItem value="2-3">{t('applicationForm.fields.experienceOptions.2-3')}</SelectItem>
-                  <SelectItem value="4-5">{t('applicationForm.fields.experienceOptions.4-5')}</SelectItem>
-                  <SelectItem value="6-10">{t('applicationForm.fields.experienceOptions.6-10')}</SelectItem>
-                  <SelectItem value="10+">{t('applicationForm.fields.experienceOptions.10+')}</SelectItem>
-                </SelectContent>
-              </Select>
+              <div className="flex gap-3 items-center">
+                <div className="w-36">
+                  <Select
+                    value={formData.yearOfExperience}
+                    onValueChange={handleSelectChange}
+                  >
+                    <SelectTrigger className="w-full bg-background/50 border-border text-foreground">
+                      <SelectValue placeholder={t('applicationForm.fields.experiencePlaceholder')} />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border-border text-foreground">
+                      <SelectItem value="0">0</SelectItem>
+                      <SelectItem value="1">1</SelectItem>
+                      <SelectItem value="2">2</SelectItem>
+                      <SelectItem value="3">3</SelectItem>
+                      <SelectItem value="4">4</SelectItem>
+                      <SelectItem value="5">5</SelectItem>
+                      <SelectItem value="6">6</SelectItem>
+                      <SelectItem value="7">7</SelectItem>
+                      <SelectItem value="8">8</SelectItem>
+                      <SelectItem value="9">9</SelectItem>
+                      <SelectItem value="10">10+</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="w-36">
+                  
+                  <Select
+                    value={formData.monthsOfExperience}
+                    onValueChange={handleMonthsChange}
+                  >
+                    <SelectTrigger className="w-full bg-background/50 border-border text-foreground">
+                      <SelectValue placeholder={t('applicationForm.fields.monthsPlaceholder') || 'Months'} />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border-border text-foreground">
+                      {Array.from({ length: 12 }).map((_, idx) => (
+                        <SelectItem key={idx} value={String(idx)}>{idx} m</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
             </div>
 
             <div>
