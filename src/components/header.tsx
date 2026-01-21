@@ -282,12 +282,12 @@ export const NavBar = () => {
                 className="flex items-center space-x-2"
               >
                 <Image
-                  src="/logoblack.png"
+                  src="/logoblack.svg"
                   alt="Logo"
                   width={100}
                   height={100}
                   priority
-                  className="h-10 w-auto"
+                  className="h-12 w-auto"
                 />
               </Link>
 
