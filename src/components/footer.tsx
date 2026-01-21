@@ -37,11 +37,11 @@ export default function FooterSection() {
           <div className="flex-1">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/logowhite.png"
+                src="/logowhite.svg"
                 alt="Al Mawa Logo"
                 width={40}
                 height={40}
-                className="h-15 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             <p className={` text-gray-300 text-sm leading-relaxed max-w-md`}>

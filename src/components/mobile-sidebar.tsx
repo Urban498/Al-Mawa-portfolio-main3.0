@@ -308,12 +308,12 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
           {/* Sidebar Header */}
           <div className="flex items-center justify-between p-6 border-b">
             <Image
-              src="/logoblack.png"
+              src="/logoblack.svg"
               alt="Al-Mawa Logo"
               width={80}
               height={80}
               priority
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
             <button
               onClick={onClose}
