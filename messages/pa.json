@@ -1,884 +1,1063 @@
 {
   "nav": {
-    "home": "হোম",
-    "about": "আমাদের সম্পর্কে",
-    "services": "আমাদের সেবা",
-    "careers": "ক্যারিয়ার",
-    "testimonials": "ਸਾਖੀ",
-    "contact": "যোগাযোগ করুন"
+    "home": "Home",
+    "about": "About",
+    "services": "Our Services",
+    "careers": "Careers",
+    "contact": "Contact Us"
   },
   "hero": {
-    "welcome": "আল মাওয়া ইন্টারন্যাশনালে স্বাগতম",
-    "subtitle": "যেখানে উদ্ভাবন উৎকর্ষতার সাথে মিলিত হয়।",
-    "title": "সম্পূর্ণ ব্যবসায়িক সমাধান",
-    "description": "রিয়েল এস্টেট থেকে আইনি ডকুমেন্টেশন পর্যন্ত, আমরা আপনার প্রয়োজন অনুযায়ী সম্পূর্ণ ব্যবসায়িক সেবা প্রদান করি। আমাদের বিভিন্ন পেশাদার সমাধান অন্বেষণ করুন।",
-    "cta": "আজই শুরু করুন",
-    "tryTrustTransform": "চেষ্টা করুন। বিশ্বাস করুন। রূপান্তরিত করুন।",
-    "empoweringBusinesses": "ব্যবসায়কে ক্ষমতায়ন করা, রূপান্তরিত করা",
-    "now": "এখন।",
-    "tomorrow": "আগামীকাল।",
-    "future": "ভবিষ্যৎ।",
-    "tagline": "উজ্জ্বল ভবিষ্যতের জন্য ডিজিটাল অভিজ্ঞতা তৈরি এবং ডিজিটাল সমাধান প্রদান করা।"
+    "welcome": "Welcome to Al Mawa International",
+    "subtitle": "where innovation meets excellence.",
+    "title": "Comprehensive Business Solutions",
+    "description": "From real estate to legal documentation, we provide end-to-end business services tailored to your needs. Explore our diverse range of professional solutions.",
+    "cta": "Get Started Today",
+    "tryTrustTransform": "TRY. TRUST. TRANSFORM.",
+    "empoweringBusinesses": "Empowering Businesses, Transforming",
+    "now": "Now.",
+    "tomorrow": "Tomorrow.",
+    "future": "Future.",
+    "tagline": "Curating digital experience and conveying digital solutions for brighter future."
   },
   "services": {
-    "realEstate": "রিয়েল এস্টেট সেবা",
-    "legalPublic": "আইনি পাবলিক ডকুমেন্টেশন",
-    "insurance": "বীমা সেবা",
-    "hr": "এইচআর ও নিয়োগ",
-    "accounting": "হিসাবরক্ষণ ও কর",
-    "business": "ব্যবসা নিবন্ধন",
-    "legal": "আইনি ও সম্মতি",
-    "sales": "বিক্রয় ও ক্রয় ব্যবস্থাপনা",
-    "architect": "স্থপতি ও অভ্যন্তরীণ",
-    "travel": "ভ্রমণ ও পরিবহন",
-    "import": "আমদানি ও রপ্তানি",
-    "vehicle": "২য় হাতের গাড়ি বিক্রয়",
-    "event": "ইভেন্ট ম্যানেজমেন্ট",
-    "visa": "ভিসা সমাধান",
-    "social": "সামাজিক ও সম্প্রদায়",
-    "workshop": "ওয়ার্কশপ সেবা",
-    "dropshipping": "ড্রপশিপিং সেবা"
+    "realEstate": "Real Estate Services",
+    "legalPublic": "Legal Public Documentation",
+    "insurance": "Insurance Services",
+    "hr": "HR & Recruitment",
+    "accounting": "Accounting & Tax",
+    "business": "Business Registration",
+    "legal": "Legal & Compliance",
+    "sales": "Sales & Purchase Management",
+    "architect": "Architect & Interior",
+    "travel": "Travel & Transport",
+    "import": "Import & Export",
+    "vehicle": "2nd Hand Vehicle Selling",
+    "event": "Event Management",
+    "visa": "Visa Solutions",
+    "social": "Social & Community",
+    "workshop": "Workshop Services",
+    "dropshipping": "Dropshipping Services"
   },
   "about": {
-    "title": "আলমাওয়া সেবা সম্পর্কে",
-    "subtitle": "উদ্ভাবনের মাধ্যমে ব্যবসায়কে ক্ষমতায়ন করা",
-    "description": "আলমাওয়া সেবায়, আমরা অত্যাধুনিক সমাধান, কৌশলগত পরামর্শ এবং উৎকর্ষতার প্রতি অটুট প্রতিশ্রুতির মাধ্যমে ব্যবসায়কে রূপান্তরিত করতে নিবেদিত।",
-    "ourStory": "আমাদের গল্প",
-    "ourMission": "আমাদের লক্ষ্য",
-    "ourValues": "আমাদের মূল্যবোধ",
-    "meetTeam": "আমাদের টিমের সাথে দেখা করুন",
-    "readyToWork": "একসাথে কাজ করতে প্রস্তুত?",
-    "getInTouch": "যোগাযোগ করুন",
-    "scheduleCall": "একটি কল নির্ধারণ করুন",
-    "pageTitle": "আমাদের",
-    "pageSubtitle": "সম্পর্কে",
-    "mainDescription": "আমাদের কাজের মাধ্যমে, আমরা শুধুমাত্র ব্যবসায়কে সমর্থন করতে নয়, বরং তাদের নেতৃত্ব দিতে, মানিয়ে নিতে এবং প্রতিযোগিতামূলক বিশ্বে সমৃদ্ধ হতে ক্ষমতায়ন করতে চেষ্টা করি। আল-মাওয়া ইন্টারন্যাশনালে, আমরা শুধু সেবা প্রদান করি না, আমরা রূপান্তর প্রদান করি এবং আমরা বিবর্তনের প্রতিশ্রুতি দিই।",
-    "ourTeamTitle": "আমাদের টিম",
-    "teamDescription": "উদ্ভাবন এবং টিমওয়ার্ক দ্বারা চালিত, আইটি, ডিজিটাল মার্কেটিং এবং গ্রাফিক্স বিভাগের আমাদের বিশেষজ্ঞরা প্রভাবশালী ডিজিটাল অভিজ্ঞতা তৈরি করতে একসাথে কাজ করেন। আমরা প্রতিটি প্রকল্পে গুণমান, সৃজনশীলতা এবং কর্মক্ষমতা প্রদানে মনোনিবেশ করি।",
-    "wayWeWorkTitle": "আমরা যেভাবে কাজ করি",
-    "wayWeWorkDescription": "আল-মাওয়া ইন্টারন্যাশনালে, আমরা সত্যিকারের পার্থক্য তৈরি করে এমন সমাধান প্রদানের জন্য নির্ভুলতার সাথে সৃজনশীলতা একত্রিত করতে বিশ্বাস করি। আমাদের পদ্ধতি সহযোগিতামূলক, স্বচ্ছ এবং ফলাফল-ভিত্তিক যা নিশ্চিত করে যে প্রতিটি প্রকল্প ক্লায়েন্ট লক্ষ্যের সাথে পুরোপুরি সামঞ্জস্যপূর্ণ। আমরা দ্রুত মানিয়ে নিই, ক্রমাগত উদ্ভাবন করি এবং প্রতিটি পর্যায়ে স্পষ্টভাবে যোগাযোগ করি। ধারণা থেকে সমাপ্তি পর্যন্ত, আমাদের টিম বিশ্বাস এবং বৃদ্ধি অনুপ্রাণিত করে এমন ডিজিটাল বাস্তবতায় ধারণাগুলি পরিণত করতে নির্বিঘ্নে কাজ করে। দক্ষতা, চপলতা এবং উদ্ভাবন শুধু পদ্ধতি নয়, এগুলি আমাদের মানসিকতা।",
-    "whyChooseUsTitle": "কেন আমাদের বেছে নিন",
-    "whyChooseUsDescription": "আল-মাওয়া ইন্টারন্যাশনাল বেছে নেওয়ার অর্থ হল এমন একটি টিমের সাথে অংশীদারিত্ব করা যা আপনার সাফল্যকে নিজের মতোই অগ্রাধিকার দেয়। আমরা পরিমাপযোগ্য ফলাফল প্রদান করে এমন সমাধান তৈরি করতে প্রযুক্তি, কৌশল এবং সৃজনশীলতা একত্রিত করি। আমাদের প্রতিশ্রুতি সেবার বাইরে যায় - আমরা সততা এবং উৎকর্ষতায় প্রোথিত দীর্ঘস্থায়ী অংশীদারিত্ব তৈরি করি। প্রতিটি সমাধান তৈরি করা হয়, প্রতিটি সময়সীমা সম্মানিত হয় এবং প্রতিটি ফলাফল আপনার ডিজিটাল যাত্রাকে ক্ষমতায়ন করার জন্য ডিজাইন করা হয়। আমরা শুধু প্রত্যাশা পূরণ করি না, আমরা সেগুলি পুনর্সংজ্ঞায়িত করি।",
-    "whatWeStandForTitle": "আমরা কিসের জন্য দাঁড়িয়ে আছি",
-    "whatWeStandForDescription": "আমরা উদ্ভাবন, জবাবদিহিতা এবং রূপান্তরের জন্য দাঁড়িয়ে আছি - মূল্যবোধ যা আমরা যে প্রতিটি সিদ্ধান্ত নিই তা পরিচালনা করে। আমাদের লক্ষ্য হল এমন প্রযুক্তি তৈরি করা যা জীবনকে সহজ করে এবং বৃদ্ধিকে ত্বরান্বিত করে। আমরা ব্যবসায়কে টেকসই, স্মার্ট এবং স্কেলযোগ্য ডিজিটাল সমাধান দিয়ে ক্ষমতায়ন করতে বিশ্বাস করি। আমাদের মূলে রয়েছে সততা, সহযোগিতা এবং ক্রমাগত উন্নতির প্রতি প্রতিশ্রুতি। আমরা একটি উন্নত ডিজিটাল অভিজ্ঞতা তৈরিতে মনোনিবেশ করছি যা মানুষ, ধারণা এবং সম্ভাবনাকে সংযুক্ত করে।"
+    "title": "About Almawa Services",
+    "subtitle": "Empowering Businesses Through Innovation",
+    "description": "At Almawa Services, we are dedicated to transforming businesses through cutting-edge solutions, strategic consulting, and unwavering commitment to excellence.",
+    "ourStory": "Our Story",
+    "ourMission": "Our Mission",
+    "ourValues": "Our Values",
+    "meetTeam": "Meet Our Team",
+    "readyToWork": "Ready to Work Together?",
+    "getInTouch": "Get In Touch",
+    "scheduleCall": "Schedule a Call",
+    "pageTitle": "About",
+    "pageSubtitle": "us",
+    "mainDescription": "Through our work, we strive to not only support businesses but to empower them to lead, adapt, and thrive in a competitive world. At AL-Mawa International, we don't just provide services we deliver transformation and we promise evolution.",
+    "ourTeamTitle": "Our Team",
+    "teamDescription": "Driven by innovation and teamwork, our experts from IT, digital marketing, and graphics departments work hand in hand to create impactful digital experiences. We focus on delivering quality, creativity, and performance in every project we handle.",
+    "wayWeWorkTitle": "The Way We Work",
+    "wayWeWorkDescription": "At AL-Mawa International, we believe in combining precision with creativity to deliver solutions that truly make a difference. Our approach is collaborative, transparent, and result-oriented ensuring every project aligns perfectly with client goals. We adapt quickly, innovate constantly, and communicate clearly at every stage of execution. From concept to completion, our teams work seamlessly to turn ideas into digital realities that inspire trust and growth. Efficiency, agility, and innovation are not just methods, they're our mindset.",
+    "whyChooseUsTitle": "Why Choose Us",
+    "whyChooseUsDescription": "Choosing AL-Mawa International means partnering with a team that prioritizes your success as much as its own. We bring together technology, strategy, and creativity to craft solutions that deliver measurable results. Our commitment goes beyond service we build lasting partnerships rooted in integrity and excellence. Every solution is tailored, every deadline is respected, and every outcome is designed to empower your digital journey. We don't just meet expectations, we redefine them.",
+    "whatWeStandForTitle": "What We Stand For",
+    "whatWeStandForDescription": "We stand for innovation, accountability, and transformation values that guide every decision we make. Our goal is to create technology that simplifies lives and accelerates growth. We believe in empowering businesses with digital solutions that are sustainable, smart, and scalable. At our core lies a commitment to honesty, collaboration, and continuous improvement. We're focused on building a better digital experience one that connects people, ideas, and possibilities."
   },
   "contact": {
-    "title": "যোগাযোগ করুন",
-    "sales": "বিক্রয়",
-    "salesDesc": "আমাদের প্ল্যাটফর্ম সম্পর্কে আরও জানতে আগ্রহী? আরও তথ্যের জন্য আমাদের বিক্রয় টিমের সাথে যোগাযোগ করুন।",
-    "support": "সহায়তা",
-    "supportDesc": "আমরা যেকোনো প্ল্যাটফর্ম প্রশ্নে সাহায্য করতে এখানে আছি। আমাদের FAQ দেখুন এবং আরও জানুন।",
-    "general": "সাধারণ অনুসন্ধান",
-    "generalDesc": "সাধারণ অনুসন্ধানের জন্য, নীচের ফর্ম ব্যবহার করে আমাদের সাথে যোগাযোগ করুন।",
-    "getDirections": "দিকনির্দেশনা পান",
-    "contactOffice": "অফিসে যোগাযোগ করুন",
-    "formTitle": "আমাদের একটি বার্তা পাঠান",
-    "formDescription": "নীচের ফর্মটি পূরণ করুন এবং আমরা ২৪ ঘন্টার মধ্যে আপনার কাছে ফিরে আসব।",
-    "firstName": "প্রথম নাম",
-    "lastName": "শেষ নাম",
-    "emailAddress": "ইমেল ঠিকানা",
-    "phoneNumber": "ফোন নম্বর",
-    "selectCountry": "দেশ নির্বাচন করুন",
-    "subject": "বিষয়",
-    "projectDescription": "আপনার প্রকল্প সম্পর্কে আমাদের বলুন এবং আমরা কীভাবে আপনার দৃষ্টিভঙ্গি জীবন্ত করতে সাহায্য করতে পারি...",
-    "submitButton": "জমা দিন",
-    "submitting": "পাঠানো হচ্ছে...",
-    "successMessage": "বার্তা সফলভাবে পাঠানো হয়েছে!",
-    "successDescription": "যোগাযোগ করার জন্য ধন্যবাদ। আমরা ২৪ ঘন্টার মধ্যে আপনার কাছে ফিরে আসব।",
-    "errorMessage": "বার্তা পাঠাতে ব্যর্থ",
-    "errorDescription": "পরে আবার চেষ্টা করুন।",
+    "title": "Contact Us",
+    "sales": "Sales",
+    "salesDesc": "Interested in learning more about our platform? Contact our sales team for more information.",
+    "support": "Support",
+    "supportDesc": "We're here to help with any platform questions. Check out our FAQ and learn more.",
+    "general": "General Inquiry",
+    "generalDesc": "For general inquiries, please contact us using the form below.",
+    "getDirections": "Get Directions",
+    "contactOffice": "Contact Office",
+    "formTitle": "Send us a message",
+    "formDescription": "Fill out the form below and we'll get back to you within 24 hours.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "selectCountry": "Select country",
+    "subject": "Subject",
+    "projectDescription": "Tell us about your project and how we can help bring your vision to life...",
+    "submitButton": "Submit",
+    "submitting": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "successDescription": "Thank you for reaching out. We'll get back to you within 24 hours.",
+    "errorMessage": "Failed to send message",
+    "errorDescription": "Please try again later.",
     "mapInstruction": {
-      "desktop": "দিকনির্দেশনার জন্য মানচিত্রের উপর হোভার করুন",
-      "mobile": "দিকনির্দেশনার জন্য মানচিত্রে ক্লিক করুন"
+      "desktop": "Hover over the Map for Direction",
+      "mobile": "Click on the Map for Direction"
     },
-    "otherWaysTitle": "আমাদের কাছে পৌঁছানোর অন্যান্য উপায়",
-    "otherWaysDescription": "আপনার জন্য সবচেয়ে ভাল কাজ করে এমন পদ্ধতি চয়ন করুন। আমরা সর্বদা সাহায্য করতে এখানে আছি!",
+    "otherWaysTitle": "Other Ways to Reach Us",
+    "otherWaysDescription": "Choose the method that works best for you. We're always here to help!",
     "contactInfo": {
       "email": {
-        "title": "ইমেল",
-        "description": "যেকোনো সময় আমাদের একটি ইমেল পাঠান"
+        "title": "Email",
+        "description": "Send us an email anytime"
       },
       "phone": {
-        "title": "ফোন",
-        "description": "সোম – শনি: সকাল ৯:০০ – সন্ধ্যা ৭:০০"
+        "title": "Phone",
+        "description": "Mon – Sat: 9:00 AM – 7:00 PM"
       },
       "office": {
-        "title": "অফিস",
-        "address": "আল- মাওয়া ইন্টারন্যাশনাল অফিস নং ১০২-১০৩, (নেক্সাস ওয়ার্ক স্পেস)",
-        "description": "১ম তলা, প্রাইড আইকন বিল্ডিং, অথিথি রেস্তোরাঁর উপরে, খারাদি, পুনে, মহারাষ্ট্র- ভারত ৪১১০১৪"
+        "title": "Office",
+        "address": "AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces)",
+        "description": "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014"
       },
       "workingHours": {
-        "title": "কাজের সময়",
-        "hours": "সোম – শনি: সকাল ৯:০০ – সন্ধ্যা ৭:০০",
-        "description": "* ১ম ও ৩য় শনিবার বন্ধ"
+        "title": "Working Hours",
+        "hours": "Mon – Sat: 9:00 AM – 7:00 PM",
+        "description": "* Closed on 1st & 3rd Saturdays"
       }
     }
   },
   "footer": {
-    "description": "পরবর্তী প্রজন্মের ডিজিটাল সমাধান প্রদান করা যা ধারণাগুলিকে পরিমাপযোগ্য ফলাফলে রূপান্তরিত করে।",
-    "contactInfo": "যোগাযোগের তথ্য",
-    "quickLinks": "দ্রুত লিঙ্ক",
-    "services": "সেবা",
-    "followUs": "আমাদের অনুসরণ করুন",
-    "allRightsReserved": "সর্বস্বত্ব সংরক্ষিত।",
-    "companyName": "আল মাওয়া ইন্টারন্যাশনাল"
+    "description": "Delivering next-generation digital solutions that transform ideas into measurable results.",
+    "contactInfo": "Contact Info",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved.",
+    "companyName": "Al Mawa International"
   },
   "common": {
-    "learnMore": "আরও জানুন",
-    "readMore": "আরও পড়ুন",
-    "viewAll": "সব দেখুন",
-    "submit": "জমা দিন",
-    "cancel": "বাতিল করুন",
-    "close": "বন্ধ করুন",
-    "save": "সংরক্ষণ করুন",
-    "loading": "লোড হচ্ছে..."
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "loading": "Loading..."
   },
   "home": {
-    "companyTitle": "আল মাওয়া ইন্টারন্যাশনাল",
-    "companyDescription": "আল-মাওয়া ইন্টারন্যাশনালে, আমরা প্রযুক্তিকে শুধুমাত্র সরঞ্জামের একটি সেট হিসাবে নয়, বরং একটি সেতু হিসাবে দেখি যা মানুষকে ক্ষমতায়ন করে এবং বৃদ্ধিকে ত্বরান্বিত করে। আপনার ডিজিটাল বৃদ্ধি অংশীদার হিসাবে, আমরা দ্রুত বিকশিত বিশ্বে ব্যবসায়কে সমৃদ্ধ হতে সাহায্য করতে উদ্ভাবন, কৌশল এবং অত্যাধুনিক সমাধান একত্রিত করি।",
-    "ourMissionTitle": "আমাদের লক্ষ্য",
-    "ourMissionDescription": "এই বিশ্বাসে অনুপ্রাণিত যে প্রযুক্তির প্রকৃত শক্তি মানুষের মধ্যে রয়েছে, আমরা স্মার্ট, নির্বিঘ্ন এবং টেকসই আইটি সমাধানের মাধ্যমে ডিজিটাল অভিজ্ঞতা পুনর্সংজ্ঞায়িত করতে প্রতিশ্রুতিবদ্ধ। আমাদের লক্ষ্য হল সৃজনশীলতার সাথে প্রযুক্তি একত্রিত করা, প্রতিটি ক্লায়েন্টকে সাহসীভাবে উদ্ভাবন করতে, দক্ষতার সাথে কাজ করতে এবং এই বিকশিত ডিজিটাল বিশ্বে আত্মবিশ্বাসের সাথে নেতৃত্ব দিতে ক্ষমতায়ন করা।",
-    "ourValuesTitle": "আমাদের মূল্যবোধ",
-    "ourValuesDescription": "আমরা বিশ্বাস, উদ্ভাবন এবং রূপান্তরের একটি বৈশ্বিক প্রতীক হয়ে উঠার কল্পনা করি - এমন একটি স্থান যেখানে ধারণাগুলি দীর্ঘস্থায়ী প্রভাবে পরিণত হয় এবং প্রযুক্তি মানব অগ্রগতির জন্য একটি অনুঘটক হিসাবে কাজ করে, এমন একটি ভবিষ্যত তৈরি করার আকাঙ্ক্ষা যেখানে প্রতিটি ব্যবসা, আকার নির্বিশেষে, বুদ্ধিমান উদ্ভাবন, ক্ষমতায়িত দল এবং সীমাহীন সম্ভাবনার মাধ্যমে সমৃদ্ধ হয়।",
-    "voicesFromDesk": "ডেস্ক থেকে কণ্ঠস্বর",
-    "voicesSubtitle": "পেশাদার দৃষ্টিভঙ্গি যা জানাতে, অনুপ্রাণিত করতে এবং ক্ষমতায়ন করার জন্য ডিজাইন করা হয়েছে"
+    "companyTitle": "Al Mawa International",
+    "companyDescription": "At AL-MAWA International, We see technology not just as a set of tools, but as a bridge that empowers people and accelerates growth. As your digital growth partner, we combine innovation, strategy, and cutting-edge solutions to help businesses thrive in a fast-evolving world.",
+    "ourMissionTitle": "Our Mission",
+    "ourMissionDescription": "Inspired by the belief that technology's true power lies in people, We're committed to redefining the digital experience through smart, seamless, and sustainable IT solutions. Our mission is to fuse creativity with technology, empowering every client to innovate boldly, perform efficiently, and lead confidently in this evolving digital world.",
+    "ourValuesTitle": "Our Values",
+    "ourValuesDescription": "We envision becoming a global symbol of trust, innovation, and transformation a place where ideas turn into lasting impact, and technology serves as a catalyst for human progress, aspiring to create a future where every business, regardless of size, thrives through intelligent innovation, empowered teams, and limitless possibilities.",
+    "voicesFromDesk": "Voices From The Desk",
+    "voicesSubtitle": "Professional perspectives designed to inform, inspire, and empower"
   },
   "servicesSection": {
-    "title": "আমরা যা তৈরি করি",
-    "subtitle": "প্রযুক্তি, অন্তর্দৃষ্টি এবং সমন্বিত সমাধানের মাধ্যমে ব্যবসায়কে রূপান্তরিত করা",
+    "title": "what we create",
+    "subtitle": "Transforming businesses through technology, insight, and integrated solutions",
     "webDevelopment": {
-      "title": "ওয়েব ডেভেলপমেন্ট",
-      "description": "আধুনিক, প্রতিক্রিয়াশীল ওয়েবসাইট এবং ওয়েব অ্যাপ্লিকেশন তৈরি করা যা ব্যবসায়িক বৃদ্ধি এবং ব্যবহারকারীর সম্পৃক্ততা চালিত করে।",
-      "features": ["ওয়েবসাইট ডিজাইন", "ই-কমার্স ডেভেলপমেন্ট", "ওয়েব হোস্টিং", "এসইও ইন্টিগ্রেশন"]
+      "title": "Web Development",
+      "description": "Creating modern, responsive websites and web applications that drive business growth and user engagement.",
+      "features": [
+        "Website Design",
+        "E-commerce Development",
+        "Web Hosting",
+        "SEO Integration"
+      ]
     },
     "itTechServices": {
-      "title": "আইটি ও প্রযুক্তি সেবা",
-      "description": "আপনার ব্যবসার জন্য অবকাঠামো, সাইবার নিরাপত্তা এবং পরিচালিত সেবা সহ সম্পূর্ণ আইটি সমাধান।",
-      "features": ["অবকাঠামো সেবা", "সাইবার নিরাপত্তা", "পরিচালিত আইটি", "ক্লাউড সমাধান"]
+      "title": "IT & Tech Services",
+      "description": "Comprehensive IT solutions including infrastructure, cybersecurity, and managed services for your business.",
+      "features": [
+        "Infrastructure Services",
+        "Cybersecurity",
+        "Managed IT",
+        "Cloud Solutions"
+      ]
     },
     "digitalMarketing": {
-      "title": "ডিজিটাল মার্কেটিং",
-      "description": "আপনার পৌঁছানো বৃদ্ধি করতে ইমেল, হোয়াটসঅ্যাপ এবং এসএমএস মার্কেটিং সহ কৌশলগত ডিজিটাল মার্কেটিং প্রচারাভিযান।",
-      "features": ["ইমেল মার্কেটিং", "হোয়াটসঅ্যাপ মার্কেটিং", "এসএমএস প্রচারাভিযান", "বিশ্লেষণ"]
+      "title": "Digital Marketing",
+      "description": "Strategic digital marketing campaigns including email, WhatsApp, and SMS marketing to boost your reach.",
+      "features": [
+        "Email Marketing",
+        "WhatsApp Marketing",
+        "SMS Campaigns",
+        "Analytics"
+      ]
     },
     "graphicDesign": {
-      "title": "গ্রাফিক ডিজাইন",
-      "description": "আকর্ষণীয় ভিজ্যুয়াল পরিচয় এবং মার্কেটিং উপকরণ তৈরি করতে পেশাদার ব্র্যান্ডিং এবং গ্রাফিক ডিজাইন সেবা।",
-      "features": ["ব্র্যান্ড পরিচয়", "মার্কেটিং ডিজাইন", "ডিজিটাল গ্রাফিক্স", "প্রিন্ট ডিজাইন"]
+      "title": "Graphic Design",
+      "description": "Professional branding and graphic design services to create compelling visual identities and marketing materials.",
+      "features": [
+        "Brand Identity",
+        "Marketing Design",
+        "Digital Graphics",
+        "Print Design"
+      ]
     },
     "aiServices": {
-      "title": "এআই সেবা",
-      "description": "আপনার ব্যবসায়কে বিপ্লব ঘটাতে মেশিন লার্নিং, অটোমেশন এবং ডেটা বিশ্লেষণ সহ অত্যাধুনিক কৃত্রিম বুদ্ধিমত্তা সমাধান।",
-      "features": ["মেশিন লার্নিং সমাধান", "কম্পিউটার ভিশন সেবা", "জেনারেটিভ এআই সেবা", "এআই অটোমেশন সেবা"]
+      "title": "AI Services",
+      "description": "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
+      "features": [
+        "Machine Learning Solutions",
+        "Computer Vision Services",
+        "Generative AI Services",
+        "AI Automation Services"
+      ]
     },
-    "learnMore": "আরও জানুন"
+    "learnMore": "Learn more"
   },
   "team": {
-    "title": "গতিশীল",
-    "titleHighlight": "মন",
-    "description": "আল-মাওয়া ইন্টারন্যাশনাল একটি চর্বিহীন, চটপটে এবং উদ্ভাবন-চালিত কাঠামোর অধীনে কাজ করে যা আইটি, ডিজিটাল মার্কেটিং, ডিজাইন, এইচআর এবং বিক্রয় জুড়ে বিশেষজ্ঞদের দ্বারা চালিত। প্রতিটি বিভাগ নির্বিঘ্ন সম্পাদন এবং প্রভাবশালী ক্লায়েন্ট ফলাফল নিশ্চিত করতে সামঞ্জস্যপূর্ণভাবে কাজ করে। আল-মাওয়ার কেন্দ্রে রয়েছে অভিজ্ঞতার সাথে সৃজনশীলতা একত্রিত করে এমন উত্সাহী পেশাদারদের একটি বৈচিত্র্যময় দল - উৎকর্ষতা প্রদান এবং প্রতিটি প্রকল্পকে একটি সফল গল্পে রূপান্তরিত করা।",
-    "linkedin": "লিঙ্কডইন"
+    "title": "The Dynamic",
+    "titleHighlight": "Minds",
+    "description": "AL-Mawa International operates under a lean, agile, and innovation-driven structure powered by specialists across IT, Digital Marketing, Design, HR, and Sales. Each department works in harmony to ensure seamless execution and impactful client outcomes. At the heart of AL-Mawa is a diverse team of passionate professionals who combine experience with creativity — delivering excellence and transforming every project into a success story.",
+    "linkedin": "LinkedIn"
   },
   "servicesPage": {
-    "title": "ওয়েব ডেভেলপমেন্ট সেবা পুনে - আল মাওয়া ইন্টারন্যাশনাল",
-    "subtitle": "আধুনিক বিশ্বে আপনার ব্যবসাকে সমৃদ্ধ করতে আমরা সম্পূর্ণ ডিজিটাল সমাধান অফার করি",
-    "ctaText": "আমাদের দক্ষতার সাথে আপনার ব্যবসা রূপান্তরিত করতে প্রস্তুত?",
-    "ctaButton": "আজই শুরু করুন",
-    "learnMore": "আরও জানুন",
+    "title": "Web Development Services Pune - Al Mawa International",
+    "subtitle": "We offer comprehensive digital solutions to help your business thrive in the modern world",
+    "ctaText": "Ready to transform your business with our expertise?",
+    "ctaButton": "Get Started Today",
+    "learnMore": "Learn More",
     "uiux": {
-      "title": "UI/UX ডিজাইন",
-      "description": "স্বজ্ঞাত এবং দৃষ্টিনন্দন ব্যবহারকারীর অভিজ্ঞতা তৈরি করা যা সম্পৃক্ত এবং রূপান্তরিত করে।",
-      "features": ["ব্যবহারকারী গবেষণা", "ওয়্যারফ্রেমিং", "প্রোটোটাইপিং", "ভিজ্যুয়াল ডিজাইন"]
+      "title": "UI/UX Design",
+      "description": "Creating intuitive and visually stunning user experiences that engage and convert.",
+      "features": [
+        "User Research",
+        "Wireframing",
+        "Prototyping",
+        "Visual Design"
+      ]
     },
     "development": {
-      "title": "সফটওয়্যার ডেভেলপমেন্ট",
-      "description": "অত্যাধুনিক প্রযুক্তি এবং সর্বোত্তম অনুশীলনের সাথে শক্তিশালী, স্কেলযোগ্য অ্যাপ্লিকেশন তৈরি করা।",
-      "features": ["ওয়েব অ্যাপ্লিকেশন", "মোবাইল অ্যাপ", "API ডেভেলপমেন্ট", "ডাটাবেস ডিজাইন"]
+      "title": "Software Development",
+      "description": "Building robust, scalable applications with cutting-edge technologies and best practices.",
+      "features": [
+        "Web Applications",
+        "Mobile Apps",
+        "API Development",
+        "Database Design"
+      ]
     },
     "marketing": {
-      "title": "ডিজিটাল মার্কেটিং",
-      "description": "কৌশলগত ডিজিটাল মার্কেটিং প্রচারাভিযান এবং ডেটা-চালিত অন্তর্দৃষ্টির মাধ্যমে বৃদ্ধি চালনা করা।",
-      "features": ["এসইও অপটিমাইজেশন", "সোশ্যাল মিডিয়া", "কন্টেন্ট কৌশল", "বিশ্লেষণ"]
+      "title": "Digital Marketing",
+      "description": "Driving growth through strategic digital marketing campaigns and data-driven insights.",
+      "features": [
+        "SEO Optimization",
+        "Social Media",
+        "Content Strategy",
+        "Analytics"
+      ]
     }
   },
   "webDevelopmentPage": {
-    "title": "ওয়েব ডেভেলপমেন্ট",
-    "subtitle": "আমাদের সম্পূর্ণ ওয়েব ডেভেলপমেন্ট সেবার সাথে আপনার ডিজিটাল উপস্থিতি রূপান্তরিত করুন। অত্যাশ্চর্য ডিজাইন থেকে শক্তিশালী কার্যকারিতা পর্যন্ত, আমরা ওয়েবসাইট তৈরি করি যা ফলাফল প্রদান করে।",
-    "servicesTitle": "আমাদের ওয়েব ডেভেলপমেন্ট সেবা",
-    "benefitsTitle": "আমাদের ওয়েব ডেভেলপমেন্ট সেবার সুবিধা",
-    "benefitsSubtitle": "আপনার ব্যবসার জন্য আমাদের ওয়েব ডেভেলপমেন্ট সমাধান কেন বেছে নিন",
-    "ctaTitle": "আপনার ওয়েবসাইট তৈরি করতে প্রস্তুত?",
-    "ctaSubtitle": "আসুন একটি শক্তিশালী ওয়েব উপস্থিতি তৈরি করি যা আপনার ব্যবসাকে এগিয়ে নিয়ে যায়। আজই আমাদের ওয়েব ডেভেলপমেন্ট বিশেষজ্ঞদের সাথে যোগাযোগ করুন।",
-    "ctaButton": "আজই শুরু করুন",
-    "learnMoreButton": "আমাদের সম্পর্কে আরও জানুন",
-    "enquireButton": "অনুসন্ধান করুন",
-    "serviceBadge": "সেবা",
+    "title": "Web Development",
+    "subtitle": "Transform your digital presence with our comprehensive web development services. From stunning designs to powerful functionality, we create websites that drive results.",
+    "servicesTitle": "Our Web Development Services",
+    "benefitsTitle": "Benefits of Our Web Development Services",
+    "benefitsSubtitle": "Why choose our web development solutions for your business",
+    "ctaTitle": "Ready to Build Your Website?",
+    "ctaSubtitle": "Let's create a powerful web presence that drives your business forward. Get in touch with our web development experts today.",
+    "ctaButton": "Get Started Today",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Service",
     "services": {
       "websiteDesignDev": {
-        "title": "ওয়েবসাইট ডিজাইনিং ও ডেভেলপমেন্ট সেবা",
-        "description": "আধুনিক ডিজাইন নীতির সাথে ধারণা থেকে স্থাপনা পর্যন্ত সম্পূর্ণ ওয়েবসাইট সমাধান",
-        "features": ["কাস্টম ডিজাইন", "প্রতিক্রিয়াশীল লেআউট", "আধুনিক UI/UX", "ক্রস-ব্রাউজার সামঞ্জস্যপূর্ণ"]
+        "title": "Website Designing & Development Services",
+        "description": "Complete end-to-end website solutions from concept to deployment with modern design principles",
+        "features": [
+          "Custom Design",
+          "Responsive Layout",
+          "Modern UI/UX",
+          "Cross-browser Compatible"
+        ]
       },
       "websiteDesign": {
-        "title": "ওয়েবসাইট ডিজাইন সেবা",
-        "description": "সৃজনশীল এবং ব্যবহারকারী-কেন্দ্রিক ওয়েবসাইট ডিজাইন যা দর্শকদের গ্রাহকে রূপান্তরিত করে",
-        "features": ["ভিজ্যুয়াল ডিজাইন", "ব্যবহারকারীর অভিজ্ঞতা", "ব্র্যান্ড ইন্টিগ্রেশন", "মোবাইল-ফার্স্ট ডিজাইন"]
+        "title": "Website Design Services",
+        "description": "Creative and user-focused website designs that convert visitors into customers",
+        "features": [
+          "Visual Design",
+          "User Experience",
+          "Brand Integration",
+          "Mobile-first Design"
+        ]
       },
       "websiteDevelopment": {
-        "title": "ওয়েবসাইট ডেভেলপমেন্ট সেবা",
-        "description": "স্কেলযোগ্য ওয়েবসাইটের জন্য শক্তিশালী ব্যাকএন্ড ডেভেলপমেন্ট এবং ফ্রন্টএন্ড বাস্তবায়ন",
-        "features": ["ফ্রন্টএন্ড ডেভেলপমেন্ট", "ব্যাকএন্ড সিস্টেম", "ডাটাবেস ইন্টিগ্রেশন", "API ডেভেলপমেন্ট"]
+        "title": "Website Development Services",
+        "description": "Robust backend development and frontend implementation for scalable websites",
+        "features": [
+          "Frontend Development",
+          "Backend Systems",
+          "Database Integration",
+          "API Development"
+        ]
       },
       "ecommerce": {
-        "title": "ই-কমার্স ডেভেলপমেন্ট",
-        "description": "সুরক্ষিত পেমেন্ট প্রসেসিং এবং ইনভেন্টরি ম্যানেজমেন্ট সহ সম্পূর্ণ-বৈশিষ্ট্যযুক্ত অনলাইন স্টোর",
-        "features": ["শপিং কার্ট", "পেমেন্ট গেটওয়ে", "ইনভেন্টরি ম্যানেজমেন্ট", "অর্ডার প্রসেসিং"]
+        "title": "E-commerce Development",
+        "description": "Full-featured online stores with secure payment processing and inventory management",
+        "features": [
+          "Shopping Cart",
+          "Payment Gateway",
+          "Inventory Management",
+          "Order Processing"
+        ]
       },
       "hosting": {
-        "title": "ওয়েব হোস্টিং ও ডোমেইন সেবা",
-        "description": "সর্বোত্তম ওয়েবসাইট কর্মক্ষমতার জন্য নির্ভরযোগ্য হোস্টিং সমাধান এবং ডোমেইন ম্যানেজমেন্ট",
-        "features": ["ডোমেইন নিবন্ধন", "SSL সার্টিফিকেট", "ক্লাউড হোস্টিং", "২৪/৭ সহায়তা"]
+        "title": "Web Hosting & Domain Services",
+        "description": "Reliable hosting solutions and domain management for optimal website performance",
+        "features": [
+          "Domain Registration",
+          "SSL Certificates",
+          "Cloud Hosting",
+          "24/7 Support"
+        ]
       },
       "seo": {
-        "title": "SEO ও ডিজিটাল মার্কেটিং ইন্টিগ্রেশন",
-        "description": "আপনার অনলাইন উপস্থিতি বৃদ্ধি করতে বিল্ট-ইন SEO অপটিমাইজেশন এবং মার্কেটিং টুল",
-        "features": ["অন-পেজ SEO", "অ্যানালিটিক্স সেটআপ", "সোশ্যাল ইন্টিগ্রেশন", "পারফরম্যান্স ট্র্যাকিং"]
+        "title": "SEO & Digital Marketing Integration",
+        "description": "Built-in SEO optimization and marketing tools to boost your online presence",
+        "features": [
+          "On-page SEO",
+          "Analytics Setup",
+          "Social Integration",
+          "Performance Tracking"
+        ]
       },
       "security": {
-        "title": "পারফরম্যান্স ও নিরাপত্তা অপটিমাইজেশন",
-        "description": "দ্রুত, নিরাপদ ওয়েবসাইটের জন্য উন্নত নিরাপত্তা ব্যবস্থা এবং পারফরম্যান্স অপটিমাইজেশন",
-        "features": ["নিরাপত্তা অডিট", "গতি অপটিমাইজেশন", "SSL বাস্তবায়ন", "ব্যাকআপ সমাধান"]
+        "title": "Performance & Security Optimization",
+        "description": "Advanced security measures and performance optimization for fast, secure websites",
+        "features": [
+          "Security Audits",
+          "Speed Optimization",
+          "SSL Implementation",
+          "Backup Solutions"
+        ]
       },
       "maintenance": {
-        "title": "ওয়েবসাইট রক্ষণাবেক্ষণ ও সহায়তা",
-        "description": "আপনার ওয়েবসাইট সুচারুভাবে চালু রাখতে চলমান রক্ষণাবেক্ষণ এবং প্রযুক্তিগত সহায়তা",
-        "features": ["নিয়মিত আপডেট", "বাগ ফিক্স", "কন্টেন্ট আপডেট", "প্রযুক্তিগত সহায়তা"]
+        "title": "Website Maintenance & Support",
+        "description": "Ongoing maintenance and technical support to keep your website running smoothly",
+        "features": [
+          "Regular Updates",
+          "Bug Fixes",
+          "Content Updates",
+          "Technical Support"
+        ]
       },
       "emerging": {
-        "title": "উদীয়মান ওয়েব প্রযুক্তি",
-        "description": "ভবিষ্যত-প্রস্তুত ওয়েবসাইটের জন্য অত্যাধুনিক ওয়েব প্রযুক্তি এবং ফ্রেমওয়ার্ক",
-        "features": ["প্রগ্রেসিভ ওয়েব অ্যাপ", "AI ইন্টিগ্রেশন", "আধুনিক ফ্রেমওয়ার্ক", "ক্লাউড সমাধান"]
+        "title": "Emerging Web Technologies",
+        "description": "Cutting-edge web technologies and frameworks for future-ready websites",
+        "features": [
+          "Progressive Web Apps",
+          "AI Integration",
+          "Modern Frameworks",
+          "Cloud Solutions"
+        ]
       },
       "benefits": {
-        "title": "ওয়েবসাইট ডিজাইন ও ডেভেলপমেন্ট সেবার সুবিধা",
-        "description": "আপনার ব্যবসার জন্য পেশাদার ওয়েবসাইট ডিজাইন এবং ডেভেলপমেন্টের সম্পূর্ণ সুবিধা",
-        "features": ["বর্ধিত অনলাইন উপস্থিতি", "উন্নত ব্যবহারকারী সম্পৃক্ততা", "উচ্চতর রূপান্তর হার", "পেশাদার বিশ্বাসযোগ্যতা"]
+        "title": "Benefits of Website Design & Development Services",
+        "description": "Comprehensive advantages of professional website design and development for your business",
+        "features": [
+          "Increased Online Presence",
+          "Better User Engagement",
+          "Higher Conversion Rates",
+          "Professional Credibility"
+        ]
       }
     },
     "benefitsList": [
-      "পেশাদার ওয়েব উপস্থিতি যা বিশ্বাস এবং বিশ্বাসযোগ্যতা তৈরি করে",
-      "প্রতিক্রিয়াশীল ডিজাইন যা সমস্ত ডিভাইসে নিখুঁতভাবে কাজ করে",
-      "উন্নত সার্চ ইঞ্জিন র‍্যাঙ্কিংয়ের জন্য SEO-অপটিমাইজড কাঠামো",
-      "দ্রুত লোডিং সময় এবং সর্বোত্তম কর্মক্ষমতা",
-      "নিয়মিত ব্যাকআপ সহ নিরাপদ এবং নির্ভরযোগ্য হোস্টিং",
-      "চলমান সহায়তা এবং রক্ষণাবেক্ষণ অন্তর্ভুক্ত",
-      "স্কেলযোগ্য সমাধান যা আপনার ব্যবসার সাথে বৃদ্ধি পায়",
-      "আধুনিক মার্কেটিং টুল এবং অ্যানালিটিক্সের সাথে ইন্টিগ্রেশন"
+      "Professional web presence that builds trust and credibility",
+      "Responsive design that works perfectly on all devices",
+      "SEO-optimized structure for better search engine rankings",
+      "Fast loading times and optimal performance",
+      "Secure and reliable hosting with regular backups",
+      "Ongoing support and maintenance included",
+      "Scalable solutions that grow with your business",
+      "Integration with modern marketing tools and analytics"
     ]
   },
   "itTechServicesPage": {
-    "title": "IT ও প্রযুক্তি",
-    "subtitle": "আপনার ব্যবসাকে এগিয়ে নিয়ে যেতে সম্পূর্ণ IT সমাধান এবং প্রযুক্তি সেবা। অবকাঠামো থেকে উদীয়মান প্রযুক্তি পর্যন্ত, আমরা আপনাকে কভার করেছি।",
-    "servicesTitle": "সম্পূর্ণ IT ও প্রযুক্তি সমাধান",
-    "benefitsTitle": "আমাদের IT ও প্রযুক্তি সেবার সুবিধা",
-    "benefitsSubtitle": "আমাদের সম্পূর্ণ IT সমাধান দিয়ে আপনার ব্যবসা রূপান্তরিত করুন",
-    "ctaTitle": "আপনার IT অবকাঠামো আপগ্রেড করতে প্রস্তুত?",
-    "ctaSubtitle": "আমাদের IT বিশেষজ্ঞদের একটি শক্তিশালী, নিরাপদ এবং স্কেলযোগ্য প্রযুক্তি ভিত্তি তৈরি করতে সাহায্য করতে দিন। একটি সম্পূর্ণ IT মূল্যায়নের জন্য আজই আমাদের সাথে যোগাযোগ করুন।",
-    "ctaButton": "IT পরামর্শ পান",
-    "learnMoreButton": "আমাদের সম্পর্কে আরও জানুন",
-    "enquireButton": "অনুসন্ধান করুন",
-    "serviceBadge": "IT সেবা",
+    "title": "IT & Tech",
+    "subtitle": "Comprehensive IT solutions and technology services to power your business forward. From infrastructure to emerging technologies, we've got you covered.",
+    "servicesTitle": "Complete IT & Technology Solutions",
+    "benefitsTitle": "Benefits of Our IT & Tech Services",
+    "benefitsSubtitle": "Transform your business with our comprehensive IT solutions",
+    "ctaTitle": "Ready to Upgrade Your IT Infrastructure?",
+    "ctaSubtitle": "Let our IT experts help you build a robust, secure, and scalable technology foundation. Contact us today for a comprehensive IT assessment.",
+    "ctaButton": "Get IT Consultation",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "IT Service",
     "services": {
       "overview": {
-        "title": "IT ও প্রযুক্তি সেবা - সম্পূর্ণ বিবরণ",
-        "description": "আমাদের সমস্ত IT এবং প্রযুক্তি সেবা অফারের সম্পূর্ণ ওভারভিউ",
-        "feature1": "সেবা পোর্টফোলিও",
-        "feature2": "প্রযুক্তি স্ট্যাক",
-        "feature3": "বাস্তবায়ন প্রক্রিয়া",
-        "feature4": "সহায়তা কাঠামো"
+        "title": "IT & Tech Services - Complete Details",
+        "description": "Comprehensive overview of all our IT and technology service offerings",
+        "feature1": "Service Portfolio",
+        "feature2": "Technology Stack",
+        "feature3": "Implementation Process",
+        "feature4": "Support Structure"
       },
       "infrastructure": {
-        "title": "অবকাঠামো সেবা",
-        "description": "স্কেলযোগ্য এবং নির্ভরযোগ্য ব্যবসায়িক কার্যক্রমের জন্য শক্তিশালী IT অবকাঠামো সমাধান",
-        "feature1": "নেটওয়ার্ক সেটআপ",
-        "feature2": "সার্ভার ম্যানেজমেন্ট",
-        "feature3": "হার্ডওয়্যার ইনস্টলেশন",
-        "feature4": "সিস্টেম আর্কিটেকচার"
+        "title": "Infrastructure Services",
+        "description": "Robust IT infrastructure solutions for scalable and reliable business operations",
+        "feature1": "Network Setup",
+        "feature2": "Server Management",
+        "feature3": "Hardware Installation",
+        "feature4": "System Architecture"
       },
       "managed": {
-        "title": "পরিচালিত IT সেবা",
-        "description": "আপনার সিস্টেম সুচারুভাবে চালু রাখতে সম্পূর্ণ IT ম্যানেজমেন্ট এবং মনিটরিং",
-        "feature1": "২৪/৭ মনিটরিং",
-        "feature2": "সক্রিয় রক্ষণাবেক্ষণ",
-        "feature3": "সিস্টেম আপডেট",
-        "feature4": "পারফরম্যান্স অপটিমাইজেশন"
+        "title": "Managed IT Services",
+        "description": "Complete IT management and monitoring to keep your systems running smoothly",
+        "feature1": "24/7 Monitoring",
+        "feature2": "Proactive Maintenance",
+        "feature3": "System Updates",
+        "feature4": "Performance Optimization"
       },
       "cybersecurity": {
-        "title": "সাইবার নিরাপত্তা সেবা",
-        "description": "সাইবার হুমকি থেকে আপনার ব্যবসা রক্ষা করতে উন্নত নিরাপত্তা সমাধান",
-        "feature1": "নিরাপত্তা অডিট",
-        "feature2": "হুমকি সনাক্তকরণ",
-        "feature3": "ডেটা সুরক্ষা",
-        "feature4": "সম্মতি ব্যবস্থাপনা"
+        "title": "Cybersecurity Services",
+        "description": "Advanced security solutions to protect your business from cyber threats",
+        "feature1": "Security Audits",
+        "feature2": "Threat Detection",
+        "feature3": "Data Protection",
+        "feature4": "Compliance Management"
       },
       "cloud": {
-        "title": "ক্লাউড ও DevOps সেবা",
-        "description": "দক্ষ ডেভেলপমেন্ট এবং স্থাপনার জন্য আধুনিক ক্লাউড সমাধান এবং DevOps অনুশীলন",
-        "feature1": "ক্লাউড মাইগ্রেশন",
-        "feature2": "DevOps বাস্তবায়ন",
-        "feature3": "CI/CD পাইপলাইন",
-        "feature4": "কন্টেইনার ম্যানেজমেন্ট"
+        "title": "Cloud & DevOps Services",
+        "description": "Modern cloud solutions and DevOps practices for efficient development and deployment",
+        "feature1": "Cloud Migration",
+        "feature2": "DevOps Implementation",
+        "feature3": "CI/CD Pipelines",
+        "feature4": "Container Management"
       },
       "software": {
-        "title": "সফটওয়্যার ডেভেলপমেন্ট সেবা",
-        "description": "আপনার নির্দিষ্ট ব্যবসায়িক প্রয়োজনীয়তার জন্য কাস্টম সফটওয়্যার সমাধান",
-        "feature1": "কাস্টম অ্যাপ্লিকেশন",
-        "feature2": "সিস্টেম ইন্টিগ্রেশন",
-        "feature3": "API ডেভেলপমেন্ট",
-        "feature4": "লিগেসি আধুনিকীকরণ"
+        "title": "Software Development Services",
+        "description": "Custom software solutions tailored to your specific business requirements",
+        "feature1": "Custom Applications",
+        "feature2": "System Integration",
+        "feature3": "API Development",
+        "feature4": "Legacy Modernization"
       },
       "consulting": {
-        "title": "IT পরামর্শ ও উপদেষ্টা",
-        "description": "আপনার ব্যবসায়িক উদ্দেশ্যের সাথে প্রযুক্তি সারিবদ্ধ করতে কৌশলগত IT নির্দেশনা",
-        "feature1": "প্রযুক্তি কৌশল",
-        "feature2": "ডিজিটাল রূপান্তর",
-        "feature3": "IT পরিকল্পনা",
-        "feature4": "ঝুঁকি মূল্যায়ন"
+        "title": "IT Consulting & Advisory",
+        "description": "Strategic IT guidance to align technology with your business objectives",
+        "feature1": "Technology Strategy",
+        "feature2": "Digital Transformation",
+        "feature3": "IT Planning",
+        "feature4": "Risk Assessment"
       },
       "data": {
-        "title": "ডেটা ও বিশ্লেষণ সেবা",
-        "description": "উন্নত ব্যবসায়িক সিদ্ধান্তের জন্য আপনার ডেটাকে কার্যকর অন্তর্দৃষ্টিতে রূপান্তরিত করুন",
-        "feature1": "ডেটা বিশ্লেষণ",
-        "feature2": "ব্যবসায়িক বুদ্ধিমত্তা",
-        "feature3": "রিপোর্টিং সমাধান",
-        "feature4": "ডেটা ভিজুয়ালাইজেশন"
+        "title": "Data & Analytics Services",
+        "description": "Transform your data into actionable insights for better business decisions",
+        "feature1": "Data Analysis",
+        "feature2": "Business Intelligence",
+        "feature3": "Reporting Solutions",
+        "feature4": "Data Visualization"
       },
       "communication": {
-        "title": "যোগাযোগ ও সহযোগিতা সেবা",
-        "description": "দূরবর্তী দলের জন্য আধুনিক যোগাযোগ সরঞ্জাম এবং সহযোগিতা প্ল্যাটফর্ম",
-        "feature1": "ভিডিও কনফারেন্সিং",
-        "feature2": "টিম সহযোগিতা",
-        "feature3": "ডকুমেন্ট শেয়ারিং",
-        "feature4": "দূরবর্তী অ্যাক্সেস"
+        "title": "Communication & Collaboration Services",
+        "description": "Modern communication tools and collaboration platforms for remote teams",
+        "feature1": "Video Conferencing",
+        "feature2": "Team Collaboration",
+        "feature3": "Document Sharing",
+        "feature4": "Remote Access"
       },
       "support": {
-        "title": "IT সহায়তা ও হেল্পডেস্ক সেবা",
-        "description": "আপনার IT প্রয়োজনের জন্য সম্পূর্ণ প্রযুক্তিগত সহায়তা এবং হেল্পডেস্ক সেবা",
-        "feature1": "প্রযুক্তিগত সহায়তা",
-        "feature2": "সমস্যা সমাধান",
-        "feature3": "ব্যবহারকারী প্রশিক্ষণ",
-        "feature4": "ডকুমেন্টেশন"
+        "title": "IT Support & Helpdesk Services",
+        "description": "Comprehensive technical support and helpdesk services for your IT needs",
+        "feature1": "Technical Support",
+        "feature2": "Issue Resolution",
+        "feature3": "User Training",
+        "feature4": "Documentation"
       },
       "emerging": {
-        "title": "উদীয়মান প্রযুক্তি সেবা",
-        "description": "AI, IoT এবং ব্লকচেইন বাস্তবায়ন সহ অত্যাধুনিক প্রযুক্তি সমাধান",
-        "feature1": "AI ইন্টিগ্রেশন",
-        "feature2": "IoT সমাধান",
-        "feature3": "ব্লকচেইন ডেভেলপমেন্ট",
-        "feature4": "অটোমেশন টুল"
+        "title": "Emerging Technology Services",
+        "description": "Cutting-edge technology solutions including AI, IoT, and blockchain implementations",
+        "feature1": "AI Integration",
+        "feature2": "IoT Solutions",
+        "feature3": "Blockchain Development",
+        "feature4": "Automation Tools"
       },
       "benefits": {
-        "title": "IT ও প্রযুক্তি সেবার সুবিধা",
-        "description": "আমাদের IT এবং প্রযুক্তি সেবা বাস্তবায়নের মূল সুবিধা এবং উপকারিতা",
-        "feature1": "খরচ হ্রাস",
-        "feature2": "উন্নত নিরাপত্তা",
-        "feature3": "উন্নত উৎপাদনশীলতা",
-        "feature4": "কৌশলগত বৃদ্ধি"
+        "title": "Benefits of IT & Tech Services",
+        "description": "Key advantages and benefits of implementing our IT and technology services",
+        "feature1": "Cost Reduction",
+        "feature2": "Enhanced Security",
+        "feature3": "Improved Productivity",
+        "feature4": "Strategic Growth"
       }
     },
-    "benefit1": "দক্ষ পরিচালিত সেবার মাধ্যমে IT খরচ হ্রাস",
-    "benefit2": "উন্নত সাইবার নিরাপত্তা ব্যবস্থার সাথে বর্ধিত নিরাপত্তা",
-    "benefit3": "নির্ভরযোগ্য IT অবকাঠামোর সাথে উন্নত উৎপাদনশীলতা",
-    "benefit4": "২৪/৭ প্রযুক্তিগত সহায়তা এবং মনিটরিং",
-    "benefit5": "স্কেলযোগ্য সমাধান যা আপনার ব্যবসার সাথে বৃদ্ধি পায়",
-    "benefit6": "সর্বশেষ প্রযুক্তি এবং সর্বোত্তম অনুশীলনে অ্যাক্সেস",
-    "benefit7": "শিল্প মান এবং নিয়মকানুনের সাথে সম্মতি",
-    "benefit8": "ব্যবসায়িক লক্ষ্যের সাথে সারিবদ্ধ কৌশলগত IT পরিকল্পনা",
-    "benefit9": "দ্রুত সমস্যা সমাধান এবং ন্যূনতম ডাউনটাইম",
-    "benefit10": "প্রত্যয়িত IT পেশাদারদের কাছ থেকে বিশেষজ্ঞ নির্দেশনা"
+    "benefit1": "Reduced IT costs through efficient managed services",
+    "benefit2": "Enhanced security with advanced cybersecurity measures",
+    "benefit3": "Improved productivity with reliable IT infrastructure",
+    "benefit4": "24/7 technical support and monitoring",
+    "benefit5": "Scalable solutions that grow with your business",
+    "benefit6": "Access to latest technologies and best practices",
+    "benefit7": "Compliance with industry standards and regulations",
+    "benefit8": "Strategic IT planning aligned with business goals",
+    "benefit9": "Faster issue resolution and minimal downtime",
+    "benefit10": "Expert guidance from certified IT professionals"
   },
   "digitalMarketingPage": {
-    "title": "ডিজিটাল মার্কেটিং",
-    "subtitle": "শক্তিশালী ইমেল, হোয়াটসঅ্যাপ এবং SMS মার্কেটিং প্রচারাভিযানের মাধ্যমে আপনার গ্রাহকদের সাথে সংযুক্ত হন। আমাদের সমন্বিত ডিজিটাল মার্কেটিং সমাধানের সাথে সম্পৃক্ততা চালান এবং রূপান্তর বৃদ্ধি করুন।",
-    "statsTitle": "মার্কেটিং যা ফলাফল প্রদান করে",
-    "servicesTitle": "আমাদের ডিজিটাল মার্কেটিং সেবা",
-    "servicesSubtitle": "একাধিক চ্যানেল জুড়ে সম্পূর্ণ মার্কেটিং সমাধান",
-    "benefitsTitle": "ইমেল, হোয়াটসঅ্যাপ ও SMS মার্কেটিংয়ের সুবিধা",
-    "benefitsSubtitle": "কেন মাল্টি-চ্যানেল মার্কেটিং আপনার ব্যবসায়িক বৃদ্ধির জন্য অপরিহার্য",
-    "ctaTitle": "আপনার মার্কেটিং ফলাফল বৃদ্ধি করতে প্রস্তুত?",
-    "ctaSubtitle": "শক্তিশালী ইমেল, হোয়াটসঅ্যাপ এবং SMS প্রচারাভিযানের মাধ্যমে আপনার গ্রাহকদের সাথে সংযুক্ত হওয়া শুরু করুন। আসুন একটি মার্কেটিং কৌশল তৈরি করি যা প্রকৃত ফলাফল প্রদান করে।",
-    "ctaButton": "মার্কেটিং প্রচারাভিযান শুরু করুন",
-    "learnMoreButton": "আমাদের সম্পর্কে আরও জানুন",
-    "enquireButton": "অনুসন্ধান করুন",
-    "serviceBadge": "মার্কেটিং",
+    "title": "Digital Marketing",
+    "subtitle": "Connect with your customers through powerful email, WhatsApp, and SMS marketing campaigns. Drive engagement and boost conversions with our integrated digital marketing solutions.",
+    "statsTitle": "Marketing That Delivers Results",
+    "servicesTitle": "Our Digital Marketing Services",
+    "servicesSubtitle": "Comprehensive marketing solutions across multiple channels",
+    "benefitsTitle": "Benefits of Email, WhatsApp & SMS Marketing",
+    "benefitsSubtitle": "Why multi-channel marketing is essential for your business growth",
+    "ctaTitle": "Ready to Boost Your Marketing Results?",
+    "ctaSubtitle": "Start connecting with your customers through powerful email, WhatsApp, and SMS campaigns. Let's create a marketing strategy that drives real results.",
+    "ctaButton": "Start Marketing Campaign",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Marketing",
     "stats": {
       "emailUsers": {
-        "metric": "৪.১ বিলিয়ন",
-        "description": "বিশ্বব্যাপী ইমেল ব্যবহারকারী"
+        "metric": "4.1 Billion",
+        "description": "Email users worldwide"
       },
       "whatsappUsers": {
-        "metric": "২+ বিলিয়ন",
-        "description": "হোয়াটসঅ্যাপ সক্রিয় ব্যবহারকারী"
+        "metric": "2+ Billion",
+        "description": "WhatsApp active users"
       },
       "smsOpenRate": {
-        "metric": "৯৮%",
-        "description": "SMS খোলার হার"
+        "metric": "98%",
+        "description": "SMS open rate"
       },
       "emailROI": {
-        "metric": "৪২০০%",
-        "description": "ইমেল মার্কেটিংয়ের গড় ROI"
+        "metric": "4200%",
+        "description": "Average ROI for email marketing"
       }
     },
     "services": {
       "email": {
-        "title": "ইমেল মার্কেটিং সেবা",
-        "description": "পেশাদার ইমেল প্রচারাভিযান যা আপনার দর্শকদের সম্পৃক্ত করে এবং রূপান্তর চালিত করে",
-        "feature1": "প্রচারাভিযান ডিজাইন",
-        "feature2": "স্বয়ংক্রিয় ক্রম",
-        "feature3": "A/B পরীক্ষা",
-        "feature4": "পারফরম্যান্স বিশ্লেষণ"
+        "title": "Email Marketing Services",
+        "description": "Professional email campaigns that engage your audience and drive conversions",
+        "feature1": "Campaign Design",
+        "feature2": "Automated Sequences",
+        "feature3": "A/B Testing",
+        "feature4": "Performance Analytics"
       },
       "whatsapp": {
-        "title": "হোয়াটসঅ্যাপ মার্কেটিং সেবা",
-        "description": "ব্যক্তিগতকৃত বার্তার সাথে হোয়াটসঅ্যাপ ব্যবসার মাধ্যমে সরাসরি গ্রাহক সম্পৃক্ততা",
-        "feature1": "ব্যবসা API সেটআপ",
-        "feature2": "সম্প্রচার বার্তা",
-        "feature3": "গ্রাহক সহায়তা",
-        "feature4": "স্বয়ংক্রিয় প্রতিক্রিয়া"
+        "title": "WhatsApp Marketing Services",
+        "description": "Direct customer engagement through WhatsApp Business with personalized messaging",
+        "feature1": "Business API Setup",
+        "feature2": "Broadcast Messages",
+        "feature3": "Customer Support",
+        "feature4": "Automated Responses"
       },
       "sms": {
-        "title": "SMS মার্কেটিং সেবা",
-        "description": "সময়-সংবেদনশীল প্রচার এবং আপডেটের জন্য লক্ষ্যযুক্ত SMS প্রচারাভিযানের সাথে তাৎক্ষণিক পৌঁছানো",
-        "feature1": "বাল্ক SMS প্রচারাভিযান",
-        "feature2": "ব্যক্তিগতকৃত বার্তা",
-        "feature3": "ডেলিভারি রিপোর্ট",
-        "feature4": "অপ্ট-ইন ম্যানেজমেন্ট"
+        "title": "SMS Marketing Services",
+        "description": "Instant reach with targeted SMS campaigns for time-sensitive promotions and updates",
+        "feature1": "Bulk SMS Campaigns",
+        "feature2": "Personalized Messages",
+        "feature3": "Delivery Reports",
+        "feature4": "Opt-in Management"
       },
       "omnichannel": {
-        "title": "ওমনিচ্যানেল ইন্টিগ্রেশন",
-        "description": "সামঞ্জস্যপূর্ণ গ্রাহক অভিজ্ঞতার জন্য সমস্ত মার্কেটিং চ্যানেল জুড়ে নির্বিঘ্ন ইন্টিগ্রেশন",
-        "feature1": "ক্রস-প্ল্যাটফর্ম প্রচারাভিযান",
-        "feature2": "একীভূত বিশ্লেষণ",
-        "feature3": "গ্রাহক যাত্রা ম্যাপিং",
-        "feature4": "সিঙ্ক্রোনাইজড মেসেজিং"
+        "title": "Omnichannel Integration",
+        "description": "Seamless integration across all marketing channels for consistent customer experience",
+        "feature1": "Cross-platform Campaigns",
+        "feature2": "Unified Analytics",
+        "feature3": "Customer Journey Mapping",
+        "feature4": "Synchronized Messaging"
       },
       "benefits": {
-        "title": "ইমেল, হোয়াটসঅ্যাপ ও SMS মার্কেটিংয়ের সুবিধা",
-        "description": "ব্যবসায়িক বৃদ্ধির জন্য মাল্টি-চ্যানেল মার্কেটিং পদ্ধতির সম্পূর্ণ সুবিধা",
-        "feature1": "উচ্চতর সম্পৃক্ততা",
-        "feature2": "সরাসরি যোগাযোগ",
-        "feature3": "খরচ-কার্যকর",
-        "feature4": "পরিমাপযোগ্য ফলাফল"
+        "title": "Benefits of Email, WhatsApp & SMS Marketing",
+        "description": "Comprehensive advantages of multi-channel marketing approach for business growth",
+        "feature1": "Higher Engagement",
+        "feature2": "Direct Communication",
+        "feature3": "Cost-Effective",
+        "feature4": "Measurable Results"
       }
     },
-    "benefit1": "তাদের পছন্দের চ্যানেলের মাধ্যমে গ্রাহকদের সাথে সরাসরি যোগাযোগ",
-    "benefit2": "ঐতিহ্যবাহী বিজ্ঞাপনের তুলনায় উচ্চতর সম্পৃক্ততার হার",
-    "benefit3": "পরিমাপযোগ্য ROI সহ খরচ-কার্যকর মার্কেটিং",
-    "benefit4": "গ্রাহক আচরণ এবং পছন্দের উপর ভিত্তি করে ব্যক্তিগতকৃত বার্তা",
-    "benefit5": "রিয়েল-টাইম ডেলিভারি এবং তাৎক্ষণিক গ্রাহক প্রতিক্রিয়া",
-    "benefit6": "স্বয়ংক্রিয় প্রচারাভিযান যা সময় বাঁচায় এবং দক্ষতা বৃদ্ধি করে",
-    "benefit7": "প্রচারাভিযান অপটিমাইজেশনের জন্য বিস্তারিত বিশ্লেষণ এবং রিপোর্টিং",
-    "benefit8": "নিয়মিত সম্পৃক্ততার মাধ্যমে বর্ধিত গ্রাহক ধারণ",
-    "benefit9": "স্থানীয় ব্যক্তিগতকরণ ক্ষমতা সহ বৈশ্বিক পৌঁছানো",
-    "benefit10": "বিদ্যমান CRM এবং মার্কেটিং টুলের সাথে ইন্টিগ্রেশন"
+    "benefit1": "Direct communication with customers through their preferred channels",
+    "benefit2": "Higher engagement rates compared to traditional advertising",
+    "benefit3": "Cost-effective marketing with measurable ROI",
+    "benefit4": "Personalized messaging based on customer behavior and preferences",
+    "benefit5": "Real-time delivery and instant customer feedback",
+    "benefit6": "Automated campaigns that save time and increase efficiency",
+    "benefit7": "Detailed analytics and reporting for campaign optimization",
+    "benefit8": "Increased customer retention through regular engagement",
+    "benefit9": "Global reach with local personalization capabilities",
+    "benefit10": "Integration with existing CRM and marketing tools"
   },
   "graphicDesignPage": {
-    "title": "গ্রাফিক ডিজাইন",
-    "subtitle": "অত্যাশ্চর্য ভিজ্যুয়াল ডিজাইনের সাথে আপনার ব্র্যান্ড রূপান্তরিত করুন যা দর্শকদের মুগ্ধ করে এবং ফলাফল প্রদান করে। ব্র্যান্ডিং থেকে ডিজিটাল গ্রাফিক্স পর্যন্ত, আমরা ডিজাইন তৈরি করি যা প্রভাব ফেলে।",
-    "statsTitle": "ভিজ্যুয়াল ডিজাইনের শক্তি",
-    "servicesTitle": "আমাদের গ্রাফিক ডিজাইন সেবা",
-    "servicesSubtitle": "আপনার সমস্ত ভিজ্যুয়াল যোগাযোগের প্রয়োজনের জন্য সম্পূর্ণ ডিজাইন সমাধান",
-    "benefitsTitle": "ব্র্যান্ডিং ও গ্রাফিক ডিজাইন সেবার সুবিধা",
-    "benefitsSubtitle": "পেশাদার ডিজাইন সেবা কীভাবে আপনার ব্যবসা রূপান্তরিত করতে পারে",
-    "ctaTitle": "আপনার ব্র্যান্ড রূপান্তরিত করতে প্রস্তুত?",
-    "ctaSubtitle": "আমাদের সৃজনশীল টিমকে অত্যাশ্চর্য গ্রাফিক ডিজাইনের সাথে আপনার দৃষ্টিভঙ্গি জীবন্ত করতে দিন যা প্রভাব ফেলে। আজই আপনার ডিজাইন প্রকল্প শুরু করুন এবং পেশাদার ডিজাইন যে পার্থক্য করতে পারে তা দেখুন।",
-    "ctaButton": "ডিজাইন প্রকল্প শুরু করুন",
-    "learnMoreButton": "আমাদের সম্পর্কে আরও জানুন",
-    "enquireButton": "অনুসন্ধান করুন",
-    "serviceBadge": "ডিজাইন",
+    "title": "Graphic Design",
+    "subtitle": "Transform your brand with stunning visual designs that captivate audiences and drive results. From branding to digital graphics, we create designs that make an impact.",
+    "statsTitle": "The Power of Visual Design",
+    "servicesTitle": "Our Graphic Design Services",
+    "servicesSubtitle": "Comprehensive design solutions for all your visual communication needs",
+    "benefitsTitle": "Benefits of Branding & Graphic Design Services",
+    "benefitsSubtitle": "How professional design services can transform your business",
+    "ctaTitle": "Ready to Transform Your Brand?",
+    "ctaSubtitle": "Let our creative team bring your vision to life with stunning graphic designs that make an impact. Start your design project today and see the difference professional design can make.",
+    "ctaButton": "Start Design Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Design",
     "stats": {
       "firstImpressions": {
-        "metric": "৯৪%",
-        "description": "প্রথম ইম্প্রেশন ডিজাইন-সম্পর্কিত"
+        "metric": "94%",
+        "description": "First impressions are design-related"
       },
       "visualContent": {
-        "metric": "৩x",
-        "description": "ভিজ্যুয়াল কন্টেন্ট শেয়ার করার সম্ভাবনা বেশি"
+        "metric": "3x",
+        "description": "More likely to share visual content"
       },
       "visualLearners": {
-        "metric": "৬৫%",
-        "description": "মানুষ ভিজ্যুয়াল শিক্ষার্থী"
+        "metric": "65%",
+        "description": "Of people are visual learners"
       },
       "brandRecognition": {
-        "metric": "৮০%",
-        "description": "রঙের সাথে ব্র্যান্ড স্বীকৃতি বৃদ্ধি"
+        "metric": "80%",
+        "description": "Brand recognition increase with color"
       }
     },
     "services": {
       "brandIdentity": {
-        "title": "ব্র্যান্ড পরিচয় ডিজাইন",
-        "description": "লোগো, রঙ প্যালেট এবং ব্র্যান্ড গাইডলাইন সহ সম্পূর্ণ ব্র্যান্ড পরিচয় সিস্টেম",
-        "feature1": "লোগো ডিজাইন",
-        "feature2": "ব্র্যান্ড গাইডলাইন",
-        "feature3": "রঙ স্কিম",
-        "feature4": "টাইপোগ্রাফি নির্বাচন"
+        "title": "Brand Identity Design",
+        "description": "Complete brand identity systems including logos, color palettes, and brand guidelines",
+        "feature1": "Logo Design",
+        "feature2": "Brand Guidelines",
+        "feature3": "Color Schemes",
+        "feature4": "Typography Selection"
       },
       "marketing": {
-        "title": "মার্কেটিং ও প্রচারমূলক ডিজাইন",
-        "description": "চোখ ধাঁধানো মার্কেটিং উপকরণ যা সম্পৃক্ততা চালিত করে এবং রূপান্তর বৃদ্ধি করে",
-        "feature1": "ফ্লায়ার ও ব্রোশার",
-        "feature2": "ব্যানার ও পোস্টার",
-        "feature3": "বিজ্ঞাপন ডিজাইন",
-        "feature4": "প্রচারমূলক গ্রাফিক্স"
+        "title": "Marketing & Promotional Design",
+        "description": "Eye-catching marketing materials that drive engagement and boost conversions",
+        "feature1": "Flyers & Brochures",
+        "feature2": "Banners & Posters",
+        "feature3": "Advertisement Design",
+        "feature4": "Promotional Graphics"
       },
       "digitalSocial": {
-        "title": "ডিজিটাল ও সোশ্যাল মিডিয়া ডিজাইন",
-        "description": "সোশ্যাল মিডিয়া প্ল্যাটফর্ম এবং অনলাইন উপস্থিতির জন্য অপটিমাইজ করা আকর্ষণীয় ডিজিটাল গ্রাফিক্স",
-        "feature1": "সোশ্যাল মিডিয়া পোস্ট",
-        "feature2": "কভার ইমেজ",
-        "feature3": "ডিজিটাল বিজ্ঞাপন",
-        "feature4": "ওয়েব গ্রাফিক্স"
+        "title": "Digital & Social Media Design",
+        "description": "Engaging digital graphics optimized for social media platforms and online presence",
+        "feature1": "Social Media Posts",
+        "feature2": "Cover Images",
+        "feature3": "Digital Ads",
+        "feature4": "Web Graphics"
       },
       "uiux": {
-        "title": "UI/UX ও ওয়েব গ্রাফিক্স",
-        "description": "ব্যবহারকারী-বান্ধব ইন্টারফেস ডিজাইন এবং ওয়েব গ্রাফিক্স যা ব্যবহারকারীর অভিজ্ঞতা বাড়ায়",
-        "feature1": "ওয়েবসাইট গ্রাফিক্স",
-        "feature2": "UI উপাদান",
-        "feature3": "আইকন ও ইলাস্ট্রেশন",
-        "feature4": "ইউজার ইন্টারফেস ডিজাইন"
+        "title": "UI/UX & Web Graphics",
+        "description": "User-friendly interface designs and web graphics that enhance user experience",
+        "feature1": "Website Graphics",
+        "feature2": "UI Elements",
+        "feature3": "Icons & Illustrations",
+        "feature4": "User Interface Design"
       },
       "corporate": {
-        "title": "কর্পোরেট ও অফিস ব্র্যান্ডিং",
-        "description": "ব্যবসার জন্য পেশাদার কর্পোরেট পরিচয় এবং অফিস ব্র্যান্ডিং সমাধান",
-        "feature1": "বিজনেস কার্ড",
-        "feature2": "লেটারহেড",
-        "feature3": "অফিস সাইনেজ",
-        "feature4": "কর্পোরেট প্রেজেন্টেশন"
+        "title": "Corporate & Office Branding",
+        "description": "Professional corporate identity and office branding solutions for businesses",
+        "feature1": "Business Cards",
+        "feature2": "Letterheads",
+        "feature3": "Office Signage",
+        "feature4": "Corporate Presentations"
       },
       "motion": {
-        "title": "মোশন গ্রাফিক্স ও মাল্টিমিডিয়া ডিজাইন",
-        "description": "আকর্ষণীয় ভিজ্যুয়াল স্টোরিটেলিংয়ের জন্য গতিশীল মোশন গ্রাফিক্স এবং মাল্টিমিডিয়া কন্টেন্ট",
-        "feature1": "অ্যানিমেটেড গ্রাফিক্স",
-        "feature2": "ভিডিও গ্রাফিক্স",
-        "feature3": "GIF তৈরি",
-        "feature4": "ইন্টারঅ্যাক্টিভ মিডিয়া"
+        "title": "Motion Graphics & Multimedia Design",
+        "description": "Dynamic motion graphics and multimedia content for engaging visual storytelling",
+        "feature1": "Animated Graphics",
+        "feature2": "Video Graphics",
+        "feature3": "GIF Creation",
+        "feature4": "Interactive Media"
       },
       "illustration": {
-        "title": "ইলাস্ট্রেশন ও সৃজনশীল শিল্প",
-        "description": "আপনার ব্র্যান্ড এবং বার্তার জন্য তৈরি কাস্টম ইলাস্ট্রেশন এবং সৃজনশীল শিল্পকর্ম",
-        "feature1": "কাস্টম ইলাস্ট্রেশন",
-        "feature2": "ডিজিটাল আর্ট",
-        "feature3": "ক্যারেক্টার ডিজাইন",
-        "feature4": "ইনফোগ্রাফিক্স"
+        "title": "Illustration & Creative Art",
+        "description": "Custom illustrations and creative artwork tailored to your brand and message",
+        "feature1": "Custom Illustrations",
+        "feature2": "Digital Art",
+        "feature3": "Character Design",
+        "feature4": "Infographics"
       },
       "print": {
-        "title": "প্রিন্ট ও পাবলিশিং ডিজাইন",
-        "description": "বই, ম্যাগাজিন এবং মার্কেটিং উপকরণের জন্য পেশাদার প্রিন্ট ডিজাইন সেবা",
-        "feature1": "বই ডিজাইন",
-        "feature2": "ম্যাগাজিন লেআউট",
-        "feature3": "ক্যাটালগ ডিজাইন",
-        "feature4": "প্রিন্ট উপকরণ"
+        "title": "Print & Publishing Design",
+        "description": "Professional print design services for books, magazines, and marketing materials",
+        "feature1": "Book Design",
+        "feature2": "Magazine Layout",
+        "feature3": "Catalog Design",
+        "feature4": "Print Materials"
       },
       "packaging": {
-        "title": "প্যাকেজিং ও পণ্য ব্র্যান্ডিং",
-        "description": "আকর্ষণীয় প্যাকেজিং ডিজাইন এবং পণ্য ব্র্যান্ডিং যা তাকে আলাদা হয়ে দাঁড়ায়",
-        "feature1": "পণ্য প্যাকেজিং",
-        "feature2": "লেবেল ডিজাইন",
-        "feature3": "ব্র্যান্ড অ্যাপ্লিকেশন",
-        "feature4": "পণ্য গ্রাফিক্স"
+        "title": "Packaging & Product Branding",
+        "description": "Attractive packaging design and product branding that stands out on shelves",
+        "feature1": "Product Packaging",
+        "feature2": "Label Design",
+        "feature3": "Brand Applications",
+        "feature4": "Product Graphics"
       },
       "emerging": {
-        "title": "উদীয়মান গ্রাফিক ডিজাইন ট্রেন্ড",
-        "description": "সর্বশেষ ট্রেন্ড এবং প্রযুক্তি ব্যবহার করে অত্যাধুনিক ডিজাইন পদ্ধতি",
-        "feature1": "আধুনিক ডিজাইন ট্রেন্ড",
-        "feature2": "3D গ্রাফিক্স",
-        "feature3": "AR/VR গ্রাফিক্স",
-        "feature4": "ইন্টারঅ্যাক্টিভ ডিজাইন"
+        "title": "Emerging Graphic Design Trends",
+        "description": "Cutting-edge design approaches using the latest trends and technologies",
+        "feature1": "Modern Design Trends",
+        "feature2": "3D Graphics",
+        "feature3": "AR/VR Graphics",
+        "feature4": "Interactive Design"
       },
       "benefits": {
-        "title": "ব্র্যান্ডিং ও গ্রাফিক ডিজাইন সেবার সুবিধা",
-        "description": "ব্যবসায়িক সাফল্যের জন্য পেশাদার ব্র্যান্ডিং এবং গ্রাফিক ডিজাইনের মূল সুবিধা",
-        "feature1": "ব্র্যান্ড স্বীকৃতি",
-        "feature2": "পেশাদার ইমেজ",
-        "feature3": "মার্কেটিং কার্যকারিতা",
-        "feature4": "গ্রাহক বিশ্বাস"
+        "title": "Benefits of Branding & Graphic Design Services",
+        "description": "Key advantages of professional branding and graphic design for business success",
+        "feature1": "Brand Recognition",
+        "feature2": "Professional Image",
+        "feature3": "Marketing Effectiveness",
+        "feature4": "Customer Trust"
       }
     },
-    "benefit1": "পেশাদার ব্র্যান্ড ইমেজ যা বিশ্বাস এবং বিশ্বাসযোগ্যতা তৈরি করে",
-    "benefit2": "সমস্ত মার্কেটিং উপকরণ জুড়ে সামঞ্জস্যপূর্ণ ভিজ্যুয়াল পরিচয়",
-    "benefit3": "বর্ধিত ব্র্যান্ড স্বীকৃতি এবং গ্রাহক স্মরণ",
-    "benefit4": "দৃষ্টিনন্দন কন্টেন্টের সাথে উচ্চতর সম্পৃক্ততার হার",
-    "benefit5": "সমস্ত ব্যবসায়িক আকারের জন্য খরচ-কার্যকর ডিজাইন সমাধান",
-    "benefit6": "গুণমান আপস না করে দ্রুত টার্নঅ্যারাউন্ড সময়",
-    "benefit7": "স্কেলযোগ্য ডিজাইন যা বিভিন্ন প্ল্যাটফর্ম জুড়ে কাজ করে",
-    "benefit8": "ডিজাইন ট্রেন্ড এবং সর্বোত্তম অনুশীলনে বিশেষজ্ঞ নির্দেশনা",
-    "benefit9": "আপনার নির্দিষ্ট প্রয়োজনের জন্য কাস্টম সমাধান",
-    "benefit10": "চলমান ডিজাইন সহায়তা এবং সংশোধন অন্তর্ভুক্ত"
+    "benefit1": "Professional brand image that builds trust and credibility",
+    "benefit2": "Consistent visual identity across all marketing materials",
+    "benefit3": "Increased brand recognition and customer recall",
+    "benefit4": "Higher engagement rates with visually appealing content",
+    "benefit5": "Cost-effective design solutions for all business sizes",
+    "benefit6": "Fast turnaround times without compromising quality",
+    "benefit7": "Scalable designs that work across different platforms",
+    "benefit8": "Expert guidance on design trends and best practices",
+    "benefit9": "Custom solutions tailored to your specific needs",
+    "benefit10": "Ongoing design support and revisions included"
   },
   "aiServicesPage": {
-    "title": "AI সেবা",
-    "subtitle": "আপনার ব্যবসায়িক কার্যক্রম রূপান্তরিত করতে এবং উদ্ভাবন চালাতে কৃত্রিম বুদ্ধিমত্তার শক্তি ব্যবহার করুন। আমাদের সম্পূর্ণ AI সেবা আপনাকে প্রতিযোগিতামূলক সুবিধার জন্য অত্যাধুনিক প্রযুক্তি ব্যবহার করতে সাহায্য করে।",
-    "servicesTitle": "আমাদের AI সেবা",
-    "benefitsTitle": "কেন আমাদের AI সেবা বেছে নিন?",
-    "benefitsSubtitle": "ভবিষ্যতের জন্য ডিজাইন করা বুদ্ধিমান সমাধান দিয়ে আপনার ব্যবসা রূপান্তরিত করুন",
-    "ctaTitle": "AI দিয়ে আপনার ব্যবসা রূপান্তরিত করতে প্রস্তুত?",
-    "ctaSubtitle": "আমাদের AI বিশেষজ্ঞদের উদ্ভাবন এবং বৃদ্ধি চালাতে কৃত্রিম বুদ্ধিমত্তার শক্তি ব্যবহার করতে সাহায্য করতে দিন। আজই আপনার AI রূপান্তর শুরু করুন এবং আপনার ব্যবসার জন্য নতুন সম্ভাবনা আনলক করুন।",
-    "ctaButton": "AI প্রকল্প শুরু করুন",
-    "learnMoreButton": "আমাদের সম্পর্কে আরও জানুন",
-    "enquireButton": "অনুসন্ধান করুন",
-    "serviceBadge": "AI সেবা",
+    "title": "AI Services",
+    "subtitle": "Harness the power of artificial intelligence to transform your business operations and drive innovation. Our comprehensive AI services help you leverage cutting-edge technology for competitive advantage.",
+    "servicesTitle": "Our AI Services",
+    "benefitsTitle": "Why Choose Our AI Services?",
+    "benefitsSubtitle": "Transform your business with intelligent solutions designed for the future",
+    "ctaTitle": "Ready to Transform Your Business with AI?",
+    "ctaSubtitle": "Let our AI experts help you harness the power of artificial intelligence to drive innovation and growth. Start your AI transformation today and unlock new possibilities for your business.",
+    "ctaButton": "Start AI Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "AI Service",
     "services": {
       "machineLearning": {
-        "title": "মেশিন লার্নিং (ML) সেবা",
-        "description": "প্রক্রিয়া স্বয়ংক্রিয় করতে এবং আপনার ডেটা থেকে অন্তর্দৃষ্টি বের করতে উন্নত মেশিন লার্নিং সমাধান",
-        "feature1": "ভবিষ্যদ্বাণীমূলক বিশ্লেষণ",
-        "feature2": "শ্রেণীবিভাগ মডেল",
-        "feature3": "সুপারিশ সিস্টেম",
-        "feature4": "অসঙ্গতি সনাক্তকরণ"
+        "title": "Machine Learning (ML) Services",
+        "description": "Advanced machine learning solutions to automate processes and extract insights from your data",
+        "feature1": "Predictive Analytics",
+        "feature2": "Classification Models",
+        "feature3": "Recommendation Systems",
+        "feature4": "Anomaly Detection"
       },
       "nlp": {
-        "title": "ন্যাচারাল ল্যাঙ্গুয়েজ প্রসেসিং (NLP) সেবা",
-        "description": "আপনার অ্যাপ্লিকেশনের জন্য বুদ্ধিমান টেক্সট প্রসেসিং এবং ভাষা বোঝার ক্ষমতা",
-        "feature1": "টেক্সট বিশ্লেষণ",
-        "feature2": "চ্যাটবট ও ভার্চুয়াল সহায়ক",
-        "feature3": "সেন্টিমেন্ট বিশ্লেষণ",
-        "feature4": "ভাষা অনুবাদ"
+        "title": "Natural Language Processing (NLP) Services",
+        "description": "Intelligent text processing and language understanding capabilities for your applications",
+        "feature1": "Text Analysis",
+        "feature2": "Chatbots & Virtual Assistants",
+        "feature3": "Sentiment Analysis",
+        "feature4": "Language Translation"
       },
       "computerVision": {
-        "title": "কম্পিউটার ভিশন সেবা",
-        "description": "ভিজ্যুয়াল কাজ স্বয়ংক্রিয় করতে এবং অন্তর্দৃষ্টি বের করতে উন্নত ইমেজ এবং ভিডিও বিশ্লেষণ ক্ষমতা",
-        "feature1": "অবজেক্ট সনাক্তকরণ",
-        "feature2": "ইমেজ শ্রেণীবিভাগ",
-        "feature3": "মুখ শনাক্তকরণ",
-        "feature4": "গুণমান পরিদর্শন"
+        "title": "Computer Vision Services",
+        "description": "Advanced image and video analysis capabilities to automate visual tasks and extract insights",
+        "feature1": "Object Detection",
+        "feature2": "Image Classification",
+        "feature3": "Facial Recognition",
+        "feature4": "Quality Inspection"
       },
       "generativeAI": {
-        "title": "জেনারেটিভ AI সেবা",
-        "description": "কন্টেন্ট, কোড এবং উদ্ভাবনী অ্যাপ্লিকেশন তৈরি করতে অত্যাধুনিক জেনারেটিভ AI সমাধান",
-        "feature1": "কন্টেন্ট জেনারেশন",
-        "feature2": "কোড অটোমেশন",
-        "feature3": "সৃজনশীল ডিজাইন",
-        "feature4": "সিন্থেটিক ডেটা"
+        "title": "Generative AI Services",
+        "description": "Cutting-edge generative AI solutions to create content, code, and innovative applications",
+        "feature1": "Content Generation",
+        "feature2": "Code Automation",
+        "feature3": "Creative Design",
+        "feature4": "Synthetic Data"
       },
       "aiAutomation": {
-        "title": "AI অটোমেশন সেবা",
-        "description": "কর্মপ্রবাহ সুগম করতে এবং অপারেশনাল দক্ষতা বৃদ্ধি করতে বুদ্ধিমান অটোমেশন সমাধান",
-        "feature1": "প্রক্রিয়া অটোমেশন",
-        "feature2": "বুদ্ধিমান ডকুমেন্ট প্রসেসিং",
-        "feature3": "কর্মপ্রবাহ অপটিমাইজেশন",
-        "feature4": "RPA ইন্টিগ্রেশন"
+        "title": "AI Automation Services",
+        "description": "Intelligent automation solutions to streamline workflows and increase operational efficiency",
+        "feature1": "Process Automation",
+        "feature2": "Intelligent Document Processing",
+        "feature3": "Workflow Optimization",
+        "feature4": "RPA Integration"
       },
       "dataAnalytics": {
-        "title": "ডেটা ও বিশ্লেষণ AI সেবা",
-        "description": "আপনার সংস্থা জুড়ে ডেটা-চালিত সিদ্ধান্ত গ্রহণ চালাতে AI-চালিত বিশ্লেষণ এবং অন্তর্দৃষ্টি",
-        "feature1": "ভবিষ্যদ্বাণীমূলক বিশ্লেষণ",
-        "feature2": "ব্যবসায়িক বুদ্ধিমত্তা",
-        "feature3": "ডেটা ভিজুয়ালাইজেশন",
-        "feature4": "রিয়েল-টাইম অন্তর্দৃষ্টি"
+        "title": "Data & Analytics AI Services",
+        "description": "AI-powered analytics and insights to drive data-driven decision making across your organization",
+        "feature1": "Predictive Analytics",
+        "feature2": "Business Intelligence",
+        "feature3": "Data Visualization",
+        "feature4": "Real-time Insights"
       },
       "cybersecurity": {
-        "title": "সাইবার নিরাপত্তায় AI",
-        "description": "আপনার ডিজিটাল সম্পদ রক্ষা করতে এবং হুমকি সনাক্ত করতে উন্নত AI-চালিত নিরাপত্তা সমাধান",
-        "feature1": "হুমকি সনাক্তকরণ",
-        "feature2": "আচরণগত বিশ্লেষণ",
-        "feature3": "নিরাপত্তা অটোমেশন",
-        "feature4": "ঝুঁকি মূল্যায়ন"
+        "title": "AI in Cybersecurity",
+        "description": "Advanced AI-driven security solutions to protect your digital assets and detect threats",
+        "feature1": "Threat Detection",
+        "feature2": "Behavioral Analysis",
+        "feature3": "Security Automation",
+        "feature4": "Risk Assessment"
       },
       "industrySpecific": {
-        "title": "শিল্প-নির্দিষ্ট AI সমাধান",
-        "description": "নির্দিষ্ট শিল্প এবং ব্যবসায়িক ভার্টিকালের জন্য ডিজাইন করা তৈরি AI সমাধান",
-        "feature1": "হেলথকেয়ার AI",
-        "feature2": "আর্থিক সেবা",
-        "feature3": "উৎপাদন",
-        "feature4": "খুচরা ও ই-কমার্স"
+        "title": "Industry-Specific AI Solutions",
+        "description": "Tailored AI solutions designed for specific industries and business verticals",
+        "feature1": "Healthcare AI",
+        "feature2": "Financial Services",
+        "feature3": "Manufacturing",
+        "feature4": "Retail & E-commerce"
       },
       "infrastructure": {
-        "title": "AI অবকাঠামো ও MLOps",
-        "description": "স্কেলে AI মডেল স্থাপন এবং পরিচালনা করতে শক্তিশালী AI অবকাঠামো এবং MLOps অনুশীলন",
-        "feature1": "মডেল স্থাপনা",
-        "feature2": "পাইপলাইন অটোমেশন",
-        "feature3": "মনিটরিং ও রক্ষণাবেক্ষণ",
-        "feature4": "স্কেলযোগ্য অবকাঠামো"
+        "title": "AI Infrastructure & MLOps",
+        "description": "Robust AI infrastructure and MLOps practices to deploy and manage AI models at scale",
+        "feature1": "Model Deployment",
+        "feature2": "Pipeline Automation",
+        "feature3": "Monitoring & Maintenance",
+        "feature4": "Scalable Infrastructure"
       },
       "training": {
-        "title": "AI প্রশিক্ষণ ও সহায়তা",
-        "description": "আপনার টিমকে AI প্রযুক্তি কার্যকরভাবে ব্যবহার করতে সাহায্য করার জন্য সম্পূর্ণ প্রশিক্ষণ এবং চলমান সহায়তা",
-        "feature1": "টিম প্রশিক্ষণ",
-        "feature2": "সর্বোত্তম অনুশীলন",
-        "feature3": "প্রযুক্তিগত সহায়তা",
-        "feature4": "জ্ঞান স্থানান্তর"
+        "title": "AI Training & Support",
+        "description": "Comprehensive training and ongoing support to help your team leverage AI technologies effectively",
+        "feature1": "Team Training",
+        "feature2": "Best Practices",
+        "feature3": "Technical Support",
+        "feature4": "Knowledge Transfer"
       }
     },
-    "benefit1": "অভিজ্ঞ শিল্প পেশাদারদের কাছ থেকে বিশেষজ্ঞ AI নির্দেশনা",
-    "benefit2": "আপনার নির্দিষ্ট ব্যবসায়িক প্রয়োজনের জন্য কাস্টমাইজড AI সমাধান",
-    "benefit3": "প্রমাণিত AI পদ্ধতির মাধ্যমে বাস্তবায়ন ঝুঁকি হ্রাস",
-    "benefit4": "কাঠামোগত প্রকল্প ব্যবস্থাপনার সাথে দ্রুত AI স্থাপনা",
-    "benefit5": "কৌশলগত AI পরিকল্পনা এবং সম্পদ বরাদ্দের মাধ্যমে খরচ অপটিমাইজেশন",
-    "benefit6": "সর্বশেষ AI ট্রেন্ড এবং উদীয়মান প্রযুক্তিতে অ্যাক্সেস",
-    "benefit7": "বৃদ্ধির জন্য ডিজাইন করা স্কেলযোগ্য AI অবকাঠামো",
-    "benefit8": "AI উদ্যোগ এবং ব্যবসায়িক উদ্দেশ্যের মধ্যে কৌশলগত সারিবদ্ধতা",
-    "benefit9": "আপনার টিমে চলমান AI সহায়তা এবং জ্ঞান স্থানান্তর",
-    "benefit10": "স্পষ্ট KPI এবং সাফল্যের মেট্রিক্স সহ পরিমাপযোগ্য AI ফলাফল"
+    "benefit1": "Expert AI guidance from experienced industry professionals",
+    "benefit2": "Customized AI solutions tailored to your specific business needs",
+    "benefit3": "Reduced implementation risks through proven AI methodologies",
+    "benefit4": "Faster AI deployment with structured project management",
+    "benefit5": "Cost optimization through strategic AI planning and resource allocation",
+    "benefit6": "Access to latest AI trends and emerging technologies",
+    "benefit7": "Scalable AI infrastructure designed for growth",
+    "benefit8": "Strategic alignment between AI initiatives and business objectives",
+    "benefit9": "Ongoing AI support and knowledge transfer to your team",
+    "benefit10": "Measurable AI results with clear KPIs and success metrics"
   },
   "enquiryForm": {
-    "title": "যোগাযোগ করুন",
-    "subtitle": "আপনার প্রকল্পের প্রয়োজনীয়তা সম্পর্কে আমাদের বলুন",
-    "thankYouTitle": "ধন্যবাদ!",
-    "thankYouMessage": "আপনার অনুসন্ধান সফলভাবে জমা দেওয়া হয়েছে। আমরা ২৪ ঘন্টার মধ্যে আপনার কাছে ফিরে আসব।",
+    "title": "Get In Touch",
+    "subtitle": "Tell us about your project requirements",
+    "thankYouTitle": "Thank You!",
+    "thankYouMessage": "Your enquiry has been submitted successfully. We'll get back to you within 24 hours.",
     "fields": {
       "fullName": {
-        "label": "পূর্ণ নাম",
-        "placeholder": "আপনার পূর্ণ নাম লিখুন",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
         "required": true
       },
       "email": {
-        "label": "ইমেল ঠিকানা",
-        "placeholder": "আপনার ইমেল ঠিকানা লিখুন",
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
         "required": true
       },
       "phone": {
-        "label": "ফোন নম্বর",
-        "placeholder": "আপনার ফোন নম্বর লিখুন",
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number",
         "required": false
       },
       "company": {
-        "label": "কোম্পানির নাম",
-        "placeholder": "আপনার কোম্পানির নাম লিখুন",
+        "label": "Company Name",
+        "placeholder": "Enter your company name",
         "required": false
       },
       "service": {
-        "label": "আগ্রহী সেবা",
-        "placeholder": "একটি সেবা নির্বাচন করুন",
+        "label": "Service Interested In",
+        "placeholder": "Select a service",
         "required": true
       },
       "message": {
-        "label": "প্রকল্পের বিবরণ",
-        "placeholder": "আপনার প্রকল্পের প্রয়োজনীয়তা, সময়সীমা এবং বাজেট সম্পর্কে আমাদের বলুন...",
+        "label": "Project Details",
+        "placeholder": "Tell us about your project requirements, timeline, and budget...",
         "required": true
       }
     },
     "services": {
-      "webDevelopment": "ওয়েব ডেভেলপমেন্ট",
-      "itTechServices": "IT ও প্রযুক্তি সেবা",
-      "digitalMarketing": "ডিজিটাল মার্কেটিং",
-      "graphicDesign": "গ্রাফিক ডিজাইন",
-      "consultingServices": "পরামর্শ সেবা",
-      "other": "অন্যান্য"
+      "webDevelopment": "Web Development",
+      "itTechServices": "IT & Tech Services",
+      "digitalMarketing": "Digital Marketing",
+      "graphicDesign": "Graphic Design",
+      "consultingServices": "Consulting Services",
+      "other": "Other"
     },
     "buttons": {
-      "submit": "অনুসন্ধান পাঠান",
-      "submitting": "জমা দেওয়া হচ্ছে..."
+      "submit": "Send Enquiry",
+      "submitting": "Submitting..."
     },
     "toast": {
-      "success": "অনুসন্ধান সফলভাবে জমা দেওয়া হয়েছে!",
-      "successDescription": "আপনার অনুসন্ধানের জন্য ধন্যবাদ। আমরা ২৪ ঘন্টার মধ্যে আপনার কাছে ফিরে আসব।",
-      "error": "অনুসন্ধান জমা দিতে ব্যর্থ",
-      "errorDescription": "পরে আবার চেষ্টা করুন।"
+      "success": "Enquiry submitted successfully!",
+      "successDescription": "Thank you for your enquiry. We'll get back to you within 24 hours.",
+      "error": "Failed to submit enquiry",
+      "errorDescription": "Please try again later."
     }
   },
   "careers": {
-    "pageTitle": "ਅਲ ਮਾਵਾ ਇੰਟਰਨੈਸ਼ਨਲ ਪੁਣੇ ਵਿੱਚ ਕੈਰੀਅਰ - ਵੈੱਬ ਡਿਵੈਲਪਰ ਨੌਕਰੀਆਂ | IT ਨੌਕਰੀਆਂ",
+    "pageTitle": "Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs",
     "openPositions": {
-      "title": "ਖੁੱਲ੍ਹੀਆਂ ਅਸਾਮੀਆਂ",
-      "subtitle": "ਆਪਣੇ ਹੁਨਰ ਅਤੇ ਜਨੂੰਨ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਮੌਕੇ ਖੋਜੋ"
+      "title": "Open Positions",
+      "subtitle": "Discover opportunities that match your skills and passion"
     },
     "search": {
-      "placeholder": "ਨੌਕਰੀਆਂ ਖੋਜੋ...",
-      "department": "ਵਿਭਾਗ",
-      "allDepartments": "ਸਾਰੇ ਵਿਭਾਗ",
-      "location": "ਪੁਣੇ, ਭਾਰਤ"
+      "placeholder": "Search jobs...",
+      "department": "Department",
+      "allDepartments": "All Departments",
+      "location": "Pune, India"
     },
     "jobCard": {
-      "showMore": "ਹੋਰ ਦਿਖਾਓ",
-      "showLess": "ਘੱਟ ਦਿਖਾਓ",
-      "keyRequirements": "ਮੁੱਖ ਲੋੜਾਂ:",
-      "jobDetails": "ਨੌਕਰੀ ਵੇਰਵੇ:",
-      "department": "ਵਿਭਾਗ",
-      "notSpecified": "ਨਿਰਧਾਰਤ ਨਹੀਂ",
-      "location": "ਸਥਾਨ",
-      "type": "ਕਿਸਮ",
-      "salary": "ਤਨਖਾਹ",
-      "competitive": "ਪ੍ਰਤੀਯੋਗੀ",
-      "recentlyPosted": "ਹਾਲ ਹੀ ਵਿੱਚ ਪੋਸਟ ਕੀਤਾ",
-      "applyNow": "ਹੁਣੇ ਅਰਜ਼ੀ ਦਿਓ"
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "keyRequirements": "Key Requirements:",
+      "jobDetails": "Job Details:",
+      "department": "Department",
+      "notSpecified": "Not specified",
+      "location": "Location",
+      "type": "Type",
+      "salary": "Salary",
+      "competitive": "Competitive",
+      "recentlyPosted": "Recently posted",
+      "applyNow": "Apply Now"
     },
-    "noJobs": "ਤੁਹਾਡੇ ਮਾਪਦੰਡ ਨਾਲ ਮੇਲ ਖਾਂਦੀਆਂ ਕੋਈ ਨੌਕਰੀਆਂ ਨਹੀਂ ਮਿਲੀਆਂ।",
+    "noJobs": "No jobs found matching your criteria.",
     "benefits": {
-      "title": "ਸਾਡੇ ਨਾਲ ਕੰਮ ਕਿਉਂ ਕਰੋ",
-      "subtitle": "ਅਸੀਂ ਵਿਆਪਕ ਲਾਭਾਂ ਅਤੇ ਸਹੂਲਤਾਂ ਨਾਲ ਆਪਣੀ ਟੀਮ ਦੀ ਦੇਖਭਾਲ ਕਰਨ ਵਿੱਚ ਵਿਸ਼ਵਾਸ ਕਰਦੇ ਹਾਂ",
+      "title": "why work with us",
+      "subtitle": "We believe in taking care of our team with comprehensive benefits and perks",
       "items": {
         "innovative": {
-          "title": "ਨਵੀਨਤਾਕਾਰੀ ਕੰਮ ਦਾ ਮਾਹੌਲ",
-          "description": "ਇੱਕ ਅਗਾਂਹਵਧੂ ਸੋਚ ਵਾਲੀ ਟੀਮ ਨਾਲ ਸਹਿਯੋਗ ਕਰੋ ਜੋ ਰਚਨਾਤਮਕਤਾ, ਤਕਨਾਲੋਜੀ ਅਤੇ ਨਿਰੰਤਰ ਸਿੱਖਣ ਨੂੰ ਅਪਣਾਉਂਦੀ ਹੈ।"
+          "title": "Innovative Work Environment",
+          "description": "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning."
         },
         "growth": {
-          "title": "ਕੈਰੀਅਰ ਵਿਕਾਸ ਅਤੇ ਵਿਕਾਸ",
-          "description": "ਤੇਜ਼ੀ ਨਾਲ ਵਿਕਸਤ ਹੋ ਰਹੇ ਡਿਜੀਟਲ ਲੈਂਡਸਕੇਪ ਵਿੱਚ ਹੁਨਰ ਵਧਾਉਣ, ਮਾਰਗਦਰਸ਼ਨ ਅਤੇ ਤਰੱਕੀ ਦੇ ਮੌਕਿਆਂ ਤੱਕ ਪਹੁੰਚ"
+          "title": "Career Growth & Development",
+          "description": "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape"
         },
         "empowerment": {
-          "title": "ਸ਼ਕਤੀਕਰਨ ਅਤੇ ਪ੍ਰਭਾਵ",
-          "description": "ਅਰਥਪੂਰਨ ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਯੋਗਦਾਨ ਪਾਓ ਜੋ ਅਸਲ ਵਪਾਰਕ ਨਤੀਜੇ ਦਿੰਦੇ ਹਨ ਅਤੇ ਇੱਕ ਠੋਸ ਫਰਕ ਪੈਦਾ ਕਰਦੇ ਹਨ"
+          "title": "Empowerment & Impact",
+          "description": "Contribute to meaningful projects that drive real business results and make a tangible difference"
         }
       }
     },
     "faq": {
-      "title": "ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ",
-      "subtitle": "ਸਵਾਲ ਹਨ? ਸਾਡੇ ਕੋਲ ਜਵਾਬ ਹਨ।",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Got questions? We've got answers.",
       "items": {
         "interview": {
-          "question": "ਇੰਟਰਵਿਊ ਪ੍ਰਕਿਰਿਆ ਕਿਹੋ ਜਿਹੀ ਹੈ?",
-          "answer": "ਸਾਡੀ ਇੰਟਰਵਿਊ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਆਮ ਤੌਰ 'ਤੇ ਸ਼ੁਰੂਆਤੀ ਫੋਨ ਸਕ੍ਰੀਨਿੰਗ, ਤਕਨੀਕੀ ਮੁਲਾਂਕਣ (ਤਕਨੀਕੀ ਭੂਮਿਕਾਵਾਂ ਲਈ), ਅਤੇ ਟੀਮ ਮੈਂਬਰਾਂ ਅਤੇ ਲੀਡਰਸ਼ਿਪ ਨਾਲ 2-3 ਦੌਰ ਦੇ ਇੰਟਰਵਿਊ ਸ਼ਾਮਲ ਹੁੰਦੇ ਹਨ। ਪੂਰੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਆਮ ਤੌਰ 'ਤੇ 2 ਤੋਂ 4 ਦਿਨ ਲੱਗਦੇ ਹਨ।"
+          "question": "What is the interview process like?",
+          "answer": "Our interview process typically consists of an initial phone screening, technical assessment (for technical roles), and 2-3 rounds of interviews with team members and leadership. The entire process usually takes 2 to 4 days."
         },
         "remote": {
-          "question": "ਕੀ ਤੁਸੀਂ ਰਿਮੋਟ ਕੰਮ ਦੇ ਮੌਕੇ ਪੇਸ਼ ਕਰਦੇ ਹੋ?",
-          "answer": "ਹਾਂ! ਅਸੀਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਰਿਮੋਟ ਅਹੁਦਿਆਂ ਦੇ ਨਾਲ-ਨਾਲ ਹਾਈਬ੍ਰਿਡ ਪ੍ਰਬੰਧ ਵੀ ਪੇਸ਼ ਕਰਦੇ ਹਾਂ। ਸਾਡੇ ਬਹੁਤ ਸਾਰੇ ਟੀਮ ਮੈਂਬਰ ਰਿਮੋਟ ਕੰਮ ਕਰਦੇ ਹਨ, ਅਤੇ ਸਾਡੇ ਕੋਲ ਵੰਡੀਆਂ ਟੀਮਾਂ ਨੂੰ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਢੰਗ ਨਾਲ ਸਮਰਥਨ ਕਰਨ ਲਈ ਸਾਧਨ ਅਤੇ ਸੱਭਿਆਚਾਰ ਹੈ।"
+          "question": "Do you offer remote work opportunities?",
+          "answer": "Yes! We offer fully remote positions as well as hybrid arrangements. Many of our team members work remotely, and we have the tools and culture to support distributed teams effectively."
         },
         "benefits": {
-          "question": "ਤੁਸੀਂ ਕਿਹੜੇ ਲਾਭ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹੋ?",
-          "answer": "ਅਸੀਂ ਨਿਰੰਤਰ ਸਿੱਖਣ ਰਾਹੀਂ ਆਪਣੀ ਟੀਮ ਨੂੰ ਵਧਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਵਿੱਚ ਵਿਸ਼ਵਾਸ ਕਰਦੇ ਹਾਂ। ਅਸੀਂ ਨਵੇਂ ਹੁਨਰ ਖੋਜਣ, ਹੱਥੋਂ-ਹੱਥ ਅਨੁਭਵ ਪ੍ਰਾਪਤ ਕਰਨ ਅਤੇ ਆਪਣੀ ਮਹਾਰਤ ਵਧਾਉਣ ਦੇ ਮੌਕੇ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਾਂ - ਇਹ ਸਭ ਇੱਕ ਪ੍ਰਤੀਯੋਗੀ ਤਨਖਾਹ, ਨਵੇਂ ਹੁਨਰ ਸਿੱਖਣ ਲਈ ਸਮਰਪਿਤ ਸਿਖਲਾਈ ਘੰਟੇ, ਅਤੇ ਤੁਹਾਨੂੰ ਦਿਨ ਭਰ ਊਰਜਾਵਾਨ ਰੱਖਣ ਲਈ ਤਾਜ਼ਗੀ ਭਰੇ ਚਾਹ ਬ੍ਰੇਕ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹੋਏ।"
+          "question": "What benefits do you provide?",
+          "answer": "We believe in helping our team grow through continuous learning. We offer opportunities to explore new skills, gain hands-on experience, and enhance your expertise all while providing a competitive salary, dedicated training hours for learning new skills, and refreshing tea breaks to keep you energized throughout the day."
         },
         "careerGrowth": {
-          "question": "ਤੁਸੀਂ ਕੈਰੀਅਰ ਵਿਕਾਸ ਦਾ ਸਮਰਥਨ ਕਿਵੇਂ ਕਰਦੇ ਹੋ?",
-          "answer": "ਅਸੀਂ ਆਪਣੇ ਲੋਕਾਂ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰਨ ਵਿੱਚ ਵਿਸ਼ਵਾਸ ਕਰਦੇ ਹਾਂ। ਅਸੀਂ ਮਾਰਗਦਰਸ਼ਨ ਪ੍ਰੋਗਰਾਮ, ਕਾਨਫਰੰਸ ਹਾਜ਼ਰੀ, ਅੰਦਰੂਨੀ ਗਤੀਸ਼ੀਲਤਾ ਦੇ ਮੌਕੇ, ਅਤੇ ਨਿਯਮਤ ਕੈਰੀਅਰ ਵਿਕਾਸ ਗੱਲਬਾਤ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਾਂ।"
+          "question": "How do you support career growth?",
+          "answer": "We believe in investing in our people. We provide mentorship programs, conference attendance, internal mobility opportunities, and regular career development conversations."
         },
         "culture": {
-          "question": "ਕੰਪਨੀ ਦਾ ਸੱਭਿਆਚਾਰ ਕਿਹੋ ਜਿਹਾ ਹੈ?",
-          "answer": "ਸਾਡਾ ਸੱਭਿਆਚਾਰ ਸਹਿਯੋਗ, ਨਵੀਨਤਾ ਅਤੇ ਸਤਿਕਾਰ 'ਤੇ ਬਣਿਆ ਹੈ। ਅਸੀਂ ਵਿਭਿੰਨ ਦ੍ਰਿਸ਼ਟੀਕੋਣਾਂ ਦੀ ਕਦਰ ਕਰਦੇ ਹਾਂ, ਖੁੱਲ੍ਹੇ ਸੰਚਾਰ ਨੂੰ ਉਤਸ਼ਾਹਿਤ ਕਰਦੇ ਹਾਂ, ਅਤੇ ਸ਼ਾਨਦਾਰ ਉਤਪਾਦ ਬਣਾਉਂਦੇ ਹੋਏ ਇੱਕ ਸਿਹਤਮੰਦ ਕੰਮ-ਜੀਵਨ ਸੰਤੁਲਨ ਬਣਾਈ ਰੱਖਦੇ ਹਾਂ।"
+          "question": "What is the company culture like?",
+          "answer": "Our culture is built on collaboration, innovation, and respect. We value diverse perspectives, encourage open communication, and maintain a healthy work-life balance while building amazing products."
         }
       }
     },
     "applicationForm": {
-      "title": "ਲਈ ਅਰਜ਼ੀ ਦਿਓ",
-      "subtitle": "ਆਪਣੀ ਅਰਜ਼ੀ ਜਮ੍ਹਾਂ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤਾ ਫਾਰਮ ਭਰੋ। ਅਸੀਂ 48 ਘੰਟਿਆਂ ਵਿੱਚ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਾਂਗੇ।",
+      "title": "Apply for",
+      "subtitle": "Fill out the form below to submit your application. We'll get back to you within 48 hours.",
       "fields": {
-        "firstName": "ਪਹਿਲਾ ਨਾਮ",
-        "lastName": "ਆਖਰੀ ਨਾਮ",
-        "email": "ਈਮੇਲ ਪਤਾ",
-        "phone": "ਫੋਨ ਨੰਬਰ",
-        "experience": "ਤਜਰਬੇ ਦੇ ਸਾਲ",
-        "experiencePlaceholder": "ਤਜਰਬੇ ਦਾ ਪੱਧਰ ਚੁਣੋ",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "experience": "Years of Experience",
+        "experiencePlaceholder": "Select experience level",
         "experienceOptions": {
-          "0-1": "0-1 ਸਾਲ",
-          "2-3": "2-3 ਸਾਲ",
-          "4-5": "4-5 ਸਾਲ",
-          "6-10": "6-10 ਸਾਲ",
-          "10+": "10+ ਸਾਲ"
+          "0-1": "0-1 years",
+          "2-3": "2-3 years",
+          "4-5": "4-5 years",
+          "6-10": "6-10 years",
+          "10+": "10+ years"
         },
-        "coverLetter": "ਕਵਰ ਲੈਟਰ",
-        "coverLetterPlaceholder": "ਸਾਨੂੰ ਦੱਸੋ ਕਿ ਤੁਸੀਂ ਇਸ ਭੂਮਿਕਾ ਵਿੱਚ ਕਿਉਂ ਦਿਲਚਸਪੀ ਰੱਖਦੇ ਹੋ ਅਤੇ ਕੀ ਤੁਹਾਨੂੰ ਇੱਕ ਸ਼ਾਨਦਾਰ ਫਿੱਟ ਬਣਾਉਂਦਾ ਹੈ...",
-        "resume": "ਰੈਜ਼ੂਮੇ/CV"
+        "coverLetter": "Cover Letter",
+        "coverLetterPlaceholder": "Tell us why you're interested in this role and what makes you a great fit...",
+        "resume": "Resume/CV"
       },
       "buttons": {
-        "cancel": "ਰੱਦ ਕਰੋ",
-        "submit": "ਅਰਜ਼ੀ ਜਮ੍ਹਾਂ ਕਰੋ",
-        "submitting": "ਜਮ੍ਹਾਂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+        "cancel": "Cancel",
+        "submit": "Submit Application",
+        "submitting": "Submitting..."
       },
       "toast": {
-        "success": "ਅਰਜ਼ੀ ਸਫਲਤਾਪੂਰਵਕ ਜਮ੍ਹਾਂ ਕੀਤੀ ਗਈ!",
-        "successDescription": "{jobTitle} ਲਈ ਤੁਹਾਡੀ ਅਰਜ਼ੀ ਪ੍ਰਾਪਤ ਹੋ ਗਈ ਹੈ। ਅਸੀਂ ਇਸਦੀ ਸਮੀਖਿਆ ਕਰਾਂਗੇ ਅਤੇ ਜਲਦੀ ਹੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਾਂਗੇ।",
-        "error": "ਅਰਜ਼ੀ ਜਮ੍ਹਾਂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
-        "errorDescription": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਜਾਣਕਾਰੀ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+        "success": "Application submitted successfully!",
+        "successDescription": "Your application for {jobTitle} has been received. We'll review it and get back to you soon.",
+        "error": "Failed to submit application",
+        "errorDescription": "Please check your information and try again."
       }
     }
+  },
+  "testimonialsPage": {
+    "label": "ਸਾਖੀਆਂ ਅਤੇ ਕੇਸ ਅਧਿਐਨ",
+    "title": "ਸਾਡੇ ਕਲਾਇੰਟ ਕੀ ਕਹਿੰਦੇ ਹਨ",
+    "titleHighlight": "ਕਲਾਇੰਟ",
+    "titleEnd": "ਕਹਿੰਦੇ ਹਨ",
+    "description": "ਬ੍ਰਾਂਡਾਂ ਦੀ ਇੱਕ ਚੁਣੀ ਗਈ ਲਾਈਨ ਜੋ AL-MAWA International ਨੂੰ ਭਰੋਸਾ ਕਰਦੀ ਹੈ ਉਨ੍ਹਾਂ ਦੀ ਡਿਜੀਟਲ ਮੌਜੂਦਗੀ ਨੂੰ ਆਕਾਰ ਦੇਣ ਲਈ – ਉਚ੍ਚ-ਪ੍ਰਦਰਸ਼ਨ ਸੋਸ਼ਲ ਮੀਡੀਆ ਕੈਂਪੇਨਿਆਂ ਤੋਂ ਪ੍ਰੀਮੀਅਮ, ਰੂਪਾਂਤਰਨ-ਕੇਂਦ੍ਰਿਤ ਵੈਬਸਾਈਟਾਂ ਤਕ।",
+    "badges": {
+      "services": "ਸੋਸ਼ਲ ਮੀਡੀਆ • ਵਿਜ਼ਾ • ਵੈਬ",
+      "approach": "ਰਣਨੀਤੀ • ਡਿਜ਼ਾਈਨ • ਵਿਕਾਸ"
+    },
+    "reviewsSection": {
+      "title": "ਗਾਹਕ ਸਮੀਖਿਆਵਾਂ ਅਤੇ ਫੀਡਬੈਕ",
+      "subtitle": "ਸਾਡੇ ਸੰਤੁਸ਼ਟ ਗਾਹਕਾਂ ਤੋਂ ਸਿਧਾ ਸੁਣੋ ਕਿ ਉਹਨਾਂ ਨਾਲ ਕੰਮ ਕਰਨ ਦੀ ਉਨ੍ਹਾਂ ਦੀ ਜਾਣਕਾਰੀ।"
+    }
+  },
+  "ourWorkPage": {
+    "title": "ਸਾਡਾ",
+    "titleHighlight": "ਕੰਮ",
+    "description": "ਸਾਡੇ ਡਿਜੀਟਲ ਹੱਲ ਅਤੇ ਮਾਰਕੀਟਿੰਗ ਮੁਹਿੰਮਾਂ ਦੇ ਪੋਰਟਫੋਲੀਓ ਦੀ ਖੋਜ ਕਰੋ ਜੋ ਸਾਡੇ ਗ੍ਰਾਹਕਾਂ ਲਈ ਅਸਲ ਨਤੀਜੇ ਦਿੰਦੇ ਹਨ।",
+    "badges": {
+      "services": "ਸੋਸ਼ਲ ਮੀਡੀਆ • ਵਿਜ਼ਾ • ਵੈਬ",
+      "approach": "ਰਣਨੀਤੀ • ਡਿਜ਼ਾਈਨ • ਵਿਕਾਸ"
+    },
+    "socialMediaSection": {
+      "title": "ਸਾਡਾ ਸੋਸ਼ਲ ਮੀਡੀਆ ਕੰਮ",
+      "description": "ਲੁਭਾਉਣਾ ਸੋਸ਼ਲ ਮੀਡੀਆ ਸਮੱਗਰੀ ਜੋ ਸਪਸ਼ਟਤਾ ਅਤੇ ਪ੍ਰਭਾਵ ਨਾਲ ਤੁਹਾਡੀ ਬ੍ਰਾਂਡ ਨੁਮਾਇੰਦਗੀ ਲਈ ਡਿਜ਼ਾਈਨ ਕੀਤੀ ਗਈ ਹੈ।"
+    },
+    "websiteSection": {
+      "title": "ਸਾਡੀ ਵੈਬਸਾਈਟ ਵਿਕਾਸ",
+      "description": "ਕਸਟਮ ਵੈਬਸਾਈਟ ਹੱਲ ਨਤੀਜੇ ਦੇਣ ਅਤੇ ਦੀਰਘਕਾਲੀਨ ਪ੍ਰਭਾਵ ਤਿਆਰ ਕਰਨ ਲਈ ਡਿਜ਼ਾਈਨ ਕੀਤੇ ਗਏ ਹਨ।"
+    },
+    "cardBadges": {
+      "websiteDevelopment": "ਵੈਬਸਾਈਟ ਵਿਕਾਸ"
+    },
+    "liveStatus": "ਲਾਈਵ"
+  },
+  "shareFeedbackPage": {
+    "label": "ਆਪਣਾ ਅਨੁਭਵ ਸਾਂਝਾ ਕਰੋ",
+    "title": "ਡਾਇਰੈਕਟਰ ਦਾ ਡੈਸਕ",
+    "description": "ਤੁਹਾਡੀ ਪ੍ਰਤੀਕ੍ਰਿਆ ਮਾਇਨੇ ਰਖਦੀ ਹੈ। ਸਾਡੇ ਨਾਲ ਆਪਣਾ ਅਨੁਭਵ ਸਾਂਝਾ ਕਰੋ ਅਤੇ ਸਾਨੂੰ ਬਿਹਤਰ ਹੋਣ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰੋ। ਹਰ ਸੂਝ ਨੂੰ ਸਾਡੀ ਲੀਡਰਸ਼ਿਪ ਟੀਮ ਦੁਆਰਾ ਵਿਅਕਤਿਗਤ ਤੌਰ 'ਤੇ ਸਮੀਖਿਆ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।",
+    "benefits": {
+      "title": "ਆਪਣੀ ਪ੍ਰਤੀਕ੍ਰਿਆ ਸਾਂਝੀ ਕਿਉਂ ਕਰੋ?",
+      "intro": "AL-MAWA International ਵਿੱਚ, ਤੁਹਾਡੀ ਅਵਾਜ਼ ਸਾਡੀ ਵਿਕਾਸ ਨੂੰ ਚਲਾਉਂਦੀ ਹੈ। ਹਰ ਟਿੱਪਣੀ, ਸੁਝਾਅ ਅਤੇ ਸੂਝ ਸਾਨੂੰ ਬਿਹਤਰ ਸੇਵਾਵਾਂ ਅਤੇ ਅਨੁਭਵ ਪ੍ਰਦਾਨ ਕਰਨ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰਦੀ ਹੈ।",
+      "items": [
+        {
+          "title": "ਸਿਧਾ ਸਮੀਖਿਆ ਕੀਤਾ",
+          "description": "ਤੁਹਾਡੀ ਪ੍ਰਤੀਕ੍ਰਿਆ ਸਾਡੀ ਲੀਡਰਸ਼ਿਪ ਟੀਮ ਦੁਆਰਾ ਵਿਅਕਤਿਗਤ ਤੌਰ 'ਤੇ ਸਮੀਖਿਆ ਕੀਤੀ ਜਾਂਦੀ ਹੈ"
+        },
+        {
+          "title": "ਗੁਪਤ ਅਤੇ ਸੁਰਖਿਅਤ",
+          "description": "ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਸੁਰਖਿਅਤ ਰੱਖੀ ਜਾਂਦੀ ਹੈ ਅਤੇ ਧਿਆਨ ਨਾਲ ਸੰਭਾਲੀ ਜਾਂਦੀ ਹੈ"
+        },
+        {
+          "title": "ਸਾਡੀਆਂ ਸੇਵਾਵਾਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੋ",
+          "description": "ਤੁਹਾਡੀ ਸੂਝ ਸਾਨੂੰ ਸਿਧਾ ਬਿਹਤਰ ਹੋਣ ਅਤੇ ਤੁਹਾਨੂੰ ਬਿਹਤਰ ਸੇਵਾ ਦੇਣ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰਦੀ ਹੈ"
+        }
+      ]
+    },
+    "form": {
+      "title": "ਆਪਣੀ ਪ੍ਰਤੀਕ੍ਰਿਆ ਸਾਂਝੀ ਕਰੋ",
+      "feedback": {
+        "label": "ਤੁਹਾਡੀ ਪ੍ਰਤੀਕ੍ਰਿਆ *",
+        "placeholder": "ਸਾਡੇ ਨਾਲ ਆਪਣਾ ਅਨੁਭਵ ਸਾਂਝਾ ਕਰੋ..."
+      },
+      "name": {
+        "label": "ਪੂਰਾ ਨਾਂ *",
+        "placeholder": "ਆਪਣਾ ਪੂਰਾ ਨਾਂ ਦਰਜ ਕਰੋ"
+      },
+      "email": {
+        "label": "ਈ-ਮੇਲ ਪਤਾ *",
+        "placeholder": "your@email.com"
+      },
+      "designation": {
+        "label": "ਤੁਹਾਡਾ ਨਾਂਵ / ਭੂਮਿਕਾ",
+        "placeholder": "ਜਿਵੇਂ: ਮੈਨੇਜਰ, ਵਪਾਰ ਮਾਲਕ"
+      },
+      "rating": {
+        "label": "ਆਪਣੇ ਅਨੁਭਵ ਨੂੰ ਦਰਜਾ ਦਿਓ *"
+      },
+      "image": {
+        "label": "ਆਪਣੀ ਫੋਟੋ ਅੱਪਲੋਡ ਕਰੋ (ਵਿਕਲਪਿਕ)",
+        "placeholder": "ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਕਲਿਕ ਕਰੋ"
+      },
+      "submitButton": "ਪ੍ਰਤੀਕ੍ਰਿਆ ਭੇਜੋ",
+      "submitting": "ਭੇਜ ਰਹੇ ਹਾਂ..."
+    },
+    "successMessage": "ਤੁਹਾਡੀ ਪ੍ਰਤੀਕ੍ਰਿਆ ਲਈ ਧਨਵਾਦ!",
+    "errorMessage": "ਪ੍ਰਤੀਕ੍ਰਿਆ ਭੇਜਣ ਵਿਚ ਅਸਫਲ",
+    "errorDescription": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਜਾਣਕਾਰੀ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
   }
 }

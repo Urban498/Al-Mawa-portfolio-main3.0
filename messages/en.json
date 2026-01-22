@@ -881,5 +881,95 @@
         "errorDescription": "Please check your information and try again."
       }
     }
+  },
+  "testimonialsPage": {
+    "label": "Testimonials & Case Studies",
+    "title": "What Our",
+    "titleHighlight": "Clients",
+    "titleEnd": "Say",
+    "description": "A selection of brands that trust AL-MAWA International to shape their digital presence – from high-performing social media campaigns to premium, conversion-focused websites.",
+    "badges": {
+      "services": "Social Media • Ads • Web",
+      "approach": "Strategy • Design • Development"
+    },
+    "reviewsSection": {
+      "title": "Client Reviews & Feedback",
+      "subtitle": "Hear directly from our satisfied clients about their experience working with us."
+    }
+  },
+  "ourWorkPage": {
+    "title": "Our",
+    "titleHighlight": "Work",
+    "description": "Explore our portfolio of digital solutions and marketing campaigns that drive real results for our clients.",
+    "badges": {
+      "services": "Social Media • Ads • Web",
+      "approach": "Strategy • Design • Development"
+    },
+    "socialMediaSection": {
+      "title": "Our Social Media Work",
+      "description": "Engaging social media content designed to represent your brand with clarity and impact."
+    },
+    "websiteSection": {
+      "title": "Our Website Development",
+      "description": "Custom website solutions built to deliver results and create lasting impressions."
+    },
+    "cardBadges": {
+      "websiteDevelopment": "Website Development"
+    },
+    "liveStatus": "Live"
+  },
+  "shareFeedbackPage": {
+    "label": "Share Your Experience",
+    "title": "Director's Desk",
+    "description": "Your feedback matters. Share your experience with us and help us improve. Every insight is personally reviewed by our leadership team.",
+    "benefits": {
+      "title": "Why Share Your Feedback?",
+      "intro": "At Al-Mawa International, your voice drives our growth. Every comment, suggestion, and insight helps us deliver better services and experiences.",
+      "items": [
+        {
+          "title": "Directly Reviewed",
+          "description": "Your feedback is personally reviewed by our leadership team"
+        },
+        {
+          "title": "Confidential & Secure",
+          "description": "Your information is kept safe and handled with care"
+        },
+        {
+          "title": "Impact Our Services",
+          "description": "Your insights directly help us improve and serve you better"
+        }
+      ]
+    },
+    "form": {
+      "title": "Share Your Feedback",
+      "feedback": {
+        "label": "Your Feedback *",
+        "placeholder": "Share your experience with us..."
+      },
+      "name": {
+        "label": "Full Name *",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email Address *",
+        "placeholder": "your@email.com"
+      },
+      "designation": {
+        "label": "Your Designation / Role",
+        "placeholder": "e.g., Manager, Business Owner"
+      },
+      "rating": {
+        "label": "Rate Your Experience *"
+      },
+      "image": {
+        "label": "Upload Your Photo (Optional)",
+        "placeholder": "Click to upload"
+      },
+      "submitButton": "Submit Feedback",
+      "submitting": "Sending..."
+    },
+    "successMessage": "Thank you for your feedback!",
+    "errorMessage": "Failed to submit feedback",
+    "errorDescription": "Please check your information and try again."
   }
 }

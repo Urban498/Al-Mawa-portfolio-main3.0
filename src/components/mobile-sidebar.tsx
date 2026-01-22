@@ -218,6 +218,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
   const t = useTranslations('nav');
   const [expandedServices, setExpandedServices] = useState<number[]>([]);
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Initialize component to prevent glitch
@@ -369,14 +370,39 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  href="/testimonials"
-                  onClick={handleLinkClick}
-                  className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
+              {/* Testimonials with Dropdown */}
+              <li className="pt-6">
+                <button
+                  onClick={() => {
+                    if (activeMenu === 'testimonials') {
+                      setActiveMenu(null);
+                    } else {
+                      setActiveMenu('testimonials');
+                    }
+                  }}
+                  className="flex items-center justify-between w-full text-black text-xl  hover:text-gray-600 transition-colors duration-300"
                 >
-                  {t('testimonials')}
-                </Link>
+                  <span className="text-left">{t('testimonials')}</span>
+                  <ChevronDown className={`w-6 h-6 transition-transform duration-200 ${activeMenu === 'testimonials' ? 'rotate-0' : '-rotate-90'}`} />
+                </button>
+                {activeMenu === 'testimonials' && (
+                  <div className="pl-4 pt-2 space-y-2">
+                    <Link
+                      href="/testimonials"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Testimonials
+                    </Link>
+                    <Link
+                      href="/share-feedback"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Share Feedback
+                    </Link>
+                  </div>
+                )}
               </li>
             </ul>
           </div>
