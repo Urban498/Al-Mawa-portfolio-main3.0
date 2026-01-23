@@ -107,3 +107,76 @@ export async function sendBackupCodesEmail(email: string, codes: string[]): Prom
     return false;
   }
 }
+
+// Send Job Application Confirmation Email
+export async function sendJobApplicationEmail(
+  email: string,
+  firstName: string,
+  lastName: string,
+  resumeUrl: string
+): Promise<boolean> {
+  try {
+    const mailOptions = {
+      from: process.env.EMAIL_HOST_USER,
+      to: email,
+      subject: '✅ Your Job Application Has Been Received - Al-Mawa International',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px;">
+            <h1 style="color: #1f2937; margin-bottom: 20px;">✅ Application Received</h1>
+            
+            <p style="color: #4b5563; font-size: 16px; margin-bottom: 20px;">
+              Dear <strong>${firstName} ${lastName}</strong>,
+            </p>
+            
+            <p style="color: #4b5563; font-size: 16px; margin-bottom: 20px;">
+              Thank you for applying to a position at <strong>Al-Mawa International</strong>! We appreciate your interest in joining our team.
+            </p>
+            
+            <div style="background-color: #ffffff; border-left: 4px solid #10b981; padding: 20px; border-radius: 4px; margin: 25px 0;">
+              <p style="color: #059669; font-weight: bold; margin-bottom: 10px;">📋 Application Summary</p>
+              <p style="color: #6b7280; font-size: 14px; margin: 5px 0;">
+                <strong>Applicant Name:</strong> ${firstName} ${lastName}
+              </p>
+              <p style="color: #6b7280; font-size: 14px; margin: 5px 0;">
+                <strong>Email:</strong> ${email}
+              </p>
+              
+              <p style="color: #6b7280; font-size: 14px; margin: 5px 0;">
+                <strong>Submission Date:</strong> ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+            </div>
+            
+            <p style="color: #4b5563; font-size: 16px; margin-bottom: 20px;">
+              Our recruitment team will review your application and will contact you shortly if your qualifications match our current needs. Please keep your email and phone number accessible.
+            </p>
+            
+            <div style="background-color: #eff6ff; border: 1px solid #3b82f6; padding: 15px; border-radius: 4px; margin: 20px 0;">
+              <p style="color: #1e40af; font-size: 14px; margin: 0;">
+                <strong>⏱️ Note:</strong> The recruitment process may take a few weeks. If you have any questions in the meantime, please don't hesitate to contact us.
+              </p>
+            </div>
+            
+            <p style="color: #6b7280; font-size: 14px; margin-top: 20px;">
+              Thank you for your interest in Al-Mawa International. We look forward to reviewing your qualifications!
+            </p>
+            
+            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+            
+            <p style="color: #9ca3af; font-size: 12px; text-align: center;">
+              Al-Mawa International &copy; 2026 - All rights reserved<br>
+              For inquiries, contact us at ${process.env.EMAIL_HOST_USER}
+            </p>
+          </div>
+        </div>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log('✅ Job application email sent to:', email);
+    return true;
+  } catch (error) {
+    console.error('❌ Error sending job application email:', error);
+    return false;
+  }
+}

@@ -3,6 +3,7 @@ import { connectDB } from "../libs/db";
 import jobApllyModel from "../models/job-apply-schema";
 import { v2 as cloudinary } from 'cloudinary';
 import { corsHeaders, handleOptions } from "@/lib/cors";
+import { sendJobApplicationEmail } from "../libs/jobEmailService";
 
 // Handle preflight requests
 export async function OPTIONS() {
@@ -141,10 +142,26 @@ export async function POST(request) {
     // Save to database
     const jobApplication = new jobApllyModel(jobApplicationData);
     await jobApplication.save();
+    console.log('✅ Job application saved to database:', jobApplication._id);
+
+    // Send confirmation email to applicant
+    console.log('📧 Sending job application confirmation email...');
+    const emailSent = await sendJobApplicationEmail(
+      emailAddress,
+      firstName,
+      lastName,
+      uploadResult.secure_url
+    );
+
+    if (emailSent) {
+      console.log('✅ Confirmation email sent successfully');
+    } else {
+      console.warn('⚠️ Failed to send confirmation email, but application was saved');
+    }
 
     return NextResponse.json({
       success: true,
-      message: "Job application submitted successfully",
+      message: "Job application submitted successfully. Check your email for confirmation.",
       data: {
         id: jobApplication._id,
         resumeUrl: uploadResult.secure_url,
