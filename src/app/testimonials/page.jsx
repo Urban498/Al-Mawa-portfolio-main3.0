@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   Card,
   CardHeader,
@@ -378,197 +379,9 @@ const ReviewCard = ({ review, index }) => {
   );
 };
 
-const FeedbackModal = ({ isOpen, onClose, onSubmit }) => {
-  const [formData, setFormData] = useState({
-    feedback: "",
-    name: "",
-    designation: "",
-    rating: 5,
-    image: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: name === "rating" ? parseInt(value) : value,
-    }));
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData((prev) => ({
-          ...prev,
-          image: reader.result,
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-    setFormData({
-      feedback: "",
-      name: "",
-      designation: "",
-      rating: 5,
-      image: "",
-    });
-  };
-
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] flex flex-col"
-      >
-        <div className="flex justify-between items-center mb-4 px-6 pt-6 flex-shrink-0">
-          <h2 className="text-2xl font-bold text-gray-900">Share Your Feedback</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 transition-colors"
-          >
-            <X size={24} />
-          </button>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4 overflow-y-auto flex-1 px-6">
-          {/* Feedback */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Your Feedback
-            </label>
-            <textarea
-              name="feedback"
-              value={formData.feedback}
-              onChange={handleChange}
-              required
-              placeholder="Share your experience with us..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none resize-none h-24"
-            />
-          </div>
-
-          {/* Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Your Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Enter your name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none"
-            />
-          </div>
-
-          {/* Designation */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Designation / Company
-            </label>
-            <input
-              type="text"
-              name="designation"
-              value={formData.designation}
-              onChange={handleChange}
-              placeholder="e.g., CEO at Company Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none"
-            />
-          </div>
-
-          {/* Rating */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Rating
-            </label>
-            <div className="flex items-center gap-2">
-              <select
-                name="rating"
-                value={formData.rating}
-                onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none"
-              >
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <option key={num} value={num}>
-                    {num} Star{num > 1 ? "s" : ""}
-                  </option>
-                ))}
-              </select>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={18}
-                    className={`${
-                      i < formData.rating
-                        ? "fill-yellow-400 text-yellow-400"
-                        : "text-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Image Upload */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Profile Image <span className="text-xs text-gray-500">(Optional)</span>
-            </label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-[#0ea5e9] file:text-white hover:file:bg-[#0ea5e9]/90"
-            />
-            {formData.image && (
-              <div className="mt-2 flex justify-center">
-                <img
-                  src={formData.image}
-                  alt="Preview"
-                  className="w-12 h-12 rounded-full object-cover border border-[#0ea5e9]"
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Submit Button */}
-          <div className="flex gap-3 pt-2 pb-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="flex-1 px-4 py-2 bg-[#0ea5e9] text-white rounded-lg font-medium hover:bg-[#0ea5e9]/90 transition-colors"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </motion.div>
-    </div>
-  );
-};
-
 export default function TestimonialsPage() {
+  const t = useTranslations('testimonialsPage');
   const [reviews, setReviews] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -595,34 +408,14 @@ export default function TestimonialsPage() {
       const response = await fetch('/api/reviews');
       if (response.ok) {
         const data = await response.json();
-        setReviews(data);
+        // Filter only approved reviews to display on testimonials page
+        const approvedReviews = data.filter(review => review.status === 'approved');
+        setReviews(approvedReviews);
       }
     } catch (error) {
       console.error('Error fetching reviews:', error);
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const handleAddReview = async (newReview) => {
-    try {
-      const response = await fetch('/api/reviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newReview),
-      });
-
-      if (response.ok) {
-        const updatedReviews = await response.json();
-        setReviews(updatedReviews);
-        setIsModalOpen(false);
-        setCurrentIndex(0);
-      }
-    } catch (error) {
-      console.error('Error adding review:', error);
-      alert('Failed to save review. Please try again.');
     }
   };
 
@@ -653,38 +446,27 @@ export default function TestimonialsPage() {
             className="max-w-3xl space-y-6 md:space-y-7"
           >
             <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-[#0ea5e9] font-bold">
-              Testimonials &amp; Case Studies
+              {t('label')}
             </p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
-              What Our
+              {t('title')}
               <span className="font-[family-name:var(--font-corpta)] font-light text-7xl text-[#0ea5e9]">
                 {" "}
-                Clients{" "}
+                {t('titleHighlight')}{" "}
               </span>
-              Say
+              {t('titleEnd')}
             </h1>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-              A selection of brands that trust{" "}
-              <span className="text-[#0ea5e9] font-bold">
-                AL-MAWA International
-              </span>{" "}
-              to shape their digital presence – from high-performing social
-              media campaigns to premium, conversion-focused websites.
+              {t('description')}
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-1 text-xs md:text-sm text-muted-foreground">
               <span className="rounded-full border border-border/60 bg-card/60 px-4 py-1.5 uppercase tracking-[0.22em]">
-                Social Media • Ads • Web
+                {t('badges.services')}
               </span>
               <span className="rounded-full border border-border/60 bg-card/60 px-4 py-1.5 uppercase tracking-[0.22em]">
-                Strategy • Design • Development
+                {t('badges.approach')}
               </span>
             </div>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="mt-4 px-6 py-2 bg-[#0ea5e9] text-white rounded-lg font-semibold hover:bg-[#0ea5e9]/90 transition-colors w-fit"
-            >
-              Share Your Feedback
-            </button>
           </motion.div>
         </section>
 
@@ -696,10 +478,10 @@ export default function TestimonialsPage() {
               className="mb-10 md:mb-12"
             >
               <h2 className="text-xl md:text-4xl font-semibold tracking-tight mb-3">
-                Client Reviews & Feedback
+                {t('reviewsSection.title')}
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-xl">
-                Hear directly from our satisfied clients about their experience working with us.
+              <p className="text-sm md:text-base text-muted-foreground max-w-xl whitespace-nowrap">
+                {t('reviewsSection.subtitle')}
               </p>
             </motion.div>
 
@@ -768,13 +550,6 @@ export default function TestimonialsPage() {
           </section>
         )}
       </div>
-
-      {/* Feedback Modal */}
-      <FeedbackModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleAddReview}
-      />
     </main>
   );
 }

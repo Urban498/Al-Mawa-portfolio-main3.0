@@ -970,5 +970,95 @@
         "errorDescription": "Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut."
       }
     }
+  },
+  "testimonialsPage": {
+    "label": "Testimonials und Fallstudien",
+    "title": "Was unsere",
+    "titleHighlight": "Kunden",
+    "titleEnd": "Sagen",
+    "description": "Eine Auswahl von Marken, die AL-MAWA International vertrauen, um ihre digitale Präsenz zu gestalten – von hochperformanten Social-Media-Kampagnen bis hin zu Premium-Websites mit Konversionsfokus.",
+    "badges": {
+      "services": "Soziale Medien • Anzeigen • Web",
+      "approach": "Strategie • Design • Entwicklung"
+    },
+    "reviewsSection": {
+      "title": "Kundenbewertungen und Rückmeldungen",
+      "subtitle": "Hören Sie direkt von unseren zufriedenen Kunden von ihrer Erfahrung bei der Zusammenarbeit mit uns."
+    }
+  },
+  "ourWorkPage": {
+    "title": "Unsere",
+    "titleHighlight": "Arbeit",
+    "description": "Entdecken Sie unser Portfolio digitaler Lösungen und Marketingkampagnen, die echte Ergebnisse für unsere Kunden liefern.",
+    "badges": {
+      "services": "Soziale Medien • Anzeigen • Web",
+      "approach": "Strategie • Design • Entwicklung"
+    },
+    "socialMediaSection": {
+      "title": "Unsere Social-Media-Arbeit",
+      "description": "Ansprechende Social-Media-Inhalte, die Ihre Marke mit Klarheit und Wirkung präsentieren."
+    },
+    "websiteSection": {
+      "title": "Unsere Website-Entwicklung",
+      "description": "Maßgeschneiderte Website-Lösungen zum Erzielen von Ergebnissen und Hinterlassen bleibender Eindrücke."
+    },
+    "cardBadges": {
+      "websiteDevelopment": "Website-Entwicklung"
+    },
+    "liveStatus": "Aktiv"
+  },
+  "shareFeedbackPage": {
+    "label": "Teilen Sie Ihr Feedback",
+    "title": "Schreibtisch des Direktors",
+    "description": "Ihr Feedback ist wichtig. Teilen Sie Ihre Erfahrung mit uns und helfen Sie uns, uns zu verbessern. Jede Rückmeldung wird persönlich von unserem Leitungsteam überprüft.",
+    "benefits": {
+      "title": "Warum Feedback teilen?",
+      "intro": "Bei AL-MAWA International treibt Ihre Stimme unser Wachstum an. Jeder Kommentar, Vorschlag und jede Idee hilft uns, bessere Dienstleistungen und Erfahrungen zu liefern.",
+      "items": [
+        {
+          "title": "Direkt überprüft",
+          "description": "Ihr Feedback wird persönlich von unserem Leitungsteam überprüft"
+        },
+        {
+          "title": "Vertraulich und Sicher",
+          "description": "Ihre Informationen werden sicher aufbewahrt und sorgfältig behandelt"
+        },
+        {
+          "title": "Unsere Dienstleistungen Beeinflussen",
+          "description": "Ihre Erkenntnisse helfen uns direkt, besser zu werden und Sie besser zu bedienen"
+        }
+      ]
+    },
+    "form": {
+      "title": "Teilen Sie Ihr Feedback",
+      "feedback": {
+        "label": "Ihr Feedback *",
+        "placeholder": "Teilen Sie Ihre Erfahrung mit uns..."
+      },
+      "name": {
+        "label": "Vollständiger Name *",
+        "placeholder": "Geben Sie Ihren vollständigen Namen ein"
+      },
+      "email": {
+        "label": "E-Mail-Adresse *",
+        "placeholder": "ihre@email.com"
+      },
+      "designation": {
+        "label": "Ihre Bezeichnung / Rolle",
+        "placeholder": "z.B. Manager, Geschäftsinhaber"
+      },
+      "rating": {
+        "label": "Bewerten Sie Ihre Erfahrung *"
+      },
+      "image": {
+        "label": "Laden Sie Ihr Foto Hoch (Optional)",
+        "placeholder": "Klicken zum Hochladen"
+      },
+      "submitButton": "Feedback Absenden",
+      "submitting": "Wird gesendet..."
+    },
+    "successMessage": "Danke für Ihr Feedback!",
+    "errorMessage": "Fehler beim Senden des Feedbacks",
+    "errorDescription": "Bitte überprüfen Sie Ihre Informationen und versuchen Sie es erneut."
   }
 }

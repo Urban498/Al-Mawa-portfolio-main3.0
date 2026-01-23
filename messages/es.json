@@ -880,5 +880,95 @@
         "errorDescription": "Por favor, verifique su información e inténtelo de nuevo."
       }
     }
+  },
+  "testimonialsPage": {
+    "label": "Testimonios y Casos de Estudio",
+    "title": "Lo que dicen nuestros",
+    "titleHighlight": "Clientes",
+    "titleEnd": "Dicen",
+    "description": "Una selección de marcas que confían en AL-MAWA International para dar forma a su presencia digital, desde campañas de redes sociales de alto rendimiento hasta sitios web premium enfocados en la conversión.",
+    "badges": {
+      "services": "Redes Sociales • Anuncios • Web",
+      "approach": "Estrategia • Diseño • Desarrollo"
+    },
+    "reviewsSection": {
+      "title": "Reseñas y Comentarios de Clientes",
+      "subtitle": "Escuche directamente de nuestros clientes satisfechos sobre su experiencia trabajando con nosotros."
+    }
+  },
+  "ourWorkPage": {
+    "title": "Nuestro",
+    "titleHighlight": "Trabajo",
+    "description": "Explore nuestro portafolio de soluciones digitales y campañas de marketing que generan resultados reales para nuestros clientes.",
+    "badges": {
+      "services": "Redes Sociales • Anuncios • Web",
+      "approach": "Estrategia • Diseño • Desarrollo"
+    },
+    "socialMediaSection": {
+      "title": "Nuestro Trabajo en Redes Sociales",
+      "description": "Contenido atractivo de redes sociales diseñado para representar su marca con claridad e impacto."
+    },
+    "websiteSection": {
+      "title": "Nuestro Desarrollo de Sitios Web",
+      "description": "Soluciones de sitios web personalizadas diseñadas para generar resultados e impresiones duraderas."
+    },
+    "cardBadges": {
+      "websiteDevelopment": "Desarrollo de Sitios Web"
+    },
+    "liveStatus": "En Vivo"
+  },
+  "shareFeedbackPage": {
+    "label": "Comparte tu Experiencia",
+    "title": "Escritorio del Director",
+    "description": "Su opinión es importante. Comparta su experiencia con nosotros y ayúdenos a mejorar. Cada perspectiva es revisada personalmente por nuestro equipo de liderazgo.",
+    "benefits": {
+      "title": "¿Por qué compartir su opinión?",
+      "intro": "En AL-MAWA International, su voz impulsa nuestro crecimiento. Cada comentario, sugerencia e idea nos ayuda a entregar mejores servicios y experiencias.",
+      "items": [
+        {
+          "title": "Revisado Directamente",
+          "description": "Su opinión es revisada personalmente por nuestro equipo de liderazgo"
+        },
+        {
+          "title": "Confidencial y Seguro",
+          "description": "Su información se mantiene segura y se maneja con cuidado"
+        },
+        {
+          "title": "Impacto en Nuestros Servicios",
+          "description": "Sus perspectivas nos ayudan directamente a mejorar y servirle mejor"
+        }
+      ]
+    },
+    "form": {
+      "title": "Comparte tu Opinión",
+      "feedback": {
+        "label": "Tu Opinión *",
+        "placeholder": "Comparte tu experiencia con nosotros..."
+      },
+      "name": {
+        "label": "Nombre Completo *",
+        "placeholder": "Ingresa tu nombre completo"
+      },
+      "email": {
+        "label": "Dirección de Correo Electrónico *",
+        "placeholder": "tu@email.com"
+      },
+      "designation": {
+        "label": "Tu Designación / Rol",
+        "placeholder": "Ej: Gerente, Dueño de Negocio"
+      },
+      "rating": {
+        "label": "Califica tu Experiencia *"
+      },
+      "image": {
+        "label": "Carga tu Foto (Opcional)",
+        "placeholder": "Haz clic para cargar"
+      },
+      "submitButton": "Enviar Opinión",
+      "submitting": "Enviando..."
+    },
+    "successMessage": "¡Gracias por tu opinión!",
+    "errorMessage": "Error al enviar la opinión",
+    "errorDescription": "Por favor verifica tu información e intenta de nuevo."
   }
 }

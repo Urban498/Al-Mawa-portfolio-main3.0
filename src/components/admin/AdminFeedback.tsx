@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Trash2, RefreshCw, Eye, EyeOff, Search, X } from "lucide-react";
+import { Trash2, RefreshCw, Eye, EyeOff, Search, X, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -14,6 +14,7 @@ interface Review {
   rating: number;
   image?: string;
   createdAt?: string;
+  status?: 'pending' | 'approved' | 'rejected';
 }
 
 interface ReviewToDelete {
@@ -25,6 +26,7 @@ export default function AdminFeedback() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [deleting, setDeleting] = useState<number | null>(null);
+  const [approving, setApproving] = useState<number | null>(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [reviewToDelete, setReviewToDelete] = useState<ReviewToDelete | null>(null);
   const [expandedReviews, setExpandedReviews] = useState<number[]>([]);
@@ -58,6 +60,32 @@ export default function AdminFeedback() {
         ? prev.filter((i) => i !== index)
         : [...prev, index]
     );
+  };
+
+  const handleApprove = async (index: number, status: 'approved' | 'rejected') => {
+    try {
+      setApproving(index);
+      const response = await fetch(`/api/reviews?index=${index}`, {
+        method: "PATCH",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setReviews(data.reviews);
+        toast.success(`Feedback ${status} successfully!`);
+      } else {
+        toast.error("Failed to update feedback status");
+      }
+    } catch (error) {
+      console.error("Error updating review status:", error);
+      toast.error("Error updating feedback status");
+    } finally {
+      setApproving(null);
+    }
   };
 
   const handleDelete = async (index: number) => {
@@ -95,6 +123,28 @@ export default function AdminFeedback() {
       review.feedback.toLowerCase().includes(searchLower)
     );
   });
+
+  const getStatusColor = (status?: string) => {
+    switch (status) {
+      case 'approved':
+        return 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800';
+      case 'rejected':
+        return 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800';
+      default:
+        return 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800';
+    }
+  };
+
+  const getStatusBadgeColor = (status?: string) => {
+    switch (status) {
+      case 'approved':
+        return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100';
+      case 'rejected':
+        return 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100';
+      default:
+        return 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100';
+    }
+  };
 
   if (isLoading) {
     return (
@@ -184,7 +234,7 @@ export default function AdminFeedback() {
         ) : (
           <div className="space-y-4">
             {filteredReviews.map((review, index) => (
-              <Card key={index} className="border border-gray-200 dark:border-gray-700">
+              <Card key={index} className={`border transition-all ${getStatusColor(review.status)}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                     <div className="flex-1">
@@ -204,6 +254,13 @@ export default function AdminFeedback() {
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             {review.designation}
                           </p>
+                          <div className="mt-2">
+                            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getStatusBadgeColor(review.status)}`}>
+                              {review.status === 'approved' && <CheckCircle2 className="inline w-3 h-3 mr-1" />}
+                              {review.status === 'rejected' && <XCircle className="inline w-3 h-3 mr-1" />}
+                              {review.status ? review.status.charAt(0).toUpperCase() + review.status.slice(1) : 'Pending'}
+                            </span>
+                          </div>
                         </div>
                         <div className="flex items-center gap-2 ml-4">
                           <div className="flex items-center gap-1">
@@ -238,7 +295,7 @@ export default function AdminFeedback() {
                       )}
                     </div>
 
-                    <div className="flex gap-2">
+                    <div className="flex flex-col gap-2">
                       <Button
                         onClick={() => toggleReviewExpansion(index)}
                         variant="ghost"
@@ -257,6 +314,32 @@ export default function AdminFeedback() {
                           </>
                         )}
                       </Button>
+
+                      {review.status !== 'approved' && (
+                        <Button
+                          onClick={() => handleApprove(index, 'approved')}
+                          disabled={approving === index}
+                          variant="default"
+                          size="sm"
+                          className="bg-green-600 hover:bg-green-700 flex items-center gap-2"
+                        >
+                          <CheckCircle2 className="w-4 h-4" />
+                          {approving === index ? "Approving..." : "Approve"}
+                        </Button>
+                      )}
+
+                      {review.status !== 'rejected' && (
+                        <Button
+                          onClick={() => handleApprove(index, 'rejected')}
+                          disabled={approving === index}
+                          variant="outline"
+                          size="sm"
+                          className="text-red-600 hover:text-red-700 border-red-200 hover:border-red-300 flex items-center gap-2"
+                        >
+                          <XCircle className="w-4 h-4" />
+                          {approving === index ? "Rejecting..." : "Reject"}
+                        </Button>
+                      )}
 
                       <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
                         <DialogTrigger asChild>

@@ -970,5 +970,95 @@
         "errorDescription": "情報を確認して、もう一度お試しください。"
       }
     }
+  },
+  "testimonialsPage": {
+    "label": "証言とケーススタディ",
+    "title": "私たちのクライアントが言うことは",
+    "titleHighlight": "クライアント",
+    "titleEnd": "言う",
+    "description": "AL-MAWA Internationalを信頼して、デジタルプレゼンスを形作るブランドのセレクション—高パフォーマンスのソーシャルメディアキャンペーンからコンバージョンに焦点を当てたプレミアムWebサイトまで。",
+    "badges": {
+      "services": "ソーシャルメディア • 広告 • ウェブ",
+      "approach": "戦略 • デザイン • 開発"
+    },
+    "reviewsSection": {
+      "title": "クライアントレビューとフィードバック",
+      "subtitle": "私たちと一緒に仕事をすることについて、満足しているクライアントから直接聞いてください。"
+    }
+  },
+  "ourWorkPage": {
+    "title": "私たちの",
+    "titleHighlight": "仕事",
+    "description": "クライアントに実際の結果をもたらすデジタルソリューションとマーケティングキャンペーンのポートフォリオを探索します。",
+    "badges": {
+      "services": "ソーシャルメディア • 広告 • ウェブ",
+      "approach": "戦略 • デザイン • 開発"
+    },
+    "socialMediaSection": {
+      "title": "私たちのソーシャルメディアの仕事",
+      "description": "あなたのブランドを明確さと影響力で表現するために設計された、魅力的なソーシャルメディアコンテンツ。"
+    },
+    "websiteSection": {
+      "title": "私たちのWebサイト開発",
+      "description": "結果をもたらし、永続的な印象を残すように設計されたカスタムWebサイトソリューション。"
+    },
+    "cardBadges": {
+      "websiteDevelopment": "Webサイト開発"
+    },
+    "liveStatus": "ライブ"
+  },
+  "shareFeedbackPage": {
+    "label": "あなたの経験を共有する",
+    "title": "ディレクターのデスク",
+    "description": "あなたのフィードバックは重要です。私たちとあなたの経験を共有し、改善を支援してください。すべての洞察は、リーダーシップチームが個人的にレビューします。",
+    "benefits": {
+      "title": "フィードバックを共有する理由は？",
+      "intro": "AL-MAWA Internationalでは、あなたの声が私たちの成長を推進します。すべてのコメント、提案、洞察は、より良いサービスと経験を提供するのに役立ちます。",
+      "items": [
+        {
+          "title": "直接レビュー済み",
+          "description": "あなたのフィードバックはリーダーシップチームが個人的にレビューしています"
+        },
+        {
+          "title": "機密で安全",
+          "description": "あなたの情報は安全に保たれ、注意深く処理されます"
+        },
+        {
+          "title": "私たちのサービスに影響を与える",
+          "description": "あなたの洞察は、私たちが改善し、あなたにより良くサービスするのに直接役立ちます"
+        }
+      ]
+    },
+    "form": {
+      "title": "あなたのフィードバックを共有する",
+      "feedback": {
+        "label": "あなたのフィードバック *",
+        "placeholder": "私たちとあなたの経験を共有してください..."
+      },
+      "name": {
+        "label": "フルネーム *",
+        "placeholder": "フルネームを入力してください"
+      },
+      "email": {
+        "label": "メールアドレス *",
+        "placeholder": "your@email.com"
+      },
+      "designation": {
+        "label": "あなたの呼称/役割",
+        "placeholder": "例：マネージャー、ビジネスオーナー"
+      },
+      "rating": {
+        "label": "あなたの経験を評価してください *"
+      },
+      "image": {
+        "label": "あなたの写真をアップロードしてください（オプション）",
+        "placeholder": "アップロードするにはクリック"
+      },
+      "submitButton": "フィードバックを送信",
+      "submitting": "送信中..."
+    },
+    "successMessage": "あなたのフィードバックをありがとうございました！",
+    "errorMessage": "フィードバック送信に失敗しました",
+    "errorDescription": "情報を確認してもう一度お試しください。"
   }
 }

@@ -406,18 +406,39 @@ export const NavBar = () => {
                   </Link>
                 </li>
 
-                  {/* Testimonials Link */}
-                <li>
-                  <Link
-                    href="/testimonials"
-                    aria-current={pathname === "/testimonials" ? "page" : undefined}
+                {/* Testimonials Link with Dropdown */}
+                <li className="relative group">
+                  <div
                     className={cn(
+                      "relative inline-flex items-center gap-1 cursor-pointer",
                       navLinkBaseClass,
-                      pathname === "/testimonials" && navLinkActiveClass
+                      (pathname === "/testimonials" || pathname === "/share-feedback") && navLinkActiveClass,
+                      "group-hover:after:w-full"
                     )}
                   >
-                    <span>{t('testimonials')}</span>
-                  </Link>
+                    <span className="flex gap-1">{t('testimonials')} <ChevronDown className="w-3 h-3 my-auto transition-transform group-hover:rotate-180" /></span>
+                  </div>
+
+                  {/* Testimonials Dropdown */}
+                  <div
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
+                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
+                  >
+                    <div className="bg-white border border-white/20 shadow-2xl py-3 rounded-xl w-fit min-w-[200px]">
+                      <Link
+                        href="/testimonials"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                      >
+                        Testimonials
+                      </Link>
+                      <Link
+                        href="/share-feedback"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                      >
+                        Director&apos;s Desk
+                      </Link>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>

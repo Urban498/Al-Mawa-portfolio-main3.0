@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   Card,
   CardHeader,
@@ -201,7 +202,7 @@ const SocialMediaCard = ({ item, index }) => {
 // ----------------------
 // Website Card Component
 // ----------------------
-const WebsiteCard = ({ site, index }) => {
+const WebsiteCard = ({ site, index, t }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -262,7 +263,7 @@ const WebsiteCard = ({ site, index }) => {
             <div className="absolute top-4 left-4 z-10">
               <div className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-xl border border-gray-200">
                 <span className="text-[10px] font-semibold tracking-[0.2em] text-blue-600 uppercase">
-                  Website Development
+                  {t('cardBadges.websiteDevelopment')}
                 </span>
               </div>
             </div>
@@ -307,7 +308,7 @@ const WebsiteCard = ({ site, index }) => {
             <div className="flex items-center gap-4 mt-3 text-xs text-gray-500">
               <div className="flex items-center gap-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                <span>Live</span>
+                <span>{t('liveStatus')}</span>
               </div>
             </div>
           </div>
@@ -324,6 +325,7 @@ const WebsiteCard = ({ site, index }) => {
 // Page Component
 // ----------------------
 export default function OurWorkPage() {
+  const t = useTranslations('ourWorkPage');
   return (
     <main
       className={`min-h-screen bg-gradient-to-b from-background via-muted to-card text-foreground ${corpta.variable}`}
@@ -339,21 +341,21 @@ export default function OurWorkPage() {
               Our Portfolio
             </p> */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
-              Our
+              {t('title')}
               <span className="font-[family-name:var(--font-corpta)] font-light text-7xl text-[#0ea5e9]">
                 {" "}
-                Work{" "}
+                {t('titleHighlight')}{" "}
               </span>
             </h1>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-              Explore our portfolio of digital solutions and marketing campaigns that drive real results for our clients.
+              {t('description')}
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-1 text-xs md:text-sm text-muted-foreground">
               <span className="rounded-full border border-border/60 bg-card/60 px-4 py-1.5 uppercase tracking-[0.22em]">
-                Social Media • Ads • Web
+                {t('badges.services')}
               </span>
               <span className="rounded-full border border-border/60 bg-card/60 px-4 py-1.5 uppercase tracking-[0.22em]">
-                Strategy • Design • Development
+                {t('badges.approach')}
               </span>
             </div>
           </motion.div>
@@ -372,11 +374,10 @@ export default function OurWorkPage() {
           >
             <div className="space-y-3">
               <h2 className="text-xl md:text-4xl font-semibold tracking-tight">
-                Our Social Media Work
+                {t('socialMediaSection.title')}
               </h2>
               <p className="text-sm md:text-base text-muted-foreground max-w-xl">
-                Engaging social media content designed to represent your brand
-                with clarity and impact.
+                {t('socialMediaSection.description')}
               </p>
             </div>
           </motion.div>
@@ -400,18 +401,17 @@ export default function OurWorkPage() {
           >
             <div className="space-y-3">
               <h2 className="text-xl md:text-4xl font-semibold tracking-tight">
-                Websites We Built
+                {t('websiteSection.title')}
               </h2>
               <p className="text-sm md:text-base text-muted-foreground max-w-xl">
-                Explore our portfolio of custom website solutions built for
-                businesses of all sizes.
+                {t('websiteSection.description')}
               </p>
             </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8">
             {websiteProjects.map((site, index) => (
-              <WebsiteCard key={site.name + index} site={site} index={index} />
+              <WebsiteCard key={site.name + index} site={site} index={index} t={t} />
             ))}
           </div>
         </section>
