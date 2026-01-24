@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const contactInfo = [
   { icon: Mail, text: "business@al-mawa.international", href: "mailto:business@al-mawa.international" },
-  { icon: Phone, text: "+91 9561179693", href: "tel:+91 9561179693" },
+  { icon: Phone, text: "+91 9561179693 | 9511991736", href: "tel:+91 9561179693" },
   { icon: MapPin, text: "AL-MAWA INTERNATIONAL Location", href: "https://www.google.com/maps/search/?api=1&query=AL-MAWA+INTERNATIONAL+Office+No.+102-103,+%28+Nexus+Work+Spaces%29+1st+Floor,+Pride+icon+Building,+Above+Athithi+Restaurant,+Kharadi+Bypass+Road,+Kharadi,+Pune,+Maharashtra,+India+411014" },
 ];
 

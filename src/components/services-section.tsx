@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Code, Megaphone, Brush, Brain } from "lucide-react";
+import { Code, Megaphone, Brush, Brain, Cloud } from "lucide-react";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { useTranslations } from 'next-intl';
@@ -41,9 +41,49 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
+  },
+  hover: {
+    y: -12,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+const iconVariants = {
+  hidden: { scale: 0, rotate: -180 },
+  visible: {
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  hover: {
+    scale: 1.2,
+    rotate: 15,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
+
+const featureVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.05 + 0.2,
+      duration: 0.4,
+    },
+  }),
+  hover: {
+    x: 5,
+    transition: { duration: 0.2 },
   },
 };
 
@@ -82,6 +122,12 @@ export default function ServicesSection() {
       color: "from-indigo-500 to-blue-600",
       href: "/services/consulting",
     },
+    {
+      id: "cloudSolutions",
+      icon: <Cloud className="w-8 h-8" />,
+      color: "from-sky-500 to-blue-400",
+      href: "/services/cloud-solutions",
+    },
   ];
 
   return (
@@ -115,55 +161,76 @@ export default function ServicesSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {services.map((service) => (
+        {services.map((service) => (
             <motion.div
               key={service.id}
               variants={cardVariants}
-              whileHover={{
-                y: -5,
-                transition: { duration: 0.2 },
-              }}
+              whileHover="hover"
+              className="h-full"
             >
-              <Card className="h-full group hover:shadow-xl transition-all duration-300 border-border/50 hover:border-border bg-card/50 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}
+              <Card className="h-full group relative overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gradient-to-r from-transparent via-blue-200 to-transparent hover:border-blue-300 bg-gradient-to-br from-card/80 via-card/50 to-card/40 backdrop-blur-md hover:backdrop-blur-lg">
+                {/* Animated background gradient on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
+                </div>
+
+                <CardHeader className="pb-4 relative z-10">
+                  <motion.div
+                    variants={iconVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    whileHover="hover"
+                    className={`w-20 h-20 rounded-3xl bg-gradient-to-r ${service.color} p-4 mb-4 group-hover:shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center`}
                   >
                     <div className="text-white w-full h-full flex items-center justify-center">
                       {service.icon}
                     </div>
-                  </div>
+                  </motion.div>
                   <CardTitle
-                    className={`text-xl font-semibold text-foreground group-hover:text-2xl transition-all duration-300 ease-in-out ${inter.className}`}
+                    className={`text-2xl font-bold text-foreground group-hover:text-3xl transition-all duration-300 ease-in-out ${inter.className}`}
                   >
                     {t(`${service.id}.title`)}
                   </CardTitle>
                   <CardDescription
-                    className={`text-muted-foreground leading-relaxed uppercase ${inter.className}`}
+                    className={`text-muted-foreground leading-relaxed text-sm group-hover:text-foreground/80 transition-colors duration-300 ${inter.className}`}
                   >
                     {t(`${service.id}.description`)}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="pt-0">
+                <CardContent className="pt-0 relative z-10">
                   <div className="space-y-3 mb-6">
                     {t.raw(`${service.id}.features`).map((feature: string, index: number) => (
-                      <div
+                      <motion.div
                         key={index}
-                        className="flex items-center text-sm text-muted-foreground"
+                        custom={index}
+                        variants={featureVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        whileHover="hover"
+                        className="flex items-center text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300"
                       >
-                        <div
-                          className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.color} mr-3 flex-shrink-0`}
+                        <motion.div
+                          className={`w-3 h-3 rounded-full bg-gradient-to-r ${service.color} mr-3 flex-shrink-0 shadow-md`}
+                          whileHover={{ scale: 1.5 }}
                         />
-                        {feature}
-                      </div>
+                        <span className="font-medium">{feature}</span>
+                      </motion.div>
                     ))}
                   </div>
 
                   <Link href={service.href}>
-                    <Button size="lg" className="animated-border-button text-lg w-full no-animated-hover">
-                      <span>{t('learnMore')}</span>
-                    </Button>
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button 
+                        size="lg" 
+                        className="animated-border-button text-lg w-full no-animated-hover bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
+                      >
+                        <span>{t('learnMore')}</span>
+                      </Button>
+                    </motion.div>
                   </Link>
                 </CardContent>
               </Card>

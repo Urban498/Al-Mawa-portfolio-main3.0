@@ -38,6 +38,7 @@ export default function ShareFeedback() {
     feedback: "",
     name: "",
     email: "",
+    mobile: "",
     designation: "",
     rating: 5,
     image: "",
@@ -83,6 +84,7 @@ export default function ShareFeedback() {
           feedback: "",
           name: "",
           email: "",
+          mobile: "",
           designation: "",
           rating: 5,
           image: "",
@@ -205,6 +207,22 @@ export default function ShareFeedback() {
                       onChange={handleChange}
                       required
                       placeholder={t('form.email.placeholder')}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+
+                  {/* Mobile Number */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-900 mb-2">
+                      {t('form.mobile.label')}
+                    </label>
+                    <input
+                      type="tel"
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      required
+                      placeholder={t('form.mobile.placeholder')}
                       className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
                     />
                   </div>

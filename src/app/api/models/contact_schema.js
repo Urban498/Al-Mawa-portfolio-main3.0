@@ -6,6 +6,7 @@ firstname:{type:String,required: true},
 lastName:{type:String,required: true},
 emailAddress:{type:String,required:true},
 phoneNumber:{type:Number,required:true},
+mobileNumber:{type:Number,required:true},
 selecetCountry:{type:String,required:true},
 subject:{type:String,required:true},
 tellUSAboutYou:{type:String,required:true}
