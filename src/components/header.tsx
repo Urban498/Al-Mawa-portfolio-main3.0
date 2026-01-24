@@ -109,32 +109,51 @@ const servicesData = [
           // },
         ],
       },
-      {
-        name: "Digital Marketing",
-        href: "/services/email-whatsapp-sms-marketing",
-        subItems: [
-          {
-            name: "Email Marketing Services",
-            href: "/services/email-whatsapp-sms-marketing",
-          },
-          {
-            name: "WhatsApp Marketing Services",
-            href: "/services/email-whatsapp-sms-marketing",
-          },
-          {
-            name: "SMS Marketing Services",
-            href: "/services/email-whatsapp-sms-marketing",
-          },
-          {
-            name: "Omnichannel Integration",
-            href: "/services/email-whatsapp-sms-marketing",
-          },
-          // {
-          //   name: "Benefits of Email, WhatsApp & SMS Marketing",
-          //   href: "/services/email-whatsapp-sms-marketing",
-          // },
-        ],
-      },
+     {
+  name: "Digital Marketing",
+  href: "/services/email-whatsapp-sms-marketing",
+  subItems: [
+    {
+      name: "Email Marketing Services",
+      href: "/services/email-whatsapp-sms-marketing",
+    },
+    {
+      name: "WhatsApp Marketing Services",
+      href: "/services/email-whatsapp-sms-marketing",
+    },
+    {
+      name: "SMS Marketing Services",
+      href: "/services/email-whatsapp-sms-marketing",
+    },
+    {
+      name: "Omnichannel Integration",
+      href: "/services/email-whatsapp-sms-marketing",
+    },
+
+    // ✅ New additions
+    {
+      name: "RCS Messaging Services",
+      href: "/services/rcs-marketing",
+    },
+    {
+      name: "Push Notification Services",
+      href: "/services/push-notifications",
+    },
+    {
+      name: "Marketing Automation",
+      href: "/services/marketing-automation",
+    },
+    {
+      name: "Customer Journey & Drip Campaigns",
+      href: "/services/drip-campaigns",
+    },
+    {
+  name: "Chatbot Marketing Services",
+  href: "/services/chatbot-marketing",
+}
+
+  ],
+},
       {
         name: "Graphic Design",
         href: "/services/branding-graphic-design",
