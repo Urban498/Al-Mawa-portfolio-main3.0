@@ -112,8 +112,7 @@ export async function sendBackupCodesEmail(email: string, codes: string[]): Prom
 export async function sendJobApplicationEmail(
   email: string,
   firstName: string,
-  lastName: string,
-  resumeUrl: string
+  lastName: string
 ): Promise<boolean> {
   try {
     const mailOptions = {

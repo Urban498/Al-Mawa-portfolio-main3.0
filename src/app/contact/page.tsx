@@ -103,13 +103,13 @@ const getContactInfo = (t: (key: string) => string) => [
   {
     icon: <Mail className="w-6 h-6" />,
     title: t('contactInfo.email.title'),
-    value: ["business@al-mawa.international", "hr@al-mawa.international"],
+    value: ["business@al-mawa.international", "hr@al-mawa.international", "legal@al-mawa.international", "sales@al-mawa.international"],
     description: t('contactInfo.email.description'),
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: t('contactInfo.phone.title'),
-    value: ["+91 9561179693", "+91 9561186693", "+91 9561106693"],
+    value: ["+91 9561179693", "+91 9511991736", "+91 9028322363"],
     description: t('contactInfo.phone.description'),
   },
   {
@@ -168,6 +168,7 @@ export default function ContactPage() {
     lastName: "",
     emailAddress: "",
     phoneNumber: "",
+    mobileNumber: "",
     selecetCountry: "",
     subject: "",
     tellUSAboutYou: "",
@@ -218,6 +219,7 @@ export default function ContactPage() {
       const response = await api.post("/contact-us", {
         ...formData,
         phoneNumber: parseInt(formData.phoneNumber, 10),
+        mobileNumber: parseInt(formData.mobileNumber, 10),
       });
 
       console.log("✅ Form submitted successfully:", response.data);
@@ -231,6 +233,7 @@ export default function ContactPage() {
         lastName: "",
         emailAddress: "",
         phoneNumber: "",
+        mobileNumber: "",
         selecetCountry: "",
         subject: "",
         tellUSAboutYou: "",
@@ -403,6 +406,22 @@ export default function ContactPage() {
                       placeholder={t('phoneNumber')}
                       type="tel"
                       value={formData.phoneNumber}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 1.15 }}
+                  >
+                    <Input
+                      name="mobileNumber"
+                      placeholder={t('mobileNumber')}
+                      type="tel"
+                      value={formData.mobileNumber}
                       onChange={handleInputChange}
                       required
                       className="w-full p-4 border-b text-black placeholder:text-gray-400 hover:border-b-2 border-gray-400 focus:outline-none focus:ring-b-2 focus:ring-black"

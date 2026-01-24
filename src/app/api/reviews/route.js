@@ -40,6 +40,7 @@ async function sendFeedbackToDirector(feedback) {
             <div style="background-color: #ffffff; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p style="color: #6b7280; margin: 10px 0;"><strong>Client Name:</strong> ${feedback.name || 'N/A'}</p>
               <p style="color: #6b7280; margin: 10px 0;"><strong>Email:</strong> ${feedback.email || 'N/A'}</p>
+              <p style="color: #6b7280; margin: 10px 0;"><strong>Mobile Number:</strong> ${feedback.mobile || 'N/A'}</p>
               <p style="color: #6b7280; margin: 10px 0;"><strong>Designation:</strong> ${feedback.designation || 'N/A'}</p>
               <p style="color: #6b7280; margin: 10px 0;"><strong>Rating:</strong> ${'⭐'.repeat(feedback.rating || 5)}</p>
               <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 15px 0;">

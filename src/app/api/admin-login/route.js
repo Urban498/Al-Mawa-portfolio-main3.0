@@ -7,7 +7,7 @@ import AdminOTP from "../models/AdminOTP";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { email, password, otp, backupCode, step } = body;
+    const { email, password, otp, step } = body;
 
     // STEP 1: Initial login with credentials
     if (step === 1) {

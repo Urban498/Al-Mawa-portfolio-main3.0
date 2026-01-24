@@ -171,6 +171,11 @@
       "description": "Soluciones de inteligencia artificial de vanguardia que incluyen aprendizaje automático, automatización y analítica de datos para revolucionar su negocio.",
       "features": ["Soluciones de Aprendizaje Automático", "Servicios de Visión por Computadora", "Servicios de IA Generativa", "Servicios de Automatización con IA"]
     },
+    "cloudSolutions": {
+      "title": "Soluciones en la Nube",
+      "description": "Infraestructura y servicios en la nube escalables para aplicaciones modernas, garantizando confiabilidad, seguridad y eficiencia de costos.",
+      "features": ["Migración a la Nube", "Infraestructura en la Nube", "Recuperación ante Desastres", "Optimización en la Nube"]
+    },
     "learnMore": "Saber más"
   },
   "team": {
@@ -952,6 +957,10 @@
       "email": {
         "label": "Dirección de Correo Electrónico *",
         "placeholder": "tu@email.com"
+      },
+      "mobile": {
+        "label": "Número de Teléfono Móvil *",
+        "placeholder": "Ingresa tu número de teléfono móvil"
       },
       "designation": {
         "label": "Tu Designación / Rol",

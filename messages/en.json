@@ -78,6 +78,7 @@
     "lastName": "Last Name",
     "emailAddress": "Email Address",
     "phoneNumber": "Phone Number",
+    "mobileNumber": "Mobile Number",
     "selectCountry": "Select country",
     "subject": "Subject",
     "projectDescription": "Tell us about your project and how we can help bring your vision to life...",
@@ -95,22 +96,22 @@
     "otherWaysDescription": "Choose the method that works best for you. We're always here to help!",
     "contactInfo": {
       "email": {
-        "title": "Email",
+        "title": "Email Us",
         "description": "Send us an email anytime"
       },
       "phone": {
         "title": "Phone",
-        "description": "Mon – Sat: 9:00 AM – 7:00 PM"
+        "description": "Mon - Sat: 10:00 AM - 06:00 PM"
       },
       "office": {
-        "title": "Office",
+        "title": "Our Registered & Corporate address",
         "address": "AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces)",
         "description": "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014"
       },
       "workingHours": {
         "title": "Working Hours",
-        "hours": "Mon – Sat: 9:00 AM – 7:00 PM",
-        "description": "* Closed on 1st & 3rd Saturdays"
+        "hours": "10:00 AM - 06:00 PM",
+        "description": ""
       }
     }
   },
@@ -170,6 +171,11 @@
       "title": "AI Services",
       "description": "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
       "features": ["Machine Learning Solutions", "Computer Vision Services", "Generative AI Services", "AI Automation Services"]
+    },
+    "cloudSolutions": {
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure and services for modern applications, ensuring reliability, security, and cost efficiency.",
+      "features": ["Cloud Migration", "Cloud Infrastructure", "Disaster Recovery", "Cloud Optimization"]
     },
     "learnMore": "Learn more"
   },
@@ -953,6 +959,10 @@
       "email": {
         "label": "Email Address *",
         "placeholder": "your@email.com"
+      },
+      "mobile": {
+        "label": "Mobile Number *",
+        "placeholder": "Enter your mobile number"
       },
       "designation": {
         "label": "Your Designation / Role",

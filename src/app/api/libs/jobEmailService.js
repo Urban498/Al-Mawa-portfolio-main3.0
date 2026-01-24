@@ -15,8 +15,7 @@ const transporter = nodemailer.createTransport({
 export async function sendJobApplicationEmail(
   email,
   firstName,
-  lastName,
-  resumeUrl
+  lastName
 ) {
   try {
     const mailOptions = {

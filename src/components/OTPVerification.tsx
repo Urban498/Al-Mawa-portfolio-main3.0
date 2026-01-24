@@ -80,9 +80,7 @@ const OTPVerification = ({
     }
   };
 
-  const handleBackupCodeSubmit: SubmitHandler<OTPFormData> = async (data) => {
-    // Backup code functionality removed
-  };
+  // Backup code submission functionality has been removed
 
   return (
     <section className="flex min-h-screen items-center justify-center bg-zinc-50 px-4 py-16 dark:bg-zinc-900">

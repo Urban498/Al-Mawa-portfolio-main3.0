@@ -3,6 +3,8 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback } from "react";
 import { Inter } from "next/font/google";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -88,36 +90,63 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-6 py-4",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, id) => (
-          <li
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-border bg-gradient-to-b from-card to-muted px-8 py-6 md:w-[450px]"
+          <motion.li
             key={id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: id * 0.1 }}
+            whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            className="relative w-[350px] max-w-full shrink-0 rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50/80 via-white to-blue-50/40 px-8 py-8 md:w-[450px] hover:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 backdrop-blur-sm"
           >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className={`relative z-20 text-sm leading-[1.6] font-normal text-foreground  ${inter.className}`}>
-                {item.description}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className={`text-sm leading-[1.6] font-normal text-foreground  ${inter.className}`}>
+            {/* Animated background gradient */}
+            <div className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 rounded-3xl" />
+            </div>
+
+            {/* Animated quote icon */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 0.2, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="absolute top-4 right-4"
+            >
+              <Quote className="w-8 h-8 text-blue-400" />
+            </motion.div>
+
+            <blockquote className="relative z-20">
+              <motion.span 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={`relative z-20 text-sm leading-[1.8] font-medium text-gray-700 ${inter.className}`}
+              >
+                &quot;{item.description}&quot;
+              </motion.span>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative z-20 mt-6 flex flex-row items-center gap-4 border-t border-blue-200 pt-4"
+              >
+                <div className="flex flex-col gap-2">
+                  <span className={`text-sm font-bold text-gray-900 ${inter.className}`}>
                     {item.subtitle}
                   </span>
-                  <span className={`text-sm leading-[1.6] font-normal text-muted-foreground uppercase ${inter.className}`}>
-                    {item.  title}
+                  <span className={`text-xs font-semibold text-blue-600 uppercase tracking-wider ${inter.className}`}>
+                    {item.title}
                   </span>
-                </span>
-              </div>
+                </div>
+              </motion.div>
             </blockquote>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>

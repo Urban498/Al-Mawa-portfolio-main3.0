@@ -196,6 +196,16 @@
         "KI-Automatisierungsdienste"
       ]
     },
+    "cloudSolutions": {
+      "title": "Cloud-Lösungen",
+      "description": "Skalierbare Cloud-Infrastruktur und Services für moderne Anwendungen mit Zuverlässigkeit, Sicherheit und Kosteneffizienz.",
+      "features": [
+        "Cloud-Migration",
+        "Cloud-Infrastruktur",
+        "Notfallwiederherstellung",
+        "Cloud-Optimierung"
+      ]
+    },
     "learnMore": "Mehr erfahren"
   },
   "team": {
@@ -1042,6 +1052,10 @@
       "email": {
         "label": "E-Mail-Adresse *",
         "placeholder": "ihre@email.com"
+      },
+      "mobile": {
+        "label": "Mobilfunknummer *",
+        "placeholder": "Geben Sie Ihre Mobilfunknummer ein"
       },
       "designation": {
         "label": "Ihre Bezeichnung / Rolle",

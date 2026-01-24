@@ -9,6 +9,8 @@ import { toast } from "sonner";
 
 interface Review {
   name: string;
+  email: string;
+  mobile: string;
   designation: string;
   feedback: string;
   rating: number;
@@ -119,6 +121,8 @@ export default function AdminFeedback() {
     const searchLower = searchQuery.toLowerCase();
     return (
       review.name.toLowerCase().includes(searchLower) ||
+      review.email.toLowerCase().includes(searchLower) ||
+      review.mobile.toLowerCase().includes(searchLower) ||
       review.designation.toLowerCase().includes(searchLower) ||
       review.feedback.toLowerCase().includes(searchLower)
     );
@@ -185,7 +189,7 @@ export default function AdminFeedback() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               type="text"
-              placeholder="Search by name, designation, or feedback text..."
+              placeholder="Search by name, email, mobile, designation, or feedback text..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
@@ -253,6 +257,12 @@ export default function AdminFeedback() {
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             {review.designation}
+                          </p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                            <strong>Email:</strong> {review.email || 'N/A'}
+                          </p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <strong>Mobile:</strong> {review.mobile || 'N/A'}
                           </p>
                           <div className="mt-2">
                             <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getStatusBadgeColor(review.status)}`}>

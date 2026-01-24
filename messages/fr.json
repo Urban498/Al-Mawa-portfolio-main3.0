@@ -168,8 +168,13 @@
     },
     "aiServices": {
       "title": "Services IA",
-      "description": "Soluciones de inteligencia artificial de vanguardia que incluyen aprendizaje automático, automatización y analítica de datos para revolucionar su negocio.",
-      "features": ["Soluciones de Aprendizaje Automático", "Services de Vision par Ordinateur", "Services IA Generativa", "Services d'Automatisation IA"]
+      "description": "Solutions d'intelligence artificielle avant-gardistes incluant l'apprentissage automatique, l'automatisation et l'analyse de données pour révolutionner votre entreprise.",
+      "features": ["Solutions d'Apprentissage Automatique", "Services de Vision par Ordinateur", "Services IA Générative", "Services d'Automatisation IA"]
+    },
+    "cloudSolutions": {
+      "title": "Solutions Cloud",
+      "description": "Infrastructure et services cloud évolutifs pour les applications modernes, assurant la fiabilité, la sécurité et l'efficacité des coûts.",
+      "features": ["Migration Cloud", "Infrastructure Cloud", "Récupération après Sinistre", "Optimisation Cloud"]
     },
     "learnMore": "Saber más"
   },
@@ -952,6 +957,10 @@
       "email": {
         "label": "Adresse Email *",
         "placeholder": "votre@email.com"
+      },
+      "mobile": {
+        "label": "Numéro de Téléphone Mobile *",
+        "placeholder": "Entrez votre numéro de téléphone mobile"
       },
       "designation": {
         "label": "Votre Titre / Rôle",

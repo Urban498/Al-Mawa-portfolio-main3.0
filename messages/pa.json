@@ -186,13 +186,23 @@
       ]
     },
     "aiServices": {
-      "title": "AI Services",
-      "description": "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
+      "title": "AI ਸੇਵਾਵਾਂ",
+      "description": "ਆਪਣੇ ਕਾਰੋਬਾਰ ਵਿੱਚ ਕ્રાંતિ ਲਿਆਉਣ ਲਈ ਮਸ਼ੀਨ ਲਰਨਿੰਗ, ਆਟੋਮੇਸ਼ਨ ਅਤੇ ਡੇਟਾ ਵਿਸ਼ਲੇਸ਼ਣ ਸਹਿਤ ਅत्यાधुनिक ਕਿਰਤ੍ਰਿਮ ਬੁੱਧੀਮਾਨੀ ਸਮਾਧਾਨ।",
       "features": [
-        "Machine Learning Solutions",
-        "Computer Vision Services",
-        "Generative AI Services",
-        "AI Automation Services"
+        "ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਸਮਾਧਾਨ",
+        "ਕੰਪਿਊਟਰ ਵਿਸ਼ਨ ਸੇਵਾਵਾਂ",
+        "ਜਨਰਿਟਿਵ AI ਸੇਵਾਵਾਂ",
+        "AI ਆਟੋਮੇਸ਼ਨ ਸੇਵਾਵਾਂ"
+      ]
+    },
+    "cloudSolutions": {
+      "title": "ਕਲਾਉਡ ਸਮਾਧਾਨ",
+      "description": "ਆਧੁਨਿਕ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਸਕੇਲੇਬਲ ਕਲਾਉਡ ਬੁਨਿਆਦ ਢਾਂਚਾ ਅਤੇ ਸੇਵਾਵਾਂ, ਜੋ ਭਰੋਸੇਮੰਦਤਾ, ਸੁਰੱਖਿਆ ਅਤੇ ਖਰਚ ਪ੍ਰਭਾਵਸ਼ੀਲਤਾ ਯਕੀਨੀ ਬਣਾਉਂਦੀਆਂ ਹਨ।",
+      "features": [
+        "ਕਲਾਉਡ ਮਾਈਗ੍ਰੇਸ਼ਨ",
+        "ਕਲਾਉਡ ਬੁਨਿਆਦ ਢਾਂਚਾ",
+        "ਪ੍ਰਮੁੱਖ ਰਿਕਵਰੀ",
+        "ਕਲਾਉਡ ਅਨੁਕੂਲਨ"
       ]
     },
     "learnMore": "Learn more"
