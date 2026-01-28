@@ -419,7 +419,7 @@ export default function CareersPage() {
                 drag
                 dragElastic={0.2}
                 dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
-                dragTransition={{ power: 0.3, modifyTargetVelocity: vel => vel * 0.5 }}
+                dragTransition={{ power: 0.3, modifyTarget: vel => vel * 0.5 }}
                 onDragEnd={(event, info) => {
                   if (Math.abs(info.offset.x) > 100 || Math.abs(info.offset.y) > 100) {
                     // Snap back if dragged too far
@@ -762,7 +762,7 @@ export default function CareersPage() {
                 drag
                 dragElastic={0.2}
                 dragConstraints={{ left: -80, right: 80, top: -80, bottom: 80 }}
-                dragTransition={{ power: 0.3, modifyTargetVelocity: vel => vel * 0.5 }}
+                dragTransition={{ power: 0.3, modifyTarget: vel => vel * 0.5 }}
               >
                 <Card className="border border-[#0ea5e9]/30 bg-card/60 backdrop-blur-2xl hover:bg-card/80 shadow-xl hover:shadow-2xl transition-all duration-500 h-full group relative overflow-hidden cursor-grab active:cursor-grabbing"
                   style={{
