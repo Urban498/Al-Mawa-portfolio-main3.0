@@ -302,7 +302,7 @@ export default function CareersPage() {
             }}
           />
           <motion.div 
-            className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-3xl"
             animate={{ 
               x: [0, -80, 0],
               y: [0, 60, 0],
@@ -401,20 +401,88 @@ export default function CareersPage() {
             {filteredJobs.map((job, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.7, 
+                  delay: index * 0.12,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                whileHover={{ 
+                  y: -16, 
+                  scale: 1.02,
+                  transition: { duration: 0.3, type: "spring", stiffness: 200 }
+                }}
+                whileTap={{ scale: 0.98 }}
+                drag
+                dragElastic={0.2}
+                dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
+                dragTransition={{ power: 0.3, modifyTarget: vel => vel * 0.5 }}
+                onDragEnd={(event, info) => {
+                  if (Math.abs(info.offset.x) > 100 || Math.abs(info.offset.y) > 100) {
+                    // Snap back if dragged too far
+                    return;
+                  }
+                }}
               >
-                <Card className="border border-border/50 bg-card/40 backdrop-blur-xl hover:bg-card/60 transition-all duration-300 group">
+                <Card className="border border-[#0ea5e9]/30 bg-card/60 backdrop-blur-2xl hover:bg-card/80 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden relative isolate cursor-grab active:cursor-grabbing"
+                  style={{
+                    boxShadow: "0 20px 25px -5px rgba(14, 165, 233, 0.2), 0 8px 10px -6px rgba(14, 165, 233, 0.15)"
+                  }}
+                >
+                  <motion.div 
+                    className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0ea5e9]/20 to-[#0ea5e9]/15 rounded-full -mr-12 -mt-12 group-hover:scale-150"
+                    animate={{ 
+                      x: [0, 20, 0],
+                      y: [0, -15, 0],
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 45, 0]
+                    }}
+                    transition={{ 
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  ></motion.div>
+                  <motion.div 
+                    className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-tr from-[#0ea5e9]/15 to-[#0ea5e9]/10 rounded-full opacity-0 group-hover:opacity-100"
+                    animate={{ 
+                      x: [0, -25, 0],
+                      y: [0, 20, 0],
+                      rotate: [360, 0, 360]
+                    }}
+                    transition={{ 
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  ></motion.div>
+                  <motion.div 
+                    className="absolute top-1/2 left-1/2 w-20 h-20 bg-gradient-to-br from-[#0ea5e9]/10 to-[#0ea5e9]/5 rounded-full blur-xl"
+                    animate={{ 
+                      scale: [1, 1.5, 1],
+                      opacity: [0.3, 0.6, 0.3]
+                    }}
+                    transition={{ 
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                  ></motion.div>
                   <CardHeader>
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 relative z-10">
                       <div className="flex-1">
-                        <CardTitle
-                          className={`text-xl font-bold text-black transition-colors uppercase ${inter.className}`}
-                        >
-                          {job.jobTitle}
-                        </CardTitle>
+                        <div className="flex items-center gap-3 mb-2">
+                          <Briefcase className="w-5 h-5 text-[#0ea5e9] flex-shrink-0" />
+                          <CardTitle
+                            className={`text-2xl font-bold text-black transition-colors uppercase ${inter.className}`}
+                          >
+                            {job.jobTitle}
+                          </CardTitle>
+                        </div>
                         <CardDescription className={`text-black mt-2 `}>
                           <div
                             className="cursor-pointer hover:text-black transition-colors"
@@ -514,53 +582,122 @@ export default function CareersPage() {
                         </CardDescription>
                       </div>
                       <div className="flex flex-wrap gap-2">
-                        <Badge
-                          variant="secondary"
-                          className="bg-muted text-muted-foreground"
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                          transition={{ delay: index * 0.12 + 0.1, duration: 0.5 }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          drag
+                          dragElastic={0.3}
+                          dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
                         >
-                          <Building2 className="w-3 h-3 mr-1" />
-                          {job.jobDepartment}
-                        </Badge>
-                        <Badge
-                          variant="secondary"
-                          className="bg-muted text-muted-foreground"
+                          <Badge
+                            className="bg-[#0ea5e9]/15 text-gray-700 border-2 border-[#0ea5e9]/30 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
+                          >
+                            <Building2 className="w-3 h-3 mr-1.5" />
+                            {job.jobDepartment}
+                          </Badge>
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                          transition={{ delay: index * 0.12 + 0.15, duration: 0.5 }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          drag
+                          dragElastic={0.3}
+                          dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
                         >
-                          <MapPin className="w-3 h-3 mr-1" />
-                          Pune, India
-                        </Badge>
-                        <Badge
-                          variant="secondary"
-                          className="bg-muted text-muted-foreground"
+                          <Badge
+                            className="bg-[#0ea5e9]/15 text-gray-700 border-2 border-[#0ea5e9]/30 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
+                          >
+                            <MapPin className="w-3 h-3 mr-1.5" />
+                            Pune, India
+                          </Badge>
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                          transition={{ delay: index * 0.12 + 0.2, duration: 0.5 }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          drag
+                          dragElastic={0.3}
+                          dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
                         >
-                          <Briefcase className="w-3 h-3 mr-1" />
-                          {job.jobType}
-                        </Badge>
+                          <Badge
+                            className="bg-[#0ea5e9]/15 text-gray-700 border-2 border-[#0ea5e9]/30 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
+                          >
+                            <Briefcase className="w-3 h-3 mr-1.5" />
+                            {job.jobType}
+                          </Badge>
+                        </motion.div>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <span className="w-4 h-4 flex items-center justify-center font-bold">₹</span>
-                          {(() => {
-                            // Check for actual salary value (not empty string or null)
-                            const hasSalary = job.jobSalary && job.jobSalary.trim() !== '';
-                            return hasSalary ? job.jobSalary : t('jobCard.competitive');
-                          })()}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {t('jobCard.recentlyPosted')}
-                        </span>
-                      </div>
-                      <Button
-                        onClick={() => handleApplyNow(job)}
-                        className="hover:bg-[#0ea5e9] bg-white border-2 transition-all duration-300 cursor-pointer border-[#0ea5e9] hover:text-[white] text-black "
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 relative z-10">
+                      <motion.div 
+                        className="flex items-center gap-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.12 + 0.25, duration: 0.5 }}
                       >
-                        {t('jobCard.applyNow')}
-                        <ChevronRight className="ml-2 h-4 w-4" />
-                      </Button>
+                        <motion.div
+                          drag
+                          dragElastic={0.2}
+                          dragConstraints={{ left: -20, right: 20, top: -20, bottom: 20 }}
+                          whileHover={{ scale: 1.08, y: -2 }}
+                          whileTap={{ scale: 0.96 }}
+                        >
+                          <span className="flex items-center gap-2 px-4 py-2.5 bg-[#0ea5e9]/15 text-gray-700 rounded-full font-semibold border-2 border-[#0ea5e9]/20 shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing">
+                            <span className="w-4 h-4 flex items-center justify-center font-bold">₹</span>
+                            {(() => {
+                              const hasSalary = job.jobSalary && job.jobSalary.trim() !== '';
+                              return hasSalary ? job.jobSalary : t('jobCard.competitive');
+                            })()}
+                          </span>
+                        </motion.div>
+                        <motion.div
+                          drag
+                          dragElastic={0.2}
+                          dragConstraints={{ left: -20, right: 20, top: -20, bottom: 20 }}
+                          whileHover={{ scale: 1.08, y: -2 }}
+                          whileTap={{ scale: 0.96 }}
+                        >
+                          <span className="flex items-center gap-2 px-4 py-2.5 bg-[#0ea5e9]/15 text-gray-700 rounded-full font-semibold border-2 border-[#0ea5e9]/20 shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing">
+                            <Clock className="w-4 h-4" />
+                            {t('jobCard.recentlyPosted')}
+                          </span>
+                        </motion.div>
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.12 + 0.3, duration: 0.5 }}
+                        drag
+                        dragElastic={0.15}
+                        dragConstraints={{ left: -40, right: 40, top: -40, bottom: 40 }}
+                      >
+                        <motion.button
+                          onClick={() => handleApplyNow(job)}
+                          className="inline-flex items-center justify-center px-6 py-2.5 bg-[#0ea5e9] hover:bg-[#0ea5e9]/90 transition-all duration-300 cursor-grab active:cursor-grabbing text-white font-semibold rounded-lg shadow-lg hover:shadow-xl relative overflow-hidden group"
+                          whileHover={{ 
+                            scale: 1.08,
+                            y: -3
+                          }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <span className="relative z-10 flex items-center">
+                            {t('jobCard.applyNow')}
+                            <motion.span 
+                              className="ml-2"
+                              animate={{ x: [0, 3, 0] }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                            >
+                              <ChevronRight className="h-4 w-4" />
+                            </motion.span>
+                          </span>
+                        </motion.button>
+                      </motion.div>
                     </div>
                   </CardContent>
                 </Card>
@@ -607,27 +744,106 @@ export default function CareersPage() {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                initial={{ opacity: 0, y: 40, scale: 0.85 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ 
+                  duration: 0.7, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                whileHover={{ 
+                  y: -20, 
+                  scale: 1.05,
+                  transition: { duration: 0.3, type: "spring", stiffness: 200 }
+                }}
+                whileTap={{ scale: 0.97 }}
+                drag
+                dragElastic={0.2}
+                dragConstraints={{ left: -80, right: 80, top: -80, bottom: 80 }}
+                dragTransition={{ power: 0.3, modifyTarget: vel => vel * 0.5 }}
               >
-                <Card className="border border-border/50 bg-card/40 backdrop-blur-xl hover:bg-card/60 transition-all duration-300 h-full group">
-                  <CardContent className="p-6 text-center">
+                <Card className="border border-[#0ea5e9]/30 bg-card/60 backdrop-blur-2xl hover:bg-card/80 shadow-xl hover:shadow-2xl transition-all duration-500 h-full group relative overflow-hidden cursor-grab active:cursor-grabbing"
+                  style={{
+                    boxShadow: "0 20px 25px -5px rgba(14, 165, 233, 0.2), 0 8px 10px -6px rgba(14, 165, 233, 0.15)"
+                  }}
+                >
+                  <motion.div 
+                    className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#0ea5e9]/25 to-[#0ea5e9]/20 rounded-full -mr-20 -mt-20 group-hover:scale-150"
+                    animate={{ 
+                      x: [0, 30, 0],
+                      y: [0, -25, 0],
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 90, 0]
+                    }}
+                    transition={{ 
+                      duration: 7,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  ></motion.div>
+                  <motion.div 
+                    className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-[#0ea5e9]/20 to-[#0ea5e9]/15 rounded-full opacity-0 group-hover:opacity-100"
+                    animate={{ 
+                      x: [0, -35, 0],
+                      y: [0, 30, 0],
+                      scale: [0.8, 1.2, 0.8],
+                      rotate: [360, 0, 360]
+                    }}
+                    transition={{ 
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  ></motion.div>
+                  <motion.div 
+                    className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-[#0ea5e9]/15 to-[#0ea5e9]/5 rounded-full blur-2xl"
+                    animate={{ 
+                      scale: [1, 1.8, 1],
+                      opacity: [0.2, 0.5, 0.2],
+                      y: [0, -20, 0]
+                    }}
+                    transition={{ 
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  ></motion.div>
+                  <CardContent className="p-8 text-center relative z-10">
                     <motion.div
-                      className="inline-flex p-4 rounded-xl bg-[#0ea5e9] text-white mb-4 group-hover:scale-110 transition-transform duration-300"
-                      whileHover={{ rotate: 5 }}
+                      className="inline-flex p-6 rounded-2xl bg-[#0ea5e9] text-white mb-6 group-hover:scale-130 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: index * 0.15 + 0.2, duration: 0.6 }}
+                      animate={{ 
+                        y: [0, -8, 0]
+                      }}
+                      whileHover={{ 
+                        scale: 1.3, 
+                        rotate: 12
+                      }}
+                      whileTap={{ scale: 1.15 }}
                     >
                       {benefit.icon}
                     </motion.div>
-                    <h3
-                      className={`font-bold text-lg text-black transition-colors mb-2 uppercase ${inter.className}`}
+                    <motion.h3
+                      className={`font-bold text-lg text-black transition-colors mb-3 uppercase ${inter.className}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
                     >
                       {benefit.title}
-                    </h3>
-                    <p className="text-black text-sm leading-relaxed">
+                    </motion.h3>
+                    <motion.p 
+                      className="text-black text-sm leading-relaxed"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: index * 0.15 + 0.4, duration: 0.5 }}
+                    >
                       {benefit.description}
-                    </p>
+                    </motion.p>
                   </CardContent>
                 </Card>
               </motion.div>

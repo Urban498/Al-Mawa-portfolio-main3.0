@@ -109,7 +109,7 @@ const getContactInfo = (t: (key: string) => string) => [
   {
     icon: <Phone className="w-6 h-6" />,
     title: t('contactInfo.phone.title'),
-    value: ["+91 9561179693", "+91 9511991736", "+91 9028322363"],
+    value: ["+91 95611-79693", "+91 95119-91736", "+91 9028322363", "+91 95611-06693"],
     description: t('contactInfo.phone.description'),
   },
   {
