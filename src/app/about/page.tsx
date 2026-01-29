@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Inter, Playfair_Display, Montserrat } from "next/font/google";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from 'next-intl';
@@ -15,7 +15,6 @@ import GRP from "../about/image/grp.png";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-import conferenceRoom from "@/app/about/image/conference room 1.jpg";
 import TeamSection from "@/components/team";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -43,13 +42,34 @@ const staggerContainer = {
   },
 };
 
+// Additional motion variants for panels and images
+const panelTitle = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+const panelText = {
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.08 } },
+};
+const floatAnim = {
+  animate: { y: [0, -10, 0], transition: { repeat: Infinity, duration: 4 } },
+};
+const imageBob = {
+  idle: { y: 0 },
+  float: { y: [-4, 4, -4], transition: { duration: 6, repeat: Infinity } },
+};
+
 export default function AboutPage() {
   const t = useTranslations('about');
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   useEffect(() => {
-    // Only run GSAP animation on desktop (lg and above)
-    if (typeof window === 'undefined' || !containerRef.current || window.innerWidth < 1024) return;
+    // Set desktop state and only run GSAP animation on desktop (lg and above)
+    if (typeof window === 'undefined' || !containerRef.current) return;
+
+    setIsDesktop(window.innerWidth >= 1024);
 
     const container = containerRef.current;
     const panels = container.querySelectorAll<HTMLDivElement>(".panel");
@@ -75,6 +95,7 @@ export default function AboutPage() {
 
     // Handle window resize
     const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
       ScrollTrigger.refresh();
     };
 
@@ -87,7 +108,7 @@ export default function AboutPage() {
     };
   }, []);
   return (
-    <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card">
+    <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card overflow-x-hidden">
       {/* SEO H1 Tag */}
       <h1 className="sr-only">
         About Al Mawa International Pune - Professional Web Development Team
@@ -213,20 +234,30 @@ export default function AboutPage() {
       </motion.section> */}
 
       {/* Desktop GSAP Horizontal Scroll */}
-      <div ref={containerRef} className="container hidden lg:flex overflow-hidden" style={{ width: '300vw', height: '100vh' }}>
+      <div ref={containerRef} className="hidden lg:flex overflow-hidden px-0" style={{ width: '300vw', height: '100vh' }}>
         {/* panel one */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center panel one min-w-screen px-8" style={{ width: '100vw' }}>
+        <div className="grid lg:grid-cols-2 gap-12 items-center panel one min-w-screen px-4 lg:px-0" style={{ width: '100vw' }}>
           <motion.div variants={fadeInUp}>
-            <div className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px]">
+            <motion.div
+              className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px] rounded-2xl overflow-hidden"
+              variants={imageBob}
+              initial="idle"
+              animate="float"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              drag={isDesktop}
+              dragElastic={0.12}
+            >
               <Image
-                src={conferenceRoom}
-                alt="Our team working together"
+                src="/the_way_we_work.jpg"
+                alt="The Way We Work"
                 fill
                 className="rounded-2xl shadow-2xl object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
+              <motion.span aria-hidden className="absolute -top-6 -left-6 w-16 h-16 rounded-full blur-3xl opacity-30" style={{background: 'radial-gradient(circle at 30% 30%, rgba(14,165,233,0.6), rgba(59,130,246,0.15))'}} variants={floatAnim} animate="animate" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
-            </div>
+            </motion.div>
           </motion.div>
           <motion.div variants={fadeInUp} className="space-y-6">
             <h2
@@ -235,28 +266,48 @@ export default function AboutPage() {
               {t('wayWeWorkTitle')}
             </h2>
             <div
-              className={`space-y-4 text-black ${playfair_display.className}`}
+              className={`space-y-4 ${playfair_display.className}`}
             >
-              <p className="text-lg leading-relaxed">
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={panelText}
+                className="text-lg leading-relaxed text-gray-500"
+                drag={isDesktop}
+                dragElastic={0.12}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
               {t('wayWeWorkDescription')}
-              </p>
+              </motion.p>
               
             </div>
           </motion.div>
         </div>
         {/* panel two */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center panel two min-w-screen px-8" style={{ width: '100vw' }}>
+        <div className="grid lg:grid-cols-2 gap-12 items-center panel two min-w-screen px-4 lg:px-0" style={{ width: '100vw' }}>
           <motion.div variants={fadeInUp}>
-          <div className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px]">
+            <motion.div
+              className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px] rounded-2xl overflow-hidden"
+              variants={imageBob}
+              initial="idle"
+              animate="float"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              drag={isDesktop}
+              dragElastic={0.12}
+            >
               <Image
-                src={conferenceRoom}
-                alt="Our team working together"
+                src="/why_choose_us.jpg"
+                alt="Why Choose Us"
                 fill
                 className="rounded-2xl shadow-2xl object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
+              <motion.span aria-hidden className="absolute -top-8 -right-6 w-20 h-20 rounded-full blur-3xl opacity-30" style={{background: 'radial-gradient(circle at 30% 30%, rgba(236,72,153,0.6), rgba(99,102,241,0.15))'}} variants={floatAnim} animate="animate" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
-            </div>
+            </motion.div>
           </motion.div>
           <motion.div variants={fadeInUp} className="space-y-6">
             <h2
@@ -265,27 +316,47 @@ export default function AboutPage() {
               {t('whyChooseUsTitle')}
             </h2>
             <div
-              className={`space-y-4 text-black ${playfair_display.className}`}
+              className={`space-y-4 ${playfair_display.className}`}
             >
-              <p className="text-lg leading-relaxed">
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={panelText}
+                className="text-lg leading-relaxed text-gray-500"
+                drag={isDesktop}
+                dragElastic={0.12}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
               {t('whyChooseUsDescription')}
-              </p>
+              </motion.p>
             </div>
           </motion.div>
         </div>
         {/* panel three */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center panel three min-w-screen px-8" style={{ width: '100vw' }}>
+        <div className="grid lg:grid-cols-2 gap-12 items-center panel three min-w-screen px-4 lg:px-0" style={{ width: '100vw' }}>
           <motion.div variants={fadeInUp}>
-          <div className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px]">
+            <motion.div
+              className="relative w-full h-[400px] lg:h-[450px] xl:h-[500px] rounded-2xl overflow-hidden"
+              variants={imageBob}
+              initial="idle"
+              animate="float"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              drag={isDesktop}
+              dragElastic={0.12}
+            >
               <Image
-                src={conferenceRoom}
-                alt="Our team working together"
+                src="/stand_for.jpg"
+                alt="What We Stand For"
                 fill
                 className="rounded-2xl shadow-2xl object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
+              <motion.span aria-hidden className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full blur-3xl opacity-30" style={{background: 'radial-gradient(circle at 30% 30%, rgba(250,204,21,0.6), rgba(249,115,22,0.12))'}} variants={floatAnim} animate="animate" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
-            </div>
+            </motion.div>
           </motion.div>
           <motion.div variants={fadeInUp} className="space-y-6">
             <h2
@@ -294,15 +365,24 @@ export default function AboutPage() {
               {t('whatWeStandForTitle')}
             </h2>
             <div
-              className={`space-y-4 text-black ${playfair_display.className}`}
+              className={`space-y-4 ${playfair_display.className}`}
             >
-              <p className="text-lg leading-relaxed">
-              {t('whatWeStandForDescription')}
-              </p>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={panelText}
+                className="text-lg leading-relaxed text-gray-500"
+                drag={isDesktop}
+                dragElastic={0.12}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t('whatWeStandForDescription')}
+              </motion.p>
             </div>
           </motion.div>
         </div>
-
       </div>
 
       {/* Mobile sections - same content as GSAP panels */}
@@ -320,8 +400,8 @@ export default function AboutPage() {
               <motion.div variants={fadeInUp}>
                 <div className="relative mb-8">
                   <Image
-                    src={conferenceRoom}
-                    alt="Our team working together"
+                    src="/the_way_we_work.jpg"
+                    alt="The Way We Work"
                     width={800}
                     height={400}
                     className="rounded-2xl shadow-2xl w-full h-[300px] md:h-[400px] object-cover"
@@ -336,11 +416,21 @@ export default function AboutPage() {
                   {t('wayWeWorkTitle')}
                 </h2>
                 <div
-                  className={`space-y-4 text-black ${playfair_display.className}`}
+                  className={`space-y-4 ${playfair_display.className}`}
                 >
-                  <p className="text-base md:text-lg leading-relaxed">
+                  <motion.p
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={panelText}
+                    className="text-base md:text-lg leading-relaxed text-gray-500"
+                    drag={isDesktop}
+                    dragElastic={0.12}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     {t('wayWeWorkDescription')}
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
             </div>
@@ -360,8 +450,8 @@ export default function AboutPage() {
               <motion.div variants={fadeInUp}>
                 <div className="relative mb-8">
                   <Image
-                    src={conferenceRoom}
-                    alt="Our team working together"
+                    src="/why_choose_us.jpg"
+                    alt="Why Choose Us"
                     width={800}
                     height={400}
                     className="rounded-2xl shadow-2xl w-full h-[300px] md:h-[400px] object-cover"
@@ -376,11 +466,21 @@ export default function AboutPage() {
                   {t('whyChooseUsTitle')}
                 </h2>
                 <div
-                  className={`space-y-4 text-black ${playfair_display.className}`}
+                  className={`space-y-4 ${playfair_display.className}`}
                 >
-                  <p className="text-base md:text-lg leading-relaxed">
+                  <motion.p
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={panelText}
+                    className="text-base md:text-lg leading-relaxed text-gray-500"
+                    drag={isDesktop}
+                    dragElastic={0.12}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     {t('whyChooseUsDescription')}
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
             </div>
@@ -400,8 +500,8 @@ export default function AboutPage() {
               <motion.div variants={fadeInUp}>
                 <div className="relative mb-8">
                   <Image
-                    src={conferenceRoom}
-                    alt="Our team working together"
+                    src="/stand_for.jpg"
+                    alt="What We Stand For"
                     width={800}
                     height={400}
                     className="rounded-2xl shadow-2xl w-full h-[300px] md:h-[400px] object-cover"
@@ -416,11 +516,21 @@ export default function AboutPage() {
                   {t('whatWeStandForTitle')}
                 </h2>
                 <div
-                  className={`space-y-4 text-black ${playfair_display.className}`}
+                  className={`space-y-4 ${playfair_display.className}`}
                 >
-                  <p className="text-base md:text-lg leading-relaxed">
+                  <motion.p
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={panelText}
+                    className="text-base md:text-lg leading-relaxed text-gray-500"
+                    drag={isDesktop}
+                    dragElastic={0.12}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     {t('whatWeStandForDescription')}
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
             </div>
