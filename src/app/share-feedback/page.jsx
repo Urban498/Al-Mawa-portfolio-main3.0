@@ -44,6 +44,36 @@ export default function ShareFeedback() {
     rating: 5,
     image: "",
   });
+  const [isUploading, setIsUploading] = useState(false);
+
+  // Upload compressed base64 image to Cloudinary (recommended for production)
+  async function uploadToCloudinary(base64Image) {
+    try {
+      const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+      const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+      if (!cloudName || !uploadPreset) return null; // not configured
+
+      const form = new FormData();
+      form.append('file', base64Image);
+      form.append('upload_preset', uploadPreset);
+
+      const resp = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+        method: 'POST',
+        body: form,
+      });
+
+      if (!resp.ok) {
+        const text = await resp.text().catch(() => '');
+        throw new Error(`Cloudinary upload failed: ${resp.status} ${text}`);
+      }
+
+      const data = await resp.json();
+      return data.secure_url || data.url || null;
+    } catch (err) {
+      console.error('Cloudinary upload error:', err);
+      return null;
+    }
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -99,41 +129,50 @@ export default function ShareFeedback() {
     try {
       // Prevent submitting very large payloads
       const payload = { ...formData };
-      if (payload.image && payload.image.length > 160 * 1024) {
-        // Remove image from payload and inform the user
+
+      // If there's an image and Cloudinary is configured, upload it first and replace image with URL
+      if (payload.image) {
+        setIsUploading(true);
+        const url = await uploadToCloudinary(payload.image);
+        setIsUploading(false);
+
+        if (url) {
+          payload.image = url; // send URL instead of base64
+        } else {
+          // If Cloudinary not configured or upload failed, strip image and inform user
+          payload.image = '';
+          toast('Image was not uploaded. Your feedback will still be submitted without the image.', { icon: '⚠️' });
+        }
+      }
+
+      // Final sanity size check (very small guard)
+      if (payload.image && typeof payload.image === 'string' && payload.image.length > 200 * 1024) {
         payload.image = '';
         toast.error('Your image was too large and was not submitted. You can try a smaller image or skip it.');
       }
 
-      // const response = await fetch('/api/reviews', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(payload),
-      // });
-      const res = await axios.post('/api/reviews',payload);
-      console.log("share data:- ",res.data);
+      const res = await axios.post('/api/reviews', payload, { timeout: 12000 });
 
-      // if (response.ok) {
-      //   toast.success("Thank you for your feedback!");
-      //   setFormData({  
-      //     feedback: "",
-      //     name: "",
-      //     email: "",
-      //     mobile: "",
-      //     designation: "",
-      //     rating: 5,
-      //     image: "",
-      //   });
-      // } else {
-      //   const data = await response.json().catch(() => ({}));
-      //   console.error('Server returned error adding review:', data);
-      //   toast.error(data.error || 'Failed to save review. Please try again.');
-      // }
+      if (res?.status === 201 || res?.status === 200) {
+        toast.success('Thank you for your feedback!');
+        setFormData({
+          feedback: '',
+          name: '',
+          email: '',
+          mobile: '',
+          designation: '',
+          rating: 5,
+          image: '',
+        });
+      } else {
+        console.error('Server returned non-success:', res?.data || res?.status);
+        toast.error((res?.data && res.data.error) || 'Failed to save review. Please try again.');
+      }
     } catch (error) {
       console.error('Error adding review:', error);
       toast.error('Failed to save review. Please try again.');
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -342,9 +381,10 @@ export default function ShareFeedback() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full mt-8 px-6 py-3 bg-[#0ea5e9] hover:bg-[#0ea5e9]/90 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+                    disabled={isUploading}
+                    className="w-full mt-8 px-6 py-3 bg-[#0ea5e9] hover:bg-[#0ea5e9]/90 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {t('form.submitButton')}
+                    {isUploading ? 'Uploading image…' : t('form.submitButton')}
                   </button>
                 </form>
               </div>

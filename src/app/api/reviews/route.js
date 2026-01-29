@@ -4,6 +4,10 @@ import nodemailer from 'nodemailer';
 
 const reviewsFile = path.join(process.cwd(), 'data', 'reviews.json');
 
+// In-memory fallback store for environments where disk writes may fail (serverless like Vercel)
+let fallbackReviews = []; // non-persistent; cleared on cold start
+
+
 // Create email transporter
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
@@ -194,6 +198,17 @@ export async function GET() {
 
 export async function POST(request) {
   try {
+    // Early guard: check Content-Length header to reject obviously large payloads quickly
+    try {
+      const cl = request.headers.get('content-length');
+      if (cl && parseInt(cl) > 4.5 * 1024 * 1024) {
+        console.warn('Rejecting large request via Content-Length:', cl);
+        return Response.json({ error: 'Payload too large' }, { status: 413 });
+      }
+    } catch {
+      // ignore header parsing errors
+    }
+
     let newReview;
     try {
       newReview = await request.json();
@@ -212,7 +227,7 @@ export async function POST(request) {
     newReview.status = 'pending'; // New feedback is pending by default
 
     // If an image is present and it's very large, drop it server-side to avoid huge JSON files
-    if (newReview.image && typeof newReview.image === 'string' && newReview.image.length > 200 * 1024) {
+    if (newReview.image && typeof newReview.image === 'string' && newReview.image.length > 200 * 1024 && !/^https?:\/\//i.test(newReview.image)) {
       console.warn('Incoming review image too large; dropping image before saving to disk (size bytes):', newReview.image.length);
       newReview.image = '';
       newReview._imageDropped = true;
@@ -222,15 +237,24 @@ export async function POST(request) {
     const reviews = await getReviews();
     const updatedReviews = [newReview, ...reviews];
 
+    let savedToDisk = true;
     try {
       await saveReviews(updatedReviews);
     } catch (saveErr) {
-      console.error('Error saving reviews to disk:', saveErr);
-      return Response.json({ error: 'Failed to save review' }, { status: 500 });
+      savedToDisk = false;
+      console.error('Error saving reviews to disk (will use in-memory fallback):', saveErr);
+      try {
+        fallbackReviews.unshift(newReview);
+        console.warn('Stored review in-memory fallback (non-persistent).');
+      } catch (fbErr) {
+        console.error('Failed to store review in-memory fallback:', fbErr);
+        return Response.json({ error: 'Failed to save review' }, { status: 500 });
+      }
     }
 
     // Respond to the client now (success)
-    const response = Response.json(updatedReviews, { status: 201 });
+    const responsePayload = savedToDisk ? updatedReviews : [newReview, ...reviews];
+    const response = Response.json({ savedToDisk, reviews: responsePayload }, { status: 201 });
 
     // Asynchronously notify director and send thank you email; errors here should not affect the client response
     (async () => {
