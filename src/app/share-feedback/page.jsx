@@ -54,28 +54,62 @@ export default function ShareFeedback() {
 
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
+    if (!file) return;
+
+    // Client-side compression to avoid sending huge base64 payloads
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const MAX_WIDTH = 1024;
+        const scale = Math.min(1, MAX_WIDTH / img.width);
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        // Export as JPEG with reasonable quality to reduce size
+        const compressed = canvas.toDataURL('image/jpeg', 0.75);
+
+        // Limit base64 length to avoid very large payloads (approx 160KB)
+        const MAX_BASE64_LENGTH = 160 * 1024;
+        if (compressed.length > MAX_BASE64_LENGTH) {
+          toast.error('Image is too large after compression. Please choose a smaller image (<= ~160KB)');
+          return;
+        }
+
         setFormData((prev) => ({
           ...prev,
-          image: reader.result,
+          image: compressed,
         }));
       };
-      reader.readAsDataURL(file);
-    }
+      img.onerror = () => {
+        toast.error('Failed to process the selected image. Please try another one.');
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
+      // Prevent submitting very large payloads
+      const payload = { ...formData };
+      if (payload.image && payload.image.length > 160 * 1024) {
+        // Remove image from payload and inform the user
+        payload.image = '';
+        toast.error('Your image was too large and was not submitted. You can try a smaller image or skip it.');
+      }
+
       const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
@@ -89,6 +123,10 @@ export default function ShareFeedback() {
           rating: 5,
           image: "",
         });
+      } else {
+        const data = await response.json().catch(() => ({}));
+        console.error('Server returned error adding review:', data);
+        toast.error(data.error || 'Failed to save review. Please try again.');
       }
     } catch (error) {
       console.error('Error adding review:', error);
