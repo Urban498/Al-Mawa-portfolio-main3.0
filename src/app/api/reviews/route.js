@@ -194,8 +194,14 @@ export async function GET() {
 
 export async function POST(request) {
   try {
-    const newReview = await request.json();
-    
+    let newReview;
+    try {
+      newReview = await request.json();
+    } catch (err) {
+      console.error('Error parsing request body (possibly too large or invalid JSON):', err);
+      return Response.json({ error: 'Invalid request body or payload too large' }, { status: 413 });
+    }
+
     // Add timestamp and status
     newReview.createdAt = new Date().toISOString();
     newReview.status = 'pending'; // New feedback is pending by default
