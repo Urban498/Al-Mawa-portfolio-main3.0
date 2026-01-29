@@ -202,24 +202,56 @@ export async function POST(request) {
       return Response.json({ error: 'Invalid request body or payload too large' }, { status: 413 });
     }
 
+    // Basic validation (ensure required fields present)
+    if (!newReview || !newReview.feedback || !newReview.name) {
+      return Response.json({ error: 'Missing required fields (feedback or name)' }, { status: 400 });
+    }
+
     // Add timestamp and status
     newReview.createdAt = new Date().toISOString();
     newReview.status = 'pending'; // New feedback is pending by default
-    
+
+    // If an image is present and it's very large, drop it server-side to avoid huge JSON files
+    if (newReview.image && typeof newReview.image === 'string' && newReview.image.length > 200 * 1024) {
+      console.warn('Incoming review image too large; dropping image before saving to disk (size bytes):', newReview.image.length);
+      newReview.image = '';
+      newReview._imageDropped = true;
+    }
+
+    // Save reviews first and respond immediately to avoid email errors causing 500
     const reviews = await getReviews();
     const updatedReviews = [newReview, ...reviews];
-    
-    await saveReviews(updatedReviews);
-    
-    // Send feedback notification email to director for review and approval
-    await sendFeedbackToDirector(newReview);
-    
-    // Send thank you email to client
-    await sendThankYouEmailToClient(newReview.email, newReview.name);
-    
-    return Response.json(updatedReviews, { status: 201 });
+
+    try {
+      await saveReviews(updatedReviews);
+    } catch (saveErr) {
+      console.error('Error saving reviews to disk:', saveErr);
+      return Response.json({ error: 'Failed to save review' }, { status: 500 });
+    }
+
+    // Respond to the client now (success)
+    const response = Response.json(updatedReviews, { status: 201 });
+
+    // Asynchronously notify director and send thank you email; errors here should not affect the client response
+    (async () => {
+      try {
+        const directorResult = await sendFeedbackToDirector(newReview);
+        if (!directorResult) console.error('Failed to send feedback notification to director (function returned false)');
+      } catch (emailErr) {
+        console.error('Error sending feedback notification to director:', emailErr);
+      }
+
+      try {
+        const thankYouResult = await sendThankYouEmailToClient(newReview.email, newReview.name);
+        if (!thankYouResult) console.error('Failed to send thank you email to client (function returned false)');
+      } catch (thankErr) {
+        console.error('Error sending thank you email to client:', thankErr);
+      }
+    })();
+
+    return response;
   } catch (error) {
-    console.error('Error saving review:', error);
+    console.error('Unexpected error in POST /api/reviews:', error?.stack || error);
     return Response.json({ error: 'Failed to save review' }, { status: 500 });
   }
 }
