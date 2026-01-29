@@ -11,10 +11,10 @@ import ServicesSection from "@/components/services-section";
 import Bg from "../app/about/image/demo2.png";
 import { Inter, Playfair_Display } from "next/font/google";
 import conferenceRoom from "@/components/images/conference room 1.jpg";
-// import values from "@/components/images/ourvalue.jpg";
-import values from "@/components/images/ourv.png";
-// import mission from "@/components/images/ourmission.jpg";
-import mission from "@/components/images/ourm.png";
+import teamDiscuss from "@/app/about/image/team discuss.png";
+// Use public images for mission and values (place files at public/our_mission.jpg and public/our_value.jpg)
+// removed local imports
+
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({
@@ -64,8 +64,8 @@ export default function HeroSection() {
                 content: (
                   <div className="h-full w-full flex items-center justify-center z-20">
                     <Image
-                      src={conferenceRoom}
-                      alt="about us"
+                      src={teamDiscuss}
+                      alt="AL-Mawa International"
                       className="object-cover h-full w-full rounded-lg shadow-2xl"
                       priority
                     />
@@ -76,11 +76,14 @@ export default function HeroSection() {
                 title: t('ourMissionTitle'),
                 description: t('ourMissionDescription'),
                 content: (
-                  <div className="h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
+                  <div className="relative h-full w-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black">
                     <Image
-                      src={mission}
+                      src="/our_mission.jpg"
                       alt="mission"
-                      className="object-cover h-full w-full rounded-lg"
+                      width={800}
+                      height={500}
+                      className="object-cover rounded-lg h-[300px] sm:h-[360px] md:h-[420px] lg:h-full w-full"
+                      priority
                     />
                   </div>
                 ),
@@ -91,13 +94,17 @@ export default function HeroSection() {
                 content: (
                   <div className="h-full w-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-accent-foreground">
                     <Image
-                      src={values}
-                      alt="values"
-                      className="object-cover h-full w-full rounded-lg"
+                      src="/our_values2.jpg"
+                      alt="Our Values"
+                      width={800}
+                      height={500}
+                      className="object-cover rounded-lg h-[300px] sm:h-[360px] md:h-[420px] lg:h-full w-full"
+                      priority
                     />
                   </div>
                 ),
               },
+
             ]}
           />
         </div>
