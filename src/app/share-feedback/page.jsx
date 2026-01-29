@@ -7,6 +7,7 @@ import { Work_Sans, Inter } from "next/font/google";
 import { useTranslations } from 'next-intl';
 import { toast } from "sonner";
 import localFont from "next/font/local";
+import axios from "axios";
 
 const work_sans = Work_Sans({
   subsets: ["latin"],
@@ -104,30 +105,32 @@ export default function ShareFeedback() {
         toast.error('Your image was too large and was not submitted. You can try a smaller image or skip it.');
       }
 
-      const response = await fetch('/api/reviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
+      // const response = await fetch('/api/reviews', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(payload),
+      // });
+      const res = await axios.post('/api/reviews',payload);
+      console.log("share data:- ",res.data);
 
-      if (response.ok) {
-        toast.success("Thank you for your feedback!");
-        setFormData({
-          feedback: "",
-          name: "",
-          email: "",
-          mobile: "",
-          designation: "",
-          rating: 5,
-          image: "",
-        });
-      } else {
-        const data = await response.json().catch(() => ({}));
-        console.error('Server returned error adding review:', data);
-        toast.error(data.error || 'Failed to save review. Please try again.');
-      }
+      // if (response.ok) {
+      //   toast.success("Thank you for your feedback!");
+      //   setFormData({  
+      //     feedback: "",
+      //     name: "",
+      //     email: "",
+      //     mobile: "",
+      //     designation: "",
+      //     rating: 5,
+      //     image: "",
+      //   });
+      // } else {
+      //   const data = await response.json().catch(() => ({}));
+      //   console.error('Server returned error adding review:', data);
+      //   toast.error(data.error || 'Failed to save review. Please try again.');
+      // }
     } catch (error) {
       console.error('Error adding review:', error);
       toast.error('Failed to save review. Please try again.');
