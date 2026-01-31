@@ -385,3 +385,13 @@
     padding: 0.5rem 1rem;
   }
 }
+
+.animated-logo {
+    animation: rotate-logo 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rotate-logo {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}

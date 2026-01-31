@@ -298,15 +298,24 @@ export const NavBar = () => {
               <Link
                 href="/"
                 aria-label="home"
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-1"
               >
                 <Image
-                  src="/logoblack.png"
-                  alt="Logo"
+                  src="/logo al-mawa erth.png"
+                  alt="Earth"
                   width={100}
                   height={100}
                   priority
-                  className="h-16 w-auto"
+                  className="h-16 w-auto animated-logo"
+                  style={{ backgroundColor: 'transparent' }}
+                />
+                <Image
+                  src="/logo al-mawa name.png"
+                  alt="Al Mawa Name"
+                  width={100}
+                  height={100}
+                  priority
+                  className="h-8 w-auto -ml-6 z-10 mt-6"
                 />
               </Link>
 
