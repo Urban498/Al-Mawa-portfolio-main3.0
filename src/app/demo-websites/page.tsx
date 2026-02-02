@@ -14,8 +14,16 @@ const corpta = localFont({
   display: "swap",
 });
 
+// Types
+interface DemoWebsite {
+  url: string;
+  name: string;
+  img: string;
+  description: string;
+}
+
 // Demo Websites Data
-const demoWebsites = [
+const demoWebsites: DemoWebsite[] = [
   {
     url: "https://wheel-harmony.vercel.app",
     name: "Wheel Harmony",
@@ -34,12 +42,12 @@ const demoWebsites = [
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut", delay },
+  transition: { duration: 0.6, delay },
   viewport: { once: true, amount: 0.2 },
 });
 
 // Website Card Component
-const WebsiteCard = ({ site, index, t }) => {
+const WebsiteCard = ({ site, index }: { site: DemoWebsite; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -218,7 +226,7 @@ export default function DemoWebsitesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-7 lg:gap-8 max-w-4xl mx-auto">
             {demoWebsites.map((site, index) => (
-              <WebsiteCard key={site.name + index} site={site} index={index} t={t} />
+              <WebsiteCard key={site.name + index} site={site} index={index} />
             ))}
           </div>
         </section>
