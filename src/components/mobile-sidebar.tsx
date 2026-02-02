@@ -348,6 +348,41 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                 </Link>
               </li>
 
+              {/* Our Work with Dropdown */}
+              <li className="pt-6">
+                <button
+                  onClick={() => {
+                    if (activeMenu === 'our-work') {
+                      setActiveMenu(null);
+                    } else {
+                      setActiveMenu('our-work');
+                    }
+                  }}
+                  className="flex items-center justify-between w-full text-black text-xl  hover:text-gray-600 transition-colors duration-300"
+                >
+                  <span className="text-left">Our Work</span>
+                  <ChevronDown className={`w-6 h-6 transition-transform duration-200 ${activeMenu === 'our-work' ? 'rotate-0' : '-rotate-90'}`} />
+                </button>
+                {activeMenu === 'our-work' && (
+                  <div className="pl-4 pt-2 space-y-2">
+                    <Link
+                      href="/our-work"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Our Work
+                    </Link>
+                    <Link
+                      href="/demo-websites"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Demo Websites
+                    </Link>
+                  </div>
+                )}
+              </li>
+
               {/* Services Section */}
               <li className="pt-6">
                 <button

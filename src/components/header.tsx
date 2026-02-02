@@ -349,17 +349,39 @@ export const NavBar = () => {
                   </Link>
                 </li>
 
-                <li>
-                  <Link
-                    href="/our-work"
-                    aria-current={pathname === "/our-work" ? "page" : undefined}
+                {/* Our Work Dropdown */}
+                <li className="relative group">
+                  <div
                     className={cn(
+                      "relative inline-flex items-center gap-1 cursor-pointer",
                       navLinkBaseClass,
-                      pathname === "/our-work" && navLinkActiveClass
+                      (pathname?.startsWith("/our-work") || pathname?.startsWith("/demo-websites")) && navLinkActiveClass,
+                      "group-hover:after:w-full"
                     )}
                   >
-                    <span>Our Work</span>
-                  </Link>
+                    <span className="flex gap-1">Our Work <ChevronDown className="w-3 h-3 my-auto transition-transform group-hover:rotate-180" /></span>
+                  </div>
+
+                  {/* Our Work Dropdown */}
+                  <div
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
+                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
+                  >
+                    <div className="bg-white border border-white/20 shadow-2xl py-3 rounded-xl w-fit min-w-[200px]">
+                      <Link
+                        href="/our-work"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                      >
+                        Our Work
+                      </Link>
+                      <Link
+                        href="/demo-websites"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                      >
+                        Demo Websites
+                      </Link>
+                    </div>
+                  </div>
                 </li>
 
                 {/* Simple Hover Dropdown */}

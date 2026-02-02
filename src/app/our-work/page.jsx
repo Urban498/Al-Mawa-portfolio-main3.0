@@ -409,7 +409,7 @@ export default function OurWorkPage() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8">
             {websiteProjects.map((site, index) => (
               <WebsiteCard key={site.name + index} site={site} index={index} t={t} />
             ))}

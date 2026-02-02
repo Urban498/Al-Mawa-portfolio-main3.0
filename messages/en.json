@@ -981,5 +981,15 @@
     "successMessage": "Thank you for your feedback!",
     "errorMessage": "Failed to submit feedback",
     "errorDescription": "Please check your information and try again."
+  },
+  "demoWebsites": {
+    "title": "Demo Websites",
+    "subtitle": "Explore our portfolio of demo websites showcasing modern design and functionality",
+    "description": "A collection of demo websites we've created to demonstrate our web development capabilities and design expertise.",
+    "viewLiveDemo": "View Live Demo",
+    "visitSite": "Visit Site",
+    "getStarted": "Get Started",
+    "ctaTitle": "Ready to Build Your Website?",
+    "ctaDescription": "Let's create something amazing together. Contact us to discuss your project."
   }
 }
