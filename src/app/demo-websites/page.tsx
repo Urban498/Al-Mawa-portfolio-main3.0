@@ -27,14 +27,26 @@ const demoWebsites: DemoWebsite[] = [
   {
     url: "https://wheel-harmony.vercel.app",
     name: "Wheel Harmony",
-    img: "/demo-wheel-harmony.jpg", // TODO: Replace with actual image
+    img: "/demo-wheel-harmony.png",
     description: "A modern automotive website showcasing vehicle services and harmony in design."
   },
   {
     url: "https://craveable-co.vercel.app",
     name: "Craveable Co",
-    img: "/demo-craveable-co.jpg", // TODO: Replace with actual image
+    img: "/demo-craveable-co.png",
     description: "A delightful food and beverage website with an appetizing design."
+  },
+  {
+    url: "https://lux-perfume.vercel.app",
+    name: "Lux Perfume",
+    img: "/demo-lux-perfume.png",
+    description: "A luxurious perfume website showcasing elegant fragrances and scents."
+  },
+  {
+    url: "https://feesy-school-hub.vercel.app",
+    name: "Feesy School Hub",
+    img: "/school_feesy.png",
+    description: "A comprehensive school management hub for educational institutions and students."
   },
 ];
 
@@ -74,33 +86,20 @@ const WebsiteCard = ({ site, index }: { site: DemoWebsite; index: number }) => {
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
 
           {/* Website preview area */}
-          <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-50 overflow-hidden">
-            {/* Gradient mesh background */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 left-0 w-64 h-64 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-              <div
-                className="absolute bottom-0 right-0 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
-                style={{ animationDelay: "1s" }}
-              />
-            </div>
+          <div className="relative aspect-video overflow-hidden">
+            {/* Project Image */}
+            <img
+              src={site.img}
+              alt={site.name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              onError={(e) => {
+                // Fallback to placeholder if image fails to load
+                e.currentTarget.src = `https://via.placeholder.com/400x225/cccccc/000000?text=${encodeURIComponent(site.name)}`;
+              }}
+            />
 
-            {/* Website icon/preview */}
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div
-                className={`relative transition-all duration-500 ${
-                  isHovered ? "scale-110" : "scale-100"
-                }`}
-              >
-                <div className="absolute inset-0 bg-blue-500 rounded-2xl blur-2xl opacity-30 animate-pulse" />
-                <div className="relative w-32 h-32 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-xl border border-gray-200 group-hover:border-blue-400 transition-all duration-300">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#0ea5e9]/20 to-[#0ea5e9]/5 rounded-full flex items-center justify-center">
-                    <span className="text-[#0ea5e9] font-bold text-lg">
-                      {site.name.charAt(0)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Platform badge */}
             <div className="absolute top-4 left-4 z-10">
