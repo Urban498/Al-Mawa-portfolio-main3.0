@@ -42,8 +42,17 @@ export default function AutoModal() {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 700);
-    return () => clearTimeout(timer);
+    const lastShown = localStorage.getItem('autoModalLastShown');
+    const now = Date.now();
+    const twentyFourHours = 24 * 60 * 60 * 1000; // 86400000 ms
+
+    if (!lastShown || (now - parseInt(lastShown)) > twentyFourHours) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        localStorage.setItem('autoModalLastShown', now.toString());
+      }, 700);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
