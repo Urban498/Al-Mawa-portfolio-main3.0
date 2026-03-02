@@ -145,7 +145,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/60 backdrop-blur-md"
           onClick={onClose}
         />
 
@@ -156,20 +156,20 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           animate="visible"
           exit="exit"
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto"
+          className="relative w-full max-w-lg md:max-w-2xl bg-white/95 rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto border border-white/60 ring-1 ring-black/5"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b">
+          <div className="sticky top-0 z-10 flex items-start justify-between gap-4 p-6 border-b bg-white/90 backdrop-blur-md">
             <div>
-              <h2 className="text-2xl font-bold text-black">{t('title')}</h2>
+              <h2 className="text-2xl font-bold text-black tracking-tight">{t('title')}</h2>
               <p className="text-gray-600 text-sm mt-1">
                 {t('subtitle')}
               </p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 rounded-full transition-colors hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-2"
             >
               <X className="w-5 h-5" />
             </button>
@@ -186,7 +186,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Send className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">
+                <h3 className="text-xl font-semibold text-black mb-2 tracking-tight">
                   {t('thankYouTitle')}
                 </h3>
                 <p className="text-gray-600">
@@ -194,10 +194,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Name */}
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-sm font-medium text-black">
+                  <Label htmlFor="name" className="text-sm font-semibold text-black">
                     {t('fields.fullName.label')} *
                   </Label>
                   <div className="relative">
@@ -208,7 +208,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                       placeholder={t('fields.fullName.placeholder')}
                       value={formData.name}
                       onChange={(e) => handleInputChange("name", e.target.value)}
-                      className="pl-10"
+                      className="pl-10 h-11 rounded-xl bg-white border-gray-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-0"
                       required
                     />
                   </div>
@@ -216,7 +216,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium text-black">
+                  <Label htmlFor="email" className="text-sm font-semibold text-black">
                     {t('fields.email.label')} *
                   </Label>
                   <div className="relative">
@@ -227,7 +227,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                       placeholder={t('fields.email.placeholder')}
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
-                      className="pl-10"
+                      className="pl-10 h-11 rounded-xl bg-white border-gray-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-0"
                       required
                     />
                   </div>
@@ -235,7 +235,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
                 {/* Phone */}
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-sm font-medium text-black">
+                  <Label htmlFor="phone" className="text-sm font-semibold text-black">
                     {t('fields.phone.label')}
                   </Label>
                   <div className="relative">
@@ -246,14 +246,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                       placeholder={t('fields.phone.placeholder')}
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="pl-10"
+                      className="pl-10 h-11 rounded-xl bg-white border-gray-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-0"
                     />
                   </div>
                 </div>
 
                 {/* Company */}
                 <div className="space-y-2">
-                  <Label htmlFor="company" className="text-sm font-medium text-black">
+                  <Label htmlFor="company" className="text-sm font-semibold text-black">
                     {t('fields.company.label')}
                   </Label>
                   <div className="relative">
@@ -264,14 +264,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                       placeholder={t('fields.company.placeholder')}
                       value={formData.company}
                       onChange={(e) => handleInputChange("company", e.target.value)}
-                      className="pl-10"
+                      className="pl-10 h-11 rounded-xl bg-white border-gray-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-0"
                     />
                   </div>
                 </div>
 
                 {/* Service */}
                 <div className="space-y-2">
-                  <Label htmlFor="service" className="text-sm font-medium text-black">
+                  <Label htmlFor="service" className="text-sm font-semibold text-black">
                     {t('fields.service.label')} *
                   </Label>
                   <Select
@@ -279,7 +279,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     onValueChange={(value) => handleInputChange("service", value)}
                     required
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="h-11 rounded-xl bg-white border-gray-200 shadow-sm focus:ring-2 focus:ring-[#0ea5e9]">
                       <SelectValue placeholder={t('fields.service.placeholder')} />
                     </SelectTrigger>
                     <SelectContent>
@@ -294,7 +294,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-medium text-black">
+                  <Label htmlFor="message" className="text-sm font-semibold text-black">
                     {t('fields.message.label')} *
                   </Label>
                   <div className="relative">
@@ -304,7 +304,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                       placeholder={t('fields.message.placeholder')}
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
-                      className="pl-10 min-h-[100px] resize-none"
+                      className="pl-10 min-h-[110px] rounded-xl bg-white border-gray-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-0 resize-none"
                       required
                     />
                   </div>
@@ -314,7 +314,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full animated-border-button"
+                  className="w-full h-11 rounded-xl text-base font-semibold bg-[#0ea5e9] hover:bg-[#0284c7] text-white focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-2"
                   size="lg"
                 >
                   {isSubmitting ? (

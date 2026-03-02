@@ -14,6 +14,11 @@ import {
   Network,
   TrendingUp,
   CheckCircle,
+  MessageSquareText,
+  Bell,
+  Workflow,
+  Route,
+  Bot,
 } from "lucide-react";
 import Link from "next/link";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -92,6 +97,66 @@ const getServices = (t: (key: string) => string) => [
       t('services.benefits.feature2') as string,
       t('services.benefits.feature3') as string,
       t('services.benefits.feature4') as string,
+    ],
+  },
+  {
+    icon: MessageSquareText,
+    title: "RCS Messaging Services",
+    description:
+      "Rich, interactive messaging campaigns with branded experiences and higher engagement.",
+    features: [
+      "Verified sender & branding",
+      "Rich media (images, cards, carousels)",
+      "Buttons & quick replies",
+      "Campaign reporting & insights",
+    ],
+  },
+  {
+    icon: Bell,
+    title: "Push Notification Services",
+    description:
+      "Instant, high-visibility notifications to re-engage users and drive repeat actions.",
+    features: [
+      "Web & mobile push setup",
+      "Segmentation & targeting",
+      "Personalized messaging",
+      "A/B testing & analytics",
+    ],
+  },
+  {
+    icon: Workflow,
+    title: "Marketing Automation",
+    description:
+      "Automate your marketing workflows to nurture leads and convert customers at scale.",
+    features: [
+      "Lead nurturing workflows",
+      "Behavior-based triggers",
+      "Audience segmentation",
+      "CRM & tool integrations",
+    ],
+  },
+  {
+    icon: Route,
+    title: "Customer Journey & Drip Campaigns",
+    description:
+      "Design multi-step drip campaigns that guide customers from awareness to conversion.",
+    features: [
+      "Journey mapping",
+      "Multi-channel sequences",
+      "Personalization rules",
+      "Performance optimization",
+    ],
+  },
+  {
+    icon: Bot,
+    title: "Chatbot Marketing Services",
+    description:
+      "Conversational chatbots that capture leads, qualify prospects, and support customers 24/7.",
+    features: [
+      "Lead capture & qualification",
+      "WhatsApp / website chatbots",
+      "Auto replies & FAQs",
+      "Handover to human agents",
     ],
   },
 ];
