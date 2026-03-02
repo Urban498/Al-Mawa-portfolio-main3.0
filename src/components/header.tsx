@@ -133,24 +133,24 @@ const servicesData = [
     // ✅ New additions
     {
       name: "RCS Messaging Services",
-      href: "/services/rcs-marketing",
+      href: "/services/email-whatsapp-sms-marketing",
     },
     {
       name: "Push Notification Services",
-      href: "/services/push-notifications",
+      href: "/services/email-whatsapp-sms-marketing",
     },
     {
       name: "Marketing Automation",
-      href: "/services/marketing-automation",
+      href: "/services/email-whatsapp-sms-marketing",
     },
     {
       name: "Customer Journey & Drip Campaigns",
-      href: "/services/drip-campaigns",
+      href: "/services/email-whatsapp-sms-marketing",
     },
     {
-  name: "Chatbot Marketing Services",
-  href: "/services/chatbot-marketing",
-}
+      name: "Chatbot Marketing Services",
+      href: "/services/email-whatsapp-sms-marketing",
+    },
 
   ],
 },
