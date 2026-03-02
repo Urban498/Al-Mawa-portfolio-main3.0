@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 import arshad from "../components/images/images/arshad.png";
 import omkar from "../components/images/images/omkar.png";
 import sabeel from "../components/images/images/sabeel.png";
-import sufiyan from "../components/images/images/sufiyan.png";
+import shashant from "../app/about/image/shashant.jpeg";
 import ahemad from "../components/images/images/ahemad.png";
 import priyanka from "../components/images/images/priyanka.png";
 
@@ -34,7 +34,7 @@ type Member = {
 // ✅ Members data
 const members: Member[] = [
   { name: "Arshad Shaikh", role: "Full Stack Developer", avatar: arshad, link: "https://www.linkedin.com/in/arshad-shaikh-502721205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
-  { name: "Sufiyan Ali", role: "Full Stack Developer", avatar: sufiyan, link: "https://www.linkedin.com/in/sayyed-sufiyan-ali-7483192a8/", team: "Development Team" },
+  { name: "Shashant Shekhar", role: "Full Stack Developer", avatar: shashant, link: "https://www.linkedin.com/in/shashant-shekhar-588a0b20b", team: "Development Team" },
   { name: "Md Ahmad Raza", role: "Full Stack Developer", avatar: ahemad, link: "https://www.linkedin.com/in/md-ahmad-raza-4626a5232/", team: "Development Team" },
   { name: "Priyanka Godbole", role: "Marketing Manager", avatar: priyanka, link: "#", team: "Sales & Marketing Team" },
   { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
@@ -135,7 +135,6 @@ export default function TeamSection() {
                         <h3 className="text-base font-medium transition-all duration-500 group-hover:tracking-wider">
                           {member.name}
                         </h3>
-                        <span className="text-xs text-gray-500">_0{index + 1}</span>
                       </div>
 
                       <div className="mt-1 flex items-center justify-between">
