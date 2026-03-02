@@ -114,23 +114,43 @@ const servicesData = [
     subItems: [
       {
         name: "Email Marketing Services",
-        href: "/services/email-whatsapp-sms-marketing",
+        href: "/services/email-marketing-services",
       },
       {
         name: "WhatsApp Marketing Services",
-        href: "/services/email-whatsapp-sms-marketing",
+        href: "/services/whatsapp-marketing-services",
       },
       {
         name: "SMS Marketing Services",
-        href: "/services/email-whatsapp-sms-marketing",
+        href: "/services/sms-marketing-services",
       },
       {
         name: "Omnichannel Integration",
-        href: "/services/email-whatsapp-sms-marketing",
+        href: "/services/omnichannel-integration",
+      },
+      {
+        name: "RCS Messaging Services",
+        href: "/services/rcs-messaging-services",
+      },
+      {
+        name: "Push Notification Services",
+        href: "/services/push-notification-services",
+      },
+      {
+        name: "Marketing Automation",
+        href: "/services/marketing-automation",
+      },
+      {
+        name: "Customer Journey & Drip Campaigns",
+        href: "/services/customer-journey-drip-campaigns",
+      },
+      {
+        name: "Chatbot Marketing Services",
+        href: "/services/chatbot-marketing-services",
       },
       {
         name: "Benefits of Email, WhatsApp & SMS Marketing",
-        href: "/services/email-whatsapp-sms-marketing",
+        href: "/services/benefits-of-email-whatsapp-sms-marketing",
       },
     ],
   },

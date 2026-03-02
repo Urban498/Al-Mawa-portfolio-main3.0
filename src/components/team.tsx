@@ -14,7 +14,6 @@ import ahemad from "../components/images/images/ahemad.png";
 import priyanka from "../components/images/images/priyanka.png";
 
 
-
 // ✅ Font setup
 const inter = Inter({ subsets: ["latin"] });
 const playfair_display = Playfair_Display({

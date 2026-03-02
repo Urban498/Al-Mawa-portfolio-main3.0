@@ -115,41 +115,41 @@ const servicesData = [
   subItems: [
     {
       name: "Email Marketing Services",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/email-marketing-services",
     },
     {
       name: "WhatsApp Marketing Services",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/whatsapp-marketing-services",
     },
     {
       name: "SMS Marketing Services",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/sms-marketing-services",
     },
     {
       name: "Omnichannel Integration",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/omnichannel-integration",
     },
 
     // ✅ New additions
     {
       name: "RCS Messaging Services",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/rcs-messaging-services",
     },
     {
       name: "Push Notification Services",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/push-notification-services",
     },
     {
       name: "Marketing Automation",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/marketing-automation",
     },
     {
       name: "Customer Journey & Drip Campaigns",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/customer-journey-drip-campaigns",
     },
     {
       name: "Chatbot Marketing Services",
-      href: "/services/email-whatsapp-sms-marketing",
+      href: "/services/chatbot-marketing-services",
     },
 
   ],
@@ -240,6 +240,7 @@ export const NavBar = () => {
   const t = useTranslations('nav');
   const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
+  const [servicesMenuOpen, setServicesMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   const navLinkBaseClass =
@@ -273,6 +274,10 @@ export const NavBar = () => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [menuState]);
+
+  useEffect(() => {
+    setServicesMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header>
@@ -386,7 +391,12 @@ export const NavBar = () => {
 
                 {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
-                  <li key={index} className="relative group">
+                  <li
+                    key={index}
+                    className="relative"
+                    onMouseEnter={() => setServicesMenuOpen(true)}
+                    onMouseLeave={() => setServicesMenuOpen(false)}
+                  >
                     <div
                       className={cn(
                         "relative inline-flex items-center gap-1 cursor-pointer",
@@ -401,8 +411,12 @@ export const NavBar = () => {
 
                     {/* Dropdown Box */}
                     <div
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
-                     group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
+                      className={cn(
+                        "absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[110] transition-opacity duration-200",
+                        servicesMenuOpen
+                          ? "opacity-100 visible pointer-events-auto"
+                          : "opacity-0 invisible pointer-events-none"
+                      )}
                     >
                       <div className="bg-white border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide">
                         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -410,6 +424,7 @@ export const NavBar = () => {
                             <div key={itemIndex} className="space-y-4">
                               <Link
                                 href={item.href}
+                                onClick={() => setServicesMenuOpen(false)}
                                 className="block text-lg font-semibold text-black  transition-colors duration-200 pb-2"
                               >
                                 {item.name}
@@ -419,6 +434,7 @@ export const NavBar = () => {
                                   <Link
                                     key={subIndex}
                                     href={subItem.href}
+                                    onClick={() => setServicesMenuOpen(false)}
                                     className="block text-xs text-gray-700 hover:bg-[#0ea5e9]/15 rounded-xl pl-2 transition-colors duration-200 py-1.5 leading-relaxed"
                                   >
                                     {subItem.name}
