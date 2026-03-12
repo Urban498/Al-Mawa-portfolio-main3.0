@@ -1,868 +1,1163 @@
 {
   "nav": {
-    "home": "முகப்பு",
-    "about": "எங்களைப் பற்றி",
-    "services": "எங்கள் சேவைகள்",
-    "careers": "வாழ்க்கை",
-    "testimonials": "சாட்சியங்கள்",
-    "contact": "தொடர்பு கொள்ளுங்கள்"
+    "home": "Home",
+    "about": "About",
+    "services": "Our Services",
+    "careers": "Careers",
+    "testimonials": "Testimonials",
+    "contact": "Contact Us"
   },
   "hero": {
-    "welcome": "அல் மாவா இன்டர்நேஷனலுக்கு உங்களை வரவேற்கிறோம்",
-    "subtitle": "புதுமை சிறப்பை சந்திக்கும் இடம்.",
-    "title": "விரிவான வணிக தீர்வுகள்",
-    "description": "ரியல் எஸ்டேட் முதல் சட்ட ஆவணங்கள் வரை, உங்கள் தேவைகளுக்கு ஏற்ற முழுமையான வணிக சேவைகளை நாங்கள் வழங்குகிறோம். எங்கள் தொழில்முறை தீர்வுகளின் பல்வேறு வரம்பை ஆராயுங்கள்.",
-    "cta": "இன்றே தொடங்குங்கள்",
-    "tryTrustTransform": "முயற்சி. நம்பிக்கை. மாற்றம்.",
-    "empoweringBusinesses": "வணிகங்களை அதிகாரப்படுத்துதல், மாற்றுதல்",
-    "now": "இப்போது.",
-    "tomorrow": "நாளை.",
-    "future": "எதிர்காலம்.",
-    "tagline": "பிரகாசமான எதிர்காலத்திற்கான டிஜிட்டல் அனுபவம் மற்றும் தீர்வுகள்."
+    "welcome": "Welcome to Al Mawa International",
+    "subtitle": "where innovation meets excellence.",
+    "title": "Comprehensive Business Solutions",
+    "description": "From real estate to legal documentation, we provide end-to-end business services tailored to your needs. Explore our diverse range of professional solutions.",
+    "cta": "Get Started Today",
+    "tryTrustTransform": "TRY. TRUST. TRANSFORM.",
+    "empoweringBusinesses": "Empowering Businesses, Transforming",
+    "now": "Now.",
+    "tomorrow": "Tomorrow.",
+    "future": "Future.",
+    "tagline": "Curating digital experience and conveying digital solutions for brighter future."
   },
   "services": {
-    "realEstate": "ரியல் எஸ்டேட் சேவைகள்",
-    "legalPublic": "சட்ட பொது ஆவணங்கள்",
-    "insurance": "காப்பீட்டு சேவைகள்",
-    "hr": "மனித வளம் & ஆட்சேர்ப்பு",
-    "accounting": "கணக்கியல் & வரி",
-    "business": "வணிக பதிவு",
-    "legal": "சட்டம் & இணக்கம்",
-    "sales": "விற்பனை & கொள்முதல் மேலாண்மை",
-    "architect": "கட்டிடக்கலை & உள்துறை",
-    "travel": "பயணம் & போக்குவரத்து",
-    "import": "இறக்குமதி & ஏற்றுமதி",
-    "vehicle": "பழைய வாகன விற்பனை",
-    "event": "நிகழ்வு மேலாண்மை",
-    "visa": "விசா தீர்வுகள்",
-    "social": "சமூக & சமுதாய",
-    "workshop": "பட்டறை சேவைகள்",
-    "dropshipping": "டிராப்ஷிப்பிங் சேவைகள்"
+    "realEstate": "Real Estate Services",
+    "legalPublic": "Legal Public Documentation",
+    "insurance": "Insurance Services",
+    "hr": "HR & Recruitment",
+    "accounting": "Accounting & Tax",
+    "business": "Business Registration",
+    "legal": "Legal & Compliance",
+    "sales": "Sales & Purchase Management",
+    "architect": "Architect & Interior",
+    "travel": "Travel & Transport",
+    "import": "Import & Export",
+    "vehicle": "2nd Hand Vehicle Selling",
+    "event": "Event Management",
+    "visa": "Visa Solutions",
+    "social": "Social & Community",
+    "workshop": "Workshop Services",
+    "dropshipping": "Dropshipping Services"
   },
   "about": {
-    "title": "அல்மாவா சேவைகள் பற்றி",
-    "subtitle": "புதுமையின் மூலம் வணிகங்களை மேம்படுத்துதல்",
-    "description": "அல்மாவா சேவைகளில், அதிநவீன தீர்வுகள், மூலோபாய ஆலோசனை மற்றும் சிறப்புக்கான அசைக்க முடியாத அர்ப்பணிப்பு மூலம் வணிகங்களை மாற்றுவதில் நாங்கள் அர்ப்பணிப்புடன் உள்ளோம்.",
-    "ourStory": "எங்கள் கதை",
-    "ourMission": "எங்கள் நோக்கம்",
-    "ourValues": "எங்கள் மதிப்புகள்",
-    "meetTeam": "எங்கள் குழுவை சந்திக்கவும்",
-    "readyToWork": "ஒன்றாக வேலை செய்ய தயாரா?",
-    "getInTouch": "தொடர்பில் இருங்கள்",
-    "scheduleCall": "அழைப்பை திட்டமிடுங்கள்",
-    "pageTitle": "எங்களைப் பற்றி",
-    "pageSubtitle": "நாங்கள்",
-    "mainDescription": "எங்கள் வேலையின் மூலம், நாங்கள் வணிகங்களுக்கு ஆதரவு வழங்குவதற்கு மட்டுமல்லாமல், போட்டித்தன்மையான உலகில் அவர்களை வழிநடத்தவும், தகவமைக்கவும் மற்றும் செழிக்கவும் அவர்களை வலுப்படுத்துவதற்கும் நாங்கள் முயற்சி செய்கிறோம். அல்-மாவா இன்டர்நேஷனலில், நாங்கள் சேவைகளை வழங்குவது மட்டுமல்லாமல், மாற்றத்தை கொண்டு வருகிறோம் மற்றும் வளர்ச்சியை உறுதியளிக்கிறோம்.",
-    "ourTeamTitle": "எங்கள் குழு",
-    "teamDescription": "புதுமை மற்றும் குழுப்பணியால் உந்தப்பட்டு, ஐடி, டிஜிட்டல் மார்க்கெட்டிங் மற்றும் கிராபிக்ஸ் துறைகளின் எங்கள் நிபுணர்கள் தாக்கமான டிஜிட்டல் அனுபவங்களை உருவாக்க கைகோர்த்து வேலை செய்கிறார்கள். நாங்கள் கையாளும் ஒவ்வொரு திட்டத்திலும் தரம், படைப்பாற்றல் மற்றும் செயல்திறனை வழங்குவதில் நாங்கள் கவனம் செலுத்துகிறோம்.",
-    "wayWeWorkTitle": "நாங்கள் வேலை செய்யும் முறை",
-    "wayWeWorkDescription": "அல்-மாவா இன்டர்நேஷனலில், உண்மையில் வித்தியாசத்தை ஏற்படுத்தும் தீர்வுகளை வழங்க துல்லியம் மற்றும் படைப்பாற்றலை இணைப்பதில் நாங்கள் நம்பிக்கை கொண்டுள்ளோம். எங்கள் அணுகுமுறை ஒத்துழைப்பு, வெளிப்படைத்தன்மை மற்றும் முடிவு சார்ந்தது, ஒவ்வொரு திட்டமும் வாடிக்கையாளர் இலக்குகளுடன் முழுமையாக ஒத்திசைக்கப்படுவதை உறுதி செய்கிறது.",
-    "whyChooseUsTitle": "எங்களை ஏன் தேர்வு செய்ய வேண்டும்",
-    "whyChooseUsDescription": "அல்-மாவா இன்டர்நேஷனலைத் தேர்ந்தெடுப்பது என்பது உங்கள் வெற்றியை தங்கள் சொந்த வெற்றியைப் போலவே முன்னுரிமை அளிக்கும் குழுவுடன் கூட்டாண்மை செய்வதாகும். அளவிடக்கூடிய முடிவுகளை வழங்கும் தீர்வுகளை உருவாக்க நாங்கள் தொழில்நுட்பம், மூலோபாயம் மற்றும் படைப்பாற்றலை ஒன்றிணைக்கிறோம்.",
-    "whatWeStandForTitle": "நாங்கள் எதற்காக நிற்கிறோம்",
-    "whatWeStandForDescription": "நாங்கள் புதுமை, பொறுப்புக்கூறல் மற்றும் மாற்றத்திற்காக நிற்கிறோம் - நாங்கள் எடுக்கும் ஒவ்வொரு முடிவையும் வழிநடத்தும் மதிப்புகள். வாழ்க்கையை எளிதாக்கும் மற்றும் வளர்ச்சியை துரிதப்படுத்தும் தொழில்நுட்பத்தை உருவாக்குவதே எங்கள் குறிக்கோள்."
+    "title": "About Almawa Services",
+    "subtitle": "Empowering Businesses Through Innovation",
+    "description": "At Almawa Services, we are dedicated to transforming businesses through cutting-edge solutions, strategic consulting, and unwavering commitment to excellence.",
+    "ourStory": "Our Story",
+    "ourMission": "Our Mission",
+    "ourValues": "Our Values",
+    "meetTeam": "Meet Our Team",
+    "readyToWork": "Ready to Work Together?",
+    "getInTouch": "Get In Touch",
+    "scheduleCall": "Schedule a Call",
+    "pageTitle": "About",
+    "pageSubtitle": "us",
+    "mainDescription": "Through our work, we strive to not only support businesses but to empower them to lead, adapt, and thrive in a competitive world. At AL-Mawa International, we don't just provide services we deliver transformation and we promise evolution.",
+    "ourTeamTitle": "Our Team",
+    "teamDescription": "Driven by innovation and teamwork, our experts from IT, digital marketing, and graphics departments work hand in hand to create impactful digital experiences. We focus on delivering quality, creativity, and performance in every project we handle.",
+    "wayWeWorkTitle": "The Way We Work",
+    "wayWeWorkDescription": "At AL-Mawa International we combine a research-led discovery phase with creative problem-solving to deliver digital products that move your business forward. From collaborative workshops and rapid prototyping to agile sprints and rigorous QA, we focus on measurable outcomes and user impact at every step. Post-launch we provide analytics-driven improvements and ongoing support so solutions evolve with your goals and keep delivering value.",
+    "whyChooseUsTitle": "Why Choose Us",
+    "whyChooseUsDescription": "Choose AL-Mawa for a partner that blends deep technical expertise with business-first thinking. Our multidisciplinary teams—strategy, design, engineering, and growth—deliver scalable solutions focused on real user outcomes and measurable ROI. We prioritize transparency, predictable delivery, and long-term partnerships so projects launch confidently and continue to create impact.",
+    "whatWeStandForTitle": "What We Stand For",
+    "whatWeStandForDescription": "We stand for innovation, accountability, and people-centered technology. We build solutions that simplify complexity, respect privacy and accessibility, and drive sustainable growth. Guided by integrity, collaboration, and a commitment to continuous learning, our work aims to create meaningful, lasting impact for clients and the communities they serve."
   },
   "contact": {
-    "title": "எங்களை தொடர்பு கொள்ளுங்கள்",
-    "sales": "விற்பனை",
-    "salesDesc": "எங்கள் தளம் பற்றி மேலும் அறிய ஆர்வமா? மேலும் தகவலுக்கு எங்கள் விற்பனை குழுவை தொடர்பு கொள்ளுங்கள்.",
-    "support": "ஆதரவு",
-    "supportDesc": "எந்த தள கேள்விகளிலும் உதவ நாங்கள் இங்கே இருக்கிறோம். எங்கள் FAQ ஐப் பார்த்து மேலும் அறியவும்.",
-    "general": "பொதுவான விசாரணைகள்",
-    "generalDesc": "பொதுவான விசாரணைகளுக்கு, கீழே உள்ள படிவத்தைப் பயன்படுத்தி எங்களை தொடர்பு கொள்ளுங்கள்.",
-    "getDirections": "திசைகளைப் பெறுங்கள்",
-    "contactOffice": "அலுவலகத்தை தொடர்பு கொள்ளுங்கள்",
-    "formTitle": "எங்களுக்கு ஒரு செய்தி அனுப்புங்கள்",
-    "formDescription": "கீழே உள்ள படிவத்தை நிரப்புங்கள், நாங்கள் 24 மணி நேரத்திற்குள் உங்களை தொடர்பு கொள்வோம்.",
-    "firstName": "முதல் பெயர்",
-    "lastName": "கடைசி பெயர்",
-    "emailAddress": "மின்னஞ்சல் முகவரி",
-    "phoneNumber": "தொலைபேசி எண்",
-    "selectCountry": "நாட்டைத் தேர்ந்தெடுக்கவும்",
-    "subject": "விஷயம்",
-    "projectDescription": "உங்கள் திட்டத்தைப் பற்றி எங்களிடம் கூறுங்கள் மற்றும் உங்கள் கனவை நனவாக்க நாங்கள் எவ்வாறு உதவ முடியும்...",
-    "submitButton": "சமர்ப்பிக்கவும்",
-    "submitting": "அனுப்புகிறது...",
-    "successMessage": "செய்தி வெற்றிகரமாக அனுப்பப்பட்டது!",
-    "successDescription": "எங்களை தொடர்பு கொண்டதற்கு நன்றி. நாங்கள் 24 மணி நேரத்திற்குள் உங்களை தொடர்பு கொள்வோம்.",
-    "errorMessage": "செய்தி அனுப்புவதில் தோல்வி",
-    "errorDescription": "தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.",
+    "title": "Contact Us",
+    "sales": "Sales",
+    "salesDesc": "Interested in learning more about our platform? Contact our sales team for more information.",
+    "support": "Support",
+    "supportDesc": "We're here to help with any platform questions. Check out our FAQ and learn more.",
+    "general": "General Inquiry",
+    "generalDesc": "For general inquiries, please contact us using the form below.",
+    "getDirections": "Get Directions",
+    "contactOffice": "Contact Office",
+    "formTitle": "Send us a message",
+    "formDescription": "Fill out the form below and we'll get back to you within 24 hours.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "mobileNumber": "Mobile Number",
+    "selectCountry": "Select country",
+    "subject": "Subject",
+    "projectDescription": "Tell us about your project and how we can help bring your vision to life...",
+    "submitButton": "Submit",
+    "submitting": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "successDescription": "Thank you for reaching out. We'll get back to you within 24 hours.",
+    "errorMessage": "Failed to send message",
+    "errorDescription": "Please try again later.",
     "mapInstruction": {
-      "desktop": "திசைகளுக்கு வரைபடத்தின் மேல் வைக்கவும்",
-      "mobile": "திசைகளுக்கு வரைபடத்தைக் கிளிக் செய்யவும்"
+      "desktop": "Hover over the Map for Direction",
+      "mobile": "Click on the Map for Direction"
     },
-    "otherWaysTitle": "எங்களை அடைவதற்கான பிற வழிகள்",
-    "otherWaysDescription": "உங்களுக்கு சிறந்த முறையைத் தேர்ந்தெடுக்கவும். நாங்கள் எப்போதும் உதவ இங்கே இருக்கிறோம்!",
+    "otherWaysTitle": "Other Ways to Reach Us",
+    "otherWaysDescription": "Choose the method that works best for you. We're always here to help!",
     "contactInfo": {
       "email": {
-        "title": "மின்னஞ்சல்",
-        "description": "எங்களுக்கு எப்போது வேண்டுமானாலும் மின்னஞ்சல் அனுப்பவும்"
+        "title": "Email Us",
+        "description": "Send us an email anytime"
       },
       "phone": {
-        "title": "தொலைபேசி",
-        "description": "திங்கள் – சனி: காலை 9:00 – மாலை 7:00"
+        "title": "Phone",
+        "description": "Mon - Sat: 10:00 AM - 06:00 PM"
       },
       "office": {
-        "title": "அலுவலகம்",
-        "address": "அல்- மாவா இன்டர்நேஷனல் அலுவலக எண். 102-103, (நெக்சஸ் வொர்க் ஸ்பேசஸ்)",
-        "description": "1வது மாடி, பிரைட் ஐகான் கட்டிடம், அதிதி உணவகத்திற்கு மேலே, கரடி, புணே, மகாராஷ்டிரா- இந்தியா 411014"
+        "title": "Our Registered & Corporate address",
+        "address": "AL- MAWA INTERNATIONAL Office No. 102-103, ( Nexus Work Spaces)",
+        "description": "1st Floor, Pride icon Building, Above Athithi Restaurant, Kharadi, Pune , Maharashtra- India 411014"
       },
       "workingHours": {
-        "title": "வேலை நேரம்",
-        "hours": "திங்கள் – சனி: காலை 9:00 – மாலை 7:00",
-        "description": "* 1வது மற்றும் 3வது சனிக்கிழமைகளில் மூடப்பட்டிருக்கும்"
+        "title": "Working Hours",
+        "hours": "10:00 AM - 06:00 PM",
+        "description": ""
       }
     }
   },
   "footer": {
-    "description": "அடுத்த தலைமுறை டிஜிட்டல் தீர்வுகளை வழங்குதல் அவை கருத்துக்களை அளவிடக்கூடிய முடிவுகளாக மாற்றுகின்றன.",
-    "contactInfo": "தொடர்பு தகவல்",
-    "quickLinks": "விரைவு இணைப்புகள்",
-    "services": "சேவைகள்",
-    "followUs": "எங்களைப் பின்தொடரவும்",
-    "allRightsReserved": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
-    "companyName": "அல் மாவா இந்தர்நாஷனல்"
+    "description": "Delivering next-generation digital solutions that transform ideas into measurable results.",
+    "contactInfo": "Contact Info",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved.",
+    "companyName": "Al Mawa International"
   },
   "common": {
-    "learnMore": "மேலும் அறியவும்",
-    "readMore": "மேலும் படிக்கவும்",
-    "viewAll": "அனைத்தையும் பார்க்கவும்",
-    "submit": "சமர்ப்பிக்கவும்",
-    "cancel": "ரத்து செய்யவும்",
-    "close": "மூடவும்",
-    "save": "சேமிக்கவும்",
-    "loading": "ஏற்றுகிறது..."
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "loading": "Loading..."
   },
   "home": {
-    "companyTitle": "அல் மாவா இந்தர்நாஷனல்",
-    "companyDescription": "அல்-மாவா இந்தர்நாஷனல்லில், நாம் தொழில்நுட்பத்தை வேறும் கருவிகளின் தொகுப்பாக மட்டும் பார்க்கவில்லை, மாறாக மக்களை அதிகாரப்படுத்தும் வளர்ச்சியை வேகப்படுத்தும் ஒரு பாலமாகப் பார்க்கிறோம்।",
-    "ourMissionTitle": "எங்கள் நோக்கம்",
-    "ourMissionDescription": "தொழில்நுட்பத்தின் உண்மையான சக்தி மக்களில் உள்ளது என்ற நம்பிக்கையால் உத்வேகப்பட்டு, ச்மார்ட், சுலபமான மற்றும் நிலைத்திருக்கட்டைய ஐடி தீர்வுகள் மூலம் டிஜிட்டல் அனுபவத்தை மறுவரையறுக்க நாங்கள் அர்ப்பணிப்புடன் உள்ளோம்।",
-    "ourValuesTitle": "எங்கள் மதிப்புகள்",
-    "ourValuesDescription": "நாங்கள் நம்பிக்கை, புதுமை மற்றும் மாற்றத்தின் உலகளாவிய சின்னமாக மாற நினைக்கிறோம்।",
-    "voicesFromDesk": "மேஜையிலிருந்து குரல்கள்",
-    "voicesSubtitle": "தகவல், உத்வேகம் மற்றும் அதிகாரமளித்தலுக்கு வரையப்பட்ட தொழில்முறை காட்சிகள்"
+    "companyTitle": "Al Mawa International",
+    "companyDescription": "At AL-MAWA International we see technology as a strategic bridge that empowers people and accelerates growth. We partner with businesses to design tailored digital strategies, delivering measurable outcomes through innovation, reliability, and a commitment to excellence.",
+    "ourMissionTitle": "Our Mission",
+    "ourMissionDescription": "Guided by the belief that technology's greatest value is its human impact, we deliver smart, sustainable IT solutions that transform how businesses operate. Our mission is to blend creativity with engineering to build solutions that scale, perform, and create lasting business value.",
+    "ourValuesTitle": "Our Values",
+    "ourValuesDescription": "We value honesty, collaboration, and continuous improvement. Our work focuses on building sustainable, intelligent solutions that drive growth, empower teams, and create meaningful outcomes for our clients.",
+    "voicesFromDesk": "Voices From The Desk",
+    "voicesSubtitle": "Professional perspectives designed to inform, inspire, and empower"
   },
   "servicesSection": {
-    "title": "நாங்கள் என்ன உருவாக்குகிறோம்",
-    "subtitle": "தொழில்நுட்பம், நுண்ணறிவு மற்றும் ஒருங்கிணைந்த தீர்வுகள் மூலம் வணிகங்களை மாற்றுதல்",
+    "title": "what we create",
+    "subtitle": "Transforming businesses through technology, insight, and integrated solutions",
     "webDevelopment": {
-      "title": "வெப் டெவலப்மென்ட்",
-      "description": "வணிக வளர்ச்சி மற்றும் பயனர் ஈடுபாட்டை ஊக்குவிக்கும் நவீன, பதிலளிக்கக்கூடிய வலைத்தளங்கள் மற்றும் வலை பயன்பாடுகளை உருவாக்குதல்.",
-      "features": ["வலைத்தள வடிவமைப்பு", "ஈ-காமர்ஸ் டெவலப்மென்ட்", "வலை ஹோஸ்டிங்", "SEO ஒருங்கிணைப்பு"]
+      "title": "Web Development",
+      "description": "Creating modern, responsive websites and web applications that drive business growth and user engagement.",
+      "features": [
+        "Website Design",
+        "E-commerce Development",
+        "Web Hosting",
+        "SEO Integration"
+      ]
     },
     "itTechServices": {
-      "title": "IT மற்றும் தொழில்நுட்ப சேவைகள்",
-      "description": "உங்கள் வணிகத்திற்கான உள்கட்டமைப்பு, சைபர் பாதுகாப்பு மற்றும் நிர்வகிக்கப்பட்ட சேவைகள் உட்பட விரிவான IT தீர்வுகள்.",
-      "features": ["உள்கட்டமைப்பு சேவைகள்", "சைபர் பாதுகாப்பு", "நிர்வகிக்கப்பட்ட IT", "கிளவுட் தீர்வுகள்"]
+      "title": "IT & Tech Services",
+      "description": "Comprehensive IT solutions including infrastructure, cybersecurity, and managed services for your business.",
+      "features": [
+        "Infrastructure Services",
+        "Cybersecurity",
+        "Managed IT",
+        "Cloud Solutions"
+      ]
     },
     "digitalMarketing": {
-      "title": "டிஜிட்டல் மார்க்கெட்டிங்",
-      "description": "உங்கள் அணுகலை அதிகரிக்க மின்னஞ்சல், வாட்ஸ்அப் மற்றும் SMS மார்க்கெட்டிங் உட்பட மூலோபாய டிஜிட்டல் மார்க்கெட்டிங் பிரச்சாரங்கள்.",
-      "features": ["மின்னஞ்சல் மார்க்கெட்டிங்", "வாட்ஸ்அப் மார்க்கெட்டிங்", "SMS பிரச்சாரங்கள்", "பகுப்பாய்வு"]
+      "title": "Digital Marketing",
+      "description": "Strategic digital marketing campaigns including email, WhatsApp, and SMS marketing to boost your reach.",
+      "features": [
+        "Email Marketing",
+        "WhatsApp Marketing",
+        "SMS Campaigns",
+        "Analytics"
+      ]
     },
     "graphicDesign": {
-      "title": "கிராஃபிக் டிசைன்",
-      "description": "கவர்ச்சிகரமான காட்சி அடையாளம் மற்றும் மார்க்கெட்டிங் பொருட்களை உருவாக்க தொழில்முறை பிராண்டிங் மற்றும் கிராஃபிக் டிசைன் சேவைகள்.",
-      "features": ["பிராண்ட் அடையாளம்", "மார்க்கெட்டிங் டிசைன்", "டிஜிட்டல் கிராஃபிக்ஸ்", "அச்சு வடிவமைப்பு"]
+      "title": "Graphic Design",
+      "description": "Professional branding and graphic design services to create compelling visual identities and marketing materials.",
+      "features": [
+        "Brand Identity",
+        "Marketing Design",
+        "Digital Graphics",
+        "Print Design"
+      ]
     },
     "aiServices": {
-      "title": "AI சேவைகள்",
-      "description": "உங்கள் வணிகத்தில் புரட்சி செய்ய இயந்திர கற்றல், தன்னியக்கம் மற்றும் தரவு பகுப்பாய்வு உட்பட அதிநவீன செயற்கை நுண்ணறிவு தீர்வுகள்.",
-      "features": ["இயந்திர கற்றல் தீர்வுகள்", "கணினி பார்வை சேவைகள்", "உருவாக்கும் AI சேவைகள்", "AI தன்னியக்க சேவைகள்"]
+      "title": "AI Services",
+      "description": "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
+      "features": [
+        "Machine Learning Solutions",
+        "Computer Vision Services",
+        "Generative AI Services",
+        "AI Automation Services"
+      ]
     },
     "cloudSolutions": {
-      "title": "கிளவுட் சமாधานங்கள்",
-      "description": "நவீன பயன்பாடுகளுக்கான மிகப்பெரிய கிளவுட் உள்ளமைப்பு மற்றும் சேவைகள், நம்பகத்தன்மை, பாதுகாப்பு மற்றும் செலவு திறன் உறுதி செய்கின்றன.",
-      "features": ["கிளவுட் மைகிரேஷன்", "கிளவுட் உள்ளமைப்பு", "பேரழிவு மீட்சி", "கிளவுட் உகப்பாக்கம்"]
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure and services for modern applications, ensuring reliability, security, and cost efficiency.",
+      "features": [
+        "Cloud Migration",
+        "Cloud Infrastructure",
+        "Disaster Recovery",
+        "Cloud Optimization"
+      ]
     },
-    "learnMore": "மேலும் அறிக"
+    "learnMore": "Learn more"
   },
   "team": {
-    "title": "ஆற்றல்மிக்க",
-    "titleHighlight": "மனங்கள்",
-    "description": "அல்-மாவா இன்டர்நேஷனல் IT, டிஜிட்டல் மார்க்கெட்டிங், டிசைன், HR மற்றும் விற்பனையில் நிபுணர்களால் இயக்கப்படும் மெலிந்த, சுறுசுறுப்பான மற்றும் புதுமை-உந்துதல் கட்டமைப்பின் கீழ் செயல்படுகிறது. ஒவ்வொரு துறையும் தடையற்ற செயல்பாடு மற்றும் தாக்கமான வாடிக்கையாளர் முடிவுகளை உறுதிசெய்ய இணக்கமாக வேலை செய்கிறது. அல்-மாவாவின் இதயத்தில் அனுபவம் மற்றும் படைப்பாற்றலை இணைக்கும் ஆர்வமுள்ள தொழில் வல்லுநர்களின் பல்வேறு குழு உள்ளது — சிறப்பை வழங்குதல் மற்றும் ஒவ்வொரு திட்டத்தையும் வெற்றிக் கதையாக மாற்றுதல்.",
-    "linkedin": "லிங்க்ட்இன்"
+    "title": "The Dynamic",
+    "titleHighlight": "Minds",
+    "description": "AL-Mawa International operates under a lean, agile, and innovation-driven structure powered by specialists across IT, Digital Marketing, Design, HR, and Sales. Each department works in harmony to ensure seamless execution and impactful client outcomes. At the heart of AL-Mawa is a diverse team of passionate professionals who combine experience with creativity — delivering excellence and transforming every project into a success story.",
+    "linkedin": "LinkedIn"
   },
   "servicesPage": {
-    "title": "வலை மேம்பாட்டு சேவைகள் புணே - அல் மாவா இன்டர்நேஷனல்",
-    "subtitle": "நவீன உலகில் உங்கள் வணிகம் செழிக்க உதவ நாங்கள் விரிவான டிஜிட்டல் தீர்வுகளை வழங்குகிறோம்",
-    "ctaText": "எங்கள் நிபுணத்துவத்துடன் உங்கள் வணிகத்தை மாற்ற தயாரா?",
-    "ctaButton": "இன்றே தொடங்குங்கள்",
-    "learnMore": "மேலும் அறிக",
+    "title": "Web Development Services Pune - Al Mawa International",
+    "subtitle": "We offer comprehensive digital solutions to help your business thrive in the modern world",
+    "ctaText": "Ready to transform your business with our expertise?",
+    "ctaButton": "Get Started Today",
+    "learnMore": "Learn More",
     "uiux": {
-      "title": "UI/UX வடிவமைப்பு",
-      "description": "ஈடுபடுத்தும் மற்றும் மாற்றும் உள்ளுணர்வு மற்றும் காட்சி ரீதியாக அதிர்ச்சியூட்டும் பயனர் அனுபவங்களை உருவாக்குதல்.",
-      "features": ["பயனர் ஆராய்ச்சி", "வயர்ஃப்ரேமிங்", "முன்மாதிரி", "காட்சி வடிவமைப்பு"]
+      "title": "UI/UX Design",
+      "description": "Creating intuitive and visually stunning user experiences that engage and convert.",
+      "features": [
+        "User Research",
+        "Wireframing",
+        "Prototyping",
+        "Visual Design"
+      ]
     },
     "development": {
-      "title": "மென்பொருள் மேம்பாடு",
-      "description": "அதிநவீன தொழில்நுட்பங்கள் மற்றும் சிறந்த நடைமுறைகளுடன் வலுவான, அளவிடக்கூடிய பயன்பாடுகளை உருவாக்குதல்.",
-      "features": ["வலை பயன்பாடுகள்", "மொபைல் ஆப்ஸ்", "API மேம்பாடு", "தரவுத்தள வடிவமைப்பு"]
+      "title": "Software Development",
+      "description": "Building robust, scalable applications with cutting-edge technologies and best practices.",
+      "features": [
+        "Web Applications",
+        "Mobile Apps",
+        "API Development",
+        "Database Design"
+      ]
     },
     "marketing": {
-      "title": "டிஜிட்டல் மார்க்கெட்டிங்",
-      "description": "மூலோபாய டிஜிட்டல் மார்க்கெட்டிங் பிரச்சாரங்கள் மற்றும் தரவு-உந்துதல் நுண்ணறிவு மூலம் வளர்ச்சியை இயக்குதல்.",
-      "features": ["SEO மேம்படுத்தல்", "சமூக ஊடகம்", "உள்ளடக்க மூலோபாயம்", "பகுப்பாய்வு"]
+      "title": "Digital Marketing",
+      "description": "Driving growth through strategic digital marketing campaigns and data-driven insights.",
+      "features": [
+        "SEO Optimization",
+        "Social Media",
+        "Content Strategy",
+        "Analytics"
+      ]
     }
   },
   "webDevelopmentPage": {
-    "title": "வலை மேம்பாடு",
-    "subtitle": "எங்கள் விரிவான வலை மேம்பாட்டு சேவைகளுடன் உங்கள் டிஜிட்டல் இருப்பை மாற்றுங்கள். அதிர்ச்சியூட்டும் வடிவமைப்புகளிலிருந்து சக்திவாய்nt செயல்பாடு வரை, நாங்கள் முடிவுகளை வழங்கும் வலைத்தளங்களை உருவாக்குகிறோம்.",
-    "servicesTitle": "எங்கள் வலை மேம்பாட்டு சேவைகள்",
-    "benefitsTitle": "எங்கள் வலை மேம்பாட்டு சேவைகளின் நன்மைகள்",
-    "benefitsSubtitle": "உங்கள் வணிகத்திற்கு எங்கள் வலை மேம்பாட்டு தீர்வுகளை ஏன் தேர்வு செய்ய வேண்டும்",
-    "ctaTitle": "உங்கள் வலைத்தளத்தை உருவாக்க தயாரா?",
-    "ctaSubtitle": "உங்கள் வணிகத்தை முன்னோக்கி நகர்த்தும் சக்திவாய்nt வலை இருப்பை உருவாக்குவோம். இன்றே எங்கள் வலை மேம்பாட்டு நிபுணர்களுடன் தொடர்பு கொள்ளுங்கள்.",
-    "ctaButton": "இன்றே தொடங்குங்கள்",
-    "learnMoreButton": "எங்களைப் பற்றி மேலும் அறிக",
-    "enquireButton": "விசாரிக்கவும்",
-    "serviceBadge": "சேவை",
+    "title": "Web Development",
+    "subtitle": "Transform your digital presence with our comprehensive web development services. From stunning designs to powerful functionality, we create websites that drive results.",
+    "servicesTitle": "Our Web Development Services",
+    "benefitsTitle": "Benefits of Our Web Development Services",
+    "benefitsSubtitle": "Why choose our web development solutions for your business",
+    "ctaTitle": "Ready to Build Your Website?",
+    "ctaSubtitle": "Let's create a powerful web presence that drives your business forward. Get in touch with our web development experts today.",
+    "ctaButton": "Get Started Today",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Service",
     "services": {
       "websiteDesignDev": {
-        "title": "வலைத்தள வடிவமைப்பு மற்றும் மேம்பாட்டு சேவைகள்",
-        "description": "நவீன வடிவமைப்பு கொள்கைகளுடன் கருத்துருவாக்கத்திலிருந்து வரிசைப்படுத்தல் வரை முழுமையான வலைத்தள தீர்வுகள்",
-        "features": ["தனிப்பயன் வடிவமைப்பு", "பதிலளிக்கும் தளவமைப்பு", "நவீன UI/UX", "குறுக்கு-உலாவி இணக்கமான"]
+        "title": "Website Designing & Development Services",
+        "description": "Complete end-to-end website solutions from concept to deployment with modern design principles",
+        "features": [
+          "Custom Design",
+          "Responsive Layout",
+          "Modern UI/UX",
+          "Cross-browser Compatible"
+        ]
       },
       "websiteDesign": {
-        "title": "வலைத்தள வடிவமைப்பு சேவைகள்",
-        "description": "பார்வையாளர்களை வாடிக்கையாளர்களாக மாற்றும் ஆக்கப்பூர்வமான மற்றும் பயனர்-மையமான வலைத்தள வடிவமைப்புகள்",
-        "features": ["காட்சி வடிவமைப்பு", "பயனர் அனுபவம்", "பிராண்ட் ஒருங்கிணைப்பு", "மொபைல்-முதல் வடிவமைப்பு"]
+        "title": "Website Design Services",
+        "description": "Creative and user-focused website designs that convert visitors into customers",
+        "features": [
+          "Visual Design",
+          "User Experience",
+          "Brand Integration",
+          "Mobile-first Design"
+        ]
       },
       "websiteDevelopment": {
-        "title": "வலைத்தள மேம்பாட்டு சேவைகள்",
-        "description": "அளவிடக்கூடிய வலைத்தளங்களுக்கான வலுவான பின்தள மேம்பாடு மற்றும் முன்தள செயல்படுத்தல்",
-        "features": ["முன்தள மேம்பாடு", "பின்தள அமைப்புகள்", "தரவுத்தள ஒருங்கிணைப்பு", "API மேம்பாடு"]
+        "title": "Website Development Services",
+        "description": "Robust backend development and frontend implementation for scalable websites",
+        "features": [
+          "Frontend Development",
+          "Backend Systems",
+          "Database Integration",
+          "API Development"
+        ]
       },
       "ecommerce": {
-        "title": "மின்-வணிக மேம்பாடு",
-        "description": "பாதுகாப்பான கட்டண செயலாக்கம் மற்றும் சரக்கு மேலாண்மையுடன் முழு அம்சங்களுடன் கூடிய ஆன்லைன் கடைகள்",
-        "features": ["ஷாப்பிங் கார்ட்", "கட்டண நுழைவாயில்", "சரக்கு மேலாண்மை", "ஆர்டர் செயலாக்கம்"]
+        "title": "E-commerce Development",
+        "description": "Full-featured online stores with secure payment processing and inventory management",
+        "features": [
+          "Shopping Cart",
+          "Payment Gateway",
+          "Inventory Management",
+          "Order Processing"
+        ]
       },
       "hosting": {
-        "title": "வலை ஹோஸ்டிங் மற்றும் டொமைன் சேவைகள்",
-        "description": "உகந்த வலைத்தள செயல்திறனுக்கான நம்பகமான ஹோஸ்டிங் தீர்வுகள் மற்றும் டொமைன் மேலாண்மை",
-        "features": ["டொமைன் பதிவு", "SSL சான்றிதழ்கள்", "கிளவுட் ஹோஸ்டிங்", "24/7 ஆதரவு"]
+        "title": "Web Hosting & Domain Services",
+        "description": "Reliable hosting solutions and domain management for optimal website performance",
+        "features": [
+          "Domain Registration",
+          "SSL Certificates",
+          "Cloud Hosting",
+          "24/7 Support"
+        ]
       },
       "seo": {
-        "title": "SEO மற்றும் டிஜிட்டல் மார்க்கெட்டிங் ஒருங்கிணைப்பு",
-        "description": "உங்கள் ஆன்லைன் இருப்பை அதிகரிக்க உள்ளமைக்கப்பட்ட SEO மேம்படுத்தல் மற்றும் மார்க்கெட்டிங் கருவிகள்",
-        "features": ["பக்கத்தில் SEO", "பகுப்பாய்வு அமைப்பு", "சமூக ஒருங்கிணைப்பு", "செயல்திறன் கண்காணிப்பு"]
+        "title": "SEO & Digital Marketing Integration",
+        "description": "Built-in SEO optimization and marketing tools to boost your online presence",
+        "features": [
+          "On-page SEO",
+          "Analytics Setup",
+          "Social Integration",
+          "Performance Tracking"
+        ]
       },
       "security": {
-        "title": "செயல்திறன் மற்றும் பாதுகாப்பு மேம்படுத்தல்",
-        "description": "வேகமான, பாதுகாப்பான வலைத்தளங்களுக்கான மேம்பட்ட பாதுகாப்பு நடவடிக்கைகள் மற்றும் செயல்திறன் மேம்படுத்தல்",
-        "features": ["பாதுகாப்பு தணிக்கைகள்", "வேக மேம்படுத்தல்", "SSL செயல்படுத்தல்", "காப்பு தீர்வுகள்"]
+        "title": "Performance & Security Optimization",
+        "description": "Advanced security measures and performance optimization for fast, secure websites",
+        "features": [
+          "Security Audits",
+          "Speed Optimization",
+          "SSL Implementation",
+          "Backup Solutions"
+        ]
       },
       "maintenance": {
-        "title": "வலைத்தள பராமரிப்பு மற்றும் ஆதரவு",
-        "description": "உங்கள் வலைத்தளத்தை சுமூகமாக இயக்க தொடர்ச்சியான பராமரிப்பு மற்றும் தொழில்நுட்ப ஆதரவு",
-        "features": ["வழக்கமான புதுப்பிப்புகள்", "பிழை திருத்தங்கள்", "உள்ளடக்க புதுப்பிப்புகள்", "தொழில்நுட்ப ஆதரவு"]
+        "title": "Website Maintenance & Support",
+        "description": "Ongoing maintenance and technical support to keep your website running smoothly",
+        "features": [
+          "Regular Updates",
+          "Bug Fixes",
+          "Content Updates",
+          "Technical Support"
+        ]
       },
       "emerging": {
-        "title": "வளர்ந்து வரும் வலை தொழில்நுட்பங்கள்",
-        "description": "எதிர்கால-தயார் வலைத்தளங்களுக்கான அதிநவீன வலை தொழில்நுட்பங்கள் மற்றும் கட்டமைப்புகள்",
-        "features": ["முற்போக்கான வலை பயன்பாடுகள்", "AI ஒருங்கிணைப்பு", "நவீன கட்டமைப்புகள்", "கிளவுட் தீர்வுகள்"]
+        "title": "Emerging Web Technologies",
+        "description": "Cutting-edge web technologies and frameworks for future-ready websites",
+        "features": [
+          "Progressive Web Apps",
+          "AI Integration",
+          "Modern Frameworks",
+          "Cloud Solutions"
+        ]
       },
       "benefits": {
-        "title": "வலைத்தள வடிவமைப்பு மற்றும் மேம்பாட்டு சேவைகளின் நன்மைகள்",
-        "description": "உங்கள் வணிகத்திற்கான தொழில்முறை வலைத்தள வடிவமைப்பு மற்றும் மேம்பாட்டின் விரிவான நன்மைகள்",
-        "features": ["அதிகரித்த ஆன்லைன் இருப்பு", "சிறந்த பயனர் ஈடுபாடு", "அதிக மாற்று விகிதங்கள்", "தொழில்முறை நம்பகத்தன்மை"]
+        "title": "Benefits of Website Design & Development Services",
+        "description": "Comprehensive advantages of professional website design and development for your business",
+        "features": [
+          "Increased Online Presence",
+          "Better User Engagement",
+          "Higher Conversion Rates",
+          "Professional Credibility"
+        ]
       }
     },
     "benefitsList": [
-      "நம்பிக்கை மற்றும் நம்பகத்தன்மையை உருவாக்கும் தொழில்முறை வலை இருப்பு",
-      "அனைத்து சாதனங்களிலும் சரியாக வேலை செய்யும் பதிலளிக்கும் வடிவமைப்பு",
-      "சிறந்த தேடுபொறி தரவரிசைக்கான SEO-மேம்படுத்தப்பட்ட கட்டமைப்பு",
-      "வேகமான ஏற்றும் நேரங்கள் மற்றும் உகந்த செயல்திறன்",
-      "வழக்கமான காப்புப்பிரதிகளுடன் பாதுகாப்பான மற்றும் நம்பகமான ஹோஸ்டிங்",
-      "தொடர்ச்சியான ஆதரவு மற்றும் பராமரிப்பு சேர்க்கப்பட்டுள்ளது",
-      "உங்கள் வணிகத்துடன் வளரும் அளவிடக்கூடிய தீர்வுகள்",
-      "நவீன மார்க்கெட்டிங் கருவிகள் மற்றும் பகுப்பாய்வுகளுடன் ஒருங்கிணைப்பு"
+      "Professional web presence that builds trust and credibility",
+      "Responsive design that works perfectly on all devices",
+      "SEO-optimized structure for better search engine rankings",
+      "Fast loading times and optimal performance",
+      "Secure and reliable hosting with regular backups",
+      "Ongoing support and maintenance included",
+      "Scalable solutions that grow with your business",
+      "Integration with modern marketing tools and analytics"
     ]
   },
   "itTechServicesPage": {
-    "title": "IT மற்றும் தொழில்நுட்பம்",
-    "subtitle": "உங்கள் வணிகத்தை முன்னோக்கி நகர்த்த விரிவான IT தீர்வுகள் மற்றும் தொழில்நுட்ப சேவைகள். உள்கட்டமைப்பிலிருந்து வளர்ந்து வரும் தொழில்நுட்பங்கள் வரை, நாங்கள் உங்களை கவர் செய்துள்ளோம்.",
-    "servicesTitle": "முழுமையான IT மற்றும் தொழில்நுட்ப தீர்வுகள்",
-    "benefitsTitle": "எங்கள் IT மற்றும் தொழில்நுட்ப சேவைகளின் நன்மைகள்",
-    "benefitsSubtitle": "எங்கள் விரிவான IT தீர்வுகளுடன் உங்கள் வணிகத்தை மாற்றுங்கள்",
-    "ctaTitle": "உங்கள் IT உள்கட்டமைப்பை மேம்படுத்த தயாரா?",
-    "ctaSubtitle": "எங்கள் IT நிபுணர்கள் வலுவான, பாதுகாப்பான மற்றும் அளவிடக்கூடிய தொழில்நுட்ப அடித்தளத்தை உருவாக்க உதவட்டும். விரிவான IT மதிப்பீட்டிற்கு இன்றே எங்களை தொடர்பு கொள்ளுங்கள்.",
-    "ctaButton": "IT ஆலோசனை பெறுங்கள்",
-    "learnMoreButton": "எங்களைப் பற்றி மேலும் அறிக",
-    "enquireButton": "விசாரிக்கவும்",
-    "serviceBadge": "IT சேவை",
+    "title": "IT & Tech",
+    "subtitle": "Comprehensive IT solutions and technology services to power your business forward. From infrastructure to emerging technologies, we've got you covered.",
+    "servicesTitle": "Complete IT & Technology Solutions",
+    "benefitsTitle": "Benefits of Our IT & Tech Services",
+    "benefitsSubtitle": "Transform your business with our comprehensive IT solutions",
+    "ctaTitle": "Ready to Upgrade Your IT Infrastructure?",
+    "ctaSubtitle": "Let our IT experts help you build a robust, secure, and scalable technology foundation. Contact us today for a comprehensive IT assessment.",
+    "ctaButton": "Get IT Consultation",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "IT Service",
     "services": {
       "overview": {
-        "title": "IT மற்றும் தொழில்நுட்ப சேவைகள் - முழு விவரங்கள்",
-        "description": "எங்கள் அனைத்து IT மற்றும் தொழில்நுட்ப சேவை வழங்கல்களின் விரிவான கண்ணோட்டம்",
-        "feature1": "சேவை போர்ட்ஃபோலியோ",
-        "feature2": "தொழில்நுட்ப அடுக்கு",
-        "feature3": "செயல்படுத்தல் செயல்முறை",
-        "feature4": "ஆதரவு கட்டமைப்பு"
+        "title": "IT & Tech Services - Complete Details",
+        "description": "Comprehensive overview of all our IT and technology service offerings",
+        "feature1": "Service Portfolio",
+        "feature2": "Technology Stack",
+        "feature3": "Implementation Process",
+        "feature4": "Support Structure"
       },
       "infrastructure": {
-        "title": "உள்கட்டமைப்பு சேவைகள்",
-        "description": "அளவிடக்கூடிய மற்றும் நம்பகமான வணிக செயல்பாடுகளுக்கான வலுவான IT உள்கட்டமைப்பு தீர்வுகள்",
-        "features": ["நெட்வொர்க் அமைப்பு", "சர்வர் மேலாண்மை", "வன்பொருள் நிறுவல்", "சிஸ்டம் கட்டிடக்கலை"]
+        "title": "Infrastructure Services",
+        "description": "Robust IT infrastructure solutions for scalable and reliable business operations",
+        "feature1": "Network Setup",
+        "feature2": "Server Management",
+        "feature3": "Hardware Installation",
+        "feature4": "System Architecture"
       },
       "managed": {
-        "title": "நிர்வகிக்கப்பட்ட IT சேவைகள்",
-        "description": "உங்கள் சிஸ்டங்களை சுமூகமாக இயக்க முழுமையான IT மேலாண்மை மற்றும் கண்காணிப்பு",
-        "features": ["24/7 கண்காணிப்பு", "முன்னெச்சரிக்கை பராமரிப்பு", "சிஸ்டம் புதுப்பிப்புகள்", "செயல்திறன் மேம்படுத்தல்"]
+        "title": "Managed IT Services",
+        "description": "Complete IT management and monitoring to keep your systems running smoothly",
+        "feature1": "24/7 Monitoring",
+        "feature2": "Proactive Maintenance",
+        "feature3": "System Updates",
+        "feature4": "Performance Optimization"
       },
       "cybersecurity": {
-        "title": "சைபர் பாதுகாப்பு சேவைகள்",
-        "description": "சைபர் அச்சுறுத்தல்களிலிருந்து உங்கள் வணிகத்தைப் பாதுகாக்க மேம்பட்ட பாதுகாப்பு தீர்வுகள்",
-        "features": ["பாதுகாப்பு தணிக்கைகள்", "அச்சுறுத்தல் கண்டறிதல்", "தரவு பாதுகாப்பு", "இணக்க மேலாண்மை"]
+        "title": "Cybersecurity Services",
+        "description": "Advanced security solutions to protect your business from cyber threats",
+        "feature1": "Security Audits",
+        "feature2": "Threat Detection",
+        "feature3": "Data Protection",
+        "feature4": "Compliance Management"
       },
       "cloud": {
-        "title": "கிளவுட் மற்றும் DevOps சேவைகள்",
-        "description": "திறமையான மேம்பாடு மற்றும் வரிசைப்படுத்தலுக்கான நவீன கிளவுட் தீர்வுகள் மற்றும் DevOps நடைமுறைகள்",
-        "features": ["கிளவுட் இடம்பெயர்வு", "DevOps செயல்படுத்தல்", "CI/CD பைப்லைன்கள்", "கன்டெய்னர் மேலாண்மை"]
+        "title": "Cloud & DevOps Services",
+        "description": "Modern cloud solutions and DevOps practices for efficient development and deployment",
+        "feature1": "Cloud Migration",
+        "feature2": "DevOps Implementation",
+        "feature3": "CI/CD Pipelines",
+        "feature4": "Container Management"
       },
       "software": {
-        "title": "மென்பொருள் மேம்பாட்டு சேவைகள்",
-        "description": "உங்கள் குறிப்பிட்ட வணிக தேவைகளுக்கு ஏற்ப தனிப்பயன் மென்பொருள் தீர்வுகள்",
-        "features": ["தனிப்பயன் பயன்பாடுகள்", "சிஸ்டம் ஒருங்கிணைப்பு", "API மேம்பாடு", "மரபு நவீனமயமாக்கல்"]
+        "title": "Software Development Services",
+        "description": "Custom software solutions tailored to your specific business requirements",
+        "feature1": "Custom Applications",
+        "feature2": "System Integration",
+        "feature3": "API Development",
+        "feature4": "Legacy Modernization"
       },
       "consulting": {
-        "title": "IT ஆலோசனை மற்றும் ஆலோசகர்",
-        "description": "உங்கள் வணிக நோக்கங்களுடன் தொழில்நுட்பத்தை சீரமைக்க மூலோபாய IT வழிகாட்டுதல்",
-        "features": ["தொழில்நுட்ப மூலோபாயம்", "டிஜிட்டல் மாற்றம்", "IT திட்டமிடல்", "ஆபத்து மதிப்பீடு"]
+        "title": "IT Consulting & Advisory",
+        "description": "Strategic IT guidance to align technology with your business objectives",
+        "feature1": "Technology Strategy",
+        "feature2": "Digital Transformation",
+        "feature3": "IT Planning",
+        "feature4": "Risk Assessment"
       },
       "data": {
-        "title": "தரவு மற்றும் பகுப்பாய்வு சேவைகள்",
-        "description": "சிறந்த வணிக முடிவுகளுக்காக உங்கள் தரவை செயல்படக்கூடிய நுண்ணறிவுகளாக மாற்றுங்கள்",
-        "features": ["தரவு பகுப்பாய்வு", "வணிக நுண்ணறிவு", "அறிக்கையிடல் தீர்வுகள்", "தரவு காட்சிப்படுத்தல்"]
+        "title": "Data & Analytics Services",
+        "description": "Transform your data into actionable insights for better business decisions",
+        "feature1": "Data Analysis",
+        "feature2": "Business Intelligence",
+        "feature3": "Reporting Solutions",
+        "feature4": "Data Visualization"
       },
       "communication": {
-        "title": "தொடர்பு மற்றும் ஒத்துழைப்பு சேவைகள்",
-        "description": "தொலைநிலை குழுக்களுக்கான நவீன தொடர்பு கருவிகள் மற்றும் ஒத்துழைப்பு தளங்கள்",
-        "features": ["வீடியோ மாநாடு", "குழு ஒத்துழைப்பு", "ஆவண பகிர்வு", "தொலைநிலை அணுகல்"]
+        "title": "Communication & Collaboration Services",
+        "description": "Modern communication tools and collaboration platforms for remote teams",
+        "feature1": "Video Conferencing",
+        "feature2": "Team Collaboration",
+        "feature3": "Document Sharing",
+        "feature4": "Remote Access"
       },
       "support": {
-        "title": "IT ஆதரவு மற்றும் உதவி மேசை சேவைகள்",
-        "description": "உங்கள் IT தேவைகளுக்கான விரிவான தொழில்நுட்ப ஆதரவு மற்றும் உதவி மேசை சேவைகள்",
-        "features": ["தொழில்நுட்ப ஆதரவு", "சிக்கல் தீர்வு", "பயனர் பயிற்சி", "ஆவணப்படுத்தல்"]
+        "title": "IT Support & Helpdesk Services",
+        "description": "Comprehensive technical support and helpdesk services for your IT needs",
+        "feature1": "Technical Support",
+        "feature2": "Issue Resolution",
+        "feature3": "User Training",
+        "feature4": "Documentation"
       },
       "emerging": {
-        "title": "வளர்ந்து வரும் தொழில்நுட்ப சேவைகள்",
-        "description": "AI, IoT மற்றும் பிளாக்செயின் செயல்படுத்தல்கள் உட்பட அதிநவீன தொழில்நுட்ப தீர்வுகள்",
-        "features": ["AI ஒருங்கிணைப்பு", "IoT தீர்வுகள்", "பிளாக்செயின் மேம்பாடு", "ஆட்டோமேஷன் கருவிகள்"]
+        "title": "Emerging Technology Services",
+        "description": "Cutting-edge technology solutions including AI, IoT, and blockchain implementations",
+        "feature1": "AI Integration",
+        "feature2": "IoT Solutions",
+        "feature3": "Blockchain Development",
+        "feature4": "Automation Tools"
       },
       "benefits": {
-        "title": "IT மற்றும் தொழில்நுட்ப சேவைகளின் நன்மைகள்",
-        "description": "எங்கள் IT மற்றும் தொழில்நுட்ப சேவைகளை செயல்படுத்துவதன் முக்கிய நன்மைகள் மற்றும் பலன்கள்",
-        "features": ["செலவு குறைப்பு", "மேம்பட்ட பாதுகாப்பு", "மேம்பட்ட உற்பத்தித்திறன்", "மூலோபாய வளர்ச்சி"]
+        "title": "Benefits of IT & Tech Services",
+        "description": "Key advantages and benefits of implementing our IT and technology services",
+        "feature1": "Cost Reduction",
+        "feature2": "Enhanced Security",
+        "feature3": "Improved Productivity",
+        "feature4": "Strategic Growth"
       }
     },
-    "benefitsList": [
-      "திறமையான நிர்வகிக்கப்பட்ட சேவைகள் மூலம் குறைக்கப்பட்ட IT செலவுகள்",
-      "மேம்பட்ட சைபர் பாதுகாப்பு நடவடிக்கைகளுடன் மேம்பட்ட பாதுகாப்பு",
-      "நம்பகமான IT உள்கட்டமைப்புடன் மேம்பட்ட உற்பத்தித்திறன்",
-      "24/7 தொழில்நுட்ப ஆதரவு மற்றும் கண்காணிப்பு",
-      "உங்கள் வணிகத்துடன் வளரும் அளவிடக்கூடிய தீர்வுகள்",
-      "சமீபத்திய தொழில்நுட்பங்கள் மற்றும் சிறந்த நடைமுறைகளுக்கான அணுகல்",
-      "தொழில்துறை தரநிலைகள் மற்றும் விதிமுறைகளுடன் இணக்கம்",
-      "வணிக இலக்குகளுடன் சீரமைக்கப்பட்ட மூலோபாய IT திட்டமிடல்",
-      "வேகமான சிக்கல் தீர்வு மற்றும் குறைந்தபட்ச செயலிழப்பு நேரம்",
-      "சான்றளிக்கப்பட்ட IT நிபுணர்களிடமிருந்து நிபுணர் வழிகாட்டுதல்"
-    ],
-    "benefit1": "திறமையான நிர்வகிக்கப்பட்ட சேவைகள் மூலம் குறைக்கப்பட்ட IT செலவுகள்",
-    "benefit2": "மேம்பட்ட சைபர் பாதுகாப்பு நடவடிக்கைகளுடன் மேம்பட்ட பாதுகாப்பு",
-    "benefit3": "நம்பகமான IT உள்கட்டமைப்புடன் மேம்பட்ட உற்பத்தித்திறன்",
-    "benefit4": "24/7 தொழில்நுட்ப ஆதரவு மற்றும் கண்காணிப்பு",
-    "benefit5": "உங்கள் வணிகத்துடன் வளரும் அளவிடக்கூடிய தீர்வுகள்",
-    "benefit6": "சமீபத்திய தொழில்நுட்பங்கள் மற்றும் சிறந்த நடைமுறைகளுக்கான அணுகல்",
-    "benefit7": "தொழில்துறை தரநிலைகள் மற்றும் விதிமுறைகளுடன் இணக்கம்",
-    "benefit8": "வணிக இலக்குகளுடன் சீரமைக்கப்பட்ட மூலோபாய IT திட்டமிடல்",
-    "benefit9": "வேகமான சிக்கல் தீர்வு மற்றும் குறைந்தபட்ச செயலிழப்பு நேரம்",
-    "benefit10": "சான்றளிக்கப்பட்ட IT நிபுணர்களிடமிருந்து நிபுணர் வழிகாட்டுதல்"
+    "benefit1": "Reduced IT costs through efficient managed services",
+    "benefit2": "Enhanced security with advanced cybersecurity measures",
+    "benefit3": "Improved productivity with reliable IT infrastructure",
+    "benefit4": "24/7 technical support and monitoring",
+    "benefit5": "Scalable solutions that grow with your business",
+    "benefit6": "Access to latest technologies and best practices",
+    "benefit7": "Compliance with industry standards and regulations",
+    "benefit8": "Strategic IT planning aligned with business goals",
+    "benefit9": "Faster issue resolution and minimal downtime",
+    "benefit10": "Expert guidance from certified IT professionals"
   },
   "digitalMarketingPage": {
-    "title": "டிஜிட்டல் மார்க்கெட்டிங்",
-    "subtitle": "சக்திவாய்ந்த மின்னஞ்சல், வாட்ஸ்அப் மற்றும் SMS மார்க்கெட்டிங் பிரச்சாரங்கள் மூலம் உங்கள் வாடிக்கையாளர்களுடன் இணைக்கவும். எங்கள் ஒருங்கிணைந்த டிஜிட்டல் மார்க்கெட்டிங் தீர்வுகளுடன் ஈடுபாட்டை அதிகரிக்கவும் மற்றும் மாற்றங்களை அதிகரிக்கவும்.",
-    "statsTitle": "முடிவுகளை வழங்கும் மார்க்கெட்டிங்",
-    "servicesTitle": "எங்கள் டிஜிட்டல் மார்க்கெட்டிங் சேவைகள்",
-    "servicesSubtitle": "பல சேனல்களில் விரிவான மார்க்கெட்டிங் தீர்வுகள்",
-    "benefitsTitle": "மின்னஞ்சல், வாட்ஸ்அப் மற்றும் SMS மார்க்கெட்டிங்கின் நன்மைகள்",
-    "benefitsSubtitle": "உங்கள் வணிக வளர்ச்சிக்கு பல-சேனல் மார்க்கெட்டிங் ஏன் அவசியம்",
-    "ctaTitle": "உங்கள் மார்க்கெட்டிங் முடிவுகளை அதிகரிக்க தயாரா?",
-    "ctaSubtitle": "சக்திவாய்ந்த மின்னஞ்சல், வாட்ஸ்அப் மற்றும் SMS பிரச்சாரங்கள் மூலம் உங்கள் வாடிக்கையாளர்களுடன் இணைக்கத் தொடங்குங்கள். உண்மையான முடிவுகளை வழங்கும் மார்க்கெட்டிங் உத்தியை உருவாக்குவோம்.",
-    "ctaButton": "மார்க்கெட்டிங் பிரச்சாரத்தைத் தொடங்குங்கள்",
-    "learnMoreButton": "எங்களைப் பற்றி மேலும் அறிக",
-    "enquireButton": "விசாரிக்கவும்",
-    "serviceBadge": "மார்க்கெட்டிங்",
+    "title": "Digital Marketing",
+    "subtitle": "Connect with your customers through powerful email, WhatsApp, and SMS marketing campaigns. Drive engagement and boost conversions with our integrated digital marketing solutions.",
+    "statsTitle": "Marketing That Delivers Results",
+    "servicesTitle": "Our Digital Marketing Services",
+    "servicesSubtitle": "Comprehensive marketing solutions across multiple channels",
+    "benefitsTitle": "Benefits of Email, WhatsApp & SMS Marketing",
+    "benefitsSubtitle": "Why multi-channel marketing is essential for your business growth",
+    "ctaTitle": "Ready to Boost Your Marketing Results?",
+    "ctaSubtitle": "Start connecting with your customers through powerful email, WhatsApp, and SMS campaigns. Let's create a marketing strategy that drives real results.",
+    "ctaButton": "Start Marketing Campaign",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Marketing",
     "stats": {
       "emailUsers": {
-        "metric": "4.1 பில்லியன்",
-        "description": "உலகளவில் மின்னஞ்சல் பயனர்கள்"
+        "metric": "4.1 Billion",
+        "description": "Email users worldwide"
       },
       "whatsappUsers": {
-        "metric": "2+ பில்லியன்",
-        "description": "வாட்ஸ்அப் செயலில் உள்ள பயனர்கள்"
+        "metric": "2+ Billion",
+        "description": "WhatsApp active users"
       },
       "smsOpenRate": {
         "metric": "98%",
-        "description": "SMS திறக்கும் விகிதம்"
+        "description": "SMS open rate"
       },
       "emailROI": {
         "metric": "4200%",
-        "description": "மின்னஞ்சல் மார்க்கெட்டிங்கிற்கான சராசரி ROI"
+        "description": "Average ROI for email marketing"
       }
     },
     "services": {
       "email": {
-        "title": "மின்னஞ்சல் மார்க்கெட்டிங் சேவைகள்",
-        "description": "உங்கள் பார்வையாளர்களை ஈடுபடுத்தும் மற்றும் மாற்றங்களை இயக்கும் தொழில்முறை மின்னஞ்சல் பிரச்சாரங்கள்",
-        "feature1": "பிரச்சார வடிவமைப்பு",
-        "feature2": "தானியங்கு வரிசைகள்",
-        "feature3": "A/B சோதனை",
-        "feature4": "செயல்திறன் பகுப்பாய்வு"
+        "title": "Email Marketing Services",
+        "description": "Professional email campaigns that engage your audience and drive conversions",
+        "feature1": "Campaign Design",
+        "feature2": "Automated Sequences",
+        "feature3": "A/B Testing",
+        "feature4": "Performance Analytics"
       },
       "whatsapp": {
-        "title": "வாட்ஸ்அப் மார்க்கெட்டிங் சேவைகள்",
-        "description": "தனிப்பயனாக்கப்பட்ட செய்தியிடலுடன் வாட்ஸ்அப் வணிகம் மூலம் நேரடி வாடிக்கையாளர் ஈடுபாடு",
-        "feature1": "வணிக API அமைப்பு",
-        "feature2": "ஒளிபரப்பு செய்திகள்",
-        "feature3": "வாடிக்கையாளர் ஆதரவு",
-        "feature4": "தானியங்கு பதில்கள்"
+        "title": "WhatsApp Marketing Services",
+        "description": "Direct customer engagement through WhatsApp Business with personalized messaging",
+        "feature1": "Business API Setup",
+        "feature2": "Broadcast Messages",
+        "feature3": "Customer Support",
+        "feature4": "Automated Responses"
       },
       "sms": {
-        "title": "SMS மார்க்கெட்டிங் சேவைகள்",
-        "description": "நேர-உணர்திறன் விளம்பரங்கள் மற்றும் புதுப்பிப்புகளுக்கான இலக்கு SMS பிரச்சாரங்களுடன் உடனடி அணுகல்",
-        "feature1": "மொத்த SMS பிரச்சாரங்கள்",
-        "feature2": "தனிப்பயனாக்கப்பட்ட செய்திகள்",
-        "feature3": "விநியோக அறிக்கைகள்",
-        "feature4": "ஆப்ட்-இன் மேலாண்மை"
+        "title": "SMS Marketing Services",
+        "description": "Instant reach with targeted SMS campaigns for time-sensitive promotions and updates",
+        "feature1": "Bulk SMS Campaigns",
+        "feature2": "Personalized Messages",
+        "feature3": "Delivery Reports",
+        "feature4": "Opt-in Management"
       },
       "omnichannel": {
-        "title": "ஓம்னிசேனல் ஒருங்கிணைப்பு",
-        "description": "நிலையான வாடிக்கையாளர் அனுபவத்திற்காக அனைத்து மார்க்கெட்டிங் சேனல்களிலும் தடையற்ற ஒருங்கிணைப்பு",
-        "feature1": "குறுக்கு-தளம் பிரச்சாரங்கள்",
-        "feature2": "ஒருங்கிணைந்த பகுப்பாய்வு",
-        "feature3": "வாடிக்கையாளர் பயண வரைபடம்",
-        "feature4": "ஒத்திசைக்கப்பட்ட செய்தியிடல்"
+        "title": "Omnichannel Integration",
+        "description": "Seamless integration across all marketing channels for consistent customer experience",
+        "feature1": "Cross-platform Campaigns",
+        "feature2": "Unified Analytics",
+        "feature3": "Customer Journey Mapping",
+        "feature4": "Synchronized Messaging"
       },
       "benefits": {
-        "title": "மின்னஞ்சல், வாட்ஸ்அப் மற்றும் SMS மார்க்கெட்டிங்கின் நன்மைகள்",
-        "description": "வணிக வளர்ச்சிக்கான பல-சேனல் மார்க்கெட்டிங் அணுகுமுறையின் விரிவான நன்மைகள்",
-        "feature1": "அதிக ஈடுபாடு",
-        "feature2": "நேரடி தொடர்பு",
-        "feature3": "செலவு குறைவு",
-        "feature4": "அளவிடக்கூடிய முடிவுகள்"
+        "title": "Benefits of Email, WhatsApp & SMS Marketing",
+        "description": "Comprehensive advantages of multi-channel marketing approach for business growth",
+        "feature1": "Higher Engagement",
+        "feature2": "Direct Communication",
+        "feature3": "Cost-Effective",
+        "feature4": "Measurable Results"
       }
     },
-    "benefit1": "வாடிக்கையாளர்களின் விருப்பமான சேனல்கள் மூலம் நேரடி தொடர்பு",
-    "benefit2": "பாரம்பரிய விளம்பரத்துடன் ஒப்பிடும்போது அதிக ஈடுபாடு விகிதங்கள்",
-    "benefit3": "அளவிடக்கூடிய ROI உடன் செலவு குறைவான மார்க்கெட்டிங்",
-    "benefit4": "வாடிக்கையாளர் நடத்தை மற்றும் விருப்பங்களின் அடிப்படையில் தனிப்பயனாக்கப்பட்ட செய்தியிடல்",
-    "benefit5": "நிகழ்நேர விநியோகம் மற்றும் உடனடி வாடிக்கையாளர் கருத்து",
-    "benefit6": "நேரத்தை மிச்சப்படுத்தும் மற்றும் செயல்திறனை அதிகரிக்கும் தானியங்கு பிரச்சாரங்கள்",
-    "benefit7": "பிரச்சார மேம்படுத்தலுக்கான விரிவான பகுப்பாய்வு மற்றும் அறிக்கையிடல்",
-    "benefit8": "வழக்கமான ஈடுபாட்டின் மூலம் அதிகரித்த வாடிக்கையாளர் தக்கவைப்பு",
-    "benefit9": "உள்ளூர் தனிப்பயனாக்கல் திறன்களுடன் உலகளாவிய அணுகல்",
-    "benefit10": "தற்போதுள்ள CRM மற்றும் மார்க்கெட்டிங் கருவிகளுடன் ஒருங்கிணைப்பு"
+    "benefit1": "Direct communication with customers through their preferred channels",
+    "benefit2": "Higher engagement rates compared to traditional advertising",
+    "benefit3": "Cost-effective marketing with measurable ROI",
+    "benefit4": "Personalized messaging based on customer behavior and preferences",
+    "benefit5": "Real-time delivery and instant customer feedback",
+    "benefit6": "Automated campaigns that save time and increase efficiency",
+    "benefit7": "Detailed analytics and reporting for campaign optimization",
+    "benefit8": "Increased customer retention through regular engagement",
+    "benefit9": "Global reach with local personalization capabilities",
+    "benefit10": "Integration with existing CRM and marketing tools"
   },
   "graphicDesignPage": {
-    "title": "கிராஃபிக் டிசைன்",
-    "subtitle": "பார்வையாளர்களை கவர்ந்து முடிவுகளை வழங்கும் அற்புதமான விஷுவல் டிசைன்களுடன் உங்கள் பிராண்டை மாற்றுங்கள். பிராண்டிங் முதல் டிஜிட்டல் கிராஃபிக்ஸ் வரை, நாங்கள் தாக்கத்தை ஏற்படுத்தும் டிசைன்களை உருவாக்குகிறோம்.",
-    "statsTitle": "விஷுவல் டிசைனின் சக்தி",
-    "servicesTitle": "எங்கள் கிராஃபிக் டிசைன் சேவைகள்",
-    "servicesSubtitle": "உங்கள் அனைத்து விஷுவல் கம்யூனிகேஷன் தேவைகளுக்கான விரிவான டிசைன் தீர்வுகள்",
-    "benefitsTitle": "பிராண்டிங் மற்றும் கிராஃபிக் டிசைன் சேவைகளின் நன்மைகள்",
-    "benefitsSubtitle": "தொழில்முறை டிசைன் சேவைகள் உங்கள் வணிகத்தை எவ்வாறு மாற்றும்",
-    "ctaTitle": "உங்கள் பிராண்டை மாற்ற தயாரா?",
-    "ctaSubtitle": "எங்கள் ஆக்கப்பூர்வ குழு உங்கள் பார்வையை தாக்கத்தை ஏற்படுத்தும் அற்புதமான கிராஃபிக் டிசைன்களுடன் உயிர்ப்பிக்க அனுமதிக்கவும். இன்றே உங்கள் டிசைன் திட்டத்தைத் தொடங்கி, தொழில்முறை டிசைன் எவ்வளவு வித்தியாசத்தை ஏற்படுத்தும் என்பதைப் பாருங்கள்.",
-    "ctaButton": "டிசைன் திட்டத்தைத் தொடங்குங்கள்",
-    "learnMoreButton": "எங்களைப் பற்றி மேலும் அறிக",
-    "enquireButton": "விசாரிக்கவும்",
-    "serviceBadge": "டிசைன்",
+    "title": "Graphic Design",
+    "subtitle": "Transform your brand with stunning visual designs that captivate audiences and drive results. From branding to digital graphics, we create designs that make an impact.",
+    "statsTitle": "The Power of Visual Design",
+    "servicesTitle": "Our Graphic Design Services",
+    "servicesSubtitle": "Comprehensive design solutions for all your visual communication needs",
+    "benefitsTitle": "Benefits of Branding & Graphic Design Services",
+    "benefitsSubtitle": "How professional design services can transform your business",
+    "ctaTitle": "Ready to Transform Your Brand?",
+    "ctaSubtitle": "Let our creative team bring your vision to life with stunning graphic designs that make an impact. Start your design project today and see the difference professional design can make.",
+    "ctaButton": "Start Design Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Design",
     "stats": {
       "firstImpressions": {
         "metric": "94%",
-        "description": "முதல் பதிவுகள் டிசைன்-தொடர்பானவை"
+        "description": "First impressions are design-related"
       },
       "visualContent": {
         "metric": "3x",
-        "description": "விஷுவல் உள்ளடக்கத்தைப் பகிர்வதற்கான அதிக வாய்ப்பு"
+        "description": "More likely to share visual content"
       },
       "visualLearners": {
         "metric": "65%",
-        "description": "மக்கள் விஷுவல் கற்றுக்கொள்பவர்கள்"
+        "description": "Of people are visual learners"
       },
       "brandRecognition": {
         "metric": "80%",
-        "description": "நிறத்துடன் பிராண்ட் அங்கீகார அதிகரிப்பு"
+        "description": "Brand recognition increase with color"
       }
     },
     "services": {
       "brandIdentity": {
-        "title": "பிராண்ட் அடையாள டிசைன்",
-        "description": "லோகோ, வண்ண தட்டுகள் மற்றும் பிராண்ட் வழிகாட்டுதல்கள் உட்பட முழுமையான பிராண்ட் அடையாள அமைப்புகள்",
-        "feature1": "லோகோ டிசைன்",
-        "feature2": "பிராண்ட் வழிகாட்டுதல்கள்",
-        "feature3": "வண்ணத் திட்டங்கள்",
-        "feature4": "அச்சுக்கலை தேர்வு"
+        "title": "Brand Identity Design",
+        "description": "Complete brand identity systems including logos, color palettes, and brand guidelines",
+        "feature1": "Logo Design",
+        "feature2": "Brand Guidelines",
+        "feature3": "Color Schemes",
+        "feature4": "Typography Selection"
       },
       "marketing": {
-        "title": "மார்க்கெட்டிங் மற்றும் விளம்பர டிசைன்",
-        "description": "ஈடுபாட்டை அதிகரிக்கும் மற்றும் மாற்றங்களை அதிகரிக்கும் கண்ணைக் கவரும் மார்க்கெட்டிங் பொருட்கள்",
-        "feature1": "துண்டுப்பிரசுரங்கள் மற்றும் சிற்றேடுகள்",
-        "feature2": "பேனர்கள் மற்றும் போஸ்டர்கள்",
-        "feature3": "விளம்பர டிசைன்",
-        "feature4": "விளம்பர கிராஃபிக்ஸ்"
+        "title": "Marketing & Promotional Design",
+        "description": "Eye-catching marketing materials that drive engagement and boost conversions",
+        "feature1": "Flyers & Brochures",
+        "feature2": "Banners & Posters",
+        "feature3": "Advertisement Design",
+        "feature4": "Promotional Graphics"
       },
       "digitalSocial": {
-        "title": "டிஜிட்டல் மற்றும் சமூக ஊடக டிசைன்",
-        "description": "சமூக ஊடக தளங்கள் மற்றும் ஆன்லைன் இருப்புக்கு மேம்படுத்தப்பட்ட ஈர்க்கும் டிஜிட்டல் கிராஃபிக்ஸ்",
-        "feature1": "சமூக ஊடக இடுகைகள்",
-        "feature2": "அட்டைப் படங்கள்",
-        "feature3": "டிஜிட்டல் விளம்பரங்கள்",
-        "feature4": "வலை கிராஃபிக்ஸ்"
+        "title": "Digital & Social Media Design",
+        "description": "Engaging digital graphics optimized for social media platforms and online presence",
+        "feature1": "Social Media Posts",
+        "feature2": "Cover Images",
+        "feature3": "Digital Ads",
+        "feature4": "Web Graphics"
       },
       "uiux": {
-        "title": "UI/UX மற்றும் வலை கிராஃபிக்ஸ்",
-        "description": "பயனர் அனுபவத்தை மேம்படுத்தும் பயனர்-நட்பு இடைமுக டிசைன்கள் மற்றும் வலை கிராஃபிக்ஸ்",
-        "feature1": "வலைத்தள கிராஃபிக்ஸ்",
-        "feature2": "UI கூறுகள்",
-        "feature3": "ஐகான்கள் மற்றும் விளக்கப்படங்கள்",
-        "feature4": "பயனர் இடைமுக டிசைன்"
+        "title": "UI/UX & Web Graphics",
+        "description": "User-friendly interface designs and web graphics that enhance user experience",
+        "feature1": "Website Graphics",
+        "feature2": "UI Elements",
+        "feature3": "Icons & Illustrations",
+        "feature4": "User Interface Design"
       },
       "corporate": {
-        "title": "கார்ப்பரேட் மற்றும் அலுவலக பிராண்டிங்",
-        "description": "வணிகங்களுக்கான தொழில்முறை கார்ப்பரேட் அடையாளம் மற்றும் அலுவலக பிராண்டிங் தீர்வுகள்",
-        "feature1": "வணிக அட்டைகள்",
-        "feature2": "கடிதத்தலைப்புகள்",
-        "feature3": "அலுவலக அடையாளங்கள்",
-        "feature4": "கார்ப்பரேட் விளக்கக்காட்சிகள்"
+        "title": "Corporate & Office Branding",
+        "description": "Professional corporate identity and office branding solutions for businesses",
+        "feature1": "Business Cards",
+        "feature2": "Letterheads",
+        "feature3": "Office Signage",
+        "feature4": "Corporate Presentations"
       },
       "motion": {
-        "title": "மோஷன் கிராஃபிக்ஸ் மற்றும் மல்டிமீடியா டிசைன்",
-        "description": "ஈர்க்கும் விஷுவல் கதைசொல்லலுக்கான டைனமிக் மோஷன் கிராஃபிக்ஸ் மற்றும் மல்டிமீடியா உள்ளடக்கம்",
-        "feature1": "அனிமேட்டட் கிராஃபிக்ஸ்",
-        "feature2": "வீடியோ கிராஃபிக்ஸ்",
-        "feature3": "GIF உருவாக்கம்",
-        "feature4": "ஊடாடும் ஊடகம்"
+        "title": "Motion Graphics & Multimedia Design",
+        "description": "Dynamic motion graphics and multimedia content for engaging visual storytelling",
+        "feature1": "Animated Graphics",
+        "feature2": "Video Graphics",
+        "feature3": "GIF Creation",
+        "feature4": "Interactive Media"
       },
       "illustration": {
-        "title": "விளக்கப்படம் மற்றும் ஆக்கப்பூர்வ கலை",
-        "description": "உங்கள் பிராண்ட் மற்றும் செய்திக்கு ஏற்ப தனிப்பயன் விளக்கப்படங்கள் மற்றும் ஆக்கப்பூர்வ கலைப்படைப்புகள்",
-        "feature1": "தனிப்பயன் விளக்கப்படங்கள்",
-        "feature2": "டிஜிட்டல் கலை",
-        "feature3": "பாத்திர டிசைன்",
-        "feature4": "தகவல் கிராஃபிக்ஸ்"
+        "title": "Illustration & Creative Art",
+        "description": "Custom illustrations and creative artwork tailored to your brand and message",
+        "feature1": "Custom Illustrations",
+        "feature2": "Digital Art",
+        "feature3": "Character Design",
+        "feature4": "Infographics"
       },
       "print": {
-        "title": "அச்சு மற்றும் வெளியீட்டு டிசைன்",
-        "description": "புத்தகங்கள், பத்திரிகைகள் மற்றும் மார்க்கெட்டிங் பொருட்களுக்கான தொழில்முறை அச்சு டிசைன் சேவைகள்",
-        "feature1": "புத்தக டிசைன்",
-        "feature2": "பத்திரிகை தளவமைப்பு",
-        "feature3": "பட்டியல் டிசைன்",
-        "feature4": "அச்சு பொருட்கள்"
+        "title": "Print & Publishing Design",
+        "description": "Professional print design services for books, magazines, and marketing materials",
+        "feature1": "Book Design",
+        "feature2": "Magazine Layout",
+        "feature3": "Catalog Design",
+        "feature4": "Print Materials"
       },
       "packaging": {
-        "title": "பேக்கேஜிங் மற்றும் தயாரிப்பு பிராண்டிங்",
-        "description": "அலமாரிகளில் தனித்து நிற்கும் கவர்ச்சிகரமான பேக்கேஜிங் டிசைன் மற்றும் தயாரிப்பு பிராண்டிங்",
-        "feature1": "தயாரிப்பு பேக்கேஜிங்",
-        "feature2": "லேபிள் டிசைன்",
-        "feature3": "பிராண்ட் பயன்பாடுகள்",
-        "feature4": "தயாரிப்பு கிராஃபிக்ஸ்"
+        "title": "Packaging & Product Branding",
+        "description": "Attractive packaging design and product branding that stands out on shelves",
+        "feature1": "Product Packaging",
+        "feature2": "Label Design",
+        "feature3": "Brand Applications",
+        "feature4": "Product Graphics"
       },
       "emerging": {
-        "title": "வளர்ந்து வரும் கிராஃபிக் டிசைன் போக்குகள்",
-        "description": "சமீபத்திய போக்குகள் மற்றும் தொழில்நுட்பங்களைப் பயன்படுத்தி அதிநவீன டிசைன் அணுகுமுறைகள்",
-        "feature1": "நவீன டிசைன் போக்குகள்",
-        "feature2": "3D கிராஃபிக்ஸ்",
-        "feature3": "AR/VR கிராஃபிக்ஸ்",
-        "feature4": "ஊடாடும் டிசைன்"
+        "title": "Emerging Graphic Design Trends",
+        "description": "Cutting-edge design approaches using the latest trends and technologies",
+        "feature1": "Modern Design Trends",
+        "feature2": "3D Graphics",
+        "feature3": "AR/VR Graphics",
+        "feature4": "Interactive Design"
       },
       "benefits": {
-        "title": "பிராண்டிங் மற்றும் கிராஃபிக் டிசைன் சேவைகளின் நன்மைகள்",
-        "description": "வணிக வெற்றிக்கான தொழில்முறை பிராண்டிங் மற்றும் கிராஃபிக் டிசைனின் முக்கிய நன்மைகள்",
-        "feature1": "பிராண்ட் அங்கீகாரம்",
-        "feature2": "தொழில்முறை படம்",
-        "feature3": "மார்க்கெட்டிங் செயல்திறன்",
-        "feature4": "வாடிக்கையாளர் நம்பிக்கை"
+        "title": "Benefits of Branding & Graphic Design Services",
+        "description": "Key advantages of professional branding and graphic design for business success",
+        "feature1": "Brand Recognition",
+        "feature2": "Professional Image",
+        "feature3": "Marketing Effectiveness",
+        "feature4": "Customer Trust"
       }
     },
-    "benefit1": "நம்பிக்கை மற்றும் நம்பகத்தன்மையை உருவாக்கும் தொழில்முறை பிராண்ட் படம்",
-    "benefit2": "அனைத்து மார்க்கெட்டிங் பொருட்களிலும் நிலையான விஷுவல் அடையாளம்",
-    "benefit3": "அதிகரித்த பிராண்ட் அங்கீகாரம் மற்றும் வாடிக்கையாளர் நினைவு",
-    "benefit4": "பார்வைக்கு கவர்ச்சிகரமான உள்ளடக்கத்துடன் அதிக ஈடுபாட்டு விகிதங்கள்",
-    "benefit5": "அனைத்து வணிக அளவுகளுக்கும் செலவு குறைவான டிசைன் தீர்வுகள்",
-    "benefit6": "தரத்தில் சமரசம் செய்யாமல் வேகமான திருப்பு நேரங்கள்",
-    "benefit7": "வெவ்வேறு தளங்களில் வேலை செய்யும் அளவிடக்கூடிய டிசைன்கள்",
-    "benefit8": "டிசைன் போக்குகள் மற்றும் சிறந்த நடைமுறைகளில் நிபுணர் வழிகாட்டுதல்",
-    "benefit9": "உங்கள் குறிப்பிட்ட தேவைகளுக்கு ஏற்ப தனிப்பயன் தீர்வுகள்",
-    "benefit10": "தொடர்ச்சியான டிசைன் ஆதரவு மற்றும் திருத்தங்கள் சேர்க்கப்பட்டுள்ளன"
+    "benefit1": "Professional brand image that builds trust and credibility",
+    "benefit2": "Consistent visual identity across all marketing materials",
+    "benefit3": "Increased brand recognition and customer recall",
+    "benefit4": "Higher engagement rates with visually appealing content",
+    "benefit5": "Cost-effective design solutions for all business sizes",
+    "benefit6": "Fast turnaround times without compromising quality",
+    "benefit7": "Scalable designs that work across different platforms",
+    "benefit8": "Expert guidance on design trends and best practices",
+    "benefit9": "Custom solutions tailored to your specific needs",
+    "benefit10": "Ongoing design support and revisions included"
   },
   "aiServicesPage": {
-    "title": "AI சேவைகள்",
-    "subtitle": "உங்கள் வணிக செயல்பாடுகளை மாற்றுவதற்கும் புதுமையை ஊக்குவிப்பதற்கும் செயற்கை நுண்ணறிவின் சக்தியைப் பயன்படுத்துங்கள். எங்கள் விரிவான AI சேவைகள் போட்டி நன்மைக்காக அதிநவீன தொழில்நுட்பத்தைப் பயன்படுத்த உங்களுக்கு உதவுகின்றன.",
-    "servicesTitle": "எங்கள் AI சேவைகள்",
-    "benefitsTitle": "எங்கள் AI சேவைகளை ஏன் தேர்வு செய்ய வேண்டும்?",
-    "benefitsSubtitle": "எதிர்காலத்திற்காக வடிவமைக்கப்பட்ட அறிவார்ந்த தீர்வுகளுடன் உங்கள் வணிகத்தை மாற்றுங்கள்",
-    "ctaTitle": "AI உடன் உங்கள் வணிகத்தை மாற்ற தயாரா?",
-    "ctaSubtitle": "எங்கள் AI நிபுணர்கள் புதுமை மற்றும் வளர்ச்சியை ஊக்குவிக்க செயற்கை நுண்ணறிவின் சக்தியைப் பயன்படுத்த உதவட்டும். இன்றே உங்கள் AI மாற்றத்தைத் தொடங்கி உங்கள் வணிகத்திற்கான புதிய சாத்தியங்களைத் திறக்கவும்.",
-    "ctaButton": "AI திட்டத்தைத் தொடங்குங்கள்",
-    "learnMoreButton": "எங்களைப் பற்றி மேலும் அறிக",
-    "enquireButton": "விசாரிக்கவும்",
-    "serviceBadge": "AI சேவை",
+    "title": "AI Services",
+    "subtitle": "Harness the power of artificial intelligence to transform your business operations and drive innovation. Our comprehensive AI services help you leverage cutting-edge technology for competitive advantage.",
+    "servicesTitle": "Our AI Services",
+    "benefitsTitle": "Why Choose Our AI Services?",
+    "benefitsSubtitle": "Transform your business with intelligent solutions designed for the future",
+    "ctaTitle": "Ready to Transform Your Business with AI?",
+    "ctaSubtitle": "Let our AI experts help you harness the power of artificial intelligence to drive innovation and growth. Start your AI transformation today and unlock new possibilities for your business.",
+    "ctaButton": "Start AI Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "AI Service",
     "services": {
       "machineLearning": {
-        "title": "மெஷின் லர்னிங் (ML) சேவைகள்",
-        "description": "செயல்முறைகளை தானியங்குபடுத்துவதற்கும் உங்கள் தரவிலிருந்து நுண்ணறிவுகளைப் பிரித்தெடுப்பதற்கும் மேம்பட்ட மெஷின் லர்னிங் தீர்வுகள்",
-        "feature1": "முன்னறிவிப்பு பகுப்பாய்வு",
-        "feature2": "வகைப்பாடு மாதிரிகள்",
-        "feature3": "பரிந்துரை அமைப்புகள்",
-        "feature4": "அசாதாரண கண்டறிதல்"
+        "title": "Machine Learning (ML) Services",
+        "description": "Advanced machine learning solutions to automate processes and extract insights from your data",
+        "feature1": "Predictive Analytics",
+        "feature2": "Classification Models",
+        "feature3": "Recommendation Systems",
+        "feature4": "Anomaly Detection"
       },
       "nlp": {
-        "title": "இயற்கை மொழி செயலாக்கம் (NLP) சேவைகள்",
-        "description": "உங்கள் பயன்பாடுகளுக்கான அறிவார்ந்த உரை செயலாக்கம் மற்றும் மொழி புரிதல் திறன்கள்",
-        "feature1": "உரை பகுப்பாய்வு",
-        "feature2": "சாட்பாட்கள் மற்றும் மெய்நிகர் உதவியாளர்கள்",
-        "feature3": "உணர்வு பகுப்பாய்வு",
-        "feature4": "மொழி மொழிபெயர்ப்பு"
+        "title": "Natural Language Processing (NLP) Services",
+        "description": "Intelligent text processing and language understanding capabilities for your applications",
+        "feature1": "Text Analysis",
+        "feature2": "Chatbots & Virtual Assistants",
+        "feature3": "Sentiment Analysis",
+        "feature4": "Language Translation"
       },
       "computerVision": {
-        "title": "கணினி பார்வை சேவைகள்",
-        "description": "காட்சி பணிகளை தானியங்குபடுத்துவதற்கும் நுண்ணறிவுகளைப் பிரித்தெடுப்பதற்கும் மேம்பட்ட படம் மற்றும் வீடியோ பகுப்பாய்வு திறன்கள்",
-        "feature1": "பொருள் கண்டறிதல்",
-        "feature2": "படம் வகைப்பாடு",
-        "feature3": "முக அங்கீகாரம்",
-        "feature4": "தர ஆய்வு"
+        "title": "Computer Vision Services",
+        "description": "Advanced image and video analysis capabilities to automate visual tasks and extract insights",
+        "feature1": "Object Detection",
+        "feature2": "Image Classification",
+        "feature3": "Facial Recognition",
+        "feature4": "Quality Inspection"
       },
       "generativeAI": {
-        "title": "உருவாக்கும் AI சேவைகள்",
-        "description": "உள்ளடக்கம், குறியீடு மற்றும் புதுமையான பயன்பாடுகளை உருவாக்க அதிநவீன உருவாக்கும் AI தீர்வுகள்",
-        "feature1": "உள்ளடக்க உருவாக்கம்",
-        "feature2": "குறியீடு தானியங்குபடுத்தல்",
-        "feature3": "ஆக்கப்பூர்வ வடிவமைப்பு",
-        "feature4": "செயற்கை தரவு"
+        "title": "Generative AI Services",
+        "description": "Cutting-edge generative AI solutions to create content, code, and innovative applications",
+        "feature1": "Content Generation",
+        "feature2": "Code Automation",
+        "feature3": "Creative Design",
+        "feature4": "Synthetic Data"
       },
       "aiAutomation": {
-        "title": "AI தானியங்குபடுத்தல் சேவைகள்",
-        "description": "பணிப்பாய்வுகளை நெறிப்படுத்துவதற்கும் செயல்பாட்டு திறனை அதிகரிப்பதற்கும் அறிவார்ந்த தானியங்குபடுத்தல் தீர்வுகள்",
-        "feature1": "செயல்முறை தானியங்குபடுத்தல்",
-        "feature2": "அறிவார்ந்த ஆவண செயலாக்கம்",
-        "feature3": "பணிப்பாய்வு மேம்படுத்தல்",
-        "feature4": "RPA ஒருங்கிணைப்பு"
+        "title": "AI Automation Services",
+        "description": "Intelligent automation solutions to streamline workflows and increase operational efficiency",
+        "feature1": "Process Automation",
+        "feature2": "Intelligent Document Processing",
+        "feature3": "Workflow Optimization",
+        "feature4": "RPA Integration"
       },
       "dataAnalytics": {
-        "title": "தரவு மற்றும் பகுப்பாய்வு AI சேவைகள்",
-        "description": "உங்கள் நிறுவனத்தில் தரவு-உந்துதல் முடிவெடுப்பை ஊக்குவிக்க AI-இயங்கும் பகுப்பாய்வு மற்றும் நுண்ணறிவுகள்",
-        "feature1": "முன்னறிவிப்பு பகுப்பாய்வு",
-        "feature2": "வணிக நுண்ணறிவு",
-        "feature3": "தரவு காட்சிப்படுத்தல்",
-        "feature4": "நிகழ்நேர நுண்ணறிவுகள்"
+        "title": "Data & Analytics AI Services",
+        "description": "AI-powered analytics and insights to drive data-driven decision making across your organization",
+        "feature1": "Predictive Analytics",
+        "feature2": "Business Intelligence",
+        "feature3": "Data Visualization",
+        "feature4": "Real-time Insights"
       },
       "cybersecurity": {
-        "title": "சைபர் பாதுகாப்பில் AI",
-        "description": "உங்கள் டிஜிட்டல் சொத்துக்களைப் பாதுகாக்கவும் அச்சுறுத்தல்களைக் கண்டறியவும் மேம்பட்ட AI-இயங்கும் பாதுகாப்பு தீர்வுகள்",
-        "feature1": "அச்சுறுத்தல் கண்டறிதல்",
-        "feature2": "நடத்தை பகுப்பாய்வு",
-        "feature3": "பாதுகாப்பு தானியங்குபடுத்தல்",
-        "feature4": "ஆபத்து மதிப்பீடு"
+        "title": "AI in Cybersecurity",
+        "description": "Advanced AI-driven security solutions to protect your digital assets and detect threats",
+        "feature1": "Threat Detection",
+        "feature2": "Behavioral Analysis",
+        "feature3": "Security Automation",
+        "feature4": "Risk Assessment"
       },
       "industrySpecific": {
-        "title": "தொழில்துறை-குறிப்பிட்ட AI தீர்வுகள்",
-        "description": "குறிப்பிட்ட தொழில்கள் மற்றும் வணிக செங்குத்துகளுக்காக வடிவமைக்கப்பட்ட தனிப்பயன் AI தீர்வுகள்",
-        "feature1": "சுகாதார AI",
-        "feature2": "நிதி சேவைகள்",
-        "feature3": "உற்பத்தி",
-        "feature4": "சில்லறை மற்றும் மின்வணிகம்"
+        "title": "Industry-Specific AI Solutions",
+        "description": "Tailored AI solutions designed for specific industries and business verticals",
+        "feature1": "Healthcare AI",
+        "feature2": "Financial Services",
+        "feature3": "Manufacturing",
+        "feature4": "Retail & E-commerce"
       },
       "infrastructure": {
-        "title": "AI உள்கட்டமைப்பு மற்றும் MLOps",
-        "description": "AI மாதிரிகளை அளவில் வரிசைப்படுத்துவதற்கும் நிர்வகிப்பதற்கும் வலுவான AI உள்கட்டமைப்பு மற்றும் MLOps நடைமுறைகள்",
-        "feature1": "மாதிரி வரிசைப்படுத்தல்",
-        "feature2": "குழாய் தானியங்குபடுத்தல்",
-        "feature3": "கண்காணிப்பு மற்றும் பராமரிப்பு",
-        "feature4": "அளவிடக்கூடிய உள்கட்டமைப்பு"
+        "title": "AI Infrastructure & MLOps",
+        "description": "Robust AI infrastructure and MLOps practices to deploy and manage AI models at scale",
+        "feature1": "Model Deployment",
+        "feature2": "Pipeline Automation",
+        "feature3": "Monitoring & Maintenance",
+        "feature4": "Scalable Infrastructure"
       },
       "training": {
-        "title": "AI பயிற்சி மற்றும் ஆதரவு",
-        "description": "உங்கள் குழு AI தொழில்நுட்பங்களை திறம்பட பயன்படுத்த உதவுவதற்கான விரிவான பயிற்சி மற்றும் தொடர்ச்சியான ஆதரவு",
-        "feature1": "குழு பயிற்சி",
-        "feature2": "சிறந்த நடைமுறைகள்",
-        "feature3": "தொழில்நுட்ப ஆதரவு",
-        "feature4": "அறிவு பரிமாற்றம்"
+        "title": "AI Training & Support",
+        "description": "Comprehensive training and ongoing support to help your team leverage AI technologies effectively",
+        "feature1": "Team Training",
+        "feature2": "Best Practices",
+        "feature3": "Technical Support",
+        "feature4": "Knowledge Transfer"
       }
     },
-    "benefit1": "அனுபவமிக்க தொழில்துறை நிபுணர்களிடமிருந்து நிபுணர் AI வழிகாட்டுதல்",
-    "benefit2": "உங்கள் குறிப்பிட்ட வணிக தேவைகளுக்கு ஏற்ப தனிப்பயனாக்கப்பட்ட AI தீர்வுகள்",
-    "benefit3": "நிரூபிக்கப்பட்ட AI முறைகள் மூலம் செயல்படுத்தல் அபாயங்களைக் குறைத்தல்",
-    "benefit4": "கட்டமைக்கப்பட்ட திட்ட மேலாண்மையுடன் வேகமான AI வரிசைப்படுத்தல்",
-    "benefit5": "மூலோபாய AI திட்டமிடல் மற்றும் வள ஒதுக்கீடு மூலம் செலவு மேம்படுத்தல்",
-    "benefit6": "சமீபத்திய AI போக்குகள் மற்றும் வளர்ந்து வரும் தொழில்நுட்பங்களுக்கான அணுகல்",
-    "benefit7": "வளர்ச்சிக்காக வடிவமைக்கப்பட்ட அளவிடக்கூடிய AI உள்கட்டமைப்பு",
-    "benefit8": "AI முன்முயற்சிகள் மற்றும் வணிக நோக்கங்களுக்கு இடையே மூலோபாய சீரமைப்பு",
-    "benefit9": "உங்கள் குழுவிற்கு தொடர்ச்சியான AI ஆதரவு மற்றும் அறிவு பரிமாற்றம்",
-    "benefit10": "தெளிவான KPIகள் மற்றும் வெற்றி அளவீடுகளுடன் அளவிடக்கூடிய AI முடிவுகள்"
+    "benefit1": "Expert AI guidance from experienced industry professionals",
+    "benefit2": "Customized AI solutions tailored to your specific business needs",
+    "benefit3": "Reduced implementation risks through proven AI methodologies",
+    "benefit4": "Faster AI deployment with structured project management",
+    "benefit5": "Cost optimization through strategic AI planning and resource allocation",
+    "benefit6": "Access to latest AI trends and emerging technologies",
+    "benefit7": "Scalable AI infrastructure designed for growth",
+    "benefit8": "Strategic alignment between AI initiatives and business objectives",
+    "benefit9": "Ongoing AI support and knowledge transfer to your team",
+    "benefit10": "Measurable AI results with clear KPIs and success metrics"
+  },
+  "cloudSolutionsPage": {
+    "title": "Cloud Solutions",
+    "subtitle": "Transform your business with scalable, secure, and cost-effective cloud solutions. From migration to optimization, we provide comprehensive cloud services to power your digital transformation.",
+    "servicesTitle": "Our Cloud Solutions",
+    "benefitsTitle": "Why Choose Our Cloud Solutions?",
+    "benefitsSubtitle": "Unlock the full potential of cloud computing for your organization",
+    "ctaTitle": "Ready to Transform Your Infrastructure with Cloud?",
+    "ctaSubtitle": "Let our cloud experts help you migrate, deploy, and optimize your cloud infrastructure. Achieve scalability, security, and cost efficiency with our comprehensive cloud solutions.",
+    "ctaButton": "Start Cloud Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Cloud Service",
+    "services": {
+      "cloudMigration": {
+        "title": "Cloud Migration Services",
+        "description": "Seamless migration of your applications and data to the cloud with minimal downtime",
+        "feature1": "Assessment & Planning",
+        "feature2": "Safe Data Transfer",
+        "feature3": "Minimal Downtime",
+        "feature4": "Post-Migration Support"
+      },
+      "dataManagement": {
+        "title": "Cloud Data Management",
+        "description": "Comprehensive data management solutions for storage, backup, and recovery in the cloud",
+        "feature1": "Data Storage",
+        "feature2": "Backup & Recovery",
+        "feature3": "Data Replication",
+        "feature4": "Data Governance"
+      },
+      "cloudSecurity": {
+        "title": "Cloud Security & Compliance",
+        "description": "Enterprise-grade security solutions to protect your cloud infrastructure and data",
+        "feature1": "Access Control",
+        "feature2": "Encryption",
+        "feature3": "Compliance Management",
+        "feature4": "Threat Detection"
+      },
+      "performanceOptimization": {
+        "title": "Cloud Performance Optimization",
+        "description": "Optimize your cloud infrastructure for maximum performance, reliability, and cost efficiency",
+        "feature1": "Performance Tuning",
+        "feature2": "Resource Optimization",
+        "feature3": "Cost Efficiency",
+        "feature4": "Load Balancing"
+      },
+      "multiCloudStrategy": {
+        "title": "Multi-Cloud Strategy",
+        "description": "Strategic guidance on leveraging multiple cloud providers for flexibility and resilience",
+        "feature1": "Cloud Strategy",
+        "feature2": "Vendor Selection",
+        "feature3": "Integration Services",
+        "feature4": "Hybrid Cloud Solutions"
+      },
+      "complianceManagement": {
+        "title": "Cloud Compliance Management",
+        "description": "Ensure your cloud infrastructure meets regulatory requirements and industry standards",
+        "feature1": "Compliance Audits",
+        "feature2": "Policy Implementation",
+        "feature3": "Documentation",
+        "feature4": "Continuous Monitoring"
+      }
+    },
+    "benefit1": "Reduced IT infrastructure and operational costs",
+    "benefit2": "Improved scalability and flexibility for growing businesses",
+    "benefit3": "Enhanced security and disaster recovery capabilities",
+    "benefit4": "Faster deployment of applications and services",
+    "benefit5": "24/7 monitoring and support from cloud experts",
+    "benefit6": "Seamless integration with existing systems",
+    "benefit7": "Global accessibility and collaboration capabilities",
+    "benefit8": "Automated backup and recovery solutions",
+    "benefit9": "Compliance with industry standards and regulations",
+    "benefit10": "Future-proof infrastructure aligned with business growth"
   },
   "enquiryForm": {
-    "title": "தொடர்பில் இருங்கள்",
-    "subtitle": "உங்கள் திட்டத் தேவைகளைப் பற்றி எங்களிடம் கூறுங்கள்",
-    "thankYouTitle": "நன்றி!",
-    "thankYouMessage": "உங்கள் விசாரணை வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது. நாங்கள் 24 மணி நேரத்திற்குள் உங்களைத் தொடர்பு கொள்வோம்.",
+    "title": "Get In Touch",
+    "subtitle": "Tell us about your project requirements",
+    "thankYouTitle": "Thank You!",
+    "thankYouMessage": "Your enquiry has been submitted successfully. We'll get back to you within 24 hours.",
     "fields": {
       "fullName": {
-        "label": "முழு பெயர்",
-        "placeholder": "உங்கள் முழு பெயரை உள்ளிடவும்",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
         "required": true
       },
       "email": {
-        "label": "மின்னஞ்சல் முகவரி",
-        "placeholder": "உங்கள் மின்னஞ்சல் முகவரியை உள்ளிடவும்",
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
         "required": true
       },
       "phone": {
-        "label": "தொலைபேசி எண்",
-        "placeholder": "உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்",
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number",
         "required": false
       },
       "company": {
-        "label": "நிறுவனத்தின் பெயர்",
-        "placeholder": "உங்கள் நிறுவனத்தின் பெயரை உள்ளிடவும்",
+        "label": "Company Name",
+        "placeholder": "Enter your company name",
         "required": false
       },
       "service": {
-        "label": "ஆர்வமுள்ள சேவை",
-        "placeholder": "ஒரு சேவையைத் தேர்ந்தெடுக்கவும்",
+        "label": "Service Interested In",
+        "placeholder": "Select a service",
         "required": true
       },
       "message": {
-        "label": "திட்ட விவரங்கள்",
-        "placeholder": "உங்கள் திட்டத் தேவைகள், காலக்கெடு மற்றும் பட்ஜெட் பற்றி எங்களிடம் கூறுங்கள்...",
+        "label": "Project Details",
+        "placeholder": "Tell us about your project requirements, timeline, and budget...",
         "required": true
       }
     },
     "services": {
-      "webDevelopment": "வலை மேம்பாடு",
-      "itTechServices": "IT மற்றும் தொழில்நுட்ப சேவைகள்",
-      "digitalMarketing": "டிஜிட்டல் மார்க்கெட்டிங்",
-      "graphicDesign": "கிராஃபிக் வடிவமைப்பு",
-      "consultingServices": "ஆலோசனை சேவைகள்",
-      "other": "மற்றவை"
+      "webDevelopment": "Web Development",
+      "itTechServices": "IT & Tech Services",
+      "digitalMarketing": "Digital Marketing",
+      "graphicDesign": "Graphic Design",
+      "consultingServices": "Consulting Services",
+      "other": "Other"
     },
     "buttons": {
-      "submit": "விசாரணையை அனுப்பவும்",
-      "submitting": "சமர்ப்பிக்கிறது..."
+      "submit": "Send Enquiry",
+      "submitting": "Submitting..."
     },
     "toast": {
-      "success": "விசாரணை வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!",
-      "successDescription": "உங்கள் விசாரணைக்கு நன்றி. நாங்கள் 24 மணி நேரத்திற்குள் உங்களைத் தொடர்பு கொள்வோம்.",
-      "error": "விசாரணையை சமர்ப்பிக்க முடியவில்லை",
-      "errorDescription": "தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்."
+      "success": "Enquiry submitted successfully!",
+      "successDescription": "Thank you for your enquiry. We'll get back to you within 24 hours.",
+      "error": "Failed to submit enquiry",
+      "errorDescription": "Please try again later."
     }
   },
   "careers": {
-    "pageTitle": "அல் மாவா இன்டர்நேஷனல் புணேவில் வேலைவாய்ப்புகள் - வெப் டெவலப்பர் வேலைகள் | ஐடி வேலைகள்",
+    "pageTitle": "Careers at Al Mawa International Pune - Web Developer Jobs | IT Jobs",
     "openPositions": {
-      "title": "திறந்த பதவிகள்",
-      "subtitle": "உங்கள் திறன்கள் மற்றும் ஆர்வத்துடன் பொருந்தும் வாய்ப்புகளைக் கண்டறியுங்கள்"
+      "title": "Open Positions",
+      "subtitle": "Discover opportunities that match your skills and passion"
     },
     "search": {
-      "placeholder": "வேலைகளைத் தேடுங்கள்...",
-      "department": "துறை",
-      "allDepartments": "அனைத்து துறைகள்",
-      "location": "புணே, இந்தியா"
+      "placeholder": "Search jobs...",
+      "department": "Department",
+      "allDepartments": "All Departments",
+      "location": "Pune, India"
     },
     "jobCard": {
-      "showMore": "மேலும் காட்டு",
-      "showLess": "குறைவாகக் காட்டு",
-      "keyRequirements": "முக்கிய தேவைகள்:",
-      "jobDetails": "வேலை விவரங்கள்:",
-      "department": "துறை",
-      "notSpecified": "குறிப்பிடப்படவில்லை",
-      "location": "இடம்",
-      "type": "வகை",
-      "salary": "சம்பளம்",
-      "competitive": "போட்டித்தன்மை",
-      "recentlyPosted": "சமீபத்தில் இடுகையிடப்பட்டது",
-      "applyNow": "இப்போது விண்ணப்பிக்கவும்"
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "keyRequirements": "Key Requirements:",
+      "jobDetails": "Job Details:",
+      "department": "Department",
+      "notSpecified": "Not specified",
+      "location": "Location",
+      "type": "Type",
+      "salary": "Salary",
+      "competitive": "Competitive",
+      "recentlyPosted": "Recently posted",
+      "applyNow": "Apply Now"
     },
-    "noJobs": "உங்கள் அளவுகோல்களுடன் பொருந்தும் வேலைகள் எதுவும் இல்லை.",
+    "noJobs": "No jobs found matching your criteria.",
     "benefits": {
-      "title": "எங்களுடன் ஏன் பணியாற்ற வேண்டும்",
-      "subtitle": "விரிவான நன்மைகள் மற்றும் சலுகைகளுடன் எங்கள் குழுவை கவனித்துக்கொள்வதில் நாங்கள் நம்புகிறோம்",
+      "title": "why work with us",
+      "subtitle": "We believe in taking care of our team with comprehensive benefits and perks",
       "items": {
         "innovative": {
-          "title": "புதுமையான பணி சூழல்",
-          "description": "படைப்பாற்றல், தொழில்நுட்பம் மற்றும் தொடர்ச்சியான கற்றலை ஏற்றுக்கொள்ளும் முன்னோக்கு சிந்தனை குழுவுடன் ஒத்துழைக்கவும்."
+          "title": "Innovative Work Environment",
+          "description": "Collaborate with a forward-thinking team that embraces creativity, technology, and continuous learning."
         },
         "growth": {
-          "title": "தொழில் வளர்ச்சி மற்றும் மேம்பாடு",
-          "description": "வேகமாக வளரும் டிஜிட்டல் நிலப்பரப்பில் திறன் மேம்பாடு, வழிகாட்டுதல் மற்றும் முன்னேற்றத்திற்கான வாய்ப்புகளை அணுகவும்"
+          "title": "Career Growth & Development",
+          "description": "Access opportunities for skill enhancement, mentorship, and advancement in a fast-evolving digital landscape"
         },
         "empowerment": {
-          "title": "அதிகாரமளித்தல் மற்றும் தாக்கம்",
-          "description": "உண்மையான வணிக முடிவுகளை வழங்கும் மற்றும் உறுதியான வேறுபாட்டை ஏற்படுத்தும் அர்த்தமுள்ள திட்டங்களுக்கு பங்களிக்கவும்"
+          "title": "Empowerment & Impact",
+          "description": "Contribute to meaningful projects that drive real business results and make a tangible difference"
         }
       }
     },
     "faq": {
-      "title": "அடிக்கடி கேட்கப்படும் கேள்விகள்",
-      "subtitle": "கேள்விகள் உள்ளதா? எங்களிடம் பதில்கள் உள்ளன.",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Got questions? We've got answers.",
       "items": {
         "interview": {
-          "question": "நேர்காணல் செயல்முறை எப்படி இருக்கும்?",
-          "answer": "எங்கள் நேர்காணல் செயல்முறையில் பொதுவாக ஆரம்ப தொலைபேசி திரையிடல், தொழில்நுட்ப மதிப்பீடு (தொழில்நுட்ப பாத்திரங்களுக்கு), மற்றும் குழு உறுப்பினர்கள் மற்றும் தலைமையுடன் 2-3 சுற்று நேர்காணல்கள் அடங்கும். முழு செயல்முறையும் பொதுவாக 2 முதல் 4 நாட்கள் ஆகும்."
+          "question": "What is the interview process like?",
+          "answer": "Our interview process typically consists of an initial phone screening, technical assessment (for technical roles), and 2-3 rounds of interviews with team members and leadership. The entire process usually takes 2 to 4 days."
         },
         "remote": {
-          "question": "தொலைநிலை பணி வாய்ப்புகளை வழங்குகிறீர்களா?",
-          "answer": "ஆம்! நாங்கள் முழுமையாக தொலைநிலை பதவிகள் மற்றும் கலப்பின ஏற்பாடுகளையும் வழங்குகிறோம். எங்கள் குழுவின் பல உறுப்பினர்கள் தொலைநிலையில் பணிபுரிகின்றனர், மேலும் விநியோகிக்கப்பட்ட குழுக்களை திறம்பட ஆதரிக்க எங்களிடம் கருவிகள் மற்றும் கலாச்சாரம் உள்ளது."
+          "question": "Do you offer remote work opportunities?",
+          "answer": "Yes! We offer fully remote positions as well as hybrid arrangements. Many of our team members work remotely, and we have the tools and culture to support distributed teams effectively."
         },
         "benefits": {
-          "question": "நீங்கள் என்ன நன்மைகளை வழங்குகிறீர்கள்?",
-          "answer": "தொடர்ச்சியான கற்றல் மூலம் எங்கள் குழு வளர உதவுவதில் நாங்கள் நம்புகிறோம். புதிய திறன்களை ஆராய, நேரடி அனுபவத்தைப் பெற மற்றும் உங்கள் நிபுணத்துவத்தை மேம்படுத்த வாய்ப்புகளை வழங்குகிறோம், அனைத்தும் போட்டி சம்பளம், புதிய திறன்களைக் கற்க அர்ப்பணிக்கப்பட்ட பயிற்சி மணிநேரங்கள் மற்றும் நாள் முழுவதும் உங்களை உற்சாகமாக வைத்திருக்க புத்துணர்ச்சியூட்டும் தேநீர் இடைவேளைகளை வழங்குகிறோம்."
+          "question": "What benefits do you provide?",
+          "answer": "We believe in helping our team grow through continuous learning. We offer opportunities to explore new skills, gain hands-on experience, and enhance your expertise all while providing a competitive salary, dedicated training hours for learning new skills, and refreshing tea breaks to keep you energized throughout the day."
         },
         "careerGrowth": {
-          "question": "தொழில் வளர்ச்சியை எவ்வாறு ஆதரிக்கிறீர்கள்?",
-          "answer": "எங்கள் மக்களில் முதலீடு செய்வதில் நாங்கள் நம்புகிறோம். வழிகாட்டுதல் திட்டங்கள், மாநாட்டு வருகை, உள் இயக்கம் வாய்ப்புகள் மற்றும் வழக்கமான தொழில் மேம்பாட்டு உரையாடல்களை வழங்குகிறோம்."
+          "question": "How do you support career growth?",
+          "answer": "We believe in investing in our people. We provide mentorship programs, conference attendance, internal mobility opportunities, and regular career development conversations."
         },
         "culture": {
-          "question": "நிறுவன கலாச்சாரம் எப்படி இருக்கிறது?",
-          "answer": "எங்கள் கலாச்சாரம் ஒத்துழைப்பு, புதுமை மற்றும் மரியாதையின் அடிப்படையில் கட்டமைக்கப்பட்டுள்ளது. நாங்கள் பல்வேறு கண்ணோட்டங்களை மதிக்கிறோம், திறந்த தொடர்பை ஊக்குவிக்கிறோம், மற்றும் அற்புதமான தயாரிப்புகளை உருவாக்கும்போது ஆரோக்கியமான பணி-வாழ்க்கை சமநிலையை பராமரிக்கிறோம்."
+          "question": "What is the company culture like?",
+          "answer": "Our culture is built on collaboration, innovation, and respect. We value diverse perspectives, encourage open communication, and maintain a healthy work-life balance while building amazing products."
         }
       }
     },
     "applicationForm": {
-      "title": "க்கு விண்ணப்பிக்கவும்",
-      "subtitle": "உங்கள் விண்ணப்பத்தை சமர்ப்பிக்க கீழே உள்ள படிவத்தை நிரப்பவும். நாங்கள் 48 மணி நேரத்திற்குள் உங்களைத் தொடர்பு கொள்வோம்.",
+      "title": "Apply for",
+      "subtitle": "Fill out the form below to submit your application. We'll get back to you within 48 hours.",
       "fields": {
-        "firstName": "முதல் பெயர்",
-        "lastName": "கடைசி பெயர்",
-        "email": "மின்னஞ்சல் முகவரி",
-        "phone": "தொலைபேசி எண்",
-        "experience": "அனுபவ ஆண்டுகள்",
-        "experiencePlaceholder": "அனுபவ நிலையைத் தேர்ந்தெடுக்கவும்",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "experience": "Years of Experience",
+        "experiencePlaceholder": "Select experience level",
+        "monthsPlaceholder": "Months",
         "experienceOptions": {
-          "0-1": "0-1 ஆண்டுகள்",
-          "2-3": "2-3 ஆண்டுகள்",
-          "4-5": "4-5 ஆண்டுகள்",
-          "6-10": "6-10 ஆண்டுகள்",
-          "10+": "10+ ஆண்டுகள்"
+          "0-1": "0-1 years",
+          "2-3": "2-3 years",
+          "4-5": "4-5 years",
+          "6-10": "6-10 years",
+          "10+": "10+ years"
         },
-        "coverLetter": "கவர் லெட்டர்",
-        "coverLetterPlaceholder": "இந்த பாத்திரத்தில் நீங்கள் ஏன் ஆர்வமாக உள்ளீர்கள் மற்றும் உங்களை சிறந்த பொருத்தமாக்குவது என்ன என்பதை எங்களிடம் கூறுங்கள்...",
-        "resume": "ரெஸ்யூம்/சிவி"
+        "coverLetter": "Cover Letter",
+        "coverLetterPlaceholder": "Tell us why you're interested in this role and what makes you a great fit...",
+        "resume": "Resume/CV"
       },
       "buttons": {
-        "cancel": "ரத்து செய்",
-        "submit": "விண்ணப்பத்தை சமர்ப்பிக்கவும்",
-        "submitting": "சமர்ப்பிக்கிறது..."
+        "cancel": "Cancel",
+        "submit": "Submit Application",
+        "submitting": "Submitting..."
       },
       "toast": {
-        "success": "விண்ணப்பம் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!",
-        "successDescription": "{jobTitle} க்கான உங்கள் விண்ணப்பம் பெறப்பட்டது. நாங்கள் அதை மதிப்பாய்வு செய்து விரைவில் உங்களைத் தொடர்பு கொள்வோம்.",
-        "error": "விண்ணப்பத்தை சமர்ப்பிக்க முடியவில்லை",
-        "errorDescription": "தயவுசெய்து உங்கள் தகவலைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்."
+        "success": "Application submitted successfully!",
+        "successDescription": "Your application for {jobTitle} has been received. We'll review it and get back to you soon.",
+        "error": "Failed to submit application",
+        "errorDescription": "Please check your information and try again."
       }
     }
+  },
+  "testimonialsPage": {
+    "label": "Testimonials & Case Studies",
+    "title": "What Our",
+    "titleHighlight": "Clients",
+    "titleEnd": "Say",
+    "description": "A selection of brands that trust AL-MAWA International to shape their digital presence – from high-performing social media campaigns to premium, conversion-focused websites.",
+    "badges": {
+      "services": "Social Media • Ads • Web",
+      "approach": "Strategy • Design • Development"
+    },
+    "reviewsSection": {
+      "title": "Client Reviews & Feedback",
+      "subtitle": "Hear directly from our satisfied clients about their experience working with us."
+    }
+  },
+  "ourWorkPage": {
+    "title": "Our",
+    "titleHighlight": "Work",
+    "description": "Explore our portfolio of digital solutions and marketing campaigns that drive real results for our clients.",
+    "badges": {
+      "services": "Social Media • Ads • Web",
+      "approach": "Strategy • Design • Development"
+    },
+    "socialMediaSection": {
+      "title": "Our Social Media Work",
+      "description": "Engaging social media content designed to represent your brand with clarity and impact."
+    },
+    "websiteSection": {
+      "title": "Our Website Development",
+      "description": "Custom website solutions built to deliver results and create lasting impressions."
+    },
+    "cardBadges": {
+      "websiteDevelopment": "Website Development"
+    },
+    "liveStatus": "Live"
+  },
+  "shareFeedbackPage": {
+    "label": "Share Your Experience",
+    "title": "Director's Desk",
+    "description": "Your feedback matters. Share your experience with us and help us improve. Every insight is personally reviewed by our leadership team.",
+    "benefits": {
+      "title": "Why Share Your Feedback?",
+      "intro": "At Al-Mawa International, your voice drives our growth. Every comment, suggestion, and insight helps us deliver better services and experiences.",
+      "items": [
+        {
+          "title": "Directly Reviewed",
+          "description": "Your feedback is personally reviewed by our leadership team"
+        },
+        {
+          "title": "Confidential & Secure",
+          "description": "Your information is kept safe and handled with care"
+        },
+        {
+          "title": "Impact Our Services",
+          "description": "Your insights directly help us improve and serve you better"
+        }
+      ]
+    },
+    "form": {
+      "title": "Share Your Feedback",
+      "feedback": {
+        "label": "Your Feedback *",
+        "placeholder": "Share your experience with us..."
+      },
+      "name": {
+        "label": "Full Name *",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email Address *",
+        "placeholder": "your@email.com"
+      },
+      "mobile": {
+        "label": "Mobile Number *",
+        "placeholder": "Enter your mobile number"
+      },
+      "designation": {
+        "label": "Your Designation / Role",
+        "placeholder": "e.g., Manager, Business Owner"
+      },
+      "rating": {
+        "label": "Rate Your Experience *"
+      },
+      "image": {
+        "label": "Upload Your Photo (Optional)",
+        "placeholder": "Click to upload"
+      },
+      "submitButton": "Submit Feedback",
+      "submitting": "Sending..."
+    },
+    "successMessage": "Thank you for your feedback!",
+    "errorMessage": "Failed to submit feedback",
+    "errorDescription": "Please check your information and try again."
+  },
+  "demoWebsites": {
+    "title": "Demo Websites",
+    "subtitle": "Explore our portfolio of demo websites showcasing modern design and functionality",
+    "description": "A collection of demo websites we've created to demonstrate our web development capabilities and design expertise.",
+    "viewLiveDemo": "View Live Demo",
+    "visitSite": "Visit Site",
+    "getStarted": "Get Started",
+    "ctaTitle": "Ready to Build Your Website?",
+    "ctaDescription": "Let's create something amazing together. Contact us to discuss your project."
   }
 }

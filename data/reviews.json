@@ -1,14 +1,15 @@
 [
   {
-    "feedback": "testing feedback hai",
-    "name": "PandatG",
-    "email": "shashantshekhar10@gmail.com",
-    "mobile": "07004330655",
-    "designation": "tester",
+    "feedback": "I am very happy with the website created for Nitin Hardware. The design looks professional and clearly showcases our products and services. The website is easy for customers to use and helps our business build a strong online presence. The integration of our social media platforms like Instagram and Facebook also makes it easier for customers to connect with us. Thank you for the great work and support.",
+    "name": "Nitin Hardware",
+    "email": "nitinhardware12@gmail.com",
+    "mobile": "9175360545",
+    "designation": "Business Owner",
     "rating": 5,
     "image": "",
-    "createdAt": "2026-01-29T12:21:28.276Z",
-    "status": "pending"
+    "createdAt": "2026-03-12T07:56:04.955Z",
+    "status": "approved",
+    "updatedAt": "2026-03-12T07:56:24.952Z"
   },
   {
     "feedback": "testing api",

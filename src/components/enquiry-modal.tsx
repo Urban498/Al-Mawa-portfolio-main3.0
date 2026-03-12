@@ -31,26 +31,40 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 }) => {
   const t = useTranslations('enquiryForm');
   
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: serviceName || "",
-    message: ""
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  // Define services array at component level to use in initialization
   const services = [
     { key: "webDevelopment", label: t('services.webDevelopment') },
     { key: "itTechServices", label: t('services.itTechServices') },
     { key: "digitalMarketing", label: t('services.digitalMarketing') },
     { key: "graphicDesign", label: t('services.graphicDesign') },
     { key: "consultingServices", label: t('services.consultingServices') },
+    { key: "cloudSolutions", label: t('services.cloudSolutions') },
     { key: "other", label: t('services.other') }
   ];
+
+  // Determine the initial service value by finding a matching service label
+  const getInitialService = () => {
+    if (!serviceName) return "";
+    
+    // First, try to find an exact match with service labels
+    const matchedService = services.find(s => s.label === serviceName);
+    if (matchedService) return serviceName;
+    
+    // If no exact match, return empty to let user select
+    return "";
+  };
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: getInitialService(),
+    message: ""
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({

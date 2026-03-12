@@ -348,7 +348,7 @@ export default function AboutPage() {
               dragElastic={0.12}
             >
               <Image
-                src="/stand_for.jpg"
+                src="/stand_for.jpeg"
                 alt="What We Stand For"
                 fill
                 className="rounded-2xl shadow-2xl object-cover"

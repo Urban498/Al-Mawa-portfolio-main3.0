@@ -283,7 +283,7 @@
     ]
   },
   "itTechServicesPage": {
-    "title": "IT & Tech",
+    "title": "IT & Tech Services",
     "subtitle": "Comprehensive IT solutions and technology services to power your business forward. From infrastructure to emerging technologies, we've got you covered.",
     "servicesTitle": "Complete IT & Technology Solutions",
     "benefitsTitle": "Benefits of Our IT & Tech Services",
@@ -726,6 +726,79 @@
     "benefit9": "Ongoing AI support and knowledge transfer to your team",
     "benefit10": "Measurable AI results with clear KPIs and success metrics"
   },
+  "cloudSolutionsPage": {
+    "title": "Cloud Solutions",
+    "subtitle": "Transform your business with scalable, secure, and cost-effective cloud solutions. From migration to optimization, we provide comprehensive cloud services to power your digital transformation.",
+    "servicesTitle": "Our Cloud Solutions",
+    "benefitsTitle": "Why Choose Our Cloud Solutions?",
+    "benefitsSubtitle": "Unlock the full potential of cloud computing for your organization",
+    "ctaTitle": "Ready to Transform Your Infrastructure with Cloud?",
+    "ctaSubtitle": "Let our cloud experts help you migrate, deploy, and optimize your cloud infrastructure. Achieve scalability, security, and cost efficiency with our comprehensive cloud solutions.",
+    "ctaButton": "Start Cloud Project",
+    "learnMoreButton": "Learn More About Us",
+    "enquireButton": "Enquire",
+    "serviceBadge": "Cloud Service",
+    "services": {
+      "cloudMigration": {
+        "title": "Cloud Migration Services",
+        "description": "Seamless migration of your applications and data to the cloud with minimal downtime",
+        "feature1": "Assessment & Planning",
+        "feature2": "Safe Data Transfer",
+        "feature3": "Minimal Downtime",
+        "feature4": "Post-Migration Support"
+      },
+      "dataManagement": {
+        "title": "Cloud Data Management",
+        "description": "Comprehensive data management solutions for storage, backup, and recovery in the cloud",
+        "feature1": "Data Storage",
+        "feature2": "Backup & Recovery",
+        "feature3": "Data Replication",
+        "feature4": "Data Governance"
+      },
+      "cloudSecurity": {
+        "title": "Cloud Security & Compliance",
+        "description": "Enterprise-grade security solutions to protect your cloud infrastructure and data",
+        "feature1": "Access Control",
+        "feature2": "Encryption",
+        "feature3": "Compliance Management",
+        "feature4": "Threat Detection"
+      },
+      "performanceOptimization": {
+        "title": "Cloud Performance Optimization",
+        "description": "Optimize your cloud infrastructure for maximum performance, reliability, and cost efficiency",
+        "feature1": "Performance Tuning",
+        "feature2": "Resource Optimization",
+        "feature3": "Cost Efficiency",
+        "feature4": "Load Balancing"
+      },
+      "multiCloudStrategy": {
+        "title": "Multi-Cloud Strategy",
+        "description": "Strategic guidance on leveraging multiple cloud providers for flexibility and resilience",
+        "feature1": "Cloud Strategy",
+        "feature2": "Vendor Selection",
+        "feature3": "Integration Services",
+        "feature4": "Hybrid Cloud Solutions"
+      },
+      "complianceManagement": {
+        "title": "Cloud Compliance Management",
+        "description": "Ensure your cloud infrastructure meets regulatory requirements and industry standards",
+        "feature1": "Compliance Audits",
+        "feature2": "Policy Implementation",
+        "feature3": "Documentation",
+        "feature4": "Continuous Monitoring"
+      }
+    },
+    "benefit1": "Reduced IT infrastructure and operational costs",
+    "benefit2": "Improved scalability and flexibility for growing businesses",
+    "benefit3": "Enhanced security and disaster recovery capabilities",
+    "benefit4": "Faster deployment of applications and services",
+    "benefit5": "24/7 monitoring and support from cloud experts",
+    "benefit6": "Seamless integration with existing systems",
+    "benefit7": "Global accessibility and collaboration capabilities",
+    "benefit8": "Automated backup and recovery solutions",
+    "benefit9": "Compliance with industry standards and regulations",
+    "benefit10": "Future-proof infrastructure aligned with business growth"
+  },
   "enquiryForm": {
     "title": "Get In Touch",
     "subtitle": "Tell us about your project requirements",
@@ -768,7 +841,8 @@
       "itTechServices": "IT & Tech Services",
       "digitalMarketing": "Digital Marketing",
       "graphicDesign": "Graphic Design",
-      "consultingServices": "Consulting Services",
+      "consultingServices": "AI Services",
+      "cloudSolutions": "Cloud Solutions",
       "other": "Other"
     },
     "buttons": {

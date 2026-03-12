@@ -47,7 +47,14 @@ const demoWebsites: DemoWebsite[] = [
     name: "Feesy School Hub",
     img: "/school_feesy.png",
     description: "A comprehensive school management hub for educational institutions and students."
-  },
+    },
+  {
+    url: "https://priyanka-playful-canvas.vercel.app",
+    name: "Priyanka Play House",
+    img: "/priyankaplayhouse.png",
+    description: "Priyanka Play House is a fun and nurturing space for children that focuses on learning through play, creativity, and early childhood development in a safe and joyful environment."
+    },
+  
 ];
 
 // Animation Helpers
