@@ -17,9 +17,9 @@ type Course = {
 export default async function ITCourseDetailsPage({
   params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   await connectDB();
   const doc = (await CourseModel.findOne({ slug }).lean()) as unknown as {
     slug?: unknown;
@@ -50,11 +50,11 @@ export default async function ITCourseDetailsPage({
 
   return (
     <>
-      {/* Google Fonts */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-        /* Dot-grid pattern on hero */
+        *, *::before, *::after { box-sizing: border-box; }
+
         .cd-hero::before {
           content: '';
           position: absolute; inset: 0;
@@ -79,10 +79,8 @@ export default async function ITCourseDetailsPage({
         .cd-fade-4 { animation: fadeUp 0.7s ease 0.38s both; }
         .cd-pulse  { animation: pulseDot 2s infinite; }
 
-        /* Back link hover */
         .cd-back:hover { gap: 12px !important; color: #0284c7 !important; }
 
-        /* List-item check bullets */
         .cd-list { margin:0; padding:0; list-style:none; }
         .cd-list li {
           display: flex; align-items: flex-start; gap: 10px;
@@ -103,23 +101,22 @@ export default async function ITCourseDetailsPage({
           background-position: center;
         }
 
-        /* Panel hover */
         .cd-panel { transition: border-color 0.3s, box-shadow 0.3s; }
         .cd-panel:hover {
           border-color: #0ea5e9 !important;
           box-shadow: 0 8px 28px rgba(14,165,233,0.1) !important;
         }
 
-        /* CTA buttons */
         .cd-btn-primary {
-          display: inline-flex; align-items: center; gap: 8px;
+          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
           background: #0a0a0a; color: white;
           padding: 14px 28px; border-radius: 8px;
           font-family: 'DM Sans', sans-serif;
           font-weight: 700; font-size: 0.92rem;
           text-decoration: none;
           transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-          border: none; cursor: pointer; position: relative; overflow: hidden;
+          border: none; cursor: pointer;
+          white-space: nowrap;
         }
         .cd-btn-primary:hover {
           background: #0ea5e9;
@@ -127,7 +124,7 @@ export default async function ITCourseDetailsPage({
           box-shadow: 0 10px 28px rgba(14,165,233,0.35);
         }
         .cd-btn-secondary {
-          display: inline-flex; align-items: center; gap: 8px;
+          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
           background: white; color: #0a0a0a;
           padding: 13px 28px; border-radius: 8px;
           font-family: 'DM Sans', sans-serif;
@@ -135,6 +132,7 @@ export default async function ITCourseDetailsPage({
           text-decoration: none;
           border: 1.5px solid #e9ecef;
           transition: border-color 0.3s, color 0.3s, transform 0.3s;
+          white-space: nowrap;
         }
         .cd-btn-secondary:hover {
           border-color: #0ea5e9;
@@ -142,13 +140,148 @@ export default async function ITCourseDetailsPage({
           transform: translateY(-2px);
         }
 
-        /* Marquee strip */
         @keyframes marqueeScroll {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
         }
         .cd-marquee-track { animation: marqueeScroll 22s linear infinite; }
         .cd-marquee-item::after { content: '  ✦  '; opacity: 0.45; }
+
+        /* ── TABLET ≤ 1024px ── */
+        @media (max-width: 1024px) {
+          .cd-hero-section {
+            padding: 90px 24px 60px !important;
+          }
+          .cd-content-section {
+            padding: 56px 24px 72px !important;
+          }
+          .cd-overview-card {
+            padding: 32px !important;
+          }
+          .cd-panel-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .cd-cta-strip {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding: 32px !important;
+            gap: 20px !important;
+          }
+        }
+
+        /* ── MOBILE ≤ 640px ── */
+        @media (max-width: 640px) {
+          .cd-hero-section {
+            padding: 80px 20px 50px !important;
+          }
+          .cd-hero-inner {
+            padding: 0 !important;
+          }
+          .cd-hero h1 {
+            font-size: 1.9rem !important;
+            line-height: 1.15 !important;
+            margin-bottom: 14px !important;
+          }
+          .cd-hero-desc {
+            font-size: 0.92rem !important;
+            margin-bottom: 24px !important;
+          }
+          .cd-hero-badge {
+            font-size: 0.65rem !important;
+            padding: 6px 14px !important;
+            margin-bottom: 16px !important;
+          }
+          .cd-hero-actions {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px !important;
+          }
+          .cd-hero-actions .cd-btn-primary,
+          .cd-hero-actions .cd-btn-secondary {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+
+          .cd-content-section {
+            padding: 44px 20px 60px !important;
+          }
+          .cd-overview-card {
+            padding: 24px 20px !important;
+            border-radius: 14px !important;
+            margin-bottom: 18px !important;
+          }
+          .cd-overview-card h2 {
+            font-size: 1.35rem !important;
+          }
+          .cd-overview-card p {
+            font-size: 0.9rem !important;
+          }
+
+          .cd-panel-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .cd-detail-panel {
+            padding: 24px 20px !important;
+            border-radius: 14px !important;
+          }
+          .cd-detail-panel h3 {
+            font-size: 1.1rem !important;
+          }
+
+          .cd-cta-strip {
+            padding: 28px 20px !important;
+            border-radius: 14px !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 20px !important;
+            margin-top: 18px !important;
+          }
+          .cd-cta-strip h3 {
+            font-size: 1.25rem !important;
+          }
+          .cd-cta-buttons {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px !important;
+            width: 100% !important;
+          }
+          .cd-cta-buttons a {
+            width: 100% !important;
+            justify-content: center !important;
+            text-align: center !important;
+          }
+          .cd-cta-btn-outline {
+            justify-content: center !important;
+          }
+
+          .cd-back {
+            font-size: 0.82rem !important;
+            margin-bottom: 20px !important;
+          }
+        }
+
+        /* ── VERY SMALL ≤ 380px ── */
+        @media (max-width: 380px) {
+          .cd-hero-section {
+            padding: 70px 16px 44px !important;
+          }
+          .cd-hero h1 {
+            font-size: 1.65rem !important;
+          }
+          .cd-content-section {
+            padding: 36px 16px 50px !important;
+          }
+          .cd-overview-card {
+            padding: 20px 16px !important;
+          }
+          .cd-detail-panel {
+            padding: 20px 16px !important;
+          }
+          .cd-cta-strip {
+            padding: 22px 16px !important;
+          }
+        }
       `}</style>
 
       <div style={{
@@ -161,7 +294,7 @@ export default async function ITCourseDetailsPage({
 
         {/* ── HERO HEADER ── */}
         <section
-          className="cd-hero"
+          className="cd-hero cd-hero-section"
           style={{
             background: '#f8f9fa',
             position: 'relative',
@@ -185,7 +318,7 @@ export default async function ITCourseDetailsPage({
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 980, margin: '0 auto', position: 'relative', zIndex: 2 }}>
+          <div className="cd-hero-inner" style={{ maxWidth: 980, margin: '0 auto', position: 'relative', zIndex: 2 }}>
 
             {/* Back link */}
             <Link
@@ -204,7 +337,7 @@ export default async function ITCourseDetailsPage({
             </Link>
 
             {/* Badge */}
-            <div className="cd-fade-1" style={{
+            <div className="cd-fade-1 cd-hero-badge" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: 'white', border: '1px solid #e9ecef',
               boxShadow: '0 2px 10px rgba(0,0,0,0.06)',
@@ -221,7 +354,7 @@ export default async function ITCourseDetailsPage({
             {/* Title */}
             <h1 className="cd-fade-2" style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(2.4rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.9rem, 5vw, 4rem)',
               fontWeight: 900,
               lineHeight: 1.07,
               margin: '0 0 18px',
@@ -231,7 +364,7 @@ export default async function ITCourseDetailsPage({
             </h1>
 
             {/* Description */}
-            <p className="cd-fade-3" style={{
+            <p className="cd-fade-3 cd-hero-desc" style={{
               fontSize: '1.05rem', color: '#6c757d',
               lineHeight: 1.75, maxWidth: 620, margin: '0 0 32px',
             }}>
@@ -239,7 +372,7 @@ export default async function ITCourseDetailsPage({
             </p>
 
             {/* CTA buttons */}
-            <div className="cd-fade-4" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <div className="cd-fade-4 cd-hero-actions" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Link href="/contact" className="cd-btn-primary">
                 Enquire Now →
               </Link>
@@ -279,17 +412,17 @@ export default async function ITCourseDetailsPage({
         </div>
 
         {/* ── CONTENT ── */}
-        <section style={{ padding: '72px 24px 96px' }}>
+        <section className="cd-content-section" style={{ padding: '72px 24px 96px' }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
 
             {/* Overview card */}
             <div
-              className="cd-panel"
+              className="cd-panel cd-overview-card"
               style={{
                 background: 'white',
                 border: '1px solid #e9ecef',
                 borderRadius: 18,
-                padding: '40px 40px',
+                padding: '40px',
                 marginBottom: 24,
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}
@@ -303,7 +436,7 @@ export default async function ITCourseDetailsPage({
               </span>
               <h2 style={{
                 fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+                fontSize: 'clamp(1.35rem, 2.5vw, 2rem)',
                 fontWeight: 800, margin: '0 0 14px', color: '#0a0a0a',
               }}>
                 About This Course
@@ -317,15 +450,17 @@ export default async function ITCourseDetailsPage({
             </div>
 
             {/* Two-column panels */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: 22,
-            }}>
-
+            <div
+              className="cd-panel-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: 22,
+              }}
+            >
               {/* What you'll learn */}
               <div
-                className="cd-panel"
+                className="cd-panel cd-detail-panel"
                 style={{
                   background: 'white',
                   border: '1px solid #e9ecef',
@@ -334,7 +469,6 @@ export default async function ITCourseDetailsPage({
                   boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
                 }}
               >
-                {/* Icon badge */}
                 <div style={{
                   width: 48, height: 48, borderRadius: 12,
                   background: '#e0f2fe',
@@ -368,7 +502,7 @@ export default async function ITCourseDetailsPage({
 
               {/* Who is this for */}
               <div
-                className="cd-panel"
+                className="cd-panel cd-detail-panel"
                 style={{
                   background: 'white',
                   border: '1px solid #e9ecef',
@@ -377,7 +511,6 @@ export default async function ITCourseDetailsPage({
                   boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
                 }}
               >
-                {/* Icon badge */}
                 <div style={{
                   width: 48, height: 48, borderRadius: 12,
                   background: '#e0f2fe',
@@ -413,19 +546,22 @@ export default async function ITCourseDetailsPage({
             </div>
 
             {/* Bottom CTA strip */}
-            <div style={{
-              marginTop: 28,
-              background: '#0a0a0a',
-              borderRadius: 18,
-              padding: '40px',
-              position: 'relative',
-              overflow: 'hidden',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: 24,
-            }}>
+            <div
+              className="cd-cta-strip"
+              style={{
+                marginTop: 28,
+                background: '#0a0a0a',
+                borderRadius: 18,
+                padding: '40px',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: 24,
+              }}
+            >
               {/* Glow */}
               <div style={{
                 position: 'absolute', inset: 0,
@@ -447,20 +583,26 @@ export default async function ITCourseDetailsPage({
                   Enroll in {course.title}
                 </h3>
               </div>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', position: 'relative' }}>
-                <Link href="/contact" className="cd-btn-primary" style={{ background: 'white', color: '#0a0a0a' }}>
+              <div className="cd-cta-buttons" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', position: 'relative' }}>
+                <Link
+                  href="/contact"
+                  className="cd-btn-primary"
+                  style={{ background: 'white', color: '#0a0a0a' }}
+                >
                   Enquire Now →
                 </Link>
                 <Link
                   href="/it-courses#courses"
+                  className="cd-cta-btn-outline"
                   style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                     background: 'transparent', color: 'white',
                     padding: '13px 24px', borderRadius: 8,
                     fontWeight: 600, fontSize: '0.92rem',
                     textDecoration: 'none',
                     border: '1.5px solid rgba(255,255,255,0.28)',
                     transition: 'border-color 0.3s, background 0.3s',
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   View All Courses
