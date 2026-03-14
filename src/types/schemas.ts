@@ -38,6 +38,17 @@ export interface JobApplySchema {
   updatedAt?: string;
 }
 
+export interface InternshipApplySchema {
+  _id?: string;
+  fullName: string;
+  emailAddress: string;
+  phoneNumber: number;
+  courseOfInterest: string;
+  message?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 export interface VisitorSchema {
   _id?: string;
   ip: string;
@@ -66,7 +77,12 @@ export interface VisitorStatistics {
 }
 
 // Union type for all data types
-export type AdminDataType = ContactSchema | EnquirySchema | JobApplySchema | VisitorSchema;
+export type AdminDataType =
+  | ContactSchema
+  | EnquirySchema
+  | JobApplySchema
+  | InternshipApplySchema
+  | VisitorSchema;
 
 // API Response types
 export interface ApiResponse<T> {

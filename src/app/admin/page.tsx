@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback, useMemo, Suspense } from "reac
 import LoginPage from "@/components/login";
 import AdminSidebar from "@/components/admin-sidebar";
 import axios from "axios";
-import { ContactSchema, EnquirySchema, JobApplySchema, AdminDataType, ApiResponse, VisitorApiResponse } from "@/types/schemas";
+import { ContactSchema, EnquirySchema, JobApplySchema, InternshipApplySchema, AdminDataType, ApiResponse, VisitorApiResponse } from "@/types/schemas";
 import { useSearchParams } from "next/navigation";
 import JobPostForm from "@/components/admin/JobPostForm";
 import JobManagement from "@/components/admin/JobManagement";
@@ -38,11 +38,14 @@ function AdminContent() {
   const [data, setData] = useState<AdminDataType[]>([]);
   const [currentPageJobs, setCurrentPageJobs] = useState<number>(1);
   const [pageSizeJobs, setPageSizeJobs] = useState<number>(10);
+  const [currentPageInternship, setCurrentPageInternship] = useState<number>(1);
+  const [pageSizeInternship, setPageSizeInternship] = useState<number>(10);
   const [visitorData, setVisitorData] = useState<VisitorApiResponse | null>(null);
   const [visitorPage, setVisitorPage] = useState(1);
   const [visitorSearch, setVisitorSearch] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [jobSearch, setJobSearch] = useState("");
+  const [internshipSearch, setInternshipSearch] = useState("");
   const searchParams = useSearchParams();
   const sectionParam = searchParams.get('section');
 
@@ -111,6 +114,9 @@ function AdminContent() {
         case "jobs":
           endpoint = "/api/job-apply-form";
           break;
+        case "internship":
+          endpoint = "/api/internship-apply";
+          break;
         default:
           return;
       }
@@ -147,6 +153,19 @@ function AdminContent() {
     });
   }, [data, jobSearch, activeSection]);
 
+  const filteredInternship = useMemo(() => {
+    if (activeSection !== "internship") return data as InternshipApplySchema[];
+    if (!internshipSearch) return data as InternshipApplySchema[];
+    const q = internshipSearch.toLowerCase();
+    return (data as InternshipApplySchema[]).filter((item: InternshipApplySchema) => {
+      const name = String(item.fullName || "").toLowerCase();
+      const email = String(item.emailAddress || "").toLowerCase();
+      const phone = String(item.phoneNumber || "").toLowerCase();
+      const course = String(item.courseOfInterest || "").toLowerCase();
+      return name.includes(q) || email.includes(q) || phone.includes(q) || course.includes(q);
+    });
+  }, [data, internshipSearch, activeSection]);
+
   // Check authentication status on component mount
   useEffect(() => {
     checkAuthStatus();
@@ -163,6 +182,10 @@ function AdminContent() {
   useEffect(() => {
     setVisitorSearch("");
     setVisitorPage(1);
+    setJobSearch("");
+    setInternshipSearch("");
+    setCurrentPageJobs(1);
+    setCurrentPageInternship(1);
   }, [activeSection]);
 
   const handleLogin = () => {
@@ -191,6 +214,9 @@ function AdminContent() {
           break;
         case "jobs":
           endpoint = `/api/job-apply-form/${id}`;
+          break;
+        case "internship":
+          endpoint = `/api/internship-apply/${id}`;
           break;
         case "visitors":
           toast.info("Visitor records cannot be deleted individually");
@@ -250,6 +276,7 @@ function AdminContent() {
         <div className="mb-6 flex items-center gap-3">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 capitalize">
             {activeSection === "jobs" ? "Job Applications" : 
+             activeSection === "internship" ? "Internship Applications" :
              activeSection === "post-jobs" ? "Post New Job" :
              activeSection === "manage-jobs" ? "Manage Jobs" :
              activeSection === "feedback" ? "Client Feedback" :
@@ -269,6 +296,32 @@ function AdminContent() {
                 {jobSearch && (
                   <button
                     onClick={() => setJobSearch("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                    aria-label="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+
+          {activeSection === "internship" && (
+            <div className="ml-2">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search applicants..."
+                  value={internshipSearch}
+                  onChange={(e) => {
+                    setInternshipSearch(e.target.value);
+                    setCurrentPageInternship(1);
+                  }}
+                  className="w-64 px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                />
+                {internshipSearch && (
+                  <button
+                    onClick={() => setInternshipSearch("")}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
                     aria-label="Clear search"
                   >
@@ -475,6 +528,17 @@ function AdminContent() {
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Actions</th>
                       </>
                     )}
+
+                    {activeSection === "internship" && (
+                      <>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Full Name</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Email</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Phone</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Course</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Message</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">Actions</th>
+                      </>
+                    )}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -492,6 +556,32 @@ function AdminContent() {
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as JobApplySchema).YearOfExperience} yrs {(item as JobApplySchema).MonthsOfExperience || 0} mos</td>
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"><a href={(item as JobApplySchema).ResumeLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">View Resume</a></td>
                           <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"><button onClick={() => (item as JobApplySchema)._id && handleDelete((item as JobApplySchema)._id!)} className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors">Delete</button></td>
+                        </tr>
+                      ));
+                    }
+
+                    if (activeSection === "internship") {
+                      const source = filteredInternship as AdminDataType[];
+                      const start = (currentPageInternship - 1) * pageSizeInternship;
+                      const end = start + pageSizeInternship;
+
+                      return source.slice(start, end).map((item, idx) => (
+                        <tr key={((item as InternshipApplySchema)._id as string) || idx} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as InternshipApplySchema).fullName}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as InternshipApplySchema).emailAddress}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as InternshipApplySchema).phoneNumber}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">{(item as InternshipApplySchema).courseOfInterest}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100 max-w-xs truncate" title={(item as InternshipApplySchema).message || ""}>
+                            {(item as InternshipApplySchema).message ? `${String((item as InternshipApplySchema).message).substring(0, 50)}...` : "—"}
+                          </td>
+                          <td className="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
+                            <button
+                              onClick={() => (item as InternshipApplySchema)._id && handleDelete((item as InternshipApplySchema)._id!)}
+                              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                            >
+                              Delete
+                            </button>
+                          </td>
                         </tr>
                       ));
                     }

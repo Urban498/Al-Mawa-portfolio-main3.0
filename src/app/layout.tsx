@@ -9,7 +9,7 @@ import FooterSection from "@/components/footer";
 import AOSProvider from "@/components/aos-provider";
 import { IntlProvider } from "@/components/providers/intl-provider";
 import { useState, useEffect, useRef } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Download, Mail, Phone } from "lucide-react";
 import ToastProvider from "@/components/ToastProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { usePathname } from "next/navigation";
@@ -334,6 +334,77 @@ export default function RootLayout({
               )}
 
               {!isAdminRoute && <VisitorTracker />}
+
+              {!isAdminRoute && (
+                <div className="fixed bottom-6 right-6 z-[9999]">
+                  <div className="relative">
+                    {/* Ripple rings */}
+                    {[0, 0.8, 1.6].map((delay, i) => (
+                      <span
+                        key={i}
+                        className="absolute inset-0 rounded-full border-2 border-sky-400/50 animate-ping"
+                        style={{ animationDelay: `${delay}s`, animationDuration: "2.4s" }}
+                      />
+                    ))}
+
+                    {/* PDF badge */}
+                    <span className="absolute -top-1 -right-1 z-10 bg-amber-400 text-white text-[9px] font-semibold px-1.5 py-0.5 rounded-full leading-tight animate-pulse">
+                      PDF
+                    </span>
+
+                    <a
+                      href={encodeURI("/AL-MAWA INTERNATIONAL COMPANY  PROFILE.pdf")}
+                      download
+                      aria-label="Download company profile"
+                      className="group relative flex w-14 h-14 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-sky-600 shadow-lg shadow-sky-500/40 transition-transform duration-200 hover:scale-110 active:scale-95"
+                      style={{ animation: "pulse-glow 2.4s ease-in-out infinite" }}
+                    >
+                      {/* Bouncing download icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 text-white"
+                        style={{ animation: "bounce-icon 2.4s ease-in-out infinite" }}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 3v13M7 11l5 5 5-5" />
+                        <path d="M5 21h14" />
+                      </svg>
+
+                      {/* Auto-showing tooltip */}
+                      <span
+                        className="pointer-events-none absolute right-16 top-1/2 -translate-y-1/2 rounded-lg bg-slate-900 px-3 py-1.5 text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        style={{ animation: "tooltip-pop 2.4s ease-in-out infinite" }}
+                      >
+                        Download company profile
+                        <span className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-slate-900" />
+                      </span>
+                    </a>
+                  </div>
+
+                  <style>{`
+                    @keyframes pulse-glow {
+                      0%, 100% { box-shadow: 0 4px 18px rgba(14,165,233,0.45), 0 0 0 0 rgba(14,165,233,0.35); }
+                      50% { box-shadow: 0 4px 24px rgba(14,165,233,0.65), 0 0 0 12px rgba(14,165,233,0); }
+                    }
+                    @keyframes bounce-icon {
+                      0%, 100% { transform: translateY(0); }
+                      40% { transform: translateY(3px); }
+                      60% { transform: translateY(1px); }
+                    }
+                    @keyframes tooltip-pop {
+                      0%, 20% { opacity: 0; transform: translateY(-50%) translateX(4px); }
+                      35%, 75% { opacity: 1; transform: translateY(-50%) translateX(0); }
+                      90%, 100% { opacity: 0; transform: translateY(-50%) translateX(4px); }
+                    }
+                  `}</style>
+                </div>
+              )}
+
               <div className={isAdminRoute ? "" : "pt-10"}>{children}</div>
               {!isAdminRoute && <FooterSection />}
               <ToastProvider />

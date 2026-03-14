@@ -414,14 +414,14 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                 </button>
               </li>
 
-              {/* Careers Link */}
+              {/* Our Programs Link */}
               <li className=" pt-6">
                 <Link
-                  href="/careers"
+                  href="/it-courses"
                   onClick={handleLinkClick}
                   className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
                 >
-                  {t('careers')}
+                  Our Programs
                 </Link>
               </li>
 

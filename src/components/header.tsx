@@ -2,14 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Code2, Laptop2, Megaphone, Palette, BrainCircuit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileSidebar } from "@/components/mobile-sidebar";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import React, { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
-import { usePathname } from "next/navigation";
+
+const serviceHeadingIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Web Development": Code2,
+  "IT & Tech Services": Laptop2,
+  "Digital Marketing": Megaphone,
+  "Graphic Design": Palette,
+  "AI Services": BrainCircuit,
+};
 
 const servicesData = [
   {
@@ -238,15 +245,8 @@ const servicesData = [
 
 export const NavBar = () => {
   const t = useTranslations('nav');
-  const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
-  const [servicesMenuOpen, setServicesMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-
-  const navLinkBaseClass =
-    "relative inline-block text-black transition-colors duration-200 hover:text-[#0ea5e9] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#0ea5e9] after:transition-all after:duration-200 hover:after:w-full";
-
-  const navLinkActiveClass = "text-[#0ea5e9] after:w-full";
 
   // Handle scroll effect
   useEffect(() => {
@@ -275,15 +275,11 @@ export const NavBar = () => {
     };
   }, [menuState]);
 
-  useEffect(() => {
-    setServicesMenuOpen(false);
-  }, [pathname]);
-
   return (
     <header>
       <nav
         data-state={menuState && "active"}
-        className={` fixed z-50 lg:z-[100] w-full px-5`}
+        className={` fixed z-50 w-full px-5`}
       >
         <div
           className={cn(
@@ -332,11 +328,7 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/"
-                    aria-current={pathname === "/" ? "page" : undefined}
-                    className={cn(
-                      navLinkBaseClass,
-                      pathname === "/" && navLinkActiveClass
-                    )}
+                    className="text-black hover:text-black block"
                   >
                     <span>{t('home')}</span>
                   </Link>
@@ -344,11 +336,7 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/about"
-                    aria-current={pathname === "/about" ? "page" : undefined}
-                    className={cn(
-                      navLinkBaseClass,
-                      pathname === "/about" && navLinkActiveClass
-                    )}
+                    className="text-black hover:text-black block"
                   >
                     <span>{t('about')}</span>
                   </Link>
@@ -356,15 +344,9 @@ export const NavBar = () => {
 
                 {/* Our Work Dropdown */}
                 <li className="relative group">
-                  <div
-                    className={cn(
-                      "relative inline-flex items-center gap-1 cursor-pointer",
-                      navLinkBaseClass,
-                      (pathname?.startsWith("/our-work") || pathname?.startsWith("/demo-websites")) && navLinkActiveClass,
-                      "group-hover:after:w-full"
-                    )}
-                  >
-                    <span className="flex gap-1">Our Work <ChevronDown className="w-3 h-3 my-auto transition-transform group-hover:rotate-180" /></span>
+                  <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
+                    <span>Our Work</span>
+                    <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                   </div>
 
                   {/* Our Work Dropdown */}
@@ -391,32 +373,16 @@ export const NavBar = () => {
 
                 {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
-                  <li
-                    key={index}
-                    className="relative"
-                    onMouseEnter={() => setServicesMenuOpen(true)}
-                    onMouseLeave={() => setServicesMenuOpen(false)}
-                  >
-                    <div
-                      className={cn(
-                        "relative inline-flex items-center gap-1 cursor-pointer",
-                        navLinkBaseClass,
-                        pathname?.startsWith("/services") && navLinkActiveClass,
-                        "group-hover:after:w-full"
-                      )}
-                    >
-                      <span className="flex gap-1">{t('services')} <ChevronDown className="w-3 h-3 my-auto transition-transform group-hover:rotate-180" /></span>
-                      
+                  <li key={index} className="relative group">
+                    <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
+                      <span>{t('services')}</span>
+                      <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                     </div>
 
                     {/* Dropdown Box */}
                     <div
-                      className={cn(
-                        "absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[110] transition-opacity duration-200",
-                        servicesMenuOpen
-                          ? "opacity-100 visible pointer-events-auto"
-                          : "opacity-0 invisible pointer-events-none"
-                      )}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
+                     group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
                     >
                       <div className="bg-white border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide">
                         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -424,17 +390,19 @@ export const NavBar = () => {
                             <div key={itemIndex} className="space-y-4">
                               <Link
                                 href={item.href}
-                                onClick={() => setServicesMenuOpen(false)}
-                                className="block text-lg font-semibold text-black  transition-colors duration-200 pb-2"
+                                className="flex items-center gap-2 text-lg font-semibold text-black transition-colors duration-200 pb-2"
                               >
-                                {item.name}
+                                {(() => {
+                                  const Icon = serviceHeadingIcons[item.name];
+                                  return Icon ? <Icon className="w-4 h-4 text-[#0ea5e9]" /> : null;
+                                })()}
+                                <span>{item.name}</span>
                               </Link>
                               <div className="space-y-2">
                                 {item.subItems?.map((subItem, subIndex) => (
                                   <Link
                                     key={subIndex}
                                     href={subItem.href}
-                                    onClick={() => setServicesMenuOpen(false)}
                                     className="block text-xs text-gray-700 hover:bg-[#0ea5e9]/15 rounded-xl pl-2 transition-colors duration-200 py-1.5 leading-relaxed"
                                   >
                                     {subItem.name}
@@ -449,31 +417,21 @@ export const NavBar = () => {
                   </li>
                 ))}
 
-                {/* Careers Link */}
+                {/* Our Programs Link */}
                 <li>
                   <Link
-                    href="/careers"
-                    aria-current={pathname === "/careers" ? "page" : undefined}
-                    className={cn(
-                      navLinkBaseClass,
-                      pathname === "/careers" && navLinkActiveClass
-                    )}
+                    href="/it-courses"
+                    className="text-black hover:text-black block duration-150"
                   >
-                    <span>{t('careers')}</span>
+                    <span>Our Programs</span>
                   </Link>
                 </li>
 
                 {/* Testimonials Link with Dropdown */}
                 <li className="relative group">
-                  <div
-                    className={cn(
-                      "relative inline-flex items-center gap-1 cursor-pointer",
-                      navLinkBaseClass,
-                      (pathname === "/testimonials" || pathname === "/share-feedback") && navLinkActiveClass,
-                      "group-hover:after:w-full"
-                    )}
-                  >
-                    <span className="flex gap-1">{t('testimonials')} <ChevronDown className="w-3 h-3 my-auto transition-transform group-hover:rotate-180" /></span>
+                  <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
+                    <span>{t('testimonials')}</span>
+                    <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                   </div>
 
                   {/* Testimonials Dropdown */}

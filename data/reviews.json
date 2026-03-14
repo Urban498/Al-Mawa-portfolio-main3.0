@@ -12,17 +12,6 @@
     "updatedAt": "2026-03-12T07:56:24.952Z"
   },
   {
-    "feedback": "testing api",
-    "name": "ahmad",
-    "email": "admin@gmail.com",
-    "mobile": "7004330655",
-    "designation": "tester",
-    "rating": 4,
-    "image": "",
-    "createdAt": "2026-01-29T12:00:07.888Z",
-    "status": "pending"
-  },
-  {
     "feedback": "testing feedback",
     "name": "Shashant Shekhar",
     "email": "shashantshekhar10@gmail.com",
