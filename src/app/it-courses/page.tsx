@@ -177,7 +177,6 @@ const TESTIMONIALS_BASE: Testimonial[] = [
   { initials: 'RP', avatarBg: '#059669', text: 'I completed the mobile app internship and my Flutter app is now live on the Play Store. The real-project experience made all the difference in my interviews.', name: 'Rahul Patil', role: 'Flutter Developer at AppVentures' },
 ];
 
-// Duplicate for seamless infinite scroll
 const TESTIMONIALS = [...TESTIMONIALS_BASE, ...TESTIMONIALS_BASE];
 
 const MARQUEE_ITEMS = ['Web Development', 'Mobile Apps', 'Artificial Intelligence', 'Cloud Computing', 'UI/UX Design', 'Software Internship'];
@@ -229,16 +228,16 @@ function HeroStats() {
   const s3 = useCounterAnimation(95, visible);
 
   return (
-    <div ref={ref} style={styles.heroStats}>
-      <div style={styles.statItem}>
+    <div ref={ref} className="hero-stats" style={styles.heroStats}>
+      <div className="stat-item" style={styles.statItem}>
         <span style={styles.statNum}>{s1}+</span>
         <span style={styles.statLabel}>Students Enrolled</span>
       </div>
-      <div style={{ ...styles.statItem, ...styles.statItemBorder }}>
+      <div className="stat-item" style={{ ...styles.statItem, ...styles.statItemBorder }}>
         <span style={styles.statNum}>{s2}</span>
         <span style={styles.statLabel}>Courses Available</span>
       </div>
-      <div style={{ ...styles.statItem, ...styles.statItemBorder }}>
+      <div className="stat-item" style={{ ...styles.statItem, ...styles.statItemBorder }}>
         <span style={styles.statNum}>{s3}%</span>
         <span style={styles.statLabel}>Placement Rate</span>
       </div>
@@ -271,11 +270,9 @@ function CourseCard({ course }: { course: Course }) {
         ...(hovered ? styles.courseCardHover : {}),
       }}
     >
-      {/* Diagonal arrow */}
       <div style={{ ...styles.cardArrow, ...(hovered ? styles.cardArrowVisible : {}) }}>
         <IconDiagArrow />
       </div>
-      {/* Icon */}
       <div style={{ ...styles.cardIconWrap, ...(hovered ? styles.cardIconWrapHover : {}) }}>
         <span style={{ color: hovered ? 'white' : '#0ea5e9', transition: 'color 0.3s', display: 'flex' }}>
           {course.icon}
@@ -334,7 +331,7 @@ function StepItem({ step }: { step: Step }) {
       }}
     >
       {step.hasArrow && (
-        <div style={styles.stepArrowWrap}>
+        <div style={styles.stepArrowWrap} className="step-arrow-wrap">
           <StepArrowSvg />
         </div>
       )}
@@ -358,6 +355,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="testimonial-card"
       style={{
         ...styles.testimonialCard,
         ...(t.featured ? styles.testimonialCardFeatured : {}),
@@ -418,13 +416,7 @@ function EnquiryModal({ open, onClose, courses }: { open: boolean; onClose: () =
       const res = await fetch('/api/internship-apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fullName,
-          emailAddress,
-          phoneNumber,
-          courseOfInterest,
-          message,
-        })
+        body: JSON.stringify({ fullName, emailAddress, phoneNumber, courseOfInterest, message })
       });
 
       const data = await res.json().catch(() => null);
@@ -435,11 +427,8 @@ function EnquiryModal({ open, onClose, courses }: { open: boolean; onClose: () =
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFullName('');
-        setEmailAddress('');
-        setPhoneNumber('');
-        setCourseOfInterest('');
-        setMessage('');
+        setFullName(''); setEmailAddress(''); setPhoneNumber('');
+        setCourseOfInterest(''); setMessage('');
         onClose();
       }, 1800);
     } catch (e: unknown) {
@@ -453,74 +442,35 @@ function EnquiryModal({ open, onClose, courses }: { open: boolean; onClose: () =
 
   return (
     <div style={styles.modalOverlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={styles.modal}>
+      <div style={styles.modal} className="modal-card">
         <button style={styles.modalClose} onClick={onClose}>✕</button>
-        <h2 style={styles.modalTitle}>Apply Now</h2>
-        <p style={styles.modalSub}>IT Courses & Internship Program — Fill in your details and we&apos;ll get back to you within 24 hours.</p>
+        <h2 style={styles.modalTitle} className="modal-title">Apply Now</h2>
+        <p style={styles.modalSub}>IT Courses &amp; Internship Program — Fill in your details and we&apos;ll get back to you within 24 hours.</p>
         <div style={styles.formGroup}>
           <label style={styles.formLabel}>Full Name</label>
-          <input
-            style={styles.formControl}
-            type="text"
-            placeholder="Your full name"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-          />
+          <input style={styles.formControl} type="text" placeholder="Your full name" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         </div>
         <div style={styles.formGroup}>
           <label style={styles.formLabel}>Email Address</label>
-          <input
-            style={styles.formControl}
-            type="email"
-            placeholder="your@email.com"
-            value={emailAddress}
-            onChange={(e) => setEmailAddress(e.target.value)}
-          />
+          <input style={styles.formControl} type="email" placeholder="your@email.com" value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} />
         </div>
         <div style={styles.formGroup}>
           <label style={styles.formLabel}>Phone Number</label>
-          <input
-            style={styles.formControl}
-            type="tel"
-            placeholder="+91 00000 00000"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
+          <input style={styles.formControl} type="tel" placeholder="+91 00000 00000" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         </div>
         <div style={styles.formGroup}>
           <label style={styles.formLabel}>Course of Interest</label>
-          <select
-            style={styles.formControl}
-            value={courseOfInterest}
-            onChange={(e) => setCourseOfInterest(e.target.value)}
-          >
+          <select style={styles.formControl} value={courseOfInterest} onChange={(e) => setCourseOfInterest(e.target.value)}>
             <option value="">Select a course...</option>
             {courses.map(c => <option key={c.slug}>{c.title}</option>)}
           </select>
         </div>
         <div style={styles.formGroup}>
           <label style={styles.formLabel}>Message (Optional)</label>
-          <textarea
-            style={{ ...styles.formControl, resize: 'vertical' }}
-            rows={3}
-            placeholder="Tell us about your goals..."
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
+          <textarea style={{ ...styles.formControl, resize: 'vertical' }} rows={3} placeholder="Tell us about your goals..." value={message} onChange={(e) => setMessage(e.target.value)} />
         </div>
         {error && (
-          <div
-            style={{
-              marginTop: 8,
-              color: '#b91c1c',
-              background: '#fef2f2',
-              border: '1px solid #fecaca',
-              padding: '10px 12px',
-              borderRadius: 8,
-              fontSize: '0.85rem',
-              lineHeight: 1.4
-            }}
-          >
+          <div style={{ marginTop: 8, color: '#b91c1c', background: '#fef2f2', border: '1px solid #fecaca', padding: '10px 12px', borderRadius: 8, fontSize: '0.85rem', lineHeight: 1.4 }}>
             {error}
           </div>
         )}
@@ -529,11 +479,7 @@ function EnquiryModal({ open, onClose, courses }: { open: boolean; onClose: () =
           onClick={handleSubmit}
           disabled={isSubmitting}
         >
-          {submitted
-            ? '✓ Application Submitted!'
-            : isSubmitting
-              ? 'Submitting...'
-              : 'Submit Application →'}
+          {submitted ? '✓ Application Submitted!' : isSubmitting ? 'Submitting...' : 'Submit Application →'}
         </button>
       </div>
     </div>
@@ -548,7 +494,6 @@ export default function ITCoursesPage() {
 
   useEffect(() => {
     let mounted = true;
-
     (async () => {
       try {
         const res = await fetch('/api/courses');
@@ -560,10 +505,7 @@ export default function ITCoursesPage() {
         if (mounted) setCourses([]);
       }
     })();
-
-    return () => {
-      mounted = false;
-    };
+    return () => { mounted = false; };
   }, []);
 
   return (
@@ -571,25 +513,25 @@ export default function ITCoursesPage() {
       <style>{globalStyles}</style>
 
       {/* ── HERO ── */}
-      <section style={styles.hero}>
+      <section style={styles.hero} className="hero-section">
         <div style={styles.heroOrb1} />
         <div style={styles.heroOrb2} />
         <div style={styles.heroContent}>
-          <div style={styles.heroBadge}>
+          <div style={styles.heroBadge} className="hero-badge">
             <span style={styles.heroBadgeDot} className="pulse-dot" />
             Enroll &amp; Get Certified
           </div>
-          <h1 style={styles.heroH1} className="fade-up-1">
+          <h1 style={styles.heroH1} className="hero-h1 fade-up-1">
             IT Courses &amp;<br /><em style={{ color: '#0ea5e9', fontStyle: 'normal' }}>Internship</em> Program
           </h1>
-          <p style={styles.heroSub} className="fade-up-2">
+          <p style={styles.heroSub} className="hero-sub fade-up-2">
             Learn Web Development, Mobile Apps, Artificial Intelligence and Cloud Computing with real industry projects and expert mentorship.
           </p>
-          <div style={styles.heroActions} className="fade-up-3">
+          <div style={styles.heroActions} className="hero-actions fade-up-3">
             <PrimaryButton onClick={() => setModalOpen(true)}>
               Apply for Internship <span>→</span>
             </PrimaryButton>
-            <a href="#courses" style={styles.btnSecondary}>Explore Courses ↓</a>
+            <a href="#courses" style={styles.btnSecondary} className="btn-secondary">Explore Courses ↓</a>
           </div>
           <HeroStats />
         </div>
@@ -605,40 +547,38 @@ export default function ITCoursesPage() {
       </div>
 
       {/* ── COURSES ── */}
-      <section style={styles.coursesSection} id="courses">
-        <div style={styles.container}>
+      <section style={styles.coursesSection} id="courses" className="section-padded">
+        <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>What We Offer</span>
-            <h2 style={styles.sectionTitle}>Explore Our Courses</h2>
+            <h2 style={styles.sectionTitle} className="section-title">Explore Our Courses</h2>
             <p style={{ ...styles.sectionSub, margin: '0 auto' }}>
               Choose from our comprehensive range of courses and start your learning journey with real mentorship today.
             </p>
           </RevealDiv>
           {courses.length > 0 ? (
-            <div style={styles.coursesGrid}>
+            <div style={styles.coursesGrid} className="courses-grid">
               {courses.map((c) => <CourseCard key={c.slug} course={c} />)}
             </div>
           ) : (
-            <p style={{ textAlign: 'center', color: '#6c757d' }}>
-              No courses found.
-            </p>
+            <p style={{ textAlign: 'center', color: '#6c757d' }}>No courses found.</p>
           )}
         </div>
       </section>
 
       {/* ── BENEFITS ── */}
-      <section style={styles.benefitsSection}>
-        <div style={styles.container}>
-          <div style={styles.benefitsLayout}>
-            <div style={styles.benefitsLeft}>
+      <section style={styles.benefitsSection} className="section-padded">
+        <div style={styles.container} className="container-pad">
+          <div style={styles.benefitsLayout} className="benefits-layout">
+            <div style={styles.benefitsLeft} className="benefits-sticky">
               <RevealDiv>
                 <span style={styles.sectionLabel}>Why Choose Us</span>
-                <h2 style={styles.sectionTitle}>Our Internship<br />Program Benefits</h2>
+                <h2 style={styles.sectionTitle} className="section-title">Our Internship<br />Program Benefits</h2>
                 <p style={styles.sectionSub}>
                   Transform your theoretical knowledge into practical experience with our comprehensive program.
                 </p>
               </RevealDiv>
-              <div style={styles.benefitsVisual}>
+              <div style={styles.benefitsVisual} className="benefits-visual">
                 <div style={styles.benefitsVisualBg} />
                 <div style={styles.benefitsVisualCounter}>
                   5+<small style={{ display: 'block', fontFamily: "'DM Sans', sans-serif", fontSize: '0.65rem', fontWeight: 400, opacity: 0.8, marginTop: 3 }}>Key Benefits</small>
@@ -661,27 +601,27 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── STEPS ── */}
-      <section style={styles.stepsSection}>
-        <div style={styles.container}>
+      <section style={styles.stepsSection} className="section-padded">
+        <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>How It Works</span>
-            <h2 style={styles.sectionTitle}>Follow Our Proven Process</h2>
+            <h2 style={styles.sectionTitle} className="section-title">Follow Our Proven Process</h2>
             <p style={{ ...styles.sectionSub, margin: '0 auto' }}>
               Four simple steps to become a skilled, job-ready developer in the technology industry.
             </p>
           </RevealDiv>
-          <div style={styles.stepsGrid}>
+          <div style={styles.stepsGrid} className="steps-grid">
             {STEPS.map((s) => <StepItem key={s.num} step={s} />)}
           </div>
         </div>
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section style={styles.testimonialsSection}>
-        <div style={styles.container}>
+      <section style={styles.testimonialsSection} className="testimonials-section">
+        <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>Student Stories</span>
-            <h2 style={styles.sectionTitle}>Voices From Our Students</h2>
+            <h2 style={styles.sectionTitle} className="section-title">Voices From Our Students</h2>
             <p style={{ ...styles.sectionSub, margin: '0 auto' }}>
               Hear from students who transformed their careers through our program. Hover to pause.
             </p>
@@ -695,19 +635,19 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={styles.ctaSection}>
+      <section style={styles.ctaSection} className="cta-section">
         <div style={styles.ctaBg} />
-        <div style={{ ...styles.container, textAlign: 'center', position: 'relative' }}>
+        <div style={{ ...styles.container, textAlign: 'center', position: 'relative' }} className="container-pad">
           <span style={{ ...styles.sectionLabel, color: 'rgba(255,255,255,0.4)' }}>Start Today</span>
-          <h2 style={{ ...styles.sectionTitle, color: 'white', maxWidth: 560, margin: '0 auto 14px' }}>
+          <h2 style={{ ...styles.sectionTitle, color: 'white', maxWidth: 560, margin: '0 auto 14px' }} className="section-title">
             Launch Your IT Career<br />With AL-MAWA
           </h2>
           <p style={{ ...styles.sectionSub, color: 'rgba(255,255,255,0.55)', maxWidth: 440, margin: '0 auto 36px' }}>
             Join hundreds of students who have successfully transformed their careers through our courses and internship program.
           </p>
-          <div style={styles.ctaActions}>
+          <div style={styles.ctaActions} className="cta-actions">
             <PrimaryButton onClick={() => setModalOpen(true)} light>Apply Now →</PrimaryButton>
-            <a href="#courses" style={styles.ctaOutline}>View All Courses</a>
+            <a href="#courses" style={styles.ctaOutline} className="cta-outline">View All Courses</a>
           </div>
         </div>
       </section>
@@ -727,7 +667,7 @@ function PrimaryButton({ children, onClick, light }: { children: React.ReactNode
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        display: 'inline-flex', alignItems: 'center', gap: 8,
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
         background: light ? (hovered ? '#0ea5e9' : 'white') : (hovered ? '#0ea5e9' : '#0a0a0a'),
         color: light ? '#0a0a0a' : 'white',
         padding: '14px 30px', borderRadius: 8,
@@ -737,6 +677,8 @@ function PrimaryButton({ children, onClick, light }: { children: React.ReactNode
         boxShadow: hovered ? '0 10px 28px rgba(14,165,233,0.35)' : 'none',
         transition: 'all 0.3s',
         fontFamily: "'DM Sans', sans-serif",
+        width: '100%',
+        maxWidth: 260,
       }}
     >
       {children}
@@ -749,7 +691,7 @@ function PrimaryButton({ children, onClick, light }: { children: React.ReactNode
 const styles: Record<string, React.CSSProperties> = {
   hero: {
     minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: '#f8f9fa', position: 'relative', overflow: 'hidden', padding: '80px 24px',
+    background: '#f8f9fa', position: 'relative', overflow: 'hidden', padding: '100px 24px 80px',
   },
   heroOrb1: {
     position: 'absolute', borderRadius: '50%', filter: 'blur(100px)',
@@ -761,7 +703,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: 360, height: 360, background: 'rgba(59,130,246,0.09)', bottom: -60, left: -60,
     pointerEvents: 'none',
   },
-  heroContent: { position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: 860 },
+  heroContent: { position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: 860, width: '100%' },
   heroBadge: {
     display: 'inline-flex', alignItems: 'center', gap: 8,
     background: 'white', border: '1px solid #e9ecef',
@@ -775,7 +717,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   heroH1: {
     fontFamily: "'Playfair Display', serif",
-    fontSize: 'clamp(2.6rem, 6vw, 5rem)',
+    fontSize: 'clamp(2.4rem, 6vw, 5rem)',
     fontWeight: 900, color: '#0a0a0a', lineHeight: 1.07, marginBottom: 22,
   },
   heroSub: {
@@ -784,7 +726,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   heroActions: { display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' },
   btnSecondary: {
-    display: 'inline-flex', alignItems: 'center', gap: 8,
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
     background: 'white', color: '#0a0a0a',
     padding: '13px 30px', borderRadius: 8,
     fontWeight: 600, fontSize: '0.92rem',
@@ -823,7 +765,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   sectionTitle: {
     fontFamily: "'Playfair Display', serif",
-    fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)',
+    fontSize: 'clamp(1.7rem, 3.5vw, 2.8rem)',
     fontWeight: 800, color: '#0a0a0a', lineHeight: 1.18, marginBottom: 14,
   },
   sectionSub: { fontSize: '0.97rem', color: '#6c757d', maxWidth: 500, lineHeight: 1.75 },
@@ -833,7 +775,7 @@ const styles: Record<string, React.CSSProperties> = {
 
   coursesSection: { background: '#f8f9fa', padding: '96px 24px' },
   coursesGrid: {
-    display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))', gap: 22,
+    display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: 22,
   },
   courseCard: {
     background: 'white', borderRadius: 16, border: '1px solid #e9ecef',
@@ -981,7 +923,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   ctaActions: { display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' },
   ctaOutline: {
-    display: 'inline-flex', alignItems: 'center', gap: 8,
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
     background: 'transparent', color: 'white',
     padding: '13px 30px', borderRadius: 8,
     fontWeight: 600, fontSize: '0.92rem',
@@ -1015,7 +957,7 @@ const styles: Record<string, React.CSSProperties> = {
   formControl: {
     width: '100%', padding: '11px 14px', borderRadius: 8,
     border: '1px solid #e9ecef', fontFamily: "'DM Sans', sans-serif", fontSize: '0.88rem',
-    color: '#0a0a0a', background: 'white', outline: 'none',
+    color: '#0a0a0a', background: 'white', outline: 'none', boxSizing: 'border-box' as const,
   },
   formSubmit: {
     width: '100%', padding: 13, borderRadius: 8,
@@ -1025,10 +967,12 @@ const styles: Record<string, React.CSSProperties> = {
   },
 };
 
-// ─── Global CSS (keyframes & dot-grid that can't be inline) ───────────────────
+// ─── Global CSS ────────────────────────────────────────────────────────────────
 
 const globalStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; }
 
   .hero-dot-grid::before {
     content: '';
@@ -1041,19 +985,19 @@ const globalStyles = `
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
   @keyframes pulseDot {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.6); }
+    50%       { opacity: 0.4; transform: scale(1.6); }
   }
   @keyframes marqueeScroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to   { transform: translateX(-50%); }
   }
   @keyframes scrollCards {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to   { transform: translateX(-50%); }
   }
 
   .fade-up-1 { animation: fadeUp 0.7s ease 0.12s both; }
@@ -1067,12 +1011,169 @@ const globalStyles = `
   .testimonials-track { animation: scrollCards 32s linear infinite; }
   .testimonials-track:hover { animation-play-state: paused; }
 
-  @media (max-width: 900px) {
-    .benefits-layout { grid-template-columns: 1fr !important; }
-    .steps-grid { grid-template-columns: repeat(2,1fr) !important; gap: 40px 20px !important; }
-    .step-arrow-wrap { display: none !important; }
+  /* ── TABLET ≤ 1024px ── */
+  @media (max-width: 1024px) {
+    .benefits-layout {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+    .benefits-sticky {
+      position: static !important;
+      top: auto !important;
+    }
+    .benefits-visual {
+      min-height: 220px !important;
+    }
+    .courses-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 48px 24px !important;
+    }
+    .step-arrow-wrap {
+      display: none !important;
+    }
   }
-  @media (max-width: 600px) {
-    .steps-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* ── MOBILE ≤ 640px ── */
+  @media (max-width: 640px) {
+
+    /* Hero */
+    .hero-section {
+      min-height: auto !important;
+      padding: 90px 20px 60px !important;
+    }
+    .hero-h1 {
+      font-size: 2rem !important;
+      line-height: 1.14 !important;
+    }
+    .hero-sub {
+      font-size: 0.9rem !important;
+      margin-bottom: 26px !important;
+    }
+    .hero-badge {
+      font-size: 0.65rem !important;
+      padding: 6px 14px !important;
+      margin-bottom: 20px !important;
+    }
+    .hero-actions {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 10px !important;
+    }
+    .hero-actions button,
+    .hero-actions a,
+    .btn-secondary {
+      width: 100% !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+
+    /* Stats */
+    .hero-stats {
+      flex-direction: column !important;
+      margin-top: 36px !important;
+      padding-top: 28px !important;
+      gap: 0 !important;
+    }
+    .stat-item {
+      padding: 14px 0 !important;
+      border-left: none !important;
+      border-top: 1px solid #e9ecef !important;
+      width: 100% !important;
+    }
+    .stat-item:first-child {
+      border-top: none !important;
+    }
+
+    /* Sections */
+    .section-padded {
+      padding: 60px 20px !important;
+    }
+    .container-pad {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .section-title {
+      font-size: 1.65rem !important;
+    }
+
+    /* Courses */
+    .courses-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Benefits */
+    .benefits-layout {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+    .benefits-visual {
+      min-height: 180px !important;
+      padding: 28px !important;
+      margin-top: 16px !important;
+    }
+
+    /* Steps */
+    .steps-grid {
+      grid-template-columns: 1fr !important;
+      gap: 36px !important;
+    }
+    .step-arrow-wrap {
+      display: none !important;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+      padding: 60px 0 0 !important;
+    }
+    .testimonial-card {
+      width: 280px !important;
+      padding: 22px 18px !important;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 64px 20px !important;
+    }
+    .cta-actions {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 10px !important;
+    }
+    .cta-actions button,
+    .cta-actions a,
+    .cta-outline {
+      width: 100% !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+    }
+
+    /* Modal */
+    .modal-card {
+      padding: 28px 18px !important;
+      border-radius: 14px !important;
+    }
+    .modal-title {
+      font-size: 1.3rem !important;
+    }
+  }
+
+  /* ── VERY SMALL ≤ 380px ── */
+  @media (max-width: 380px) {
+    .hero-h1 {
+      font-size: 1.75rem !important;
+    }
+    .hero-section {
+      padding: 80px 16px 50px !important;
+    }
+    .section-padded {
+      padding: 50px 16px !important;
+    }
+    .cta-section {
+      padding: 50px 16px !important;
+    }
   }
 `;
