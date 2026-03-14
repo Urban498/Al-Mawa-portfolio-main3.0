@@ -17,11 +17,20 @@ type Course = {
 export default async function ITCourseDetailsPage({
   params
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   await connectDB();
-  const doc = await CourseModel.findOne({ slug }).lean();
+  const doc = (await CourseModel.findOne({ slug }).lean()) as unknown as {
+    slug?: unknown;
+    title?: unknown;
+    desc?: unknown;
+    details?: {
+      overview?: unknown;
+      whatYouWillLearn?: unknown;
+      whoIsThisFor?: unknown;
+    };
+  } | null;
   if (!doc) notFound();
 
   const course: Course = {
