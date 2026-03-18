@@ -999,18 +999,22 @@
   "ourWorkPage": {
     "title": "Unsere",
     "titleHighlight": "Arbeit",
-    "description": "Entdecken Sie unser Portfolio digitaler Lösungen und Marketingkampagnen, die echte Ergebnisse für unsere Kunden liefern.",
+    "description": "Entdecken Sie unser umfassendes Portfolio mit Website-Entwicklung, Softwarelösungen und Social-Media-Marketing-Kampagnen – alle entwickelt, um messbare Ergebnisse zu liefern und Ihre digitale Präsenz zu transformieren.",
     "badges": {
-      "services": "Soziale Medien • Anzeigen • Web",
+      "services": "Software • Website • Soziale Medien",
       "approach": "Strategie • Design • Entwicklung"
-    },
-    "socialMediaSection": {
-      "title": "Unsere Social-Media-Arbeit",
-      "description": "Ansprechende Social-Media-Inhalte, die Ihre Marke mit Klarheit und Wirkung präsentieren."
     },
     "websiteSection": {
       "title": "Unsere Website-Entwicklung",
-      "description": "Maßgeschneiderte Website-Lösungen zum Erzielen von Ergebnissen und Hinterlassen bleibender Eindrücke."
+      "description": "Wunderschön gestaltete, hochperformante Websites, die Ihr Publikum fesseln, Conversions steigern und eine starke Online-Präsenz schaffen, die in Ihrer Branche hervorsticht."
+    },
+    "softwareSection": {
+      "title": "Unsere Softwareentwicklung",
+      "description": "Hochmoderne Softwarelösungen und intelligente CRM-Systeme, die Ihr Team stärken, Operationen automatisieren und neue Wachstumschancen für Ihr Unternehmen erschließen."
+    },
+    "socialMediaSection": {
+      "title": "Unsere Social-Media-Arbeit",
+      "description": "Strategische Social-Media-Kampagnen und überzeugende Inhalte, die Ihre Markenposition stärken, Ihr Publikum einbeziehen und aussagekräftige Verbindungen mit Ihren Kunden aufbauen."
     },
     "cardBadges": {
       "websiteDevelopment": "Website-Entwicklung"

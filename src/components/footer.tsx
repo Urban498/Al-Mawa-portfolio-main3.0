@@ -114,6 +114,13 @@ export default function FooterSection() {
                 </Link>
                 <span className="text-xs text-gray-300 hidden md:inline">|</span>
                 <Link
+                  href="/careers"
+                  className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+                >
+                  Career
+                </Link>
+                <span className="text-xs text-gray-300 hidden md:inline">|</span>
+                <Link
                   href="/policy"
                   className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
                 >

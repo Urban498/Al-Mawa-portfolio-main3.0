@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 
@@ -42,17 +43,10 @@ export default function AutoModal() {
   };
 
   useEffect(() => {
-    const lastShown = localStorage.getItem('autoModalLastShown');
-    const now = Date.now();
-    const twentyFourHours = 24 * 60 * 60 * 1000; // 86400000 ms
-
-    if (!lastShown || (now - parseInt(lastShown)) > twentyFourHours) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-        localStorage.setItem('autoModalLastShown', now.toString());
-      }, 700);
-      return () => clearTimeout(timer);
-    }
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 700);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -69,8 +63,22 @@ export default function AutoModal() {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 40 }}
             transition={{ type: "spring", stiffness: 150, damping: 20 }}
-            className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl p-6 md:p-8"
+            className="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden flex items-stretch max-h-[90vh]"
           >
+            {/* Left Side - Image */}
+            <div className="w-2/5 hidden sm:flex relative overflow-hidden items-center justify-center bg-gray-100 p-6">
+              <Image 
+                src="/emi.jpeg" 
+                alt="Al Mawa Services" 
+                width={400}
+                height={500}
+                className="object-contain max-w-full h-auto"
+                priority
+              />
+            </div>
+
+            {/* Right Side - Form */}
+            <div className="relative w-full sm:w-3/5 p-6 overflow-y-auto">
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-3 right-4 text-gray-500 hover:text-black text-2xl font-bold"
@@ -158,6 +166,7 @@ export default function AutoModal() {
                 Sign Up
               </button>
             </form>
+            </div>
           </motion.div>
         </motion.div>
       )}

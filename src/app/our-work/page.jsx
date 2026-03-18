@@ -21,8 +21,10 @@ import divyansh from "../testimonials/images/divyansh.png";
 import hotel from "../testimonials/images/hotel.png";
 import chocolate from "../testimonials/images/chocolate.png";
 import lifestyle from "../testimonials/images/lifestyle.png";
-import Sonai from "../testimonials/images/sonal_School_logo2.png"
-import TicketCRM from "../testimonials/images/ticket_manage_crm.png"
+import Sonai from "../testimonials/images/sonal_School_logo2.png";
+import TicketCRM from "../testimonials/images/ticket_manage_crm.png";
+import infinity from "../../../public/infinity1.png";
+import fortune from "../../../public/fortune1.png";
 // ----------------------
 // Font Configuration
 // ----------------------
@@ -35,36 +37,146 @@ const corpta = localFont({
 // ----------------------
 // Sample Data
 // ----------------------
+const softwareDevelopment = [
+  {
+    url: "https://www.kontechindustriesticketcrm.live/dashboard",
+    name: "Kontech Industries Ticket Management Crm",
+    img: TicketCRM,
+    description:
+      "A comprehensive customer relationship management system designed to streamline ticket handling and workflow automation.",
+    overview:
+      "This modern CRM solution helps businesses manage support tickets efficiently with real-time tracking, automated routing, and priority-based queue management.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://www.infinityloanservices.com",
+    name: "Infinity Loan Services",
+    img: infinity,
+    description:
+      "A digital lending platform offering quick and easy loan applications with transparent terms and instant approval processes.",
+    overview:
+      "Infinity Loan Services provides users with a seamless online lending experience, featuring instant eligibility checks, transparent pricing, and fast disbursement.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://fortuneloan.services/",
+    name: "Fortune Loan Services",
+    img: fortune,
+    description:
+      "An advanced loan management platform providing financial solutions with AI-powered risk assessment and customer matching.",
+    overview:
+      "Fortune Loan Services offers intelligent loan matching, competitive rates, and comprehensive financial tools for both lenders and borrowers.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+];
+
 const socialMediaWork = [
   {
     url: "https://www.instagram.com/nitinhardwarepune?igsh=cWxsNDJ3Zmp0ZnBv",
     title: "Nitin Hardware",
     platform: "Social Media Marketing",
     img: nitin,
+    description:
+      "Comprehensive social media strategy for a hardware retail business focused on engagement and local market penetration.",
+    overview:
+      "Managing Instagram presence with product showcases, customer testimonials, and promotional campaigns to drive engagement and foot traffic.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
   },
   {
     url: "https://www.instagram.com/lifestylehomedecorpune?igsh=MWZwenJnd3MyZDM3aQ==",
     title: "Life Style Home Decor",
     platform: "Social Media Marketing",
     img: lifestyle,
+    description:
+      "Strategic social media marketing for a home decor brand, focusing on visual storytelling and trendy content.",
+    overview:
+      "Creating aesthetically appealing content that showcases home decor products, interior design inspiration, and customer transformations.",
+    technologies: [
+      "Instagram",
+      "Pinterest",
+      "Canva",
+      "Reels",
+      "Influencer Partnerships",
+    ],
   },
   {
     url: "https://www.instagram.com/thechocolateroom_fcroad?igsh=MWFrMThpNTNzc2E5MQ==",
     title: "The Chocolate Room",
     platform: "Social Media Marketing",
     img: chocolate,
+    description:
+      "Food and beverage brand marketing with focus on mouth-watering visuals and customer engagement.",
+    overview:
+      "Building a strong community around premium chocolate products through engaging content, promotional offers, and user-generated content.",
+    technologies: [
+      "Instagram Stories",
+      "Food Photography",
+      "Video Marketing",
+      "Email Integration",
+      "Engagement Campaigns",
+    ],
   },
   {
     url: "https://www.instagram.com/hotel_rest_inn?igsh=NHAxMXN5ZThpOWNy",
     title: "Hotel Rest INN",
     platform: "Social Media Marketing",
     img: hotel,
+    description:
+      "Hospitality brand social media management promoting room bookings and customer experiences.",
+    overview:
+      "Showcasing hotel facilities, room tours, local attractions, and guest reviews to encourage bookings and build reputation.",
+    technologies: [
+      "Instagram",
+      "Facebook",
+      "Booking.com Integration",
+      "Virtual Tours",
+      "Customer Reviews",
+    ],
   },
   {
     url: "https://www.instagram.com/divyyansh_fashion_?igsh=MWhzcGgzMXg5YXhpcw==",
     title: "Divyansh Fashion Zone",
     platform: "Social Media Marketing",
     img: divyansh,
+    description:
+      "Fashion retail marketing with focus on latest trends, seasonal collections, and fashion-forward content.",
+    overview:
+      "Managing fashion brand presence with outfit styling, trend reports, fashion tips, and collection launches to drive sales.",
+    technologies: [
+      "Instagram",
+      "TikTok",
+      "Fashion Photography",
+      "Trend Analysis",
+      "Influencer Collabs",
+    ],
   },
 ];
 
@@ -73,21 +185,43 @@ const websiteProjects = [
     url: "https://www.nitinhardware.in/",
     name: "Nitin Hardware",
     img: nitin,
+    description:
+      "A comprehensive e-commerce platform for hardware retail with product catalog and online ordering system.",
+    overview:
+      "Full-featured hardware store website featuring product categories, pricing, inventory management, and customer reviews.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Shopify",
+      "Payment Gateway",
+    ],
   },
   {
     url: "https://www.lifestylehomedecor.in/",
     name: "Life Style Home Decor",
     img: lifestyle,
+    description:
+      "Beautiful home decor e-commerce site showcasing furniture, decorative items, and interior design inspiration.",
+    overview:
+      "Interactive online store with product filters, mood boards, designer consultation booking, and virtual room visualization tools.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Webflow", "CMS"],
   },
   {
     url: "https://www.sonairesidentialworldschool.in",
     name: "Sona 'I' Residential World School",
     img: Sonai,
-  },
-  {
-    url: "https://ticket-management-crm.vercel.app",
-    name: "Ticket Management CRM",
-    img: TicketCRM,
+    description:
+      "Educational institution website providing school information, admissions, and online learning resources.",
+    overview:
+      "School website featuring academic programs, teacher profiles, student achievements, admissions portal, and event updates.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Learning Management System",
+      "Student Portal",
+    ],
   },
 ];
 
@@ -102,9 +236,155 @@ const fadeUp = (delay = 0) => ({
 });
 
 // ----------------------
+// Project Modal Component
+// ----------------------
+const ProjectModal = ({ isOpen, project, onClose }) => {
+  if (!isOpen || !project) return null;
+
+  const projectTitle = project.name || project.title;
+  const projectImg = project.img;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-2xl shadow-2xl w-screen h-screen md:w-[90vw] md:h-[90vh] md:max-w-6xl overflow-hidden flex flex-col md:flex-row"
+      >
+        {/* Modal Header with Image - Full Width on Desktop */}
+        <div className="relative w-full md:w-1/2 h-1/3 md:h-full bg-gradient-to-br from-gray-100 to-gray-50 overflow-hidden flex items-center justify-center">
+          {/* Gradient mesh background */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-64 h-64 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-0 right-0 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            />
+          </div>
+
+          {/* Project Image - Full Container */}
+          <div className="relative z-10 w-full h-full flex items-center justify-center">
+            <Image
+              src={projectImg}
+              alt={projectTitle}
+              fill
+              className="object-contain"
+              priority
+              unoptimized
+            />
+          </div>
+
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-xl border border-gray-200 flex items-center justify-center hover:bg-red-500 hover:border-red-500 transition-all duration-300 group/close z-20"
+          >
+            <svg
+              className="w-5 h-5 text-gray-600 group-hover/close:text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Modal Content - Right Side */}
+        <div className="w-full md:w-1/2 h-2/3 md:h-full p-6 md:p-8 overflow-y-auto space-y-6">
+          {/* Project Title */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              {projectTitle}
+            </h2>
+            <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
+          </div>
+
+          {/* Project Description */}
+          {project.description && (
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600 mb-2">
+                Description
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                {project.description}
+              </p>
+            </div>
+          )}
+
+          {/* Project Overview */}
+          {project.overview && (
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600 mb-2">
+                Overview
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                {project.overview}
+              </p>
+            </div>
+          )}
+
+          {/* Technologies */}
+          {project.technologies && project.technologies.length > 0 && (
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600 mb-3">
+                Technologies Used
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-sm text-blue-600 font-medium hover:bg-blue-100 transition-colors duration-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 text-center flex items-center justify-center gap-2"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Visit Project
+            </a>
+            <button
+              onClick={onClose}
+              className="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-300"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+// ----------------------
 // Social Media Card Component (CORRECTED)
 // ----------------------
-const SocialMediaCard = ({ item, index }) => {
+const SocialMediaCard = ({ item, index, onProjectOverview }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -173,6 +453,18 @@ const SocialMediaCard = ({ item, index }) => {
 
             {/* Action buttons */}
             <div className="absolute bottom-4 right-4 z-30 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              {onProjectOverview && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onProjectOverview(item);
+                  }}
+                  className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-xl border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 group/btn"
+                  title="Project Overview"
+                >
+                  <Eye className="w-4 h-4 text-gray-600 group-hover/btn:text-white transition-colors duration-300" />
+                </button>
+              )}
               <button
                 onClick={(e) => {
                   e.preventDefault();
@@ -213,7 +505,13 @@ const SocialMediaCard = ({ item, index }) => {
 // ----------------------
 // Website Card Component
 // ----------------------
-const WebsiteCard = ({ site, index, t }) => {
+const WebsiteCard = ({
+  site,
+  index,
+  t,
+  badgeType = "Website Development",
+  onProjectOverview,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -274,13 +572,25 @@ const WebsiteCard = ({ site, index, t }) => {
             <div className="absolute top-4 left-4 z-10">
               <div className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-xl border border-gray-200">
                 <span className="text-[10px] font-semibold tracking-[0.2em] text-blue-600 uppercase">
-                  {t("cardBadges.websiteDevelopment")}
+                  {badgeType}
                 </span>
               </div>
             </div>
 
-            {/* External link button */}
+            {/* External link and Project Overview buttons */}
             <div className="absolute bottom-4 right-4 z-30 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              {onProjectOverview && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onProjectOverview(site);
+                  }}
+                  className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-xl border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 group/btn"
+                  title="Project Overview"
+                >
+                  <Eye className="w-4 h-4 text-gray-600 group-hover/btn:text-white transition-colors duration-300" />
+                </button>
+              )}
               <button
                 onClick={(e) => {
                   e.preventDefault();
@@ -337,10 +647,29 @@ const WebsiteCard = ({ site, index, t }) => {
 // ----------------------
 export default function OurWorkPage() {
   const t = useTranslations("ourWorkPage");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleProjectOverview = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
     <main
       className={`min-h-screen bg-gradient-to-b from-background via-muted to-card text-foreground ${corpta.variable}`}
     >
+      <ProjectModal
+        isOpen={isModalOpen}
+        project={selectedProject}
+        onClose={handleCloseModal}
+      />
+
       <div className="relative isolate overflow-hidden z-0">
         {/* Hero Section */}
         <section className="relative max-w-6xl mx-auto px-4 pt-20 pb-14 md:pt-24 lg:pt-28 lg:pb-16">
@@ -377,44 +706,20 @@ export default function OurWorkPage() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-800/80 to-transparent" />
         </div>
 
-        {/* Social Media Work Section */}
+        {/* Websites Section */}
         <section className="relative max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-18">
           <motion.div
             {...fadeUp(0.05)}
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12"
+            className="flex flex-col gap-6 mb-12 md:mb-14"
           >
-            <div className="space-y-3">
-              <h2 className="text-xl md:text-4xl font-semibold tracking-tight">
-                {t("socialMediaSection.title")}
-              </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-xl">
-                {t("socialMediaSection.description")}
-              </p>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
-            {socialMediaWork.map((item, index) => (
-              <SocialMediaCard
-                key={item.title + index}
-                item={item}
-                index={index}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Websites Section */}
-        <section className="relative max-w-6xl mx-auto px-4 pb-16 md:pb-20 lg:pb-24">
-          <motion.div
-            {...fadeUp(0.05)}
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12"
-          >
-            <div className="space-y-3">
-              <h2 className="text-xl md:text-4xl font-semibold tracking-tight">
-                {t("websiteSection.title")}
-              </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-xl">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-[#0ea5e9] to-cyan-400 rounded-full" />
+                <h2 className="text-lg md:text-2xl font-bold uppercase tracking-tight text-[#0ea5e9]">
+                  {t("websiteSection.title")}
+                </h2>
+              </div>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl font-medium">
                 {t("websiteSection.description")}
               </p>
             </div>
@@ -427,6 +732,71 @@ export default function OurWorkPage() {
                 site={site}
                 index={index}
                 t={t}
+                onProjectOverview={handleProjectOverview}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Software Development Section */}
+        <section className="relative max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-18">
+          <motion.div
+            {...fadeUp(0.05)}
+            className="flex flex-col gap-6 mb-12 md:mb-14"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-[#0ea5e9] to-cyan-400 rounded-full" />
+                <h2 className="text-lg md:text-2xl font-bold uppercase tracking-tight text-[#0ea5e9]">
+                  {t("softwareSection.title")}
+                </h2>
+              </div>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl font-medium">
+                {t("softwareSection.description")}
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
+            {softwareDevelopment.map((software, index) => (
+              <WebsiteCard
+                key={software.name + index}
+                site={software}
+                index={index}
+                t={t}
+                badgeType="Software Development"
+                onProjectOverview={handleProjectOverview}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Social Media Work Section */}
+        <section className="relative max-w-6xl mx-auto px-4 pb-16 md:pb-20 lg:pb-24">
+          <motion.div
+            {...fadeUp(0.05)}
+            className="flex flex-col gap-6 mb-12 md:mb-14"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-[#0ea5e9] to-cyan-400 rounded-full" />
+                <h2 className="text-lg md:text-2xl font-bold uppercase tracking-tight text-[#0ea5e9]">
+                  {t("socialMediaSection.title")}
+                </h2>
+              </div>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl font-medium">
+                {t("socialMediaSection.description")}
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+            {socialMediaWork.map((item, index) => (
+              <SocialMediaCard
+                key={item.title + index}
+                item={item}
+                index={index}
+                onProjectOverview={handleProjectOverview}
               />
             ))}
           </div>

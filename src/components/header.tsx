@@ -9,6 +9,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import React, { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
+import { usePathname } from "next/navigation";
 
 const serviceHeadingIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "Web Development": Code2,
@@ -245,8 +246,12 @@ const servicesData = [
 
 export const NavBar = () => {
   const t = useTranslations('nav');
+  const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+
+  // Get the current path without locale prefix
+  const currentPath = pathname.split("/").slice(2).join("/") || "/";
 
   // Handle scroll effect
   useEffect(() => {
@@ -274,6 +279,14 @@ export const NavBar = () => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [menuState]);
+
+  // Helper function to check if a link is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return currentPath === "/" || currentPath === "";
+    }
+    return currentPath.startsWith(href.replace("/", ""));
+  };
 
   return (
     <header>
@@ -328,7 +341,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/"
-                    className="text-black hover:text-black block"
+                    className={cn(
+                      "text-black hover:text-[#0ea5e9] block relative pb-2 px-2 transition-all duration-300 font-medium rounded-lg",
+                      "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                      isActive("/") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                    )}
                   >
                     <span>{t('home')}</span>
                   </Link>
@@ -336,7 +353,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/about"
-                    className="text-black hover:text-black block"
+                    className={cn(
+                      "text-black hover:text-[#0ea5e9] block relative pb-2 px-2 transition-all duration-300 font-medium rounded-lg",
+                      "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                      isActive("/about") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                    )}
                   >
                     <span>{t('about')}</span>
                   </Link>
@@ -344,26 +365,36 @@ export const NavBar = () => {
 
                 {/* Our Work Dropdown */}
                 <li className="relative group">
-                  <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
+                  <div className={cn(
+                    "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                    isActive("/our-work") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                  )}>
                     <span>Our Work</span>
-                    <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                    <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" />
                   </div>
 
                   {/* Our Work Dropdown */}
                   <div
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
-                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
+                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-all duration-300"
                   >
-                    <div className="bg-white border border-white/20 shadow-2xl py-3 rounded-xl w-fit min-w-[200px]">
+                    <div className="bg-white border border-[#0ea5e9]/20 shadow-2xl shadow-[#0ea5e9]/10 py-3 rounded-xl w-fit min-w-[200px] backdrop-blur-sm">
                       <Link
                         href="/our-work"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                        className={cn(
+                          "block px-4 py-2 text-sm transition-all duration-200 rounded-lg margin-1",
+                          isActive("/our-work") ? "text-[#0ea5e9] bg-[#0ea5e9]/10 font-semibold" : "text-gray-700 hover:text-[#0ea5e9] hover:bg-[#0ea5e9]/10"
+                        )}
                       >
                         Our Work
                       </Link>
                       <Link
                         href="/demo-websites"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                        className={cn(
+                          "block px-4 py-2 text-sm transition-all duration-200 rounded-lg",
+                          isActive("/demo-websites") ? "text-[#0ea5e9] bg-[#0ea5e9]/10 font-semibold" : "text-gray-700 hover:text-[#0ea5e9] hover:bg-[#0ea5e9]/10"
+                        )}
                       >
                         Demo Websites
                       </Link>
@@ -374,27 +405,34 @@ export const NavBar = () => {
                 {/* Simple Hover Dropdown */}
                 {servicesData.map((service, index) => (
                   <li key={index} className="relative group">
-                    <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
+                    <div className={cn(
+                      "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                      "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                      isActive("/services") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                    )}>
                       <span>{t('services')}</span>
-                      <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                      <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" />
                     </div>
 
                     {/* Dropdown Box */}
                     <div
                       className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
-                     group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
+                     group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-all duration-300"
                     >
-                      <div className="bg-white border border-white/20 shadow-2xl py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide">
+                      <div className="bg-white border border-[#0ea5e9]/20 shadow-2xl shadow-[#0ea5e9]/10 py-6 rounded-xl w-[80vw] max-w-6xl max-h-[80vh] overflow-y-auto scrollbar-hide backdrop-blur-sm">
                         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                           {service.items.map((item, itemIndex) => (
                             <div key={itemIndex} className="space-y-4">
                               <Link
                                 href={item.href}
-                                className="flex items-center gap-2 text-lg font-semibold text-black transition-colors duration-200 pb-2"
+                                className={cn(
+                                  "flex items-center gap-2 text-lg font-semibold transition-colors duration-200 pb-2",
+                                  isActive(item.href) ? "text-[#0ea5e9]" : "text-black hover:text-[#0ea5e9]"
+                                )}
                               >
                                 {(() => {
                                   const Icon = serviceHeadingIcons[item.name];
-                                  return Icon ? <Icon className="w-4 h-4 text-[#0ea5e9]" /> : null;
+                                  return Icon ? <Icon className={cn("w-4 h-4", isActive(item.href) ? "text-[#0ea5e9]" : "text-[#0ea5e9]")} /> : null;
                                 })()}
                                 <span>{item.name}</span>
                               </Link>
@@ -403,7 +441,10 @@ export const NavBar = () => {
                                   <Link
                                     key={subIndex}
                                     href={subItem.href}
-                                    className="block text-xs text-gray-700 hover:bg-[#0ea5e9]/15 rounded-xl pl-2 transition-colors duration-200 py-1.5 leading-relaxed"
+                                    className={cn(
+                                      "block text-xs rounded-xl pl-2 transition-colors duration-200 py-1.5 leading-relaxed",
+                                      isActive(subItem.href) ? "text-[#0ea5e9] bg-[#0ea5e9]/15 font-semibold" : "text-gray-700 hover:text-[#0ea5e9] hover:bg-[#0ea5e9]/15"
+                                    )}
                                   >
                                     {subItem.name}
                                   </Link>
@@ -421,7 +462,11 @@ export const NavBar = () => {
                 <li>
                   <Link
                     href="/it-courses"
-                    className="text-black hover:text-black block duration-150"
+                    className={cn(
+                      "text-black hover:text-[#0ea5e9] block duration-300 relative pb-2 px-2 font-medium transition-all rounded-lg",
+                      "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                      isActive("/it-courses") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                    )}
                   >
                     <span>Our Programs</span>
                   </Link>
@@ -429,26 +474,36 @@ export const NavBar = () => {
 
                 {/* Testimonials Link with Dropdown */}
                 <li className="relative group">
-                  <div className="flex items-center gap-1 cursor-pointer text-black hover:text-black py-2">
+                  <div className={cn(
+                    "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                    isActive("/testimonials") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                  )}>
                     <span>{t('testimonials')}</span>
-                    <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                    <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" />
                   </div>
 
                   {/* Testimonials Dropdown */}
                   <div
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible 
-                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
+                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-all duration-300"
                   >
-                    <div className="bg-white border border-white/20 shadow-2xl py-3 rounded-xl w-fit min-w-[200px]">
+                    <div className="bg-white border border-[#0ea5e9]/20 shadow-2xl shadow-[#0ea5e9]/10 py-3 rounded-xl w-fit min-w-[200px] backdrop-blur-sm">
                       <Link
                         href="/testimonials"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                        className={cn(
+                          "block px-4 py-2 text-sm transition-all duration-200 rounded-lg",
+                          isActive("/testimonials") ? "text-[#0ea5e9] bg-[#0ea5e9]/10 font-semibold" : "text-gray-700 hover:text-[#0ea5e9] hover:bg-[#0ea5e9]/10"
+                        )}
                       >
                         Testimonials
                       </Link>
                       <Link
                         href="/share-feedback"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0ea5e9]/15 transition-colors duration-200"
+                        className={cn(
+                          "block px-4 py-2 text-sm transition-all duration-200 rounded-lg",
+                          isActive("/share-feedback") ? "text-[#0ea5e9] bg-[#0ea5e9]/10 font-semibold" : "text-gray-700 hover:text-[#0ea5e9] hover:bg-[#0ea5e9]/10"
+                        )}
                       >
                         Director&apos;s Desk
                       </Link>

@@ -904,18 +904,22 @@
   "ourWorkPage": {
     "title": "Notre",
     "titleHighlight": "Travail",
-    "description": "Explorez notre portefeuille de solutions numériques et de campagnes marketing qui génèrent des résultats réels pour nos clients.",
+    "description": "Découvrez notre portefeuille complet comprenant le Développement Web, les Solutions Logicielles et les Campagnes de Marketing sur les Réseaux Sociaux, tous conçus pour fournir des résultats mesurables et transformer votre présence numérique.",
     "badges": {
-      "services": "Médias Sociaux • Publicités • Web",
+      "services": "Logiciel • Site Web • Réseaux Sociaux",
       "approach": "Stratégie • Conception • Développement"
-    },
-    "socialMediaSection": {
-      "title": "Notre Travail sur les Médias Sociaux",
-      "description": "Contenu de médias sociaux engageant conçu pour représenter votre marque avec clarté et impact."
     },
     "websiteSection": {
       "title": "Notre Développement de Sites Web",
-      "description": "Solutions de sites Web personnalisées conçues pour générer des résultats et laisser des impressions durables."
+      "description": "Des sites web magnifiquement conçus et haute performance qui captivent votre audience, augmentent les conversions et établissent une présence en ligne puissante qui se démarque dans votre secteur."
+    },
+    "softwareSection": {
+      "title": "Notre Développement de Logiciels",
+      "description": "Des solutions logicielles de pointe et des systèmes CRM intelligents qui habilitent votre équipe, automatisent les opérations et débloquent de nouvelles opportunités de croissance pour votre entreprise."
+    },
+    "socialMediaSection": {
+      "title": "Notre Travail sur les Médias Sociaux",
+      "description": "Des campagnes stratégiques de réseaux sociaux et un contenu convaincant qui valorisent votre voix de marque, engagent votre audience et construisent des connexions significatives avec vos clients."
     },
     "cardBadges": {
       "websiteDevelopment": "Développement de Sites Web"

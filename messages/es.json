@@ -904,18 +904,22 @@
   "ourWorkPage": {
     "title": "Nuestro",
     "titleHighlight": "Trabajo",
-    "description": "Explore nuestro portafolio de soluciones digitales y campañas de marketing que generan resultados reales para nuestros clientes.",
+    "description": "Descubra nuestro portafolio completo que incluye Desarrollo Web, Soluciones de Software y Campañas de Marketing en Redes Sociales, todas diseñadas para entregar resultados medibles y transformar su presencia digital.",
     "badges": {
-      "services": "Redes Sociales • Anuncios • Web",
+      "services": "Software • Sitio Web • Redes Sociales",
       "approach": "Estrategia • Diseño • Desarrollo"
-    },
-    "socialMediaSection": {
-      "title": "Nuestro Trabajo en Redes Sociales",
-      "description": "Contenido atractivo de redes sociales diseñado para representar su marca con claridad e impacto."
     },
     "websiteSection": {
       "title": "Nuestro Desarrollo de Sitios Web",
-      "description": "Soluciones de sitios web personalizadas diseñadas para generar resultados e impresiones duraderas."
+      "description": "Sitios web bellamente diseñados y de alto rendimiento que cautivan a su audiencia, impulsan conversiones y establecen una presencia en línea sólida que destaca en su industria."
+    },
+    "softwareSection": {
+      "title": "Nuestro Desarrollo de Software",
+      "description": "Soluciones de software de vanguardia y sistemas CRM inteligentes que empoderan a su equipo, automatizan operaciones y desbloquean nuevas oportunidades de crecimiento para su negocio."
+    },
+    "socialMediaSection": {
+      "title": "Nuestro Trabajo en Redes Sociales",
+      "description": "Campañas estratégicas de redes sociales y contenido convincente que elevan la voz de su marca, atraen a su audiencia y construyen conexiones significativas con sus clientes."
     },
     "cardBadges": {
       "websiteDevelopment": "Desarrollo de Sitios Web"

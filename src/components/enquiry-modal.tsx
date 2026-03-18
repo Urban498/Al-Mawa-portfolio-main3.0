@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, User, Mail, Phone, MessageSquare, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -170,12 +171,12 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           animate="visible"
           exit="exit"
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="relative w-full max-w-lg md:max-w-2xl bg-white/95 rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto border border-white/60 ring-1 ring-black/5"
+          className="relative w-full max-w-5xl bg-white/95 rounded-2xl shadow-2xl max-h-[90vh] overflow-hidden border border-white/60 ring-1 ring-black/5"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className="sticky top-0 z-10 flex items-start justify-between gap-4 p-6 border-b bg-white/90 backdrop-blur-md">
-            <div>
+            <div>                    
               <h2 className="text-2xl font-bold text-black tracking-tight">{t('title')}</h2>
               <p className="text-gray-600 text-sm mt-1">
                 {t('subtitle')}
@@ -189,8 +190,21 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             </button>
           </div>
 
-          {/* Content */}
-          <div className="p-6">
+          {/* Content - Two Column Layout */}
+          <div className="flex items-stretch max-h-[calc(90vh-80px)] overflow-hidden">
+            {/* Left Side - Image */}
+            <div className="w-2/5 bg-gradient-to-br from-[#0ea5e9]/10 to-[#0284c7]/10 items-center justify-center p-8 hidden sm:flex">
+              <Image 
+                src="/logoblack.png" 
+                alt="Al Mawa Logo" 
+                width={300}
+                height={300}
+                className="max-w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* Right Side - Form */}
+            <div className="w-full sm:w-3/5 p-6 overflow-y-auto">
             {isSubmitted ? (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -345,6 +359,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 </Button>
               </form>
             )}
+            </div>
           </div>
         </motion.div>
       </div>

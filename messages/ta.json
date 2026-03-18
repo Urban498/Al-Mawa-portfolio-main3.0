@@ -1074,18 +1074,22 @@
   "ourWorkPage": {
     "title": "Our",
     "titleHighlight": "Work",
-    "description": "Explore our portfolio of digital solutions and marketing campaigns that drive real results for our clients.",
+    "description": "Discover our comprehensive portfolio featuring Website Development, Software Solutions, and Social Media Marketing campaigns—all engineered to deliver measurable results and transform your digital presence.",
     "badges": {
-      "services": "Social Media • Ads • Web",
+      "services": "Software • Website • Social Media",
       "approach": "Strategy • Design • Development"
-    },
-    "socialMediaSection": {
-      "title": "Our Social Media Work",
-      "description": "Engaging social media content designed to represent your brand with clarity and impact."
     },
     "websiteSection": {
       "title": "Our Website Development",
-      "description": "Custom website solutions built to deliver results and create lasting impressions."
+      "description": "Beautifully crafted, high-performance websites designed to captivate your audience, drive conversions, and establish a powerful online presence that stands out in your industry."
+    },
+    "softwareSection": {
+      "title": "Our Software Development",
+      "description": "Cutting-edge software solutions and intelligent CRM systems that empower your team, automate operations, and unlock new growth opportunities for your business."
+    },
+    "socialMediaSection": {
+      "title": "Our Social Media Work",
+      "description": "Strategic social media campaigns and compelling content that elevate your brand voice, engage your audience, and build meaningful connections with your customers."
     },
     "cardBadges": {
       "websiteDevelopment": "Website Development"
