@@ -8,6 +8,7 @@ import { NavBar } from "@/components/header";
 import FooterSection from "@/components/footer";
 import AOSProvider from "@/components/aos-provider";
 import { IntlProvider } from "@/components/providers/intl-provider";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState, useEffect, useRef } from "react";
 import { Download, Mail, Phone } from "lucide-react";
 import ToastProvider from "@/components/ToastProvider";
@@ -406,7 +407,12 @@ export default function RootLayout({
               )}
 
               <div className={isAdminRoute ? "" : "pt-10"}>{children}</div>
-              {!isAdminRoute && <FooterSection />}
+              {!isAdminRoute && (
+                <>
+                  <FooterSection />
+                  <LanguageSwitcher variant="fixed" />
+                </>
+              )}
               <ToastProvider />
             </AOSProvider>
           </IntlProvider>

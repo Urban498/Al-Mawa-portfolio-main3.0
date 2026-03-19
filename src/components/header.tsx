@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Menu, X, ChevronDown, Code2, Laptop2, Megaphone, Palette, BrainCircuit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileSidebar } from "@/components/mobile-sidebar";
-import { LanguageSwitcher } from "@/components/language-switcher";
 import React, { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
@@ -672,9 +671,8 @@ export const NavBar = () => {
               onClose={() => setMenuState(false)}
             />
 
-            {/* Desktop Contact Button & Language Switcher */}
+            {/* Desktop Contact Button */}
             <div className="hidden lg:flex items-center gap-2">
-              <LanguageSwitcher />
               <Button
                 asChild
                 size="sm"

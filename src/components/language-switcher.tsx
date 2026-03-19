@@ -28,7 +28,7 @@ const languages = [
 ];
 
 interface LanguageSwitcherProps {
-  variant?: "default" | "mobile";
+  variant?: "default" | "mobile" | "fixed";
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ variant = "default" }) => {
@@ -125,6 +125,77 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ variant = "d
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Fixed variant - bottom left position
+  if (variant === "fixed") {
+    return (
+      <div className="fixed bottom-6 left-6 z-50">
+        <div className="relative">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-all hover:shadow-xl"
+            aria-label="Change Language"
+            title="Change Language"
+          >
+            <Languages className="w-5 h-5" />
+            <span className="text-sm font-medium">
+              {getCurrentLanguage().code.toUpperCase()}
+            </span>
+          </button>
+
+          {isOpen && (
+            <>
+              {/* Backdrop */}
+              <div
+                className="fixed inset-0 z-40"
+                onClick={() => setIsOpen(false)}
+              />
+
+              {/* Dropdown - positioned above button */}
+              <div className="absolute bottom-full left-0 mb-2 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden max-h-96 overflow-y-auto">
+                <div className="py-2">
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">
+                    Select Language
+                  </div>
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={cn(
+                        "w-full px-4 py-2.5 text-left hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-between",
+                        currentLang === lang.code &&
+                          "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                      )}
+                    >
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium">{lang.name}</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                          {lang.nativeName}
+                        </span>
+                      </div>
+                      {currentLang === lang.code && (
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     );
