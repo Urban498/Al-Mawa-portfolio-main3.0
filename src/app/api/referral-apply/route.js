@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "../libs/db";
 import ReferralModel from "../models/referral-schema";
 import { corsHeaders, handleOptions } from "@/lib/cors";
+import { sendReferralApplicationEmail } from "../libs/applicationEmailService";
 
 export async function OPTIONS() {
   return handleOptions();
@@ -47,6 +48,15 @@ export async function POST(request) {
     });
 
     const saved = await app.save();
+
+    // Send emails to user and director
+    await sendReferralApplicationEmail(
+      emailAddress,
+      fullName,
+      companyName,
+      designationPosition,
+      interestedServices
+    );
 
     return NextResponse.json(
       {

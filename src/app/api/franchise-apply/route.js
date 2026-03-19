@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "../libs/db";
 import FranchiseModel from "../models/franchise-schema";
 import { corsHeaders, handleOptions } from "@/lib/cors";
+import { sendFranchiseApplicationEmail } from "../libs/applicationEmailService";
 
 export async function OPTIONS() {
   return handleOptions();
@@ -47,6 +48,15 @@ export async function POST(request) {
     });
 
     const saved = await app.save();
+
+    // Send emails to user and director
+    await sendFranchiseApplicationEmail(
+      emailAddress,
+      fullName,
+      businessName,
+      location,
+      investmentCapacity
+    );
 
     return NextResponse.json(
       {

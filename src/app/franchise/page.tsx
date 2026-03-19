@@ -140,14 +140,9 @@ export default function FranchisePage() {
           <p className="text-xl mb-8 opacity-90">
             Take the first step towards building a successful business with Al-Mawa
           </p>
-          <div className="space-x-4">
-            <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-white text-[#0ea5e9] hover:bg-gray-100">
-              Apply Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0ea5e9]">
-              Download Brochure
-            </Button>
-          </div>
+          <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-white text-[#0ea5e9] hover:bg-gray-100">
+            Apply Now
+          </Button>
         </div>
       </section>
     </div>
