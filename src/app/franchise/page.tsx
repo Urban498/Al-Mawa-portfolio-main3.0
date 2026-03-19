@@ -15,17 +15,28 @@ export default function FranchisePage() {
 
       {/* Hero Section */}
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Join Our <span className="text-[#0ea5e9]">Franchise Network</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Build a successful business partnership with Al-Mawa and become part of our growing family of entrepreneurs
-          </p>
-          <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8">
-            Apply Now
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                Join Our <span className="text-[#0ea5e9]">Franchise Network</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto lg:mx-0">
+                Build a successful business partnership with Al-Mawa and become part of our growing family of entrepreneurs
+              </p>
+              <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8">
+                Apply Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+            <div className="relative">
+              <img 
+                src="/franchise.png" 
+                alt="Al-Mawa Franchise Opportunity" 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -56,6 +67,36 @@ export default function FranchisePage() {
               <p className="text-gray-600">
                 Unlimited growth opportunities with multiple revenue streams
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <img 
+                src="/franchis2.png" 
+                alt="Franchise Success Story" 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Join a Growing Network
+              </h2>
+              <p className="text-lg text-gray-600 mb-4">
+                Become part of Al-Mawa's expanding franchise network across multiple regions. Our proven business model and comprehensive support system ensure your success in the competitive IT services market.
+              </p>
+              <p className="text-lg text-gray-600 mb-6">
+                With over 50+ successful franchise partners, we offer a turnkey solution that includes training, marketing support, and access to our established client base.
+              </p>
+              <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white">
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </div>
           </div>
         </div>

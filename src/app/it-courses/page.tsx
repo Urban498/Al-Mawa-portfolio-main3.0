@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ─── Icon Components ───────────────────────────────────────────────────────────
 
@@ -513,29 +514,53 @@ export default function ITCoursesPage() {
       <style>{globalStyles}</style>
 
       {/* ── HERO ── */}
-      <section style={styles.hero} className="hero-section">
+      <section style={{ ...styles.hero, minHeight: '80vh', display: 'flex', alignItems: 'center' }} className="hero-section">
         <div style={styles.heroOrb1} />
         <div style={styles.heroOrb2} />
-        <div style={styles.heroContent}>
-          <div style={styles.heroBadge} className="hero-badge">
-            <span style={styles.heroBadgeDot} className="pulse-dot" />
-            Enroll &amp; Get Certified
+        <div style={{ ...styles.container, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', position: 'relative', zIndex: 2 }} className="container-pad">
+          {/* Left Content */}
+          <div style={styles.heroContent}>
+            <div style={styles.heroBadge} className="hero-badge">
+              <span style={styles.heroBadgeDot} className="pulse-dot" />
+              Enroll &amp; Get Certified
+            </div>
+            <h1 style={styles.heroH1} className="hero-h1 fade-up-1">
+              IT Courses &amp;<br /><em style={{ color: '#0ea5e9', fontStyle: 'normal' }}>Internship</em> Program
+            </h1>
+            <p style={styles.heroSub} className="hero-sub fade-up-2">
+              Learn Web Development, Mobile Apps, Artificial Intelligence and Cloud Computing with real industry projects and expert mentorship.
+            </p>
+            <div style={styles.heroActions} className="hero-actions fade-up-3">
+              <PrimaryButton onClick={() => setModalOpen(true)}>
+                Apply for Internship <span>→</span>
+              </PrimaryButton>
+              <a href="#courses" style={styles.btnSecondary} className="btn-secondary">Explore Courses ↓</a>
+            </div>
+            <HeroStats />
           </div>
-          <h1 style={styles.heroH1} className="hero-h1 fade-up-1">
-            IT Courses &amp;<br /><em style={{ color: '#0ea5e9', fontStyle: 'normal' }}>Internship</em> Program
-          </h1>
-          <p style={styles.heroSub} className="hero-sub fade-up-2">
-            Learn Web Development, Mobile Apps, Artificial Intelligence and Cloud Computing with real industry projects and expert mentorship.
-          </p>
-          <div style={styles.heroActions} className="hero-actions fade-up-3">
-            <PrimaryButton onClick={() => setModalOpen(true)}>
-              Apply for Internship <span>→</span>
-            </PrimaryButton>
-            <a href="#courses" style={styles.btnSecondary} className="btn-secondary">Explore Courses ↓</a>
+          
+          {/* Right Image */}
+          <div style={{
+            borderRadius: 20,
+            overflow: 'hidden',
+            boxShadow: '0 20px 50px rgba(14,165,233,0.15)',
+            width: '100%',
+            aspectRatio: '4/3'
+          }}>
+            <img
+              src="/intern2.png"
+              alt="IT Internship Program Hero"
+              style={{
+                width: '100%',
+                height: '100%',
+                display: 'block',
+                objectFit: 'cover'
+              }}
+            />
           </div>
-          <HeroStats />
         </div>
       </section>
+
 
       {/* ── MARQUEE ── */}
       <div style={styles.marqueeSection}>
@@ -563,6 +588,47 @@ export default function ITCoursesPage() {
           ) : (
             <p style={{ textAlign: 'center', color: '#6c757d' }}>No courses found.</p>
           )}
+        </div>
+      </section>
+
+      {/* ── INTERNSHIP & TRAINING ── */}
+      <section style={styles.programsSection} className="section-padded">
+        <div style={styles.container} className="container-pad">
+          <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
+            <span style={styles.sectionLabel}>Our Programs</span>
+            <h2 style={styles.sectionTitle} className="section-title">Internship &amp;<br />Training Experience</h2>
+            <p style={{ ...styles.sectionSub, margin: '0 auto' }}>
+              Structured pathways to build real skills through mentored projects and hands-on experience.
+            </p>
+          </RevealDiv>
+          <div style={styles.programsGrid}>
+            <div style={{ ...styles.programCard, borderRadius: 16, background: 'white', border: '1px solid #e9ecef', overflow: 'hidden', transition: 'all 0.4s ease', opacity: 1, transform: 'translateY(0)' }}>
+              <div style={styles.programImageWrap}>
+                <img
+                  src="/internship.png"
+                  alt="IT Internship Program"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <h3 style={styles.programCardTitle}>Internship Program</h3>
+              <p style={styles.programCardDesc}>
+                Get hands-on experience with real client projects. Work under expert mentorship, build your portfolio, and earn a recognized internship certificate while preparing for your first job.
+              </p>
+            </div>
+            <div style={{ ...styles.programCard, borderRadius: 16, background: 'white', border: '1px solid #e9ecef', overflow: 'hidden', transition: 'all 0.4s ease', opacity: 1, transform: 'translateY(0)' }}>
+              <div style={styles.programImageWrap}>
+                <img
+                  src="/training.png"
+                  alt="IT Training Program"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <h3 style={styles.programCardTitle}>Training Program</h3>
+              <p style={styles.programCardDesc}>
+                Master the latest technologies through structured training modules. Our comprehensive curriculum covers everything from fundamentals to advanced topics with live sessions and practical labs.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -810,7 +876,27 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: '0.83rem', fontWeight: 600, textDecoration: 'none',
   },
 
-  benefitsSection: { background: 'white', padding: '96px 24px' },
+  programsSection: { background: 'white', padding: '96px 24px' },
+  programsGrid: {
+    display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: 48,
+  },
+  programCard: {
+    background: 'white', borderRadius: 16, overflow: 'hidden',
+    border: '1px solid #e9ecef', transition: 'all 0.4s ease',
+    opacity: 0, transform: 'translateY(28px)',
+  },
+  programCardVisible: { opacity: 1, transform: 'translateY(0)' },
+  programImageWrap: { minHeight: 280, overflow: 'hidden', background: '#f0f3f7', position: 'relative', width: '100%' },
+  programCardTitle: {
+    fontFamily: "'Playfair Display', serif", fontSize: '1.35rem', fontWeight: 700,
+    color: '#0a0a0a', padding: '28px 28px 12px', marginBottom: 0,
+  },
+  programCardDesc: {
+    fontSize: '0.88rem', color: '#6c757d', lineHeight: 1.75,
+    padding: '0 28px 28px', margin: 0,
+  },
+
+  benefitsSection: { background: '#f8f9fa', padding: '96px 24px' },
   benefitsLayout: {
     display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'start',
   },
@@ -1013,6 +1099,10 @@ const globalStyles = `
 
   /* ── TABLET ≤ 1024px ── */
   @media (max-width: 1024px) {
+    .hero-section {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
     .benefits-layout {
       grid-template-columns: 1fr !important;
       gap: 40px !important;
@@ -1027,6 +1117,10 @@ const globalStyles = `
     .courses-grid {
       grid-template-columns: repeat(2, 1fr) !important;
     }
+    .programs-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
     .steps-grid {
       grid-template-columns: repeat(2, 1fr) !important;
       gap: 48px 24px !important;
@@ -1038,6 +1132,10 @@ const globalStyles = `
 
   /* ── MOBILE ≤ 640px ── */
   @media (max-width: 640px) {
+    .hero-section > div {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
 
     /* Hero */
     .hero-section {
@@ -1103,6 +1201,12 @@ const globalStyles = `
     /* Courses */
     .courses-grid {
       grid-template-columns: 1fr !important;
+    }
+
+    /* Programs */
+    .programs-grid {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
     }
 
     /* Benefits */

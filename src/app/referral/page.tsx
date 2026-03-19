@@ -15,17 +15,28 @@ export default function ReferralPage() {
 
       {/* Hero Section */}
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Earn <span className="text-[#0ea5e9]">Commission</span> Through Referrals
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Join our referral program and earn attractive commissions by referring clients to Al-Mawa's premium services
-          </p>
-          <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8">
-            Start Referring
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                Earn <span className="text-[#0ea5e9]">Commission</span> Through Referrals
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto lg:mx-0">
+                Join our referral program and earn attractive commissions by referring clients to Al-Mawa's premium services
+              </p>
+              <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8">
+                Start Referring
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+            <div className="relative">
+              <img 
+                src="/referral.png" 
+                alt="Al-Mawa Referral Program" 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -106,6 +117,36 @@ export default function ReferralPage() {
               <p className="text-sm text-gray-600">
                 Receive your commission payout once the project is completed
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <img 
+                src="/referral2.png" 
+                alt="Referral Success Stories" 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Maximize Your Earning Potential
+              </h2>
+              <p className="text-lg text-gray-600 mb-4">
+                Turn your professional network into a steady income stream with Al-Mawa's generous referral program. Our referrers earn substantial commissions on every successful referral.
+              </p>
+              <p className="text-lg text-gray-600 mb-6">
+                With transparent tracking, timely payouts, and dedicated support, you'll have everything you need to succeed as a trusted Al-Mawa partner.
+              </p>
+              <Button size="lg" onClick={() => setIsModalOpen(true)} className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white">
+                Join Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </div>
           </div>
         </div>
