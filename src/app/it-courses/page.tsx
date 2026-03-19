@@ -163,18 +163,18 @@ const BENEFITS: Benefit[] = [
 ];
 
 const STEPS: Step[] = [
-  { num: '01', title: 'Enroll', desc: 'Choose your course and complete enrollment. Our team guides you through onboarding.', hasArrow: true, delay: '0.1s' },
+  { num: '01', title: 'Enroll', desc: 'Choose your program and complete enrollment. Our team guides you through onboarding.', hasArrow: true, delay: '0.1s' },
   { num: '02', title: 'Learn', desc: 'Attend live sessions, access recorded content and work through structured modules.', hasArrow: true, delay: '0.2s' },
   { num: '03', title: 'Build Projects', desc: 'Work on real client projects under mentorship and build a strong professional portfolio.', hasArrow: true, delay: '0.3s' },
   { num: '04', title: 'Get Certified', desc: 'Complete your internship, receive your certificate and get full job placement support.', hasArrow: false, delay: '0.4s' },
 ];
 
 const TESTIMONIALS_BASE: Testimonial[] = [
-  { initials: 'AK', text: 'The web development course was exactly what I needed. Projects were real and challenging, and mentors were always available. I landed a job within 2 months.', name: 'Arjun Kumar', role: 'Frontend Developer at TechCorp' },
-  { initials: 'PS', avatarBg: '#1a1a2e', text: 'The AI course opened a completely new world for me. Within 6 months I went from zero coding knowledge to building machine learning models. Truly transformative.', name: 'Priya Sharma', role: 'ML Engineer at DataFlow Inc.', featured: true },
+  { initials: 'AK', text: 'The web development training program was exactly what I needed. Projects were real and challenging, and mentors were always available. I landed a job within 2 months.', name: 'Arjun Kumar', role: 'Frontend Developer at TechCorp' },
+  { initials: 'PS', avatarBg: '#1a1a2e', text: 'The AI training program opened a completely new world for me. Within 6 months I went from zero coding knowledge to building machine learning models. Truly transformative.', name: 'Priya Sharma', role: 'ML Engineer at DataFlow Inc.', featured: true },
   { initials: 'MR', text: 'Best investment I made in my career. The internship certificate and portfolio I built helped me stand out in every interview. Job placement guidance was invaluable.', name: 'Mohammed Rashid', role: 'Full Stack Developer' },
   { initials: 'SA', avatarBg: '#0284c7', text: 'The Cloud Computing module was incredibly well-structured. I passed my AWS exam first attempt and now manage infrastructure for a fintech startup. Amazing!', name: 'Sara Al-Amin', role: 'Cloud Engineer at FinStack' },
-  { initials: 'NK', avatarBg: '#7c3aed', text: 'As a designer, I was hesitant about a tech program. The UI/UX course was perfect — practical, industry-focused, and mentors really understood the design process.', name: 'Neha Kulkarni', role: 'Product Designer at Zomato' },
+  { initials: 'NK', avatarBg: '#7c3aed', text: 'As a designer, I was hesitant about a tech program. The UI/UX training program was perfect — practical, industry-focused, and mentors really understood the design process.', name: 'Neha Kulkarni', role: 'Product Designer at Zomato' },
   { initials: 'RP', avatarBg: '#059669', text: 'I completed the mobile app internship and my Flutter app is now live on the Play Store. The real-project experience made all the difference in my interviews.', name: 'Rahul Patil', role: 'Flutter Developer at AppVentures' },
 ];
 
@@ -236,7 +236,7 @@ function HeroStats() {
       </div>
       <div className="stat-item" style={{ ...styles.statItem, ...styles.statItemBorder }}>
         <span style={styles.statNum}>{s2}</span>
-        <span style={styles.statLabel}>Courses Available</span>
+        <span style={styles.statLabel}>Programs Available</span>
       </div>
       <div className="stat-item" style={{ ...styles.statItem, ...styles.statItemBorder }}>
         <span style={styles.statNum}>{s3}%</span>
@@ -446,7 +446,7 @@ function EnquiryModal({ open, onClose, courses }: { open: boolean; onClose: () =
       <div style={styles.modal} className="modal-card">
         <button style={styles.modalClose} onClick={onClose}>✕</button>
         <h2 style={styles.modalTitle} className="modal-title">Apply Now</h2>
-        <p style={styles.modalSub}>IT Courses &amp; Internship Program — Fill in your details and we&apos;ll get back to you within 24 hours.</p>
+        <p style={styles.modalSub}>IT Industrial Training &amp; Internship Program — Fill in your details and we&apos;ll get back to you within 24 hours.</p>
         <div style={styles.formGroup}>
           <label style={styles.formLabel}>Full Name</label>
           <input style={styles.formControl} type="text" placeholder="Your full name" value={fullName} onChange={(e) => setFullName(e.target.value)} />
@@ -460,9 +460,9 @@ function EnquiryModal({ open, onClose, courses }: { open: boolean; onClose: () =
           <input style={styles.formControl} type="tel" placeholder="+91 00000 00000" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         </div>
         <div style={styles.formGroup}>
-          <label style={styles.formLabel}>Course of Interest</label>
+          <label style={styles.formLabel}>Program of Interest</label>
           <select style={styles.formControl} value={courseOfInterest} onChange={(e) => setCourseOfInterest(e.target.value)}>
-            <option value="">Select a course...</option>
+            <option value="">Select a program...</option>
             {courses.map(c => <option key={c.slug}>{c.title}</option>)}
           </select>
         </div>
@@ -525,7 +525,7 @@ export default function ITCoursesPage() {
               Enroll &amp; Get Certified
             </div>
             <h1 style={styles.heroH1} className="hero-h1 fade-up-1">
-              IT Courses &amp;<br /><em style={{ color: '#0ea5e9', fontStyle: 'normal' }}>Internship</em> Program
+              IT Industrial Training &amp;<br /><em style={{ color: '#0ea5e9', fontStyle: 'normal' }}>Internship</em> Program
             </h1>
             <p style={styles.heroSub} className="hero-sub fade-up-2">
               Learn Web Development, Mobile Apps, Artificial Intelligence and Cloud Computing with real industry projects and expert mentorship.
@@ -534,7 +534,7 @@ export default function ITCoursesPage() {
               <PrimaryButton onClick={() => setModalOpen(true)}>
                 Apply for Internship <span>→</span>
               </PrimaryButton>
-              <a href="#courses" style={styles.btnSecondary} className="btn-secondary">Explore Courses ↓</a>
+              <a href="#courses" style={styles.btnSecondary} className="btn-secondary">Explore Programs ↓</a>
             </div>
             <HeroStats />
           </div>
@@ -576,9 +576,9 @@ export default function ITCoursesPage() {
         <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>What We Offer</span>
-            <h2 style={styles.sectionTitle} className="section-title">Explore Our Courses</h2>
+            <h2 style={styles.sectionTitle} className="section-title">Explore Our Training Programs</h2>
             <p style={{ ...styles.sectionSub, margin: '0 auto' }}>
-              Choose from our comprehensive range of courses and start your learning journey with real mentorship today.
+              Choose from our comprehensive range of training and internship programs and start your learning journey with real mentorship today.
             </p>
           </RevealDiv>
           {courses.length > 0 ? (
@@ -586,7 +586,7 @@ export default function ITCoursesPage() {
               {courses.map((c) => <CourseCard key={c.slug} course={c} />)}
             </div>
           ) : (
-            <p style={{ textAlign: 'center', color: '#6c757d' }}>No courses found.</p>
+            <p style={{ textAlign: 'center', color: '#6c757d' }}>No programs found.</p>
           )}
         </div>
       </section>
