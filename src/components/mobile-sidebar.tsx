@@ -414,15 +414,46 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                 </button>
               </li>
 
-              {/* Our Programs Link */}
-              <li className=" pt-6">
-                <Link
-                  href="/it-courses"
-                  onClick={handleLinkClick}
-                  className="text-black hover:text-gray-600 block duration-150 text-xl  py-2"
+              {/* Our Programs with Dropdown */}
+              <li className="pt-6">
+                <button
+                  onClick={() => {
+                    if (activeMenu === 'our-programs') {
+                      setActiveMenu(null);
+                    } else {
+                      setActiveMenu('our-programs');
+                    }
+                  }}
+                  className="flex items-center justify-between w-full text-black text-xl  hover:text-gray-600 transition-colors duration-300"
                 >
-                  Our Programs
-                </Link>
+                  <span className="text-left">Our Programs</span>
+                  <ChevronDown className={`w-6 h-6 transition-transform duration-200 ${activeMenu === 'our-programs' ? 'rotate-0' : '-rotate-90'}`} />
+                </button>
+                {activeMenu === 'our-programs' && (
+                  <div className="pl-4 pt-2 space-y-2">
+                    <Link
+                      href="/franchise"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Franchise
+                    </Link>
+                    <Link
+                      href="/referral"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Referral & Commission
+                    </Link>
+                    <Link
+                      href="/training-internship"
+                      onClick={handleLinkClick}
+                      className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
+                    >
+                      Training & Internship
+                    </Link>
+                  </div>
+                )}
               </li>
 
               {/* Testimonials with Dropdown */}

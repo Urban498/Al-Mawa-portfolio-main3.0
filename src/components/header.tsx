@@ -249,9 +249,10 @@ export const NavBar = () => {
   const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [programsDropdownOpen, setProgramsDropdownOpen] = React.useState(false);
 
   // Get the current path without locale prefix
-  const currentPath = pathname.split("/").slice(2).join("/") || "/";
+  const currentPath = pathname.split("/").slice(1).join("/") || "/";
 
   // Handle scroll effect
   useEffect(() => {
@@ -458,18 +459,170 @@ export const NavBar = () => {
                   </li>
                 ))}
 
-                {/* Our Programs Link */}
-                <li>
-                  <Link
-                    href="/it-courses"
+                {/* Our Programs Dropdown */}
+                <li className="relative group">
+                  <div 
                     className={cn(
-                      "text-black hover:text-[#0ea5e9] block duration-300 relative pb-2 px-2 font-medium transition-all rounded-lg",
+                      "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
                       "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
-                      isActive("/it-courses") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                      (isActive("/franchise") || isActive("/referral") || isActive("/training-internship")) && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
                     )}
+                    onMouseEnter={() => setProgramsDropdownOpen(true)}
                   >
                     <span>Our Programs</span>
-                  </Link>
+                    <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" />
+                  </div>
+
+                  {/* Our Programs Dropdown */}
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-6 transition-all duration-500 z-[110] ${
+                      programsDropdownOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
+                    }`}
+                    onMouseEnter={() => setProgramsDropdownOpen(true)}
+                    onMouseLeave={() => setProgramsDropdownOpen(false)}
+                  >
+                    <div className="bg-white border border-[#0ea5e9]/20 shadow-2xl shadow-[#0ea5e9]/10 p-8 rounded-2xl w-[900px] backdrop-blur-sm">
+                      <div className="grid grid-cols-3 gap-6">
+                        {/* Franchise Section */}
+                        <div className="group relative overflow-hidden rounded-xl border border-gray-200/50 hover:border-[#0ea5e9]/60 transition-all duration-500 hover:shadow-xl hover:shadow-[#0ea5e9]/20 hover:scale-[1.02]">
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#0ea5e9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="relative p-6 flex flex-col h-full">
+                            <div className="w-full h-32 rounded-lg overflow-hidden mb-4 group-hover:scale-110 transition-transform duration-500">
+                              <Image 
+                                src="/franchise.png"
+                                alt="Franchise Business"
+                                width={200}
+                                height={128}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1 flex flex-col">
+                              <div className="flex items-center mb-3">
+                                <div className="w-2 h-2 bg-[#0ea5e9] rounded-full mr-2 animate-pulse"></div>
+                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0ea5e9] transition-colors duration-300">Franchise Opportunity</h3>
+                              </div>
+                              <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
+                                Join our successful franchise network and build your own business with the backing of an established brand.
+                              </p>
+                              <div className="space-y-3">
+                                <div className="flex flex-wrap gap-2 text-xs">
+                                  <span className="inline-flex items-center text-gray-500">
+                                    <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                    Low Investment
+                                  </span>
+                                  <span className="inline-flex items-center text-gray-500">
+                                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
+                                    High Returns
+                                  </span>
+                                </div>
+                                <Button
+                                  asChild
+                                  size="sm"
+                                  className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300 hover:scale-105"
+                                >
+                                  <Link href="/franchise" onClick={() => setProgramsDropdownOpen(false)}>
+                                    Explore Now
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Referral Section */}
+                        <div className="group relative overflow-hidden rounded-xl border border-gray-200/50 hover:border-[#0ea5e9]/60 transition-all duration-500 hover:shadow-xl hover:shadow-[#0ea5e9]/20 hover:scale-[1.02]">
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#0ea5e9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="relative p-6 flex flex-col h-full">
+                            <div className="w-full h-32 rounded-lg overflow-hidden mb-4 group-hover:scale-110 transition-transform duration-500">
+                              <Image 
+                                src="/referral.png"
+                                alt="Referral Commission"
+                                width={200}
+                                height={128}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1 flex flex-col">
+                              <div className="flex items-center mb-3">
+                                <div className="w-2 h-2 bg-[#0ea5e9] rounded-full mr-2 animate-pulse"></div>
+                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0ea5e9] transition-colors duration-300">Referral & Commission</h3>
+                              </div>
+                              <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
+                                Turn your network into income! Earn attractive commissions up to 15% by referring clients to our premium services.
+                              </p>
+                              <div className="space-y-3">
+                                <div className="flex flex-wrap gap-2 text-xs">
+                                  <span className="inline-flex items-center text-gray-500">
+                                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></span>
+                                    Up to 15% Commission
+                                  </span>
+                                  <span className="inline-flex items-center text-gray-500">
+                                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-1"></span>
+                                    Instant Payouts
+                                  </span>
+                                </div>
+                                <Button
+                                  asChild
+                                  size="sm"
+                                  className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300 hover:scale-105"
+                                >
+                                  <Link href="/referral" onClick={() => setProgramsDropdownOpen(false)}>
+                                    Explore Now
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Training & Internship Section */}
+                        <div className="group relative overflow-hidden rounded-xl border border-gray-200/50 hover:border-[#0ea5e9]/60 transition-all duration-500 hover:shadow-xl hover:shadow-[#0ea5e9]/20 hover:scale-[1.02]">
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#0ea5e9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="relative p-6 flex flex-col h-full">
+                            <div className="w-full h-32 rounded-lg overflow-hidden mb-4 group-hover:scale-110 transition-transform duration-500">
+                              <Image 
+                                src="/intern.png"
+                                alt="Training Internship"
+                                width={200}
+                                height={128}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1 flex flex-col">
+                              <div className="flex items-center mb-3">
+                                <div className="w-2 h-2 bg-[#0ea5e9] rounded-full mr-2 animate-pulse"></div>
+                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0ea5e9] transition-colors duration-300">Training & Internship</h3>
+                              </div>
+                              <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
+                                Launch your career with our comprehensive training programs and hands-on internships with 85% success rate.
+                              </p>
+                              <div className="space-y-3">
+                                <div className="flex flex-wrap gap-2 text-xs">
+                                  <span className="inline-flex items-center text-gray-500">
+                                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-1"></span>
+                                    Expert Training
+                                  </span>
+                                  <span className="inline-flex items-center text-gray-500">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                                    Job Placement
+                                  </span>
+                                </div>
+                                <Button
+                                  asChild
+                                  size="sm"
+                                  className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300 hover:scale-105"
+                                >
+                                  <Link href="/it-courses" onClick={() => setProgramsDropdownOpen(false)}>
+                                    Explore Now
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </li>
 
                 {/* Testimonials Link with Dropdown */}
