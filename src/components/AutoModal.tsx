@@ -158,13 +158,22 @@ export default function AutoModal() {
                 </span>
               </label>
 
-              <button
-                type="submit"
-                disabled={!consent}
-                className="w-full bg-black text-white rounded-lg py-2 md:py-3 font-medium hover:bg-gray-800 transition disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                Sign Up
-              </button>
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="flex-1 bg-gray-300 text-gray-800 rounded-lg py-2 md:py-3 font-medium hover:bg-gray-400 transition"
+                >
+                  Skip
+                </button>
+                <button
+                  type="submit"
+                  disabled={!consent}
+                  className="flex-1 bg-black text-white rounded-lg py-2 md:py-3 font-medium hover:bg-gray-800 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  Sign Up
+                </button>
+              </div>
             </form>
             </div>
           </motion.div>
