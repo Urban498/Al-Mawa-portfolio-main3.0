@@ -1,5 +1,29 @@
 [
   {
+    "feedback": "I am very happy with the portfolio website created for Sona I Residential School. The design looks clean, modern, and perfectly represents our institution. All the information is well-organized, making it easy for parents and students to explore our facilities, activities, and updates. The website is user-friendly and helps us build a strong online presence. Thank you for the excellent work and support.",
+    "name": "Alnarsingh rao",
+    "email": "sonairesidentialschool@gmail.com",
+    "mobile": "98224 33779",
+    "designation": "Chairman",
+    "rating": 5,
+    "image": "",
+    "createdAt": "2026-03-19T11:59:20.359Z",
+    "status": "approved",
+    "updatedAt": "2026-03-19T11:59:39.191Z"
+  },
+  {
+    "feedback": "I am very happy with the CRM system developed for our business. The platform is well-designed, professional, and makes managing support tickets extremely easy and efficient. The real-time tracking and automated workflow features have significantly improved our team’s productivity and response time. The system is user-friendly and helps us stay organized with priority-based ticket handling. Thank you for the excellent work and continuous support.",
+    "name": "Anil Pawar",
+    "email": "kontechindustry@gmail.com",
+    "mobile": "9765417792",
+    "designation": "Product Manager",
+    "rating": 5,
+    "image": "",
+    "createdAt": "2026-03-19T11:53:44.434Z",
+    "status": "approved",
+    "updatedAt": "2026-03-19T11:55:10.310Z"
+  },
+  {
     "feedback": "I am very happy with the website created for Nitin Hardware. The design looks professional and clearly showcases our products and services. The website is easy for customers to use and helps our business build a strong online presence. The integration of our social media platforms like Instagram and Facebook also makes it easier for customers to connect with us. Thank you for the great work and support.",
     "name": "Nitin Hardware",
     "email": "nitinhardware12@gmail.com",
