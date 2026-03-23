@@ -17,7 +17,8 @@ const inter = Inter({ subsets: ["latin"] });
 const contactInfo = [
   { icon: Mail, text: "business@al-mawa.international", href: "mailto:business@al-mawa.international" },
   { icon: Phone, text: "+91 9561179693 | 9511991736", href: "tel:+91 9561179693" },
-  { icon: MapPin, text: "AL-MAWA INTERNATIONAL Location", href: "https://www.google.com/maps/search/?api=1&query=AL-MAWA+INTERNATIONAL+Office+No.+102-103,+%28+Nexus+Work+Spaces%29+1st+Floor,+Pride+icon+Building,+Above+Athithi+Restaurant,+Kharadi+Bypass+Road,+Kharadi,+Pune,+Maharashtra,+India+411014" },
+  { icon: MapPin, text: "AL-MAWA INTERNATIONAL PUNE Location", href: "https://www.google.com/maps/search/?api=1&query=AL-MAWA+INTERNATIONAL+Office+No.+102-103,+%28+Nexus+Work+Spaces%29+1st+Floor,+Pride+icon+Building,+Above+Athithi+Restaurant,+Kharadi+Bypass+Road,+Kharadi,+Pune,+Maharashtra,+India+411014" },
+  { icon: MapPin, text: "AL-MAWA INTERNATIONAL JAIPUR Location", href: "https://www.google.com/maps/dir//Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur,+J,+Signature+Elite,+Connekt+Coworking+4th+Floor,+7,+Govind+Marg,+Jaipur,+Rajasthan+302004/@18.5472427,73.9242248,2466m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!2m2!1d75.8143621!2d26.8993959?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" },
 ];
 
 export default function FooterSection() {
@@ -180,6 +181,24 @@ export default function FooterSection() {
                   <path
                     fill="currentColor"
                     d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="https://www.youtube.com/@Al.mawagrowthacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+              >
+                <svg
+                  className="size-7"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                   />
                 </svg>
               </Link>

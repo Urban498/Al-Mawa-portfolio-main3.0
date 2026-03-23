@@ -344,7 +344,7 @@ export default function CareersPage() {
             className="text-center mb-12"
           >
             <h2
-              className={`text-2xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className} `}
+              className={`text-2xl md:text-6xl font-bold mb-4 bg-clip-text text-blue-600 uppercase ${inter.className} `}
             >
               {t('openPositions.title')}
             </h2>
@@ -363,7 +363,7 @@ export default function CareersPage() {
             className="mb-8 space-y-4 md:space-y-0 md:flex md:gap-4 max-w-4xl mx-auto"
           >
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-600 h-4 w-4" />
               <Input
                 placeholder={t('search.placeholder')}
                 value={searchTerm}
@@ -375,15 +375,15 @@ export default function CareersPage() {
               value={selectedDepartment}
               onValueChange={setSelectedDepartment}
             >
-              <SelectTrigger className="w-full md:w-48 bg-background/50 border-border text-black">
+              <SelectTrigger className="w-full md:w-48 bg-background/50 border-border text-blue-700">
                 <SelectValue placeholder="Department" />
               </SelectTrigger>
-              <SelectContent className="bg-background border-border text-black">
+              <SelectContent className="bg-background border-border text-blue-700">
                 {departments.map((dept) => (
                   <SelectItem
                     key={dept}
                     value={dept}
-                    className="text-black hover:bg-muted"
+                    className="text-blue-700 hover:bg-blue-50"
                   >
                     {dept === "all" ? t('search.allDepartments') : dept}
                   </SelectItem>
@@ -391,8 +391,8 @@ export default function CareersPage() {
               </SelectContent>
             </Select>
             <div className="w-full md:w-48 flex items-center justify-center bg-background/50 border border-border rounded-md px-3 py-2">
-              <MapPin className="w-4 h-4 text-[#0ea5e9] mr-2" />
-              <span className="text-black font-medium">{t('search.location')}</span>
+              <MapPin className="w-4 h-4 text-blue-600 mr-2" />
+              <span className="text-blue-700 font-medium">{t('search.location')}</span>
             </div>
           </motion.div>
 
@@ -478,12 +478,12 @@ export default function CareersPage() {
                         <div className="flex items-center gap-3 mb-2">
                           <Briefcase className="w-5 h-5 text-[#0ea5e9] flex-shrink-0" />
                           <CardTitle
-                            className={`text-2xl font-bold text-black transition-colors uppercase ${inter.className}`}
+                            className={`text-2xl font-bold text-blue-700 transition-colors uppercase ${inter.className}`}
                           >
                             {job.jobTitle}
                           </CardTitle>
                         </div>
-                        <CardDescription className={`text-black mt-2 `}>
+                        <CardDescription className={`text-gray-700 mt-2 `}>
                           <div
                             className="cursor-pointer hover:text-black transition-colors"
                             onClick={() =>
@@ -547,27 +547,27 @@ export default function CareersPage() {
                                   </h4>
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
                                     <div className="flex items-center gap-2">
-                                      <Building2 className="w-4 h-4 text-primary" />
-                                      <span className="text-muted-foreground">
+                                      <Building2 className="w-4 h-4 text-blue-600" />
+                                      <span className="text-blue-700">
                                         {t('jobCard.department')}:{" "}
                                         {job.jobDepartment || t('jobCard.notSpecified')}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                      <MapPin className="w-4 h-4 text-primary" />
-                                      <span className="text-muted-foreground">
+                                      <MapPin className="w-4 h-4 text-blue-600" />
+                                      <span className="text-blue-700">
                                         {t('jobCard.location')}: {t('search.location')}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                      <Briefcase className="w-4 h-4 text-primary" />
-                                      <span className="text-muted-foreground">
+                                      <Briefcase className="w-4 h-4 text-blue-600" />
+                                      <span className="text-blue-700">
                                         {t('jobCard.type')}: {job.jobType || "Full-time"}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                      <span className="w-4 h-4 text-primary flex items-center justify-center font-bold">₹</span>
-                                      <span className="text-muted-foreground">
+                                      <span className="w-4 h-4 text-blue-600 flex items-center justify-center font-bold">₹</span>
+                                      <span className="text-blue-700">
                                         {t('jobCard.salary')}: {(() => {
                                           const hasSalary = job.jobSalary && job.jobSalary.trim() !== '';
                                           return hasSalary ? job.jobSalary : t('jobCard.competitive');
@@ -608,7 +608,7 @@ export default function CareersPage() {
                           dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
                         >
                           <Badge
-                            className="bg-[#0ea5e9]/15 text-gray-700 border-2 border-[#0ea5e9]/30 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
+                            className="bg-blue-100 text-blue-700 border-2 border-blue-300 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
                           >
                             <MapPin className="w-3 h-3 mr-1.5" />
                             Pune, India
@@ -624,7 +624,7 @@ export default function CareersPage() {
                           dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
                         >
                           <Badge
-                            className="bg-[#0ea5e9]/15 text-gray-700 border-2 border-[#0ea5e9]/30 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
+                            className="bg-blue-100 text-blue-700 border-2 border-blue-300 font-semibold text-xs shadow-md hover:shadow-lg transition-all cursor-grab active:cursor-grabbing"
                           >
                             <Briefcase className="w-3 h-3 mr-1.5" />
                             {job.jobType}
@@ -679,8 +679,8 @@ export default function CareersPage() {
                       >
                         <motion.button
                           onClick={() => handleApplyNow(job)}
-                          className="inline-flex items-center justify-center px-6 py-2.5 bg-[#0ea5e9] hover:bg-[#0ea5e9]/90 transition-all duration-300 cursor-grab active:cursor-grabbing text-white font-semibold rounded-lg shadow-lg hover:shadow-xl relative overflow-hidden group"
-                          whileHover={{ 
+                          className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 transition-all duration-300 cursor-grab active:cursor-grabbing text-white font-semibold rounded-lg shadow-lg hover:shadow-xl relative overflow-hidden group"
+                          whileHover={{
                             scale: 1.08,
                             y: -3
                           }}
@@ -829,7 +829,7 @@ export default function CareersPage() {
                       {benefit.icon}
                     </motion.div>
                     <motion.h3
-                      className={`font-bold text-lg text-black transition-colors mb-3 uppercase ${inter.className}`}
+                      className={`font-bold text-lg text-blue-700 transition-colors mb-3 uppercase ${inter.className}`}
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
@@ -837,7 +837,7 @@ export default function CareersPage() {
                       {benefit.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-black text-sm leading-relaxed"
+                      className="text-blue-700 text-sm leading-relaxed"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: index * 0.15 + 0.4, duration: 0.5 }}
@@ -862,12 +862,12 @@ export default function CareersPage() {
             className="text-center mb-12"
           >
             <h2
-              className={`text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-black uppercase ${inter.className}`}
+              className={`text-3xl md:text-4xl font-bold mb-4 text-blue-600 uppercase ${inter.className}`}
             >
               {t('faq.title')}
             </h2>
             <p
-              className={`text-black text-xl max-w-2xl mx-auto ${playfair_display.className}`}
+              className={`text-blue-700 text-xl max-w-2xl mx-auto ${playfair_display.className}`}
             >
               {t('faq.subtitle')}
             </p>
@@ -885,10 +885,10 @@ export default function CareersPage() {
                   value={`item-${index}`}
                   className="border border-border/50 bg-card/40 backdrop-blur-xl rounded-lg px-6 "
                 >
-                  <AccordionTrigger className="text-black transition-colors  text-left">
+                  <AccordionTrigger className="text-blue-700 transition-colors text-left">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-black leading-relaxed">
+                  <AccordionContent className="text-blue-700 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -903,11 +903,11 @@ export default function CareersPage() {
         <DialogContent className="bg-background border-border text-foreground max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle
-              className={`text-2xl font-bold text-black ${inter.className} uppercase`}
+              className={`text-2xl font-bold text-blue-700 ${inter.className} uppercase`}
             >
               {t('applicationForm.title')} {selectedJob?.jobTitle}
             </DialogTitle>
-            <DialogDescription className="text-muted-foreground">
+            <DialogDescription className="text-blue-600">
               {t('applicationForm.subtitle')}
             </DialogDescription>
           </DialogHeader>
@@ -915,7 +915,7 @@ export default function CareersPage() {
           <form onSubmit={handleApplicationSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="firstName" className="text-foreground mb-2">
+                <Label htmlFor="firstName" className="text-blue-700 mb-2">
                   {t('applicationForm.fields.firstName')}
                 </Label>
                 <Input
@@ -928,7 +928,7 @@ export default function CareersPage() {
                 />
               </div>
               <div>
-                <Label htmlFor="lastName" className="text-foreground mb-2">
+                <Label htmlFor="lastName" className="text-blue-700 mb-2">
                   {t('applicationForm.fields.lastName')}
                 </Label>
                 <Input
@@ -943,7 +943,7 @@ export default function CareersPage() {
             </div>
 
             <div>
-              <Label htmlFor="email" className="text-foreground mb-2">
+              <Label htmlFor="email" className="text-blue-700 mb-2">
                 {t('applicationForm.fields.email')}
               </Label>
               <Input
@@ -958,7 +958,7 @@ export default function CareersPage() {
             </div>
 
             <div>
-              <Label htmlFor="phone" className="text-foreground mb-2">
+              <Label htmlFor="phone" className="text-blue-700 mb-2">
                 {t('applicationForm.fields.phone')}
               </Label>
               <Input
@@ -972,7 +972,7 @@ export default function CareersPage() {
             </div>
 
             <div>
-              <Label htmlFor="experience" className="text-foreground mb-2">
+              <Label htmlFor="experience" className="text-blue-700 mb-2">
                 {t('applicationForm.fields.experience')}
               </Label>
               <div className="flex gap-3 items-center">
@@ -981,10 +981,10 @@ export default function CareersPage() {
                     value={formData.yearOfExperience}
                     onValueChange={handleSelectChange}
                   >
-                    <SelectTrigger className="w-full bg-background/50 border-border text-foreground">
+                    <SelectTrigger className="w-full bg-background/50 border-border text-blue-700">
                       <SelectValue placeholder={t('applicationForm.fields.experiencePlaceholder')} />
                     </SelectTrigger>
-                    <SelectContent className="bg-background border-border text-foreground">
+                    <SelectContent className="bg-background border-border text-blue-700">
                       <SelectItem value="0">0</SelectItem>
                       <SelectItem value="1">1</SelectItem>
                       <SelectItem value="2">2</SelectItem>

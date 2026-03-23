@@ -119,6 +119,13 @@ const getContactInfo = (t: (key: string) => string) => [
     description: t('contactInfo.office.description'),
   },
   {
+    icon: <MapPin className="w-6 h-6" />,
+    title: "Jaipur Branch",
+    value: "J, Signature Elite, Connekt Co-Working Office Spaces 4th Floor Above Westside Showroom, 7th Govind Marg, Narayan Singh Circle, Jaipur Rajasthan - 302004",
+    description: "Visit our Jaipur office",
+    href: "https://www.google.com/maps/dir//Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur,+J,+Signature+Elite,+Connekt+Coworking+4th+Floor,+7,+Govind+Marg,+Jaipur,+Rajasthan+302004/@18.5472427,73.9242248,2466m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!2m2!1d75.8143621!2d26.8993959?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
+  },
+  {
     icon: <Clock className="w-6 h-6" />,
     title: t('contactInfo.workingHours.title'),
     value: t('contactInfo.workingHours.hours'),
