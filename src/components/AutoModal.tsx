@@ -67,26 +67,32 @@ export default function AutoModal() {
           >
             {/* Left Side - Image */}
             <div className="w-2/5 hidden sm:flex relative overflow-hidden items-center justify-center bg-gray-100 p-6">
-              <Image 
-                src="/emi.jpeg" 
-                alt="Al Mawa Services" 
-                width={400}
-                height={500}
-                className="object-contain max-w-full h-auto"
-                priority
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 100 }}
+              >
+                <Image 
+                  src="/emi.png" 
+                  alt="Al Mawa Services" 
+                  width={400}
+                  height={500}
+                  className="object-contain max-w-full h-auto drop-shadow-2xl"
+                  priority
+                />
+              </motion.div>
             </div>
 
             {/* Right Side - Form */}
             <div className="relative w-full sm:w-3/5 p-6 overflow-y-auto">
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-3 right-4 text-gray-500 hover:text-black text-2xl font-bold"
+              className="absolute top-3 right-4 text-gray-500 hover:text-primary text-2xl font-bold transition"
             >
               ×
             </button>
 
-            <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-gray-900">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-blue-600">
               Let Us Help You With the Right Solution
             </h2>
 
@@ -102,7 +108,7 @@ export default function AutoModal() {
                 value={data.name}
                 placeholder="Your Name"
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-black outline-none"
+                className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
               />
 
               <input
@@ -112,7 +118,7 @@ export default function AutoModal() {
                 value={data.number}
                 placeholder="Your Phone Number"
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-black outline-none"
+                className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
               />
 
               <input
@@ -122,7 +128,7 @@ export default function AutoModal() {
                 value={data.company}
                 placeholder="Company Name"
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-black outline-none"
+                className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
               />
 
               <textarea
@@ -131,30 +137,30 @@ export default function AutoModal() {
                 onChange={handleData}
                 value={data.message}
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-black outline-none"
+                className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
               />
 
-              <label className="flex items-start gap-2 text-sm text-gray-700">
+              <label className="flex items-start gap-2 text-sm text-blue-700">
                 <span>
                   By clicking Sign Up, you confirm that you have read and agree
                   to our{" "}
-                  <Link href="/policy" className="text-cyan-600">
+                  <Link href="/policy" className="text-blue-700 font-semibold">
                     Terms & Conditions and Privacy Policy
                   </Link>.
                 </span>
               </label>
 
-              <label className="flex items-start gap-2 text-sm text-gray-700">
+              <label className="flex items-start gap-2 text-sm text-blue-700">
                 <input
                   type="checkbox"
                   checked={consent}
                   onChange={() => setConsent(!consent)}
-                  className="mt-1"
+                  className="mt-1 accent-blue-600"
                   required
                 />
                 <span>
                   By submitting this form, you agree to be contacted by us on{" "}
-                  <b>WhatsApp / SMS / Email</b> regarding your enquiry.
+                  <b className="text-blue-800">WhatsApp / SMS / Email</b> regarding your enquiry.
                 </span>
               </label>
 
@@ -162,14 +168,14 @@ export default function AutoModal() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="flex-1 bg-gray-300 text-gray-800 rounded-lg py-2 md:py-3 font-medium hover:bg-gray-400 transition"
+                  className="flex-1 bg-blue-200 text-blue-700 rounded-lg py-2 md:py-3 font-medium hover:bg-blue-300 transition"
                 >
                   Skip
                 </button>
                 <button
                   type="submit"
                   disabled={!consent}
-                  className="flex-1 bg-black text-white rounded-lg py-2 md:py-3 font-medium hover:bg-gray-800 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="flex-1 bg-blue-600 text-white rounded-lg py-2 md:py-3 font-medium hover:bg-blue-700 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   Sign Up
                 </button>
