@@ -566,12 +566,12 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <h2
-              className={`text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-black ${inter.className} uppercase`}
+              className={`text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className} uppercase`}
             >
               Our Jaipur Branch
             </h2>
             <p
-              className={`text-lg max-w-3xl mx-auto text-gray-600 ${playfair_display.className}`}
+              className={`text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed ${playfair_display.className}`}
             >
               Expanding our footprint in Rajasthan with a state-of-the-art workspace in the heart of Jaipur
             </p>
@@ -584,20 +584,20 @@ export default function AboutPage() {
             >
               <div className="space-y-4">
                 <h3
-                  className={`text-2xl md:text-3xl font-bold text-black ${inter.className}`}
+                  className={`text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className}`}
                 >
                   Premium Coworking Space
                 </h3>
                 <p
-                  className={`text-gray-600 leading-relaxed ${playfair_display.className}`}
+                  className={`text-gray-600 leading-relaxed text-lg ${playfair_display.className}`}
                 >
                   Located in the prestigious Signature Elite building, our Jaipur branch offers a modern, collaborative environment in the city's prime business district. This strategic location allows us to better serve our growing client base in Rajasthan and Northern India.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-black">Address:</h4>
-                <address className={`text-gray-600 not-italic ${playfair_display.className}`}>
+                <h4 className={`text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className}`}>Address:</h4>
+                <address className={`text-gray-600 not-italic text-base leading-relaxed ${playfair_display.className}`}>
                   J, Signature Elite, Connekt Co-Working Office Spaces<br />
                   4th Floor Above Westside Showroom<br />
                   7th Govind Marg, Narayan Singh Circle<br />
@@ -606,12 +606,12 @@ export default function AboutPage() {
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-black">Get Directions:</h4>
+                <h4 className={`text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className}`}>Get Directions:</h4>
                 <motion.a
                   href="https://www.google.com/maps/dir//Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur,+J,+Signature+Elite,+Connekt+Coworking+4th+Floor,+7,+Govind+Marg,+Jaipur,+Rajasthan+302004/@18.5472427,73.9242248,2466m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!2m2!1d75.8143621!2d26.8993959?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold rounded-lg transition-colors duration-300"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] hover:from-[#0284c7] hover:to-[#0ea5e9] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
