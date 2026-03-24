@@ -248,7 +248,6 @@ export const NavBar = () => {
   const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [programsDropdownOpen, setProgramsDropdownOpen] = React.useState(false);
 
   // Get the current path without locale prefix
   const currentPath = pathname.split("/").slice(1).join("/") || "/";
@@ -460,25 +459,19 @@ export const NavBar = () => {
 
                 {/* Our Programs Dropdown */}
                 <li className="relative group">
-                  <div 
-                    className={cn(
-                      "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
-                      "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
-                      (isActive("/franchise") || isActive("/referral") || isActive("/training-internship")) && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
-                    )}
-                    onMouseEnter={() => setProgramsDropdownOpen(true)}
-                  >
+                  <div className={cn(
+                    "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+                    (isActive("/franchise") || isActive("/referral") || isActive("/training-internship")) && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
+                  )}>
                     <span>Our Programs</span>
                     <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" />
                   </div>
 
                   {/* Our Programs Dropdown */}
                   <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-6 transition-all duration-500 z-[110] ${
-                      programsDropdownOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
-                    }`}
-                    onMouseEnter={() => setProgramsDropdownOpen(true)}
-                    onMouseLeave={() => setProgramsDropdownOpen(false)}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible 
+                   group-hover:opacity-100 group-hover:visible z-[110] pointer-events-none group-hover:pointer-events-auto transition-all duration-500"
                   >
                     <div className="bg-white border border-[#0ea5e9]/20 shadow-2xl shadow-[#0ea5e9]/10 p-8 rounded-2xl w-[900px] backdrop-blur-sm">
                       <div className="grid grid-cols-3 gap-6">
@@ -519,7 +512,7 @@ export const NavBar = () => {
                                   size="sm"
                                   className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300 hover:scale-105"
                                 >
-                                  <Link href="/franchise" onClick={() => setProgramsDropdownOpen(false)}>
+                                  <Link href="/franchise">
                                     Explore Now
                                   </Link>
                                 </Button>
@@ -565,7 +558,7 @@ export const NavBar = () => {
                                   size="sm"
                                   className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300 hover:scale-105"
                                 >
-                                  <Link href="/referral" onClick={() => setProgramsDropdownOpen(false)}>
+                                  <Link href="/referral">
                                     Explore Now
                                   </Link>
                                 </Button>
@@ -611,7 +604,7 @@ export const NavBar = () => {
                                   size="sm"
                                   className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300 hover:scale-105"
                                 >
-                                  <Link href="/it-courses" onClick={() => setProgramsDropdownOpen(false)}>
+                                  <Link href="/it-courses">
                                     Explore Now
                                   </Link>
                                 </Button>
