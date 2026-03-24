@@ -226,15 +226,14 @@ export default function RootLayout({
                   ref={dragRef}
                   style={{
                     position: "fixed",
-                    top: 0,
-                    [dock]: "0px",
-                    transform: `translateY(${y}px)`,
+                    top: `${y}px`,
+                    right: "16px",
                     transition: dragging ? "none" : "all 0.3s ease",
                     zIndex: 9999,
                     touchAction: "none",
                   }}
                 >
-                  <div className="fixed right-4 top-20 flex flex-col gap-3">
+                  <div className="flex flex-col gap-3">
                     {/* Phone Contact Button */}
                     <span
                       className={`transition-all duration-300 ease-in-out bg-black/55 backdrop-blur-sm text-white w-10 h-10 flex items-center gap-3 px-2 overflow-hidden cursor-pointer
@@ -284,7 +283,7 @@ export default function RootLayout({
                       `}
                       onClick={() => isMobile && setIsSocialOpen(!isSocialOpen)}
                       onMouseEnter={() => !isMobile && setIsSocialHovered(true)}
-                      onMouseLeave={() => !isMobile && setIsSocialHovered(false)}
+                      onMouseLeave={() => !isMobile && setTimeout(() => setIsSocialHovered(false), 800)}
                     >
                       <FaShare
                         className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isSocialOpen || isSocialHovered ? "scale-110" : ""
@@ -293,23 +292,29 @@ export default function RootLayout({
                       {((isMobile && isSocialOpen) || (!isMobile && isSocialHovered)) && (
                         <div className="flex items-center gap-4">
                           <a
-                            href="https://www.linkedin.com/in/al-m-international-private-limited-083948381"
+                            href="https://www.linkedin.com/company/al-mawa-international-opc-private-limited/posts/?feedView=all"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="pointer-events-auto"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <FaLinkedin className="w-5 h-5 text-blue-500 hover:scale-110 transition" />
                           </a>
                           <a
-                            href="https://www.instagram.com/al_mawainternational/?igsh=MXJkbWt3b3NvOTBmaw%3D%3D#"
+                            href="https://www.instagram.com/al_mawainternational?igsh=MXJkbWt3b3NvOTBmaw=="
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="pointer-events-auto"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <FaInstagram className="w-5 h-5 text-pink-500 hover:scale-110 transition" />
                           </a>
                           <a
-                            href="https://www.facebook.com/yourpage"
+                            href="https://www.facebook.com/almawainternational"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="pointer-events-auto"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <FaFacebook className="w-5 h-5 text-blue-400 hover:scale-110 transition" />
                           </a>
@@ -317,13 +322,17 @@ export default function RootLayout({
                             href="https://x.com/al_mawa__"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="pointer-events-auto"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <FaXTwitter className="w-5 h-5 text-white hover:scale-110 transition" />
                           </a>
                           <a
-                            href="https://www.youtube.com/@Al-MawaInternational-k3"
+                            href="https://www.youtube.com/@Al.mawagrowthacademy"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="pointer-events-auto"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <FaYoutube className="w-5 h-5 text-red-500 hover:scale-110 transition" />
                           </a>
