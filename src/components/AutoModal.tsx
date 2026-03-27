@@ -63,9 +63,28 @@ export default function AutoModal() {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 40 }}
             transition={{ type: "spring", stiffness: 150, damping: 20 }}
-            className="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden flex items-stretch max-h-[90vh]"
+            className="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col sm:flex-row items-stretch max-h-[90vh]"
           >
-            {/* Left Side - Image */}
+            {/* Mobile Image - Top */}
+            <div className="sm:hidden w-full h-56 bg-gray-100 relative overflow-hidden flex-shrink-0">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 100 }}
+                className="flex items-center justify-center h-full w-full p-4"
+              >
+                <Image 
+                  src="/emi.png" 
+                  alt="Al Mawa Services" 
+                  width={400}
+                  height={220}
+                  className="object-contain max-w-full max-h-full w-auto h-auto drop-shadow-lg"
+                  priority
+                />
+              </motion.div>
+            </div>
+
+            {/* Left Side - Image (Desktop Only) */}
             <div className="w-2/5 hidden sm:flex relative overflow-hidden items-center justify-center bg-gray-100 p-6">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -84,7 +103,7 @@ export default function AutoModal() {
             </div>
 
             {/* Right Side - Form */}
-            <div className="relative w-full sm:w-3/5 p-6 overflow-y-auto">
+            <div className="relative w-full sm:w-3/5 p-4 sm:p-6 overflow-y-auto flex-1 min-h-0">
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-3 right-4 text-gray-500 hover:text-primary text-2xl font-bold transition"
