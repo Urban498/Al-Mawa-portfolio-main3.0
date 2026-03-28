@@ -25,6 +25,8 @@ import Sonai from "../testimonials/images/sonal_School_logo2.png";
 import TicketCRM from "../testimonials/images/ticket_manage_crm.png";
 import infinity from "../../../public/infinity1.png";
 import fortune from "../../../public/fortune1.png";
+import surajDryFruits from "../../../public/suraj_dry_fruits.png";
+import sonaSchoolFee from "../../../public/sona_software.png";
 // ----------------------
 // Font Configuration
 // ----------------------
@@ -80,6 +82,23 @@ const softwareDevelopment = [
       "An advanced loan management platform providing financial solutions with AI-powered risk assessment and customer matching.",
     overview:
       "Fortune Loan Services offers intelligent loan matching, competitive rates, and comprehensive financial tools for both lenders and borrowers.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://school-fees-hub-kappa.vercel.app",
+    name: "Sona'i School Fee Receipt Management",
+    img: sonaSchoolFee,
+    description:
+      "A comprehensive fee receipt generation software for educational institutions, streamlining fee collection and receipt management.",
+    overview:
+      "This fee management system enables schools to efficiently generate, track, and manage student fee receipts. Features include automated receipt generation, payment tracking, monthly collections overview, and fee breakdown analytics for better financial management.",
     technologies: [
       "React",
       "Next.js",
@@ -221,6 +240,23 @@ const websiteProjects = [
       "Tailwind CSS",
       "Learning Management System",
       "Student Portal",
+    ],
+  },
+  {
+    url: "https://www.surajnaturodryfruits.online",
+    name: "Suraj Dry Fruits",
+    img: surajDryFruits,
+    description:
+      "Premium dry fruits e-commerce website offering a curated selection of high-quality natural and organic dry fruits.",
+    overview:
+      "Online marketplace for premium dry fruits featuring product listings, nutritional information, customer reviews, and secure checkout. The platform specializes in premium natural and organic dry fruits sourced from trusted suppliers, with detailed product descriptions and health benefits.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
     ],
   },
 ];
