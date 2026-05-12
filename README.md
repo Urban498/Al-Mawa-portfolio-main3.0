@@ -41,3 +41,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Shashant 20.01.2026  for Email 2 Step veryfication 
 npm install nodemailer bcryptjs jsonwebtoken
 npm install --save-dev @types/nodemailer
+
+
+<!-- testing  -->
