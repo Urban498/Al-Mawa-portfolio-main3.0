@@ -102,9 +102,12 @@ export default function FooterSection() {
         {/* Bottom Bar */}
         <div className="border-t border-border/50 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex flex-col items-center md:items-start gap-1">
+            <div className="flex flex-col items-center md:items-start gap-2">
               <p className="text-white text-sm font-semibold">
                 © {year} {t('companyName')}. {t('allRightsReserved')}
+              </p>
+              <p className="text-gray-300 text-xs">
+                Designed & Developed by AL-Mawa International
               </p>
               <div className="flex flex-col md:flex-row gap-3">
                 <Link

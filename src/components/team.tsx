@@ -6,12 +6,16 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from 'next-intl';
 
 // ✅ Import member images
-import arshad from "../components/images/images/arshad.png";
 import omkar from "../components/images/images/omkar.png";
 import sabeel from "../components/images/images/sabeel.png";
 import shashant from "../app/about/image/shashant.jpeg";
-import ahemad from "../components/images/images/ahemad.png";
+import shrihari from "../components/images/images/shrihari.png";
+import kshitij from "../components/images/images/kshitij.png";
+import samyak from "../components/images/images/Samyak.jpeg";
+import pawan from "../components/images/images/Pawan.png";
 import priyanka from "../components/images/images/priyanka.png";
+import sanika from "../components/images/images/Sanika.jpeg";
+import komal from "../components/images/images/komal.png";
 
 
 // ✅ Font setup
@@ -32,13 +36,17 @@ type Member = {
 
 // ✅ Members data
 const members: Member[] = [
-  { name: "Arshad Shaikh", role: "Full Stack Developer", avatar: arshad, link: "https://www.linkedin.com/in/arshad-shaikh-502721205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   { name: "Shashant Shekhar", role: "Full Stack Developer", avatar: shashant, link: "https://www.linkedin.com/in/shashant-shekhar-588a0b20b", team: "Development Team" },
-  { name: "Md Ahmad Raza", role: "Full Stack Developer", avatar: ahemad, link: "https://www.linkedin.com/in/md-ahmad-raza-4626a5232/", team: "Development Team" },
+  { name: "Shrihari Surve", role: "Full Stack Developer", avatar: shrihari, link: "https://www.linkedin.com/in/srihari-surve-/", team: "Development Team" },
+  { name: "Kshitij Hapase", role: "Flutter Developer", avatar: kshitij, link: "https://www.linkedin.com/in/kshitij-hapase-141976322/", team: "Development Team" },
+  { name: "Samyak Jitendra Jain", role: "Full Stack Developer", avatar: samyak, link: "https://www.linkedin.com/in/samyak-jitendra-jain-066a24259", team: "Development Team" },
+  { name: "Pawan Wagh", role: "Full Stack Developer", avatar: pawan, link: "https://www.linkedin.com/in/pawan-wagh29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   { name: "Priyanka Godbole", role: "Marketing Manager", avatar: priyanka, link: "#", team: "Sales & Marketing Team" },
   { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
 
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
+  { name: "Sanika Chougule", role: "Sales & Marketing Team", avatar: sanika, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  { name: "Komal Jadhav", role: "Graphic Designer", avatar: komal, link: "https://www.linkedin.com/in/komal-jadhav-1b9503263?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Graphic Designer Team" },
   { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
 
 
