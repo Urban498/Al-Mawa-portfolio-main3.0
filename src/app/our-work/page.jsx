@@ -27,6 +27,10 @@ import infinity from "../../../public/infinity1.png";
 import fortune from "../../../public/fortune1.png";
 import surajDryFruits from "../../../public/suraj_dry_fruits.png";
 import sonaSchoolFee from "../../../public/sona_software.png";
+import karyon from "../../../public/karyon.png";
+import spArt from "../../../public/SP_Art.png";
+import erudition from "../../../public/eduration.png";
+import morpankh from "../../../public/morpankh.png";
 // ----------------------
 // Font Configuration
 // ----------------------
@@ -250,6 +254,74 @@ const websiteProjects = [
       "Premium dry fruits e-commerce website offering a curated selection of high-quality natural and organic dry fruits.",
     overview:
       "Online marketplace for premium dry fruits featuring product listings, nutritional information, customer reviews, and secure checkout. The platform specializes in premium natural and organic dry fruits sourced from trusted suppliers, with detailed product descriptions and health benefits.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://karyon-final-updated.vercel.app/",
+    name: "Karyon",
+    img: karyon,
+    description:
+      "A modern and dynamic website showcasing innovative solutions with a sleek design and user-friendly interface.",
+    overview:
+      "Karyon features a contemporary design with smooth animations, responsive layout, and intuitive navigation. The platform highlights cutting-edge services and products with an emphasis on visual appeal and user experience.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://sp-art-hub-main-updated-website.vercel.app/",
+    name: "SP Art Hub",
+    img: spArt,
+    description:
+      "An artistic platform dedicated to showcasing creative works and connecting artists with art enthusiasts.",
+    overview:
+      "SP Art Hub provides a vibrant space for artists to display their portfolios, connect with potential buyers, and engage with the art community. The platform features gallery views, artist profiles, and seamless browsing experiences.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://erudition-jet.vercel.app/",
+    name: "Erudition",
+    img: erudition,
+    description:
+      "An educational platform focused on learning and knowledge sharing with modern interactive features.",
+    overview:
+      "Erudition offers a comprehensive learning experience with course listings, educational resources, and interactive learning tools. The platform is designed to facilitate knowledge acquisition and skill development in an engaging digital environment.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    url: "https://morpankh-saree.vercel.app/",
+    name: "Morpankh Saree",
+    img: morpankh,
+    description:
+      "An elegant e-commerce platform for traditional sarees featuring a beautiful collection of ethnic wear.",
+    overview:
+      "Morpankh Saree showcases a stunning collection of traditional and contemporary sarees with detailed product descriptions, high-quality imagery, and a seamless shopping experience. The platform celebrates the rich heritage of Indian ethnic fashion.",
     technologies: [
       "React",
       "Next.js",
