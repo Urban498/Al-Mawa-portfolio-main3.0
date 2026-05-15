@@ -201,6 +201,38 @@ const demoWebsites: DemoWebsite[] = [
     tech: ["Next.js", "React", "Tailwind"],
     link: "https://d-maker-studio-hub-two.vercel.app/",
     image: "/D maker.png"
+  },
+  {
+    title: "Karyon",
+    description: "A modern and dynamic website showcasing innovative solutions with a sleek design and user-friendly interface.",
+    category: "Business",
+    tech: ["Next.js", "React", "Tailwind"],
+    link: "https://karyon-final-updated.vercel.app/",
+    image: "/karyon.png"
+  },
+  {
+    title: "SP Art Hub",
+    description: "An artistic platform dedicated to showcasing creative works and connecting artists with art enthusiasts.",
+    category: "Art",
+    tech: ["Next.js", "React", "Tailwind"],
+    link: "https://sp-art-hub-main-updated-website.vercel.app/",
+    image: "/SP_Art.png"
+  },
+  {
+    title: "Erudition",
+    description: "An educational platform focused on learning and knowledge sharing with modern interactive features.",
+    category: "Education",
+    tech: ["Next.js", "React", "Tailwind"],
+    link: "https://erudition-jet.vercel.app/",
+    image: "/eduration.png"
+  },
+  {
+    title: "Morpankh Saree",
+    description: "An elegant e-commerce platform for traditional sarees featuring a beautiful collection of ethnic wear.",
+    category: "Fashion",
+    tech: ["Next.js", "React", "Tailwind"],
+    link: "https://morpankh-saree.vercel.app/",
+    image: "/morpankh.png"
   }
 ];
 
