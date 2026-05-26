@@ -8,6 +8,7 @@ import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import ServicesSection from "@/components/services-section";
+import TestimonialsCarousel from "@/components/testimonials-carousel";
 import Bg from "../app/about/image/demo2.png";
 import { Inter, Playfair_Display } from "next/font/google";
 import conferenceRoom from "@/components/images/conference room 1.jpg";
@@ -112,6 +113,11 @@ export default function HeroSection() {
         {/* Services section */}
         <div className="mt-22 bg-white relative z-10">
           <ServicesSection />
+        </div>
+
+        {/* Testimonials Carousel */}
+        <div className="relative z-10">
+          <TestimonialsCarousel />
         </div>
       </div>
 

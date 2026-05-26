@@ -384,10 +384,11 @@ export default function TestimonialsPage() {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Auto-slide carousel every 5 seconds
+  // Auto-slide carousel every 5 seconds (pauses on hover)
   useEffect(() => {
-    if (reviews.length === 0) return;
+    if (reviews.length === 0 || isHovered) return;
     
     const interval = setInterval(() => {
       const totalSets = Math.ceil(reviews.length / 3);
@@ -395,7 +396,7 @@ export default function TestimonialsPage() {
     }, 5000); // 5 seconds
     
     return () => clearInterval(interval);
-  }, [reviews.length]);
+  }, [reviews.length, isHovered]);
 
   // Load reviews from API on mount
   useEffect(() => {
@@ -486,7 +487,11 @@ export default function TestimonialsPage() {
             </motion.div>
 
             {/* Carousel Container */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               {/* Navigation Buttons - Left */}
               <button
                 onClick={handlePrevious}
