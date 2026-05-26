@@ -14,6 +14,7 @@ import localFont from "next/font/local";
 import { Play, ExternalLink, Share2, Eye, X, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import logo from "../../../public/logoblack.png";
+import TestimonialsCarousel from "@/components/testimonials-carousel";
 
 // lOGO IMPORT
 import nitin from "./images/nitin.png";
@@ -472,88 +473,7 @@ export default function TestimonialsPage() {
         </section>
 
         {/* Client Reviews Section - Carousel */}
-        {reviews.length > 0 && (
-          <section className="relative max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-20">
-            <motion.div
-              {...fadeUp(0.05)}
-              className="mb-10 md:mb-12"
-            >
-              <h2 className="text-xl md:text-4xl font-semibold tracking-tight mb-3">
-                {t('reviewsSection.title')}
-              </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-xl whitespace-nowrap">
-                {t('reviewsSection.subtitle')}
-              </p>
-            </motion.div>
-
-            {/* Carousel Container */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              {/* Navigation Buttons - Left */}
-              <button
-                onClick={handlePrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 md:translate-x-0 p-2 rounded-full bg-white/80 hover:bg-white text-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm z-10"
-                aria-label="Previous reviews"
-              >
-                <ChevronLeft size={24} />
-              </button>
-
-              {/* Main Carousel - 3 Cards */}
-              <div className="overflow-hidden px-4">
-                <motion.div
-                  animate={{ x: -currentIndex * (100 / 3) + "%" }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="flex gap-6"
-                >
-                  {reviews.map((review, index) => (
-                    <div
-                      key={index}
-                      className="flex-shrink-0 w-full md:w-1/3"
-                    >
-                      <ReviewCard 
-                        review={review} 
-                        index={index}
-                      />
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-
-              {/* Navigation Buttons - Right */}
-              <button
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 md:translate-x-0 p-2 rounded-full bg-white/80 hover:bg-white text-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm z-10"
-                aria-label="Next reviews"
-              >
-                <ChevronRight size={24} />
-              </button>
-
-              {/* Carousel Indicators */}
-              <div className="flex items-center justify-center gap-2 mt-8">
-                {Array.from({ length: Math.ceil(reviews.length / 3) }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === Math.floor(currentIndex / 3)
-                        ? "bg-[#0ea5e9] w-8"
-                        : "bg-gray-300 hover:bg-gray-400 w-2"
-                    }`}
-                    aria-label={`Go to review set ${index + 1}`}
-                  />
-                ))}
-              </div>
-
-              {/* Review Counter */}
-              <div className="text-center mt-4 text-sm text-gray-600">
-                <span className="font-semibold text-gray-900">{Math.floor(currentIndex / 3) + 1}</span> of <span className="font-semibold text-gray-900">{Math.ceil(reviews.length / 3)}</span>
-              </div>
-            </div>
-          </section>
-        )}
+        <TestimonialsCarousel />
       </div>
     </main>
   );
