@@ -192,16 +192,7 @@ const TestimonialsCarousel = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.2 }}
-          className="flex items-center justify-center gap-2 mt-8 text-gray-600 text-sm"
-        >
-          <span>↕ Scroll to explore more</span>
-        </motion.div>
+        {/* Scroll Indicator removed per request */}
       </div>
 
       {/* Hide scrollbar styles */}
