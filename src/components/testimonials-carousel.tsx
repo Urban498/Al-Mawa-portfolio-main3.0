@@ -117,7 +117,7 @@ const TestimonialsCarousel = () => {
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
+            className="flex items-stretch gap-6 overflow-x-auto pb-4 scrollbar-hide"
             style={{
               msOverflowStyle: "none",
               scrollbarWidth: "none",
@@ -137,9 +137,9 @@ const TestimonialsCarousel = () => {
                     delay: 0.05 * index,
                   }}
                   viewport={{ once: true, amount: 0.2 }}
-                  className="flex-shrink-0 w-full sm:w-96"
+                  className="flex-shrink-0 w-full sm:w-96 h-[32rem] sm:h-[34rem] lg:h-[36rem]"
                 >
-                  <div className="group/card relative rounded-2xl border-2 border-gray-200 bg-white shadow-md transition-all duration-300 hover:border-[#0ea5e9] hover:shadow-lg hover:shadow-blue-500/15 p-8 flex flex-col overflow-hidden">
+                  <div className="group/card relative rounded-2xl border-2 border-gray-200 bg-white shadow-md transition-all duration-300 hover:border-[#0ea5e9] hover:shadow-lg hover:shadow-blue-500/15 p-8 flex flex-col h-full overflow-hidden">
                     {/* Animated background on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-cyan-50/0 group-hover/card:from-blue-50 group-hover/card:to-cyan-50 rounded-2xl transition-colors duration-300" />
 
