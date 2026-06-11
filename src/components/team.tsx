@@ -8,14 +8,18 @@ import { useTranslations } from 'next-intl';
 // ✅ Import member images
 import omkar from "../components/images/images/omkar.png";
 import sabeel from "../components/images/images/sabeel.png";
-import shashant from "../app/about/image/shashant.jpeg";
+import shashant from "../components/images/images/shashant.png";
 import shrihari from "../components/images/images/shrihari.png";
 import kshitij from "../components/images/images/kshitij.png";
 import samyak from "../components/images/images/Samyak.jpeg";
 import pawan from "../components/images/images/Pawan.png";
 import priyanka from "../components/images/images/priyanka.png";
 import sanika from "../components/images/images/Sanika.jpeg";
-import komal from "../components/images/images/komal.png";
+import Vaibhav from "../components/images/images/Vaibhav.jpeg";
+import Tushar from "../components/images/images/Tushar.png";
+
+import om from "../components/images/images/om.png";
+import Parth from "../components/images/images/Parth.jpeg";
 
 
 // ✅ Font setup
@@ -41,12 +45,19 @@ const members: Member[] = [
   { name: "Kshitij Hapase", role: "Flutter Developer", avatar: kshitij, link: "https://www.linkedin.com/in/kshitij-hapase-141976322/", team: "Development Team" },
   { name: "Samyak Jitendra Jain", role: "Full Stack Developer", avatar: samyak, link: "https://www.linkedin.com/in/samyak-jitendra-jain-066a24259", team: "Development Team" },
   { name: "Pawan Wagh", role: "Full Stack Developer", avatar: pawan, link: "https://www.linkedin.com/in/pawan-wagh29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
-  { name: "Priyanka Godbole", role: "Marketing Manager", avatar: priyanka, link: "#", team: "Sales & Marketing Team" },
+  { name: "Tushar Kumar", role: "Full Stack Developer", avatar: Tushar, link: "https://www.linkedin.com/in/tushar-kumar-09b8b024b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
+  
+  
   { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
 
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Sanika Chougule", role: "Sales & Marketing Team", avatar: sanika, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
-  { name: "Komal Jadhav", role: "Graphic Designer", avatar: komal, link: "https://www.linkedin.com/in/komal-jadhav-1b9503263?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Graphic Designer Team" },
+  { name: "Om Mangate", role: "Sales & Marketing Team", avatar: om, link: "https://www.linkedin.com/in/om-mangate-926b46291?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  { name: "Parth Walse", role: "Sales & Marketing Team", avatar: Parth, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  
+  
+  { name: "Vaibhav", role: "Graphics Designer", avatar: Vaibhav, link: "#", team: "Graphics Designer" },
+  
   { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
 
 
