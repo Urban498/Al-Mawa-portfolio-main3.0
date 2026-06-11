@@ -48,17 +48,17 @@ const members: Member[] = [
   { name: "Tushar Kumar", role: "Full Stack Developer", avatar: Tushar, link: "https://www.linkedin.com/in/tushar-kumar-09b8b024b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   
   
-  { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "#", team: "Sales & Marketing Team" },
+  { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "https://www.linkedin.com/in/sabeel-siddiqui-7412341b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
 
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Sanika Chougule", role: "Sales & Marketing Team", avatar: sanika, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   { name: "Om Mangate", role: "Sales & Marketing Team", avatar: om, link: "https://www.linkedin.com/in/om-mangate-926b46291?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
-  { name: "Parth Walse", role: "Sales & Marketing Team", avatar: Parth, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  { name: "Parth Walse", role: "Sales & Marketing Team", avatar: Parth, link: "https://www.linkedin.com/in/parth-walse-699a88340?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   
   
-  { name: "Vaibhav", role: "Graphics Designer", avatar: Vaibhav, link: "#", team: "Graphics Designer" },
+  { name: "Vaibhav Virkar", role: "Graphics Designer", avatar: Vaibhav, link: "https://www.linkedin.com/in/vaibhav-virkar-497544324?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Graphics Designer" },
   
-  { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "#", team: "HR & Management" },
+  { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "https://www.linkedin.com/in/priyanka-godbole-755787253?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "HR & Management" },
 
 
 ];
