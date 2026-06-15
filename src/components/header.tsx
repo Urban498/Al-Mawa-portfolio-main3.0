@@ -870,7 +870,7 @@ export const NavBar = () => {
             {/* Logo */}
             <div className="flex w-full justify-between lg:w-auto">
               <Link href="/" aria-label="home" className="flex items-center space-x-2">
-                <Image src="/newlogo.png" alt="Logo" width={100} height={100} priority className="h-28 w-auto sm:h-24" />
+                <Image src="/newlogo.svg" alt="Logo" width={100} height={100} priority className="h-28 w-auto sm:h-24" />
               </Link>
 
               {/* Mobile toggle */}
