@@ -52,7 +52,7 @@ const members: Member[] = [
 
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Sanika Chougule", role: "Sales & Marketing Team", avatar: sanika, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
-  { name: "Om Mangate", role: "Sales & Marketing Team", avatar: om, link: "https://www.linkedin.com/in/om-mangate-926b46291?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  // { name: "Om Mangate", role: "Sales & Marketing Team", avatar: om, link: "https://www.linkedin.com/in/om-mangate-926b46291?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   { name: "Parth Walse", role: "Sales & Marketing Team", avatar: Parth, link: "https://www.linkedin.com/in/parth-walse-699a88340?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   
   

@@ -38,8 +38,8 @@ export default function FooterSection() {
           <div className="flex-1">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/logowhite.svg"
-                alt="Al Mawa Logo"
+                src="/footer_logo_12.svg"
+                alt="Al Mawa Footer Logo"
                 width={40}
                 height={40}
                 className="h-16 w-auto"

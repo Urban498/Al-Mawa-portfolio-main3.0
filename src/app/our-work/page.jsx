@@ -31,6 +31,7 @@ import karyon from "../../../public/karyon.png";
 import spArt from "../../../public/SP_Art.png";
 import erudition from "../../../public/eduration.png";
 import morpankh from "../../../public/morpankh.png";
+import khm from "../../../public/KHM.png";
 // ----------------------
 // Font Configuration
 // ----------------------
@@ -298,7 +299,7 @@ const websiteProjects = [
     ],
   },
   {
-    url: "https://erudition-jet.vercel.app/",
+    url: "https://www.eruditioninfinite.com/",
     name: "Erudition",
     img: erudition,
     description:
@@ -315,13 +316,31 @@ const websiteProjects = [
     ],
   },
   {
-    url: "https://morpankh-saree.vercel.app/",
+    url: "https://www.morpankhsaree.com/",
     name: "Morpankh Saree",
     img: morpankh,
     description:
       "An elegant e-commerce platform for traditional sarees featuring a beautiful collection of ethnic wear.",
     overview:
       "Morpankh Saree showcases a stunning collection of traditional and contemporary sarees with detailed product descriptions, high-quality imagery, and a seamless shopping experience. The platform celebrates the rich heritage of Indian ethnic fashion.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  
+  {
+    url: "https://khm-five.vercel.app/",
+    name: "KHM Infra",
+    img: khm,
+    description:
+      "######",
+    overview:
+      "##########",
     technologies: [
       "React",
       "Next.js",

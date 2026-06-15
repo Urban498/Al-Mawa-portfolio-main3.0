@@ -870,7 +870,7 @@ export const NavBar = () => {
             {/* Logo */}
             <div className="flex w-full justify-between lg:w-auto">
               <Link href="/" aria-label="home" className="flex items-center space-x-2">
-                <Image src="/logoblack.png" alt="Logo" width={100} height={100} priority className="h-16 w-auto" />
+                <Image src="/newlogo.png" alt="Logo" width={100} height={100} priority className="h-28 w-auto sm:h-24" />
               </Link>
 
               {/* Mobile toggle */}
@@ -885,8 +885,8 @@ export const NavBar = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm items-center">
+            <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center">
+              <ul className="flex gap-8 text-sm items-center justify-center">
 
                 {/* Home */}
                 <li>
