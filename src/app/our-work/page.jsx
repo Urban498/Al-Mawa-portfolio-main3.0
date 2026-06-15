@@ -32,6 +32,8 @@ import spArt from "../../../public/SP_Art.png";
 import erudition from "../../../public/eduration.png";
 import morpankh from "../../../public/morpankh.png";
 import khm from "../../../public/KHM.png";
+import spartsErp from "../../../public/Sparts_erp.png";
+
 // ----------------------
 // Font Configuration
 // ----------------------
@@ -97,9 +99,27 @@ const softwareDevelopment = [
     ],
   },
   {
-    url: "https://school-fees-hub-kappa.vercel.app",
+    url: "https://sonai-software-zeta.vercel.app",
     name: "Sona'i School Fee Receipt Management",
     img: sonaSchoolFee,
+    description:
+      "A comprehensive fee receipt generation software for educational institutions, streamlining fee collection and receipt management.",
+    overview:
+      "This fee management system enables schools to efficiently generate, track, and manage student fee receipts. Features include automated receipt generation, payment tracking, monthly collections overview, and fee breakdown analytics for better financial management.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+
+  {
+    url: "https://sp-art-erp.vercel.app/",
+    name: "Sp-Arts Erp System",
+    img: spartsErp,
     description:
       "A comprehensive fee receipt generation software for educational institutions, streamlining fee collection and receipt management.",
     overview:
