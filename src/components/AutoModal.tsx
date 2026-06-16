@@ -74,7 +74,7 @@ export default function AutoModal() {
                 className="flex items-center justify-center h-full w-full p-4"
               >
                 <Image 
-                  src="/emi.png" 
+                  src="/emi.svg" 
                   alt="Al Mawa Services" 
                   width={400}
                   height={220}
@@ -92,7 +92,7 @@ export default function AutoModal() {
                 transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 100 }}
               >
                 <Image 
-                  src="/emi.png" 
+                  src="/emi.svg" 
                   alt="Al Mawa Services" 
                   width={400}
                   height={500}
