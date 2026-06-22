@@ -11,7 +11,6 @@ import sabeel from "../components/images/images/sabeel.png";
 import shashant from "../components/images/images/shashant.png";
 import shrihari from "../components/images/images/shrihari.png";
 import kshitij from "../components/images/images/kshitij.png";
-import samyak from "../components/images/images/Samyak.jpeg";
 import pawan from "../components/images/images/Pawan.png";
 import priyanka from "../components/images/images/priyanka.png";
 import sanika from "../components/images/images/Sanika.jpeg";
@@ -43,7 +42,6 @@ const members: Member[] = [
   { name: "Shashant Shekhar", role: "Full Stack Developer", avatar: shashant, link: "https://www.linkedin.com/in/shashant-shekhar-588a0b20b", team: "Development Team" },
   { name: "Shrihari Surve", role: "Full Stack Developer", avatar: shrihari, link: "https://www.linkedin.com/in/srihari-surve-/", team: "Development Team" },
   { name: "Kshitij Hapase", role: "Flutter Developer", avatar: kshitij, link: "https://www.linkedin.com/in/kshitij-hapase-141976322/", team: "Development Team" },
-  { name: "Samyak Jitendra Jain", role: "Full Stack Developer", avatar: samyak, link: "https://www.linkedin.com/in/samyak-jitendra-jain-066a24259", team: "Development Team" },
   { name: "Pawan Wagh", role: "Full Stack Developer", avatar: pawan, link: "https://www.linkedin.com/in/pawan-wagh29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   { name: "Tushar Kumar", role: "Full Stack Developer", avatar: Tushar, link: "https://www.linkedin.com/in/tushar-kumar-09b8b024b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   

@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const contactInfo = [
   { icon: Mail, text: "business@al-mawa.international", href: "mailto:business@al-mawa.international" },
-  { icon: Phone, text: "+91 9561179693 | 9511991736", href: "tel:+91 9561179693" },
+  { icon: Phone, text: "+91 9561179693 | +91 9561106693", href: "tel:+91 9561179693" },
   { icon: MapPin, text: "AL-MAWA INTERNATIONAL PUNE Location", href: "https://www.google.com/maps/search/?api=1&query=AL-MAWA+INTERNATIONAL+Office+No.+102-103,+%28+Nexus+Work+Spaces%29+1st+Floor,+Pride+icon+Building,+Above+Athithi+Restaurant,+Kharadi+Bypass+Road,+Kharadi,+Pune,+Maharashtra,+India+411014" },
   { icon: MapPin, text: "AL-MAWA INTERNATIONAL JAIPUR Location", href: "https://www.google.com/maps/place/Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur/@26.8991882,75.8142119,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgIDLm72aFA!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHVAweq_aZ2I4h_rRh6zk-z6JqyDf_bKnmiPRnk8QVp1V1mlBek-UA4W0rK-SFsELkT2NQlVdG9YTyJ4e0EgCI5B0tQeRn-LDn98A5khN3YbQtqYtpiu1KXDsgMRvSwnF0Bf8ur2J2FT%3Dw152-h86-k-no!7i7680!8i4320!4m7!3m6!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!8m2!3d26.8993959!4d75.8143621!10e5!16s%2Fg%2F11y3lncpy1?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" },
 ];
