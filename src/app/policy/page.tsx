@@ -4,17 +4,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function PolicyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card py-16">
+    <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card pt-20 pb-16 lg:pt-24 lg:pb-20">
       <div className="max-w-4xl mx-auto px-4">
-        <Card className="bg-card/90 border-border/60 shadow-lg">
-          <CardHeader>
+        <Card className="bg-card/95 border border-border/50 shadow-xl shadow-slate-200/20 backdrop-blur-sm">
+          <CardHeader className="px-6 pt-6 md:px-8 md:pt-8">
             <CardTitle className="text-3xl font-bold tracking-tight text-foreground">
-              Terms &amp; Conditions &amp; Privacy Policy
+              Terms &amp; Conditions 
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-8 text-sm md:text-base leading-relaxed text-muted-foreground">
+          <CardContent className="space-y-8 px-6 pb-8 md:px-8 md:pb-10 text-sm md:text-base leading-relaxed text-muted-foreground">
             <section className="space-y-3">
-              <h2 className="text-xl font-semibold text-foreground">Terms &amp; Conditions</h2>
               <p>
                 By using this website, you agree to comply with our Terms &amp; Conditions. All content,
                 software, designs, and materials on this site are owned by us and may not be copied or
