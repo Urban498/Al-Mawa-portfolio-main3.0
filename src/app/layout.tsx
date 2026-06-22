@@ -363,7 +363,7 @@ export default function RootLayout({
                     </span>
 
                     <a
-                      href={encodeURI("/AL-MAWA INTERNATIONAL COMPANY  PROFILE (1).pdf")}
+                      href={encodeURI("/Al_mawa_company_profile.pdf")}
                       download
                       aria-label="Download company profile"
                       className="group relative flex w-14 h-14 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-sky-600 shadow-lg shadow-sky-500/40 transition-transform duration-200 hover:scale-110 active:scale-95"
