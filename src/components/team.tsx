@@ -32,7 +32,7 @@ const playfair_display = Playfair_Display({
 type Member = {
   name: string;
   role: string;
-  avatar: StaticImageData;
+  avatar: StaticImageData | string;
   link: string;
   team: string;
 };
@@ -40,23 +40,25 @@ type Member = {
 // ✅ Members data
 const members: Member[] = [
   { name: "Shashant Shekhar", role: "Full Stack Developer", avatar: shashant, link: "https://www.linkedin.com/in/shashant-shekhar-588a0b20b", team: "Development Team" },
-  { name: "Shrihari Surve", role: "Full Stack Developer", avatar: shrihari, link: "https://www.linkedin.com/in/srihari-surve-/", team: "Development Team" },
+    { name: "Pranav Rathod", role: "Business Development Executive", avatar: "/pranav.png", link: "https://www.linkedin.com/in/pranav-rathod-88aba522b?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   { name: "Kshitij Hapase", role: "Flutter Developer", avatar: kshitij, link: "https://www.linkedin.com/in/kshitij-hapase-141976322/", team: "Development Team" },
   { name: "Pawan Wagh", role: "Full Stack Developer", avatar: pawan, link: "https://www.linkedin.com/in/pawan-wagh29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   { name: "Tushar Kumar", role: "Full Stack Developer", avatar: Tushar, link: "https://www.linkedin.com/in/tushar-kumar-09b8b024b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   
   
-  { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "https://www.linkedin.com/in/sabeel-siddiqui-7412341b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "https://www.linkedin.com/in/sabeel-siddiqui-7412341b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "HR & Management" },
 
   { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
   { name: "Sanika Chougule", role: "Sales & Marketing Team", avatar: sanika, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   // { name: "Om Mangate", role: "Sales & Marketing Team", avatar: om, link: "https://www.linkedin.com/in/om-mangate-926b46291?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   { name: "Parth Walse", role: "Sales & Marketing Team", avatar: Parth, link: "https://www.linkedin.com/in/parth-walse-699a88340?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
+  { name: "Dnyaneshwari Badhekar", role: "Sales & Marketing Team", avatar: "/gyaneshawari.png", link: "#", team: "Sales & Marketing Team" },
   
   
-  { name: "Vaibhav Virkar", role: "Graphics Designer", avatar: Vaibhav, link: "https://www.linkedin.com/in/vaibhav-virkar-497544324?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Graphics Designer" },
-  
-  { name: "Priyanka Godbole", role: "HR & Management", avatar: priyanka, link: "https://www.linkedin.com/in/priyanka-godbole-755787253?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "HR & Management" },
+  { name: "Vaibhav Virkar", role: "Graphics Designer", avatar: Vaibhav, link: "https://www.linkedin.com/in/vaibhav-virkar-497544324?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Graphics Designer & Digital Marketing" },
+  { name: "Paras Gupta", role: "Graphics Designer", avatar: "/paras.png", link: "https://www.linkedin.com/in/paras-gupta-29a03a256?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "Graphics Designer & Digital Marketing" },
+
+  { name: "Priyanka Godbole", role: "CEO", avatar: priyanka, link: "https://www.linkedin.com/in/priyanka-godbole-755787253?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "HR & Management" },
 
 
 ];
@@ -95,6 +97,24 @@ export default function TeamSection() {
     return acc;
   }, {});
 
+  // Ensure `Graphics Designer & Digital Marketing` appears just after `Sales & Marketing Team`
+  const teamNames = Object.keys(teams);
+  const salesKey = "Sales & Marketing Team";
+  const graphicsKey = "Graphics Designer & Digital Marketing";
+  if (teamNames.includes(salesKey) && teamNames.includes(graphicsKey)) {
+    // remove graphicsKey and re-insert right after salesKey
+    const filtered = teamNames.filter((k) => k !== graphicsKey);
+    const salesIndex = filtered.indexOf(salesKey);
+    if (salesIndex !== -1) {
+      filtered.splice(salesIndex + 1, 0, graphicsKey);
+    }
+    // use the reordered list for rendering
+    // convert to entries array in the desired order
+    var orderedTeamEntries = filtered.map((k) => [k, teams[k]] as [string, Member[]]);
+  } else {
+    var orderedTeamEntries = Object.entries(teams);
+  }
+
   return (
     <section className="bg-gray-50 py-16 md:py-10 dark:bg-transparent">
       <div className="mx-auto max-w-5xl px-6">
@@ -114,7 +134,7 @@ export default function TeamSection() {
 
         {/* Team Sections */}
         <div className="mt-12 md:mt-24 space-y-20">
-          {Object.entries(teams).map(([teamName, teamMembers], teamIndex) => (
+          {orderedTeamEntries.map(([teamName, teamMembers], teamIndex) => (
             <div
               key={teamIndex}
               className="border-t border-gray-300 dark:border-gray-700 pt-12 first:border-t-0 first:pt-0"
