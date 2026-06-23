@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 // ✅ Import member images
 import omkar from "../components/images/images/omkar.png";
 import sabeel from "../components/images/images/sabeel.png";
-import shashant from "../components/images/images/shashant.png";
+import shashant from "../app/about/image/shashant.jpeg";
 import shrihari from "../components/images/images/shrihari.png";
 import kshitij from "../components/images/images/kshitij.png";
 import pawan from "../components/images/images/Pawan.png";
