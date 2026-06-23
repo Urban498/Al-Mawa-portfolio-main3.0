@@ -10,7 +10,7 @@ export default function ReferralPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen mt-20 bg-gradient-to-b from-gray-50 to-white">
       <ReferralFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Hero Section */}
