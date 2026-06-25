@@ -215,7 +215,7 @@ export default function RootLayout({
             <AOSProvider>
               {!isAdminRoute && (
                 <>
-                  <header className="fixed top-0 z-50">
+                  <header className="fixed top-0 z-50 w-full">
                     <NavBar />
                   </header>
                 </>
@@ -415,7 +415,7 @@ export default function RootLayout({
                 </div>
               )}
 
-              <div className={isAdminRoute ? "" : "pt-10"}>{children}</div>
+              <div className={isAdminRoute ? "" : "pt-28 sm:pt-24 md:pt-24 lg:pt-20 xl:pt-24"}>{children}</div>
               {!isAdminRoute && (
                 <>
                   <FooterSection />

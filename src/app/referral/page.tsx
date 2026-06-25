@@ -10,7 +10,7 @@ export default function ReferralPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen mt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen mt-20 overflow-x-hidden bg-gradient-to-b from-background via-muted to-card">
       <ReferralFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Hero Section */}
@@ -41,7 +41,7 @@ export default function ReferralPage() {
       </section>
 
       {/* Commission Structure */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Attractive Commission Structure
@@ -76,7 +76,7 @@ export default function ReferralPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             How It Works
@@ -123,7 +123,7 @@ export default function ReferralPage() {
       </section>
 
       {/* Visual Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -153,7 +153,7 @@ export default function ReferralPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Why Join Our Referral Program?
@@ -184,7 +184,7 @@ export default function ReferralPage() {
       </section>
 
       {/* Success Metrics */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Our Referral Success Stories

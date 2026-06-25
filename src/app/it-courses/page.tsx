@@ -510,11 +510,20 @@ export default function ITCoursesPage() {
   }, []);
 
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif", background: '#fff', color: '#0a0a0a', overflowX: 'hidden' }}>
+    <div
+      className="min-h-screen overflow-x-hidden bg-gradient-to-b from-background via-muted to-card"
+      style={{
+        fontFamily: "'DM Sans', sans-serif",
+        color: '#0a0a0a',
+        background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 50%, hsl(var(--card)) 100%)',
+        backgroundAttachment: 'scroll',
+        WebkitTapHighlightColor: 'transparent',
+      }}
+    >
       <style>{globalStyles}</style>
 
       {/* ── HERO ── */}
-      <section style={{ ...styles.hero, minHeight: '80vh', display: 'flex', alignItems: 'center' }} className="hero-section">
+      <section style={{ ...styles.hero, minHeight: '80vh', display: 'flex', alignItems: 'center', background: 'transparent' }} className="hero-section">
         <div style={styles.heroOrb1} />
         <div style={styles.heroOrb2} />
         <div style={{ ...styles.container, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', position: 'relative', zIndex: 2 }} className="container-pad">
@@ -563,7 +572,7 @@ export default function ITCoursesPage() {
 
 
       {/* ── MARQUEE ── */}
-      <div style={styles.marqueeSection}>
+      <div style={{ ...styles.marqueeSection, background: 'linear-gradient(90deg, #0ea5e9 0%, #0284c7 100%)' }}>
         <div style={styles.marqueeTrack} className="marquee-track">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
             <span key={i} style={styles.marqueeItem} className="marquee-item">{item}</span>
@@ -572,7 +581,7 @@ export default function ITCoursesPage() {
       </div>
 
       {/* ── COURSES ── */}
-      <section style={styles.coursesSection} id="courses" className="section-padded">
+      <section style={{ ...styles.coursesSection, background: 'transparent' }} id="courses" className="section-padded">
         <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>What We Offer</span>
@@ -592,7 +601,7 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── INTERNSHIP & TRAINING ── */}
-      <section style={styles.programsSection} className="section-padded">
+      <section style={{ ...styles.programsSection, background: 'transparent' }} className="section-padded">
         <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>Our Programs</span>
@@ -633,7 +642,7 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── BENEFITS ── */}
-      <section style={styles.benefitsSection} className="section-padded">
+      <section style={{ ...styles.benefitsSection, background: 'transparent' }} className="section-padded">
         <div style={styles.container} className="container-pad">
           <div style={styles.benefitsLayout} className="benefits-layout">
             <div style={styles.benefitsLeft} className="benefits-sticky">
@@ -667,7 +676,7 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── STEPS ── */}
-      <section style={styles.stepsSection} className="section-padded">
+      <section style={{ ...styles.stepsSection, background: 'transparent' }} className="section-padded">
         <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>How It Works</span>
@@ -683,7 +692,7 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section style={styles.testimonialsSection} className="testimonials-section">
+      <section style={{ ...styles.testimonialsSection, background: 'transparent' }} className="testimonials-section">
         <div style={styles.container} className="container-pad">
           <RevealDiv style={{ textAlign: 'center', marginBottom: 56 }}>
             <span style={styles.sectionLabel}>Student Stories</span>
@@ -701,7 +710,7 @@ export default function ITCoursesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={styles.ctaSection} className="cta-section">
+      <section style={{ ...styles.ctaSection, background: '#0a0a0a' }} className="cta-section">
         <div style={styles.ctaBg} />
         <div style={{ ...styles.container, textAlign: 'center', position: 'relative' }} className="container-pad">
           <span style={{ ...styles.sectionLabel, color: 'rgba(255,255,255,0.4)' }}>Start Today</span>
@@ -757,7 +766,7 @@ function PrimaryButton({ children, onClick, light }: { children: React.ReactNode
 const styles: Record<string, React.CSSProperties> = {
   hero: {
     minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: '#f8f9fa', position: 'relative', overflow: 'hidden', padding: '100px 24px 80px',
+    background: 'transparent', position: 'relative', overflow: 'hidden', padding: '100px 24px 80px',
   },
   heroOrb1: {
     position: 'absolute', borderRadius: '50%', filter: 'blur(100px)',
@@ -839,7 +848,7 @@ const styles: Record<string, React.CSSProperties> = {
   reveal: { opacity: 0, transform: 'translateY(28px)', transition: 'all 0.6s ease' },
   revealVisible: { opacity: 1, transform: 'translateY(0)' },
 
-  coursesSection: { background: '#f8f9fa', padding: '96px 24px' },
+  coursesSection: { background: 'transparent', padding: '96px 24px' },
   coursesGrid: {
     display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: 22,
   },
@@ -876,7 +885,7 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: '0.83rem', fontWeight: 600, textDecoration: 'none',
   },
 
-  programsSection: { background: 'white', padding: '96px 24px' },
+  programsSection: { background: 'transparent', padding: '96px 24px' },
   programsGrid: {
     display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: 48,
   },
@@ -896,7 +905,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: '0 28px 28px', margin: 0,
   },
 
-  benefitsSection: { background: '#f8f9fa', padding: '96px 24px' },
+  benefitsSection: { background: 'transparent', padding: '96px 24px' },
   benefitsLayout: {
     display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'start',
   },
@@ -930,7 +939,7 @@ const styles: Record<string, React.CSSProperties> = {
   benefitTitle: { fontSize: '0.93rem', fontWeight: 600, color: '#0a0a0a', marginBottom: 4 },
   benefitDesc: { fontSize: '0.84rem', color: '#6c757d', lineHeight: 1.65 },
 
-  stepsSection: { background: '#f8f9fa', padding: '96px 24px' },
+  stepsSection: { background: 'transparent', padding: '96px 24px' },
   stepsGrid: {
     display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, alignItems: 'start',
   },
@@ -963,7 +972,7 @@ const styles: Record<string, React.CSSProperties> = {
   stepTitle: { fontSize: '0.93rem', fontWeight: 600, color: '#0a0a0a', marginBottom: 8 },
   stepDesc: { fontSize: '0.79rem', color: '#6c757d', lineHeight: 1.65 },
 
-  testimonialsSection: { background: 'white', padding: '96px 0 0' },
+  testimonialsSection: { background: 'transparent', padding: '96px 0 0' },
   testimonialsTrackWrap: {
     overflow: 'hidden', padding: '8px 0 52px',
     WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%)',

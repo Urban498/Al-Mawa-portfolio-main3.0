@@ -446,7 +446,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose })
                       Referral & Commission
                     </Link>
                     <Link
-                      href="/training-internship"
+                      href="/it-courses"
                       onClick={handleLinkClick}
                       className="text-black hover:text-gray-600 block duration-150 text-lg  py-1"
                     >

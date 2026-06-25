@@ -10,7 +10,7 @@ export default function FranchisePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen mt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen mt-20 overflow-x-hidden bg-gradient-to-b from-background via-muted to-card">
       <FranchiseFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Hero Section */}
@@ -41,7 +41,7 @@ export default function FranchisePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Why Choose Al-Mawa Franchise?
@@ -73,7 +73,7 @@ export default function FranchisePage() {
       </section>
 
       {/* Visual Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -103,7 +103,7 @@ export default function FranchisePage() {
       </section>
 
       {/* Services Offered */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Services You'll Offer
@@ -134,7 +134,7 @@ export default function FranchisePage() {
       </section>
 
       {/* Requirements */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Franchise Requirements
