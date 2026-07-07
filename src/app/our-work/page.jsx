@@ -99,7 +99,7 @@ const softwareDevelopment = [
     ],
   },
   {
-    url: "https://sonai-software-zeta.vercel.app",
+    url: "https://sonai-software-d2cjfeqqm-al-mawa-internationals-projects.vercel.app",
     name: "Sona'i School Fee Receipt Management",
     img: sonaSchoolFee,
     description:
@@ -285,7 +285,7 @@ const websiteProjects = [
     ],
   },
   {
-    url: "https://karyon-final-updated.vercel.app/",
+    url: "https://www.karyoncollege.com",
     name: "Karyon",
     img: karyon,
     description:
