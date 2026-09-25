@@ -8,7 +8,6 @@ import { useTranslations } from 'next-intl';
 // ✅ Import member images
 import omkar from "../components/images/images/omkar.png";
 import sabeel from "../components/images/images/sabeel.png";
-import shashant from "../app/about/image/shashant.jpeg";
 import shrihari from "../components/images/images/shrihari.png";
 import kshitij from "../components/images/images/kshitij.png";
 import pawan from "../components/images/images/Pawan.png";
@@ -39,7 +38,6 @@ type Member = {
 
 // ✅ Members data
 const members: Member[] = [
-  { name: "Shashant Shekhar", role: "Full Stack Developer", avatar: shashant, link: "https://www.linkedin.com/in/shashant-shekhar-588a0b20b", team: "Development Team" },
     { name: "Pranav Rathod", role: "Business Development Executive", avatar: "/pranav.png", link: "https://www.linkedin.com/in/pranav-rathod-88aba522b?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   { name: "Kshitij Hapase", role: "Flutter Developer", avatar: kshitij, link: "https://www.linkedin.com/in/kshitij-hapase-141976322/", team: "Development Team" },
   { name: "Pawan Wagh", role: "Full Stack Developer", avatar: pawan, link: "https://www.linkedin.com/in/pawan-wagh29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
