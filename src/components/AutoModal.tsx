@@ -16,11 +16,15 @@ export default function AutoModal() {
     name: "",
     number: "",
     company: "",
+    hasWebsite: "",
+    location: "",
     message: "",
   });
 
   const handleData = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -146,6 +150,30 @@ export default function AutoModal() {
                 onChange={handleData}
                 value={data.company}
                 placeholder="Company Name"
+                required
+                className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              />
+
+              <select
+                name="hasWebsite"
+                onChange={handleData}
+                value={data.hasWebsite}
+                required
+                className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white text-gray-700"
+              >
+                <option value="" disabled>
+                  Do you have a website?
+                </option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+
+              <input
+                type="text"
+                name="location"
+                onChange={handleData}
+                value={data.location}
+                placeholder="Location"
                 required
                 className="w-full border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
               />
