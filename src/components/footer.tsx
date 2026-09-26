@@ -18,7 +18,6 @@ const contactInfo = [
   { icon: Mail, text: "business@al-mawa.international", href: "mailto:business@al-mawa.international" },
   { icon: Phone, text: "+91 9561179693 | +91 9561106693", href: "tel:+91 9561179693" },
   { icon: MapPin, text: "AL-MAWA INTERNATIONAL PUNE Location", href: "https://www.google.com/maps/search/?api=1&query=AL-MAWA+INTERNATIONAL+Office+No.+102-103,+%28+Nexus+Work+Spaces%29+1st+Floor,+Pride+icon+Building,+Above+Athithi+Restaurant,+Kharadi+Bypass+Road,+Kharadi,+Pune,+Maharashtra,+India+411014" },
-  { icon: MapPin, text: "AL-MAWA INTERNATIONAL JAIPUR Location", href: "https://www.google.com/maps/place/Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur/@26.8991882,75.8142119,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgIDLm72aFA!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHVAweq_aZ2I4h_rRh6zk-z6JqyDf_bKnmiPRnk8QVp1V1mlBek-UA4W0rK-SFsELkT2NQlVdG9YTyJ4e0EgCI5B0tQeRn-LDn98A5khN3YbQtqYtpiu1KXDsgMRvSwnF0Bf8ur2J2FT%3Dw152-h86-k-no!7i7680!8i4320!4m7!3m6!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!8m2!3d26.8993959!4d75.8143621!10e5!16s%2Fg%2F11y3lncpy1?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" },
 ];
 
 export default function FooterSection() {
@@ -30,22 +29,22 @@ export default function FooterSection() {
   }, []);
 
   return (
-    <footer className="bg-black text-white border-t border-border/50">
+    <footer className="border-t border-border/50 bg-[#edfbfe] text-slate-800">
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Side - Logo and Company Info */}
           <div className="flex-1">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="mb-4 flex items-center">
               <Image
-                src="/footer_logo_12.svg"
+                src="/Al Mawa International Logo.svg"
                 alt="Al Mawa Footer Logo"
                 width={40}
                 height={40}
                 className="h-16 w-auto"
               />
             </div>
-            <p className={` text-gray-300 text-sm leading-relaxed max-w-md`}>
+            <p className={` text-slate-700 text-sm leading-relaxed max-w-md`}>
               {t('description')}
             </p>
           </div>
@@ -72,7 +71,7 @@ export default function FooterSection() {
             {/* Contact Info */}
             <div>
               <h3
-                className={`${inter.className} font-semibold  mb-4 text-left md:text-right text-2xl text-white uppercase`}
+                className={`${inter.className} font-semibold  mb-4 text-left md:text-right text-2xl text-slate-900 uppercase`}
               >
                 {t('contactInfo')}
               </h3>
@@ -83,7 +82,7 @@ export default function FooterSection() {
                     <li key={index}>
                       <Link
                         href={contact.href}
-                        className="text-gray-300 flex items-center space-x-3 hover:text-[#0ea5e9] transition-colors duration-200 text-sm group md:flex-row-reverse md:space-x-reverse "
+                        className="text-slate-700 flex items-center space-x-3 hover:text-[#0ea5e9] transition-colors duration-200 text-sm group md:flex-row-reverse md:space-x-reverse "
                         target="_blank"
                       >
                         <Icon className="size-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -103,30 +102,30 @@ export default function FooterSection() {
         <div className="border-t border-border/50 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="text-white text-sm font-semibold">
+              <p className="text-slate-900 text-sm font-semibold">
                 © {year} {t('companyName')}. {t('allRightsReserved')}
               </p>
-              <p className="text-gray-300 text-xs">
+              <p className="text-slate-700 text-xs">
                 Designed & Developed by AL-Mawa International
               </p>
               <div className="flex flex-col md:flex-row gap-3">
                 <Link
                   href="/our-work"
-                  className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+                  className="text-xs text-slate-700 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
                 >
                   Our Work
                 </Link>
-                <span className="text-xs text-gray-300 hidden md:inline">|</span>
+                <span className="text-xs text-slate-700 hidden md:inline">|</span>
                 <Link
                   href="/careers"
-                  className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+                  className="text-xs text-slate-700 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
                 >
                   Career
                 </Link>
-                <span className="text-xs text-gray-300 hidden md:inline">|</span>
+                <span className="text-xs text-slate-700 hidden md:inline">|</span>
                 <Link
                   href="/policy"
-                  className="text-xs text-gray-300 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
+                  className="text-xs text-slate-700 hover:text-[#0ea5e9] underline-offset-4 hover:underline"
                 >
                   Terms &amp; Conditions / Policy
                 </Link>
@@ -138,7 +137,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X/Twitter"
-                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-slate-800 hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-white/40"
               >
                 <svg
                   className="size-7"
@@ -156,7 +155,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-slate-800 hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-white/40"
               >
                 <svg
                   className="size-7"
@@ -174,7 +173,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-slate-800 hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-white/40"
               >
                 <svg
                   className="size-7"
@@ -192,7 +191,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-slate-800 hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-white/40"
               >
                 <svg
                   className="size-7"
@@ -210,7 +209,7 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="text-white hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-accent/10"
+                className="text-slate-800 hover:text-[#0ea5e9] transition-colors duration-200 p-2 rounded-lg hover:bg-white/40"
               >
                 <svg
                   className="size-7"

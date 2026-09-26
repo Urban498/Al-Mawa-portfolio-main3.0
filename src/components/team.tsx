@@ -6,18 +6,18 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from 'next-intl';
 
 // ✅ Import member images
-import omkar from "../components/images/images/omkar.png";
-import sabeel from "../components/images/images/sabeel.png";
-import shrihari from "../components/images/images/shrihari.png";
 import kshitij from "../components/images/images/kshitij.png";
-import pawan from "../components/images/images/Pawan.png";
-import priyanka from "../components/images/images/priyanka.png";
-import sanika from "../components/images/images/Sanika.jpeg";
-import Vaibhav from "../components/images/images/Vaibhav.jpeg";
 import Tushar from "../components/images/images/Tushar.png";
-
-import om from "../components/images/images/om.png";
-import Parth from "../components/images/images/Parth.jpeg";
+import sabeel from "../../public/sabeel sir.png";
+import priyanka from "../components/images/images/priyanka.png";
+import sahil from "../../public/Sahil.png";
+import mubarak from "../../public/Mubarak.png";
+import manasi from "../../public/Manasi.jpeg";
+import sameer from "../../public/Sameer.jpeg";
+import pallavi from "../../public/Pallavi.jpeg";
+import dilip from "../../public/Dilip.png";
+import kaushal from "../../public/Kaushal.png";
+import utkarsh from "../../public/Utkarsh.png";
 
 
 // ✅ Font setup
@@ -38,27 +38,18 @@ type Member = {
 
 // ✅ Members data
 const members: Member[] = [
-    { name: "Pranav Rathod", role: "Business Development Executive", avatar: "/pranav.png", link: "https://www.linkedin.com/in/pranav-rathod-88aba522b?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
   { name: "Kshitij Hapase", role: "Flutter Developer", avatar: kshitij, link: "https://www.linkedin.com/in/kshitij-hapase-141976322/", team: "Development Team" },
-  { name: "Pawan Wagh", role: "Full Stack Developer", avatar: pawan, link: "https://www.linkedin.com/in/pawan-wagh29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
   { name: "Tushar Kumar", role: "Full Stack Developer", avatar: Tushar, link: "https://www.linkedin.com/in/tushar-kumar-09b8b024b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Development Team" },
-  
-  
-  { name: "Sabeel", role: "Sales & Marketing Team", avatar: sabeel, link: "https://www.linkedin.com/in/sabeel-siddiqui-7412341b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "HR & Management" },
-
-  { name: "Omkar Babu Bachanatti", role: "Business Development Executive", avatar: omkar, link: "https://www.linkedin.com/in/omkar-bachanatti-088b45247/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", team: "Sales & Marketing Team" },
-  { name: "Sanika Chougule", role: "Sales & Marketing Team", avatar: sanika, link: "https://www.linkedin.com/in/sanika-chougule-43b2182b2?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
-  // { name: "Om Mangate", role: "Sales & Marketing Team", avatar: om, link: "https://www.linkedin.com/in/om-mangate-926b46291?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
-  { name: "Parth Walse", role: "Sales & Marketing Team", avatar: Parth, link: "https://www.linkedin.com/in/parth-walse-699a88340?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Sales & Marketing Team" },
-  { name: "Dnyaneshwari Badhekar", role: "Sales & Marketing Team", avatar: "/gyaneshawari.png", link: "#", team: "Sales & Marketing Team" },
-  
-  
-  { name: "Vaibhav Virkar", role: "Graphics Designer", avatar: Vaibhav, link: "https://www.linkedin.com/in/vaibhav-virkar-497544324?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "Graphics Designer & Digital Marketing" },
-  { name: "Paras Gupta", role: "Graphics Designer", avatar: "/paras.png", link: "https://www.linkedin.com/in/paras-gupta-29a03a256?utm_source=share_via&utm_content=profile&utm_medium=member_ios", team: "Graphics Designer & Digital Marketing" },
-
-  { name: "Priyanka Godbole", role: "CEO", avatar: priyanka, link: "https://www.linkedin.com/in/priyanka-godbole-755787253?utm_source=share_via&utm_content=profile&utm_medium=member_android", team: "HR & Management" },
-
-
+  { name: "Sameer Laxman Pise", role: "Full Stack Developer", avatar: sameer, link: "https://www.linkedin.com/in/sameer-pise-75b446345/", team: "Development Team" },
+  { name: "Dilip Bhaskar", role: "Sales Head", avatar: dilip, link: "#", team: "Sales & Marketing Team" },
+  { name: "Kaushal Marathe", role: "Team Head", avatar: kaushal, link: "https://www.linkedin.com/in/kaushalmarathe/", team: "Sales & Marketing Team" },
+  { name: "Sahil Pacharne", role: "Business Development Executive", avatar: sahil, link: "https://www.linkedin.com/in/sahil-pacharne-481481379/", team: "Sales & Marketing Team" },
+  { name: "Mubarak Hussain", role: "Business Development Executive", avatar: mubarak, link: "https://www.linkedin.com/in/mubarak-hussain-ba2147437/", team: "Sales & Marketing Team" },
+  { name: "Utkarsh Ratnakar", role: "Graphics Designer", avatar: utkarsh, link: "https://www.linkedin.com/in/utkarsh-ratnakar-8b3a52219/", team: "Graphics Designer & Digital Marketing" },
+  { name: "Sabeel Siddiqui", role: "Technical Manager", avatar: sabeel, link: "https://www.linkedin.com/in/sabeel-siddiqui-7412341b2/", team: "Management" },
+  { name: "Priyanka Godbole", role: "CEO", avatar: priyanka, link: "https://www.linkedin.com/in/priyanka-godbole-755787253/", team: "Management" },
+  { name: "Manasi Patil", role: "HR Manager", avatar: manasi, link: "#", team: "Management" },
+  { name: "Pallavi", role: "Web Developer Intern", avatar: pallavi, link: "https://www.linkedin.com/in/rakada-pallavi-886344397/", team: "Development Team" },
 ];
 
 export default function TeamSection() {
@@ -95,23 +86,19 @@ export default function TeamSection() {
     return acc;
   }, {});
 
-  // Ensure `Graphics Designer & Digital Marketing` appears just after `Sales & Marketing Team`
-  const teamNames = Object.keys(teams);
-  const salesKey = "Sales & Marketing Team";
-  const graphicsKey = "Graphics Designer & Digital Marketing";
-  if (teamNames.includes(salesKey) && teamNames.includes(graphicsKey)) {
-    // remove graphicsKey and re-insert right after salesKey
-    const filtered = teamNames.filter((k) => k !== graphicsKey);
-    const salesIndex = filtered.indexOf(salesKey);
-    if (salesIndex !== -1) {
-      filtered.splice(salesIndex + 1, 0, graphicsKey);
-    }
-    // use the reordered list for rendering
-    // convert to entries array in the desired order
-    var orderedTeamEntries = filtered.map((k) => [k, teams[k]] as [string, Member[]]);
-  } else {
-    var orderedTeamEntries = Object.entries(teams);
-  }
+  const teamOrder = [
+    "Management",
+    "Sales & Marketing Team",
+    "Development Team",
+    "Graphics Designer & Digital Marketing",
+  ];
+
+  const orderedTeamEntries = [
+    ...teamOrder
+      .filter((teamName) => teams[teamName])
+      .map((teamName) => [teamName, teams[teamName]] as [string, Member[]]),
+    ...Object.entries(teams).filter(([teamName]) => !teamOrder.includes(teamName)),
+  ];
 
   return (
     <section className="bg-gray-50 py-16 md:py-10 dark:bg-transparent">
@@ -146,46 +133,48 @@ export default function TeamSection() {
               </div>
 
               {/* Members Grid */}
-              <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                {teamMembers.map((member, index) => (
-                  <div
-                    key={index}
-                    ref={(el) => {
-                      if (cardRefs.current) cardRefs.current[index] = el;
-                    }}
-                    className="group overflow-hidden team-card"
-                  >
-                    <Image
-                      className="h-96 w-full rounded-md object-cover object-top transition-all duration-500 lg:grayscale lg:hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl"
-                      src={member.avatar}
-                      alt={`${member.name} - ${member.role}`}
-                      width={826}
-                      height={1239}
-                      priority={index < 3}
-                    />
+              {teamMembers.length > 0 && (
+                <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                  {teamMembers.map((member, index) => (
+                    <div
+                      key={index}
+                      ref={(el) => {
+                        if (cardRefs.current) cardRefs.current[index] = el;
+                      }}
+                      className="group overflow-hidden team-card"
+                    >
+                      <Image
+                        className="h-96 w-full rounded-md object-cover object-top transition-all duration-500 lg:grayscale lg:hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl"
+                        src={member.avatar}
+                        alt={`${member.name} - ${member.role}`}
+                        width={826}
+                        height={1239}
+                        priority={index < 3}
+                      />
 
-                    <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
-                      <div className="flex justify-between">
-                        <h3 className="text-base font-medium transition-all duration-500 group-hover:tracking-wider">
-                          {member.name}
-                        </h3>
-                      </div>
+                      <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
+                        <div className="flex justify-between">
+                          <h3 className="text-base font-medium transition-all duration-500 group-hover:tracking-wider">
+                            {member.name}
+                          </h3>
+                        </div>
 
-                      <div className="mt-1 flex items-center justify-between">
-                        <span className="text-muted-foreground inline-block translate-y-6 text-sm opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                          {member.role}
-                        </span>
-                        <Link
-                          href={member.link}
-                          className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100"
-                        >
-                          {t('linkedin')}
-                        </Link>
+                        <div className="mt-1 flex items-center justify-between">
+                          <span className="text-muted-foreground inline-block translate-y-6 text-sm opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            {member.role}
+                          </span>
+                          <Link
+                            href={member.link}
+                            className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100"
+                          >
+                            {t('linkedin')}
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

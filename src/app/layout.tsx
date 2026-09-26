@@ -34,6 +34,14 @@ export default function RootLayout({
   const pathname = usePathname();
   const isAdminRoute = pathname?.startsWith("/admin");
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }, [pathname]);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isSocialOpen, setIsSocialOpen] = useState(false);

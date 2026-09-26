@@ -66,6 +66,12 @@ export default function AboutPage() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, []);
+
+  useEffect(() => {
     // Set desktop state and only run GSAP animation on desktop (lg and above)
     if (typeof window === 'undefined' || !containerRef.current) return;
 
@@ -105,10 +111,11 @@ export default function AboutPage() {
     return () => {
       window.removeEventListener('resize', handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap.set(panels, { clearProps: 'x, xPercent, transform' });
     };
   }, []);
   return (
-    <div className="min-h-screen mt-10 bg-gradient-to-b from-background via-muted to-card overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-background via-muted to-card overflow-x-hidden">
       {/* SEO H1 Tag */}
       <h1 className="sr-only">
         About Al Mawa International Pune - Professional Web Development Team
@@ -550,141 +557,6 @@ export default function AboutPage() {
         <TeamSection />
       </motion.div>
 
-      {/* Jaipur Branch Section */}
-      <motion.section
-        className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50"
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-      >
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2
-              className={`text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className} uppercase`}
-            >
-              Our Jaipur Branch
-            </h2>
-            <p
-              className={`text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed ${playfair_display.className}`}
-            >
-              Expanding our footprint in Rajasthan with a state-of-the-art workspace in the heart of Jaipur
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              variants={fadeInUp}
-              className="space-y-6"
-            >
-              <div className="space-y-4">
-                <h3
-                  className={`text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className}`}
-                >
-                  Premium Coworking Space
-                </h3>
-                <p
-                  className={`text-gray-600 leading-relaxed text-lg ${playfair_display.className}`}
-                >
-                  Located in the prestigious Signature Elite building, our Jaipur branch offers a modern, collaborative environment in the city's prime business district. This strategic location allows us to better serve our growing client base in Rajasthan and Northern India.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className={`text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className}`}>Address:</h4>
-                <address className={`text-gray-600 not-italic text-base leading-relaxed ${playfair_display.className}`}>
-                  J, Signature Elite, Connekt Co-Working Office Spaces<br />
-                  4th Floor Above Westside Showroom<br />
-                  7th Govind Marg, Narayan Singh Circle<br />
-                  Jaipur, Rajasthan - 302004
-                </address>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className={`text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] ${inter.className}`}>Get Directions:</h4>
-                <motion.a
-                  href="https://www.google.com/maps/dir//Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur,+J,+Signature+Elite,+Connekt+Coworking+4th+Floor,+7,+Govind+Marg,+Jaipur,+Rajasthan+302004/@18.5472427,73.9242248,2466m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!2m2!1d75.8143621!2d26.8993959?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] hover:from-[#0284c7] hover:to-[#0ea5e9] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <svg
-                    className="w-5 h-5 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  View on Google Maps
-                </motion.a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="space-y-6"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src="/main_section.jpeg"
-                    alt="Jaipur Branch Main Section"
-                    width={400}
-                    height={300}
-                    className="rounded-2xl shadow-lg w-full h-[250px] object-cover"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src="/small_cabin.jpeg"
-                    alt="Jaipur Branch Small Cabin"
-                    width={400}
-                    height={300}
-                    className="rounded-2xl shadow-lg w-full h-[250px] object-cover"
-                  />
-                </motion.div>
-              </div>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image
-                  src="/playground.jpeg"
-                  alt="Jaipur Branch Playground Area"
-                  width={800}
-                  height={300}
-                  className="rounded-2xl shadow-lg w-full h-[250px] object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
     </div>
   );
 }

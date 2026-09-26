@@ -844,6 +844,11 @@ export const NavBar = () => {
 
   const closeDropdown = () => setOpenDropdown(null);
 
+  const navItemClass = cn(
+    "flex h-10 items-center justify-center self-center leading-none rounded-lg px-2 text-black transition-all duration-300 font-medium tracking-[-0.01em]",
+    "hover:text-[#0ea5e9]"
+  );
+
   const isActive = (href: string) => {
     if (href === "/") return currentPath === "/" || currentPath === "";
     return currentPath.startsWith(href.replace("/", ""));
@@ -858,19 +863,19 @@ export const NavBar = () => {
         <div
           ref={navRef}
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto mt-2 w-full max-w-[1600px] px-4 transition-all duration-300 lg:px-8",
             isScrolled && !menuState &&
-              "bg-background/80 max-w-5xl rounded-2xl border backdrop-blur-lg lg:px-6 mt-4 shadow-lg"
+              "bg-background/80 rounded-2xl border backdrop-blur-lg lg:px-6 mt-4 shadow-lg"
           )}
         >
           <div
             className={`${!isScrolled && "border-b border-black/20"
-              } relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4`}
+              } relative flex flex-wrap items-center justify-between gap-2 py-3 lg:gap-0 lg:py-4`}
           >
             {/* Logo */}
-            <div className="flex w-full justify-between lg:w-auto">
-              <Link href="/" aria-label="home" className="flex items-center space-x-2">
-                <Image src="/newlogo.svg" alt="Logo" width={100} height={100} priority className="h-28 w-auto sm:h-24" />
+            <div className="flex w-full justify-between lg:w-auto lg:justify-start lg:pr-1">
+              <Link href="/" aria-label="home" className="flex items-center space-x-2 lg:mr-1 lg:-ml-5">
+                <Image src="/Al Mawa International Logo.svg" alt="Logo" width={100} height={100} priority className="h-28 w-auto sm:h-24" />
               </Link>
 
               {/* Mobile toggle */}
@@ -886,15 +891,16 @@ export const NavBar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center">
-              <ul className="flex gap-8 text-sm items-center justify-center">
+              <ul className="flex items-center justify-center gap-8 text-sm leading-none">
 
                 {/* Home */}
-                <li>
+                <li className="flex h-10 items-center leading-none">
                   <Link
                     href="/"
                     onClick={closeDropdown}
                     className={cn(
-                      "text-black hover:text-[#0ea5e9] block relative pb-2 px-2 transition-all duration-300 font-medium rounded-lg",
+                      navItemClass,
+                      "relative pb-0",
                       "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
                       isActive("/") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
                     )}
@@ -904,12 +910,13 @@ export const NavBar = () => {
                 </li>
 
                 {/* About */}
-                <li>
+                <li className="flex h-10 items-center leading-none">
                   <Link
                     href="/about"
                     onClick={closeDropdown}
                     className={cn(
-                      "text-black hover:text-[#0ea5e9] block relative pb-2 px-2 transition-all duration-300 font-medium rounded-lg",
+                      navItemClass,
+                      "relative pb-0",
                       "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
                       isActive("/about") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
                     )}
@@ -919,11 +926,13 @@ export const NavBar = () => {
                 </li>
 
                 {/* Our Work */}
-                <li className="relative">
+                <li className="relative flex h-10 items-center leading-none">
                   <button
                     onClick={() => toggleDropdown("ourWork")}
                     className={cn(
-                      "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                      navItemClass,
+                      "cursor-pointer gap-1 relative",
+                      openDropdown === "ourWork" ? "text-[#0ea5e9]" : "text-black",
                       "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:transition-transform after:duration-300 after:origin-left",
                       openDropdown === "ourWork" ? "after:scale-x-100 text-[#0ea5e9]" : "after:scale-x-0",
                       isActive("/our-work") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
@@ -963,11 +972,12 @@ export const NavBar = () => {
 
                 {/* Services */}
                 {servicesData.map((service, index) => (
-                  <li key={index} className="relative">
+                  <li key={index} className="relative flex h-10 items-center leading-none">
                     <button
                       onClick={() => toggleDropdown("services")}
                       className={cn(
-                        "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                        navItemClass,
+                        "cursor-pointer gap-1 relative",
                         "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:transition-transform after:duration-300 after:origin-left",
                         openDropdown === "services" ? "after:scale-x-100 text-[#0ea5e9]" : "after:scale-x-0",
                         isActive("/services") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
@@ -1022,11 +1032,12 @@ export const NavBar = () => {
                 ))}
 
                 {/* Our Programs */}
-                <li className="relative">
+                <li className="relative flex h-10 items-center leading-none">
                   <button
                     onClick={() => toggleDropdown("ourPrograms")}
                     className={cn(
-                      "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                      navItemClass,
+                      "cursor-pointer gap-1 relative",
                       "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:transition-transform after:duration-300 after:origin-left",
                       openDropdown === "ourPrograms" ? "after:scale-x-100 text-[#0ea5e9]" : "after:scale-x-0",
                       (isActive("/franchise") || isActive("/referral") || isActive("/training-internship")) && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
@@ -1130,11 +1141,12 @@ export const NavBar = () => {
                 </li>
 
                 {/* Testimonials */}
-                <li className="relative">
+                <li className="relative flex h-10 items-center leading-none">
                   <button
                     onClick={() => toggleDropdown("testimonials")}
                     className={cn(
-                      "flex items-center gap-1 cursor-pointer text-black hover:text-[#0ea5e9] py-2 px-2 relative pb-2 transition-all duration-300 font-medium rounded-lg",
+                      navItemClass,
+                      "cursor-pointer gap-1 relative",
                       "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-[#0ea5e9] after:to-cyan-400 after:rounded-full after:transition-transform after:duration-300 after:origin-left",
                       openDropdown === "testimonials" ? "after:scale-x-100 text-[#0ea5e9]" : "after:scale-x-0",
                       isActive("/testimonials") && "text-[#0ea5e9] after:scale-x-100 shadow-md shadow-[#0ea5e9]/20"
@@ -1172,20 +1184,20 @@ export const NavBar = () => {
                   )}
                 </li>
 
+                {/* Contact */}
+                <li className="flex h-10 items-center leading-none">
+                  <Button asChild size="sm" className="animated-border-button no-animated-hover h-10 rounded-lg px-4">
+                    <Link href="/contact" onClick={closeDropdown}>
+                      <span>{t('contact')}</span>
+                    </Link>
+                  </Button>
+                </li>
+
               </ul>
             </div>
 
             {/* Mobile Sidebar */}
             <MobileSidebar isOpen={menuState} onClose={() => setMenuState(false)} />
-
-            {/* Contact Button */}
-            <div className="hidden lg:flex items-center gap-2">
-              <Button asChild size="sm" className="animated-border-button no-animated-hover">
-                <Link href="/contact" onClick={closeDropdown}>
-                  <span>{t('contact')}</span>
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </nav>
